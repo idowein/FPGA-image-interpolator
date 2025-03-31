@@ -42,6 +42,6 @@ EAStep()
 
 # pre-commands:
 /bin/touch .init_design.begin.rst
-EAStep vivado -log Sync_To_Count.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source Sync_To_Count.tcl -notrace
+EAStep vivado -log VGA_Sync_Pulses.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source VGA_Sync_Pulses.tcl -notrace
 
 

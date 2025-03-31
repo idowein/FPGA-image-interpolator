@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log Sync_To_Count.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Sync_To_Count.tcl
+EAStep vivado -log VGA_Sync_Pulses.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source VGA_Sync_Pulses.tcl

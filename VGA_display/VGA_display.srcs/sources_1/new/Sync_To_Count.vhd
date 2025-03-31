@@ -1,11 +1,40 @@
+----------------------------------------------------------------------------------
+-- Company: 
+-- Engineer: Ido Weinstock
+-- 
+-- Create Date: 03/31/2025 01:06:12 PM
+-- Design Name: 
+-- Module Name: none - Behavioral
+-- Project Name: 
+-- Target Devices: 
+-- Tool Versions: 
+-- Description: 
+
 -- This module will take incoming horizontal and veritcal sync pulses and
 -- create Row and Column counters based on these syncs.
 -- It will align the Row/Col counters to the output Sync pulses.
 -- Useful for any module that needs to keep track of which Row/Col position we
 -- are on in the middle of a frame.
+ 
+-- Dependencies: 
+-- 
+-- Revision:
+-- Revision 0.01 - File Created
+-- Additional Comments:
+-- 
+----------------------------------------------------------------------------------
+
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
+
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+use IEEE.NUMERIC_STD.ALL;
+
+-- Uncomment the following library declaration if instantiating
+-- any Xilinx leaf cells in this code.
+--library UNISIM;
+--use UNISIM.VComponents.all;
 
 entity Sync_To_Count is
   generic (

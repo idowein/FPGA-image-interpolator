@@ -1,3 +1,15 @@
+----------------------------------------------------------------------------------
+-- Company: 
+-- Engineer: Ido Weinstock
+-- 
+-- Create Date: 03/31/2025 01:06:12 PM
+-- Design Name: 
+-- Module Name: none - Behavioral
+-- Project Name: 
+-- Target Devices: 
+-- Tool Versions: 
+-- Description: 
+
 -- The purpose of this module is to modify the input HSync and VSync signals to
 -- include some time for what is called the Front and Back porch.  The front
 -- and back porch of a VGA interface used to have more meaning when a monitor
@@ -9,9 +21,26 @@
 -- removed this notion of the front and back porches.  Remember that VGA is an
 -- analog interface.
 -- This module is designed for 640x480 with a 25 MHz input clock.
+ 
+-- Dependencies: 
+-- 
+-- Revision:
+-- Revision 0.01 - File Created
+-- Additional Comments:
+-- 
+----------------------------------------------------------------------------------
+
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
+
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+use IEEE.NUMERIC_STD.ALL;
+
+-- Uncomment the following library declaration if instantiating
+-- any Xilinx leaf cells in this code.
+--library UNISIM;
+--use UNISIM.VComponents.all;
 
 entity VGA_Sync_Porch is
   generic (

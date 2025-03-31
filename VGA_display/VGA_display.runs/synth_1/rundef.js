@@ -23,7 +23,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log Sync_To_Count.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Sync_To_Count.tcl" );
+         "-log VGA_Sync_Pulses.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source VGA_Sync_Pulses.tcl" );
 
 
 
