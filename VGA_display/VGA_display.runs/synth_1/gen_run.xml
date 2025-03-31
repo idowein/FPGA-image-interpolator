@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1743415257">
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1743424340">
   <File Type="PA-TCL" Name="VGA_Sync_Pulses.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="VGA_Sync_Pulses_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="VGA_Sync_Pulses_reports.tcl"/>
