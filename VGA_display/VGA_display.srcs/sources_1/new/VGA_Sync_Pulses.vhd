@@ -6,10 +6,10 @@ use ieee.numeric_std.all;
 
 entity VGA_Sync_Pulses is
   generic (
-    g_TOTAL_COLS  : integer;
-    g_TOTAL_ROWS  : integer;
-    g_ACTIVE_COLS : integer;
-    g_ACTIVE_ROWS : integer   
+    g_TOTAL_COLS  : integer := 800;
+    g_TOTAL_ROWS  : integer := 525;
+    g_ACTIVE_COLS : integer := 640;
+    g_ACTIVE_ROWS : integer := 480   
     );
   port (
     i_Clk       : in  std_logic;

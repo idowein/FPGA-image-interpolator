@@ -9,8 +9,8 @@ use ieee.numeric_std.all;
 
 entity Sync_To_Count is
   generic (
-    g_TOTAL_COLS : integer;
-    g_TOTAL_ROWS : integer
+    g_TOTAL_COLS  : integer := 800;
+    g_TOTAL_ROWS  : integer := 525
     );
   port (
     i_Clk     : in std_logic;
