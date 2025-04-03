@@ -1,4 +1,10 @@
 #VGA Connector
+
+###########################################################################################
+##################################### I/O colors input ports ##############################
+###########################################################################################
+
+##################################### Red I/O ##################################### 
 #Bank = 35, Pin name = IO_L8N_T1_AD14N_35,					Sch name = VGA_R0
 set_property PACKAGE_PIN A3 [get_ports {o_Red_Video[0]}]				
 	set_property IOSTANDARD LVCMOS33 [get_ports {o_Red_Video[0]}]
@@ -11,6 +17,8 @@ set_property PACKAGE_PIN C5 [get_ports {o_Red_Video[2]}]
 #Bank = 35, Pin name = IO_L8P_T1_AD14P_35,					Sch name = VGA_R3
 set_property PACKAGE_PIN A4 [get_ports {o_Red_Video[3]}]				
 	set_property IOSTANDARD LVCMOS33 [get_ports {o_Red_Video[3]}]
+
+##################################### Blue I/O ##################################### 	
 #Bank = 35, Pin name = IO_L2P_T0_AD12P_35,					Sch name = VGA_B0
 set_property PACKAGE_PIN B7 [get_ports {o_Blu_Video[0]}]				
 	set_property IOSTANDARD LVCMOS33 [get_ports {o_Blu_Video[0]}]
@@ -23,6 +31,8 @@ set_property PACKAGE_PIN D7 [get_ports {o_Blu_Video[2]}]
 #Bank = 35, Pin name = IO_L4P_T0_35,						Sch name = VGA_B3
 set_property PACKAGE_PIN D8 [get_ports {o_Blu_Video[3]}]				
 	set_property IOSTANDARD LVCMOS33 [get_ports {o_Blu_Video[3]}]
+
+##################################### Green I/O ##################################### 	
 #Bank = 35, Pin name = IO_L1P_T0_AD4P_35,					Sch name = VGA_G0
 set_property PACKAGE_PIN C6 [get_ports {o_Grn_Video[0]}]				
 	set_property IOSTANDARD LVCMOS33 [get_ports {o_Grn_Video[0]}]
@@ -35,11 +45,21 @@ set_property PACKAGE_PIN B6 [get_ports {o_Grn_Video[2]}]
 #Bank = 35, Pin name = IO_L3P_T0_DQS_AD5P_35,				Sch name = VGA_G3
 set_property PACKAGE_PIN A6 [get_ports {o_Grn_Video[3]}]				
 	set_property IOSTANDARD LVCMOS33 [get_ports {o_Grn_Video[3]}]
+	
+###########################################################################################
+########################################### Sync I/O ######################################
+###########################################################################################
+
+##################################### Horizontal Sync ##################################### 
 #Bank = 15, Pin name = IO_L4P_T0_15,						Sch name = VGA_HS
 set_property PACKAGE_PIN B11 [get_ports o_HSync]						
 	set_property IOSTANDARD LVCMOS33 [get_ports o_HSync]
+
+##################################### Vertical Sync ##################################### 	
 #Bank = 15, Pin name = IO_L3N_T0_DQS_AD1N_15,				Sch name = VGA_VS
 set_property PACKAGE_PIN B12 [get_ports o_VSync]						
 	set_property IOSTANDARD LVCMOS33 [get_ports o_VSync]
 	
-# VGA test generator (SW)
+###########################################################################################
+############################ VGA test generator (SW) ######################################
+###########################################################################################
