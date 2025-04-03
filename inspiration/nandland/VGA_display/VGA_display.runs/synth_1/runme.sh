@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_display/VGA_display.runs/synth_1'
+HD_PWD='C:/Users/idowe/myProjects/FPGA-image-interpolator/inspiration/nandland/VGA_display/VGA_display.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log Test_Pattern_Gen.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Test_Pattern_Gen.tcl
+EAStep vivado -log VGA_Sync_Pulses.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source VGA_Sync_Pulses.tcl

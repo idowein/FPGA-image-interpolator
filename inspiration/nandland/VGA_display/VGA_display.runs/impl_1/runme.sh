@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_display/VGA_display.runs/impl_1'
+HD_PWD='C:/Users/idowe/myProjects/FPGA-image-interpolator/inspiration/nandland/VGA_display/VGA_display.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -42,6 +42,6 @@ EAStep()
 
 # pre-commands:
 /bin/touch .init_design.begin.rst
-EAStep vivado -log Test_Pattern_Gen.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source Test_Pattern_Gen.tcl -notrace
+EAStep vivado -log VGA_Sync_Pulses.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source VGA_Sync_Pulses.tcl -notrace
 
 

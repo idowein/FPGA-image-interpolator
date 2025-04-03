@@ -1,90 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1743425648">
-  <File Type="BITSTR-BMM" Name="Test_Pattern_Gen_bd.bmm"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="Test_Pattern_Gen_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="Test_Pattern_Gen_timing_summary_init.rpt"/>
-  <File Type="ROUTE-PWR" Name="Test_Pattern_Gen_power_routed.rpt"/>
-  <File Type="PA-TCL" Name="Test_Pattern_Gen.tcl"/>
-  <File Type="OPT-TIMING" Name="Test_Pattern_Gen_timing_summary_opted.rpt"/>
-  <File Type="OPT-DCP" Name="Test_Pattern_Gen_opt.dcp"/>
-  <File Type="ROUTE-PWR-SUM" Name="Test_Pattern_Gen_power_summary_routed.pb"/>
-  <File Type="REPORTS-TCL" Name="Test_Pattern_Gen_reports.tcl"/>
-  <File Type="OPT-DRC" Name="Test_Pattern_Gen_drc_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="Test_Pattern_Gen.hwdef"/>
-  <File Type="PWROPT-DCP" Name="Test_Pattern_Gen_pwropt.dcp"/>
-  <File Type="PWROPT-DRC" Name="Test_Pattern_Gen_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="Test_Pattern_Gen_timing_summary_pwropted.rpt"/>
-  <File Type="PLACE-DCP" Name="Test_Pattern_Gen_placed.dcp"/>
-  <File Type="PLACE-IO" Name="Test_Pattern_Gen_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="Test_Pattern_Gen_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="Test_Pattern_Gen_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="Test_Pattern_Gen_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="Test_Pattern_Gen_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="Test_Pattern_Gen_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="Test_Pattern_Gen_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-TIMING" Name="Test_Pattern_Gen_timing_summary_placed.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="Test_Pattern_Gen_postplace_pwropt.dcp"/>
-  <File Type="BG-BIN" Name="Test_Pattern_Gen.bin"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="Test_Pattern_Gen_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="Test_Pattern_Gen_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="Test_Pattern_Gen_drc_physopted.rpt"/>
-  <File Type="BITSTR-MSK" Name="Test_Pattern_Gen.msk"/>
-  <File Type="PHYSOPT-TIMING" Name="Test_Pattern_Gen_timing_summary_physopted.rpt"/>
-  <File Type="ROUTE-ERROR-DCP" Name="Test_Pattern_Gen_routed_error.dcp"/>
-  <File Type="ROUTE-DCP" Name="Test_Pattern_Gen_routed.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="Test_Pattern_Gen_routed_bb.dcp"/>
-  <File Type="ROUTE-DRC" Name="Test_Pattern_Gen_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="Test_Pattern_Gen_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="Test_Pattern_Gen_drc_routed.rpx"/>
-  <File Type="BITSTR-MMI" Name="Test_Pattern_Gen.mmi"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="Test_Pattern_Gen_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="Test_Pattern_Gen_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="Test_Pattern_Gen_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-PWR-RPX" Name="Test_Pattern_Gen_power_routed.rpx"/>
-  <File Type="ROUTE-STATUS" Name="Test_Pattern_Gen_route_status.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="Test_Pattern_Gen_route_status.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="Test_Pattern_Gen_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-TIMING-PB" Name="Test_Pattern_Gen_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="Test_Pattern_Gen_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="Test_Pattern_Gen_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="Test_Pattern_Gen_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW" Name="Test_Pattern_Gen_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="Test_Pattern_Gen_bus_skew_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="Test_Pattern_Gen_bus_skew_routed.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="Test_Pattern_Gen_postroute_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="Test_Pattern_Gen_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="Test_Pattern_Gen_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="Test_Pattern_Gen_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="Test_Pattern_Gen_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="Test_Pattern_Gen_bus_skew_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="Test_Pattern_Gen_bus_skew_postroute_physopted.pb"/>
-  <File Type="BG-BIT" Name="Test_Pattern_Gen.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="Test_Pattern_Gen_bus_skew_postroute_physopted.rpx"/>
-  <File Type="BITSTR-RBT" Name="Test_Pattern_Gen.rbt"/>
-  <File Type="BITSTR-NKY" Name="Test_Pattern_Gen.nky"/>
-  <File Type="PDI-FILE" Name="Test_Pattern_Gen.pdi"/>
-  <File Type="RCFI_FILE" Name="Test_Pattern_Gen.rcfi"/>
-  <File Type="CFI_FILE" Name="Test_Pattern_Gen.cfi"/>
-  <File Type="RNPI_FILE" Name="Test_Pattern_Gen.rnpi"/>
-  <File Type="NPI_FILE" Name="Test_Pattern_Gen.npi"/>
-  <File Type="RBD_FILE" Name="Test_Pattern_Gen.rbd"/>
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1743669103">
+  <File Type="BITSTR-BMM" Name="VGA_Sync_Pulses_bd.bmm"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="VGA_Sync_Pulses_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="VGA_Sync_Pulses_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR" Name="VGA_Sync_Pulses_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="VGA_Sync_Pulses.tcl"/>
+  <File Type="OPT-TIMING" Name="VGA_Sync_Pulses_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="VGA_Sync_Pulses_opt.dcp"/>
+  <File Type="ROUTE-PWR-SUM" Name="VGA_Sync_Pulses_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="VGA_Sync_Pulses_reports.tcl"/>
+  <File Type="OPT-DRC" Name="VGA_Sync_Pulses_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="VGA_Sync_Pulses.hwdef"/>
+  <File Type="PWROPT-DCP" Name="VGA_Sync_Pulses_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="VGA_Sync_Pulses_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="VGA_Sync_Pulses_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="VGA_Sync_Pulses_placed.dcp"/>
+  <File Type="PLACE-IO" Name="VGA_Sync_Pulses_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="VGA_Sync_Pulses_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="VGA_Sync_Pulses_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="VGA_Sync_Pulses_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="VGA_Sync_Pulses_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="VGA_Sync_Pulses_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="VGA_Sync_Pulses_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="VGA_Sync_Pulses_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="VGA_Sync_Pulses_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="VGA_Sync_Pulses.bin"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="VGA_Sync_Pulses_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="VGA_Sync_Pulses_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="VGA_Sync_Pulses_drc_physopted.rpt"/>
+  <File Type="BITSTR-MSK" Name="VGA_Sync_Pulses.msk"/>
+  <File Type="PHYSOPT-TIMING" Name="VGA_Sync_Pulses_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="VGA_Sync_Pulses_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="VGA_Sync_Pulses_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="VGA_Sync_Pulses_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="VGA_Sync_Pulses_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="VGA_Sync_Pulses_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="VGA_Sync_Pulses_drc_routed.rpx"/>
+  <File Type="BITSTR-MMI" Name="VGA_Sync_Pulses.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="VGA_Sync_Pulses_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="VGA_Sync_Pulses_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="VGA_Sync_Pulses_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="VGA_Sync_Pulses_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="VGA_Sync_Pulses_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="VGA_Sync_Pulses_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="VGA_Sync_Pulses_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="VGA_Sync_Pulses_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="VGA_Sync_Pulses_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="VGA_Sync_Pulses_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="VGA_Sync_Pulses_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="VGA_Sync_Pulses_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="VGA_Sync_Pulses_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="VGA_Sync_Pulses_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="VGA_Sync_Pulses_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="VGA_Sync_Pulses_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="VGA_Sync_Pulses_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="VGA_Sync_Pulses_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="VGA_Sync_Pulses_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="VGA_Sync_Pulses_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="VGA_Sync_Pulses_bus_skew_postroute_physopted.pb"/>
+  <File Type="BG-BIT" Name="VGA_Sync_Pulses.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="VGA_Sync_Pulses_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-RBT" Name="VGA_Sync_Pulses.rbt"/>
+  <File Type="BITSTR-NKY" Name="VGA_Sync_Pulses.nky"/>
+  <File Type="PDI-FILE" Name="VGA_Sync_Pulses.pdi"/>
+  <File Type="RCFI_FILE" Name="VGA_Sync_Pulses.rcfi"/>
+  <File Type="CFI_FILE" Name="VGA_Sync_Pulses.cfi"/>
+  <File Type="RNPI_FILE" Name="VGA_Sync_Pulses.rnpi"/>
+  <File Type="NPI_FILE" Name="VGA_Sync_Pulses.npi"/>
+  <File Type="RBD_FILE" Name="VGA_Sync_Pulses.rbd"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="Test_Pattern_Gen.ltx"/>
-  <File Type="BITSTR-SYSDEF" Name="Test_Pattern_Gen.sysdef"/>
-  <File Type="BG-BGN" Name="Test_Pattern_Gen.bgn"/>
-  <File Type="BG-DRC" Name="Test_Pattern_Gen.drc"/>
-  <File Type="RDI-RDI" Name="Test_Pattern_Gen.vdi"/>
+  <File Type="BITSTR-LTX" Name="VGA_Sync_Pulses.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="VGA_Sync_Pulses.sysdef"/>
+  <File Type="BG-BGN" Name="VGA_Sync_Pulses.bgn"/>
+  <File Type="BG-DRC" Name="VGA_Sync_Pulses.drc"/>
+  <File Type="RDI-RDI" Name="VGA_Sync_Pulses.vdi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/new/Sync_To_Count.vhd">
+    <File Path="$PSRCDIR/sources_1/new/VGA_Sync_Pulses.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/Test_Pattern_Gen.vhd">
+    <File Path="$PSRCDIR/sources_1/new/Sync_To_Count.vhd">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -96,28 +97,26 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/VGA_Sync_Pulses.vhd">
+    <File Path="$PSRCDIR/sources_1/new/Test_Pattern_Gen.vhd">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/bd/design_1/design_1.bd">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="Test_Pattern_Gen"/>
+      <Option Name="TopModule" Val="VGA_Sync_Pulses"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
+    <File Path="$PPRDIR/VGA_Nexys_A7.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
@@ -129,9 +128,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019">
-      <Desc>Default settings for Implementation.</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>
