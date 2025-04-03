@@ -41,3 +41,5 @@ set_property PACKAGE_PIN B11 [get_ports o_HSync]
 #Bank = 15, Pin name = IO_L3N_T0_DQS_AD1N_15,				Sch name = VGA_VS
 set_property PACKAGE_PIN B12 [get_ports o_VSync]						
 	set_property IOSTANDARD LVCMOS33 [get_ports o_VSync]
+	
+# VGA test generator (SW)
