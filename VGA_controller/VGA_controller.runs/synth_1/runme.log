@@ -1,6 +1,6 @@
 
 *** Running vivado
-    with args -log Hex_Display.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Hex_Display.tcl
+    with args -log SEVEN_SEG_DISP_UNIT.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source SEVEN_SEG_DISP_UNIT.tcl
 
 
 ****** Vivado v2019.2 (64-bit)
@@ -8,44 +8,21 @@
   **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
     ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 
-source Hex_Display.tcl -notrace
-Command: synth_design -top Hex_Display -part xc7a100tcsg324-1
+source SEVEN_SEG_DISP_UNIT.tcl -notrace
+Command: synth_design -top SEVEN_SEG_DISP_UNIT -part xc7a100tcsg324-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 27808 
+INFO: Helper process launched with PID 12916 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 996.223 ; gain = 233.941
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 996.004 ; gain = 235.012
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'Hex_Display' [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:13]
-INFO: [Synth 8-226] default block is never used [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:23]
-INFO: [Synth 8-256] done synthesizing module 'Hex_Display' (1#1) [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:13]
-WARNING: [Synth 8-3917] design Hex_Display has port LED[15] driven by constant 1
-WARNING: [Synth 8-3917] design Hex_Display has port LED[14] driven by constant 1
-WARNING: [Synth 8-3917] design Hex_Display has port LED[13] driven by constant 1
-WARNING: [Synth 8-3917] design Hex_Display has port LED[12] driven by constant 1
-WARNING: [Synth 8-3917] design Hex_Display has port LED[11] driven by constant 1
-WARNING: [Synth 8-3917] design Hex_Display has port LED[10] driven by constant 1
-WARNING: [Synth 8-3917] design Hex_Display has port LED[9] driven by constant 1
-WARNING: [Synth 8-3917] design Hex_Display has port LED[8] driven by constant 0
-WARNING: [Synth 8-3917] design Hex_Display has port LED[7] driven by constant 1
-WARNING: [Synth 8-3331] design Hex_Display has unconnected port CLK
-WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[15]
-WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[14]
-WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[13]
-WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[12]
-WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[11]
-WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[10]
-WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[9]
-WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[8]
-WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[7]
-WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[6]
-WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[5]
-WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[4]
+INFO: [Synth 8-638] synthesizing module 'SEVEN_SEG_DISP_UNIT' [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_CONTROLLER.vhd:17]
+INFO: [Synth 8-256] done synthesizing module 'SEVEN_SEG_DISP_UNIT' (1#1) [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_CONTROLLER.vhd:17]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1068.152 ; gain = 305.871
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1068.625 ; gain = 307.633
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -58,12 +35,12 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1068.152 ; gain = 305.871
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1068.625 ; gain = 307.633
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1068.152 ; gain = 305.871
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1068.625 ; gain = 307.633
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1068.152 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1068.625 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -87,76 +64,34 @@ Resolution: If [get_<value>] was used to populate the object, check to make sure
 WARNING: [Vivado 12-584] No ports matched 'BTN[4]'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:81]
 CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:81]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'VGA_R[0]'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:136]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:136]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'VGA_R[1]'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:137]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:137]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'VGA_R[2]'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:138]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:138]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'VGA_R[3]'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:139]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:139]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'VGA_G[0]'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:141]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:141]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'VGA_G[1]'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:142]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:142]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'VGA_G[2]'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:143]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:143]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'VGA_G[3]'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:144]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:144]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'VGA_B[0]'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:146]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:146]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'VGA_B[1]'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:147]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:147]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'VGA_B[2]'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:148]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:148]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'VGA_B[3]'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:149]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:149]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'VGA_HS'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:151]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:151]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'VGA_VS'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:152]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:152]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 Finished Parsing XDC File [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Hex_Display_propImpl.xdc].
-Resolution: To avoid this warning, move constraints listed in [.Xil/Hex_Display_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/SEVEN_SEG_DISP_UNIT_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/SEVEN_SEG_DISP_UNIT_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1080.633 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1182.215 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1080.633 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1182.215 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1080.633 ; gain = 318.352
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1182.215 ; gain = 421.223
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1080.633 ; gain = 318.352
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1182.215 ; gain = 421.223
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1080.633 ; gain = 318.352
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1182.215 ; gain = 421.223
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1080.633 ; gain = 318.352
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1182.215 ; gain = 421.223
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -168,6 +103,18 @@ Report RTL Partitions:
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     12 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 1     
+	               12 Bit    Registers := 2     
+	               11 Bit    Registers := 1     
+	                4 Bit    Registers := 3     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -175,6 +122,20 @@ Finished RTL Component Statistics
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
 Hierarchical RTL Component report 
+Module SEVEN_SEG_DISP_UNIT 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     12 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 1     
+	               12 Bit    Registers := 2     
+	               11 Bit    Registers := 1     
+	                4 Bit    Registers := 3     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -191,30 +152,20 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-WARNING: [Synth 8-3917] design Hex_Display has port LED[15] driven by constant 1
-WARNING: [Synth 8-3917] design Hex_Display has port LED[14] driven by constant 1
-WARNING: [Synth 8-3917] design Hex_Display has port LED[13] driven by constant 1
-WARNING: [Synth 8-3917] design Hex_Display has port LED[12] driven by constant 1
-WARNING: [Synth 8-3917] design Hex_Display has port LED[11] driven by constant 1
-WARNING: [Synth 8-3917] design Hex_Display has port LED[10] driven by constant 1
-WARNING: [Synth 8-3917] design Hex_Display has port LED[9] driven by constant 1
-WARNING: [Synth 8-3917] design Hex_Display has port LED[8] driven by constant 0
-WARNING: [Synth 8-3917] design Hex_Display has port LED[7] driven by constant 1
-WARNING: [Synth 8-3331] design Hex_Display has unconnected port CLK
-WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[15]
-WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[14]
-WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[13]
-WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[12]
-WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[11]
-WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[10]
-WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[9]
-WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[8]
-WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[7]
-WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[6]
-WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[5]
-WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[4]
+INFO: [Synth 8-3886] merging instance 'rgb_temp_reg[0]' (FD) to 'LED_reg[0]'
+INFO: [Synth 8-3886] merging instance 'rgb_temp_reg[1]' (FD) to 'LED_reg[1]'
+INFO: [Synth 8-3886] merging instance 'rgb_temp_reg[2]' (FD) to 'LED_reg[2]'
+INFO: [Synth 8-3886] merging instance 'rgb_temp_reg[3]' (FD) to 'LED_reg[3]'
+INFO: [Synth 8-3886] merging instance 'rgb_temp_reg[4]' (FD) to 'LED_reg[4]'
+INFO: [Synth 8-3886] merging instance 'rgb_temp_reg[5]' (FD) to 'LED_reg[5]'
+INFO: [Synth 8-3886] merging instance 'rgb_temp_reg[6]' (FD) to 'LED_reg[6]'
+INFO: [Synth 8-3886] merging instance 'rgb_temp_reg[7]' (FD) to 'LED_reg[7]'
+INFO: [Synth 8-3886] merging instance 'rgb_temp_reg[8]' (FD) to 'LED_reg[8]'
+INFO: [Synth 8-3886] merging instance 'rgb_temp_reg[9]' (FD) to 'LED_reg[9]'
+INFO: [Synth 8-3886] merging instance 'rgb_temp_reg[10]' (FD) to 'LED_reg[10]'
+INFO: [Synth 8-3886] merging instance 'rgb_temp_reg[11]' (FD) to 'LED_reg[11]'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1080.633 ; gain = 318.352
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1182.215 ; gain = 421.223
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -226,13 +177,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1142.898 ; gain = 380.617
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1182.215 ; gain = 421.223
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1142.898 ; gain = 380.617
+Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1182.215 ; gain = 421.223
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -244,7 +195,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1152.445 ; gain = 390.164
+Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1182.215 ; gain = 421.223
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -268,13 +219,13 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1168.273 ; gain = 405.992
+Finished IO Insertion : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1182.215 ; gain = 421.223
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1168.273 ; gain = 405.992
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1182.215 ; gain = 421.223
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -293,25 +244,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1168.273 ; gain = 405.992
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1182.215 ; gain = 421.223
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1168.273 ; gain = 405.992
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1182.215 ; gain = 421.223
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1168.273 ; gain = 405.992
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1182.215 ; gain = 421.223
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1168.273 ; gain = 405.992
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1182.215 ; gain = 421.223
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -324,41 +275,51 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+-----+------+
-|      |Cell |Count |
-+------+-----+------+
-|1     |LUT4 |     7|
-|2     |IBUF |     4|
-|3     |OBUF |    16|
-+------+-----+------+
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |     3|
+|3     |LUT1   |     2|
+|4     |LUT2   |     1|
+|5     |LUT3   |     2|
+|6     |LUT4   |     5|
+|7     |LUT5   |    11|
+|8     |LUT6   |     8|
+|9     |FDRE   |    53|
+|10    |IBUF   |    17|
+|11    |OBUF   |    30|
++------+-------+------+
 
 Report Instance Areas: 
 +------+---------+-------+------+
 |      |Instance |Module |Cells |
 +------+---------+-------+------+
-|1     |top      |       |    27|
+|1     |top      |       |   133|
 +------+---------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1168.273 ; gain = 405.992
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1182.215 ; gain = 421.223
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 22 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 1168.273 ; gain = 393.512
-Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1168.273 ; gain = 405.992
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 1182.215 ; gain = 307.633
+Synthesis Optimization Complete : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1182.215 ; gain = 421.223
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1180.359 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1182.215 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 3 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1186.562 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1190.539 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-13 Infos, 64 Warnings, 20 Critical Warnings and 0 Errors encountered.
+26 Infos, 6 Warnings, 6 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1186.562 ; gain = 727.363
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1186.562 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1190.539 ; gain = 731.184
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1190.539 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint 'C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.runs/synth_1/Hex_Display.dcp' has been generated.
-INFO: [runtcl-4] Executing : report_utilization -file Hex_Display_utilization_synth.rpt -pb Hex_Display_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Apr  6 00:02:40 2025...
+INFO: [Common 17-1381] The checkpoint 'C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.runs/synth_1/SEVEN_SEG_DISP_UNIT.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file SEVEN_SEG_DISP_UNIT_utilization_synth.rpt -pb SEVEN_SEG_DISP_UNIT_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Apr  6 00:46:31 2025...

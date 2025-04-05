@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log Hex_Display.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Hex_Display.tcl
+EAStep vivado -log SEVEN_SEG_DISP_UNIT.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source SEVEN_SEG_DISP_UNIT.tcl

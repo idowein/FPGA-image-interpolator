@@ -1,83 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1743886976">
-  <File Type="BITSTR-BMM" Name="Hex_Display_bd.bmm"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="Hex_Display_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="Hex_Display_timing_summary_init.rpt"/>
-  <File Type="ROUTE-PWR" Name="Hex_Display_power_routed.rpt"/>
-  <File Type="PA-TCL" Name="Hex_Display.tcl"/>
-  <File Type="OPT-TIMING" Name="Hex_Display_timing_summary_opted.rpt"/>
-  <File Type="OPT-DCP" Name="Hex_Display_opt.dcp"/>
-  <File Type="ROUTE-PWR-SUM" Name="Hex_Display_power_summary_routed.pb"/>
-  <File Type="REPORTS-TCL" Name="Hex_Display_reports.tcl"/>
-  <File Type="OPT-DRC" Name="Hex_Display_drc_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="Hex_Display.hwdef"/>
-  <File Type="PWROPT-DCP" Name="Hex_Display_pwropt.dcp"/>
-  <File Type="PWROPT-DRC" Name="Hex_Display_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="Hex_Display_timing_summary_pwropted.rpt"/>
-  <File Type="PLACE-DCP" Name="Hex_Display_placed.dcp"/>
-  <File Type="PLACE-IO" Name="Hex_Display_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="Hex_Display_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="Hex_Display_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="Hex_Display_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="Hex_Display_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="Hex_Display_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="Hex_Display_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-TIMING" Name="Hex_Display_timing_summary_placed.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="Hex_Display_postplace_pwropt.dcp"/>
-  <File Type="BG-BIN" Name="Hex_Display.bin"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="Hex_Display_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="Hex_Display_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="Hex_Display_drc_physopted.rpt"/>
-  <File Type="BITSTR-MSK" Name="Hex_Display.msk"/>
-  <File Type="PHYSOPT-TIMING" Name="Hex_Display_timing_summary_physopted.rpt"/>
-  <File Type="ROUTE-ERROR-DCP" Name="Hex_Display_routed_error.dcp"/>
-  <File Type="ROUTE-DCP" Name="Hex_Display_routed.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="Hex_Display_routed_bb.dcp"/>
-  <File Type="ROUTE-DRC" Name="Hex_Display_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="Hex_Display_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="Hex_Display_drc_routed.rpx"/>
-  <File Type="BITSTR-MMI" Name="Hex_Display.mmi"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="Hex_Display_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="Hex_Display_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="Hex_Display_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-PWR-RPX" Name="Hex_Display_power_routed.rpx"/>
-  <File Type="ROUTE-STATUS" Name="Hex_Display_route_status.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="Hex_Display_route_status.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="Hex_Display_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-TIMING-PB" Name="Hex_Display_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="Hex_Display_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="Hex_Display_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="Hex_Display_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW" Name="Hex_Display_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="Hex_Display_bus_skew_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="Hex_Display_bus_skew_routed.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="Hex_Display_postroute_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="Hex_Display_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="Hex_Display_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="Hex_Display_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="Hex_Display_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="Hex_Display_bus_skew_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="Hex_Display_bus_skew_postroute_physopted.pb"/>
-  <File Type="BG-BIT" Name="Hex_Display.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="Hex_Display_bus_skew_postroute_physopted.rpx"/>
-  <File Type="BITSTR-RBT" Name="Hex_Display.rbt"/>
-  <File Type="BITSTR-NKY" Name="Hex_Display.nky"/>
-  <File Type="PDI-FILE" Name="Hex_Display.pdi"/>
-  <File Type="RCFI_FILE" Name="Hex_Display.rcfi"/>
-  <File Type="CFI_FILE" Name="Hex_Display.cfi"/>
-  <File Type="RNPI_FILE" Name="Hex_Display.rnpi"/>
-  <File Type="NPI_FILE" Name="Hex_Display.npi"/>
-  <File Type="RBD_FILE" Name="Hex_Display.rbd"/>
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1743889606">
+  <File Type="BITSTR-BMM" Name="SEVEN_SEG_DISP_UNIT_bd.bmm"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="SEVEN_SEG_DISP_UNIT_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="SEVEN_SEG_DISP_UNIT_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR" Name="SEVEN_SEG_DISP_UNIT_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="SEVEN_SEG_DISP_UNIT.tcl"/>
+  <File Type="OPT-TIMING" Name="SEVEN_SEG_DISP_UNIT_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="SEVEN_SEG_DISP_UNIT_opt.dcp"/>
+  <File Type="ROUTE-PWR-SUM" Name="SEVEN_SEG_DISP_UNIT_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="SEVEN_SEG_DISP_UNIT_reports.tcl"/>
+  <File Type="OPT-DRC" Name="SEVEN_SEG_DISP_UNIT_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="SEVEN_SEG_DISP_UNIT.hwdef"/>
+  <File Type="PWROPT-DCP" Name="SEVEN_SEG_DISP_UNIT_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="SEVEN_SEG_DISP_UNIT_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="SEVEN_SEG_DISP_UNIT_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="SEVEN_SEG_DISP_UNIT_placed.dcp"/>
+  <File Type="PLACE-IO" Name="SEVEN_SEG_DISP_UNIT_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="SEVEN_SEG_DISP_UNIT_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="SEVEN_SEG_DISP_UNIT_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="SEVEN_SEG_DISP_UNIT_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="SEVEN_SEG_DISP_UNIT_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="SEVEN_SEG_DISP_UNIT_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="SEVEN_SEG_DISP_UNIT_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="SEVEN_SEG_DISP_UNIT_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="SEVEN_SEG_DISP_UNIT_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="SEVEN_SEG_DISP_UNIT.bin"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="SEVEN_SEG_DISP_UNIT_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="SEVEN_SEG_DISP_UNIT_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="SEVEN_SEG_DISP_UNIT_drc_physopted.rpt"/>
+  <File Type="BITSTR-MSK" Name="SEVEN_SEG_DISP_UNIT.msk"/>
+  <File Type="PHYSOPT-TIMING" Name="SEVEN_SEG_DISP_UNIT_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="SEVEN_SEG_DISP_UNIT_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="SEVEN_SEG_DISP_UNIT_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="SEVEN_SEG_DISP_UNIT_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="SEVEN_SEG_DISP_UNIT_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="SEVEN_SEG_DISP_UNIT_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="SEVEN_SEG_DISP_UNIT_drc_routed.rpx"/>
+  <File Type="BITSTR-MMI" Name="SEVEN_SEG_DISP_UNIT.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="SEVEN_SEG_DISP_UNIT_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="SEVEN_SEG_DISP_UNIT_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="SEVEN_SEG_DISP_UNIT_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="SEVEN_SEG_DISP_UNIT_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="SEVEN_SEG_DISP_UNIT_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="SEVEN_SEG_DISP_UNIT_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="SEVEN_SEG_DISP_UNIT_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="SEVEN_SEG_DISP_UNIT_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="SEVEN_SEG_DISP_UNIT_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="SEVEN_SEG_DISP_UNIT_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="SEVEN_SEG_DISP_UNIT_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="SEVEN_SEG_DISP_UNIT_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="SEVEN_SEG_DISP_UNIT_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="SEVEN_SEG_DISP_UNIT_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="SEVEN_SEG_DISP_UNIT_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="SEVEN_SEG_DISP_UNIT_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="SEVEN_SEG_DISP_UNIT_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="SEVEN_SEG_DISP_UNIT_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="SEVEN_SEG_DISP_UNIT_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="SEVEN_SEG_DISP_UNIT_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="SEVEN_SEG_DISP_UNIT_bus_skew_postroute_physopted.pb"/>
+  <File Type="BG-BIT" Name="SEVEN_SEG_DISP_UNIT.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="SEVEN_SEG_DISP_UNIT_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-RBT" Name="SEVEN_SEG_DISP_UNIT.rbt"/>
+  <File Type="BITSTR-NKY" Name="SEVEN_SEG_DISP_UNIT.nky"/>
+  <File Type="PDI-FILE" Name="SEVEN_SEG_DISP_UNIT.pdi"/>
+  <File Type="RCFI_FILE" Name="SEVEN_SEG_DISP_UNIT.rcfi"/>
+  <File Type="CFI_FILE" Name="SEVEN_SEG_DISP_UNIT.cfi"/>
+  <File Type="RNPI_FILE" Name="SEVEN_SEG_DISP_UNIT.rnpi"/>
+  <File Type="NPI_FILE" Name="SEVEN_SEG_DISP_UNIT.npi"/>
+  <File Type="RBD_FILE" Name="SEVEN_SEG_DISP_UNIT.rbd"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="Hex_Display.ltx"/>
-  <File Type="BITSTR-SYSDEF" Name="Hex_Display.sysdef"/>
-  <File Type="BG-BGN" Name="Hex_Display.bgn"/>
-  <File Type="BG-DRC" Name="Hex_Display.drc"/>
-  <File Type="RDI-RDI" Name="Hex_Display.vdi"/>
+  <File Type="BITSTR-LTX" Name="SEVEN_SEG_DISP_UNIT.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="SEVEN_SEG_DISP_UNIT.sysdef"/>
+  <File Type="BG-BGN" Name="SEVEN_SEG_DISP_UNIT.bgn"/>
+  <File Type="BG-DRC" Name="SEVEN_SEG_DISP_UNIT.drc"/>
+  <File Type="RDI-RDI" Name="SEVEN_SEG_DISP_UNIT.vdi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/new/VGA_controller.vhd">
+    <File Path="$PSRCDIR/sources_1/new/VGA_CONTROLLER.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -85,7 +85,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="Hex_Display"/>
+      <Option Name="TopModule" Val="SEVEN_SEG_DISP_UNIT"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
@@ -108,9 +108,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019">
-      <Desc>Default settings for Implementation.</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>
