@@ -1,6 +1,6 @@
 
 *** Running vivado
-    with args -log VGA_controller.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source VGA_controller.tcl
+    with args -log Hex_Display.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Hex_Display.tcl
 
 
 ****** Vivado v2019.2 (64-bit)
@@ -8,121 +8,44 @@
   **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
     ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 
-source VGA_controller.tcl -notrace
-Command: synth_design -top VGA_controller -part xc7a100tcsg324-1
+source Hex_Display.tcl -notrace
+Command: synth_design -top Hex_Display -part xc7a100tcsg324-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 27420 
+INFO: Helper process launched with PID 27808 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 995.941 ; gain = 235.051
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 996.223 ; gain = 233.941
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'VGA_controller' [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:49]
-WARNING: [Synth 8-614] signal 'RST' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:325]
-WARNING: [Synth 8-6014] Unused sequential element DIGITAL_CLOCK_EN_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:393]
-WARNING: [Synth 8-6014] Unused sequential element COUNTER_FLIKER_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:408]
-WARNING: [Synth 8-6014] Unused sequential element COUNTER_1S_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:433]
-WARNING: [Synth 8-6014] Unused sequential element DIGIT_S1_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:446]
-WARNING: [Synth 8-6014] Unused sequential element DIGIT_S1_LATCH_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:447]
-WARNING: [Synth 8-6014] Unused sequential element COUNTER_S10_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:468]
-WARNING: [Synth 8-6014] Unused sequential element DIGIT_S10_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:481]
-WARNING: [Synth 8-6014] Unused sequential element DIGIT_S10_LATCH_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:482]
-WARNING: [Synth 8-6014] Unused sequential element COUNTER_M1_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:503]
-WARNING: [Synth 8-6014] Unused sequential element DIGIT_M1_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:518]
-WARNING: [Synth 8-6014] Unused sequential element DIGIT_M1_LATCH_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:519]
-WARNING: [Synth 8-6014] Unused sequential element COUNTER_M10_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:540]
-WARNING: [Synth 8-6014] Unused sequential element DIGIT_M10_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:555]
-WARNING: [Synth 8-6014] Unused sequential element DIGIT_M10_LATCH_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:556]
-WARNING: [Synth 8-6014] Unused sequential element DIGIT_H1_TO_CONV_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:578]
-WARNING: [Synth 8-6014] Unused sequential element COUNTER_H1_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:590]
-WARNING: [Synth 8-6014] Unused sequential element DIGIT_H1_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:581]
-WARNING: [Synth 8-6014] Unused sequential element DIGIT_H1_LATCH_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:605]
-WARNING: [Synth 8-6014] Unused sequential element DIGIT1_H1_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:583]
-WARNING: [Synth 8-6014] Unused sequential element DIGIT1_H1_LATCH_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:617]
-WARNING: [Synth 8-6014] Unused sequential element COUNTER_H10_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:634]
-WARNING: [Synth 8-6014] Unused sequential element DIGIT_H10_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:580]
-WARNING: [Synth 8-6014] Unused sequential element DIGIT_H10_LATCH_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:654]
-WARNING: [Synth 8-6014] Unused sequential element COUNTER1_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:675]
-WARNING: [Synth 8-6014] Unused sequential element COUNTER1_LATCH_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:676]
-WARNING: [Synth 8-6014] Unused sequential element COUNTER2_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:698]
-WARNING: [Synth 8-6014] Unused sequential element COUNTER2_LATCH_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:699]
-WARNING: [Synth 8-6014] Unused sequential element COUNTER3_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:721]
-WARNING: [Synth 8-6014] Unused sequential element COUNTER3_LATCH_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:722]
-WARNING: [Synth 8-6014] Unused sequential element START_TIMER_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:751]
-WARNING: [Synth 8-6014] Unused sequential element TIMER_1S_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:768]
-WARNING: [Synth 8-6014] Unused sequential element START_TIMER_TMP_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:758]
-WARNING: [Synth 8-6014] Unused sequential element DIGIT_S1_DIV_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:782]
-WARNING: [Synth 8-6014] Unused sequential element DIGIT_S1_DIV_LATCH_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:783]
-WARNING: [Synth 8-6014] Unused sequential element TIMER_DIGIT_S1_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:781]
-WARNING: [Synth 8-6014] Unused sequential element TIMER_FLAG_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:799]
-WARNING: [Synth 8-6014] Unused sequential element TIMER_S10_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:822]
-WARNING: [Synth 8-6014] Unused sequential element DIGIT_S10_DIV_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:835]
-WARNING: [Synth 8-6014] Unused sequential element DIGIT_S10_DIV_LATCH_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:836]
-WARNING: [Synth 8-6014] Unused sequential element TIMER_DIGIT_S10_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:789]
-WARNING: [Synth 8-6014] Unused sequential element TIMER_M1_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:883]
-WARNING: [Synth 8-6014] Unused sequential element TIMER_DIGIT_M1_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:789]
-WARNING: [Synth 8-6014] Unused sequential element DIGIT_M1_DIV_LATCH_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:899]
-WARNING: [Synth 8-6014] Unused sequential element DIGIT_M1_DIV_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:898]
-WARNING: [Synth 8-6014] Unused sequential element TIMER_M10_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:943]
-WARNING: [Synth 8-6014] Unused sequential element TIMER_DIGIT_M10_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:789]
-WARNING: [Synth 8-6014] Unused sequential element DIGIT_M10_DIV_LATCH_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:959]
-WARNING: [Synth 8-6014] Unused sequential element DIGIT_M10_DIV_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:958]
-WARNING: [Synth 8-3848] Net VGA_R in module/entity VGA_controller does not have driver. [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:43]
-WARNING: [Synth 8-3848] Net VGA_G in module/entity VGA_controller does not have driver. [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:44]
-WARNING: [Synth 8-3848] Net VGA_B in module/entity VGA_controller does not have driver. [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:45]
-INFO: [Synth 8-256] done synthesizing module 'VGA_controller' (1#1) [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:49]
-WARNING: [Synth 8-3917] design VGA_controller has port LED[3] driven by constant 0
-WARNING: [Synth 8-3917] design VGA_controller has port LED[2] driven by constant 0
-WARNING: [Synth 8-3917] design VGA_controller has port LED[1] driven by constant 0
-WARNING: [Synth 8-3917] design VGA_controller has port LED[0] driven by constant 0
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port LED[15]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port LED[14]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port LED[13]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port LED[12]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port LED[11]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port LED[10]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port LED[9]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port LED[8]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port LED[7]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port LED[6]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port LED[5]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port LED[4]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port VGA_R[3]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port VGA_R[2]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port VGA_R[1]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port VGA_R[0]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port VGA_G[3]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port VGA_G[2]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port VGA_G[1]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port VGA_G[0]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port VGA_B[3]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port VGA_B[2]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port VGA_B[1]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port VGA_B[0]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port SW[15]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port SW[14]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port SW[13]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port SW[12]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port SW[11]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port SW[10]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port SW[9]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port SW[8]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port SW[7]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port SW[6]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port SW[5]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port SW[4]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port SW[3]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port SW[2]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port SW[1]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port SW[0]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port BTN[3]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port BTN[2]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port BTN[1]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port BTN[0]
+INFO: [Synth 8-638] synthesizing module 'Hex_Display' [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:13]
+INFO: [Synth 8-226] default block is never used [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:23]
+INFO: [Synth 8-256] done synthesizing module 'Hex_Display' (1#1) [C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.srcs/sources_1/new/VGA_controller.vhd:13]
+WARNING: [Synth 8-3917] design Hex_Display has port LED[15] driven by constant 1
+WARNING: [Synth 8-3917] design Hex_Display has port LED[14] driven by constant 1
+WARNING: [Synth 8-3917] design Hex_Display has port LED[13] driven by constant 1
+WARNING: [Synth 8-3917] design Hex_Display has port LED[12] driven by constant 1
+WARNING: [Synth 8-3917] design Hex_Display has port LED[11] driven by constant 1
+WARNING: [Synth 8-3917] design Hex_Display has port LED[10] driven by constant 1
+WARNING: [Synth 8-3917] design Hex_Display has port LED[9] driven by constant 1
+WARNING: [Synth 8-3917] design Hex_Display has port LED[8] driven by constant 0
+WARNING: [Synth 8-3917] design Hex_Display has port LED[7] driven by constant 1
+WARNING: [Synth 8-3331] design Hex_Display has unconnected port CLK
+WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[15]
+WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[14]
+WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[13]
+WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[12]
+WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[11]
+WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[10]
+WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[9]
+WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[8]
+WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[7]
+WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[6]
+WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[5]
+WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[4]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1068.691 ; gain = 307.801
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1068.152 ; gain = 305.871
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -135,12 +58,12 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1068.691 ; gain = 307.801
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1068.152 ; gain = 305.871
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1068.691 ; gain = 307.801
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1068.152 ; gain = 305.871
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1068.691 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1068.152 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -149,34 +72,91 @@ Parsing XDC File [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc]
 WARNING: [Vivado 12-584] No ports matched 'CPU_RESETN'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:74]
 CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:74]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'BTN[0]'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:77]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:77]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'BTN[1]'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:78]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:78]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'BTN[2]'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:79]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:79]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'BTN[3]'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:80]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:80]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'BTN[4]'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:81]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:81]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'VGA_R[0]'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:136]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:136]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'VGA_R[1]'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:137]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:137]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'VGA_R[2]'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:138]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:138]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'VGA_R[3]'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:139]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:139]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'VGA_G[0]'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:141]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:141]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'VGA_G[1]'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:142]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:142]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'VGA_G[2]'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:143]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:143]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'VGA_G[3]'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:144]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:144]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'VGA_B[0]'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:146]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:146]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'VGA_B[1]'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:147]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:147]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'VGA_B[2]'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:148]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:148]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'VGA_B[3]'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:149]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:149]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'VGA_HS'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:151]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:151]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'VGA_VS'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:152]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:152]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 Finished Parsing XDC File [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/VGA_controller_propImpl.xdc].
-Resolution: To avoid this warning, move constraints listed in [.Xil/VGA_controller_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Hex_Display_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Hex_Display_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1147.465 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1080.633 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1147.465 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1080.633 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1147.465 ; gain = 386.574
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1080.633 ; gain = 318.352
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1147.465 ; gain = 386.574
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1080.633 ; gain = 318.352
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1147.465 ; gain = 386.574
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1080.633 ; gain = 318.352
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1147.465 ; gain = 386.574
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1080.633 ; gain = 318.352
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -188,15 +168,6 @@ Report RTL Partitions:
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     32 Bit       Adders := 2     
-	   2 Input      4 Bit       Adders := 1     
-+---Registers : 
-	               32 Bit    Registers := 2     
-	                4 Bit    Registers := 1     
-	                1 Bit    Registers := 2     
-+---Muxes : 
-	   2 Input     32 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -204,17 +175,6 @@ Finished RTL Component Statistics
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
 Hierarchical RTL Component report 
-Module VGA_controller 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     32 Bit       Adders := 2     
-	   2 Input      4 Bit       Adders := 1     
-+---Registers : 
-	               32 Bit    Registers := 2     
-	                4 Bit    Registers := 1     
-	                1 Bit    Registers := 2     
-+---Muxes : 
-	   2 Input     32 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -231,56 +191,30 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-WARNING: [Synth 8-3917] design VGA_controller has port LED[3] driven by constant 0
-WARNING: [Synth 8-3917] design VGA_controller has port LED[2] driven by constant 0
-WARNING: [Synth 8-3917] design VGA_controller has port LED[1] driven by constant 0
-WARNING: [Synth 8-3917] design VGA_controller has port LED[0] driven by constant 0
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port LED[15]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port LED[14]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port LED[13]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port LED[12]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port LED[11]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port LED[10]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port LED[9]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port LED[8]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port LED[7]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port LED[6]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port LED[5]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port LED[4]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port VGA_R[3]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port VGA_R[2]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port VGA_R[1]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port VGA_R[0]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port VGA_G[3]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port VGA_G[2]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port VGA_G[1]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port VGA_G[0]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port VGA_B[3]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port VGA_B[2]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port VGA_B[1]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port VGA_B[0]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port SW[15]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port SW[14]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port SW[13]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port SW[12]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port SW[11]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port SW[10]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port SW[9]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port SW[8]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port SW[7]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port SW[6]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port SW[5]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port SW[4]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port SW[3]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port SW[2]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port SW[1]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port SW[0]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port BTN[3]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port BTN[2]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port BTN[1]
-WARNING: [Synth 8-3331] design VGA_controller has unconnected port BTN[0]
+WARNING: [Synth 8-3917] design Hex_Display has port LED[15] driven by constant 1
+WARNING: [Synth 8-3917] design Hex_Display has port LED[14] driven by constant 1
+WARNING: [Synth 8-3917] design Hex_Display has port LED[13] driven by constant 1
+WARNING: [Synth 8-3917] design Hex_Display has port LED[12] driven by constant 1
+WARNING: [Synth 8-3917] design Hex_Display has port LED[11] driven by constant 1
+WARNING: [Synth 8-3917] design Hex_Display has port LED[10] driven by constant 1
+WARNING: [Synth 8-3917] design Hex_Display has port LED[9] driven by constant 1
+WARNING: [Synth 8-3917] design Hex_Display has port LED[8] driven by constant 0
+WARNING: [Synth 8-3917] design Hex_Display has port LED[7] driven by constant 1
+WARNING: [Synth 8-3331] design Hex_Display has unconnected port CLK
+WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[15]
+WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[14]
+WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[13]
+WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[12]
+WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[11]
+WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[10]
+WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[9]
+WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[8]
+WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[7]
+WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[6]
+WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[5]
+WARNING: [Synth 8-3331] design Hex_Display has unconnected port SW[4]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1147.465 ; gain = 386.574
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1080.633 ; gain = 318.352
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -292,13 +226,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1147.465 ; gain = 386.574
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1142.898 ; gain = 380.617
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1147.465 ; gain = 386.574
+Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1142.898 ; gain = 380.617
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -310,7 +244,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1156.465 ; gain = 395.574
+Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1152.445 ; gain = 390.164
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -334,13 +268,13 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1172.266 ; gain = 411.375
+Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1168.273 ; gain = 405.992
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1172.266 ; gain = 411.375
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1168.273 ; gain = 405.992
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -359,25 +293,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1172.266 ; gain = 411.375
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1168.273 ; gain = 405.992
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1172.266 ; gain = 411.375
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1168.273 ; gain = 405.992
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1172.266 ; gain = 411.375
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1168.273 ; gain = 405.992
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1172.266 ; gain = 411.375
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1168.273 ; gain = 405.992
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -390,51 +324,41 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+-------+------+
-|      |Cell   |Count |
-+------+-------+------+
-|1     |BUFG   |     2|
-|2     |CARRY4 |    32|
-|3     |LUT1   |     6|
-|4     |LUT2   |   105|
-|5     |LUT4   |     4|
-|6     |LUT5   |    66|
-|7     |LUT6   |     5|
-|8     |FDCE   |    68|
-|9     |IBUF   |     2|
-|10    |OBUF   |     6|
-|11    |OBUFT  |    24|
-+------+-------+------+
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |LUT4 |     7|
+|2     |IBUF |     4|
+|3     |OBUF |    16|
++------+-----+------+
 
 Report Instance Areas: 
 +------+---------+-------+------+
 |      |Instance |Module |Cells |
 +------+---------+-------+------+
-|1     |top      |       |   320|
+|1     |top      |       |    27|
 +------+---------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1172.266 ; gain = 411.375
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1168.273 ; gain = 405.992
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 48 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 1172.266 ; gain = 332.602
-Synthesis Optimization Complete : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1172.266 ; gain = 411.375
+Synthesis finished with 0 errors, 0 critical warnings and 22 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 1168.273 ; gain = 393.512
+Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1168.273 ; gain = 405.992
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1183.070 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 32 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1180.359 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1190.129 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1186.562 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-14 Infos, 149 Warnings, 1 Critical Warnings and 0 Errors encountered.
+13 Infos, 64 Warnings, 20 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1190.129 ; gain = 731.953
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1190.129 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1186.562 ; gain = 727.363
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1186.562 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint 'C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.runs/synth_1/VGA_controller.dcp' has been generated.
-INFO: [runtcl-4] Executing : report_utilization -file VGA_controller_utilization_synth.rpt -pb VGA_controller_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Apr  5 23:45:26 2025...
+INFO: [Common 17-1381] The checkpoint 'C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.runs/synth_1/Hex_Display.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file Hex_Display_utilization_synth.rpt -pb Hex_Display_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Apr  6 00:02:40 2025...

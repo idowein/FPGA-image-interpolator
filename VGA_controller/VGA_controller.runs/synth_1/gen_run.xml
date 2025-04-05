@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1743885901">
-  <File Type="PA-TCL" Name="VGA_controller.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="VGA_controller_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="VGA_controller_reports.tcl"/>
-  <File Type="RDS-RDS" Name="VGA_controller.vds"/>
-  <File Type="RDS-UTIL" Name="VGA_controller_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="VGA_controller_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="VGA_controller.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="VGA_controller_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="VGA_controller_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1743886936">
+  <File Type="PA-TCL" Name="Hex_Display.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="Hex_Display_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="Hex_Display_reports.tcl"/>
+  <File Type="RDS-RDS" Name="Hex_Display.vds"/>
+  <File Type="RDS-UTIL" Name="Hex_Display_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="Hex_Display_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="Hex_Display.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="Hex_Display_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="Hex_Display_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/VGA_controller.vhd">
@@ -19,7 +19,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="VGA_controller"/>
+      <Option Name="TopModule" Val="Hex_Display"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>

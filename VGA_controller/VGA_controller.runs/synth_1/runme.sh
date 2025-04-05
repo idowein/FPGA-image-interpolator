@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log VGA_controller.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source VGA_controller.tcl
+EAStep vivado -log Hex_Display.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Hex_Display.tcl
