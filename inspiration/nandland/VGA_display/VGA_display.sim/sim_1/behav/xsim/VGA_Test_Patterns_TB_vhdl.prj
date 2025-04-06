@@ -1,9 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../VGA_display.srcs/sources_1/new/Sync_To_Count.vhd" \
-"../../../../VGA_display.srcs/sources_1/new/Test_Pattern_Gen.vhd" \
-"../../../../VGA_display.srcs/sources_1/new/VGA_Sync_Pulses.vhd" \
-"../../../../VGA_display.srcs/sim_1/new/VGA_TB.vhd" \
-
-# Do not sort compile order
-nosort

@@ -1,8 +1,0 @@
-0.6
-2019.2
-Nov  6 2019
-21:57:16
-C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_display/VGA_display.srcs/sim_1/new/VGA_TB.vhd,1743411965,vhdl,,,,vga_test_patterns_tb,,,,,,,,
-C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_display/VGA_display.srcs/sources_1/new/Sync_To_Count.vhd,1743414959,vhdl,,,,sync_to_count,,,,,,,,
-C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_display/VGA_display.srcs/sources_1/new/Test_Pattern_Gen.vhd,1743411902,vhdl,,,,test_pattern_gen,,,,,,,,
-C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_display/VGA_display.srcs/sources_1/new/VGA_Sync_Pulses.vhd,1743414933,vhdl,,,,vga_sync_pulses,,,,,,,,
