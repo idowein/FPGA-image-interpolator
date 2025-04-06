@@ -1,0 +1,694 @@
+
+*** Running vivado
+    with args -log DIGITAL_CLOCK_NEW2.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source DIGITAL_CLOCK_NEW2.tcl
+
+
+****** Vivado v2019.2 (64-bit)
+  **** SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+  **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source DIGITAL_CLOCK_NEW2.tcl -notrace
+Command: synth_design -top DIGITAL_CLOCK_NEW2 -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 15452 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 996.234 ; gain = 234.359
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'DIGITAL_CLOCK_NEW2' [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:49]
+WARNING: [Synth 8-614] signal 'RST' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:327]
+WARNING: [Synth 8-614] signal 'A' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:1069]
+WARNING: [Synth 8-614] signal 'HPOS' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'L1V_MIN' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'd_H' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'L1V_MAX' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'VPOS' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'L2V_MIN' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'L2V_MAX' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'L1H_MIN' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'L1H_MAX' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'L2H_MIN' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'L2H_MAX' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'SQ1_MIN' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'SQ1_MAX' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'WIN_MARKER' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'D' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'COUNTER_FLIKER' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'SQ2_MIN' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'SQ2_MAX' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'SQ3_MIN' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'SQ3_MAX' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'SQ4_MIN' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'SQ4_MAX' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'SQ5_MIN' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'SQ5_MAX' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'SQ6_MIN' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'SQ6_MAX' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'SQ7_MIN' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'SQ7_MAX' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'SQ8_MIN' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'SQ8_MAX' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'SQ9_MIN' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'SQ9_MAX' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'START_TIMER' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'TFV_MIN' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'TFV_MAX' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'COUNTER1' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'VGA_R_IN_SECOND_BAR' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'VGA_G_IN_SECOND_BAR' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'VGA_B_IN_SECOND_BAR' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'BFV_MIN' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'BFV_MAX' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'V_MINUTES_BAR' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'COUNTER2' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'VGA_R_IN_MINUTES_BAR' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'VGA_G_IN_MINUTES_BAR' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'VGA_B_IN_MINUTES_BAR' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'V_HOUR_BAR' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'COUNTER3' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'VGA_R_IN_HOUR_BAR' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'VGA_G_IN_HOUR_BAR' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'VGA_B_IN_HOUR_BAR' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'VGA_R_IN_BUFFER' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'VGA_G_IN_BUFFER' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-614] signal 'VGA_B_IN_BUFFER' is read in the process but is not in the sensitivity list [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:2172]
+WARNING: [Synth 8-6014] Unused sequential element TIMER_FLAG_reg was removed.  [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:801]
+INFO: [Synth 8-256] done synthesizing module 'DIGITAL_CLOCK_NEW2' (1#1) [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:49]
+WARNING: [Synth 8-3331] design DIGITAL_CLOCK_NEW2 has unconnected port LED[15]
+WARNING: [Synth 8-3331] design DIGITAL_CLOCK_NEW2 has unconnected port LED[14]
+WARNING: [Synth 8-3331] design DIGITAL_CLOCK_NEW2 has unconnected port LED[13]
+WARNING: [Synth 8-3331] design DIGITAL_CLOCK_NEW2 has unconnected port LED[12]
+WARNING: [Synth 8-3331] design DIGITAL_CLOCK_NEW2 has unconnected port LED[11]
+WARNING: [Synth 8-3331] design DIGITAL_CLOCK_NEW2 has unconnected port LED[10]
+WARNING: [Synth 8-3331] design DIGITAL_CLOCK_NEW2 has unconnected port LED[9]
+WARNING: [Synth 8-3331] design DIGITAL_CLOCK_NEW2 has unconnected port LED[8]
+WARNING: [Synth 8-3331] design DIGITAL_CLOCK_NEW2 has unconnected port LED[7]
+WARNING: [Synth 8-3331] design DIGITAL_CLOCK_NEW2 has unconnected port LED[6]
+WARNING: [Synth 8-3331] design DIGITAL_CLOCK_NEW2 has unconnected port LED[5]
+WARNING: [Synth 8-3331] design DIGITAL_CLOCK_NEW2 has unconnected port LED[4]
+WARNING: [Synth 8-3331] design DIGITAL_CLOCK_NEW2 has unconnected port SW[3]
+WARNING: [Synth 8-3331] design DIGITAL_CLOCK_NEW2 has unconnected port SW[2]
+WARNING: [Synth 8-3331] design DIGITAL_CLOCK_NEW2 has unconnected port SW[1]
+WARNING: [Synth 8-3331] design DIGITAL_CLOCK_NEW2 has unconnected port BTN[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1246.094 ; gain = 484.219
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1246.094 ; gain = 484.219
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1246.094 ; gain = 484.219
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.041 . Memory (MB): peak = 1246.094 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc]
+WARNING: [Vivado 12-584] No ports matched 'reset'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:74]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc:74]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/idowe/myProjects/FPGA-image-interpolator/nexysA7.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/DIGITAL_CLOCK_NEW2_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/DIGITAL_CLOCK_NEW2_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1246.094 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1246.094 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1246.094 ; gain = 484.219
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1246.094 ; gain = 484.219
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1246.094 ; gain = 484.219
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4471] merging register 'DIGIT_S1_LATCH_reg[3:0]' into 'DIGIT_S1_reg[3:0]' [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:449]
+INFO: [Synth 8-4471] merging register 'DIGIT_M1_LATCH_reg[3:0]' into 'DIGIT_M1_reg[3:0]' [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:521]
+INFO: [Synth 8-4471] merging register 'DIGIT_M10_LATCH_reg[3:0]' into 'DIGIT_M10_reg[3:0]' [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:558]
+INFO: [Synth 8-4471] merging register 'DIGIT_H10_LATCH_reg[3:0]' into 'DIGIT_H10_reg[3:0]' [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:656]
+INFO: [Synth 8-4471] merging register 'COUNTER1_LATCH_reg[27:0]' into 'COUNTER1_reg[27:0]' [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:678]
+INFO: [Synth 8-4471] merging register 'COUNTER2_LATCH_reg[27:0]' into 'COUNTER2_reg[27:0]' [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:701]
+INFO: [Synth 8-4471] merging register 'COUNTER3_LATCH_reg[27:0]' into 'COUNTER3_reg[27:0]' [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:724]
+INFO: [Synth 8-4471] merging register 'DIGIT_S1_DIV_LATCH_reg[3:0]' into 'DIGIT_S1_DIV_reg[3:0]' [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:785]
+INFO: [Synth 8-4471] merging register 'DIGIT1_H1_LATCH_reg[3:0]' into 'DIGIT1_H1_reg[3:0]' [C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.srcs/sources_1/new/DIGITAL_CLOCK_NEW2.vhd:619]
+INFO: [Synth 8-5544] ROM "A_S10_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "A_S10_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "G_S10_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "G_S10_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "F_S10_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "F_S10_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "E_S10_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "E_S10_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "B_S10_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "B_S10_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "C_S10_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "C_S10_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "A_M10_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "A_M10_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "G_M10_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "G_M10_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "F_M10_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "F_M10_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "E_M10_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "E_M10_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "B_M10_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "B_M10_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "C_M10_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "C_M10_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "A_H10_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "A_H10_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "G_H10_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "G_H10_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "F_H10_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "E_H10_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "B_H10_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "B_H10_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "C_H10_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "C_H10_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "A_S10_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "A_S10_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "G_S10_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "G_S10_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "F_S10_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "F_S10_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "E_S10_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "E_S10_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "B_S10_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "B_S10_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "C_S10_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "C_S10_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "A_M10_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "A_M10_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "G_M10_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "G_M10_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "F_M10_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "F_M10_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "E_M10_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "E_M10_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "B_M10_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "B_M10_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "C_M10_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "C_M10_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "A_H10_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "A_H10_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "G_H10_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "G_H10_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "F_H10_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "E_H10_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "B_H10_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "B_H10_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "C_H10_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "C_H10_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "A_S1_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "A_S1_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "G_S1_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "G_S1_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "D_S1_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "D_S1_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "F_S1_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "F_S1_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "E_S1_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "E_S1_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "B_S1_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "B_S1_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "C_S1_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "C_S1_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "A_M1_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "A_M1_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "G_M1_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "G_M1_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "D_M1_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "D_M1_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "F_M1_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "F_M1_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "E_M1_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "E_M1_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "B_M1_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "B_M1_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "C_M1_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "C_M1_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "A_H1_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "A_H1_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "G_H1_MIN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "G_H1_MAX" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Common 17-14] Message 'Synth 8-5544' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1246.094 ; gain = 484.219
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+------------------------+------------+----------+
+|      |RTL Partition           |Replication |Instances |
++------+------------------------+------------+----------+
+|1     |DIGITAL_CLOCK_NEW2__GB0 |           1|     32926|
+|2     |DIGITAL_CLOCK_NEW2__GB1 |           1|     13874|
+|3     |DIGITAL_CLOCK_NEW2__GB2 |           1|     11070|
++------+------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	   2 Input     28 Bit       Adders := 4     
+	   2 Input     27 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 9     
+	   3 Input     10 Bit       Adders := 4     
+	   2 Input      9 Bit       Adders := 5     
+	   2 Input      8 Bit       Adders := 2     
+	   2 Input      7 Bit       Adders := 2     
+	   2 Input      6 Bit       Adders := 2     
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 15    
+	   2 Input      3 Bit       Adders := 3     
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               28 Bit    Registers := 8     
+	               10 Bit    Registers := 18    
+	                9 Bit    Registers := 6     
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 23    
+	                3 Bit    Registers := 2     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     28 Bit        Muxes := 9     
+	   2 Input     27 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 18    
+	   7 Input      9 Bit        Muxes := 12    
+	  11 Input      9 Bit        Muxes := 21    
+	   3 Input      9 Bit        Muxes := 9     
+	  11 Input      8 Bit        Muxes := 14    
+	   2 Input      8 Bit        Muxes := 13    
+	   7 Input      8 Bit        Muxes := 12    
+	   3 Input      8 Bit        Muxes := 3     
+	   9 Input      8 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 3     
+	   4 Input      7 Bit        Muxes := 2     
+	  11 Input      7 Bit        Muxes := 7     
+	   3 Input      7 Bit        Muxes := 3     
+	   2 Input      6 Bit        Muxes := 6     
+	   4 Input      6 Bit        Muxes := 4     
+	   3 Input      6 Bit        Muxes := 3     
+	   2 Input      4 Bit        Muxes := 93    
+	  11 Input      4 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 4     
+	   3 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 7     
+	   2 Input      2 Bit        Muxes := 3     
+	   4 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 22    
+	   3 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module DIGITAL_CLOCK_NEW2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	   2 Input     28 Bit       Adders := 4     
+	   2 Input     27 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 9     
+	   3 Input     10 Bit       Adders := 4     
+	   2 Input      9 Bit       Adders := 5     
+	   2 Input      8 Bit       Adders := 2     
+	   2 Input      7 Bit       Adders := 2     
+	   2 Input      6 Bit       Adders := 2     
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 15    
+	   2 Input      3 Bit       Adders := 3     
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               28 Bit    Registers := 8     
+	               10 Bit    Registers := 18    
+	                9 Bit    Registers := 6     
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 23    
+	                3 Bit    Registers := 2     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     28 Bit        Muxes := 9     
+	   2 Input     27 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 18    
+	   7 Input      9 Bit        Muxes := 12    
+	  11 Input      9 Bit        Muxes := 21    
+	   3 Input      9 Bit        Muxes := 9     
+	  11 Input      8 Bit        Muxes := 14    
+	   2 Input      8 Bit        Muxes := 13    
+	   7 Input      8 Bit        Muxes := 12    
+	   3 Input      8 Bit        Muxes := 3     
+	   9 Input      8 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 3     
+	   4 Input      7 Bit        Muxes := 2     
+	  11 Input      7 Bit        Muxes := 7     
+	   3 Input      7 Bit        Muxes := 3     
+	   2 Input      6 Bit        Muxes := 6     
+	   4 Input      6 Bit        Muxes := 4     
+	   3 Input      6 Bit        Muxes := 3     
+	   2 Input      4 Bit        Muxes := 93    
+	  11 Input      4 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 4     
+	   3 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 7     
+	   2 Input      2 Bit        Muxes := 3     
+	   4 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 22    
+	   3 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3331] design DIGITAL_CLOCK_NEW2 has unconnected port LED[15]
+WARNING: [Synth 8-3331] design DIGITAL_CLOCK_NEW2 has unconnected port LED[14]
+WARNING: [Synth 8-3331] design DIGITAL_CLOCK_NEW2 has unconnected port LED[13]
+WARNING: [Synth 8-3331] design DIGITAL_CLOCK_NEW2 has unconnected port LED[12]
+WARNING: [Synth 8-3331] design DIGITAL_CLOCK_NEW2 has unconnected port LED[11]
+WARNING: [Synth 8-3331] design DIGITAL_CLOCK_NEW2 has unconnected port LED[10]
+WARNING: [Synth 8-3331] design DIGITAL_CLOCK_NEW2 has unconnected port LED[9]
+WARNING: [Synth 8-3331] design DIGITAL_CLOCK_NEW2 has unconnected port LED[8]
+WARNING: [Synth 8-3331] design DIGITAL_CLOCK_NEW2 has unconnected port LED[7]
+WARNING: [Synth 8-3331] design DIGITAL_CLOCK_NEW2 has unconnected port LED[6]
+WARNING: [Synth 8-3331] design DIGITAL_CLOCK_NEW2 has unconnected port LED[5]
+WARNING: [Synth 8-3331] design DIGITAL_CLOCK_NEW2 has unconnected port LED[4]
+WARNING: [Synth 8-3331] design DIGITAL_CLOCK_NEW2 has unconnected port SW[3]
+WARNING: [Synth 8-3331] design DIGITAL_CLOCK_NEW2 has unconnected port SW[2]
+WARNING: [Synth 8-3331] design DIGITAL_CLOCK_NEW2 has unconnected port SW[1]
+WARNING: [Synth 8-3331] design DIGITAL_CLOCK_NEW2 has unconnected port BTN[0]
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\COUNTER_FLIKER_reg[27] )
+INFO: [Synth 8-3886] merging instance 'i_2/SQ9_MIN_reg[0]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ9_MIN_reg[1]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ9_MAX_reg[0]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ9_MAX_reg[1]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ8_MIN_reg[0]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ8_MIN_reg[1]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ8_MAX_reg[0]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ8_MAX_reg[1]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ7_MIN_reg[0]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ7_MIN_reg[1]' (FDC) to 'i_2/SQ7_MIN_reg[2]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ7_MAX_reg[0]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ7_MAX_reg[1]' (FDC) to 'i_2/SQ7_MAX_reg[5]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ6_MIN_reg[0]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ6_MIN_reg[1]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ6_MAX_reg[0]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ6_MAX_reg[1]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ5_MIN_reg[0]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ5_MIN_reg[1]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ5_MAX_reg[0]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ5_MAX_reg[1]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ4_MIN_reg[0]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ4_MIN_reg[1]' (FDC) to 'i_2/SQ4_MIN_reg[2]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ4_MAX_reg[0]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ4_MAX_reg[1]' (FDC) to 'i_2/SQ4_MAX_reg[5]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ3_MIN_reg[0]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ3_MIN_reg[1]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ3_MAX_reg[0]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ3_MAX_reg[1]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ2_MIN_reg[0]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ2_MIN_reg[1]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ2_MAX_reg[0]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ2_MAX_reg[1]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ1_MIN_reg[0]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ1_MIN_reg[1]' (FDC) to 'i_2/SQ1_MIN_reg[2]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ1_MAX_reg[0]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ1_MAX_reg[1]' (FDC) to 'i_2/SQ1_MAX_reg[5]'
+INFO: [Synth 8-3886] merging instance 'i_2/DIGIT_S10_reg[3]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ9_MIN_reg[2]' (FDC) to 'i_2/SQ9_MIN_reg[3]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ9_MIN_reg[3]' (FDC) to 'i_2/SQ9_MIN_reg[4]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ9_MIN_reg[4]' (FDC) to 'i_2/SQ9_MIN_reg[5]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ9_MIN_reg[5]' (FDC) to 'i_2/SQ9_MIN_reg[6]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ9_MIN_reg[6]' (FDC) to 'i_2/SQ9_MIN_reg[8]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ9_MIN_reg[7]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ9_MIN_reg[9]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ9_MAX_reg[2]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ9_MAX_reg[3]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ9_MAX_reg[4]' (FDC) to 'i_2/SQ9_MAX_reg[5]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ9_MAX_reg[5]' (FDC) to 'i_2/SQ9_MAX_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ9_MAX_reg[6]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ9_MAX_reg[7]' (FDC) to 'i_2/SQ9_MAX_reg[8]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ9_MAX_reg[9]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ8_MIN_reg[2]' (FDC) to 'i_2/SQ8_MIN_reg[4]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ8_MIN_reg[3]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ8_MIN_reg[4]' (FDC) to 'i_2/SQ8_MIN_reg[6]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ8_MIN_reg[5]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ8_MIN_reg[6]' (FDC) to 'i_2/SQ8_MIN_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ8_MIN_reg[8]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ8_MIN_reg[9]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ8_MAX_reg[2]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ8_MAX_reg[3]' (FDC) to 'i_2/SQ8_MAX_reg[8]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ8_MAX_reg[4]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ8_MAX_reg[5]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ8_MAX_reg[6]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ8_MAX_reg[7]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ8_MAX_reg[9]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ7_MIN_reg[2]' (FDC) to 'i_2/SQ7_MIN_reg[3]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ7_MIN_reg[3]' (FDC) to 'i_2/SQ7_MIN_reg[5]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ7_MIN_reg[4]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ7_MIN_reg[6]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ7_MIN_reg[7]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ7_MIN_reg[8]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ7_MIN_reg[9]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ7_MAX_reg[2]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ7_MAX_reg[3]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ7_MAX_reg[4]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ7_MAX_reg[5]' (FDC) to 'i_2/SQ7_MAX_reg[6]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ7_MAX_reg[7]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ7_MAX_reg[8]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ7_MAX_reg[9]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ6_MIN_reg[2]' (FDC) to 'i_2/SQ6_MIN_reg[3]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ6_MIN_reg[3]' (FDC) to 'i_2/SQ6_MIN_reg[4]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ6_MIN_reg[4]' (FDC) to 'i_2/SQ6_MIN_reg[5]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ6_MIN_reg[5]' (FDC) to 'i_2/SQ6_MIN_reg[6]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ6_MIN_reg[6]' (FDC) to 'i_2/SQ6_MIN_reg[8]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ6_MIN_reg[7]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ6_MIN_reg[9]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ6_MAX_reg[2]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ6_MAX_reg[3]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ6_MAX_reg[4]' (FDC) to 'i_2/SQ6_MAX_reg[5]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ6_MAX_reg[5]' (FDC) to 'i_2/SQ6_MAX_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ6_MAX_reg[6]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ6_MAX_reg[7]' (FDC) to 'i_2/SQ6_MAX_reg[8]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ6_MAX_reg[9]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ5_MIN_reg[2]' (FDC) to 'i_2/SQ5_MIN_reg[4]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ5_MIN_reg[3]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ5_MIN_reg[4]' (FDC) to 'i_2/SQ5_MIN_reg[6]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ5_MIN_reg[5]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ5_MIN_reg[6]' (FDC) to 'i_2/SQ5_MIN_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ5_MIN_reg[8]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_2/SQ5_MIN_reg[9]' (FDC) to 'i_2/SQ1_MIN_reg[9]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\SQ1_MAX_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\TIMER_DIGIT_S10_reg[3] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1246.094 ; gain = 484.219
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+------------------------+------------+----------+
+|      |RTL Partition           |Replication |Instances |
++------+------------------------+------------+----------+
+|1     |DIGITAL_CLOCK_NEW2__GB0 |           1|      2772|
+|2     |DIGITAL_CLOCK_NEW2__GB1 |           1|      1441|
+|3     |DIGITAL_CLOCK_NEW2__GB2 |           1|      2097|
++------+------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1246.094 ; gain = 484.219
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1246.094 ; gain = 484.219
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+------------------------+------------+----------+
+|      |RTL Partition           |Replication |Instances |
++------+------------------------+------------+----------+
+|1     |DIGITAL_CLOCK_NEW2__GB0 |           1|      2772|
+|2     |DIGITAL_CLOCK_NEW2__GB1 |           1|      1439|
+|3     |DIGITAL_CLOCK_NEW2__GB2 |           1|      2097|
++------+------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1246.094 ; gain = 484.219
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1246.094 ; gain = 484.219
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1246.094 ; gain = 484.219
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1246.094 ; gain = 484.219
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1246.094 ; gain = 484.219
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1246.094 ; gain = 484.219
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1246.094 ; gain = 484.219
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     2|
+|2     |CARRY4 |   977|
+|3     |LUT1   |    46|
+|4     |LUT2   |  5096|
+|5     |LUT3   |   818|
+|6     |LUT4   |   198|
+|7     |LUT5   |   218|
+|8     |LUT6   |   584|
+|9     |MUXF7  |     1|
+|10    |FDCE   |   561|
+|11    |FDRE   |     4|
+|12    |IBUF   |    18|
+|13    |OBUF   |    18|
+|14    |OBUFT  |    12|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |  8553|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1246.094 ; gain = 484.219
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 16 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:28 ; elapsed = 00:00:35 . Memory (MB): peak = 1246.094 ; gain = 484.219
+Synthesis Optimization Complete : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1246.094 ; gain = 484.219
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.040 . Memory (MB): peak = 1256.961 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 978 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'DIGITAL_CLOCK_NEW2' is not ideal for floorplanning, since the cellview 'DIGITAL_CLOCK_NEW2' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1256.961 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+228 Infos, 91 Warnings, 1 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 1256.961 ; gain = 797.691
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1256.961 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/idowe/myProjects/FPGA-image-interpolator/NIR_PROJECT/NIR_PROJECT.runs/synth_1/DIGITAL_CLOCK_NEW2.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file DIGITAL_CLOCK_NEW2_utilization_synth.rpt -pb DIGITAL_CLOCK_NEW2_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Apr  6 13:43:39 2025...

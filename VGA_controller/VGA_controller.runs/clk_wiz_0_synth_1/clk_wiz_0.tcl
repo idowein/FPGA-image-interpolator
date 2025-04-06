@@ -31,7 +31,7 @@ set_property webtalk.parent_dir C:/Users/idowe/myProjects/FPGA-image-interpolato
 set_property parent.project_path C:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.xpr [current_project]
 set_property XPM_LIBRARIES XPM_CDC [current_project]
 set_property default_lib xil_defaultlib [current_project]
-set_property target_language Verilog [current_project]
+set_property target_language VHDL [current_project]
 set_property board_part digilentinc.com:nexys-a7-100t:part0:1.3 [current_project]
 set_property ip_output_repo c:/Users/idowe/myProjects/FPGA-image-interpolator/VGA_controller/VGA_controller.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]

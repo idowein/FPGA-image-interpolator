@@ -5,8 +5,8 @@
 ## Note: As the Nexys 4 DDR was rebranded to the Nexys A7 with no substantial changes, this XDC file will also work for the Nexys 4 DDR.
 
 ## Clock signal
-set_property PACKAGE_PIN E3 [get_ports clk_100mhz]
-set_property IOSTANDARD LVCMOS33 [get_ports clk_100mhz]
+set_property PACKAGE_PIN E3 [get_ports CLK]
+set_property IOSTANDARD LVCMOS33 [get_ports CLK]
 
 ##Switches
 set_property -dict { PACKAGE_PIN J15   IOSTANDARD LVCMOS33 } [get_ports { SW[0] }]; #IO_L24N_T3_RS0_15 Sch=sw[0]

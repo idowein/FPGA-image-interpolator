@@ -1,43 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1743669103">
-  <File Type="BITSTR-BMM" Name="VGA_Sync_Pulses_bd.bmm"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="VGA_Sync_Pulses_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="VGA_Sync_Pulses_timing_summary_init.rpt"/>
   <File Type="ROUTE-PWR" Name="VGA_Sync_Pulses_power_routed.rpt"/>
   <File Type="PA-TCL" Name="VGA_Sync_Pulses.tcl"/>
-  <File Type="OPT-TIMING" Name="VGA_Sync_Pulses_timing_summary_opted.rpt"/>
-  <File Type="OPT-DCP" Name="VGA_Sync_Pulses_opt.dcp"/>
+  <File Type="BITSTR-BMM" Name="VGA_Sync_Pulses_bd.bmm"/>
   <File Type="ROUTE-PWR-SUM" Name="VGA_Sync_Pulses_power_summary_routed.pb"/>
   <File Type="REPORTS-TCL" Name="VGA_Sync_Pulses_reports.tcl"/>
+  <File Type="OPT-DCP" Name="VGA_Sync_Pulses_opt.dcp"/>
   <File Type="OPT-DRC" Name="VGA_Sync_Pulses_drc_opted.rpt"/>
   <File Type="OPT-HWDEF" Name="VGA_Sync_Pulses.hwdef"/>
   <File Type="PWROPT-DCP" Name="VGA_Sync_Pulses_pwropt.dcp"/>
-  <File Type="PWROPT-DRC" Name="VGA_Sync_Pulses_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="VGA_Sync_Pulses_timing_summary_pwropted.rpt"/>
   <File Type="PLACE-DCP" Name="VGA_Sync_Pulses_placed.dcp"/>
   <File Type="PLACE-IO" Name="VGA_Sync_Pulses_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="VGA_Sync_Pulses_clock_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL" Name="VGA_Sync_Pulses_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL-PB" Name="VGA_Sync_Pulses_utilization_placed.pb"/>
   <File Type="PLACE-CTRL" Name="VGA_Sync_Pulses_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="VGA_Sync_Pulses_incremental_reuse_placed.rpt"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="VGA_Sync_Pulses_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-TIMING" Name="VGA_Sync_Pulses_timing_summary_placed.rpt"/>
   <File Type="POSTPLACE-PWROPT-DCP" Name="VGA_Sync_Pulses_postplace_pwropt.dcp"/>
   <File Type="BG-BIN" Name="VGA_Sync_Pulses.bin"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="VGA_Sync_Pulses_timing_summary_postplace_pwropted.rpt"/>
   <File Type="PHYSOPT-DCP" Name="VGA_Sync_Pulses_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="VGA_Sync_Pulses_drc_physopted.rpt"/>
   <File Type="BITSTR-MSK" Name="VGA_Sync_Pulses.msk"/>
-  <File Type="PHYSOPT-TIMING" Name="VGA_Sync_Pulses_timing_summary_physopted.rpt"/>
   <File Type="ROUTE-ERROR-DCP" Name="VGA_Sync_Pulses_routed_error.dcp"/>
   <File Type="ROUTE-DCP" Name="VGA_Sync_Pulses_routed.dcp"/>
   <File Type="ROUTE-BLACKBOX-DCP" Name="VGA_Sync_Pulses_routed_bb.dcp"/>
   <File Type="ROUTE-DRC" Name="VGA_Sync_Pulses_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="VGA_Sync_Pulses_drc_routed.pb"/>
   <File Type="ROUTE-DRC-RPX" Name="VGA_Sync_Pulses_drc_routed.rpx"/>
-  <File Type="BITSTR-MMI" Name="VGA_Sync_Pulses.mmi"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="VGA_Sync_Pulses_methodology_drc_routed.rpt"/>
+  <File Type="BITSTR-MMI" Name="VGA_Sync_Pulses.mmi"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="VGA_Sync_Pulses_methodology_drc_routed.rpx"/>
   <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="VGA_Sync_Pulses_methodology_drc_routed.pb"/>
   <File Type="ROUTE-PWR-RPX" Name="VGA_Sync_Pulses_power_routed.rpx"/>
@@ -46,20 +35,13 @@
   <File Type="ROUTE-TIMINGSUMMARY" Name="VGA_Sync_Pulses_timing_summary_routed.rpt"/>
   <File Type="ROUTE-TIMING-PB" Name="VGA_Sync_Pulses_timing_summary_routed.pb"/>
   <File Type="ROUTE-TIMING-RPX" Name="VGA_Sync_Pulses_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="VGA_Sync_Pulses_incremental_reuse_routed.rpt"/>
   <File Type="ROUTE-CLK" Name="VGA_Sync_Pulses_clock_utilization_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW" Name="VGA_Sync_Pulses_bus_skew_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW-PB" Name="VGA_Sync_Pulses_bus_skew_routed.pb"/>
   <File Type="ROUTE-BUS-SKEW-RPX" Name="VGA_Sync_Pulses_bus_skew_routed.rpx"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="VGA_Sync_Pulses_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="VGA_Sync_Pulses_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="VGA_Sync_Pulses_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="VGA_Sync_Pulses_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="VGA_Sync_Pulses_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="VGA_Sync_Pulses_bus_skew_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="VGA_Sync_Pulses_bus_skew_postroute_physopted.pb"/>
   <File Type="BG-BIT" Name="VGA_Sync_Pulses.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="VGA_Sync_Pulses_bus_skew_postroute_physopted.rpx"/>
   <File Type="BITSTR-RBT" Name="VGA_Sync_Pulses.rbt"/>
   <File Type="BITSTR-NKY" Name="VGA_Sync_Pulses.nky"/>
   <File Type="PDI-FILE" Name="VGA_Sync_Pulses.pdi"/>
@@ -68,7 +50,6 @@
   <File Type="RNPI_FILE" Name="VGA_Sync_Pulses.rnpi"/>
   <File Type="NPI_FILE" Name="VGA_Sync_Pulses.npi"/>
   <File Type="RBD_FILE" Name="VGA_Sync_Pulses.rbd"/>
-  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
   <File Type="BITSTR-LTX" Name="VGA_Sync_Pulses.ltx"/>
   <File Type="BITSTR-SYSDEF" Name="VGA_Sync_Pulses.sysdef"/>
   <File Type="BG-BGN" Name="VGA_Sync_Pulses.bgn"/>
@@ -138,5 +119,6 @@
     <Step Id="route_design"/>
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
+    <Step Id="write_device_image"/>
   </Strategy>
 </GenRun>
