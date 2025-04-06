@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log SEVEN_SEG_DISP_UNIT.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source SEVEN_SEG_DISP_UNIT.tcl
+EAStep vivado -log SIMPLE_VGA_GREEN.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source SIMPLE_VGA_GREEN.tcl

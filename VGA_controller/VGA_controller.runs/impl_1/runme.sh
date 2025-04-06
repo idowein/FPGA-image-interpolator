@@ -42,6 +42,6 @@ EAStep()
 
 # pre-commands:
 /bin/touch .init_design.begin.rst
-EAStep vivado -log SEVEN_SEG_DISP_UNIT.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source SEVEN_SEG_DISP_UNIT.tcl -notrace
+EAStep vivado -log SIMPLE_VGA_GREEN.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source SIMPLE_VGA_GREEN.tcl -notrace
 
 

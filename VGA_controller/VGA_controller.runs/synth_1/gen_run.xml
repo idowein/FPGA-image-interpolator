@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1743889562">
-  <File Type="PA-TCL" Name="SEVEN_SEG_DISP_UNIT.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="SEVEN_SEG_DISP_UNIT_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="SEVEN_SEG_DISP_UNIT_reports.tcl"/>
-  <File Type="RDS-RDS" Name="SEVEN_SEG_DISP_UNIT.vds"/>
-  <File Type="RDS-UTIL" Name="SEVEN_SEG_DISP_UNIT_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="SEVEN_SEG_DISP_UNIT_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="SEVEN_SEG_DISP_UNIT.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="SEVEN_SEG_DISP_UNIT_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="SEVEN_SEG_DISP_UNIT_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1743930734">
+  <File Type="PA-TCL" Name="SIMPLE_VGA_GREEN.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="SIMPLE_VGA_GREEN_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="SIMPLE_VGA_GREEN_reports.tcl"/>
+  <File Type="RDS-RDS" Name="SIMPLE_VGA_GREEN.vds"/>
+  <File Type="RDS-UTIL" Name="SIMPLE_VGA_GREEN_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="SIMPLE_VGA_GREEN_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="SIMPLE_VGA_GREEN.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="SIMPLE_VGA_GREEN_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="SIMPLE_VGA_GREEN_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/VGA_CONTROLLER.vhd">
@@ -19,7 +19,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="SEVEN_SEG_DISP_UNIT"/>
+      <Option Name="TopModule" Val="SIMPLE_VGA_GREEN"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
