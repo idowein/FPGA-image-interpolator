@@ -32,7 +32,11 @@ entity VGA_CONTROLLER is
        VGA_VS : out STD_LOGIC;
        VGA_R  : out STD_LOGIC_VECTOR (3 downto 0);
        VGA_G  : out STD_LOGIC_VECTOR (3 downto 0);
-       VGA_B  : out STD_LOGIC_VECTOR (3 downto 0)
+       VGA_B  : out STD_LOGIC_VECTOR (3 downto 0);
+       CAM_D  : in  STD_LOGIC_VECTOR (7 downto 0);
+       CAM_HREF : in  STD_LOGIC;
+       CAM_VSYNC : in  STD_LOGIC;
+       CAM_PCLK  : in  STD_LOGIC
   );
 end VGA_CONTROLLER;
 
@@ -62,6 +66,19 @@ architecture Behavioral of VGA_CONTROLLER is
       );
     end component;
 
+    component CAMERA_INTERFACE
+      Port ( 
+            CAM_D : in STD_LOGIC_VECTOR(7 downto 0);
+            CAM_HREF : in STD_LOGIC;
+            CAM_VSYNC : in STD_LOGIC;
+            CAM_PCLK : in STD_LOGIC;
+            PIX_DATA : out STD_LOGIC_VECTOR(7 downto 0);
+            PIX_CLK : out STD_LOGIC;
+            HREF : out STD_LOGIC;
+            VSYNC : out STD_LOGIC
+      );
+    end component;
+
     SIGNAL CLK148_5   : STD_LOGIC;
     SIGNAL reset      : STD_LOGIC := '0';
     SIGNAL locked     : STD_LOGIC;
@@ -86,10 +103,10 @@ architecture Behavioral of VGA_CONTROLLER is
 
     SIGNAL FRAME_ADDR : STD_LOGIC_VECTOR(18 downto 0);
     SIGNAL FRAME_DATA : STD_LOGIC_VECTOR(11 downto 0);
-    SIGNAL PIX_DATA : STD_LOGIC_VECTOR(7 downto 0) := (others => '0');
-    SIGNAL PIX_CLK : STD_LOGIC := '0';
-    SIGNAL HREF : STD_LOGIC := '0';
-    SIGNAL VSYNC : STD_LOGIC := '0';
+    SIGNAL PIX_DATA : STD_LOGIC_VECTOR(7 downto 0);
+    SIGNAL PIX_CLK : STD_LOGIC;
+    SIGNAL HREF : STD_LOGIC;
+    SIGNAL VSYNC : STD_LOGIC;
 
 begin
 
@@ -104,6 +121,21 @@ begin
             clk_out1 => CLK148_5, -- Output clock
             reset    => reset,    -- Reset signal
             locked   => locked    -- Locked signal
+        );
+
+    -------------------------------------------------------------------
+    -- CAMERA INTERFACE INSTANTIATION
+    -------------------------------------------------------------------
+    CAMERA_INTERFACE_inst : CAMERA_INTERFACE
+        port map (
+            CAM_D => CAM_D,
+            CAM_HREF => CAM_HREF,
+            CAM_VSYNC => CAM_VSYNC,
+            CAM_PCLK => CAM_PCLK,
+            PIX_DATA => PIX_DATA,
+            PIX_CLK => PIX_CLK,
+            HREF => HREF,
+            VSYNC => VSYNC
         );
 
     -------------------------------------------------------------------
