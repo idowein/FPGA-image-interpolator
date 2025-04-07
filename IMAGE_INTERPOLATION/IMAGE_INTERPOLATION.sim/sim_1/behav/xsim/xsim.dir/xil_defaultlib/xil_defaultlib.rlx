@@ -1,0 +1,12 @@
+0.6
+2019.2
+Nov  6 2019
+21:57:16
+C:/Users/idowe/myProjects/FPGA-image-interpolator/IMAGE_INTERPOLATION/IMAGE_INTERPOLATION.sim/sim_1/behav/xsim/glbl.v,1573089660,verilog,,,,glbl,,,,,,,,
+C:/Users/idowe/myProjects/FPGA-image-interpolator/IMAGE_INTERPOLATION/IMAGE_INTERPOLATION.srcs/sim_1/new/TOP_LEVEL_TB.vhd,1744013414,vhdl,,,,top_level_tb,,,,,,,,
+C:/Users/idowe/myProjects/FPGA-image-interpolator/IMAGE_INTERPOLATION/IMAGE_INTERPOLATION.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.v,1744008829,verilog,,,,clk_wiz_0,,,../../../../IMAGE_INTERPOLATION.srcs/sources_1/ip/clk_wiz_0,,,,,
+C:/Users/idowe/myProjects/FPGA-image-interpolator/IMAGE_INTERPOLATION/IMAGE_INTERPOLATION.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v,1744008829,verilog,,C:/Users/idowe/myProjects/FPGA-image-interpolator/IMAGE_INTERPOLATION/IMAGE_INTERPOLATION.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.v,,clk_wiz_0_clk_wiz,,,../../../../IMAGE_INTERPOLATION.srcs/sources_1/ip/clk_wiz_0,,,,,
+C:/Users/idowe/myProjects/FPGA-image-interpolator/IMAGE_INTERPOLATION/IMAGE_INTERPOLATION.srcs/sources_1/new/CAMERA_INTERFACE.vhd,1744012152,vhdl,,,,camera_interface,,,,,,,,
+C:/Users/idowe/myProjects/FPGA-image-interpolator/IMAGE_INTERPOLATION/IMAGE_INTERPOLATION.srcs/sources_1/new/FRAME_BUFFER.vhd,1744014201,vhdl,,,,frame_buffer,,,,,,,,
+C:/Users/idowe/myProjects/FPGA-image-interpolator/IMAGE_INTERPOLATION/IMAGE_INTERPOLATION.srcs/sources_1/new/TOP_LEVEL.vhd,1744013381,vhdl,,,,top_level,,,,,,,,
+C:/Users/idowe/myProjects/FPGA-image-interpolator/IMAGE_INTERPOLATION/IMAGE_INTERPOLATION.srcs/sources_1/new/VGA_CONTROLLER.vhd,1744013154,vhdl,,,,vga_controller,,,,,,,,

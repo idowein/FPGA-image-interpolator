@@ -1,0 +1,10 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../IMAGE_INTERPOLATION.srcs/sources_1/new/CAMERA_INTERFACE.vhd" \
+"../../../../IMAGE_INTERPOLATION.srcs/sources_1/new/FRAME_BUFFER.vhd" \
+"../../../../IMAGE_INTERPOLATION.srcs/sources_1/new/TOP_LEVEL.vhd" \
+"../../../../IMAGE_INTERPOLATION.srcs/sources_1/new/VGA_CONTROLLER.vhd" \
+"../../../../IMAGE_INTERPOLATION.srcs/sim_1/new/TOP_LEVEL_TB.vhd" \
+
+# Do not sort compile order
+nosort
