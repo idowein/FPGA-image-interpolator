@@ -50,6 +50,18 @@ architecture Behavioral of VGA_CONTROLLER is
         );
     end component;
 
+    component FRAME_BUFFER
+      Port ( 
+            CLK : in STD_LOGIC;
+            PIX_DATA : in STD_LOGIC_VECTOR(7 downto 0);
+            PIX_CLK : in STD_LOGIC;
+            HREF : in STD_LOGIC;
+            VSYNC : in STD_LOGIC;
+            FRAME_ADDR : out STD_LOGIC_VECTOR(18 downto 0);
+            FRAME_DATA : out STD_LOGIC_VECTOR(11 downto 0)
+      );
+    end component;
+
     SIGNAL CLK148_5   : STD_LOGIC;
     SIGNAL reset      : STD_LOGIC := '0';
     SIGNAL locked     : STD_LOGIC;
@@ -72,6 +84,12 @@ architecture Behavioral of VGA_CONTROLLER is
     SIGNAL D_H   : STD_LOGIC := '0';
     SIGNAL D_V   : STD_LOGIC := '0';
 
+    SIGNAL FRAME_ADDR : STD_LOGIC_VECTOR(18 downto 0);
+    SIGNAL FRAME_DATA : STD_LOGIC_VECTOR(11 downto 0);
+    SIGNAL PIX_DATA : STD_LOGIC_VECTOR(7 downto 0) := (others => '0');
+    SIGNAL PIX_CLK : STD_LOGIC := '0';
+    SIGNAL HREF : STD_LOGIC := '0';
+    SIGNAL VSYNC : STD_LOGIC := '0';
 
 begin
 
@@ -86,6 +104,20 @@ begin
             clk_out1 => CLK148_5, -- Output clock
             reset    => reset,    -- Reset signal
             locked   => locked    -- Locked signal
+        );
+
+    -------------------------------------------------------------------
+    -- FRAME BUFFER INSTANTIATION
+    -------------------------------------------------------------------
+    FRAME_BUFFER_inst : FRAME_BUFFER
+        port map (
+            CLK => CLK148_5,
+            PIX_DATA => PIX_DATA,
+            PIX_CLK => PIX_CLK,
+            HREF => HREF,
+            VSYNC => VSYNC,
+            FRAME_ADDR => FRAME_ADDR,
+            FRAME_DATA => FRAME_DATA
         );
 
     -------------------------------------------------------------------
@@ -120,18 +152,21 @@ begin
     D_V <= '1' WHEN V_CNT < V_VISIBLE ELSE '0';
 
     -------------------------------------------------------------------
-    -- COLOR OUTPUT LOGIC (BASED ON SWITCHES)
+    -- COLOR OUTPUT LOGIC (BASED ON FRAME BUFFER)
     -------------------------------------------------------------------
-    PROCESS(D_H, D_V, SW)
+    PROCESS(CLK148_5, D_H, D_V)
     BEGIN
-        IF D_H = '1' AND D_V = '1' THEN
-            VGA_R <= SW(15 DOWNTO 12);  -- RED
-            VGA_G <= SW(11 DOWNTO 8);   -- GREEN
-            VGA_B <= SW(7 DOWNTO 4);    -- BLUE
-        ELSE
-            VGA_R <= (OTHERS => '0');
-            VGA_G <= (OTHERS => '0');
-            VGA_B <= (OTHERS => '0');
+        IF RISING_EDGE(CLK148_5) THEN
+            IF D_H = '1' AND D_V = '1' THEN
+                FRAME_ADDR <= std_logic_vector(to_unsigned((V_CNT * H_VISIBLE) + H_CNT, 19));
+                VGA_R <= FRAME_DATA(11 downto 8);  -- RED
+                VGA_G <= FRAME_DATA(7 downto 4);   -- GREEN
+                VGA_B <= FRAME_DATA(3 downto 0);    -- BLUE
+            ELSE
+                VGA_R <= (OTHERS => '0');
+                VGA_G <= (OTHERS => '0');
+                VGA_B <= (OTHERS => '0');
+            END IF;
         END IF;
     END PROCESS;
 
