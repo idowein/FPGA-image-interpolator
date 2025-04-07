@@ -24,18 +24,35 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity VGA_CONTROLLER is
   Port ( 
-        CLK : in STD_LOGIC;
-        FRAME_ADDR : in STD_LOGIC_VECTOR(18 downto 0);
-        FRAME_DATA : in STD_LOGIC_VECTOR(11 downto 0);
-        VGA_R : out STD_LOGIC_VECTOR(3 downto 0);
-        VGA_G : out STD_LOGIC_VECTOR(3 downto 0);
-        VGA_B : out STD_LOGIC_VECTOR(3 downto 0);
-        VGA_HS : out STD_LOGIC;
-        VGA_VS : out STD_LOGIC
+       CLK    : in  STD_LOGIC;
+       SW     : in  STD_LOGIC_VECTOR (15 downto 0);
+       BTN    : in  STD_LOGIC_VECTOR (4 downto 0);
+       LED    : out STD_LOGIC_VECTOR (15 downto 0);
+       VGA_HS : out STD_LOGIC;
+       VGA_VS : out STD_LOGIC;
+       VGA_R  : out STD_LOGIC_VECTOR (3 downto 0);
+       VGA_G  : out STD_LOGIC_VECTOR (3 downto 0);
+       VGA_B  : out STD_LOGIC_VECTOR (3 downto 0)
   );
 end VGA_CONTROLLER;
 
 architecture Behavioral of VGA_CONTROLLER is
+
+    component clk_wiz_0
+        port (
+            -- Clock in ports
+            clk_in1   : in  std_logic;
+            -- Clock out ports
+            clk_out1  : out std_logic;
+            -- Status and control signals
+            reset     : in  std_logic;
+            locked    : out std_logic
+        );
+    end component;
+
+    SIGNAL CLK148_5   : STD_LOGIC;
+    SIGNAL reset      : STD_LOGIC := '0';
+    SIGNAL locked     : STD_LOGIC;
 
     CONSTANT H_VISIBLE : INTEGER := 1920;
     CONSTANT H_FRONT   : INTEGER := 88;
@@ -55,14 +72,28 @@ architecture Behavioral of VGA_CONTROLLER is
     SIGNAL D_H   : STD_LOGIC := '0';
     SIGNAL D_V   : STD_LOGIC := '0';
 
+
 begin
+
+    LED <= SW;
+
+    -------------------------------------------------------------------
+    -- MMCM CONFIGURATION TO GENERATE 148.5 MHZ CLOCK
+    -------------------------------------------------------------------
+    MMCM_inst : clk_wiz_0
+        port map (
+            clk_in1  => CLK,      -- Input clock
+            clk_out1 => CLK148_5, -- Output clock
+            reset    => reset,    -- Reset signal
+            locked   => locked    -- Locked signal
+        );
 
     -------------------------------------------------------------------
     -- HORIZONTAL AND VERTICAL COUNTERS
     -------------------------------------------------------------------
-    PROCESS(CLK)
+    PROCESS(CLK148_5)
     BEGIN
-        IF RISING_EDGE(CLK) THEN
+        IF RISING_EDGE(CLK148_5) THEN
             IF H_CNT = H_TOTAL - 1 THEN
                 H_CNT <= 0;
                 IF V_CNT = V_TOTAL - 1 THEN
@@ -89,20 +120,19 @@ begin
     D_V <= '1' WHEN V_CNT < V_VISIBLE ELSE '0';
 
     -------------------------------------------------------------------
-    -- COLOR OUTPUT LOGIC
+    -- COLOR OUTPUT LOGIC (BASED ON SWITCHES)
     -------------------------------------------------------------------
-    PROCESS(D_H, D_V, FRAME_ADDR, FRAME_DATA)
+    PROCESS(D_H, D_V, SW)
     BEGIN
         IF D_H = '1' AND D_V = '1' THEN
-            VGA_R <= FRAME_DATA(11 downto 8);  -- RED
-            VGA_G <= FRAME_DATA(7 downto 4);   -- GREEN
-            VGA_B <= FRAME_DATA(3 downto 0);   -- BLUE
+            VGA_R <= SW(15 DOWNTO 12);  -- RED
+            VGA_G <= SW(11 DOWNTO 8);   -- GREEN
+            VGA_B <= SW(7 DOWNTO 4);    -- BLUE
         ELSE
             VGA_R <= (OTHERS => '0');
             VGA_G <= (OTHERS => '0');
             VGA_B <= (OTHERS => '0');
         END IF;
     END PROCESS;
-
 
 end Behavioral;
