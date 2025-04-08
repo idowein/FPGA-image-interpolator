@@ -1,0 +1,40 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.5",
+   "Default View_TopLeft":"-1104,-484",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0.21  2019-05-29 bk=1.5064 VDI=41 GEI=36 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace port sys_clock -pg 1 -lvl 0 -x 0 -y 120 -defaultsOSRD
+preplace port reset -pg 1 -lvl 0 -x 0 -y 200 -defaultsOSRD
+preplace port reset_0 -pg 1 -lvl 0 -x 0 -y 60 -defaultsOSRD
+preplace port reset_0_1 -pg 1 -lvl 0 -x 0 -y 500 -defaultsOSRD
+preplace inst cntl_0 -pg 1 -lvl 3 -x 770 -y 180 -defaultsOSRD
+preplace inst ov7670_registers_0 -pg 1 -lvl 3 -x 770 -y 40 -defaultsOSRD
+preplace inst vga_02_0 -pg 1 -lvl 3 -x 770 -y 550 -defaultsOSRD
+preplace inst ovo_7670_caputre_0 -pg 1 -lvl 2 -x 460 -y 360 -defaultsOSRD
+preplace inst blk_mem_gen_0 -pg 1 -lvl 3 -x 770 -y 350 -defaultsOSRD
+preplace inst clk_wiz -pg 1 -lvl 2 -x 460 -y 210 -defaultsOSRD
+preplace inst clk_wiz_1 -pg 1 -lvl 2 -x 460 -y 70 -defaultsOSRD
+preplace inst clk_wiz_2 -pg 1 -lvl 2 -x 460 -y 510 -defaultsOSRD
+preplace inst reset_inv_0 -pg 1 -lvl 1 -x 170 -y 200 -defaultsOSRD
+preplace inst reset_inv_1 -pg 1 -lvl 1 -x 170 -y 60 -defaultsOSRD
+preplace inst reset_inv_2 -pg 1 -lvl 1 -x 170 -y 500 -defaultsOSRD
+preplace netloc clk_wiz_clk_out1 1 2 1 600J 160n
+preplace netloc clk_wiz_1_clk_out1 1 2 1 600J 20n
+preplace netloc clk_wiz_2_clk_out1 1 2 1 600J 500n
+preplace netloc sys_clock_1 1 0 2 NJ 120 320
+preplace netloc reset_1 1 0 1 NJ 200
+preplace netloc reset_inv_0_Res 1 1 1 NJ 200
+preplace netloc reset_0_1 1 0 1 NJ 60
+preplace netloc reset_inv_1_Res 1 1 1 NJ 60
+preplace netloc reset_0_1_1 1 0 1 NJ 500
+preplace netloc reset_inv_2_Res 1 1 1 NJ 500
+levelinfo -pg 1 0 170 460 770 940
+pagesize -pg 1 -db -bbox -sgen -120 -40 940 660
+"
+}
+{
+   "da_board_cnt":"6",
+   "da_clkrst_cnt":"6"
+}

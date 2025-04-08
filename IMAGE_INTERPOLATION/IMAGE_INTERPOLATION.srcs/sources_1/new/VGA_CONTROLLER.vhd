@@ -1,21 +1,11 @@
 ----------------------------------------------------------------------------------
 -- Company: 
 -- Engineer: Ido Weinstock
--- 
--- Create Date: 04/06/2025 10:08:24 PM
--- Design Name: 
--- Module Name: VGA_CONTROLLER - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
+--
+-- Create Date: 2025-04-07
+-- Module Name: VGA_CAMERA_TOP - Top-Level Design
+-- Description: Integrates the CAMERA_INTERFACE, FRAME_BUFFER, and VGA timing logic
+--              to display a camera feed on a VGA monitor.
 ----------------------------------------------------------------------------------
 
 library IEEE;
@@ -23,183 +13,187 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
 entity VGA_CONTROLLER is
-  Port ( 
-       CLK    : in  STD_LOGIC;
-       SW     : in  STD_LOGIC_VECTOR (15 downto 0);
-       BTN    : in  STD_LOGIC_VECTOR (4 downto 0);
-       LED    : out STD_LOGIC_VECTOR (15 downto 0);
-       VGA_HS : out STD_LOGIC;
-       VGA_VS : out STD_LOGIC;
-       VGA_R  : out STD_LOGIC_VECTOR (3 downto 0);
-       VGA_G  : out STD_LOGIC_VECTOR (3 downto 0);
-       VGA_B  : out STD_LOGIC_VECTOR (3 downto 0);
-       CAM_D  : in  STD_LOGIC_VECTOR (7 downto 0);
-       CAM_HREF : in  STD_LOGIC;
-       CAM_VSYNC : in  STD_LOGIC;
-       CAM_PCLK  : in  STD_LOGIC
-  );
+    Port (
+        CLK         : in  std_logic;
+        SW          : in  std_logic_vector(15 downto 0);
+        BTN         : in  std_logic_vector(4 downto 0);
+        LED         : out std_logic_vector(15 downto 0);
+        VGA_HS      : out std_logic;
+        VGA_VS      : out std_logic;
+        VGA_R       : out std_logic_vector(3 downto 0);
+        VGA_G       : out std_logic_vector(3 downto 0);
+        VGA_B       : out std_logic_vector(3 downto 0);
+        CAM_D       : in  std_logic_vector(7 downto 0);
+        CAM_HREF    : in  std_logic;
+        CAM_VSYNC   : in  std_logic;
+        CAM_PCLK    : in  std_logic
+    );
 end VGA_CONTROLLER;
 
 architecture Behavioral of VGA_CONTROLLER is
 
-    component clk_wiz_0
-        port (
-            -- Clock in ports
-            clk_in1   : in  std_logic;
-            -- Clock out ports
-            clk_out1  : out std_logic;
-            -- Status and control signals
-            reset     : in  std_logic;
-            locked    : out std_logic
+    -- Clock wizard to generate required clock frequency (148.5 MHz)
+    component clk_wiz_0 is
+        port(
+            clk_in1  : in  std_logic;
+            clk_out1 : out std_logic;
+            reset    : in  std_logic;
+            locked   : out std_logic
         );
     end component;
 
-    component FRAME_BUFFER
-      Port ( 
-            CLK : in STD_LOGIC;
-            PIX_DATA : in STD_LOGIC_VECTOR(7 downto 0);
-            PIX_CLK : in STD_LOGIC;
-            HREF : in STD_LOGIC;
-            VSYNC : in STD_LOGIC;
-            FRAME_ADDR : out STD_LOGIC_VECTOR(18 downto 0);
-            FRAME_DATA : out STD_LOGIC_VECTOR(11 downto 0)
-      );
+    -- Camera interface: captures raw camera signals and generates PIX signals.
+    component CAMERA_INTERFACE is
+        port(
+            CAM_D     : in  std_logic_vector(7 downto 0);
+            CAM_HREF  : in  std_logic;
+            CAM_VSYNC : in  std_logic;
+            CAM_PCLK  : in  std_logic;
+            PIX_DATA  : out std_logic_vector(7 downto 0);
+            PIX_CLK   : out std_logic;
+            HREF      : out std_logic;
+            VSYNC     : out std_logic
+        );
     end component;
 
-    component CAMERA_INTERFACE
-      Port ( 
-            CAM_D : in STD_LOGIC_VECTOR(7 downto 0);
-            CAM_HREF : in STD_LOGIC;
-            CAM_VSYNC : in STD_LOGIC;
-            CAM_PCLK : in STD_LOGIC;
-            PIX_DATA : out STD_LOGIC_VECTOR(7 downto 0);
-            PIX_CLK : out STD_LOGIC;
-            HREF : out STD_LOGIC;
-            VSYNC : out STD_LOGIC
-      );
+    -- Frame buffer: stores camera pixel data.
+    -- NOTE: This module should be updated so that FRAME_ADDR is an input to allow reading.
+    component FRAME_BUFFER is
+        port(
+            CLK         : in  std_logic;
+            PIX_DATA    : in  std_logic_vector(7 downto 0);
+            PIX_CLK     : in  std_logic;
+            HREF        : in  std_logic;
+            VSYNC       : in  std_logic;
+            FRAME_ADDR  : in  std_logic_vector(18 downto 0); -- Changed to input for reading
+            FRAME_DATA  : out std_logic_vector(11 downto 0)
+        );
     end component;
 
-    SIGNAL CLK148_5   : STD_LOGIC;
-    SIGNAL reset      : STD_LOGIC := '0';
-    SIGNAL locked     : STD_LOGIC;
+    -- VGA Timing Constants (for 1920x1080 @ 60Hz)
+    constant H_VISIBLE : integer := 1920;
+    constant H_FRONT   : integer := 88;
+    constant H_SYNC    : integer := 44;
+    constant H_BACK    : integer := 148;
+    constant H_TOTAL   : integer := H_VISIBLE + H_FRONT + H_SYNC + H_BACK;
 
-    CONSTANT H_VISIBLE : INTEGER := 1920;
-    CONSTANT H_FRONT   : INTEGER := 88;
-    CONSTANT H_SYNC    : INTEGER := 44;
-    CONSTANT H_BACK    : INTEGER := 148;
-    CONSTANT H_TOTAL   : INTEGER := H_VISIBLE + H_FRONT + H_SYNC + H_BACK;
+    constant V_VISIBLE : integer := 1080;
+    constant V_FRONT   : integer := 4;
+    constant V_SYNC    : integer := 5;
+    constant V_BACK    : integer := 36;
+    constant V_TOTAL   : integer := V_VISIBLE + V_FRONT + V_SYNC + V_BACK;
 
-    CONSTANT V_VISIBLE : INTEGER := 1080;
-    CONSTANT V_FRONT   : INTEGER := 4;
-    CONSTANT V_SYNC    : INTEGER := 5;
-    CONSTANT V_BACK    : INTEGER := 36;
-    CONSTANT V_TOTAL   : INTEGER := V_VISIBLE + V_FRONT + V_SYNC + V_BACK;
+    signal CLK148_5      : std_logic;
+    signal reset_sig     : std_logic := '0';
+    signal locked_sig    : std_logic;
 
-    SIGNAL H_CNT : INTEGER RANGE 0 TO H_TOTAL - 1 := 0;
-    SIGNAL V_CNT : INTEGER RANGE 0 TO V_TOTAL - 1 := 0;
+    signal H_CNT         : integer range 0 to H_TOTAL - 1 := 0;
+    signal V_CNT         : integer range 0 to V_TOTAL - 1 := 0;
+    signal DISP_ACTIVE   : std_logic;
 
-    SIGNAL D_H   : STD_LOGIC := '0';
-    SIGNAL D_V   : STD_LOGIC := '0';
+    -- Signals between Camera Interface and Frame Buffer
+    signal PIX_DATA      : std_logic_vector(7 downto 0);
+    signal PIX_CLK       : std_logic;
+    signal INT_HREF      : std_logic;
+    signal INT_VSYNC     : std_logic;
 
-    SIGNAL FRAME_ADDR : STD_LOGIC_VECTOR(18 downto 0);
-    SIGNAL FRAME_DATA : STD_LOGIC_VECTOR(11 downto 0);
-    SIGNAL PIX_DATA : STD_LOGIC_VECTOR(7 downto 0);
-    SIGNAL PIX_CLK : STD_LOGIC;
-    SIGNAL HREF : STD_LOGIC;
-    SIGNAL VSYNC : STD_LOGIC;
+    -- Frame buffer read signals
+    signal FRAME_ADDR    : std_logic_vector(18 downto 0);
+    signal FRAME_DATA    : std_logic_vector(11 downto 0);
 
 begin
 
     LED <= SW;
 
     -------------------------------------------------------------------
-    -- MMCM CONFIGURATION TO GENERATE 148.5 MHZ CLOCK
+    -- Clock Generation (148.5 MHz)
     -------------------------------------------------------------------
-    MMCM_inst : clk_wiz_0
-        port map (
-            clk_in1  => CLK,      -- Input clock
-            clk_out1 => CLK148_5, -- Output clock
-            reset    => reset,    -- Reset signal
-            locked   => locked    -- Locked signal
+    CLK_GEN: clk_wiz_0
+        port map(
+            clk_in1  => CLK,
+            clk_out1 => CLK148_5,
+            reset    => reset_sig,
+            locked   => locked_sig
         );
 
     -------------------------------------------------------------------
-    -- CAMERA INTERFACE INSTANTIATION
+    -- Camera Interface instantiation
     -------------------------------------------------------------------
-    CAMERA_INTERFACE_inst : CAMERA_INTERFACE
-        port map (
-            CAM_D => CAM_D,
-            CAM_HREF => CAM_HREF,
+    CAM_IF: CAMERA_INTERFACE
+        port map(
+            CAM_D     => CAM_D,
+            CAM_HREF  => CAM_HREF,
             CAM_VSYNC => CAM_VSYNC,
-            CAM_PCLK => CAM_PCLK,
-            PIX_DATA => PIX_DATA,
-            PIX_CLK => PIX_CLK,
-            HREF => HREF,
-            VSYNC => VSYNC
+            CAM_PCLK  => CAM_PCLK,
+            PIX_DATA  => PIX_DATA,
+            PIX_CLK   => PIX_CLK,
+            HREF      => INT_HREF,
+            VSYNC     => INT_VSYNC
         );
 
     -------------------------------------------------------------------
-    -- FRAME BUFFER INSTANTIATION
+    -- Frame Buffer instantiation
     -------------------------------------------------------------------
-    FRAME_BUFFER_inst : FRAME_BUFFER
-        port map (
-            CLK => CLK148_5,
-            PIX_DATA => PIX_DATA,
-            PIX_CLK => PIX_CLK,
-            HREF => HREF,
-            VSYNC => VSYNC,
-            FRAME_ADDR => FRAME_ADDR,
-            FRAME_DATA => FRAME_DATA
+    FB: FRAME_BUFFER
+        port map(
+            CLK         => CLK148_5,
+            PIX_DATA    => PIX_DATA,
+            PIX_CLK     => PIX_CLK,
+            HREF        => INT_HREF,
+            VSYNC       => INT_VSYNC,
+            FRAME_ADDR  => FRAME_ADDR,
+            FRAME_DATA  => FRAME_DATA
         );
 
     -------------------------------------------------------------------
-    -- HORIZONTAL AND VERTICAL COUNTERS
+    -- VGA Timing Counters
     -------------------------------------------------------------------
-    PROCESS(CLK148_5)
-    BEGIN
-        IF RISING_EDGE(CLK148_5) THEN
-            IF H_CNT = H_TOTAL - 1 THEN
+    VGA_TIMING: process(CLK148_5)
+    begin
+        if rising_edge(CLK148_5) then
+            if H_CNT = H_TOTAL - 1 then
                 H_CNT <= 0;
-                IF V_CNT = V_TOTAL - 1 THEN
+                if V_CNT = V_TOTAL - 1 then
                     V_CNT <= 0;
-                ELSE
+                else
                     V_CNT <= V_CNT + 1;
-                END IF;
-            ELSE
+                end if;
+            else
                 H_CNT <= H_CNT + 1;
-            END IF;
-        END IF;
-    END PROCESS;
+            end if;
+        end if;
+    end process;
+
+    DISP_ACTIVE <= '1' when (H_CNT < H_VISIBLE and V_CNT < V_VISIBLE) else '0';
 
     -------------------------------------------------------------------
-    -- HSYNC AND VSYNC OUTPUTS
+    -- VGA Sync Generation
     -------------------------------------------------------------------
-    VGA_HS <= '0' WHEN (H_CNT >= H_VISIBLE + H_FRONT AND H_CNT < H_VISIBLE + H_FRONT + H_SYNC) ELSE '1';
-    VGA_VS <= '0' WHEN (V_CNT >= V_VISIBLE + V_FRONT AND V_CNT < V_VISIBLE + V_FRONT + V_SYNC) ELSE '1';
+    VGA_HS <= '0' when (H_CNT >= H_VISIBLE + H_FRONT and H_CNT < H_VISIBLE + H_FRONT + H_SYNC) else '1';
+    VGA_VS <= '0' when (V_CNT >= V_VISIBLE + V_FRONT and V_CNT < V_VISIBLE + V_FRONT + V_SYNC) else '1';
 
     -------------------------------------------------------------------
-    -- VISIBLE AREA DETECTION
+    -- Frame Buffer Address Generation for VGA Read
     -------------------------------------------------------------------
-    D_H <= '1' WHEN H_CNT < H_VISIBLE ELSE '0';
-    D_V <= '1' WHEN V_CNT < V_VISIBLE ELSE '0';
+    -- Compute the address based on current pixel location.
+    FRAME_ADDR <= std_logic_vector(to_unsigned(V_CNT * H_VISIBLE + H_CNT, 19));
 
     -------------------------------------------------------------------
-    -- COLOR OUTPUT LOGIC (BASED ON FRAME BUFFER)
+    -- VGA Color Generation: Map Frame Buffer data to VGA outputs.
     -------------------------------------------------------------------
-    PROCESS(CLK148_5, D_H, D_V)
-    BEGIN
-        IF RISING_EDGE(CLK148_5) THEN
-            IF D_H = '1' AND D_V = '1' THEN
-                FRAME_ADDR <= std_logic_vector(to_unsigned((V_CNT * H_VISIBLE) + H_CNT, 19));
-                VGA_R <= FRAME_DATA(11 downto 8);  -- RED
-                VGA_G <= FRAME_DATA(7 downto 4);   -- GREEN
-                VGA_B <= FRAME_DATA(3 downto 0);    -- BLUE
-            ELSE
-                VGA_R <= (OTHERS => '0');
-                VGA_G <= (OTHERS => '0');
-                VGA_B <= (OTHERS => '0');
-            END IF;
-        END IF;
-    END PROCESS;
+    process(CLK148_5)
+    begin
+        if rising_edge(CLK148_5) then
+            if DISP_ACTIVE = '1' then
+                VGA_R <= FRAME_DATA(11 downto 8);
+                VGA_G <= FRAME_DATA(7 downto 4);
+                VGA_B <= FRAME_DATA(3 downto 0);
+            else
+                VGA_R <= (others => '0');
+                VGA_G <= (others => '0');
+                VGA_B <= (others => '0');
+            end if;
+        end if;
+    end process;
 
 end Behavioral;
