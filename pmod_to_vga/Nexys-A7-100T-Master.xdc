@@ -102,8 +102,8 @@ set_property PACKAGE_PIN H4 [get_ports {din[7]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {din[7]}]
 
 
-set_property PACKAGE_PIN H3 [get_ports reset_0]
-set_property IOSTANDARD LVCMOS33 [get_ports reset_0]
+#set_property PACKAGE_PIN H3 [get_ports reset_0]
+#set_property IOSTANDARD LVCMOS33 [get_ports reset_0]
 
 
 set_property PACKAGE_PIN E7 [get_ports reset]
