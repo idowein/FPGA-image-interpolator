@@ -9,7 +9,7 @@ entity vga_controller is
         rgb_data          : in  std_logic_vector(11 downto 0);  -- Frame buffer output data
         hsync             : out std_logic;                      -- Horizontal sync
         vsync             : out std_logic;                      -- Vertical sync
-        rgb_out           : out std_logic_vector(7 downto 0)    -- VGA RGB data
+        rgb_out           : out std_logic_vector(11 downto 0)    -- VGA RGB data
     );
 end vga_controller;
 
@@ -48,7 +48,7 @@ begin
     end process;
 
     frame_buffer_read <= std_logic_vector(to_unsigned(pixel_address, frame_buffer_read'length));
-    rgb_out <= rgb_data(11 downto 4);  -- Map 12-bit RGB to 8-bit output
+    rgb_out <= rgb_data(11 downto 0);  -- Map 12-bit RGB to 8-bit output
     hsync <= '0' when h_count >= 656 and h_count < 752 else '1';
     vsync <= '0' when v_count >= 490 and v_count < 492 else '1';
 end Behavioral;

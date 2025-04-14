@@ -51,7 +51,7 @@ architecture Behavioral of top_level_design is
     signal pixel_out   : STD_LOGIC_VECTOR(11 downto 0);
 
     -- VGA Controller Signals
-    signal vga_rgb_data : STD_LOGIC_VECTOR(7 downto 0);
+    signal vga_rgb_data : STD_LOGIC_VECTOR(11 downto 0);
     
     -- MMCM signals
     signal locked : STD_LOGIC;
@@ -155,8 +155,8 @@ begin
         );
 
     -- Map VGA RGB Data
-    vga_r <= vga_rgb_data(7 downto 5); -- Red (3 bits)
-    vga_g <= vga_rgb_data(4 downto 2); -- Green (3 bits)
-    vga_b <= vga_rgb_data(1 downto 0); -- Blue (2 bits)
+    vga_r <= vga_rgb_data(11 downto 8); -- Red (3 bits)
+    vga_g <= vga_rgb_data(7 downto 4); -- Green (3 bits)
+    vga_b <= vga_rgb_data(3 downto 0); -- Blue (2 bits)
 
 end Behavioral;
