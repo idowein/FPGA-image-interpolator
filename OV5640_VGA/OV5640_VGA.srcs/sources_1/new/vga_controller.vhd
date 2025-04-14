@@ -4,12 +4,13 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity vga_controller is
     Port (
-        pixel_clk         : in  std_logic;                      -- Pixel clock
-        frame_buffer_read : out std_logic_vector(18 downto 0);  -- Frame buffer read address
-        rgb_data          : in  std_logic_vector(11 downto 0);  -- Frame buffer output data
-        hsync             : out std_logic;                      -- Horizontal sync
-        vsync             : out std_logic;                      -- Vertical sync
-        rgb_out           : out std_logic_vector(11 downto 0)   -- VGA RGB data
+        clk              : in  std_logic;                      -- Input clock
+        reset            : in  std_logic;                      -- Reset signal
+        frame_buffer_read : out std_logic_vector(18 downto 0); -- Frame buffer read address
+        rgb_data         : in  std_logic_vector(11 downto 0);  -- Frame buffer output data
+        hsync            : out std_logic;                      -- Horizontal sync
+        vsync            : out std_logic;                      -- Vertical sync
+        rgb_out          : out std_logic_vector(11 downto 0)   -- VGA RGB data
     );
 end vga_controller;
 
@@ -30,12 +31,46 @@ architecture Behavioral of vga_controller is
     signal h_count        : integer range 0 to H_TOTAL - 1 := 0; -- Horizontal pixel counter
     signal v_count        : integer range 0 to V_TOTAL - 1 := 0; -- Vertical line counter
     signal pixel_address  : integer := 0;                       -- Frame buffer pixel address
+    signal d_h, d_v       : std_logic := '0';                   -- Visible area signals
+
+    signal clk25_175      : std_logic;                          -- 25.175 MHz clock for VGA
+    signal locked         : std_logic;                          -- Locked signal from clock generator
+
+    component clk_wiz_0
+        port
+         (-- Clock in ports
+          -- Clock out ports
+          clk_25mhz          : out    std_logic;
+          clk_24mhz          : out    std_logic;
+          -- Status and control signals
+          reset             : in     std_logic;
+          locked            : out    std_logic;
+          clk_in1           : in     std_logic
+         );
+    end component;
 
 begin
-    -- Horizontal and Vertical Counters
-    process(pixel_clk)
+    -------------------------------------------------------------------
+    -- MMCM CONFIGURATION TO GENERATE 25.175 MHZ CLOCK
+    -------------------------------------------------------------------
+    MMCM_CONF : clk_wiz_0
+       port map ( 
+      -- Clock out ports  
+       clk_25mhz => clk25_175,
+       clk_24mhz => OPEN,
+      -- Status and control signals                
+       reset => reset,
+       locked => locked,
+       -- Clock in ports
+       clk_in1 => CLK
+     );
+
+    -------------------------------------------------------------------
+    -- HORIZONTAL AND VERTICAL COUNTERS
+    -------------------------------------------------------------------
+    process(clk25_175)
     begin
-        if rising_edge(pixel_clk) then
+        if rising_edge(clk25_175) then
             if h_count = H_TOTAL - 1 then
                 h_count <= 0;                                   -- Reset horizontal counter
                 if v_count = V_TOTAL - 1 then
@@ -47,25 +82,36 @@ begin
                 h_count <= h_count + 1;                         -- Increment horizontal counter
             end if;
         end if;
+    end process;
 
-        -- Calculate Frame Buffer Address
-        if h_count < H_DISPLAY and v_count < V_DISPLAY then
-            pixel_address <= v_count * H_DISPLAY + h_count;     -- Visible area address
+    -------------------------------------------------------------------
+    -- VISIBLE AREA DETECTION
+    -------------------------------------------------------------------
+    d_h <= '1' when h_count < H_DISPLAY else '0';               -- Horizontal visible area
+    d_v <= '1' when v_count < V_DISPLAY else '0';               -- Vertical visible area
+
+    -------------------------------------------------------------------
+    -- FRAME BUFFER ADDRESS CALCULATION
+    -------------------------------------------------------------------
+    process(d_h, d_v, h_count, v_count)
+    begin
+        if d_h = '1' and d_v = '1' then
+            pixel_address <= v_count * H_DISPLAY + h_count;     -- Calculate pixel address
         else
             pixel_address <= 0;                                 -- Outside visible area
         end if;
     end process;
-
-    -- Map Frame Buffer Address to Output
     frame_buffer_read <= std_logic_vector(to_unsigned(pixel_address, frame_buffer_read'length));
 
-    -- Generate RGB Output (Direct Pass-Through)
-    rgb_out <= rgb_data(11 downto 0);
-
-    -- Generate Horizontal Sync Signal
+    -------------------------------------------------------------------
+    -- SYNC SIGNAL GENERATION
+    -------------------------------------------------------------------
     hsync <= '0' when (h_count >= H_DISPLAY + H_FRONT and h_count < H_DISPLAY + H_FRONT + H_SYNC) else '1';
-
-    -- Generate Vertical Sync Signal
     vsync <= '0' when (v_count >= V_DISPLAY + V_FRONT and v_count < V_DISPLAY + V_FRONT + V_SYNC) else '1';
+
+    -------------------------------------------------------------------
+    -- RGB OUTPUT
+    -------------------------------------------------------------------
+    rgb_out <= rgb_data when (d_h = '1' and d_v = '1') else (others => '0');
 
 end Behavioral;

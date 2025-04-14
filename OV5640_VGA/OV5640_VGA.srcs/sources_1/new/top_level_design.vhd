@@ -146,7 +146,8 @@ begin
     -- Instantiate VGA Controller
     vga_ctrl_inst : entity work.vga_controller
         port map (
-            pixel_clk        => clk_25mhz,
+            clk               => clk_25mhz,
+            reset             => reset,
             frame_buffer_read => fb_addr_read,
             rgb_data         => fb_dout,
             hsync            => vga_hsync,

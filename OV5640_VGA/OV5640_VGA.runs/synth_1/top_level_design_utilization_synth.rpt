@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Mon Apr 14 16:46:57 2025
+| Date         : Mon Apr 14 18:19:22 2025
 | Host         : Ido running 64-bit major release  (build 9200)
 | Command      : report_utilization -file top_level_design_utilization_synth.rpt -pb top_level_design_utilization_synth.pb
 | Design       : top_level_design
@@ -147,13 +147,13 @@ Table of Contents
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
 | FDRE     |   21 |        Flop & Latch |
-| OBUFT    |   13 |                  IO |
+| OBUF     |   18 |                  IO |
 | LUT6     |   10 |                 LUT |
 | LUT5     |    9 |                 LUT |
-| OBUF     |    6 |                  IO |
 | LUT4     |    5 |                 LUT |
 | LUT2     |    3 |                 LUT |
 | LUT3     |    2 |                 LUT |
+| OBUFT    |    1 |                  IO |
 | LUT1     |    1 |                 LUT |
 | IBUF     |    1 |                  IO |
 +----------+------+---------------------+
@@ -165,8 +165,8 @@ Table of Contents
 +--------------+------+
 |   Ref Name   | Used |
 +--------------+------+
+| clk_wiz_0    |    2 |
 | frame_buffer |    1 |
-| clk_wiz_0    |    1 |
 +--------------+------+
 
 
