@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
---Date        : Wed Apr 16 22:46:33 2025
+--Date        : Wed Apr 16 23:11:54 2025
 --Host        : Ido running 64-bit major release  (build 9200)
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -13,6 +13,7 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity design_1 is
   port (
+    VGA_H_sync : out STD_LOGIC;
     camera_h_ref : in STD_LOGIC;
     camera_v_sync : in STD_LOGIC;
     clk_in1 : in STD_LOGIC;
@@ -26,6 +27,10 @@ entity design_1 is
     resetn : in STD_LOGIC;
     sioc : out STD_LOGIC;
     siod : inout STD_LOGIC;
+    vga_V_sync : out STD_LOGIC;
+    vga_blue : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    vga_green : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    vga_red : out STD_LOGIC_VECTOR ( 3 downto 0 );
     xclk : out STD_LOGIC;
     zoom : in STD_LOGIC
   );
@@ -125,14 +130,14 @@ architecture STRUCTURE of design_1 is
   signal pclk_0_1 : STD_LOGIC;
   signal resend_in_0_1 : STD_LOGIC;
   signal resetn_0_1 : STD_LOGIC;
+  signal vga_0_VGA_H_sync : STD_LOGIC;
   signal vga_0_frame_adress : STD_LOGIC_VECTOR ( 18 downto 0 );
+  signal vga_0_vga_V_sync : STD_LOGIC;
+  signal vga_0_vga_blue : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal vga_0_vga_green : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal vga_0_vga_red : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal zoom_0_1 : STD_LOGIC;
   signal NLW_clk_wiz_0_locked_UNCONNECTED : STD_LOGIC;
-  signal NLW_vga_0_VGA_H_sync_UNCONNECTED : STD_LOGIC;
-  signal NLW_vga_0_vga_V_sync_UNCONNECTED : STD_LOGIC;
-  signal NLW_vga_0_vga_blue_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal NLW_vga_0_vga_green_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal NLW_vga_0_vga_red_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of clk_in1 : signal is "xilinx.com:signal:clock:1.0 CLK.CLK_IN1 CLK";
   attribute X_INTERFACE_PARAMETER : string;
@@ -142,6 +147,7 @@ architecture STRUCTURE of design_1 is
   attribute X_INTERFACE_INFO of resetn : signal is "xilinx.com:signal:reset:1.0 RST.RESETN RST";
   attribute X_INTERFACE_PARAMETER of resetn : signal is "XIL_INTERFACENAME RST.RESETN, INSERT_VIP 0, POLARITY ACTIVE_LOW";
 begin
+  VGA_H_sync <= vga_0_VGA_H_sync;
   camera_h_ref_0_1 <= camera_h_ref;
   camera_v_sync_0_1 <= camera_v_sync;
   clk_in1_0_1 <= clk_in1;
@@ -154,6 +160,10 @@ begin
   reset <= ov7670_controller_0_reset;
   resetn_0_1 <= resetn;
   sioc <= ov7670_controller_0_sioc;
+  vga_V_sync <= vga_0_vga_V_sync;
+  vga_blue(3 downto 0) <= vga_0_vga_blue(3 downto 0);
+  vga_green(3 downto 0) <= vga_0_vga_green(3 downto 0);
+  vga_red(3 downto 0) <= vga_0_vga_red(3 downto 0);
   xclk <= ov7670_controller_0_xclk;
   zoom_0_1 <= zoom;
 blk_mem_gen_0: component design_1_blk_mem_gen_0_0
@@ -206,15 +216,15 @@ ovo_7670_caputre_0: component design_1_ovo_7670_caputre_0_0
     );
 vga_0: component design_1_vga_0_0
      port map (
-      VGA_H_sync => NLW_vga_0_VGA_H_sync_UNCONNECTED,
+      VGA_H_sync => vga_0_VGA_H_sync,
       cntl => cntl_0_cntl_out,
       frame_adress(18 downto 0) => vga_0_frame_adress(18 downto 0),
       frame_fix(11 downto 0) => blk_mem_gen_0_doutb(11 downto 0),
       pix_clk => clk_wiz_0_clk_vga,
-      vga_V_sync => NLW_vga_0_vga_V_sync_UNCONNECTED,
-      vga_blue(3 downto 0) => NLW_vga_0_vga_blue_UNCONNECTED(3 downto 0),
-      vga_green(3 downto 0) => NLW_vga_0_vga_green_UNCONNECTED(3 downto 0),
-      vga_red(3 downto 0) => NLW_vga_0_vga_red_UNCONNECTED(3 downto 0),
+      vga_V_sync => vga_0_vga_V_sync,
+      vga_blue(3 downto 0) => vga_0_vga_blue(3 downto 0),
+      vga_green(3 downto 0) => vga_0_vga_green(3 downto 0),
+      vga_red(3 downto 0) => vga_0_vga_red(3 downto 0),
       zoom => zoom_0_1
     );
 end STRUCTURE;

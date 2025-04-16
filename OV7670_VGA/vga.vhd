@@ -46,20 +46,21 @@ end vga;
 
 architecture Behavioral of vga is
 
-    constant FRAME_WIDTH :integer := 800;
-    constant FRAME_HEIGHT : integer:= 600;
-    constant H_FP : integer:= 40;
-    constant H_PW : integer:= 128;
-    constant H_MAX : integer:=1056;
-    constant V_FP : integer:= 1;
-    constant V_PW : integer:= 4;
-    constant V_MAX : integer:= 628;
-    constant BITS_WIDTH : integer:= 12;
-    constant ADDR_WIDTH : integer:= 19;
-    constant PIX_WIDTH : integer:= 12;
-    constant VGABIT_WIDTH : integer:= 4;
-    constant CAMERA_WIDTH : integer:= 640;
-    constant CAMERA_HEIGHT : integer:=480;
+    -- Updated constants for 1920x1080 resolution
+    constant FRAME_WIDTH : integer := 1920;
+    constant FRAME_HEIGHT : integer := 1080;
+    constant H_FP : integer := 88;   -- Horizontal Front Porch
+    constant H_PW : integer := 44;   -- Horizontal Pulse Width
+    constant H_MAX : integer := 2200; -- Total Horizontal Pixels (1920 + Front Porch + Back Porch + Sync)
+    constant V_FP : integer := 4;    -- Vertical Front Porch
+    constant V_PW : integer := 5;    -- Vertical Pulse Width
+    constant V_MAX : integer := 1125; -- Total Vertical Pixels (1080 + Front Porch + Back Porch + Sync)
+    constant BITS_WIDTH : integer := 12;
+    constant ADDR_WIDTH : integer := 19;
+    constant PIX_WIDTH : integer := 12;
+    constant VGABIT_WIDTH : integer := 4;
+    constant CAMERA_WIDTH : integer := 1920; -- Updated camera width
+    constant CAMERA_HEIGHT : integer := 1080; -- Updated camera height
 
     -- constant
     signal H_POSITIVE:std_logic := '1';
@@ -131,9 +132,7 @@ begin
         end if;
     end process;    
     
-    
     -- vertical counter
-        
     process(pix_clk) 
     begin
         if(rising_edge(pix_clk)) then
@@ -146,7 +145,6 @@ begin
     end process;   
     
     -- vertical sync.
-    
     process(pix_clk) 
     begin
         if(rising_edge(pix_clk)) then
@@ -158,20 +156,7 @@ begin
         end if;
     end process;   
     
-    
-    --
-    --                   counter_col <= counter_col+1;
---                   if  (counter_col  =  639 )  then
---                        if (counter_row(0) = '0') then
---                          val_tmp<=val_tmp+320; 
---                         end if;
---                           counter_row<=counter_row+1;    
---                            counter_col<= (others=>'0');        
---                   elsif (counter_col(0) = '0') then 
---                        val_tmp<=val_tmp+1;
---                    end if;                 
-                    --val_zoom<= val_zoom+1 ;
-           -- pixel address zoom counter
+    -- pixel address zoom counter
     process(pix_clk) 
     begin
     if(rising_edge(pix_clk)) then
@@ -194,8 +179,8 @@ begin
 	    	end if;
 	    end if;
     end if;
-    end process;             -- val<=val+1;
-           
+    end process;             
+
      -- pixel address counter
     process(pix_clk) 
     begin
@@ -280,7 +265,6 @@ begin
                    
  end process;
 
-
     -- register output 
     process (pix_clk)
     begin
@@ -296,7 +280,6 @@ begin
            v_sync_d <= v_sync;
         end if;
     end process;
-
 
     process (pix_clk)
     begin

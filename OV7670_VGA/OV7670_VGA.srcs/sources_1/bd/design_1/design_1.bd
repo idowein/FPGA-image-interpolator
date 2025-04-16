@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x9BEF0332FBADA34F",
+      "boundary_crc": "0x86C123FCAB6BE91E",
       "device": "xc7a100tcsg324-1",
       "name": "design_1",
       "synth_flow_mode": "Hierarchical",
@@ -107,6 +107,27 @@
             "value_src": "default"
           }
         }
+      },
+      "vga_blue": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      },
+      "vga_red": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      },
+      "vga_V_sync": {
+        "direction": "O"
+      },
+      "VGA_H_sync": {
+        "direction": "O"
+      },
+      "vga_green": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
       }
     },
     "components": {
@@ -166,19 +187,19 @@
         "xci_name": "design_1_clk_wiz_0_0",
         "parameters": {
           "CLKOUT1_JITTER": {
-            "value": "183.215"
+            "value": "134.463"
           },
           "CLKOUT1_PHASE_ERROR": {
-            "value": "105.461"
+            "value": "124.502"
           },
           "CLKOUT1_REQUESTED_OUT_FREQ": {
-            "value": "25.175"
+            "value": "148.5"
           },
           "CLKOUT2_JITTER": {
-            "value": "183.467"
+            "value": "193.109"
           },
           "CLKOUT2_PHASE_ERROR": {
-            "value": "105.461"
+            "value": "124.502"
           },
           "CLKOUT2_REQUESTED_OUT_FREQ": {
             "value": "25"
@@ -193,13 +214,13 @@
             "value": "clk_reg"
           },
           "MMCM_CLKFBOUT_MULT_F": {
-            "value": "9.000"
+            "value": "6.500"
           },
           "MMCM_CLKOUT0_DIVIDE_F": {
-            "value": "35.750"
+            "value": "4.375"
           },
           "MMCM_CLKOUT1_DIVIDE": {
-            "value": "36"
+            "value": "26"
           },
           "MMCM_DIVCLK_DIVIDE": {
             "value": "1"
@@ -362,7 +383,7 @@
                 "value_src": "ip_prop"
               },
               "FREQ_HZ": {
-                "value": "25174825",
+                "value": "148571428",
                 "value_src": "ip_prop"
               },
               "PHASE": {
@@ -558,6 +579,36 @@
         "ports": [
           "resetn",
           "clk_wiz_0/resetn"
+        ]
+      },
+      "vga_0_vga_blue": {
+        "ports": [
+          "vga_0/vga_blue",
+          "vga_blue"
+        ]
+      },
+      "vga_0_vga_red": {
+        "ports": [
+          "vga_0/vga_red",
+          "vga_red"
+        ]
+      },
+      "vga_0_vga_V_sync": {
+        "ports": [
+          "vga_0/vga_V_sync",
+          "vga_V_sync"
+        ]
+      },
+      "vga_0_VGA_H_sync": {
+        "ports": [
+          "vga_0/VGA_H_sync",
+          "VGA_H_sync"
+        ]
+      },
+      "vga_0_vga_green": {
+        "ports": [
+          "vga_0/vga_green",
+          "vga_green"
         ]
       }
     }
