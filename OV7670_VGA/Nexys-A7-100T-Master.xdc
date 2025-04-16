@@ -80,11 +80,8 @@ set_property IOSTANDARD LVCMOS33 [get_ports {din[6]}]
 set_property PACKAGE_PIN H4 [get_ports {din[7]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {din[7]}]
 
-## Reset buttons
-set_property -dict { PACKAGE_PIN J15   IOSTANDARD LVCMOS33 } [get_ports { reset_0 }]; #IO_L24N_T3_RS0_15 Sch=sw[0]
-
-set_property PACKAGE_PIN E7 [get_ports reset_1]
-set_property IOSTANDARD LVCMOS33 [get_ports reset_1]
+set_property PACKAGE_PIN E7 [get_ports reset]
+set_property IOSTANDARD LVCMOS33 [get_ports reset]
 
 set_property PACKAGE_PIN K1 [get_ports pwdn]
 set_property IOSTANDARD LVCMOS33 [get_ports pwdn]
