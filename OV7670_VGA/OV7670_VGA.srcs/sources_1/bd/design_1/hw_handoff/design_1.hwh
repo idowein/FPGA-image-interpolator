@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Apr 16 20:49:11 2025" VIVADOVERSION="2019.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Apr 16 22:36:53 2025" VIVADOVERSION="2019.2">
 
   <SYSTEMINFO ARCH="artix7" BOARD="digilentinc.com:nexys-a7-100t:part0:1.3" DEVICE="7a100t" NAME="design_1" PACKAGE="csg324" SPEEDGRADE="-1"/>
 
@@ -33,8 +33,8 @@
     </PORT>
     <PORT DIR="I" NAME="pclk" SIGIS="undef" SIGNAME="External_Ports_pclk">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="ovo_7670_caputre_0" PORT="pclk"/>
         <CONNECTION INSTANCE="blk_mem_gen_0" PORT="clka"/>
+        <CONNECTION INSTANCE="ovo_7670_caputre_0" PORT="pclk"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="O" NAME="sioc" SIGIS="undef" SIGNAME="ov7670_controller_0_sioc">
@@ -891,11 +891,10 @@
             <CONNECTION INSTANCE="External_Ports" PORT="clk_in1"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="locked" SIGIS="undef"/>
         <PORT CLKFREQUENCY="25174825" DIR="O" NAME="clk_vga" SIGIS="clk" SIGNAME="clk_wiz_0_clk_vga">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="vga_0" PORT="pix_clk"/>
             <CONNECTION INSTANCE="blk_mem_gen_0" PORT="clkb"/>
+            <CONNECTION INSTANCE="vga_0" PORT="pix_clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="25000000" DIR="O" NAME="clk_reg" SIGIS="clk" SIGNAME="clk_wiz_0_clk_reg">
@@ -903,6 +902,7 @@
             <CONNECTION INSTANCE="ov7670_controller_0" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="O" NAME="locked" SIGIS="undef"/>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>

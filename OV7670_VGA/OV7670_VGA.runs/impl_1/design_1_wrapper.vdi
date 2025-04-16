@@ -2,8 +2,8 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Wed Apr 16 20:52:06 2025
-# Process ID: 12200
+# Start of session at: Wed Apr 16 22:39:01 2025
+# Process ID: 27704
 # Current directory: C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.runs/impl_1
 # Command line: vivado.exe -log design_1_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source design_1_wrapper.tcl -notrace
 # Log file: C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.runs/impl_1/design_1_wrapper.vdi
@@ -24,7 +24,7 @@ INFO: [Project 1-454] Reading design checkpoint 'c:/Users/idowe/myProjects/FPGA-
 INFO: [Project 1-454] Reading design checkpoint 'c:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_ovo_7670_caputre_0_0_1/design_1_ovo_7670_caputre_0_0.dcp' for cell 'design_1_i/ovo_7670_caputre_0'
 INFO: [Project 1-454] Reading design checkpoint 'c:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_vga_0_0_1/design_1_vga_0_0.dcp' for cell 'design_1_i/vga_0'
 INFO: [Project 1-454] Reading design checkpoint 'c:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_xlconstant_0_0_1/design_1_xlconstant_0_0.dcp' for cell 'design_1_i/xlconstant_0'
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 795.070 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 796.352 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 300 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-479] Netlist was created with Vivado 2019.2
@@ -39,7 +39,7 @@ Finished Parsing XDC File [c:/Users/idowe/myProjects/FPGA-image-interpolator/OV7
 Parsing XDC File [c:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0_1/design_1_clk_wiz_0_0.xdc] for cell 'design_1_i/clk_wiz_0/inst'
 INFO: [Timing 38-35] Done setting XDC timing constraints. [c:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0_1/design_1_clk_wiz_0_0.xdc:57]
 INFO: [Timing 38-2] Deriving generated clocks [c:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0_1/design_1_clk_wiz_0_0.xdc:57]
-get_clocks: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1503.594 ; gain = 581.965
+get_clocks: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1505.305 ; gain = 582.219
 Finished Parsing XDC File [c:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0_1/design_1_clk_wiz_0_0.xdc] for cell 'design_1_i/clk_wiz_0/inst'
 Parsing XDC File [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/Nexys-A7-100T-Master.xdc]
 WARNING: [Vivado 12-584] No ports matched 'vga_red[0]'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/Nexys-A7-100T-Master.xdc:2]
@@ -126,16 +126,22 @@ Resolution: If [get_<value>] was used to populate the object, check to make sure
 WARNING: [Vivado 12-584] No ports matched 'vga_V_sync'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/Nexys-A7-100T-Master.xdc:42]
 CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/Nexys-A7-100T-Master.xdc:42]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'reset_0'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/Nexys-A7-100T-Master.xdc:86]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/Nexys-A7-100T-Master.xdc:86]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'reset_0'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/Nexys-A7-100T-Master.xdc:87]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/Nexys-A7-100T-Master.xdc:87]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 Finished Parsing XDC File [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/Nexys-A7-100T-Master.xdc]
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 CRITICAL WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'design_1_xlconstant_0_0_xlconstant' instantiated as 'design_1_i/xlconstant_0/U0' [c:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_xlconstant_0_0_1/synth/design_1_xlconstant_0_0.vhd:79]
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1503.594 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1505.305 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-21 Infos, 30 Warnings, 29 Critical Warnings and 0 Errors encountered.
+21 Infos, 32 Warnings, 31 Critical Warnings and 0 Errors encountered.
 link_design completed successfully
-link_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1503.594 ; gain = 1007.480
+link_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1505.305 ; gain = 1009.840
 Command: opt_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
@@ -149,10 +155,10 @@ INFO: [Project 1-461] DRC finished with 1 Errors, 1 Warnings
 INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
 ERROR: [Vivado_Tcl 4-78] Error(s) found during DRC. Opt_design not run.
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.497 . Memory (MB): peak = 1503.594 ; gain = 0.000
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.471 . Memory (MB): peak = 1505.305 ; gain = 0.000
 INFO: [Common 17-83] Releasing license: Implementation
-26 Infos, 31 Warnings, 29 Critical Warnings and 2 Errors encountered.
+26 Infos, 33 Warnings, 31 Critical Warnings and 2 Errors encountered.
 opt_design failed
 ERROR: [Common 17-39] 'opt_design' failed due to earlier errors.
 
-INFO: [Common 17-206] Exiting Vivado at Wed Apr 16 20:52:25 2025...
+INFO: [Common 17-206] Exiting Vivado at Wed Apr 16 22:39:19 2025...

@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
---Date        : Wed Apr 16 20:49:09 2025
+--Date        : Wed Apr 16 22:36:53 2025
 --Host        : Ido running 64-bit major release  (build 9200)
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -35,6 +35,26 @@ entity design_1 is
 end design_1;
 
 architecture STRUCTURE of design_1 is
+  component design_1_blk_mem_gen_0_0 is
+  port (
+    clka : in STD_LOGIC;
+    wea : in STD_LOGIC_VECTOR ( 0 to 0 );
+    addra : in STD_LOGIC_VECTOR ( 18 downto 0 );
+    dina : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    clkb : in STD_LOGIC;
+    addrb : in STD_LOGIC_VECTOR ( 18 downto 0 );
+    doutb : out STD_LOGIC_VECTOR ( 11 downto 0 )
+  );
+  end component design_1_blk_mem_gen_0_0;
+  component design_1_clk_wiz_0_0 is
+  port (
+    reset : in STD_LOGIC;
+    clk_in1 : in STD_LOGIC;
+    clk_vga : out STD_LOGIC;
+    clk_reg : out STD_LOGIC;
+    locked : out STD_LOGIC
+  );
+  end component design_1_clk_wiz_0_0;
   component design_1_ov7670_controller_0_0 is
   port (
     clk : in STD_LOGIC;
@@ -87,26 +107,6 @@ architecture STRUCTURE of design_1 is
     dout : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component design_1_xlconstant_0_0;
-  component design_1_blk_mem_gen_0_0 is
-  port (
-    clka : in STD_LOGIC;
-    wea : in STD_LOGIC_VECTOR ( 0 to 0 );
-    addra : in STD_LOGIC_VECTOR ( 18 downto 0 );
-    dina : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    clkb : in STD_LOGIC;
-    addrb : in STD_LOGIC_VECTOR ( 18 downto 0 );
-    doutb : out STD_LOGIC_VECTOR ( 11 downto 0 )
-  );
-  end component design_1_blk_mem_gen_0_0;
-  component design_1_clk_wiz_0_0 is
-  port (
-    reset : in STD_LOGIC;
-    clk_in1 : in STD_LOGIC;
-    locked : out STD_LOGIC;
-    clk_vga : out STD_LOGIC;
-    clk_reg : out STD_LOGIC
-  );
-  end component design_1_clk_wiz_0_0;
   signal Net1 : STD_LOGIC;
   signal blk_mem_gen_0_doutb : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal camera_h_ref_0_1 : STD_LOGIC;
