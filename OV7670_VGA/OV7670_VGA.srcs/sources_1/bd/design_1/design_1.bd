@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xA3875426E7465E1A",
+      "boundary_crc": "0x9BEF0332FBADA34F",
       "device": "xc7a100tcsg324-1",
       "name": "design_1",
       "synth_flow_mode": "Hierarchical",
@@ -14,14 +14,16 @@
       "ov7670_controller_0": "",
       "cntl_0": "",
       "ovo_7670_caputre_0": "",
-      "vga_0": "",
-      "xlconstant_0": ""
+      "vga_0": ""
     },
     "ports": {
       "clk_in1": {
         "type": "clk",
         "direction": "I",
         "parameters": {
+          "ASSOCIATED_RESET": {
+            "value": "reset_0"
+          },
           "CLK_DOMAIN": {
             "value": "design_1_clk_in1_0",
             "value_src": "default"
@@ -91,6 +93,20 @@
       },
       "cntl_in": {
         "direction": "I"
+      },
+      "resetn": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
       }
     },
     "components": {
@@ -190,6 +206,12 @@
           },
           "NUM_OUT_CLKS": {
             "value": "2"
+          },
+          "RESET_PORT": {
+            "value": "resetn"
+          },
+          "RESET_TYPE": {
+            "value": "ACTIVE_LOW"
           }
         }
       },
@@ -387,31 +409,9 @@
             "right": "0"
           }
         }
-      },
-      "xlconstant_0": {
-        "vlnv": "xilinx.com:module_ref:xlconstant:1.0",
-        "xci_name": "design_1_xlconstant_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "xlconstant",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "dout": {
-            "direction": "O",
-            "left": "0",
-            "right": "0"
-          }
-        }
       }
     },
     "nets": {
-      "xlconstant_0_dout": {
-        "ports": [
-          "xlconstant_0/dout",
-          "clk_wiz_0/reset"
-        ]
-      },
       "clk_in1_0_1": {
         "ports": [
           "clk_in1",
@@ -552,6 +552,12 @@
         "ports": [
           "cntl_in",
           "cntl_0/cntl_in"
+        ]
+      },
+      "resetn_0_1": {
+        "ports": [
+          "resetn",
+          "clk_wiz_0/resetn"
         ]
       }
     }

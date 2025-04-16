@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
---Date        : Wed Apr 16 22:36:53 2025
+--Date        : Wed Apr 16 22:46:33 2025
 --Host        : Ido running 64-bit major release  (build 9200)
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -23,6 +23,7 @@ entity design_1_wrapper is
     pwdn : out STD_LOGIC;
     resend_in : in STD_LOGIC;
     reset : out STD_LOGIC;
+    resetn : in STD_LOGIC;
     sioc : out STD_LOGIC;
     siod : inout STD_LOGIC;
     xclk : out STD_LOGIC;
@@ -46,7 +47,8 @@ architecture STRUCTURE of design_1_wrapper is
     pwdn : out STD_LOGIC;
     xclk : out STD_LOGIC;
     resend_in : in STD_LOGIC;
-    cntl_in : in STD_LOGIC
+    cntl_in : in STD_LOGIC;
+    resetn : in STD_LOGIC
   );
   end component design_1;
 begin
@@ -62,6 +64,7 @@ design_1_i: component design_1
       pwdn => pwdn,
       resend_in => resend_in,
       reset => reset,
+      resetn => resetn,
       sioc => sioc,
       siod => siod,
       xclk => xclk,

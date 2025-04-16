@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# cntl, ov7670_controller, ovo_7670_caputre, vga, xlconstant
+# cntl, ov7670_controller, ovo_7670_caputre, vga
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -168,6 +168,9 @@ proc create_root_design { parentCell } {
   set camera_h_ref [ create_bd_port -dir I camera_h_ref ]
   set camera_v_sync [ create_bd_port -dir I camera_v_sync ]
   set clk_in1 [ create_bd_port -dir I -type clk clk_in1 ]
+  set_property -dict [ list \
+   CONFIG.ASSOCIATED_RESET {reset_0} \
+ ] $clk_in1
   set cntl_in [ create_bd_port -dir I cntl_in ]
   set config_finished [ create_bd_port -dir O config_finished ]
   set din [ create_bd_port -dir I -from 7 -to 0 din ]
@@ -175,6 +178,7 @@ proc create_root_design { parentCell } {
   set pwdn [ create_bd_port -dir O pwdn ]
   set resend_in [ create_bd_port -dir I resend_in ]
   set reset [ create_bd_port -dir O -type rst reset ]
+  set resetn [ create_bd_port -dir I -type rst resetn ]
   set sioc [ create_bd_port -dir O sioc ]
   set siod [ create_bd_port -dir IO siod ]
   set xclk [ create_bd_port -dir O xclk ]
@@ -223,6 +227,8 @@ proc create_root_design { parentCell } {
    CONFIG.MMCM_CLKOUT1_DIVIDE {36} \
    CONFIG.MMCM_DIVCLK_DIVIDE {1} \
    CONFIG.NUM_OUT_CLKS {2} \
+   CONFIG.RESET_PORT {resetn} \
+   CONFIG.RESET_TYPE {ACTIVE_LOW} \
  ] $clk_wiz_0
 
   # Create instance: cntl_0, and set properties
@@ -269,17 +275,6 @@ proc create_root_design { parentCell } {
      return 1
    }
   
-  # Create instance: xlconstant_0, and set properties
-  set block_name xlconstant
-  set block_cell_name xlconstant_0
-  if { [catch {set xlconstant_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $xlconstant_0 eq "" } {
-     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-  
   # Create port connections
   connect_bd_net -net Net1 [get_bd_ports siod] [get_bd_pins ov7670_controller_0/siod]
   connect_bd_net -net blk_mem_gen_0_doutb [get_bd_pins blk_mem_gen_0/doutb] [get_bd_pins vga_0/frame_fix]
@@ -302,8 +297,8 @@ proc create_root_design { parentCell } {
   connect_bd_net -net ovo_7670_caputre_0_wr_en [get_bd_pins blk_mem_gen_0/wea] [get_bd_pins ovo_7670_caputre_0/wr_en]
   connect_bd_net -net pclk_0_1 [get_bd_ports pclk] [get_bd_pins blk_mem_gen_0/clka] [get_bd_pins ovo_7670_caputre_0/pclk]
   connect_bd_net -net resend_in_0_1 [get_bd_ports resend_in] [get_bd_pins cntl_0/resend_in]
+  connect_bd_net -net resetn_0_1 [get_bd_ports resetn] [get_bd_pins clk_wiz_0/resetn]
   connect_bd_net -net vga_0_frame_adress [get_bd_pins blk_mem_gen_0/addrb] [get_bd_pins vga_0/frame_adress]
-  connect_bd_net -net xlconstant_0_dout [get_bd_pins clk_wiz_0/reset] [get_bd_pins xlconstant_0/dout]
   connect_bd_net -net zoom_0_1 [get_bd_ports zoom] [get_bd_pins ovo_7670_caputre_0/zoom] [get_bd_pins vga_0/zoom]
 
   # Create address segments

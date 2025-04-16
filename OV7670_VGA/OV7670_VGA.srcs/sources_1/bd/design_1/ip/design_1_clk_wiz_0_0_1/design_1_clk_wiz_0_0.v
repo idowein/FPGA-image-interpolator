@@ -74,7 +74,7 @@ module design_1_clk_wiz_0_0
   output        clk_vga,
   output        clk_reg,
   // Status and control signals
-  input         reset,
+  input         resetn,
   output        locked,
  // Clock in ports
   input         clk_in1
@@ -86,7 +86,7 @@ module design_1_clk_wiz_0_0
   .clk_vga(clk_vga),
   .clk_reg(clk_reg),
   // Status and control signals               
-  .reset(reset), 
+  .resetn(resetn), 
   .locked(locked),
  // Clock in ports
   .clk_in1(clk_in1)

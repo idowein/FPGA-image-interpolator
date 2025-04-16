@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
---Date        : Wed Apr 16 22:36:53 2025
+--Date        : Wed Apr 16 22:46:33 2025
 --Host        : Ido running 64-bit major release  (build 9200)
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -23,13 +23,14 @@ entity design_1 is
     pwdn : out STD_LOGIC;
     resend_in : in STD_LOGIC;
     reset : out STD_LOGIC;
+    resetn : in STD_LOGIC;
     sioc : out STD_LOGIC;
     siod : inout STD_LOGIC;
     xclk : out STD_LOGIC;
     zoom : in STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=7,numReposBlks=7,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=5,numPkgbdBlks=0,bdsource=USER,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=6,numReposBlks=6,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=4,numPkgbdBlks=0,bdsource=USER,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of design_1 : entity is "design_1.hwdef";
 end design_1;
@@ -48,7 +49,7 @@ architecture STRUCTURE of design_1 is
   end component design_1_blk_mem_gen_0_0;
   component design_1_clk_wiz_0_0 is
   port (
-    reset : in STD_LOGIC;
+    resetn : in STD_LOGIC;
     clk_in1 : in STD_LOGIC;
     clk_vga : out STD_LOGIC;
     clk_reg : out STD_LOGIC;
@@ -102,11 +103,6 @@ architecture STRUCTURE of design_1 is
     frame_adress : out STD_LOGIC_VECTOR ( 18 downto 0 )
   );
   end component design_1_vga_0_0;
-  component design_1_xlconstant_0_0 is
-  port (
-    dout : out STD_LOGIC_VECTOR ( 0 to 0 )
-  );
-  end component design_1_xlconstant_0_0;
   signal Net1 : STD_LOGIC;
   signal blk_mem_gen_0_doutb : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal camera_h_ref_0_1 : STD_LOGIC;
@@ -128,8 +124,8 @@ architecture STRUCTURE of design_1 is
   signal ovo_7670_caputre_0_wr_en : STD_LOGIC;
   signal pclk_0_1 : STD_LOGIC;
   signal resend_in_0_1 : STD_LOGIC;
+  signal resetn_0_1 : STD_LOGIC;
   signal vga_0_frame_adress : STD_LOGIC_VECTOR ( 18 downto 0 );
-  signal xlconstant_0_dout : STD_LOGIC_VECTOR ( 0 to 0 );
   signal zoom_0_1 : STD_LOGIC;
   signal NLW_clk_wiz_0_locked_UNCONNECTED : STD_LOGIC;
   signal NLW_vga_0_VGA_H_sync_UNCONNECTED : STD_LOGIC;
@@ -140,9 +136,11 @@ architecture STRUCTURE of design_1 is
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of clk_in1 : signal is "xilinx.com:signal:clock:1.0 CLK.CLK_IN1 CLK";
   attribute X_INTERFACE_PARAMETER : string;
-  attribute X_INTERFACE_PARAMETER of clk_in1 : signal is "XIL_INTERFACENAME CLK.CLK_IN1, CLK_DOMAIN design_1_clk_in1_0, FREQ_HZ 100000000, INSERT_VIP 0, PHASE 0.000";
+  attribute X_INTERFACE_PARAMETER of clk_in1 : signal is "XIL_INTERFACENAME CLK.CLK_IN1, ASSOCIATED_RESET reset_0, CLK_DOMAIN design_1_clk_in1_0, FREQ_HZ 100000000, INSERT_VIP 0, PHASE 0.000";
   attribute X_INTERFACE_INFO of reset : signal is "xilinx.com:signal:reset:1.0 RST.RESET RST";
   attribute X_INTERFACE_PARAMETER of reset : signal is "XIL_INTERFACENAME RST.RESET, INSERT_VIP 0, POLARITY ACTIVE_LOW";
+  attribute X_INTERFACE_INFO of resetn : signal is "xilinx.com:signal:reset:1.0 RST.RESETN RST";
+  attribute X_INTERFACE_PARAMETER of resetn : signal is "XIL_INTERFACENAME RST.RESETN, INSERT_VIP 0, POLARITY ACTIVE_LOW";
 begin
   camera_h_ref_0_1 <= camera_h_ref;
   camera_v_sync_0_1 <= camera_v_sync;
@@ -154,6 +152,7 @@ begin
   pwdn <= ov7670_controller_0_pwdn;
   resend_in_0_1 <= resend_in;
   reset <= ov7670_controller_0_reset;
+  resetn_0_1 <= resetn;
   sioc <= ov7670_controller_0_sioc;
   xclk <= ov7670_controller_0_xclk;
   zoom_0_1 <= zoom;
@@ -173,7 +172,7 @@ clk_wiz_0: component design_1_clk_wiz_0_0
       clk_reg => clk_wiz_0_clk_reg,
       clk_vga => clk_wiz_0_clk_vga,
       locked => NLW_clk_wiz_0_locked_UNCONNECTED,
-      reset => xlconstant_0_dout(0)
+      resetn => resetn_0_1
     );
 cntl_0: component design_1_cntl_0_0
      port map (
@@ -217,9 +216,5 @@ vga_0: component design_1_vga_0_0
       vga_green(3 downto 0) => NLW_vga_0_vga_green_UNCONNECTED(3 downto 0),
       vga_red(3 downto 0) => NLW_vga_0_vga_red_UNCONNECTED(3 downto 0),
       zoom => zoom_0_1
-    );
-xlconstant_0: component design_1_xlconstant_0_0
-     port map (
-      dout(0) => xlconstant_0_dout(0)
     );
 end STRUCTURE;
