@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x36DB9C719CE02A4",
+      "boundary_crc": "0x2ED6AD3FE994FC3",
       "device": "xc7a100tcsg324-1",
       "name": "design_1",
       "synth_flow_mode": "Hierarchical",
@@ -62,7 +62,7 @@
       "config_finished": {
         "direction": "O"
       },
-      "reset_1": {
+      "reset": {
         "type": "rst",
         "direction": "O"
       },
@@ -274,7 +274,7 @@
             "value": "2"
           },
           "USE_LOCKED": {
-            "value": "false"
+            "value": "true"
           }
         }
       },
@@ -480,7 +480,7 @@
       "ov7670_controller_0_reset": {
         "ports": [
           "ov7670_controller_0/reset",
-          "reset_1"
+          "reset"
         ]
       },
       "Net1": {

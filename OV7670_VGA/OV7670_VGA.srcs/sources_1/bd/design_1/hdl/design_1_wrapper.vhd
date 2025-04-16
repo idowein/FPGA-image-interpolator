@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
---Date        : Wed Apr 16 20:08:38 2025
+--Date        : Wed Apr 16 20:20:15 2025
 --Host        : Ido running 64-bit major release  (build 9200)
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -23,8 +23,7 @@ entity design_1_wrapper is
     pclk : in STD_LOGIC;
     pwdn : out STD_LOGIC;
     resend_in : in STD_LOGIC;
-    reset_0 : in STD_LOGIC;
-    reset_1 : out STD_LOGIC;
+    reset : out STD_LOGIC;
     sioc : out STD_LOGIC;
     siod : inout STD_LOGIC;
     vga_V_sync : out STD_LOGIC;
@@ -44,7 +43,6 @@ architecture STRUCTURE of design_1_wrapper is
     camera_h_ref : in STD_LOGIC;
     din : in STD_LOGIC_VECTOR ( 7 downto 0 );
     clk_in1 : in STD_LOGIC;
-    reset_0 : in STD_LOGIC;
     vga_blue : out STD_LOGIC_VECTOR ( 3 downto 0 );
     vga_red : out STD_LOGIC_VECTOR ( 3 downto 0 );
     vga_V_sync : out STD_LOGIC;
@@ -52,7 +50,7 @@ architecture STRUCTURE of design_1_wrapper is
     vga_green : out STD_LOGIC_VECTOR ( 3 downto 0 );
     sioc : out STD_LOGIC;
     config_finished : out STD_LOGIC;
-    reset_1 : out STD_LOGIC;
+    reset : out STD_LOGIC;
     siod : inout STD_LOGIC;
     pwdn : out STD_LOGIC;
     xclk : out STD_LOGIC;
@@ -74,8 +72,7 @@ design_1_i: component design_1
       pclk => pclk,
       pwdn => pwdn,
       resend_in => resend_in,
-      reset_0 => reset_0,
-      reset_1 => reset_1,
+      reset => reset,
       sioc => sioc,
       siod => siod,
       vga_V_sync => vga_V_sync,
