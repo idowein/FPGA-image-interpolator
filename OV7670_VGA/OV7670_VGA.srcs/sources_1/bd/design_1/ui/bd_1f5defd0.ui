@@ -1,7 +1,7 @@
 {
    "ActiveEmotionalView":"Default View",
    "Default View_ScaleFactor":"1.0",
-   "Default View_TopLeft":"-172,50",
+   "Default View_TopLeft":"-172,145",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0.21  2019-05-29 bk=1.5064 VDI=41 GEI=36 GUI=JA:9.0 non-TLS
 #  -string -flagsOSRD
@@ -10,6 +10,7 @@ preplace port camera_v_sync -pg 1 -lvl 0 -x 0 -y 100 -defaultsOSRD
 preplace port camera_h_ref -pg 1 -lvl 0 -x 0 -y 120 -defaultsOSRD
 preplace port zoom -pg 1 -lvl 0 -x 0 -y 140 -defaultsOSRD
 preplace port clk_in1 -pg 1 -lvl 0 -x 0 -y 380 -defaultsOSRD
+preplace port reset_0 -pg 1 -lvl 0 -x 0 -y 360 -defaultsOSRD
 preplace port vga_V_sync -pg 1 -lvl 4 -x 860 -y 500 -defaultsOSRD
 preplace port VGA_H_sync -pg 1 -lvl 4 -x 860 -y 280 -defaultsOSRD
 preplace port resend -pg 1 -lvl 0 -x 0 -y 520 -defaultsOSRD
@@ -19,7 +20,6 @@ preplace port reset_1 -pg 1 -lvl 4 -x 860 -y 400 -defaultsOSRD
 preplace port siod -pg 1 -lvl 4 -x 860 -y 380 -defaultsOSRD
 preplace port pwdn -pg 1 -lvl 4 -x 860 -y 420 -defaultsOSRD
 preplace port xclk -pg 1 -lvl 4 -x 860 -y 440 -defaultsOSRD
-preplace port reset_0 -pg 1 -lvl 0 -x 0 -y 360 -defaultsOSRD
 preplace portBus din -pg 1 -lvl 0 -x 0 -y 160 -defaultsOSRD
 preplace portBus vga_blue -pg 1 -lvl 4 -x 860 -y 540 -defaultsOSRD
 preplace portBus vga_red -pg 1 -lvl 4 -x 860 -y 580 -defaultsOSRD

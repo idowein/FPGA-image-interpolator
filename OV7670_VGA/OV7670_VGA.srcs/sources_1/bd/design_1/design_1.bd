@@ -239,16 +239,19 @@
         "xci_name": "design_1_clk_wiz_0_0",
         "parameters": {
           "CLKOUT1_JITTER": {
-            "value": "151.636"
+            "value": "183.215"
+          },
+          "CLKOUT1_PHASE_ERROR": {
+            "value": "105.461"
           },
           "CLKOUT1_REQUESTED_OUT_FREQ": {
-            "value": "50"
+            "value": "25.175"
           },
           "CLKOUT2_JITTER": {
-            "value": "175.402"
+            "value": "183.467"
           },
           "CLKOUT2_PHASE_ERROR": {
-            "value": "98.575"
+            "value": "105.461"
           },
           "CLKOUT2_REQUESTED_OUT_FREQ": {
             "value": "25"
@@ -262,11 +265,14 @@
           "CLK_OUT2_PORT": {
             "value": "clk_reg"
           },
+          "MMCM_CLKFBOUT_MULT_F": {
+            "value": "9.000"
+          },
           "MMCM_CLKOUT0_DIVIDE_F": {
-            "value": "20.000"
+            "value": "35.750"
           },
           "MMCM_CLKOUT1_DIVIDE": {
-            "value": "40"
+            "value": "36"
           },
           "NUM_OUT_CLKS": {
             "value": "2"
