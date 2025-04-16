@@ -1,11 +1,3 @@
-
-## Josh Olvik
-## Pin assignment
-## Revison A
-# Clock signal
-
-
-
 ##VGA Connector
 set_property PACKAGE_PIN A3 [get_ports {vga_red[0]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {vga_red[0]}]
@@ -49,17 +41,10 @@ set_property IOSTANDARD LVCMOS33 [get_ports VGA_H_sync]
 set_property PACKAGE_PIN B12 [get_ports vga_V_sync]
 set_property IOSTANDARD LVCMOS33 [get_ports vga_V_sync]
 
-
-
 set_property PACKAGE_PIN H17 [get_ports config_finished]
 set_property IOSTANDARD LVCMOS33 [get_ports config_finished]
 
 ##Buttons
-#set_property PACKAGE_PIN V10 [get_ports resend_in]
-#set_property IOSTANDARD LVCMOS33 [get_ports resend_in]
-
-#set_property PACKAGE_PIN U11 [get_ports cntl_in]
-#set_property IOSTANDARD LVCMOS33 [get_ports cntl_in]
 
 set_property PACKAGE_PIN U12 [get_ports zoom]
 set_property IOSTANDARD LVCMOS33 [get_ports zoom]
@@ -69,66 +54,52 @@ set_property IOSTANDARD LVCMOS33 [get_ports zoom]
 
 set_property PACKAGE_PIN G4 [get_ports pclk]
 set_property IOSTANDARD LVCMOS33 [get_ports pclk]
+
 set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets pclk]
-
-
 set_property PACKAGE_PIN G2 [get_ports camera_v_sync]
+
 set_property IOSTANDARD LVCMOS33 [get_ports camera_v_sync]
-
-
 set_property PACKAGE_PIN F3 [get_ports sioc]
+
 set_property IOSTANDARD LVCMOS33 [get_ports sioc]
 set_property PULLUP true [get_ports sioc]
-
 
 set_property PACKAGE_PIN H1 [get_ports xclk]
 set_property IOSTANDARD LVCMOS33 [get_ports xclk]
 
-
 set_property PACKAGE_PIN G1 [get_ports camera_h_ref]
 set_property IOSTANDARD LVCMOS33 [get_ports camera_h_ref]
-
 
 set_property PACKAGE_PIN G3 [get_ports siod]
 set_property IOSTANDARD LVCMOS33 [get_ports siod]
 set_property PULLUP true [get_ports siod]
 
-
 set_property PACKAGE_PIN H2 [get_ports {din[6]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {din[6]}]
-
 
 set_property PACKAGE_PIN H4 [get_ports {din[7]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {din[7]}]
 
+## Reset buttons
+set_property -dict { PACKAGE_PIN J15   IOSTANDARD LVCMOS33 } [get_ports { reset_0 }]; #IO_L24N_T3_RS0_15 Sch=sw[0]
 
-
-
-
-set_property PACKAGE_PIN E7 [get_ports reset]
-set_property IOSTANDARD LVCMOS33 [get_ports reset]
-
+set_property PACKAGE_PIN E7 [get_ports reset_1]
+set_property IOSTANDARD LVCMOS33 [get_ports reset_1]
 
 set_property PACKAGE_PIN K1 [get_ports pwdn]
 set_property IOSTANDARD LVCMOS33 [get_ports pwdn]
 
-
 set_property PACKAGE_PIN F6 [get_ports {din[0]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {din[0]}]
-
 
 set_property PACKAGE_PIN J2 [get_ports {din[2]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {din[2]}]
 
-
 set_property PACKAGE_PIN G6 [get_ports {din[4]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {din[4]}]
 
-
-
 set_property PACKAGE_PIN J3 [get_ports {din[1]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {din[1]}]
-
 
 set_property PACKAGE_PIN J4 [get_ports {din[3]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {din[3]}]

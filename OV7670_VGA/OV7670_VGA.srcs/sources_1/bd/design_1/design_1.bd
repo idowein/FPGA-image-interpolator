@@ -1,11 +1,12 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x0",
+      "boundary_crc": "0x52AE16B460C75B36",
       "device": "xc7a100tcsg324-1",
       "name": "design_1",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2019.2"
+      "tool_version": "2019.2",
+      "validated": "true"
     },
     "design_tree": {
       "ovo_7670_caputre_0": "",
@@ -15,77 +16,109 @@
       "ov7670_controller_0": ""
     },
     "ports": {
-      "pclk_0": {
+      "pclk": {
         "direction": "I"
       },
-      "camera_v_sync_0": {
+      "camera_v_sync": {
         "direction": "I"
       },
-      "camera_h_ref_0": {
+      "camera_h_ref": {
         "direction": "I"
       },
-      "zoom_0": {
+      "zoom": {
         "direction": "I"
       },
-      "din_0": {
+      "din": {
         "direction": "I",
         "left": "7",
         "right": "0"
       },
-      "clk_in1_0": {
+      "clk_in1": {
         "type": "clk",
-        "direction": "I"
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "design_1_clk_in1_0",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
       },
-      "reset_0": {
+      "reset": {
         "type": "rst",
         "direction": "I",
         "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
           "POLARITY": {
             "value": "ACTIVE_HIGH"
           }
         }
       },
-      "vga_blue_0": {
+      "vga_blue": {
         "direction": "O",
         "left": "3",
         "right": "0"
       },
-      "vga_red_0": {
+      "vga_red": {
         "direction": "O",
         "left": "3",
         "right": "0"
       },
-      "vga_V_sync_0": {
+      "vga_V_sync": {
         "direction": "O"
       },
-      "VGA_H_sync_0": {
+      "VGA_H_sync": {
         "direction": "O"
       },
-      "vga_green_0": {
+      "vga_green": {
         "direction": "O",
         "left": "3",
         "right": "0"
       },
-      "resend_0": {
+      "resend": {
         "direction": "I"
       },
-      "sioc_0": {
+      "sioc": {
         "direction": "O"
       },
-      "config_finished_0": {
+      "config_finished": {
         "direction": "O"
       },
       "reset_1": {
         "type": "rst",
-        "direction": "O"
+        "direction": "O",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
       },
-      "siod_0": {
+      "siod": {
         "direction": "IO"
       },
-      "pwdn_0": {
+      "pwdn": {
         "direction": "O"
       },
-      "xclk_0": {
+      "xclk": {
         "direction": "O"
       }
     },
@@ -142,7 +175,21 @@
         "ports": {
           "pix_clk": {
             "type": "clk",
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
+              },
+              "FREQ_HZ": {
+                "value": "50000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              }
+            }
           },
           "cntl": {
             "direction": "I"
@@ -287,7 +334,25 @@
         "ports": {
           "clk": {
             "type": "clk",
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
+              },
+              "FREQ_HZ": {
+                "value": "25000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              }
+            }
           },
           "resend": {
             "direction": "I"
@@ -317,76 +382,76 @@
     "nets": {
       "pclk_0_1": {
         "ports": [
-          "pclk_0",
+          "pclk",
           "ovo_7670_caputre_0/pclk",
           "frame_buffer/clka"
         ]
       },
       "camera_v_sync_0_1": {
         "ports": [
-          "camera_v_sync_0",
+          "camera_v_sync",
           "ovo_7670_caputre_0/camera_v_sync"
         ]
       },
       "camera_h_ref_0_1": {
         "ports": [
-          "camera_h_ref_0",
+          "camera_h_ref",
           "ovo_7670_caputre_0/camera_h_ref"
         ]
       },
       "zoom_0_1": {
         "ports": [
-          "zoom_0",
+          "zoom",
           "ovo_7670_caputre_0/zoom",
           "vga_0/zoom"
         ]
       },
       "din_0_1": {
         "ports": [
-          "din_0",
+          "din",
           "ovo_7670_caputre_0/din"
         ]
       },
       "clk_in1_0_1": {
         "ports": [
-          "clk_in1_0",
+          "clk_in1",
           "clk_wiz_0/clk_in1"
         ]
       },
       "reset_0_1": {
         "ports": [
-          "reset_0",
+          "reset",
           "clk_wiz_0/reset"
         ]
       },
       "vga_0_vga_blue": {
         "ports": [
           "vga_0/vga_blue",
-          "vga_blue_0"
+          "vga_blue"
         ]
       },
       "vga_0_vga_red": {
         "ports": [
           "vga_0/vga_red",
-          "vga_red_0"
+          "vga_red"
         ]
       },
       "vga_0_vga_V_sync": {
         "ports": [
           "vga_0/vga_V_sync",
-          "vga_V_sync_0"
+          "vga_V_sync"
         ]
       },
       "vga_0_VGA_H_sync": {
         "ports": [
           "vga_0/VGA_H_sync",
-          "VGA_H_sync_0"
+          "VGA_H_sync"
         ]
       },
       "vga_0_vga_green": {
         "ports": [
           "vga_0/vga_green",
-          "vga_green_0"
+          "vga_green"
         ]
       },
       "vga_0_frame_adress": {
@@ -410,7 +475,7 @@
       },
       "resend_0_1": {
         "ports": [
-          "resend_0",
+          "resend",
           "ov7670_controller_0/resend",
           "vga_0/cntl"
         ]
@@ -442,13 +507,13 @@
       "ov7670_controller_0_sioc": {
         "ports": [
           "ov7670_controller_0/sioc",
-          "sioc_0"
+          "sioc"
         ]
       },
       "ov7670_controller_0_config_finished": {
         "ports": [
           "ov7670_controller_0/config_finished",
-          "config_finished_0"
+          "config_finished"
         ]
       },
       "ov7670_controller_0_reset": {
@@ -459,20 +524,20 @@
       },
       "Net1": {
         "ports": [
-          "siod_0",
+          "siod",
           "ov7670_controller_0/siod"
         ]
       },
       "ov7670_controller_0_pwdn": {
         "ports": [
           "ov7670_controller_0/pwdn",
-          "pwdn_0"
+          "pwdn"
         ]
       },
       "ov7670_controller_0_xclk": {
         "ports": [
           "ov7670_controller_0/xclk",
-          "xclk_0"
+          "xclk"
         ]
       }
     }
