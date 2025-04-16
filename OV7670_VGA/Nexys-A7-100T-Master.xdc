@@ -108,20 +108,6 @@ set_property IOSTANDARD LVCMOS33 [get_ports {din[3]}]
 set_property PACKAGE_PIN E6 [get_ports {din[5]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {din[5]}]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_property IOSTANDARD LVCMOS33 [get_ports clk_in1]
 set_property PACKAGE_PIN E3 [get_ports clk_in1]
 

@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x52AE16B460C75B36",
+      "boundary_crc": "0x9BEBF596C5BCA6C5",
       "device": "xc7a100tcsg324-1",
       "name": "design_1",
       "synth_flow_mode": "Hierarchical",
@@ -12,7 +12,8 @@
       "vga_0": "",
       "frame_buffer": "",
       "clk_wiz_0": "",
-      "ov7670_controller_0": ""
+      "ov7670_controller_0": "",
+      "cntl_0": ""
     },
     "ports": {
       "pclk": {
@@ -22,9 +23,6 @@
         "direction": "I"
       },
       "camera_h_ref": {
-        "direction": "I"
-      },
-      "zoom": {
         "direction": "I"
       },
       "din": {
@@ -66,9 +64,6 @@
         "left": "3",
         "right": "0"
       },
-      "resend": {
-        "direction": "I"
-      },
       "sioc": {
         "direction": "O"
       },
@@ -87,6 +82,15 @@
       },
       "xclk": {
         "direction": "O"
+      },
+      "resend_in": {
+        "direction": "I"
+      },
+      "cntl_in": {
+        "direction": "I"
+      },
+      "zoom": {
+        "direction": "I"
       }
     },
     "components": {
@@ -318,6 +322,33 @@
             "direction": "O"
           }
         }
+      },
+      "cntl_0": {
+        "vlnv": "xilinx.com:module_ref:cntl:1.0",
+        "xci_name": "design_1_cntl_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "cntl",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "resend_in": {
+            "direction": "I"
+          },
+          "cntl_in": {
+            "direction": "I"
+          },
+          "resend_out": {
+            "direction": "O"
+          },
+          "cntl_out": {
+            "direction": "O"
+          }
+        }
       }
     },
     "nets": {
@@ -340,13 +371,6 @@
           "ovo_7670_caputre_0/camera_h_ref"
         ]
       },
-      "zoom_0_1": {
-        "ports": [
-          "zoom",
-          "ovo_7670_caputre_0/zoom",
-          "vga_0/zoom"
-        ]
-      },
       "din_0_1": {
         "ports": [
           "din",
@@ -356,7 +380,8 @@
       "clk_in1_0_1": {
         "ports": [
           "clk_in1",
-          "clk_wiz_0/clk_in1"
+          "clk_wiz_0/clk_in1",
+          "cntl_0/clk"
         ]
       },
       "reset_0_1": {
@@ -412,13 +437,6 @@
         "ports": [
           "clk_wiz_0/clk_reg",
           "ov7670_controller_0/clk"
-        ]
-      },
-      "resend_0_1": {
-        "ports": [
-          "resend",
-          "ov7670_controller_0/resend",
-          "vga_0/cntl"
         ]
       },
       "frame_buffer_doutb": {
@@ -479,6 +497,37 @@
         "ports": [
           "ov7670_controller_0/xclk",
           "xclk"
+        ]
+      },
+      "resend_in_0_1": {
+        "ports": [
+          "resend_in",
+          "cntl_0/resend_in"
+        ]
+      },
+      "cntl_in_0_1": {
+        "ports": [
+          "cntl_in",
+          "cntl_0/cntl_in"
+        ]
+      },
+      "cntl_0_resend_out": {
+        "ports": [
+          "cntl_0/resend_out",
+          "ov7670_controller_0/resend"
+        ]
+      },
+      "zoom_0_1": {
+        "ports": [
+          "zoom",
+          "ovo_7670_caputre_0/zoom",
+          "vga_0/zoom"
+        ]
+      },
+      "cntl_0_cntl_out": {
+        "ports": [
+          "cntl_0/cntl_out",
+          "vga_0/cntl"
         ]
       }
     }

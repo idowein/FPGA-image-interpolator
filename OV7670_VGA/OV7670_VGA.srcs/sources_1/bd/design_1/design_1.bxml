@@ -2,9 +2,9 @@
 <Root MajorVersion="0" MinorVersion="39">
   <CompositeFile CompositeFileTopName="design_1" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="STALE" Timestamp="1744820458"/>
-    <Generation Name="IMPLEMENTATION" State="STALE" Timestamp="1744820458"/>
-    <Generation Name="SIMULATION" State="STALE" Timestamp="1744820458"/>
+    <Generation Name="SYNTHESIS" State="STALE" Timestamp="1744822697"/>
+    <Generation Name="IMPLEMENTATION" State="STALE" Timestamp="1744822697"/>
+    <Generation Name="SIMULATION" State="STALE" Timestamp="1744822697"/>
     <Generation Name="HW_HANDOFF" State="STALE" Timestamp="1744820458"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\design_1_ovo_7670_caputre_0_0\design_1_ovo_7670_caputre_0_0.xci" Type="IP">
@@ -41,6 +41,31 @@
       </File>
       <File Name="ip\design_1_ov7670_controller_0_0\design_1_ov7670_controller_0_0.xci" Type="IP">
         <Instance HierarchyPath="ov7670_controller_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="synth\design_1.vhd" Type="VHDL">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+      </File>
+      <File Name="sim\design_1.vhd" Type="VHDL">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="design_1_ooc.xdc" Type="XDC">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="OUT_OF_CONTEXT"/>
+      </File>
+      <File Name="ip\design_1_cntl_0_0\design_1_cntl_0_0.xci" Type="IP">
+        <Instance HierarchyPath="cntl_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
