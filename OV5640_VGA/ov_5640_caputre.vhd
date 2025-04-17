@@ -35,7 +35,7 @@ use IEEE.NUMERIC_STD.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity ovo_5640_caputre is
+entity ov_5640_caputre is
     Port ( pclk  : in   STD_LOGIC;
            camera_v_sync : in   STD_LOGIC;
            camera_h_ref  : in   STD_LOGIC;
@@ -44,9 +44,9 @@ entity ovo_5640_caputre is
            addr  : out  STD_LOGIC_VECTOR (18 downto 0);
            dout  : out  STD_LOGIC_VECTOR (11 downto 0);
            wr_en    : out  STD_LOGIC);
-end ovo_5640_caputre;
+end ov_5640_caputre;
 
-architecture Behavioral of ovo_5640_caputre is
+architecture Behavioral of ov_5640_caputre is
 
 	signal  address : STD_LOGIC_VECTOR (18 downto 0):= (others =>'0');
 	signal  address_next :STD_LOGIC_VECTOR (18 downto 0):= (others =>'0');

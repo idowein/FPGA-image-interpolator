@@ -21,6 +21,7 @@ entity ov5640_controller is
 end ov5640_controller;
 
 architecture Behavioral of ov5640_controller is
+
 	COMPONENT ov5640_registers
 	PORT(
 		clk      : IN std_logic;
@@ -70,7 +71,7 @@ begin
 	pwdn  <= '0'; 						-- Power device up
 	xclk  <= sys_clk;
 	
-	Inst_ov7670_registers: ov7670_registers PORT MAP(
+	Inst_ov5640_registers: ov5640_registers PORT MAP(
 		clk      => clk,
 		advance  => taken,
 		command  => command,
