@@ -39,11 +39,11 @@ set_property IOSTANDARD LVCMOS33 [get_ports {vga_green[2]}]
 set_property PACKAGE_PIN A6 [get_ports {vga_green[3]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {vga_green[3]}]
 
-set_property PACKAGE_PIN B11 [get_ports VGA_H_sync]
-set_property IOSTANDARD LVCMOS33 [get_ports VGA_H_sync]
+set_property PACKAGE_PIN B11 [get_ports vga_h_sync]
+set_property IOSTANDARD LVCMOS33 [get_ports vga_h_sync]
 
-set_property PACKAGE_PIN B12 [get_ports vga_V_sync]
-set_property IOSTANDARD LVCMOS33 [get_ports vga_V_sync]
+set_property PACKAGE_PIN B12 [get_ports vga_v_sync]
+set_property IOSTANDARD LVCMOS33 [get_ports vga_v_sync]
 
 ## Configuration Finished Signal
 set_property PACKAGE_PIN H17 [get_ports config_finished]
