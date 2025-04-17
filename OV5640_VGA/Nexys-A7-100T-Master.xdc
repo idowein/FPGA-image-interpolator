@@ -59,10 +59,10 @@ set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets pclk]
 set_property PACKAGE_PIN G2 [get_ports camera_v_sync]
 
 set_property IOSTANDARD LVCMOS33 [get_ports camera_v_sync]
-set_property PACKAGE_PIN F3 [get_ports sioc]
+set_property PACKAGE_PIN F3 [get_ports scl]
 
-set_property IOSTANDARD LVCMOS33 [get_ports sioc]
-set_property PULLUP true [get_ports sioc]
+set_property IOSTANDARD LVCMOS33 [get_ports scl]
+set_property PULLUP true [get_ports scl]
 
 set_property PACKAGE_PIN H1 [get_ports xclk]
 set_property IOSTANDARD LVCMOS33 [get_ports xclk]
@@ -70,9 +70,9 @@ set_property IOSTANDARD LVCMOS33 [get_ports xclk]
 set_property PACKAGE_PIN G1 [get_ports camera_h_ref]
 set_property IOSTANDARD LVCMOS33 [get_ports camera_h_ref]
 
-set_property PACKAGE_PIN G3 [get_ports siod]
-set_property IOSTANDARD LVCMOS33 [get_ports siod]
-set_property PULLUP true [get_ports siod]
+set_property PACKAGE_PIN G3 [get_ports sda]
+set_property IOSTANDARD LVCMOS33 [get_ports sda]
+set_property PULLUP true [get_ports sda]
 
 set_property PACKAGE_PIN H2 [get_ports {din[6]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {din[6]}]
