@@ -66,25 +66,14 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 1
-  create_project -in_memory -part xc7a100tcsg324-1
-  set_property board_part digilentinc.com:nexys-a7-100t:part0:1.3 [current_project]
-  set_property design_mode GateLvl [current_fileset]
-  set_param project.singleFileAddWarning.threshold 0
+  set_param xicom.use_bs_reader 1
+  reset_param project.defaultXPMLibraries 
+  open_checkpoint C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.runs/impl_1/design_1_wrapper.dcp
   set_property webtalk.parent_dir C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.cache/wt [current_project]
   set_property parent.project_path C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.xpr [current_project]
   set_property ip_output_repo C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
-  add_files -quiet C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.runs/synth_1/design_1_wrapper.dcp
-  set_msg_config -source 4 -id {BD 41-1661} -limit 0
-  set_param project.isImplRun true
-  add_files C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.srcs/sources_1/bd/design_1/design_1.bd
-  set_param project.isImplRun false
-  read_xdc C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/Nexys-A7-100T-Master.xdc
-  set_param project.isImplRun true
-  link_design -top design_1_wrapper -part xc7a100tcsg324-1
-  set_param project.isImplRun false
-  write_hwdef -force -file design_1_wrapper.hwdef
   close_msg_db -file init_design.pb
 } RESULT]
 if {$rc} {
