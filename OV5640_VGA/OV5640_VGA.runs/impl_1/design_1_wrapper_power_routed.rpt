@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date             : Thu Apr 17 19:59:07 2025
+| Date             : Thu Apr 17 21:42:32 2025
 | Host             : Ido running 64-bit major release  (build 9200)
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.233        |
+| Total On-Chip Power (W)  | 0.227        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.124        |
-| Device Static (W)        | 0.110        |
+| Dynamic (W)              | 0.125        |
+| Device Static (W)        | 0.102        |
 | Effective TJA (C/W)      | 4.6          |
-| Max Ambient (C)          | 83.9         |
-| Junction Temperature (C) | 26.1         |
+| Max Ambient (C)          | 84.0         |
+| Junction Temperature (C) | 26.0         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -54,18 +54,18 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.003 |        6 |       --- |             --- |
 | Slice Logic    |     0.002 |     1475 |       --- |             --- |
-|   LUT as Logic |     0.002 |      574 |     63400 |            0.91 |
+|   LUT as Logic |     0.002 |      569 |     63400 |            0.90 |
 |   CARRY4       |    <0.001 |       57 |     15850 |            0.36 |
 |   Register     |    <0.001 |      302 |    126800 |            0.24 |
 |   F7/F8 Muxes  |    <0.001 |      129 |     63400 |            0.20 |
 |   BUFG         |    <0.001 |        1 |        32 |            3.13 |
 |   Others       |     0.000 |      212 |       --- |             --- |
-| Signals        |     0.007 |     1443 |       --- |             --- |
+| Signals        |     0.007 |     1440 |       --- |             --- |
 | Block RAM      |     0.001 |      104 |       135 |           77.04 |
 | MMCM           |     0.098 |        1 |         6 |           16.67 |
-| I/O            |     0.013 |       36 |       210 |           17.14 |
-| Static Power   |     0.110 |          |           |                 |
-| Total          |     0.233 |          |           |                 |
+| I/O            |     0.014 |       36 |       210 |           17.14 |
+| Static Power   |     0.102 |          |           |                 |
+| Total          |     0.227 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -79,7 +79,7 @@ Table of Contents
 | Vccaux    |       1.800 |     0.073 |       0.055 |      0.018 |
 | Vcco33    |       3.300 |     0.008 |       0.004 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
-| Vcco18    |       1.800 |     0.004 |       0.000 |      0.004 |
+| Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
@@ -147,7 +147,7 @@ Table of Contents
 +-----------------------+-----------+
 | Name                  | Power (W) |
 +-----------------------+-----------+
-| design_1_wrapper      |     0.124 |
+| design_1_wrapper      |     0.125 |
 |   design_1_i          |     0.111 |
 |     clk_wiz_0         |     0.099 |
 |       inst            |     0.099 |

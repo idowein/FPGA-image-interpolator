@@ -2,8 +2,8 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Thu Apr 17 19:57:35 2025
-# Process ID: 6136
+# Start of session at: Thu Apr 17 21:40:58 2025
+# Process ID: 25928
 # Current directory: C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.runs/synth_1
 # Command line: vivado.exe -log design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
 # Log file: C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.runs/synth_1/design_1_wrapper.vds
@@ -19,29 +19,29 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 7608 
+INFO: Helper process launched with PID 15888 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1009.582 ; gain = 234.219
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1009.438 ; gain = 234.578
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'design_1_wrapper' [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:39]
 INFO: [Synth 8-3491] module 'design_1' declared at 'C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.srcs/sources_1/bd/design_1/synth/design_1.vhd:14' bound to instance 'design_1_i' of component 'design_1' [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:65]
 INFO: [Synth 8-638] synthesizing module 'design_1' [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.srcs/sources_1/bd/design_1/synth/design_1.vhd:43]
-INFO: [Synth 8-3491] module 'design_1_clk_wiz_0_0' declared at 'C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.runs/synth_1/.Xil/Vivado-6136-Ido/realtime/design_1_clk_wiz_0_0_stub.vhdl:5' bound to instance 'clk_wiz_0' of component 'design_1_clk_wiz_0_0' [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.srcs/sources_1/bd/design_1/synth/design_1.vhd:169]
-INFO: [Synth 8-638] synthesizing module 'design_1_clk_wiz_0_0' [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.runs/synth_1/.Xil/Vivado-6136-Ido/realtime/design_1_clk_wiz_0_0_stub.vhdl:16]
-INFO: [Synth 8-3491] module 'design_1_cntl_0_0' declared at 'C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.runs/synth_1/.Xil/Vivado-6136-Ido/realtime/design_1_cntl_0_0_stub.vhdl:5' bound to instance 'cntl_0' of component 'design_1_cntl_0_0' [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.srcs/sources_1/bd/design_1/synth/design_1.vhd:177]
-INFO: [Synth 8-638] synthesizing module 'design_1_cntl_0_0' [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.runs/synth_1/.Xil/Vivado-6136-Ido/realtime/design_1_cntl_0_0_stub.vhdl:16]
-INFO: [Synth 8-3491] module 'design_1_blk_mem_gen_0_0' declared at 'C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.runs/synth_1/.Xil/Vivado-6136-Ido/realtime/design_1_blk_mem_gen_0_0_stub.vhdl:5' bound to instance 'frame_buffer' of component 'design_1_blk_mem_gen_0_0' [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.srcs/sources_1/bd/design_1/synth/design_1.vhd:185]
-INFO: [Synth 8-638] synthesizing module 'design_1_blk_mem_gen_0_0' [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.runs/synth_1/.Xil/Vivado-6136-Ido/realtime/design_1_blk_mem_gen_0_0_stub.vhdl:18]
-INFO: [Synth 8-3491] module 'design_1_ov5640_controller_0_0' declared at 'C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.runs/synth_1/.Xil/Vivado-6136-Ido/realtime/design_1_ov5640_controller_0_0_stub.vhdl:5' bound to instance 'ov5640_controller_0' of component 'design_1_ov5640_controller_0_0' [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.srcs/sources_1/bd/design_1/synth/design_1.vhd:195]
-INFO: [Synth 8-638] synthesizing module 'design_1_ov5640_controller_0_0' [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.runs/synth_1/.Xil/Vivado-6136-Ido/realtime/design_1_ov5640_controller_0_0_stub.vhdl:19]
-INFO: [Synth 8-3491] module 'design_1_ov_5640_caputre_0_0' declared at 'C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.runs/synth_1/.Xil/Vivado-6136-Ido/realtime/design_1_ov_5640_caputre_0_0_stub.vhdl:5' bound to instance 'ov_5640_caputre_0' of component 'design_1_ov_5640_caputre_0_0' [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.srcs/sources_1/bd/design_1/synth/design_1.vhd:206]
-INFO: [Synth 8-638] synthesizing module 'design_1_ov_5640_caputre_0_0' [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.runs/synth_1/.Xil/Vivado-6136-Ido/realtime/design_1_ov_5640_caputre_0_0_stub.vhdl:19]
-INFO: [Synth 8-3491] module 'design_1_vga_0_0' declared at 'C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.runs/synth_1/.Xil/Vivado-6136-Ido/realtime/design_1_vga_0_0_stub.vhdl:5' bound to instance 'vga_0' of component 'design_1_vga_0_0' [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.srcs/sources_1/bd/design_1/synth/design_1.vhd:217]
-INFO: [Synth 8-638] synthesizing module 'design_1_vga_0_0' [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.runs/synth_1/.Xil/Vivado-6136-Ido/realtime/design_1_vga_0_0_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'design_1_clk_wiz_0_0' declared at 'C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.runs/synth_1/.Xil/Vivado-25928-Ido/realtime/design_1_clk_wiz_0_0_stub.vhdl:5' bound to instance 'clk_wiz_0' of component 'design_1_clk_wiz_0_0' [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.srcs/sources_1/bd/design_1/synth/design_1.vhd:169]
+INFO: [Synth 8-638] synthesizing module 'design_1_clk_wiz_0_0' [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.runs/synth_1/.Xil/Vivado-25928-Ido/realtime/design_1_clk_wiz_0_0_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'design_1_cntl_0_0' declared at 'C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.runs/synth_1/.Xil/Vivado-25928-Ido/realtime/design_1_cntl_0_0_stub.vhdl:5' bound to instance 'cntl_0' of component 'design_1_cntl_0_0' [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.srcs/sources_1/bd/design_1/synth/design_1.vhd:177]
+INFO: [Synth 8-638] synthesizing module 'design_1_cntl_0_0' [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.runs/synth_1/.Xil/Vivado-25928-Ido/realtime/design_1_cntl_0_0_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'design_1_blk_mem_gen_0_0' declared at 'C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.runs/synth_1/.Xil/Vivado-25928-Ido/realtime/design_1_blk_mem_gen_0_0_stub.vhdl:5' bound to instance 'frame_buffer' of component 'design_1_blk_mem_gen_0_0' [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.srcs/sources_1/bd/design_1/synth/design_1.vhd:185]
+INFO: [Synth 8-638] synthesizing module 'design_1_blk_mem_gen_0_0' [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.runs/synth_1/.Xil/Vivado-25928-Ido/realtime/design_1_blk_mem_gen_0_0_stub.vhdl:18]
+INFO: [Synth 8-3491] module 'design_1_ov5640_controller_0_0' declared at 'C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.runs/synth_1/.Xil/Vivado-25928-Ido/realtime/design_1_ov5640_controller_0_0_stub.vhdl:5' bound to instance 'ov5640_controller_0' of component 'design_1_ov5640_controller_0_0' [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.srcs/sources_1/bd/design_1/synth/design_1.vhd:195]
+INFO: [Synth 8-638] synthesizing module 'design_1_ov5640_controller_0_0' [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.runs/synth_1/.Xil/Vivado-25928-Ido/realtime/design_1_ov5640_controller_0_0_stub.vhdl:19]
+INFO: [Synth 8-3491] module 'design_1_ov_5640_caputre_0_0' declared at 'C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.runs/synth_1/.Xil/Vivado-25928-Ido/realtime/design_1_ov_5640_caputre_0_0_stub.vhdl:5' bound to instance 'ov_5640_caputre_0' of component 'design_1_ov_5640_caputre_0_0' [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.srcs/sources_1/bd/design_1/synth/design_1.vhd:206]
+INFO: [Synth 8-638] synthesizing module 'design_1_ov_5640_caputre_0_0' [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.runs/synth_1/.Xil/Vivado-25928-Ido/realtime/design_1_ov_5640_caputre_0_0_stub.vhdl:19]
+INFO: [Synth 8-3491] module 'design_1_vga_0_0' declared at 'C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.runs/synth_1/.Xil/Vivado-25928-Ido/realtime/design_1_vga_0_0_stub.vhdl:5' bound to instance 'vga_0' of component 'design_1_vga_0_0' [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.srcs/sources_1/bd/design_1/synth/design_1.vhd:217]
+INFO: [Synth 8-638] synthesizing module 'design_1_vga_0_0' [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.runs/synth_1/.Xil/Vivado-25928-Ido/realtime/design_1_vga_0_0_stub.vhdl:21]
 INFO: [Synth 8-256] done synthesizing module 'design_1' (1#1) [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.srcs/sources_1/bd/design_1/synth/design_1.vhd:43]
 INFO: [Synth 8-256] done synthesizing module 'design_1_wrapper' (2#1) [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:39]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1085.348 ; gain = 309.984
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1084.922 ; gain = 310.062
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -54,12 +54,12 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1085.348 ; gain = 309.984
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1084.922 ; gain = 310.062
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1085.348 ; gain = 309.984
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1084.922 ; gain = 310.062
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1085.348 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1084.922 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -77,36 +77,6 @@ Finished Parsing XDC File [c:/Users/idowe/myProjects/FPGA-image-interpolator/OV5
 Parsing XDC File [c:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.srcs/sources_1/bd/design_1/ip/design_1_blk_mem_gen_0_0_1/design_1_blk_mem_gen_0_0/design_1_blk_mem_gen_0_0_in_context.xdc] for cell 'design_1_i/frame_buffer'
 Finished Parsing XDC File [c:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.srcs/sources_1/bd/design_1/ip/design_1_blk_mem_gen_0_0_1/design_1_blk_mem_gen_0_0/design_1_blk_mem_gen_0_0_in_context.xdc] for cell 'design_1_i/frame_buffer'
 Parsing XDC File [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/Nexys-A7-100T-Master.xdc]
-CRITICAL WARNING: [Common 17-161] Invalid option value '#' specified for 'objects'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/Nexys-A7-100T-Master.xdc:67]
-CRITICAL WARNING: [Common 17-161] Invalid option value '#' specified for 'objects'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/Nexys-A7-100T-Master.xdc:68]
-CRITICAL WARNING: [Common 17-161] Invalid option value '#' specified for 'objects'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/Nexys-A7-100T-Master.xdc:70]
-CRITICAL WARNING: [Common 17-161] Invalid option value '#' specified for 'objects'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/Nexys-A7-100T-Master.xdc:71]
-CRITICAL WARNING: [Common 17-161] Invalid option value '#JD[3]' specified for 'objects'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/Nexys-A7-100T-Master.xdc:73]
-CRITICAL WARNING: [Common 17-161] Invalid option value '#JD[3]' specified for 'objects'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/Nexys-A7-100T-Master.xdc:74]
-CRITICAL WARNING: [Common 17-161] Invalid option value '#JD[4]' specified for 'objects'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/Nexys-A7-100T-Master.xdc:76]
-CRITICAL WARNING: [Common 17-161] Invalid option value '#JD[4]' specified for 'objects'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/Nexys-A7-100T-Master.xdc:77]
-CRITICAL WARNING: [Common 17-161] Invalid option value '#JD[7]' specified for 'objects'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/Nexys-A7-100T-Master.xdc:79]
-CRITICAL WARNING: [Common 17-161] Invalid option value '#JD[7]' specified for 'objects'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/Nexys-A7-100T-Master.xdc:80]
-CRITICAL WARNING: [Common 17-161] Invalid option value '#JD[8]' specified for 'objects'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/Nexys-A7-100T-Master.xdc:82]
-CRITICAL WARNING: [Common 17-161] Invalid option value '#JD[8]' specified for 'objects'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/Nexys-A7-100T-Master.xdc:83]
-CRITICAL WARNING: [Common 17-161] Invalid option value '#JD[9]' specified for 'objects'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/Nexys-A7-100T-Master.xdc:85]
-CRITICAL WARNING: [Common 17-161] Invalid option value '#JD[9]' specified for 'objects'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/Nexys-A7-100T-Master.xdc:86]
-CRITICAL WARNING: [Common 17-161] Invalid option value '#JD[10]' specified for 'objects'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/Nexys-A7-100T-Master.xdc:88]
-CRITICAL WARNING: [Common 17-161] Invalid option value '#JD[10]' specified for 'objects'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/Nexys-A7-100T-Master.xdc:89]
-CRITICAL WARNING: [Common 17-161] Invalid option value '#JC[1]' specified for 'objects'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/Nexys-A7-100T-Master.xdc:94]
-CRITICAL WARNING: [Common 17-161] Invalid option value '#JC[1]' specified for 'objects'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/Nexys-A7-100T-Master.xdc:95]
-CRITICAL WARNING: [Common 17-161] Invalid option value '#JC[2]' specified for 'objects'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/Nexys-A7-100T-Master.xdc:97]
-CRITICAL WARNING: [Common 17-161] Invalid option value '#JC[2]' specified for 'objects'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/Nexys-A7-100T-Master.xdc:98]
-CRITICAL WARNING: [Common 17-161] Invalid option value '#JC[3]' specified for 'objects'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/Nexys-A7-100T-Master.xdc:100]
-CRITICAL WARNING: [Common 17-161] Invalid option value '#JC[3]' specified for 'objects'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/Nexys-A7-100T-Master.xdc:101]
-CRITICAL WARNING: [Common 17-161] Invalid option value '#JC[4]' specified for 'objects'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/Nexys-A7-100T-Master.xdc:104]
-CRITICAL WARNING: [Common 17-161] Invalid option value '#JC[4]' specified for 'objects'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/Nexys-A7-100T-Master.xdc:105]
-CRITICAL WARNING: [Common 17-161] Invalid option value '#JC[7]' specified for 'objects'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/Nexys-A7-100T-Master.xdc:107]
-CRITICAL WARNING: [Common 17-161] Invalid option value '#JC[7]' specified for 'objects'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/Nexys-A7-100T-Master.xdc:108]
-CRITICAL WARNING: [Common 17-161] Invalid option value '#JC[8]' specified for 'objects'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/Nexys-A7-100T-Master.xdc:110]
-CRITICAL WARNING: [Common 17-161] Invalid option value '#JC[8]' specified for 'objects'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/Nexys-A7-100T-Master.xdc:111]
-CRITICAL WARNING: [Common 17-161] Invalid option value '#JC[9]' specified for 'objects'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/Nexys-A7-100T-Master.xdc:113]
-CRITICAL WARNING: [Common 17-161] Invalid option value '#JC[10]' specified for 'objects'. [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/Nexys-A7-100T-Master.xdc:117]
 Finished Parsing XDC File [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/Nexys-A7-100T-Master.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/Nexys-A7-100T-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/design_1_wrapper_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/design_1_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
@@ -114,21 +84,21 @@ Parsing XDC File [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/O
 Finished Parsing XDC File [C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1112.234 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1120.215 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1112.234 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1120.215 ; gain = 0.000
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'design_1_i/frame_buffer' at clock pin 'clkb' is different from the actual clock period '6.731', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1114.250 ; gain = 338.887
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1122.051 ; gain = 347.191
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1114.250 ; gain = 338.887
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1122.051 ; gain = 347.191
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -143,10 +113,10 @@ Applied set_property DONT_TOUCH = true for design_1_i/vga_0. (constraint file  a
 Applied set_property DONT_TOUCH = true for design_1_i/clk_wiz_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_1_i/frame_buffer. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1114.250 ; gain = 338.887
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1122.051 ; gain = 347.191
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1114.250 ; gain = 338.887
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1122.051 ; gain = 347.191
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -182,7 +152,7 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1114.250 ; gain = 338.887
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1122.051 ; gain = 347.191
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -194,13 +164,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1143.445 ; gain = 368.082
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1139.840 ; gain = 364.980
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1143.445 ; gain = 368.082
+Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1139.840 ; gain = 364.980
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -212,7 +182,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1153.039 ; gain = 377.676
+Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1149.938 ; gain = 375.078
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -236,13 +206,13 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1167.840 ; gain = 392.477
+Finished IO Insertion : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1165.719 ; gain = 390.859
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1167.840 ; gain = 392.477
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1165.719 ; gain = 390.859
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -261,25 +231,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1167.840 ; gain = 392.477
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1165.719 ; gain = 390.859
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1167.840 ; gain = 392.477
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1165.719 ; gain = 390.859
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1167.840 ; gain = 392.477
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1165.719 ; gain = 390.859
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1167.840 ; gain = 392.477
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1165.719 ; gain = 390.859
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -319,26 +289,26 @@ Report Instance Areas:
 |2     |  design_1_i |design_1 |    87|
 +------+-------------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1167.840 ; gain = 392.477
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1165.719 ; gain = 390.859
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 1167.840 ; gain = 363.574
-Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1167.840 ; gain = 392.477
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 1165.719 ; gain = 353.730
+Synthesis Optimization Complete : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1165.719 ; gain = 390.859
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1179.887 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1177.801 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1184.676 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1177.801 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-30 Infos, 1 Warnings, 30 Critical Warnings and 0 Errors encountered.
+30 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1184.676 ; gain = 694.996
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1184.676 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1177.801 ; gain = 687.828
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1177.801 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.runs/synth_1/design_1_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Apr 17 19:58:00 2025...
+INFO: [Common 17-206] Exiting Vivado at Thu Apr 17 21:41:24 2025...
