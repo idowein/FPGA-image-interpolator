@@ -9,9 +9,9 @@
       "validated": "true"
     },
     "design_tree": {
-      "ov7670_controller_0": "",
+      "ov5640_controller_0": "",
       "cntl_0": "",
-      "ovo_7670_caputre_0": "",
+      "ovo_5640_caputre_0": "",
       "clk_wiz_0": "",
       "frame_buffer": "",
       "vga_0": ""
@@ -128,12 +128,12 @@
       }
     },
     "components": {
-      "ov7670_controller_0": {
-        "vlnv": "xilinx.com:module_ref:ov7670_controller:1.0",
-        "xci_name": "design_1_ov7670_controller_0_0",
+      "ov5640_controller_0": {
+        "vlnv": "xilinx.com:module_ref:ov5640_controller:1.0",
+        "xci_name": "design_1_ov5640_controller_0_0",
         "reference_info": {
           "ref_type": "hdl",
-          "ref_name": "ov7670_controller",
+          "ref_name": "ov5640_controller",
           "boundary_crc": "0x0"
         },
         "ports": {
@@ -216,12 +216,12 @@
           }
         }
       },
-      "ovo_7670_caputre_0": {
-        "vlnv": "xilinx.com:module_ref:ovo_7670_caputre:1.0",
-        "xci_name": "design_1_ovo_7670_caputre_0_0",
+      "ovo_5640_caputre_0": {
+        "vlnv": "xilinx.com:module_ref:ovo_5640_caputre:1.0",
+        "xci_name": "design_1_ovo_5640_caputre_0_0",
         "reference_info": {
           "ref_type": "unknown",
-          "ref_name": "ovo_7670_caputre",
+          "ref_name": "ovo_5640_caputre",
           "boundary_crc": "0x0"
         },
         "ports": {
@@ -430,39 +430,39 @@
       }
     },
     "nets": {
-      "ov7670_controller_0_sioc": {
+      "ov5640_controller_0_sioc": {
         "ports": [
-          "ov7670_controller_0/sioc",
+          "ov5640_controller_0/sioc",
           "sioc"
         ]
       },
-      "ov7670_controller_0_config_finished": {
+      "ov5640_controller_0_config_finished": {
         "ports": [
-          "ov7670_controller_0/config_finished",
+          "ov5640_controller_0/config_finished",
           "config_finished"
         ]
       },
-      "ov7670_controller_0_reset": {
+      "ov5640_controller_0_reset": {
         "ports": [
-          "ov7670_controller_0/reset",
+          "ov5640_controller_0/reset",
           "reset"
         ]
       },
       "Net": {
         "ports": [
           "siod",
-          "ov7670_controller_0/siod"
+          "ov5640_controller_0/siod"
         ]
       },
-      "ov7670_controller_0_pwdn": {
+      "ov5640_controller_0_pwdn": {
         "ports": [
-          "ov7670_controller_0/pwdn",
+          "ov5640_controller_0/pwdn",
           "pwdn"
         ]
       },
-      "ov7670_controller_0_xclk": {
+      "ov5640_controller_0_xclk": {
         "ports": [
-          "ov7670_controller_0/xclk",
+          "ov5640_controller_0/xclk",
           "xclk"
         ]
       },
@@ -496,9 +496,9 @@
           "frame_buffer/addrb"
         ]
       },
-      "ovo_7670_caputre_0_addr": {
+      "ovo_5640_caputre_0_addr": {
         "ports": [
-          "ovo_7670_caputre_0/addr",
+          "ovo_5640_caputre_0/addr",
           "frame_buffer/addra"
         ]
       },
@@ -527,22 +527,22 @@
           "clk_wiz_0/resetn"
         ]
       },
-      "ovo_7670_caputre_0_dout": {
+      "ovo_5640_caputre_0_dout": {
         "ports": [
-          "ovo_7670_caputre_0/dout",
+          "ovo_5640_caputre_0/dout",
           "frame_buffer/dina"
         ]
       },
-      "ovo_7670_caputre_0_wr_en": {
+      "ovo_5640_caputre_0_wr_en": {
         "ports": [
-          "ovo_7670_caputre_0/wr_en",
+          "ovo_5640_caputre_0/wr_en",
           "frame_buffer/wea"
         ]
       },
       "pclk_0_1": {
         "ports": [
           "pclk",
-          "ovo_7670_caputre_0/pclk",
+          "ovo_5640_caputre_0/pclk",
           "frame_buffer/clka"
         ]
       },
@@ -562,7 +562,7 @@
       "zoom_0_1": {
         "ports": [
           "zoom",
-          "ovo_7670_caputre_0/zoom",
+          "ovo_5640_caputre_0/zoom",
           "vga_0/zoom"
         ]
       },
@@ -575,31 +575,31 @@
       "clk_wiz_0_clk_reg": {
         "ports": [
           "clk_wiz_0/clk_reg",
-          "ov7670_controller_0/clk"
+          "ov5640_controller_0/clk"
         ]
       },
       "cntl_0_resend_out": {
         "ports": [
           "cntl_0/resend_out",
-          "ov7670_controller_0/resend"
+          "ov5640_controller_0/resend"
         ]
       },
       "camera_v_sync_0_1": {
         "ports": [
           "camera_v_sync",
-          "ovo_7670_caputre_0/camera_v_sync"
+          "ovo_5640_caputre_0/camera_v_sync"
         ]
       },
       "camera_h_ref_0_1": {
         "ports": [
           "camera_h_ref",
-          "ovo_7670_caputre_0/camera_h_ref"
+          "ovo_5640_caputre_0/camera_h_ref"
         ]
       },
       "din_0_1": {
         "ports": [
           "din",
-          "ovo_7670_caputre_0/din"
+          "ovo_5640_caputre_0/din"
         ]
       },
       "vga_0_vga_H_sync": {
