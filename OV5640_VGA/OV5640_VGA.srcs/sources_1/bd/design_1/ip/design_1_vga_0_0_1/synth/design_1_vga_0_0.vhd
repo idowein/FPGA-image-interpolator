@@ -59,8 +59,8 @@ ENTITY design_1_vga_0_0 IS
     cntl : IN STD_LOGIC;
     zoom : IN STD_LOGIC;
     frame_fix : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
-    vga_H_sync : OUT STD_LOGIC;
-    vga_V_sync : OUT STD_LOGIC;
+    vga_h_sync : OUT STD_LOGIC;
+    vga_v_sync : OUT STD_LOGIC;
     vga_red : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
     vga_blue : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
     vga_green : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
@@ -77,8 +77,8 @@ ARCHITECTURE design_1_vga_0_0_arch OF design_1_vga_0_0 IS
       cntl : IN STD_LOGIC;
       zoom : IN STD_LOGIC;
       frame_fix : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
-      vga_H_sync : OUT STD_LOGIC;
-      vga_V_sync : OUT STD_LOGIC;
+      vga_h_sync : OUT STD_LOGIC;
+      vga_v_sync : OUT STD_LOGIC;
       vga_red : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
       vga_blue : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
       vga_green : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
@@ -104,8 +104,8 @@ BEGIN
       cntl => cntl,
       zoom => zoom,
       frame_fix => frame_fix,
-      vga_H_sync => vga_H_sync,
-      vga_V_sync => vga_V_sync,
+      vga_h_sync => vga_h_sync,
+      vga_v_sync => vga_v_sync,
       vga_red => vga_red,
       vga_blue => vga_blue,
       vga_green => vga_green,

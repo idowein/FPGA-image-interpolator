@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
---Date        : Thu Apr 17 18:34:28 2025
+--Date        : Thu Apr 17 19:48:30 2025
 --Host        : Ido running 64-bit major release  (build 9200)
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -26,11 +26,11 @@ entity design_1 is
     resetn : in STD_LOGIC;
     scl : out STD_LOGIC;
     sda : inout STD_LOGIC;
-    vga_H_sync : out STD_LOGIC;
-    vga_V_sync : out STD_LOGIC;
     vga_blue : out STD_LOGIC_VECTOR ( 3 downto 0 );
     vga_green : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    vga_h_sync : out STD_LOGIC;
     vga_red : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    vga_v_sync : out STD_LOGIC;
     xclk : out STD_LOGIC;
     zoom : in STD_LOGIC
   );
@@ -62,20 +62,6 @@ architecture STRUCTURE of design_1 is
     wr_en : out STD_LOGIC
   );
   end component design_1_ov_5640_caputre_0_0;
-  component design_1_vga_0_0 is
-  port (
-    pix_clk : in STD_LOGIC;
-    cntl : in STD_LOGIC;
-    zoom : in STD_LOGIC;
-    frame_fix : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    vga_H_sync : out STD_LOGIC;
-    vga_V_sync : out STD_LOGIC;
-    vga_red : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    vga_blue : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    vga_green : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    frame_adress : out STD_LOGIC_VECTOR ( 18 downto 0 )
-  );
-  end component design_1_vga_0_0;
   component design_1_clk_wiz_0_0 is
   port (
     resetn : in STD_LOGIC;
@@ -96,6 +82,20 @@ architecture STRUCTURE of design_1 is
     doutb : out STD_LOGIC_VECTOR ( 11 downto 0 )
   );
   end component design_1_blk_mem_gen_0_0;
+  component design_1_vga_0_0 is
+  port (
+    pix_clk : in STD_LOGIC;
+    cntl : in STD_LOGIC;
+    zoom : in STD_LOGIC;
+    frame_fix : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    vga_h_sync : out STD_LOGIC;
+    vga_v_sync : out STD_LOGIC;
+    vga_red : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    vga_blue : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    vga_green : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    frame_adress : out STD_LOGIC_VECTOR ( 18 downto 0 )
+  );
+  end component design_1_vga_0_0;
   component design_1_ov5640_controller_0_0 is
   port (
     clk : in STD_LOGIC;
@@ -159,11 +159,11 @@ begin
   reset <= ov5640_controller_0_reset;
   resetn_0_1 <= resetn;
   scl <= ov5640_controller_0_scl;
-  vga_H_sync <= vga_0_vga_H_sync;
-  vga_V_sync <= vga_0_vga_V_sync;
   vga_blue(3 downto 0) <= vga_0_vga_blue(3 downto 0);
   vga_green(3 downto 0) <= vga_0_vga_green(3 downto 0);
+  vga_h_sync <= vga_0_vga_H_sync;
   vga_red(3 downto 0) <= vga_0_vga_red(3 downto 0);
+  vga_v_sync <= vga_0_vga_V_sync;
   xclk <= ov5640_controller_0_xclk;
   zoom_0_1 <= zoom;
 clk_wiz_0: component design_1_clk_wiz_0_0
@@ -220,11 +220,11 @@ vga_0: component design_1_vga_0_0
       frame_adress(18 downto 0) => vga_0_frame_adress(18 downto 0),
       frame_fix(11 downto 0) => frame_buffer_doutb(11 downto 0),
       pix_clk => clk_wiz_0_clk_vga,
-      vga_H_sync => vga_0_vga_H_sync,
-      vga_V_sync => vga_0_vga_V_sync,
       vga_blue(3 downto 0) => vga_0_vga_blue(3 downto 0),
       vga_green(3 downto 0) => vga_0_vga_green(3 downto 0),
+      vga_h_sync => vga_0_vga_H_sync,
       vga_red(3 downto 0) => vga_0_vga_red(3 downto 0),
+      vga_v_sync => vga_0_vga_V_sync,
       zoom => zoom_0_1
     );
 end STRUCTURE;

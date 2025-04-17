@@ -1,7 +1,7 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
--- Date        : Thu Apr 17 17:16:46 2025
+-- Date        : Thu Apr 17 18:56:48 2025
 -- Host        : Ido running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 --               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_1_vga_0_0_sim_netlist.vhdl
@@ -16,8 +16,8 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_vga is
   port (
-    vga_H_sync : out STD_LOGIC;
-    vga_V_sync : out STD_LOGIC;
+    vga_h_sync : out STD_LOGIC;
+    vga_v_sync : out STD_LOGIC;
     vga_red : out STD_LOGIC_VECTOR ( 3 downto 0 );
     vga_blue : out STD_LOGIC_VECTOR ( 3 downto 0 );
     vga_green : out STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -4868,22 +4868,6 @@ v_sync_reg: unisim.vcomponents.FDRE
       Q => val_zoom_reg(9),
       R => clear
     );
-vga_H_sync_reg: unisim.vcomponents.FDRE
-     port map (
-      C => pix_clk,
-      CE => '1',
-      D => h_sync_d,
-      Q => vga_H_sync,
-      R => '0'
-    );
-vga_V_sync_reg: unisim.vcomponents.FDRE
-     port map (
-      C => pix_clk,
-      CE => '1',
-      D => v_sync_d,
-      Q => vga_V_sync,
-      R => '0'
-    );
 \vga_blue_reg[0]\: unisim.vcomponents.FDRE
      port map (
       C => pix_clk,
@@ -4948,6 +4932,14 @@ vga_V_sync_reg: unisim.vcomponents.FDRE
       Q => vga_green(3),
       R => '0'
     );
+vga_h_sync_reg: unisim.vcomponents.FDRE
+     port map (
+      C => pix_clk,
+      CE => '1',
+      D => h_sync_d,
+      Q => vga_h_sync,
+      R => '0'
+    );
 \vga_red_reg[0]\: unisim.vcomponents.FDRE
      port map (
       C => pix_clk,
@@ -4980,6 +4972,14 @@ vga_V_sync_reg: unisim.vcomponents.FDRE
       Q => vga_red(3),
       R => '0'
     );
+vga_v_sync_reg: unisim.vcomponents.FDRE
+     port map (
+      C => pix_clk,
+      CE => '1',
+      D => v_sync_d,
+      Q => vga_v_sync,
+      R => '0'
+    );
 end STRUCTURE;
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -4991,8 +4991,8 @@ entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
     cntl : in STD_LOGIC;
     zoom : in STD_LOGIC;
     frame_fix : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    vga_H_sync : out STD_LOGIC;
-    vga_V_sync : out STD_LOGIC;
+    vga_h_sync : out STD_LOGIC;
+    vga_v_sync : out STD_LOGIC;
     vga_red : out STD_LOGIC_VECTOR ( 3 downto 0 );
     vga_blue : out STD_LOGIC_VECTOR ( 3 downto 0 );
     vga_green : out STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -5022,11 +5022,11 @@ U0: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_vga
       frame_adress(18 downto 0) => frame_adress(18 downto 0),
       frame_fix(11 downto 0) => frame_fix(11 downto 0),
       pix_clk => pix_clk,
-      vga_H_sync => vga_H_sync,
-      vga_V_sync => vga_V_sync,
       vga_blue(3 downto 0) => vga_blue(3 downto 0),
       vga_green(3 downto 0) => vga_green(3 downto 0),
+      vga_h_sync => vga_h_sync,
       vga_red(3 downto 0) => vga_red(3 downto 0),
+      vga_v_sync => vga_v_sync,
       zoom => zoom
     );
 end STRUCTURE;

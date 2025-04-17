@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
---Date        : Thu Apr 17 18:34:28 2025
+--Date        : Thu Apr 17 19:48:30 2025
 --Host        : Ido running 64-bit major release  (build 9200)
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -26,11 +26,11 @@ entity design_1_wrapper is
     resetn : in STD_LOGIC;
     scl : out STD_LOGIC;
     sda : inout STD_LOGIC;
-    vga_H_sync : out STD_LOGIC;
-    vga_V_sync : out STD_LOGIC;
     vga_blue : out STD_LOGIC_VECTOR ( 3 downto 0 );
     vga_green : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    vga_h_sync : out STD_LOGIC;
     vga_red : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    vga_v_sync : out STD_LOGIC;
     xclk : out STD_LOGIC;
     zoom : in STD_LOGIC
   );
@@ -57,8 +57,8 @@ architecture STRUCTURE of design_1_wrapper is
     xclk : out STD_LOGIC;
     sda : inout STD_LOGIC;
     scl : out STD_LOGIC;
-    vga_H_sync : out STD_LOGIC;
-    vga_V_sync : out STD_LOGIC
+    vga_h_sync : out STD_LOGIC;
+    vga_v_sync : out STD_LOGIC
   );
   end component design_1;
 begin
@@ -77,11 +77,11 @@ design_1_i: component design_1
       resetn => resetn,
       scl => scl,
       sda => sda,
-      vga_H_sync => vga_H_sync,
-      vga_V_sync => vga_V_sync,
       vga_blue(3 downto 0) => vga_blue(3 downto 0),
       vga_green(3 downto 0) => vga_green(3 downto 0),
+      vga_h_sync => vga_h_sync,
       vga_red(3 downto 0) => vga_red(3 downto 0),
+      vga_v_sync => vga_v_sync,
       xclk => xclk,
       zoom => zoom
     );

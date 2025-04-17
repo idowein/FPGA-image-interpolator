@@ -88,7 +88,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:14965b2b</spirit:value>
+            <spirit:value>9:a7f345cc</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -99,7 +99,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:14965b2b</spirit:value>
+            <spirit:value>9:a7f345cc</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -115,11 +115,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Apr 17 14:15:36 UTC 2025</spirit:value>
+            <spirit:value>Thu Apr 17 15:56:12 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:14965b2b</spirit:value>
+            <spirit:value>9:a7f345cc</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -131,7 +131,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:13877244</spirit:value>
+            <spirit:value>9:d5ff8f3a</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -147,11 +147,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Apr 17 14:15:36 UTC 2025</spirit:value>
+            <spirit:value>Thu Apr 17 15:56:12 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:13877244</spirit:value>
+            <spirit:value>9:d5ff8f3a</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -165,11 +165,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Apr 17 14:16:46 UTC 2025</spirit:value>
+            <spirit:value>Thu Apr 17 15:56:48 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:14965b2b</spirit:value>
+            <spirit:value>9:a7f345cc</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -232,7 +232,7 @@
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>vga_H_sync</spirit:name>
+        <spirit:name>vga_h_sync</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:wireTypeDefs>
@@ -245,7 +245,7 @@
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>vga_V_sync</spirit:name>
+        <spirit:name>vga_v_sync</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:wireTypeDefs>

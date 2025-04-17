@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date                      : Thu Apr 17 18:35:44 2025
+| Date                      : Thu Apr 17 19:58:41 2025
 | Host                      : Ido running 64-bit major release  (build 9200)
 | Command                   : report_io -file design_1_wrapper_io_placed.rpt
 | Design                    : design_1_wrapper
@@ -63,8 +63,8 @@ Table of Contents
 | B8         |                 | High Range | IO_L12P_T1_MRCC_16           | User IO     |             |      16 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | B9         |                 | High Range | IO_L11N_T1_SRCC_16           | User IO     |             |      16 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | B10        |                 | High Range | VCCO_16                      | VCCO        |             |      16 |            |      |                     |                      |   any** |            |           |          |      |                  |              |                   |              |
-| B11        | vga_H_sync      | High Range | IO_L4P_T0_15                 | OUTPUT      | LVCMOS33    |      15 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
-| B12        | vga_V_sync      | High Range | IO_L3N_T0_DQS_AD1N_15        | OUTPUT      | LVCMOS33    |      15 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
+| B11        | vga_h_sync      | High Range | IO_L4P_T0_15                 | OUTPUT      | LVCMOS33    |      15 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
+| B12        | vga_v_sync      | High Range | IO_L3N_T0_DQS_AD1N_15        | OUTPUT      | LVCMOS33    |      15 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | B13        |                 | High Range | IO_L2P_T0_AD8P_15            | User IO     |             |      15 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | B14        |                 | High Range | IO_L2N_T0_AD8N_15            | User IO     |             |      15 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | B15        |                 |            | GND                          | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |

@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Thu Apr 17 18:35:44 2025
+| Date         : Thu Apr 17 19:58:41 2025
 | Host         : Ido running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file design_1_wrapper_control_sets_placed.rpt
 | Design       : design_1_wrapper
@@ -61,7 +61,7 @@ Table of Contents
 | No           | No                    | No                     |              53 |           34 |
 | No           | No                    | Yes                    |               0 |            0 |
 | No           | Yes                   | No                     |              12 |            3 |
-| Yes          | No                    | No                     |              57 |           16 |
+| Yes          | No                    | No                     |              57 |           14 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |             180 |           50 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
@@ -75,20 +75,20 @@ Table of Contents
 +------------------------------------+----------------------------------------------------------------------------+-----------------------------------------------------------------------+------------------+----------------+
 |  clk_in1_IBUF                      |                                                                            |                                                                       |                2 |              2 |
 |  design_1_i/clk_wiz_0/inst/clk_reg |                                                                            |                                                                       |                5 |              6 |
-|  design_1_i/clk_wiz_0/inst/clk_reg | design_1_i/ov5640_controller_0/U0/Inst_ov5640_registers/busy_sr_reg[31][0] |                                                                       |                3 |              8 |
-|  design_1_i/clk_wiz_0/inst/clk_reg | design_1_i/ov5640_controller_0/U0/Inst_i2c_sender/busy_sr0                 | design_1_i/ov5640_controller_0/U0/Inst_i2c_sender/data_sr[30]_i_1_n_0 |                3 |             11 |
-|  pclk_IBUF_BUFG                    | design_1_i/ov_5640_caputre_0/U0/counter_row0                               | camera_v_sync_IBUF                                                    |                4 |             11 |
+|  design_1_i/clk_wiz_0/inst/clk_reg | design_1_i/ov5640_controller_0/U0/Inst_ov5640_registers/busy_sr_reg[31][0] |                                                                       |                1 |              8 |
 |  pclk_IBUF_BUFG                    | design_1_i/ov_5640_caputre_0/U0/p_0_in_0                                   | design_1_i/ov_5640_caputre_0/U0/counter_col[10]_i_1_n_0               |                3 |             11 |
+|  pclk_IBUF_BUFG                    | design_1_i/ov_5640_caputre_0/U0/counter_row0                               | camera_v_sync_IBUF                                                    |                3 |             11 |
+|  design_1_i/clk_wiz_0/inst/clk_reg | design_1_i/ov5640_controller_0/U0/Inst_i2c_sender/busy_sr0                 | design_1_i/ov5640_controller_0/U0/Inst_i2c_sender/data_sr[30]_i_1_n_0 |                5 |             11 |
 |  design_1_i/clk_wiz_0/inst/clk_vga |                                                                            | design_1_i/vga_0/U0/eqOp21_in                                         |                3 |             12 |
-|  design_1_i/clk_wiz_0/inst/clk_vga | design_1_i/vga_0/U0/eqOp21_in                                              | design_1_i/vga_0/U0/v_cnt0                                            |                3 |             12 |
 |  design_1_i/clk_wiz_0/inst/clk_vga | design_1_i/vga_0/U0/bg_red0                                                | design_1_i/vga_0/U0/bg_red_0                                          |                6 |             12 |
-|  pclk_IBUF_BUFG                    |                                                                            |                                                                       |               10 |             14 |
-|  design_1_i/clk_wiz_0/inst/clk_reg | design_1_i/ov5640_controller_0/U0/Inst_i2c_sender/E[0]                     | design_1_i/ov5640_controller_0/U0/Inst_ov5640_registers/resd          |                4 |             16 |
-|  design_1_i/clk_wiz_0/inst/clk_vga | design_1_i/vga_0/U0/val_tmp                                                | design_1_i/vga_0/U0/clear                                             |                5 |             19 |
+|  design_1_i/clk_wiz_0/inst/clk_vga | design_1_i/vga_0/U0/eqOp21_in                                              | design_1_i/vga_0/U0/v_cnt0                                            |                3 |             12 |
+|  pclk_IBUF_BUFG                    |                                                                            |                                                                       |               11 |             14 |
+|  design_1_i/clk_wiz_0/inst/clk_reg | design_1_i/ov5640_controller_0/U0/Inst_i2c_sender/E[0]                     | design_1_i/ov5640_controller_0/U0/Inst_ov5640_registers/resd          |                3 |             16 |
 |  pclk_IBUF_BUFG                    | design_1_i/ov_5640_caputre_0/U0/address                                    | camera_v_sync_IBUF                                                    |                5 |             19 |
+|  design_1_i/clk_wiz_0/inst/clk_vga | design_1_i/vga_0/U0/val_tmp                                                | design_1_i/vga_0/U0/clear                                             |                5 |             19 |
 |  design_1_i/clk_wiz_0/inst/clk_reg | design_1_i/ov5640_controller_0/U0/Inst_i2c_sender/busy_sr0                 |                                                                       |                4 |             21 |
 |  pclk_IBUF_BUFG                    | design_1_i/ov_5640_caputre_0/U0/p_0_in1_in                                 |                                                                       |                9 |             28 |
-|  design_1_i/clk_wiz_0/inst/clk_vga |                                                                            |                                                                       |               17 |             31 |
+|  design_1_i/clk_wiz_0/inst/clk_vga |                                                                            |                                                                       |               16 |             31 |
 |  design_1_i/clk_wiz_0/inst/clk_reg | design_1_i/ov5640_controller_0/U0/Inst_i2c_sender/busy_sr0                 | design_1_i/ov5640_controller_0/U0/Inst_i2c_sender/busy_sr[31]_i_1_n_0 |                7 |             31 |
 |  design_1_i/clk_wiz_0/inst/clk_vga | design_1_i/vga_0/U0/ltOp_1                                                 | design_1_i/vga_0/U0/clear                                             |               10 |             38 |
 +------------------------------------+----------------------------------------------------------------------------+-----------------------------------------------------------------------+------------------+----------------+

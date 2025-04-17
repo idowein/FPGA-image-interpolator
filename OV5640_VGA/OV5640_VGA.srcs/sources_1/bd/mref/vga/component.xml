@@ -33,7 +33,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>6d91861a</spirit:value>
+            <spirit:value>22b1a9fa</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -46,7 +46,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>6d91861a</spirit:value>
+            <spirit:value>22b1a9fa</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -117,7 +117,7 @@
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>vga_H_sync</spirit:name>
+        <spirit:name>vga_h_sync</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:wireTypeDefs>
@@ -130,7 +130,7 @@
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>vga_V_sync</spirit:name>
+        <spirit:name>vga_v_sync</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:wireTypeDefs>
@@ -245,7 +245,7 @@
         <xilinx:designToolContext>IPI</xilinx:designToolContext>
       </xilinx:designToolContexts>
       <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2025-04-17T13:40:26Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2025-04-17T15:51:39Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2019.2</xilinx:xilinxVersion>

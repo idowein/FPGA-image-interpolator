@@ -1,10 +1,10 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Thu Apr 17 17:16:46 2025
+// Date        : Thu Apr 17 18:56:48 2025
 // Host        : Ido running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               c:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.srcs/sources_1/bd/design_1/ip/design_1_vga_0_0_1/design_1_vga_0_0_sim_netlist.v
+//               C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.srcs/sources_1/bd/design_1/ip/design_1_vga_0_0_1/design_1_vga_0_0_sim_netlist.v
 // Design      : design_1_vga_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -20,8 +20,8 @@ module design_1_vga_0_0
     cntl,
     zoom,
     frame_fix,
-    vga_H_sync,
-    vga_V_sync,
+    vga_h_sync,
+    vga_v_sync,
     vga_red,
     vga_blue,
     vga_green,
@@ -30,8 +30,8 @@ module design_1_vga_0_0
   input cntl;
   input zoom;
   input [11:0]frame_fix;
-  output vga_H_sync;
-  output vga_V_sync;
+  output vga_h_sync;
+  output vga_v_sync;
   output [3:0]vga_red;
   output [3:0]vga_blue;
   output [3:0]vga_green;
@@ -41,11 +41,11 @@ module design_1_vga_0_0
   wire [18:0]frame_adress;
   wire [11:0]frame_fix;
   wire pix_clk;
-  wire vga_H_sync;
-  wire vga_V_sync;
   wire [3:0]vga_blue;
   wire [3:0]vga_green;
+  wire vga_h_sync;
   wire [3:0]vga_red;
+  wire vga_v_sync;
   wire zoom;
 
   design_1_vga_0_0_vga U0
@@ -53,18 +53,18 @@ module design_1_vga_0_0
         .frame_adress(frame_adress),
         .frame_fix(frame_fix),
         .pix_clk(pix_clk),
-        .vga_H_sync(vga_H_sync),
-        .vga_V_sync(vga_V_sync),
         .vga_blue(vga_blue),
         .vga_green(vga_green),
+        .vga_h_sync(vga_h_sync),
         .vga_red(vga_red),
+        .vga_v_sync(vga_v_sync),
         .zoom(zoom));
 endmodule
 
 (* ORIG_REF_NAME = "vga" *) 
 module design_1_vga_0_0_vga
-   (vga_H_sync,
-    vga_V_sync,
+   (vga_h_sync,
+    vga_v_sync,
     vga_red,
     vga_blue,
     vga_green,
@@ -73,8 +73,8 @@ module design_1_vga_0_0_vga
     cntl,
     zoom,
     frame_fix);
-  output vga_H_sync;
-  output vga_V_sync;
+  output vga_h_sync;
+  output vga_v_sync;
   output [3:0]vga_red;
   output [3:0]vga_blue;
   output [3:0]vga_green;
@@ -576,11 +576,11 @@ module design_1_vga_0_0_vga
   wire \val_zoom_reg[8]_i_1_n_5 ;
   wire \val_zoom_reg[8]_i_1_n_6 ;
   wire \val_zoom_reg[8]_i_1_n_7 ;
-  wire vga_H_sync;
-  wire vga_V_sync;
   wire [3:0]vga_blue;
   wire [3:0]vga_green;
+  wire vga_h_sync;
   wire [3:0]vga_red;
+  wire vga_v_sync;
   wire zoom;
   wire [3:2]\NLW__inferred__4/i__carry__3_CO_UNCONNECTED ;
   wire [3:3]\NLW__inferred__4/i__carry__3_O_UNCONNECTED ;
@@ -3417,18 +3417,6 @@ module design_1_vga_0_0_vga
         .D(\val_zoom_reg[8]_i_1_n_6 ),
         .Q(val_zoom_reg[9]),
         .R(clear));
-  FDRE vga_H_sync_reg
-       (.C(pix_clk),
-        .CE(1'b1),
-        .D(h_sync_d),
-        .Q(vga_H_sync),
-        .R(1'b0));
-  FDRE vga_V_sync_reg
-       (.C(pix_clk),
-        .CE(1'b1),
-        .D(v_sync_d),
-        .Q(vga_V_sync),
-        .R(1'b0));
   FDRE \vga_blue_reg[0] 
        (.C(pix_clk),
         .CE(1'b1),
@@ -3477,6 +3465,12 @@ module design_1_vga_0_0_vga
         .D(bg_green_d[3]),
         .Q(vga_green[3]),
         .R(1'b0));
+  FDRE vga_h_sync_reg
+       (.C(pix_clk),
+        .CE(1'b1),
+        .D(h_sync_d),
+        .Q(vga_h_sync),
+        .R(1'b0));
   FDRE \vga_red_reg[0] 
        (.C(pix_clk),
         .CE(1'b1),
@@ -3500,6 +3494,12 @@ module design_1_vga_0_0_vga
         .CE(1'b1),
         .D(bg_red_d[3]),
         .Q(vga_red[3]),
+        .R(1'b0));
+  FDRE vga_v_sync_reg
+       (.C(pix_clk),
+        .CE(1'b1),
+        .D(v_sync_d),
+        .Q(vga_v_sync),
         .R(1'b0));
 endmodule
 `ifndef GLBL

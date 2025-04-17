@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x12C5D2B03178AB55",
+      "boundary_crc": "0xF37BAFF1D0C6D614",
       "device": "xc7a100tcsg324-1",
       "name": "design_1",
       "synth_flow_mode": "Hierarchical",
@@ -11,9 +11,9 @@
     "design_tree": {
       "cntl_0": "",
       "ov_5640_caputre_0": "",
-      "vga_0": "",
       "clk_wiz_0": "",
       "frame_buffer": "",
+      "vga_0": "",
       "ov5640_controller_0": ""
     },
     "ports": {
@@ -120,10 +120,10 @@
       "scl": {
         "direction": "O"
       },
-      "vga_H_sync": {
+      "vga_h_sync": {
         "direction": "O"
       },
-      "vga_V_sync": {
+      "vga_v_sync": {
         "direction": "O"
       }
     },
@@ -199,72 +199,6 @@
           },
           "wr_en": {
             "direction": "O"
-          }
-        }
-      },
-      "vga_0": {
-        "vlnv": "xilinx.com:module_ref:vga:1.0",
-        "xci_name": "design_1_vga_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "vga",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "pix_clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "CLK_DOMAIN": {
-                "value": "/clk_wiz_0_clk_out1",
-                "value_src": "ip_prop"
-              },
-              "FREQ_HZ": {
-                "value": "148571428",
-                "value_src": "ip_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "ip_prop"
-              }
-            }
-          },
-          "cntl": {
-            "direction": "I"
-          },
-          "zoom": {
-            "direction": "I"
-          },
-          "frame_fix": {
-            "direction": "I",
-            "left": "11",
-            "right": "0"
-          },
-          "vga_H_sync": {
-            "direction": "O"
-          },
-          "vga_V_sync": {
-            "direction": "O"
-          },
-          "vga_red": {
-            "direction": "O",
-            "left": "3",
-            "right": "0"
-          },
-          "vga_blue": {
-            "direction": "O",
-            "left": "3",
-            "right": "0"
-          },
-          "vga_green": {
-            "direction": "O",
-            "left": "3",
-            "right": "0"
-          },
-          "frame_adress": {
-            "direction": "O",
-            "left": "18",
-            "right": "0"
           }
         }
       },
@@ -370,6 +304,72 @@
           },
           "use_bram_block": {
             "value": "Stand_Alone"
+          }
+        }
+      },
+      "vga_0": {
+        "vlnv": "xilinx.com:module_ref:vga:1.0",
+        "xci_name": "design_1_vga_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "vga",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "pix_clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
+              },
+              "FREQ_HZ": {
+                "value": "148571428",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "cntl": {
+            "direction": "I"
+          },
+          "zoom": {
+            "direction": "I"
+          },
+          "frame_fix": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "vga_h_sync": {
+            "direction": "O"
+          },
+          "vga_v_sync": {
+            "direction": "O"
+          },
+          "vga_red": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "vga_blue": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "vga_green": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "frame_adress": {
+            "direction": "O",
+            "left": "18",
+            "right": "0"
           }
         }
       },
@@ -502,8 +502,8 @@
       "clk_wiz_0_clk_vga": {
         "ports": [
           "clk_wiz_0/clk_vga",
-          "vga_0/pix_clk",
-          "frame_buffer/clkb"
+          "frame_buffer/clkb",
+          "vga_0/pix_clk"
         ]
       },
       "cntl_0_cntl_out": {
@@ -598,14 +598,14 @@
       },
       "vga_0_vga_H_sync": {
         "ports": [
-          "vga_0/vga_H_sync",
-          "vga_H_sync"
+          "vga_0/vga_h_sync",
+          "vga_h_sync"
         ]
       },
       "vga_0_vga_V_sync": {
         "ports": [
-          "vga_0/vga_V_sync",
-          "vga_V_sync"
+          "vga_0/vga_v_sync",
+          "vga_v_sync"
         ]
       }
     }

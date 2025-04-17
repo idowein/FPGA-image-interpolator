@@ -36,8 +36,8 @@ entity vga is
            cntl : in STD_LOGIC;
            zoom : in STD_LOGIC;
            frame_fix : in STD_LOGIC_VECTOR (11 downto 0);
-           vga_H_sync : out STD_LOGIC;
-           vga_V_sync : out STD_LOGIC;
+           vga_h_sync : out STD_LOGIC;
+           vga_v_sync : out STD_LOGIC;
            vga_red : out STD_LOGIC_VECTOR (3 downto 0);
            vga_blue : out STD_LOGIC_VECTOR (3 downto 0);
            vga_green : out STD_LOGIC_VECTOR (3 downto 0);

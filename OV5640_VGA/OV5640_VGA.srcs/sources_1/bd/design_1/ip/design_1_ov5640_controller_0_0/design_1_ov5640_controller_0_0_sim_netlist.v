@@ -1,10 +1,10 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Thu Apr 17 17:21:54 2025
+// Date        : Thu Apr 17 19:48:58 2025
 // Host        : Ido running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               c:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.srcs/sources_1/bd/design_1/ip/design_1_ov5640_controller_0_0/design_1_ov5640_controller_0_0_sim_netlist.v
+//               C:/Users/idowe/myProjects/FPGA-image-interpolator/OV5640_VGA/OV5640_VGA.srcs/sources_1/bd/design_1/ip/design_1_ov5640_controller_0_0/design_1_ov5640_controller_0_0_sim_netlist.v
 // Design      : design_1_ov5640_controller_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
