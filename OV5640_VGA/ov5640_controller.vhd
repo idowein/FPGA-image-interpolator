@@ -40,8 +40,8 @@ architecture Behavioral of ov5640_controller is
 		id    : IN std_logic_vector(7 downto 0);
 		reg   : IN std_logic_vector(7 downto 0);
 		value : IN std_logic_vector(7 downto 0);    
-		siod  : INOUT std_logic;      
-		sioc  : OUT std_logic
+		sda  : INOUT std_logic;      
+		scl  : OUT std_logic
 		);
 	END COMPONENT;
 
@@ -59,8 +59,8 @@ begin
 	Inst_i2c_sender: i2c_sender PORT MAP(
 		clk   => clk,
 		taken => taken,
-		siod  => siod,
-		sioc  => sioc,
+		sda  => sda,
+		scl  => scl,
 		send  => send,
 		id    => camera_address,
 		reg   => command(15 downto 8),
