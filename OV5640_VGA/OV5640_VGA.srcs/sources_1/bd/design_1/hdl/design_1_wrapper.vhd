@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
---Date        : Thu Apr 17 17:21:23 2025
+--Date        : Thu Apr 17 18:34:28 2025
 --Host        : Ido running 64-bit major release  (build 9200)
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -51,14 +51,14 @@ architecture STRUCTURE of design_1_wrapper is
     vga_blue : out STD_LOGIC_VECTOR ( 3 downto 0 );
     vga_red : out STD_LOGIC_VECTOR ( 3 downto 0 );
     vga_green : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    vga_V_sync : out STD_LOGIC;
-    vga_H_sync : out STD_LOGIC;
     reset : out STD_LOGIC;
     config_finished : out STD_LOGIC;
     pwdn : out STD_LOGIC;
     xclk : out STD_LOGIC;
     sda : inout STD_LOGIC;
-    scl : out STD_LOGIC
+    scl : out STD_LOGIC;
+    vga_H_sync : out STD_LOGIC;
+    vga_V_sync : out STD_LOGIC
   );
   end component design_1;
 begin

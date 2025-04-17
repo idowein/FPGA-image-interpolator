@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
---Date        : Thu Apr 17 17:21:23 2025
+--Date        : Thu Apr 17 18:34:28 2025
 --Host        : Ido running 64-bit major release  (build 9200)
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -80,9 +80,9 @@ architecture STRUCTURE of design_1 is
   port (
     resetn : in STD_LOGIC;
     clk_in1 : in STD_LOGIC;
-    locked : out STD_LOGIC;
     clk_vga : out STD_LOGIC;
-    clk_reg : out STD_LOGIC
+    clk_reg : out STD_LOGIC;
+    locked : out STD_LOGIC
   );
   end component design_1_clk_wiz_0_0;
   component design_1_blk_mem_gen_0_0 is
