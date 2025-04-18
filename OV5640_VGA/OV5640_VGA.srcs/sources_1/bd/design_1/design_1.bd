@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xF37BAFF14E466863",
+      "boundary_crc": "0xF37BAFF1D0C6D614",
       "device": "xc7a100tcsg324-1",
       "name": "design_1",
       "synth_flow_mode": "Hierarchical",
@@ -100,7 +100,7 @@
             "value_src": "default"
           },
           "POLARITY": {
-            "value": "ACTIVE_HIGH",
+            "value": "ACTIVE_LOW",
             "value_src": "user_prop"
           }
         }
@@ -421,7 +421,7 @@
             "direction": "O",
             "parameters": {
               "POLARITY": {
-                "value": "ACTIVE_HIGH"
+                "value": "ACTIVE_LOW"
               }
             }
           },
