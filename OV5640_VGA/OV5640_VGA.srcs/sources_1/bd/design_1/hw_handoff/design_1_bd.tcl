@@ -256,7 +256,7 @@ proc create_root_design { parentCell } {
    }
   
   set_property -dict [ list \
-   CONFIG.POLARITY {ACTIVE_HIGH} \
+   CONFIG.POLARITY {ACTIVE_LOW} \
  ] [get_bd_pins /ov5640_controller_0/reset]
 
   # Create instance: ov_5640_caputre_0, and set properties
