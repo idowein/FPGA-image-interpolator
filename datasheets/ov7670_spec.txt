@@ -1,0 +1,28 @@
+frame rate: 30 fps
+
+protocol: SCCB (Serial Camera Control Bus)
+protocol frequency: 97.656 KHZ = clock_reg(25 MHz) / 256 (clock dividing)
+purpose: 
+The SCCB is a proprietary protocol similar to I2C, used to communicate with the OV7670 camera module.
+It is primarily used to configure the camera's internal registers. These registers control various settings like resolution, color format, frame rate, and exposure.
+
+Clocks:
+
+PCLK:
+purpose: data collection using parallel bus - din[7:0], HREF and VSYNC synchronized with PCLK
+Total Pixels Per Frame = 800 (H_TOTAL) × 525 (V_TOTAL) = 420,000
+Total Pixels Per Second = 420,000 × 30 fps = 12,600,000 pixels/sec = 12.6 MHz
+for the simplicity of the system and synchronization with the VGA controller, there is double sampling (60 fps):
+Total Pixels Per Second = 420,000 × 60 fps = 25,200,000 pixels/sec = 25.2 MHz
+
+XCLK:
+purpose: The XCLK is the input clock to the OV7670 camera module. It serves as the master clock that drives the internal operations of the camera, including the generation of the pixel clock (PCLK) and other internal timing signals.
+The OV7670 requires an external clock source (usually 24 MHz) provided by the host system (e.g., an FPGA or microcontroller).
+
+
+Data collection:
+
+The OV7670 camera outputs 8-bit pixel data, which is reconstructed into 16-bit RGB565 format (full image each 2 cycles). This is then converted to 12-bit RGB444 format for VGA:
+dout <= latced_data(15 downto 12) & latced_data(10 downto 7) & latced_data(4 downto 1);
+The dout signal based on the 4 MSB of each color. 
+
