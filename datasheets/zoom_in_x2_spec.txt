@@ -11,8 +11,8 @@ Zoom Logic Explanation
 
 3. Selective Writing (Cropping):
    - When `zoom = '1'`, only the pixels within a specific region of the frame are written to memory:
-     - Rows: From **120 to 360** (center of the image).
-     - Columns: From **160 to 480** (center of the image).
+     - Rows: From 120 to 360 (center of the image).
+     - Columns: From 160 to 480 (center of the image).
    - This effectively crops the image to the central 240x320 region (assuming the full resolution is 480x640).
 
    Example logic for zoomed-in region:
@@ -59,5 +59,84 @@ When a **240x320 image** is displayed on a full-screen **640x480 VGA resolution*
 - This results in pixelization, where each original pixel becomes a block of 4 screen pixels, creating a "blocky" appearance.
 - Techniques like interpolation or anti-aliasing can reduce pixelization, but they add complexity to the design.
 - Without additional processing, pixelization is normal and expected due to the low resolution of the original image compared to the display resolution.
+
+In the provided VGA module code, **pixel replication** (or the logic responsible for scaling) is implicit in how the **frame address** is calculated and used to read pixel data from the frame buffer. Here's how and where it happens:
+
+---
+
+1. Pixel Address Scaling
+The replication behavior is managed by the following part of the code, which calculates the `frame_address` for fetching pixels:
+
+```vhdl
+if (zoom = '0') then
+    fr_address <= fr_address + 1;
+else
+    fr_address <= val_zoom - val_tmp;
+end if;
+```
+
+ Explanation of Scaling Logic:
+- When `zoom = '0'` (No Zoom):
+  - `fr_address` is incremented sequentially (`fr_address <= fr_address + 1`), meaning every VGA pixel corresponds directly to one pixel from the frame buffer. This results in a **1:1 mapping** of pixels.
+
+- When `zoom = '1'` (Zoom Enabled):
+  - The `val_zoom` and `val_tmp` signals are used to calculate the appropriate `fr_address` based on the zoomed region. However, the logic for **horizontal and vertical scaling** isn't explicitly shown in the code but is effectively controlled by how the pixel clock (`pix_clk`) and counters (`h_cnt` and `v_cnt`) interact with the `frame_address`.
+
+  In this case:
+  - The frame buffer is accessed at a slower rate than the VGA display rate. For example:
+    - If the input frame is 240x320 and the VGA resolution is 640x480, each pixel from the frame buffer is replicated into a 2x2 block of VGA pixels to fill the larger screen.
+
+---
+
+2. Horizontal and Vertical Counters
+The horizontal (`h_cnt`) and vertical (`v_cnt`) counters determine **when and how pixel data is fetched** from the frame buffer. These counters run at the VGA pixel clock frequency (`pix_clk`), and their values dictate the scaling behavior.
+
+Key Code Snippet:
+```vhdl
+if (h_cnt < CAMERA_WIDTH) then
+    if (zoom = '0') then
+        fr_address <= fr_address + 1;
+    else
+        fr_address <= val_zoom - val_tmp;
+    end if;
+end if;
+```
+
+ How Replication Happens:
+- For every VGA pixel (h_cnt, v_cnt), the `fr_address` is calculated.
+- In zoom mode (`zoom = '1'), the `fr_address` does not increment for every pixel, resulting in multiple VGA pixels being mapped to the same frame buffer pixel. This effectively replicates the pixel to fill the larger display area.
+
+---
+
+ 3. Implicit Replication in VGA Timing
+The VGA timing and synchronization logic determine how many pixels to display for each line and frame:
+
+ Horizontal Counter (`h_cnt`):
+```vhdl
+if (h_cnt = (H_MAX - 1)) then
+    h_cnt <= (others => '0');
+else
+    h_cnt <= h_cnt + 1;
+end if;
+```
+
+ Vertical Counter (`v_cnt`):
+```vhdl
+if (h_cnt = (H_MAX - 1) and v_cnt = (V_MAX - 1)) then
+    v_cnt <= (others => '0');
+elsif (h_cnt = (H_MAX - 1)) then
+    v_cnt <= v_cnt + 1;
+end if;
+```
+
+- These counters run at the VGA pixel clock frequency.
+- When `zoom = '1'`, the `fr_address` calculation ensures that the same frame buffer pixel is used for multiple VGA pixels, effectively replicating the pixel.
+
+In the VGA controller code:
+- The replication happens **implicitly** in the way the `fr_address` is calculated and how the horizontal (`h_cnt`) and vertical (`v_cnt`) counters interact with the VGA timing signals.
+- Specifically:
+  - In **zoom mode**, the same pixel address (`fr_address`) is used for multiple VGA pixels, effectively replicating the pixel to fill the larger screen.
+- The logic is subtle and relies on the **difference in resolution** between the input frame buffer (e.g., 240x320) and the VGA output (e.g., 640x480).
+
 
 
