@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
---Date        : Wed Apr 23 11:30:30 2025
+--Date        : Wed Apr 23 12:28:55 2025
 --Host        : Ido running 64-bit major release  (build 9200)
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -62,18 +62,6 @@ architecture STRUCTURE of design_1 is
     locked : out STD_LOGIC
   );
   end component design_1_clk_wiz_0_0;
-  component design_1_ov7670_controller_0_0 is
-  port (
-    clk : in STD_LOGIC;
-    resend : in STD_LOGIC;
-    config_finished : out STD_LOGIC;
-    sioc : out STD_LOGIC;
-    siod : inout STD_LOGIC;
-    reset : out STD_LOGIC;
-    pwdn : out STD_LOGIC;
-    xclk : out STD_LOGIC
-  );
-  end component design_1_ov7670_controller_0_0;
   component design_1_cntl_0_0 is
   port (
     clk : in STD_LOGIC;
@@ -111,6 +99,18 @@ architecture STRUCTURE of design_1 is
     frame_adress : out STD_LOGIC_VECTOR ( 18 downto 0 )
   );
   end component design_1_vga_0_0;
+  component design_1_ov7670_controller_0_0 is
+  port (
+    clk : in STD_LOGIC;
+    resend : in STD_LOGIC;
+    config_finished : out STD_LOGIC;
+    sioc : out STD_LOGIC;
+    siod : inout STD_LOGIC;
+    reset : out STD_LOGIC;
+    pwdn : out STD_LOGIC;
+    xclk : out STD_LOGIC
+  );
+  end component design_1_ov7670_controller_0_0;
   signal Net1 : STD_LOGIC;
   signal blk_mem_gen_0_doutb : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal camera_h_ref_0_1 : STD_LOGIC;

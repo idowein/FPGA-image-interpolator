@@ -1,7 +1,7 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
--- Date        : Wed Apr 16 22:37:57 2025
+-- Date        : Wed Apr 23 12:29:24 2025
 -- Host        : Ido running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 --               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_1_ov7670_controller_0_0_sim_netlist.vhdl
@@ -1709,10 +1709,10 @@ entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ov7670_registers is
     config_finished : out STD_LOGIC;
     \busy_sr_reg[31]_0\ : out STD_LOGIC;
     p_1_in : out STD_LOGIC_VECTOR ( 0 to 0 );
-    resend : in STD_LOGIC;
     clk : in STD_LOGIC;
     taken_reg : in STD_LOGIC;
     p_0_in : in STD_LOGIC;
+    resend : in STD_LOGIC;
     E : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
 end decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ov7670_registers;
@@ -1735,7 +1735,6 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ov7670_regis
   signal config_finished_INST_0_i_3_n_0 : STD_LOGIC;
   signal config_finished_INST_0_i_4_n_0 : STD_LOGIC;
   signal \^p_1_in\ : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal resd : STD_LOGIC;
   signal NLW_sreg_reg_DOBDO_UNCONNECTED : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal NLW_sreg_reg_DOPADOP_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal NLW_sreg_reg_DOPBDOP_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
@@ -1803,7 +1802,7 @@ begin
       CE => E(0),
       D => \address_rep[0]_i_1_n_0\,
       Q => address_reg(0),
-      R => resd
+      R => resend
     );
 \address_reg[1]\: unisim.vcomponents.FDRE
     generic map(
@@ -1814,7 +1813,7 @@ begin
       CE => E(0),
       D => \address_rep[1]_i_1_n_0\,
       Q => address_reg(1),
-      R => resd
+      R => resend
     );
 \address_reg[2]\: unisim.vcomponents.FDRE
     generic map(
@@ -1825,7 +1824,7 @@ begin
       CE => E(0),
       D => \address_rep[2]_i_1_n_0\,
       Q => address_reg(2),
-      R => resd
+      R => resend
     );
 \address_reg[3]\: unisim.vcomponents.FDRE
     generic map(
@@ -1836,7 +1835,7 @@ begin
       CE => E(0),
       D => \address_rep[3]_i_1_n_0\,
       Q => address_reg(3),
-      R => resd
+      R => resend
     );
 \address_reg[4]\: unisim.vcomponents.FDRE
     generic map(
@@ -1847,7 +1846,7 @@ begin
       CE => E(0),
       D => \address_rep[4]_i_1_n_0\,
       Q => address_reg(4),
-      R => resd
+      R => resend
     );
 \address_reg[5]\: unisim.vcomponents.FDRE
     generic map(
@@ -1858,7 +1857,7 @@ begin
       CE => E(0),
       D => \address_rep[5]_i_1_n_0\,
       Q => address_reg(5),
-      R => resd
+      R => resend
     );
 \address_reg[6]\: unisim.vcomponents.FDRE
     generic map(
@@ -1869,7 +1868,7 @@ begin
       CE => E(0),
       D => \address_rep[6]_i_1_n_0\,
       Q => address_reg(6),
-      R => resd
+      R => resend
     );
 \address_reg[7]\: unisim.vcomponents.FDRE
     generic map(
@@ -1880,7 +1879,7 @@ begin
       CE => E(0),
       D => \address_rep[7]_i_1_n_0\,
       Q => address_reg(7),
-      R => resd
+      R => resend
     );
 \address_reg_rep[0]\: unisim.vcomponents.FDRE
     generic map(
@@ -1891,7 +1890,7 @@ begin
       CE => E(0),
       D => \address_rep[0]_i_1_n_0\,
       Q => address(0),
-      R => resd
+      R => resend
     );
 \address_reg_rep[1]\: unisim.vcomponents.FDRE
     generic map(
@@ -1902,7 +1901,7 @@ begin
       CE => E(0),
       D => \address_rep[1]_i_1_n_0\,
       Q => address(1),
-      R => resd
+      R => resend
     );
 \address_reg_rep[2]\: unisim.vcomponents.FDRE
     generic map(
@@ -1913,7 +1912,7 @@ begin
       CE => E(0),
       D => \address_rep[2]_i_1_n_0\,
       Q => address(2),
-      R => resd
+      R => resend
     );
 \address_reg_rep[3]\: unisim.vcomponents.FDRE
     generic map(
@@ -1924,7 +1923,7 @@ begin
       CE => E(0),
       D => \address_rep[3]_i_1_n_0\,
       Q => address(3),
-      R => resd
+      R => resend
     );
 \address_reg_rep[4]\: unisim.vcomponents.FDRE
     generic map(
@@ -1935,7 +1934,7 @@ begin
       CE => E(0),
       D => \address_rep[4]_i_1_n_0\,
       Q => address(4),
-      R => resd
+      R => resend
     );
 \address_reg_rep[5]\: unisim.vcomponents.FDRE
     generic map(
@@ -1946,7 +1945,7 @@ begin
       CE => E(0),
       D => \address_rep[5]_i_1_n_0\,
       Q => address(5),
-      R => resd
+      R => resend
     );
 \address_reg_rep[6]\: unisim.vcomponents.FDRE
     generic map(
@@ -1957,7 +1956,7 @@ begin
       CE => E(0),
       D => \address_rep[6]_i_1_n_0\,
       Q => address(6),
-      R => resd
+      R => resend
     );
 \address_reg_rep[7]\: unisim.vcomponents.FDRE
     generic map(
@@ -1968,7 +1967,7 @@ begin
       CE => E(0),
       D => \address_rep[7]_i_1_n_0\,
       Q => address(7),
-      R => resd
+      R => resend
     );
 \address_rep[0]_i_1\: unisim.vcomponents.LUT1
     generic map(
@@ -2145,14 +2144,6 @@ config_finished_INST_0_i_4: unisim.vcomponents.LUT4
       I5 => p_0_in,
       O => \busy_sr_reg[31]\(0)
     );
-resd_reg: unisim.vcomponents.FDRE
-     port map (
-      C => clk,
-      CE => '1',
-      D => resend,
-      Q => resd,
-      R => '0'
-    );
 sreg_reg: unisim.vcomponents.RAMB18E1
     generic map(
       DOA_REG => 0,
@@ -2165,8 +2156,8 @@ sreg_reg: unisim.vcomponents.RAMB18E1
       INITP_05 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INITP_06 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INITP_07 => X"0000000000000000000000000000000000000000000000000000000000000000",
-      INIT_00 => X"53A7523D510050B34FB314383A04401004008C003E000C001100120412801280",
-      INIT_01 => X"229121021E3716020F4B0E61030A1A7B190332A41861171111003DC0589E54E4",
+      INIT_00 => X"53295217510C50344F4014383A04401004008C003E000C001100120412801280",
+      INIT_01 => X"229121021E3716020F4B0E61030A1A7B190332A41861171111003DC0581E5440",
       INIT_02 => X"90008F008E008D4F74106B4A69004E204D403C78392A3871371D350B330B2907",
       INIT_03 => X"FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB80AB382B20EB10CB0849A0096009100",
       INIT_04 => X"FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",

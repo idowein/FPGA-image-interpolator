@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Wed Apr 16 22:37:57 2025
+| Date         : Wed Apr 23 12:29:24 2025
 | Host         : Ido running 64-bit major release  (build 9200)
 | Command      : report_utilization -file design_1_ov7670_controller_0_0_utilization_synth.rpt -pb design_1_ov7670_controller_0_0_utilization_synth.pb
 | Design       : design_1_ov7670_controller_0_0
@@ -33,8 +33,8 @@ Table of Contents
 | Slice LUTs*             |   54 |     0 |     63400 |  0.09 |
 |   LUT as Logic          |   54 |     0 |     63400 |  0.09 |
 |   LUT as Memory         |    0 |     0 |     19000 |  0.00 |
-| Slice Registers         |   91 |     0 |    126800 |  0.07 |
-|   Register as Flip Flop |   91 |     0 |    126800 |  0.07 |
+| Slice Registers         |   90 |     0 |    126800 |  0.07 |
+|   Register as Flip Flop |   90 |     0 |    126800 |  0.07 |
 |   Register as Latch     |    0 |     0 |    126800 |  0.00 |
 | F7 Muxes                |    0 |     0 |     31700 |  0.00 |
 | F8 Muxes                |    0 |     0 |     15850 |  0.00 |
@@ -57,7 +57,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 31    |          Yes |         Set |            - |
-| 60    |          Yes |       Reset |            - |
+| 59    |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -147,7 +147,7 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     |   60 |        Flop & Latch |
+| FDRE     |   59 |        Flop & Latch |
 | LUT2     |   40 |                 LUT |
 | FDSE     |   31 |        Flop & Latch |
 | LUT3     |   22 |                 LUT |

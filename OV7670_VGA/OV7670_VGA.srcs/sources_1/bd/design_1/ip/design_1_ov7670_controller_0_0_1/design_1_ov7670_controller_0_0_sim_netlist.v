@@ -1,10 +1,10 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Wed Apr 16 22:37:57 2025
+// Date        : Wed Apr 23 12:29:24 2025
 // Host        : Ido running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_ov7670_controller_0_0_1/design_1_ov7670_controller_0_0_sim_netlist.v
+//               C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_ov7670_controller_0_0_1/design_1_ov7670_controller_0_0_sim_netlist.v
 // Design      : design_1_ov7670_controller_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -1404,20 +1404,20 @@ module design_1_ov7670_controller_0_0_ov7670_registers
     config_finished,
     \busy_sr_reg[31]_0 ,
     p_1_in,
-    resend,
     clk,
     taken_reg,
     p_0_in,
+    resend,
     E);
   output [15:0]DOADO;
   output [0:0]\busy_sr_reg[31] ;
   output config_finished;
   output \busy_sr_reg[31]_0 ;
   output [0:0]p_1_in;
-  input resend;
   input clk;
   input taken_reg;
   input p_0_in;
+  input resend;
   input [0:0]E;
 
   wire [15:0]DOADO;
@@ -1443,7 +1443,6 @@ module design_1_ov7670_controller_0_0_ov7670_registers
   wire config_finished_INST_0_i_4_n_0;
   wire p_0_in;
   wire [0:0]p_1_in;
-  wire resd;
   wire resend;
   wire taken_reg;
   wire [15:0]NLW_sreg_reg_DOBDO_UNCONNECTED;
@@ -1458,7 +1457,7 @@ module design_1_ov7670_controller_0_0_ov7670_registers
         .CE(E),
         .D(\address_rep[0]_i_1_n_0 ),
         .Q(address_reg[0]),
-        .R(resd));
+        .R(resend));
   (* equivalent_register_removal = "no" *) 
   FDRE #(
     .INIT(1'b0)) 
@@ -1467,7 +1466,7 @@ module design_1_ov7670_controller_0_0_ov7670_registers
         .CE(E),
         .D(\address_rep[1]_i_1_n_0 ),
         .Q(address_reg[1]),
-        .R(resd));
+        .R(resend));
   (* equivalent_register_removal = "no" *) 
   FDRE #(
     .INIT(1'b0)) 
@@ -1476,7 +1475,7 @@ module design_1_ov7670_controller_0_0_ov7670_registers
         .CE(E),
         .D(\address_rep[2]_i_1_n_0 ),
         .Q(address_reg[2]),
-        .R(resd));
+        .R(resend));
   (* equivalent_register_removal = "no" *) 
   FDRE #(
     .INIT(1'b0)) 
@@ -1485,7 +1484,7 @@ module design_1_ov7670_controller_0_0_ov7670_registers
         .CE(E),
         .D(\address_rep[3]_i_1_n_0 ),
         .Q(address_reg[3]),
-        .R(resd));
+        .R(resend));
   (* equivalent_register_removal = "no" *) 
   FDRE #(
     .INIT(1'b0)) 
@@ -1494,7 +1493,7 @@ module design_1_ov7670_controller_0_0_ov7670_registers
         .CE(E),
         .D(\address_rep[4]_i_1_n_0 ),
         .Q(address_reg[4]),
-        .R(resd));
+        .R(resend));
   (* equivalent_register_removal = "no" *) 
   FDRE #(
     .INIT(1'b0)) 
@@ -1503,7 +1502,7 @@ module design_1_ov7670_controller_0_0_ov7670_registers
         .CE(E),
         .D(\address_rep[5]_i_1_n_0 ),
         .Q(address_reg[5]),
-        .R(resd));
+        .R(resend));
   (* equivalent_register_removal = "no" *) 
   FDRE #(
     .INIT(1'b0)) 
@@ -1512,7 +1511,7 @@ module design_1_ov7670_controller_0_0_ov7670_registers
         .CE(E),
         .D(\address_rep[6]_i_1_n_0 ),
         .Q(address_reg[6]),
-        .R(resd));
+        .R(resend));
   (* equivalent_register_removal = "no" *) 
   FDRE #(
     .INIT(1'b0)) 
@@ -1521,7 +1520,7 @@ module design_1_ov7670_controller_0_0_ov7670_registers
         .CE(E),
         .D(\address_rep[7]_i_1_n_0 ),
         .Q(address_reg[7]),
-        .R(resd));
+        .R(resend));
   (* equivalent_register_removal = "no" *) 
   FDRE #(
     .INIT(1'b0)) 
@@ -1530,7 +1529,7 @@ module design_1_ov7670_controller_0_0_ov7670_registers
         .CE(E),
         .D(\address_rep[0]_i_1_n_0 ),
         .Q(address[0]),
-        .R(resd));
+        .R(resend));
   (* equivalent_register_removal = "no" *) 
   FDRE #(
     .INIT(1'b0)) 
@@ -1539,7 +1538,7 @@ module design_1_ov7670_controller_0_0_ov7670_registers
         .CE(E),
         .D(\address_rep[1]_i_1_n_0 ),
         .Q(address[1]),
-        .R(resd));
+        .R(resend));
   (* equivalent_register_removal = "no" *) 
   FDRE #(
     .INIT(1'b0)) 
@@ -1548,7 +1547,7 @@ module design_1_ov7670_controller_0_0_ov7670_registers
         .CE(E),
         .D(\address_rep[2]_i_1_n_0 ),
         .Q(address[2]),
-        .R(resd));
+        .R(resend));
   (* equivalent_register_removal = "no" *) 
   FDRE #(
     .INIT(1'b0)) 
@@ -1557,7 +1556,7 @@ module design_1_ov7670_controller_0_0_ov7670_registers
         .CE(E),
         .D(\address_rep[3]_i_1_n_0 ),
         .Q(address[3]),
-        .R(resd));
+        .R(resend));
   (* equivalent_register_removal = "no" *) 
   FDRE #(
     .INIT(1'b0)) 
@@ -1566,7 +1565,7 @@ module design_1_ov7670_controller_0_0_ov7670_registers
         .CE(E),
         .D(\address_rep[4]_i_1_n_0 ),
         .Q(address[4]),
-        .R(resd));
+        .R(resend));
   (* equivalent_register_removal = "no" *) 
   FDRE #(
     .INIT(1'b0)) 
@@ -1575,7 +1574,7 @@ module design_1_ov7670_controller_0_0_ov7670_registers
         .CE(E),
         .D(\address_rep[5]_i_1_n_0 ),
         .Q(address[5]),
-        .R(resd));
+        .R(resend));
   (* equivalent_register_removal = "no" *) 
   FDRE #(
     .INIT(1'b0)) 
@@ -1584,7 +1583,7 @@ module design_1_ov7670_controller_0_0_ov7670_registers
         .CE(E),
         .D(\address_rep[6]_i_1_n_0 ),
         .Q(address[6]),
-        .R(resd));
+        .R(resend));
   (* equivalent_register_removal = "no" *) 
   FDRE #(
     .INIT(1'b0)) 
@@ -1593,7 +1592,7 @@ module design_1_ov7670_controller_0_0_ov7670_registers
         .CE(E),
         .D(\address_rep[7]_i_1_n_0 ),
         .Q(address[7]),
-        .R(resd));
+        .R(resend));
   LUT1 #(
     .INIT(2'h1)) 
     \address_rep[0]_i_1 
@@ -1729,12 +1728,6 @@ module design_1_ov7670_controller_0_0_ov7670_registers
         .I4(taken_reg),
         .I5(p_0_in),
         .O(\busy_sr_reg[31] ));
-  FDRE resd_reg
-       (.C(clk),
-        .CE(1'b1),
-        .D(resend),
-        .Q(resd),
-        .R(1'b0));
   (* \MEM.PORTA.DATA_BIT_LAYOUT  = "p0_d16" *) 
   (* METHODOLOGY_DRC_VIOS = "{SYNTH-6 {cell *THIS*}}" *) 
   (* RTL_RAM_BITS = "4096" *) 
@@ -1759,8 +1752,8 @@ module design_1_ov7670_controller_0_0_ov7670_registers
     .INITP_05(256'h0000000000000000000000000000000000000000000000000000000000000000),
     .INITP_06(256'h0000000000000000000000000000000000000000000000000000000000000000),
     .INITP_07(256'h0000000000000000000000000000000000000000000000000000000000000000),
-    .INIT_00(256'h53A7523D510050B34FB314383A04401004008C003E000C001100120412801280),
-    .INIT_01(256'h229121021E3716020F4B0E61030A1A7B190332A41861171111003DC0589E54E4),
+    .INIT_00(256'h53295217510C50344F4014383A04401004008C003E000C001100120412801280),
+    .INIT_01(256'h229121021E3716020F4B0E61030A1A7B190332A41861171111003DC0581E5440),
     .INIT_02(256'h90008F008E008D4F74106B4A69004E204D403C78392A3871371D350B330B2907),
     .INIT_03(256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB80AB382B20EB10CB0849A0096009100),
     .INIT_04(256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF),

@@ -28,10 +28,10 @@ preplace portBus vga_red -pg 1 -lvl 4 -x 960 -y 580 -defaultsOSRD
 preplace portBus vga_green -pg 1 -lvl 4 -x 960 -y 520 -defaultsOSRD
 preplace inst blk_mem_gen_0 -pg 1 -lvl 3 -x 800 -y 140 -defaultsOSRD
 preplace inst clk_wiz_0 -pg 1 -lvl 1 -x 140 -y 380 -defaultsOSRD
-preplace inst ov7670_controller_0 -pg 1 -lvl 3 -x 800 -y 390 -defaultsOSRD
 preplace inst cntl_0 -pg 1 -lvl 1 -x 140 -y 610 -defaultsOSRD
 preplace inst ovo_7670_caputre_0 -pg 1 -lvl 2 -x 470 -y 120 -defaultsOSRD
 preplace inst vga_0 -pg 1 -lvl 2 -x 470 -y 490 -defaultsOSRD
+preplace inst ov7670_controller_0 -pg 1 -lvl 3 -x 800 -y 390 -defaultsOSRD
 preplace netloc clk_in1_0_1 1 0 1 20 390n
 preplace netloc cntl_0_resend_out 1 1 2 290J 380 640
 preplace netloc cntl_0_cntl_out 1 1 1 300 470n
