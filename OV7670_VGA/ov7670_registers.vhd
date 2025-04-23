@@ -18,18 +18,20 @@
 --
 -- Red Appearing as Green / Green Appearing as Pink
 -- Solution: Register Corrections Below
--- 
---
+
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
 entity ov7670_registers is
-    Port ( clk      : in  STD_LOGIC;
-           resend   : in  STD_LOGIC;
-           advance  : in  STD_LOGIC;
-           command  : out  std_logic_vector(15 downto 0);
-           finished : out  STD_LOGIC);
+    Port ( 
+        clk      : in  STD_LOGIC;  -- Clock signal to drive the sequential process
+        resend   : in  STD_LOGIC;  -- Resets the address to restart the register configuration process
+        advance  : in  STD_LOGIC;  -- Increments the address to move to the next register configuration
+        command  : out std_logic_vector(15 downto 0); -- Current command (register address and value) being sent to the camera
+        finished : out  STD_LOGIC  -- Signal indicating the completion of the register configuration
+    );
 end ov7670_registers;
 
 architecture Behavioral of ov7670_registers is
@@ -55,10 +57,9 @@ begin
             when x"03" => sreg <= x"1100"; -- CLKRC  Prescaler - Fin/(1+1)
             when x"04" => sreg <= x"0C00"; -- COM3   Lots of stuff, enable scaling, all others off
             when x"05" => sreg <= x"3E00"; -- COM14  PCLK scaling off
-            
             when x"06" => sreg <= x"8C00"; -- RGB444 Set RGB format
             when x"07" => sreg <= x"0400"; -- COM1   no CCIR601
-             when x"08" => sreg <= x"4010"; -- COM15  Full 0-255 output, RGB 565
+            when x"08" => sreg <= x"4010"; -- COM15  Full 0-255 output, RGB 565
             when x"09" => sreg <= x"3a04"; -- TSLB   Set UV ordering,  do not auto-reset window
             when x"0A" => sreg <= x"1438"; -- COM9  - AGC Celling
             when x"0B" => sreg <= x"4f40"; --x"4fb3"; -- MTX1  - colour conversion matrix

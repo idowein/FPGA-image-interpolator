@@ -9,14 +9,15 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
 entity ov7670_controller is
-    Port ( clk   : in    STD_LOGIC;
-			  resend :in    STD_LOGIC;
-			  config_finished : out std_logic;
-           sioc  : out   STD_LOGIC;
-           siod  : inout STD_LOGIC;
-           reset : out   STD_LOGIC;
-           pwdn  : out   STD_LOGIC;
-			  xclk  : out   STD_LOGIC
+    Port ( 
+            clk   : in    STD_LOGIC;
+			resend :in    STD_LOGIC;
+		    config_finished : out std_logic;
+            sioc  : out   STD_LOGIC;
+            siod  : inout STD_LOGIC;
+            reset : out   STD_LOGIC;
+            pwdn  : out   STD_LOGIC;
+			xclk  : out   STD_LOGIC
 );
 end ov7670_controller;
 

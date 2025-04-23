@@ -78,7 +78,7 @@ begin
                             counter_col<=std_logic_vector(unsigned(counter_col)+1);
                             if (zoom_x2='1') then
                                  if(counter_row >= 120) and (counter_row < 360)  and (counter_col >= 160) and (counter_col < 480) then
-                                     wr_en <= '1';
+                                    wr_en <= '1';
                                     address <= std_logic_vector(unsigned(address)+1);
                                  end if;    
                             else
