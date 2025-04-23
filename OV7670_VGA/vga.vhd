@@ -205,19 +205,10 @@ begin
 	     else 
 	    	if(h_cnt <  CAMERA_WIDTH) then
 	    		blank <= '0';
-	    		if (zoom_x4 = '1') then
-	    			-- Handle zoom_x4: Increment frame address only for every 4th row and column
-	    			if (unsigned(v_cnt) mod 4 = 0) and (unsigned(h_cnt) mod 4 = 0) then
-	    				fr_address <= fr_address + 1;
-	    			end if;
-	    		elsif (zoom_x2 = '1') then
-	    			-- Handle zoom_x2: Increment frame address only for every 2nd row and column
-	    			if (unsigned(v_cnt) mod 2 = 0) and (unsigned(h_cnt) mod 2 = 0) then
-	    				fr_address <= fr_address + 1;
-	    			end if;
+	    		if (zoom_x2 ='0') then
+	    		 fr_address <= fr_address + 1;
 	    		else
-	    			-- No zoom: Increment frame address for every pixel
-	    			fr_address <= fr_address + 1;
+	    		fr_address<=val_zoom-val_tmp;
 	    		end if;
 	    	else
 	    		blank <= '1';
