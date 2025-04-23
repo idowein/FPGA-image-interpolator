@@ -1,6 +1,6 @@
 Vivado Simulator 2019.2
 Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto 56a9619014a94fc9a5050bd4e00e58df --incr --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot design_1_wrapper_tb_behav xil_defaultlib.design_1_wrapper_tb xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto 56a9619014a94fc9a5050bd4e00e58df --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot vga_behav xil_defaultlib.vga xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
@@ -11,35 +11,9 @@ Time Resolution for simulation is 1ps
 Compiling package std.standard
 Compiling package std.textio
 Compiling package ieee.std_logic_1164
-Compiling package ieee.numeric_std
-Compiling package unisim.vcomponents
 Compiling package ieee.std_logic_arith
 Compiling package ieee.std_logic_unsigned
-Compiling package vl.vl_types
+Compiling package ieee.numeric_std
 Compiling module xil_defaultlib.glbl
-Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
-Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
-Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_softecc_outpu...
-Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
-Compiling module blk_mem_gen_v8_4_4.blk_mem_axi_regs_fwd_v8_4(C_DATA...
-Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="art...
-Compiling module xil_defaultlib.design_1_blk_mem_gen_0_0
-Compiling module unisims_ver.IBUF
-Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=9.0,C...
-Compiling module unisims_ver.BUFG
-Compiling module xil_defaultlib.design_1_clk_wiz_0_0_clk_wiz
-Compiling module xil_defaultlib.design_1_clk_wiz_0_0
-Compiling architecture behavioral of entity xil_defaultlib.cntl [cntl_default]
-Compiling architecture design_1_cntl_0_0_arch of entity xil_defaultlib.design_1_cntl_0_0 [design_1_cntl_0_0_default]
-Compiling architecture behavioral of entity xil_defaultlib.i2c_sender [i2c_sender_default]
-Compiling architecture behavioral of entity xil_defaultlib.ov7670_registers [ov7670_registers_default]
-Compiling architecture behavioral of entity xil_defaultlib.ov7670_controller [ov7670_controller_default]
-Compiling architecture design_1_ov7670_controller_0_0_arch of entity xil_defaultlib.design_1_ov7670_controller_0_0 [design_1_ov7670_controller_0_0_d...]
-Compiling architecture behavioral of entity xil_defaultlib.ovo_7670_caputre [ovo_7670_caputre_default]
-Compiling architecture design_1_ovo_7670_caputre_0_0_arch of entity xil_defaultlib.design_1_ovo_7670_caputre_0_0 [design_1_ovo_7670_caputre_0_0_de...]
-Compiling architecture behavioral of entity xil_defaultlib.vga [vga_default]
-Compiling architecture design_1_vga_0_0_arch of entity xil_defaultlib.design_1_vga_0_0 [design_1_vga_0_0_default]
-Compiling architecture structure of entity xil_defaultlib.design_1 [design_1_default]
-Compiling architecture structure of entity xil_defaultlib.design_1_wrapper [design_1_wrapper_default]
-Compiling architecture behavioral of entity xil_defaultlib.design_1_wrapper_tb
-Built simulation snapshot design_1_wrapper_tb_behav
+Compiling architecture behavioral of entity xil_defaultlib.vga
+Built simulation snapshot vga_behav
