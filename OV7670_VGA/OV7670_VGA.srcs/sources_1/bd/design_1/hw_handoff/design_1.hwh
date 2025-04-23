@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Apr 18 15:23:24 2025" VIVADOVERSION="2019.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Apr 23 11:30:30 2025" VIVADOVERSION="2019.2">
 
   <SYSTEMINFO ARCH="artix7" BOARD="digilentinc.com:nexys-a7-100t:part0:1.3" DEVICE="7a100t" NAME="design_1" PACKAGE="csg324" SPEEDGRADE="-1"/>
 
@@ -8,12 +8,6 @@
       <CONNECTIONS>
         <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_in1"/>
         <CONNECTION INSTANCE="cntl_0" PORT="clk"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="zoom" SIGIS="undef" SIGNAME="External_Ports_zoom">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="ovo_7670_caputre_0" PORT="zoom"/>
-        <CONNECTION INSTANCE="vga_0" PORT="zoom"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="camera_h_ref" SIGIS="undef" SIGNAME="External_Ports_camera_h_ref">
@@ -105,6 +99,18 @@
     <PORT DIR="O" LEFT="3" NAME="vga_green" RIGHT="0" SIGIS="undef" SIGNAME="vga_0_vga_green">
       <CONNECTIONS>
         <CONNECTION INSTANCE="vga_0" PORT="vga_green"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="zoom_x2" SIGIS="undef" SIGNAME="External_Ports_zoom_x2">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ovo_7670_caputre_0" PORT="zoom_x2"/>
+        <CONNECTION INSTANCE="vga_0" PORT="zoom_x2"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="zoom_x4" SIGIS="undef" SIGNAME="External_Ports_zoom_x4">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ovo_7670_caputre_0" PORT="zoom_x4"/>
+        <CONNECTION INSTANCE="vga_0" PORT="zoom_x4"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -1043,9 +1049,14 @@
             <CONNECTION INSTANCE="External_Ports" PORT="camera_h_ref"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="zoom" SIGIS="undef" SIGNAME="External_Ports_zoom">
+        <PORT DIR="I" NAME="zoom_x2" SIGIS="undef" SIGNAME="External_Ports_zoom_x2">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="zoom"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="zoom_x2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="zoom_x4" SIGIS="undef" SIGNAME="External_Ports_zoom_x4">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="zoom_x4"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="7" NAME="din" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_din">
@@ -1088,9 +1099,14 @@
             <CONNECTION INSTANCE="cntl_0" PORT="cntl_out"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="zoom" SIGIS="undef" SIGNAME="External_Ports_zoom">
+        <PORT DIR="I" NAME="zoom_x2" SIGIS="undef" SIGNAME="External_Ports_zoom_x2">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="zoom"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="zoom_x2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="zoom_x4" SIGIS="undef" SIGNAME="External_Ports_zoom_x4">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="zoom_x4"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="11" NAME="frame_fix" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_0_doutb">

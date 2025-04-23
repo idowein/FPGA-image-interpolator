@@ -58,7 +58,8 @@ ENTITY design_1_ovo_7670_caputre_0_0 IS
     pclk : IN STD_LOGIC;
     camera_v_sync : IN STD_LOGIC;
     camera_h_ref : IN STD_LOGIC;
-    zoom : IN STD_LOGIC;
+    zoom_x2 : IN STD_LOGIC;
+    zoom_x4 : IN STD_LOGIC;
     din : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
     addr : OUT STD_LOGIC_VECTOR(18 DOWNTO 0);
     dout : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
@@ -74,7 +75,8 @@ ARCHITECTURE design_1_ovo_7670_caputre_0_0_arch OF design_1_ovo_7670_caputre_0_0
       pclk : IN STD_LOGIC;
       camera_v_sync : IN STD_LOGIC;
       camera_h_ref : IN STD_LOGIC;
-      zoom : IN STD_LOGIC;
+      zoom_x2 : IN STD_LOGIC;
+      zoom_x4 : IN STD_LOGIC;
       din : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
       addr : OUT STD_LOGIC_VECTOR(18 DOWNTO 0);
       dout : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
@@ -95,7 +97,8 @@ BEGIN
       pclk => pclk,
       camera_v_sync => camera_v_sync,
       camera_h_ref => camera_h_ref,
-      zoom => zoom,
+      zoom_x2 => zoom_x2,
+      zoom_x4 => zoom_x4,
       din => din,
       addr => addr,
       dout => dout,

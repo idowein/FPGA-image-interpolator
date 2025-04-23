@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x86C123FCAB6BE91E",
+      "boundary_crc": "0x44EA33ABF7CA84CA",
       "device": "xc7a100tcsg324-1",
       "name": "design_1",
       "synth_flow_mode": "Hierarchical",
@@ -41,9 +41,6 @@
             "value_src": "default"
           }
         }
-      },
-      "zoom": {
-        "direction": "I"
       },
       "camera_h_ref": {
         "direction": "I"
@@ -128,6 +125,12 @@
         "direction": "O",
         "left": "3",
         "right": "0"
+      },
+      "zoom_x2": {
+        "direction": "I"
+      },
+      "zoom_x4": {
+        "direction": "I"
       }
     },
     "components": {
@@ -342,7 +345,10 @@
           "camera_h_ref": {
             "direction": "I"
           },
-          "zoom": {
+          "zoom_x2": {
+            "direction": "I"
+          },
+          "zoom_x4": {
             "direction": "I"
           },
           "din": {
@@ -395,7 +401,10 @@
           "cntl": {
             "direction": "I"
           },
-          "zoom": {
+          "zoom_x2": {
+            "direction": "I"
+          },
+          "zoom_x4": {
             "direction": "I"
           },
           "frame_fix": {
@@ -450,13 +459,6 @@
         "ports": [
           "cntl_0/cntl_out",
           "vga_0/cntl"
-        ]
-      },
-      "zoom_0_1": {
-        "ports": [
-          "zoom",
-          "ovo_7670_caputre_0/zoom",
-          "vga_0/zoom"
         ]
       },
       "camera_h_ref_0_1": {
@@ -609,6 +611,20 @@
         "ports": [
           "vga_0/vga_green",
           "vga_green"
+        ]
+      },
+      "zoom_x2_0_1": {
+        "ports": [
+          "zoom_x2",
+          "ovo_7670_caputre_0/zoom_x2",
+          "vga_0/zoom_x2"
+        ]
+      },
+      "zoom_x4_0_1": {
+        "ports": [
+          "zoom_x4",
+          "ovo_7670_caputre_0/zoom_x4",
+          "vga_0/zoom_x4"
         ]
       }
     }

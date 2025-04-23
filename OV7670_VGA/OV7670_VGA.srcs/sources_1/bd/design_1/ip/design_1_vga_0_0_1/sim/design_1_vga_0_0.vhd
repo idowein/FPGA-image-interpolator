@@ -57,7 +57,8 @@ ENTITY design_1_vga_0_0 IS
   PORT (
     pix_clk : IN STD_LOGIC;
     cntl : IN STD_LOGIC;
-    zoom : IN STD_LOGIC;
+    zoom_x2 : IN STD_LOGIC;
+    zoom_x4 : IN STD_LOGIC;
     frame_fix : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
     VGA_H_sync : OUT STD_LOGIC;
     vga_V_sync : OUT STD_LOGIC;
@@ -75,7 +76,8 @@ ARCHITECTURE design_1_vga_0_0_arch OF design_1_vga_0_0 IS
     PORT (
       pix_clk : IN STD_LOGIC;
       cntl : IN STD_LOGIC;
-      zoom : IN STD_LOGIC;
+      zoom_x2 : IN STD_LOGIC;
+      zoom_x4 : IN STD_LOGIC;
       frame_fix : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
       VGA_H_sync : OUT STD_LOGIC;
       vga_V_sync : OUT STD_LOGIC;
@@ -96,7 +98,8 @@ BEGIN
     PORT MAP (
       pix_clk => pix_clk,
       cntl => cntl,
-      zoom => zoom,
+      zoom_x2 => zoom_x2,
+      zoom_x4 => zoom_x4,
       frame_fix => frame_fix,
       VGA_H_sync => VGA_H_sync,
       vga_V_sync => vga_V_sync,

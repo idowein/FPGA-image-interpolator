@@ -39,7 +39,8 @@ entity ovo_7670_caputre is
     Port ( pclk  : in   STD_LOGIC;
            camera_v_sync : in   STD_LOGIC;
            camera_h_ref  : in   STD_LOGIC;
-           zoom : in STD_logic ;
+           zoom_x2 : in STD_logic ;
+           zoom_x4 : in STD_logic ;
            din     : in   STD_LOGIC_VECTOR (7 downto 0);
            addr  : out  STD_LOGIC_VECTOR (18 downto 0);
            dout  : out  STD_LOGIC_VECTOR (11 downto 0);
@@ -83,7 +84,7 @@ begin
 			if( write_state(1) = '1') then
 			   counter_col<=std_logic_vector(unsigned(counter_col)+1);
 			    
-			    if (zoom='1') then
+			    if (zoom_x2='1') then
 			         if(counter_row >= 120) and (counter_row < 360)  and (counter_col >= 160) and (counter_col < 480) then
                          wr_en <= '1';
                         address <= std_logic_vector(unsigned(address)+1);
@@ -92,7 +93,17 @@ begin
 	                    wr_en <= '1';
                         address <= std_logic_vector(unsigned(address)+1);
 	              end if;
-				--address_next <= address_next + 1;
+	              
+			    if (zoom_x4='1') then
+			         if(counter_row >= 180) and (counter_row < 300)  and (counter_col >= 240) and (counter_col < 400) then
+                         wr_en <= '1';
+                        address <= std_logic_vector(unsigned(address)+1);
+	                 end if;
+	              else
+	                    wr_en <= '1';
+                        address <= std_logic_vector(unsigned(address)+1);
+	              end if;	              
+				
 			 else
                 wr_en <= '0';
 		     end if;

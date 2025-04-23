@@ -187,7 +187,8 @@ proc create_root_design { parentCell } {
   set vga_green [ create_bd_port -dir O -from 3 -to 0 vga_green ]
   set vga_red [ create_bd_port -dir O -from 3 -to 0 vga_red ]
   set xclk [ create_bd_port -dir O xclk ]
-  set zoom [ create_bd_port -dir I zoom ]
+  set zoom_x2 [ create_bd_port -dir I zoom_x2 ]
+  set zoom_x4 [ create_bd_port -dir I zoom_x4 ]
 
   # Create instance: blk_mem_gen_0, and set properties
   set blk_mem_gen_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_0 ]
@@ -309,7 +310,8 @@ proc create_root_design { parentCell } {
   connect_bd_net -net vga_0_vga_blue [get_bd_ports vga_blue] [get_bd_pins vga_0/vga_blue]
   connect_bd_net -net vga_0_vga_green [get_bd_ports vga_green] [get_bd_pins vga_0/vga_green]
   connect_bd_net -net vga_0_vga_red [get_bd_ports vga_red] [get_bd_pins vga_0/vga_red]
-  connect_bd_net -net zoom_0_1 [get_bd_ports zoom] [get_bd_pins ovo_7670_caputre_0/zoom] [get_bd_pins vga_0/zoom]
+  connect_bd_net -net zoom_x2_0_1 [get_bd_ports zoom_x2] [get_bd_pins ovo_7670_caputre_0/zoom_x2] [get_bd_pins vga_0/zoom_x2]
+  connect_bd_net -net zoom_x4_0_1 [get_bd_ports zoom_x4] [get_bd_pins ovo_7670_caputre_0/zoom_x4] [get_bd_pins vga_0/zoom_x4]
 
   # Create address segments
 

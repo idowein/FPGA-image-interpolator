@@ -34,7 +34,8 @@ use IEEE.NUMERIC_STD.ALL;
 entity vga is
     Port ( pix_clk : in STD_LOGIC;
            cntl : in STD_LOGIC;
-           zoom : in STD_LOGIC;
+           zoom_x2 : in STD_LOGIC;
+           zoom_x4 : in STD_LOGIC;
            frame_fix : in STD_LOGIC_VECTOR (11 downto 0);
            VGA_H_sync : out STD_LOGIC;
            vga_V_sync : out STD_LOGIC;
@@ -79,47 +80,44 @@ architecture Behavioral of vga is
     constant CAMERA_HEIGHT : integer := 480;     -- Camera height
 
     -- constant
-    signal H_POSITIVE:std_logic := '1';
-    signal V_POSITIVE:std_logic := '1';
-
+    signal H_POSITIVE: std_logic := '1'; -- Indicates positive polarity for horizontal sync signal
+    signal V_POSITIVE: std_logic := '1'; -- Indicates positive polarity for vertical sync signal
+    
     -- counters
-    signal h_cnt:std_logic_vector(11 downto 0) := (others=>'0') ;
-    signal v_cnt:std_logic_vector(11 downto 0) := (others=>'0') ;
-    signal val_tmp:std_logic_vector(18 downto 0) := (others=>'0') ;
-    signal val_zoom:std_logic_vector(18 downto 0) := (others=>'0') ;--fixing the zoom adress
-    --reg [BITS_WIDTH - 1:0] v_cnt;
-
+    signal h_cnt: std_logic_vector(11 downto 0) := (others => '0'); -- Horizontal pixel counter for VGA timing
+    signal v_cnt: std_logic_vector(11 downto 0) := (others => '0'); -- Vertical pixel counter for VGA timing
+    signal val_tmp: std_logic_vector(18 downto 0) := (others => '0'); -- Temporary value used for zoom address calculation
+    signal val_zoom: std_logic_vector(18 downto 0) := (others => '0'); -- Value used to adjust frame address for zoomed image
+    
     -- counters for display
-     signal h_cnt_d:std_logic_vector(11 downto 0) ;
-     signal v_cnt_d:std_logic_vector(11 downto 0) ;
-   -- reg [BITS_WIDTH - 1:0] h_cnt_d;
-   -- reg [BITS_WIDTH - 1:0] v_cnt_d;
-
-    -- syncronization signal
-    signal h_sync:std_logic;
-    signal v_sync:std_logic;
-
-    -- syncronization signal for display
-    signal h_sync_d:std_logic;
-    signal v_sync_d:std_logic;
-
+    signal h_cnt_d: std_logic_vector(11 downto 0); -- Delayed horizontal counter used for display synchronization
+    signal v_cnt_d: std_logic_vector(11 downto 0); -- Delayed vertical counter used for display synchronization
+    
+    -- synchronization signal
+    signal h_sync: std_logic; -- Horizontal sync signal for VGA display
+    signal v_sync: std_logic; -- Vertical sync signal for VGA display
+    
+    -- synchronization signal for display
+    signal h_sync_d: std_logic; -- Delayed horizontal sync signal for stabilized display output
+    signal v_sync_d: std_logic; -- Delayed vertical sync signal for stabilized display output
+    
     -- pix data is valid
-    signal valid:std_logic;
-
+    signal valid: std_logic; -- Indicates if the current pixel data is valid for display
+    
     -- pix data is blank or not (blank = HIGH : pix data is valid)
-    signal blank:std_logic :='0';
-
+    signal blank: std_logic := '0'; -- Indicates whether the current pixel is blank (1 = blank, 0 = active pixel)
+    
     -- colors
-    signal cnt_bg:std_logic_vector(28 downto 0) := (others=>'0') ;
-    signal cnt_bg_h:std_logic_vector(11 downto 0) ;
-    signal cnt_bg_v:std_logic_vector(11 downto 0) ;
-    signal bg_red:std_logic_vector(3 downto 0) ;
-    signal bg_blue:std_logic_vector(3 downto 0) ;  
-    signal bg_green:std_logic_vector(3 downto 0) ;   
-    signal bg_red_d:std_logic_vector(3 downto 0) ;
-    signal bg_blue_d:std_logic_vector(3 downto 0) ;  
-    signal bg_green_d:std_logic_vector(3 downto 0) ;
-    signal fr_address:std_logic_vector(18 downto 0) ;
+    signal cnt_bg: std_logic_vector(28 downto 0) := (others => '0'); -- Background color counter for color cycling
+    signal cnt_bg_h: std_logic_vector(11 downto 0); -- Horizontal component of the background color counter
+    signal cnt_bg_v: std_logic_vector(11 downto 0); -- Vertical component of the background color counter
+    signal bg_red: std_logic_vector(3 downto 0); -- Red component of the background color
+    signal bg_blue: std_logic_vector(3 downto 0); -- Blue component of the background color
+    signal bg_green: std_logic_vector(3 downto 0); -- Green component of the background color
+    signal bg_red_d: std_logic_vector(3 downto 0); -- Delayed red component for display stabilization
+    signal bg_blue_d: std_logic_vector(3 downto 0); -- Delayed blue component for display stabilization
+    signal bg_green_d: std_logic_vector(3 downto 0); -- Delayed green component for display stabilization
+    signal fr_address: std_logic_vector(18 downto 0); -- Frame buffer address for current pixel
     
 begin
     
@@ -207,10 +205,18 @@ begin
 	     else 
 	    	if(h_cnt <  CAMERA_WIDTH) then
 	    		blank <= '0';
-	    		if (zoom ='0') then
-	    		 fr_address <= fr_address + 1;
-	    		else
-	    		fr_address<=val_zoom-val_tmp;
+	    		if (zoom_x2 = '1' and zoom_x4 = '0') then
+	    		     fr_address<=val_zoom-val_tmp;
+	    		elsif (zoom_x2 = '0' and zoom_x4 = '1') then
+	    		     -- Implement zoom_x4 action
+	    		     -- The mod 4 condition ensures that only every 4th pixel (in both directions) is considered, 
+	    		     -- while the frame address (fr_address) is updated accordingly to reflect the zoomed-in portion. 
+	    		     -- This process effectively produces a zoom_x4 effect.
+                    if ((unsigned(v_cnt) mod 4 = 0) and (unsigned(h_cnt) mod 4 = 0)) then
+                        fr_address <= val_zoom - val_tmp;
+                    end if;
+	    		else -- if no zoom buttons is pulled up
+	    		     fr_address <= fr_address + 1;
 	    		end if;
 	    	else
 	    		blank <= '1';

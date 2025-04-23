@@ -1,10 +1,10 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Wed Apr 16 22:37:30 2025
+// Date        : Wed Apr 23 11:31:03 2025
 // Host        : Ido running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_ovo_7670_caputre_0_0_1/design_1_ovo_7670_caputre_0_0_sim_netlist.v
+//               C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_ovo_7670_caputre_0_0_1/design_1_ovo_7670_caputre_0_0_sim_netlist.v
 // Design      : design_1_ovo_7670_caputre_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -19,7 +19,8 @@ module design_1_ovo_7670_caputre_0_0
    (pclk,
     camera_v_sync,
     camera_h_ref,
-    zoom,
+    zoom_x2,
+    zoom_x4,
     din,
     addr,
     dout,
@@ -27,7 +28,8 @@ module design_1_ovo_7670_caputre_0_0
   input pclk;
   input camera_v_sync;
   input camera_h_ref;
-  input zoom;
+  input zoom_x2;
+  input zoom_x4;
   input [7:0]din;
   output [18:0]addr;
   output [11:0]dout;
@@ -40,7 +42,8 @@ module design_1_ovo_7670_caputre_0_0
   wire [11:0]dout;
   wire pclk;
   wire wr_en;
-  wire zoom;
+  wire zoom_x2;
+  wire zoom_x4;
 
   design_1_ovo_7670_caputre_0_0_ovo_7670_caputre U0
        (.addr(addr),
@@ -50,7 +53,8 @@ module design_1_ovo_7670_caputre_0_0
         .dout(dout),
         .pclk(pclk),
         .wr_en(wr_en),
-        .zoom(zoom));
+        .zoom_x2(zoom_x2),
+        .zoom_x4(zoom_x4));
 endmodule
 
 (* ORIG_REF_NAME = "ovo_7670_caputre" *) 
@@ -62,7 +66,8 @@ module design_1_ovo_7670_caputre_0_0_ovo_7670_caputre
     pclk,
     camera_v_sync,
     din,
-    zoom);
+    zoom_x4,
+    zoom_x2);
   output [11:0]dout;
   output [18:0]addr;
   output wr_en;
@@ -70,14 +75,16 @@ module design_1_ovo_7670_caputre_0_0_ovo_7670_caputre
   input pclk;
   input camera_v_sync;
   input [7:0]din;
-  input zoom;
+  input zoom_x4;
+  input zoom_x2;
 
   wire [18:0]addr;
   wire address;
-  wire address0__2;
+  wire \address[18]_i_3_n_0 ;
   wire \address[18]_i_4_n_0 ;
   wire \address[18]_i_5_n_0 ;
   wire \address[18]_i_6_n_0 ;
+  wire \address[18]_i_7_n_0 ;
   wire \address[3]_i_2_n_0 ;
   wire \address_reg[11]_i_1_n_0 ;
   wire \address_reg[11]_i_1_n_1 ;
@@ -120,21 +127,20 @@ module design_1_ovo_7670_caputre_0_0_ovo_7670_caputre
   wire camera_v_sync;
   wire \counter_col[10]_i_1_n_0 ;
   wire \counter_col[10]_i_3_n_0 ;
-  wire [10:5]counter_col_reg;
+  wire \counter_col[10]_i_4_n_0 ;
+  wire [10:4]counter_col_reg;
   wire \counter_col_reg_n_0_[0] ;
   wire \counter_col_reg_n_0_[1] ;
   wire \counter_col_reg_n_0_[2] ;
   wire \counter_col_reg_n_0_[3] ;
-  wire \counter_col_reg_n_0_[4] ;
   wire counter_row0;
   wire \counter_row[10]_i_3_n_0 ;
-  wire [10:3]counter_row_reg;
+  wire \counter_row[10]_i_4_n_0 ;
+  wire [10:2]counter_row_reg;
   wire \counter_row_reg_n_0_[0] ;
   wire \counter_row_reg_n_0_[1] ;
-  wire \counter_row_reg_n_0_[2] ;
   wire [7:0]din;
   wire [11:0]dout;
-  wire geqOp__8;
   wire \latced_data_reg_n_0_[10] ;
   wire \latced_data_reg_n_0_[12] ;
   wire \latced_data_reg_n_0_[13] ;
@@ -154,67 +160,63 @@ module design_1_ovo_7670_caputre_0_0_ovo_7670_caputre
   wire \write_state[0]_i_1_n_0 ;
   wire \write_state[1]_i_1_n_0 ;
   wire \write_state_reg_n_0_[0] ;
-  wire zoom;
+  wire zoom_x2;
+  wire zoom_x4;
   wire [3:2]\NLW_address_reg[18]_i_2_CO_UNCONNECTED ;
   wire [3:3]\NLW_address_reg[18]_i_2_O_UNCONNECTED ;
 
-  LUT3 #(
-    .INIT(8'hA2)) 
+  LUT2 #(
+    .INIT(4'h8)) 
     \address[18]_i_1 
-       (.I0(p_0_in_0),
-        .I1(zoom),
-        .I2(address0__2),
+       (.I0(\address[18]_i_3_n_0 ),
+        .I1(p_0_in_0),
         .O(address));
   LUT6 #(
-    .INIT(64'h0000080000000000)) 
+    .INIT(64'hFF5FDF5F5F5F5F5F)) 
     \address[18]_i_3 
-       (.I0(\address[18]_i_4_n_0 ),
-        .I1(\address[18]_i_5_n_0 ),
-        .I2(counter_row_reg[9]),
-        .I3(\address[18]_i_6_n_0 ),
-        .I4(counter_row_reg[10]),
-        .I5(geqOp__8),
-        .O(address0__2));
-  LUT6 #(
-    .INIT(64'h0000000015555555)) 
+       (.I0(zoom_x4),
+        .I1(\address[18]_i_4_n_0 ),
+        .I2(zoom_x2),
+        .I3(\address[18]_i_5_n_0 ),
+        .I4(\address[18]_i_6_n_0 ),
+        .I5(\address[18]_i_7_n_0 ),
+        .O(\address[18]_i_3_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  LUT4 #(
+    .INIT(16'h0ECC)) 
     \address[18]_i_4 
-       (.I0(counter_col_reg[9]),
-        .I1(counter_col_reg[5]),
-        .I2(counter_col_reg[6]),
+       (.I0(counter_col_reg[6]),
+        .I1(counter_col_reg[8]),
+        .I2(counter_col_reg[5]),
         .I3(counter_col_reg[7]),
-        .I4(counter_col_reg[8]),
-        .I5(counter_col_reg[10]),
         .O(\address[18]_i_4_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFFFF8000)) 
+  LUT4 #(
+    .INIT(16'h0001)) 
     \address[18]_i_5 
-       (.I0(counter_row_reg[5]),
-        .I1(counter_row_reg[3]),
-        .I2(counter_row_reg[4]),
-        .I3(counter_row_reg[6]),
-        .I4(counter_row_reg[7]),
-        .I5(counter_row_reg[8]),
+       (.I0(counter_col_reg[10]),
+        .I1(counter_col_reg[9]),
+        .I2(counter_row_reg[10]),
+        .I3(counter_row_reg[9]),
         .O(\address[18]_i_5_n_0 ));
-  LUT6 #(
-    .INIT(64'h0000777FFFFFFFFF)) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  LUT4 #(
+    .INIT(16'h7000)) 
     \address[18]_i_6 
-       (.I0(counter_row_reg[6]),
-        .I1(counter_row_reg[5]),
-        .I2(counter_row_reg[4]),
-        .I3(counter_row_reg[3]),
-        .I4(counter_row_reg[7]),
-        .I5(counter_row_reg[8]),
+       (.I0(counter_col_reg[8]),
+        .I1(counter_col_reg[6]),
+        .I2(counter_col_reg[7]),
+        .I3(counter_col_reg[5]),
         .O(\address[18]_i_6_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFFFE0)) 
+    .INIT(64'h01F80FF00FF00FF0)) 
     \address[18]_i_7 
-       (.I0(counter_col_reg[6]),
-        .I1(counter_col_reg[5]),
-        .I2(counter_col_reg[7]),
-        .I3(counter_col_reg[8]),
-        .I4(counter_col_reg[9]),
-        .I5(counter_col_reg[10]),
-        .O(geqOp__8));
+       (.I0(counter_row_reg[4]),
+        .I1(counter_row_reg[3]),
+        .I2(counter_row_reg[7]),
+        .I3(counter_row_reg[8]),
+        .I4(counter_row_reg[6]),
+        .I5(counter_row_reg[5]),
+        .O(\address[18]_i_7_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
     \address[3]_i_2 
@@ -407,116 +409,127 @@ module design_1_ovo_7670_caputre_0_0_ovo_7670_caputre
         .D(\address_reg[11]_i_1_n_6 ),
         .Q(addr[9]),
         .R(camera_v_sync));
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \counter_col[0]_i_1 
        (.I0(\counter_col_reg_n_0_[0] ),
         .O(plusOp__0[0]));
   LUT4 #(
-    .INIT(16'hAABA)) 
+    .INIT(16'hFF04)) 
     \counter_col[10]_i_1 
-       (.I0(camera_v_sync),
-        .I1(p_0_in_0),
-        .I2(camera_h_ref),
-        .I3(latch_href),
+       (.I0(p_0_in_0),
+        .I1(camera_h_ref),
+        .I2(latch_href),
+        .I3(camera_v_sync),
         .O(\counter_col[10]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h7FFFFFFF80000000)) 
+    .INIT(64'hFDFFFFFF02000000)) 
     \counter_col[10]_i_2 
-       (.I0(counter_col_reg[8]),
-        .I1(counter_col_reg[6]),
-        .I2(\counter_col[10]_i_3_n_0 ),
-        .I3(counter_col_reg[7]),
-        .I4(counter_col_reg[9]),
+       (.I0(counter_col_reg[9]),
+        .I1(\counter_col[10]_i_3_n_0 ),
+        .I2(\counter_col[10]_i_4_n_0 ),
+        .I3(counter_col_reg[8]),
+        .I4(counter_col_reg[6]),
         .I5(counter_col_reg[10]),
         .O(plusOp__0[10]));
-  LUT6 #(
-    .INIT(64'h8000000000000000)) 
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  LUT2 #(
+    .INIT(4'h7)) 
     \counter_col[10]_i_3 
        (.I0(counter_col_reg[5]),
-        .I1(\counter_col_reg_n_0_[3] ),
-        .I2(\counter_col_reg_n_0_[1] ),
-        .I3(\counter_col_reg_n_0_[0] ),
-        .I4(\counter_col_reg_n_0_[2] ),
-        .I5(\counter_col_reg_n_0_[4] ),
+        .I1(counter_col_reg[7]),
         .O(\counter_col[10]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  LUT5 #(
+    .INIT(32'h7FFFFFFF)) 
+    \counter_col[10]_i_4 
+       (.I0(\counter_col_reg_n_0_[3] ),
+        .I1(\counter_col_reg_n_0_[1] ),
+        .I2(\counter_col_reg_n_0_[0] ),
+        .I3(\counter_col_reg_n_0_[2] ),
+        .I4(counter_col_reg[4]),
+        .O(\counter_col[10]_i_4_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \counter_col[1]_i_1 
        (.I0(\counter_col_reg_n_0_[0] ),
         .I1(\counter_col_reg_n_0_[1] ),
         .O(plusOp__0[1]));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT3 #(
     .INIT(8'h78)) 
     \counter_col[2]_i_1 
-       (.I0(\counter_col_reg_n_0_[0] ),
-        .I1(\counter_col_reg_n_0_[1] ),
-        .I2(\counter_col_reg_n_0_[2] ),
-        .O(plusOp__0[2]));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
-  LUT4 #(
-    .INIT(16'h7F80)) 
-    \counter_col[3]_i_1 
        (.I0(\counter_col_reg_n_0_[1] ),
         .I1(\counter_col_reg_n_0_[0] ),
         .I2(\counter_col_reg_n_0_[2] ),
-        .I3(\counter_col_reg_n_0_[3] ),
-        .O(plusOp__0[3]));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
-  LUT5 #(
-    .INIT(32'h7FFF8000)) 
-    \counter_col[4]_i_1 
+        .O(plusOp__0[2]));
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  LUT4 #(
+    .INIT(16'h7F80)) 
+    \counter_col[3]_i_1 
        (.I0(\counter_col_reg_n_0_[2] ),
         .I1(\counter_col_reg_n_0_[0] ),
         .I2(\counter_col_reg_n_0_[1] ),
         .I3(\counter_col_reg_n_0_[3] ),
-        .I4(\counter_col_reg_n_0_[4] ),
-        .O(plusOp__0[4]));
-  LUT6 #(
-    .INIT(64'h7FFFFFFF80000000)) 
-    \counter_col[5]_i_1 
+        .O(plusOp__0[3]));
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  LUT5 #(
+    .INIT(32'h7FFF8000)) 
+    \counter_col[4]_i_1 
        (.I0(\counter_col_reg_n_0_[3] ),
         .I1(\counter_col_reg_n_0_[1] ),
         .I2(\counter_col_reg_n_0_[0] ),
         .I3(\counter_col_reg_n_0_[2] ),
-        .I4(\counter_col_reg_n_0_[4] ),
+        .I4(counter_col_reg[4]),
+        .O(plusOp__0[4]));
+  LUT6 #(
+    .INIT(64'h7FFFFFFF80000000)) 
+    \counter_col[5]_i_1 
+       (.I0(counter_col_reg[4]),
+        .I1(\counter_col_reg_n_0_[2] ),
+        .I2(\counter_col_reg_n_0_[0] ),
+        .I3(\counter_col_reg_n_0_[1] ),
+        .I4(\counter_col_reg_n_0_[3] ),
         .I5(counter_col_reg[5]),
         .O(plusOp__0[5]));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
-  LUT2 #(
-    .INIT(4'h6)) 
-    \counter_col[6]_i_1 
-       (.I0(\counter_col[10]_i_3_n_0 ),
-        .I1(counter_col_reg[6]),
-        .O(plusOp__0[6]));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT3 #(
-    .INIT(8'h78)) 
-    \counter_col[7]_i_1 
-       (.I0(\counter_col[10]_i_3_n_0 ),
-        .I1(counter_col_reg[6]),
-        .I2(counter_col_reg[7]),
-        .O(plusOp__0[7]));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+    .INIT(8'hD2)) 
+    \counter_col[6]_i_1 
+       (.I0(counter_col_reg[5]),
+        .I1(\counter_col[10]_i_4_n_0 ),
+        .I2(counter_col_reg[6]),
+        .O(plusOp__0[6]));
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT4 #(
-    .INIT(16'h7F80)) 
+    .INIT(16'hDF20)) 
+    \counter_col[7]_i_1 
+       (.I0(counter_col_reg[6]),
+        .I1(\counter_col[10]_i_4_n_0 ),
+        .I2(counter_col_reg[5]),
+        .I3(counter_col_reg[7]),
+        .O(plusOp__0[7]));
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  LUT5 #(
+    .INIT(32'hDFFF2000)) 
     \counter_col[8]_i_1 
        (.I0(counter_col_reg[6]),
-        .I1(\counter_col[10]_i_3_n_0 ),
+        .I1(\counter_col[10]_i_4_n_0 ),
         .I2(counter_col_reg[7]),
-        .I3(counter_col_reg[8]),
+        .I3(counter_col_reg[5]),
+        .I4(counter_col_reg[8]),
         .O(plusOp__0[8]));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
-  LUT5 #(
-    .INIT(32'h7FFF8000)) 
+  LUT6 #(
+    .INIT(64'hF7FFFFFF08000000)) 
     \counter_col[9]_i_1 
-       (.I0(counter_col_reg[7]),
-        .I1(\counter_col[10]_i_3_n_0 ),
-        .I2(counter_col_reg[6]),
-        .I3(counter_col_reg[8]),
-        .I4(counter_col_reg[9]),
+       (.I0(counter_col_reg[6]),
+        .I1(counter_col_reg[8]),
+        .I2(\counter_col[10]_i_4_n_0 ),
+        .I3(counter_col_reg[7]),
+        .I4(counter_col_reg[5]),
+        .I5(counter_col_reg[9]),
         .O(plusOp__0[9]));
   FDRE #(
     .INIT(1'b0)) 
@@ -564,7 +577,7 @@ module design_1_ovo_7670_caputre_0_0_ovo_7670_caputre
        (.C(pclk),
         .CE(p_0_in_0),
         .D(plusOp__0[4]),
-        .Q(\counter_col_reg_n_0_[4] ),
+        .Q(counter_col_reg[4]),
         .R(\counter_col[10]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
@@ -606,6 +619,7 @@ module design_1_ovo_7670_caputre_0_0_ovo_7670_caputre
         .D(plusOp__0[9]),
         .Q(counter_col_reg[9]),
         .R(\counter_col[10]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \counter_row[0]_i_1 
@@ -618,102 +632,112 @@ module design_1_ovo_7670_caputre_0_0_ovo_7670_caputre
         .I1(latch_href),
         .O(counter_row0));
   LUT6 #(
-    .INIT(64'h7FFFFFFF80000000)) 
+    .INIT(64'hF7FFFFFF08000000)) 
     \counter_row[10]_i_2 
-       (.I0(counter_row_reg[8]),
-        .I1(counter_row_reg[6]),
+       (.I0(counter_row_reg[9]),
+        .I1(counter_row_reg[7]),
         .I2(\counter_row[10]_i_3_n_0 ),
-        .I3(counter_row_reg[7]),
-        .I4(counter_row_reg[9]),
+        .I3(\counter_row[10]_i_4_n_0 ),
+        .I4(counter_row_reg[8]),
         .I5(counter_row_reg[10]),
         .O(plusOp[10]));
-  LUT6 #(
-    .INIT(64'h8000000000000000)) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT5 #(
+    .INIT(32'h7FFFFFFF)) 
     \counter_row[10]_i_3 
-       (.I0(counter_row_reg[5]),
-        .I1(counter_row_reg[3]),
-        .I2(\counter_row_reg_n_0_[1] ),
-        .I3(\counter_row_reg_n_0_[0] ),
-        .I4(\counter_row_reg_n_0_[2] ),
-        .I5(counter_row_reg[4]),
+       (.I0(counter_row_reg[3]),
+        .I1(\counter_row_reg_n_0_[1] ),
+        .I2(\counter_row_reg_n_0_[0] ),
+        .I3(counter_row_reg[2]),
+        .I4(counter_row_reg[4]),
         .O(\counter_row[10]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \counter_row[10]_i_4 
+       (.I0(counter_row_reg[5]),
+        .I1(counter_row_reg[6]),
+        .O(\counter_row[10]_i_4_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \counter_row[1]_i_1 
        (.I0(\counter_row_reg_n_0_[0] ),
         .I1(\counter_row_reg_n_0_[1] ),
         .O(plusOp[1]));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT3 #(
     .INIT(8'h78)) 
     \counter_row[2]_i_1 
-       (.I0(\counter_row_reg_n_0_[0] ),
-        .I1(\counter_row_reg_n_0_[1] ),
-        .I2(\counter_row_reg_n_0_[2] ),
+       (.I0(\counter_row_reg_n_0_[1] ),
+        .I1(\counter_row_reg_n_0_[0] ),
+        .I2(counter_row_reg[2]),
         .O(plusOp[2]));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT4 #(
     .INIT(16'h7F80)) 
     \counter_row[3]_i_1 
-       (.I0(\counter_row_reg_n_0_[1] ),
-        .I1(\counter_row_reg_n_0_[0] ),
-        .I2(\counter_row_reg_n_0_[2] ),
-        .I3(counter_row_reg[3]),
-        .O(plusOp[3]));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
-  LUT5 #(
-    .INIT(32'h7FFF8000)) 
-    \counter_row[4]_i_1 
-       (.I0(\counter_row_reg_n_0_[2] ),
+       (.I0(counter_row_reg[2]),
         .I1(\counter_row_reg_n_0_[0] ),
         .I2(\counter_row_reg_n_0_[1] ),
         .I3(counter_row_reg[3]),
+        .O(plusOp[3]));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT5 #(
+    .INIT(32'h7FFF8000)) 
+    \counter_row[4]_i_1 
+       (.I0(counter_row_reg[3]),
+        .I1(\counter_row_reg_n_0_[1] ),
+        .I2(\counter_row_reg_n_0_[0] ),
+        .I3(counter_row_reg[2]),
         .I4(counter_row_reg[4]),
         .O(plusOp[4]));
   LUT6 #(
     .INIT(64'h7FFFFFFF80000000)) 
     \counter_row[5]_i_1 
-       (.I0(counter_row_reg[3]),
-        .I1(\counter_row_reg_n_0_[1] ),
+       (.I0(counter_row_reg[4]),
+        .I1(counter_row_reg[2]),
         .I2(\counter_row_reg_n_0_[0] ),
-        .I3(\counter_row_reg_n_0_[2] ),
-        .I4(counter_row_reg[4]),
+        .I3(\counter_row_reg_n_0_[1] ),
+        .I4(counter_row_reg[3]),
         .I5(counter_row_reg[5]),
         .O(plusOp[5]));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
-  LUT2 #(
-    .INIT(4'h6)) 
-    \counter_row[6]_i_1 
-       (.I0(\counter_row[10]_i_3_n_0 ),
-        .I1(counter_row_reg[6]),
-        .O(plusOp[6]));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT3 #(
-    .INIT(8'h78)) 
-    \counter_row[7]_i_1 
-       (.I0(\counter_row[10]_i_3_n_0 ),
-        .I1(counter_row_reg[6]),
-        .I2(counter_row_reg[7]),
-        .O(plusOp[7]));
+    .INIT(8'hD2)) 
+    \counter_row[6]_i_1 
+       (.I0(counter_row_reg[5]),
+        .I1(\counter_row[10]_i_3_n_0 ),
+        .I2(counter_row_reg[6]),
+        .O(plusOp[6]));
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT4 #(
-    .INIT(16'h7F80)) 
-    \counter_row[8]_i_1 
-       (.I0(counter_row_reg[6]),
-        .I1(\counter_row[10]_i_3_n_0 ),
-        .I2(counter_row_reg[7]),
-        .I3(counter_row_reg[8]),
-        .O(plusOp[8]));
+    .INIT(16'hF708)) 
+    \counter_row[7]_i_1 
+       (.I0(counter_row_reg[5]),
+        .I1(counter_row_reg[6]),
+        .I2(\counter_row[10]_i_3_n_0 ),
+        .I3(counter_row_reg[7]),
+        .O(plusOp[7]));
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT5 #(
-    .INIT(32'h7FFF8000)) 
-    \counter_row[9]_i_1 
+    .INIT(32'hDFFF2000)) 
+    \counter_row[8]_i_1 
        (.I0(counter_row_reg[7]),
         .I1(\counter_row[10]_i_3_n_0 ),
         .I2(counter_row_reg[6]),
-        .I3(counter_row_reg[8]),
-        .I4(counter_row_reg[9]),
+        .I3(counter_row_reg[5]),
+        .I4(counter_row_reg[8]),
+        .O(plusOp[8]));
+  LUT6 #(
+    .INIT(64'hFF7FFFFF00800000)) 
+    \counter_row[9]_i_1 
+       (.I0(counter_row_reg[8]),
+        .I1(counter_row_reg[5]),
+        .I2(counter_row_reg[6]),
+        .I3(\counter_row[10]_i_3_n_0 ),
+        .I4(counter_row_reg[7]),
+        .I5(counter_row_reg[9]),
         .O(plusOp[9]));
   FDRE #(
     .INIT(1'b0)) 
@@ -745,7 +769,7 @@ module design_1_ovo_7670_caputre_0_0_ovo_7670_caputre
        (.C(pclk),
         .CE(counter_row0),
         .D(plusOp[2]),
-        .Q(\counter_row_reg_n_0_[2] ),
+        .Q(counter_row_reg[2]),
         .R(camera_v_sync));
   FDRE #(
     .INIT(1'b0)) 
@@ -1006,14 +1030,14 @@ module design_1_ovo_7670_caputre_0_0_ovo_7670_caputre
         .D(camera_h_ref),
         .Q(latch_href),
         .R(1'b0));
-  LUT5 #(
-    .INIT(32'hB8B8A8B8)) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  LUT4 #(
+    .INIT(16'hFC20)) 
     wr_en_i_1
-       (.I0(wr_en),
+       (.I0(\address[18]_i_3_n_0 ),
         .I1(camera_v_sync),
         .I2(p_0_in_0),
-        .I3(zoom),
-        .I4(address0__2),
+        .I3(wr_en),
         .O(wr_en_i_1_n_0));
   FDRE wr_en_reg
        (.C(pclk),
@@ -1021,7 +1045,6 @@ module design_1_ovo_7670_caputre_0_0_ovo_7670_caputre
         .D(wr_en_i_1_n_0),
         .Q(wr_en),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT3 #(
     .INIT(8'h04)) 
     \write_state[0]_i_1 
@@ -1029,7 +1052,7 @@ module design_1_ovo_7670_caputre_0_0_ovo_7670_caputre
         .I1(camera_h_ref),
         .I2(camera_v_sync),
         .O(\write_state[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \write_state[1]_i_1 
