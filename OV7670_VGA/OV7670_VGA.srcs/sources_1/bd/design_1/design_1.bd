@@ -5,16 +5,15 @@
       "device": "xc7a100tcsg324-1",
       "name": "design_1",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2019.2",
-      "validated": "true"
+      "tool_version": "2019.2"
     },
     "design_tree": {
       "blk_mem_gen_0": "",
       "clk_wiz_0": "",
       "cntl_0": "",
+      "ov7670_controller_0": "",
       "ovo_7670_caputre_0": "",
-      "vga_0": "",
-      "ov7670_controller_0": ""
+      "vga_0": ""
     },
     "ports": {
       "clk_in1": {
@@ -23,22 +22,6 @@
         "parameters": {
           "ASSOCIATED_RESET": {
             "value": "reset_0"
-          },
-          "CLK_DOMAIN": {
-            "value": "design_1_clk_in1_0",
-            "value_src": "default"
-          },
-          "FREQ_HZ": {
-            "value": "100000000",
-            "value_src": "default"
-          },
-          "INSERT_VIP": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "PHASE": {
-            "value": "0.000",
-            "value_src": "default"
           }
         }
       },
@@ -64,17 +47,7 @@
       },
       "reset": {
         "type": "rst",
-        "direction": "O",
-        "parameters": {
-          "INSERT_VIP": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "POLARITY": {
-            "value": "ACTIVE_LOW",
-            "value_src": "default"
-          }
-        }
+        "direction": "O"
       },
       "siod": {
         "direction": "IO"
@@ -93,17 +66,7 @@
       },
       "resetn": {
         "type": "rst",
-        "direction": "I",
-        "parameters": {
-          "INSERT_VIP": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "POLARITY": {
-            "value": "ACTIVE_LOW",
-            "value_src": "default"
-          }
-        }
+        "direction": "I"
       },
       "vga_blue": {
         "direction": "O",
@@ -247,13 +210,7 @@
         "ports": {
           "clk": {
             "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "CLK_DOMAIN": {
-                "value": "design_1_clk_in1_0",
-                "value_src": "default_prop"
-              }
-            }
+            "direction": "I"
           },
           "resend_in": {
             "direction": "I"
@@ -265,6 +222,43 @@
             "direction": "O"
           },
           "cntl_out": {
+            "direction": "O"
+          }
+        }
+      },
+      "ov7670_controller_0": {
+        "vlnv": "xilinx.com:module_ref:ov7670_controller:1.0",
+        "xci_name": "design_1_ov7670_controller_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ov7670_controller",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "resend": {
+            "direction": "I"
+          },
+          "config_finished": {
+            "direction": "O"
+          },
+          "sioc": {
+            "direction": "O"
+          },
+          "siod": {
+            "direction": "IO"
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "O"
+          },
+          "pwdn": {
+            "direction": "O"
+          },
+          "xclk": {
             "direction": "O"
           }
         }
@@ -321,21 +315,7 @@
         "ports": {
           "pix_clk": {
             "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "CLK_DOMAIN": {
-                "value": "/clk_wiz_0_clk_out1",
-                "value_src": "ip_prop"
-              },
-              "FREQ_HZ": {
-                "value": "25174825",
-                "value_src": "ip_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "ip_prop"
-              }
-            }
+            "direction": "I"
           },
           "cntl": {
             "direction": "I"
@@ -373,61 +353,6 @@
             "direction": "O",
             "left": "18",
             "right": "0"
-          }
-        }
-      },
-      "ov7670_controller_0": {
-        "vlnv": "xilinx.com:module_ref:ov7670_controller:1.0",
-        "xci_name": "design_1_ov7670_controller_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "ov7670_controller",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "reset",
-                "value_src": "constant"
-              },
-              "CLK_DOMAIN": {
-                "value": "/clk_wiz_0_clk_out1",
-                "value_src": "ip_prop"
-              },
-              "FREQ_HZ": {
-                "value": "25000000",
-                "value_src": "ip_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "ip_prop"
-              }
-            }
-          },
-          "resend": {
-            "direction": "I"
-          },
-          "config_finished": {
-            "direction": "O"
-          },
-          "sioc": {
-            "direction": "O"
-          },
-          "siod": {
-            "direction": "IO"
-          },
-          "reset": {
-            "type": "rst",
-            "direction": "O"
-          },
-          "pwdn": {
-            "direction": "O"
-          },
-          "xclk": {
-            "direction": "O"
           }
         }
       }
