@@ -195,35 +195,35 @@ begin
     end if;
     end process;             
 
-    -- Pixel address counter
-    process(pix_clk)
+     -- pixel address counter
+    process(pix_clk) 
     begin
-        if (rising_edge(pix_clk)) then
-            if (v_cnt >= CAMERA_HEIGHT) then
-                blank <= '1';
-                fr_address <= (others => '0');
-            else
-                if (h_cnt < CAMERA_WIDTH) then
-                    blank <= '0';
-                    if (zoom_x2 = '1' and zoom_x4 = '0') then
-                        -- Center zoom_x2: Address calculation for central region (272 to 592, 132 to 372)
-                        if (v_cnt >= 132 and v_cnt < 372) and (h_cnt >= 272 and h_cnt < 592) then
-                            fr_address <= val_zoom - val_tmp;
-                        end if;
-                    elsif (zoom_x2 = '0' and zoom_x4 = '1') then
-                        -- Center zoom_x4: Address calculation for central region (352 to 512, 192 to 312)
-                        if (v_cnt >= 192 and v_cnt < 312) and (h_cnt >= 352 and h_cnt < 512) then
-                            fr_address <= val_zoom - val_tmp;
-                        end if;
-                    else
-                        -- No zoom: Process all pixels
-                        fr_address <= fr_address + 1;
-                    end if;
-                else
-                    blank <= '1';
-                end if;
-            end if;
-        end if;
+    if(rising_edge(pix_clk)) then
+	     if(v_cnt >= CAMERA_HEIGHT) then
+	    	  blank <= '1';
+	    	fr_address <= (others=>'0');
+	     else 
+	    	if(h_cnt <  CAMERA_WIDTH) then
+	    		blank <= '0';
+	    		if (zoom_x4 = '1') then
+	    			-- Handle zoom_x4: Increment frame address only for every 4th row and column
+	    			if (unsigned(v_cnt) mod 4 = 0) and (unsigned(h_cnt) mod 4 = 0) then
+	    				fr_address <= fr_address + 1;
+	    			end if;
+	    		elsif (zoom_x2 = '1') then
+	    			-- Handle zoom_x2: Increment frame address only for every 2nd row and column
+	    			if (unsigned(v_cnt) mod 2 = 0) and (unsigned(h_cnt) mod 2 = 0) then
+	    				fr_address <= fr_address + 1;
+	    			end if;
+	    		else
+	    			-- No zoom: Increment frame address for every pixel
+	    			fr_address <= fr_address + 1;
+	    		end if;
+	    	else
+	    		blank <= '1';
+	    	end if;
+	    end if;
+    end if;
     end process;
     
     valid <= '1' when((h_cnt_d < FRAME_WIDTH) and (v_cnt_d < FRAME_HEIGHT)) else '0';
