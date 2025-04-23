@@ -1,7 +1,7 @@
 frame rate: 30 fps
 
 protocol: SCCB (Serial Camera Control Bus)
-protocol frequency: 97.656 KHZ = clock_reg(25 MHz) / 256 (clock dividing)
+protocol frequency: 97.656 KHZ ~= 100 KHZ = clock_reg(25 MHz) / 256 (clock dividing)
 purpose: 
 The SCCB is a proprietary protocol similar to I2C, used to communicate with the OV7670 camera module.
 It is primarily used to configure the camera's internal registers. These registers control various settings like resolution, color format, frame rate, and exposure.
