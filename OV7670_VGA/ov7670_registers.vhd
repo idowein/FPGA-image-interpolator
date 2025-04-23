@@ -4,6 +4,9 @@
 -- Description: Register settings for the OV7670 Caamera (partially from OV7670.c
 --              in the Linux Kernel
 -- Edited by : Christopher Wilson <wilson@chrec.org>
+--
+-- Edited by : Ido weinstock <ido.weinstock@gmail.com> (23/04/2025)
+--             Dvir Hershkovitz <dvirhersh@gmail.com?>
 ------------------------------------------------------------------------------------
 --
 -- Notes:

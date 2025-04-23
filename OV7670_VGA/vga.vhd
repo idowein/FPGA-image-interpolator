@@ -1,10 +1,11 @@
 ----------------------------------------------------------------------------------
 -- Company: 
--- Engineer: 
+-- Engineers : Ido weinstock <ido.weinstock@gmail.com> (23/04/2025)
+--             Dvir Hershkovitz <dvirhersh@gmail.com?>
 -- 
--- Create Date: 19.07.2020 17:58:36
+-- Create Date: 23.04.2025 
 -- Design Name: 
--- Module Name: vga_02 - Behavioral
+-- Module Name: vga - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
