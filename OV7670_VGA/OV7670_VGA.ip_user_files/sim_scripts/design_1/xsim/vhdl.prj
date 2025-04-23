@@ -1,0 +1,8 @@
+vhdl xil_defaultlib  \
+"../../../bd/design_1/ip/design_1_ov7670_controller_0_0_1/sim/design_1_ov7670_controller_0_0.vhd" \
+"../../../bd/design_1/ip/design_1_cntl_0_0_1/sim/design_1_cntl_0_0.vhd" \
+"../../../bd/design_1/ip/design_1_ovo_7670_caputre_0_0_1/sim/design_1_ovo_7670_caputre_0_0.vhd" \
+"../../../bd/design_1/ip/design_1_vga_0_0_1/sim/design_1_vga_0_0.vhd" \
+"../../../bd/design_1/sim/design_1.vhd" \
+
+nosort

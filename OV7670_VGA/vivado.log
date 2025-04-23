@@ -2,114 +2,387 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Wed Apr 16 22:35:37 2025
-# Process ID: 18280
-# Current directory: C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent23880 C:\Users\idowe\myProjects\FPGA-image-interpolator\OV7670_VGA\OV7670_VGA.xpr
-# Log file: C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/vivado.log
-# Journal file: C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA\vivado.jou
+# Start of session at: Wed Apr 23 20:38:08 2025
+# Process ID: 27940
+# Current directory: C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent13292 C:\Users\idowe\myProjects\Digital-Zoom-FPGA\OV7670_VGA\OV7670_VGA.xpr
+# Log file: C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/vivado.log
+# Journal file: C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA\vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.xpr
+open_project C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.xpr
+CRITICAL WARNING: [Project 1-19] Could not find the file 'C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/i2c_sender.vhd'.
 Scanning sources...
 Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.2/data/ip'.
-open_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:06 . Memory (MB): peak = 972.004 ; gain = 292.469
-update_module_reference design_1_ov7670_controller_0_0
-INFO: [IP_Flow 19-5107] Inferred bus interface 'reset' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
-INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
-INFO: [IP_Flow 19-4728] Bus Interface 'clk': Added interface parameter 'ASSOCIATED_RESET' with value 'reset'.
-WARNING: [IP_Flow 19-3153] Bus Interface 'clk': ASSOCIATED_BUSIF bus parameter is missing.
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1704] No user IP repositories specified
-Adding component instance block -- xilinx.com:module_ref:ov7670_controller:1.0 - ov7670_controller_0
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2019.2/data/xsim/xsim.ini' copied to run dir:'C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'vga' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj vga_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+"xvhdl --incr --relax -prj vga_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/vga.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'vga'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.sim/sim_1/behav/xsim'
+"xelab -wto 56a9619014a94fc9a5050bd4e00e58df --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot vga_behav xil_defaultlib.vga xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto 56a9619014a94fc9a5050bd4e00e58df --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot vga_behav xil_defaultlib.vga xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.numeric_std
+Compiling module xil_defaultlib.glbl
+Compiling architecture behavioral of entity xil_defaultlib.vga
+Built simulation snapshot vga_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "vga_behav -key {Behavioral:sim_1:Functional:vga} -tclbatch {vga.tcl} -view {C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/vga_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+open_wave_config C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/vga_behav.wcfg
+source vga.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'vga_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1045.020 ; gain = 79.258
+add_force {/vga/pix_clk} -radix hex {1 0ns} {0 20000ps} -repeat_every 40000ps
+run 10000000 ns
+add_force {/vga/zoom_x2} -radix hex {1 0ns}
+run 10000000 ns
+add_force {/vga/cntl} -radix hex {1 0ns}
+run 10000000 ns
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+add_force {/vga/zoom_x2} -radix hex {0 0ns}
+run 10000000 ns
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+add_force {/vga/zoom_x2} -radix hex {U 0ns}
+run 5000 ns
+add_force {/vga/zoom_x2} -radix hex {0 0ns}
+run 5000 ns
+run 5000 ns
+add_force {/vga/zoom_x2} -radix hex {1 0ns}
+run 5000 ns
+run 5000 ns
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 5000 ns
+add_force {/vga/zoom_x2} -radix hex {1 0ns}
+run 5000 ns
+run 100000 ns
+run 1000000 ns
+run 10000000 ns
+save_wave_config {C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/vga_behav.wcfg}
+run 10000000 ns
+run 10000000 ns
+current_wave_config {vga_behav.wcfg}
+C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/vga_behav.wcfg
+add_wave {{/vga/vga_blue}} 
+current_wave_config {vga_behav.wcfg}
+C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/vga_behav.wcfg
+add_wave {{/vga/vga_red}} {{/vga/vga_green}} 
+run 20000000 ns
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 20000000 ns
+save_wave_config {C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/vga_behav.wcfg}
+open_bd_design {C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/design_1.bd}
+Adding component instance block -- xilinx.com:ip:blk_mem_gen:8.4 - blk_mem_gen_0
+Adding component instance block -- xilinx.com:ip:clk_wiz:6.0 - clk_wiz_0
 Adding component instance block -- xilinx.com:module_ref:cntl:1.0 - cntl_0
 Adding component instance block -- xilinx.com:module_ref:ovo_7670_caputre:1.0 - ovo_7670_caputre_0
 Adding component instance block -- xilinx.com:module_ref:vga:1.0 - vga_0
-Adding component instance block -- xilinx.com:module_ref:xlconstant:1.0 - xlconstant_0
-Adding component instance block -- xilinx.com:ip:blk_mem_gen:8.4 - blk_mem_gen_0
-Adding component instance block -- xilinx.com:ip:clk_wiz:6.0 - clk_wiz_0
-WARNING: [BD 41-1731] Type mismatch between connected pins: /xlconstant_0/dout(undef) and /clk_wiz_0/reset(rst)
-Successfully read diagram <design_1> from BD file <C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/design_1.bd>
-Upgrading 'C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/design_1.bd'
-INFO: [IP_Flow 19-1972] Upgraded design_1_ov7670_controller_0_0 from ov7670_controller_v1_0 1.0 to ov7670_controller_v1_0 1.0
-Wrote  : <C:\Users\idowe\myProjects\FPGA-image-interpolator\OV7670_VGA\OV7670_VGA.srcs\sources_1\bd\design_1\design_1.bd> 
-Wrote  : <C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
-upgrade_ip: Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 1224.719 ; gain = 68.262
-update_module_reference: Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 1224.719 ; gain = 68.262
-update_module_reference design_1_cntl_0_0
-INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
-WARNING: [IP_Flow 19-3153] Bus Interface 'clk': ASSOCIATED_BUSIF bus parameter is missing.
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1704] No user IP repositories specified
-Upgrading 'C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/design_1.bd'
-INFO: [IP_Flow 19-1972] Upgraded design_1_cntl_0_0 from cntl_v1_0 1.0 to cntl_v1_0 1.0
-Wrote  : <C:\Users\idowe\myProjects\FPGA-image-interpolator\OV7670_VGA\OV7670_VGA.srcs\sources_1\bd\design_1\design_1.bd> 
-Wrote  : <C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
-update_module_reference design_1_ovo_7670_caputre_0_0
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1704] No user IP repositories specified
-Upgrading 'C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/design_1.bd'
-INFO: [IP_Flow 19-1972] Upgraded design_1_ovo_7670_caputre_0_0 from ovo_7670_caputre_v1_0 1.0 to ovo_7670_caputre_v1_0 1.0
-Wrote  : <C:\Users\idowe\myProjects\FPGA-image-interpolator\OV7670_VGA\OV7670_VGA.srcs\sources_1\bd\design_1\design_1.bd> 
-Wrote  : <C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
-update_module_reference design_1_vga_0_0
-INFO: [IP_Flow 19-5107] Inferred bus interface 'pix_clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
-WARNING: [IP_Flow 19-3153] Bus Interface 'pix_clk': ASSOCIATED_BUSIF bus parameter is missing.
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1704] No user IP repositories specified
-Upgrading 'C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/design_1.bd'
-INFO: [IP_Flow 19-1972] Upgraded design_1_vga_0_0 from vga_v1_0 1.0 to vga_v1_0 1.0
-Wrote  : <C:\Users\idowe\myProjects\FPGA-image-interpolator\OV7670_VGA\OV7670_VGA.srcs\sources_1\bd\design_1\design_1.bd> 
-Wrote  : <C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
-update_module_reference design_1_xlconstant_0_0
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1704] No user IP repositories specified
-Upgrading 'C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/design_1.bd'
-INFO: [IP_Flow 19-1972] Upgraded design_1_xlconstant_0_0 from xlconstant_v1_0 1.0 to xlconstant_v1_0 1.0
-WARNING: [BD 41-1731] Type mismatch between connected pins: /clk_wiz_0/reset(rst) and /xlconstant_0_upgraded_ipi/dout(undef)
-Wrote  : <C:\Users\idowe\myProjects\FPGA-image-interpolator\OV7670_VGA\OV7670_VGA.srcs\sources_1\bd\design_1\design_1.bd> 
-Wrote  : <C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
-update_compile_order -fileset sources_1
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 2
+Adding component instance block -- xilinx.com:module_ref:ov7670_controller:1.0 - ov7670_controller_0
+Successfully read diagram <design_1> from BD file <C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/design_1.bd>
+regenerate_bd_layout
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+set_property top design_1_wrapper_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+generate_target Simulation [get_files C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/design_1.bd]
+INFO: [BD 41-1662] The design 'design_1.bd' is already validated. Therefore parameter propagation will not be re-run.
 WARNING: [BD 41-2180] Resetting the memory initialization file of </blk_mem_gen_0> to default.
-WARNING: [BD 41-927] Following properties on pin /ov7670_controller_0/clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
-	PHASE=0.0 
-WARNING: [BD 41-927] Following properties on pin /vga_0/pix_clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
-	PHASE=0.0 
-Wrote  : <C:\Users\idowe\myProjects\FPGA-image-interpolator\OV7670_VGA\OV7670_VGA.srcs\sources_1\bd\design_1\design_1.bd> 
-VHDL Output written to : C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/synth/design_1.vhd
-VHDL Output written to : C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/sim/design_1.vhd
-VHDL Output written to : C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd
+Wrote  : <C:\Users\idowe\myProjects\Digital-Zoom-FPGA\OV7670_VGA\OV7670_VGA.srcs\sources_1\bd\design_1\design_1.bd> 
+Wrote  : <C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+VHDL Output written to : C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/synth/design_1.vhd
+VHDL Output written to : C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/sim/design_1.vhd
+VHDL Output written to : C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd
 INFO: [BD 41-1029] Generation completed for the IP Integrator block ov7670_controller_0 .
 INFO: [BD 41-1029] Generation completed for the IP Integrator block cntl_0 .
 INFO: [BD 41-1029] Generation completed for the IP Integrator block ovo_7670_caputre_0 .
 INFO: [BD 41-1029] Generation completed for the IP Integrator block vga_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
 INFO: [BD 41-1029] Generation completed for the IP Integrator block blk_mem_gen_0 .
 INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_0 .
-Exporting to file C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
-Generated Block Design Tcl file C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
-Generated Hardware Definition File C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/synth/design_1.hwdef
-[Wed Apr 16 22:37:02 2025] Launched design_1_cntl_0_0_synth_1, design_1_ovo_7670_caputre_0_0_synth_1, design_1_ov7670_controller_0_0_synth_1, design_1_vga_0_0_synth_1, design_1_xlconstant_0_0_synth_1, synth_1...
-Run output will be captured here:
-design_1_cntl_0_0_synth_1: C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.runs/design_1_cntl_0_0_synth_1/runme.log
-design_1_ovo_7670_caputre_0_0_synth_1: C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.runs/design_1_ovo_7670_caputre_0_0_synth_1/runme.log
-design_1_ov7670_controller_0_0_synth_1: C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.runs/design_1_ov7670_controller_0_0_synth_1/runme.log
-design_1_vga_0_0_synth_1: C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.runs/design_1_vga_0_0_synth_1/runme.log
-design_1_xlconstant_0_0_synth_1: C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.runs/design_1_xlconstant_0_0_synth_1/runme.log
-synth_1: C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.runs/synth_1/runme.log
-[Wed Apr 16 22:37:03 2025] Launched impl_1...
-Run output will be captured here: C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.runs/impl_1/runme.log
-launch_runs: Time (s): cpu = 00:00:03 ; elapsed = 00:00:10 . Memory (MB): peak = 1264.051 ; gain = 39.332
-delete_bd_objs [get_bd_nets xlconstant_0_dout] [get_bd_cells xlconstant_0]
-update_compile_order -fileset sources_1
-startgroup
-make_bd_pins_external  [get_bd_pins clk_wiz_0/reset]
-endgroup
-set_property CONFIG.ASSOCIATED_RESET {reset_0} [get_bd_ports /clk_in1]
-set_property CONFIG.POLARITY ACTIVE_LOW [get_bd_ports reset_0]
-set_property CONFIG.POLARITY ACTIVE_LOW [get_bd_ports reset_0]
+Exporting to file C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+export_ip_user_files -of_objects [get_files C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/design_1.bd] -directory C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.ip_user_files -ipstatic_source_dir C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.cache/compile_simlib/modelsim} {questa=C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.cache/compile_simlib/questa} {riviera=C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.cache/compile_simlib/riviera} {activehdl=C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2019.2/data/xsim/xsim.ini' copied to run dir:'C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'design_1_wrapper_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj design_1_wrapper_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.ip_user_files/bd/design_1/ip/design_1_blk_mem_gen_0_0_1/sim/design_1_blk_mem_gen_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1_blk_mem_gen_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.ip_user_files/bd/design_1/ip/design_1_clk_wiz_0_0_1/design_1_clk_wiz_0_0_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1_clk_wiz_0_0_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.ip_user_files/bd/design_1/ip/design_1_clk_wiz_0_0_1/design_1_clk_wiz_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1_clk_wiz_0_0
+"xvhdl --incr --relax -prj design_1_wrapper_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/ov7670_registers.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ov7670_registers'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/sccb_sender.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'SCCB_sender'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/new/ov7670_controller.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ov7670_controller'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/cntl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'cntl'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/ovo_7670_caputre.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ovo_7670_caputre'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.ip_user_files/bd/design_1/ip/design_1_ov7670_controller_0_0_1/sim/design_1_ov7670_controller_0_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'design_1_ov7670_controller_0_0'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.ip_user_files/bd/design_1/ip/design_1_cntl_0_0_1/sim/design_1_cntl_0_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'design_1_cntl_0_0'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.ip_user_files/bd/design_1/ip/design_1_ovo_7670_caputre_0_0_1/sim/design_1_ovo_7670_caputre_0_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'design_1_ovo_7670_caputre_0_0'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.ip_user_files/bd/design_1/ip/design_1_vga_0_0_1/sim/design_1_vga_0_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'design_1_vga_0_0'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.ip_user_files/bd/design_1/sim/design_1.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'design_1'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'design_1_wrapper'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sim_1/new/design_1_wrapper_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'design_1_wrapper_tb'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.sim/sim_1/behav/xsim'
+"xelab -wto 56a9619014a94fc9a5050bd4e00e58df --incr --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot design_1_wrapper_tb_behav xil_defaultlib.design_1_wrapper_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto 56a9619014a94fc9a5050bd4e00e58df --incr --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot design_1_wrapper_tb_behav xil_defaultlib.design_1_wrapper_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+ERROR: [VRFC 10-718] formal port <zoom> does not exist in entity <design_1_wrapper>.  Please compare the definition of block <design_1_wrapper> to its component declaration and its instantion to detect the mismatch. [C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sim_1/new/design_1_wrapper_TB.vhd:32]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 1326.195 ; gain = 0.000
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+set_property top design_1_wrapper [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2019.2/data/xsim/xsim.ini' copied to run dir:'C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'design_1_wrapper' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj design_1_wrapper_vlog.prj"
+"xvhdl --incr --relax -prj design_1_wrapper_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.sim/sim_1/behav/xsim'
+"xelab -wto 56a9619014a94fc9a5050bd4e00e58df --incr --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot design_1_wrapper_behav xil_defaultlib.design_1_wrapper xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto 56a9619014a94fc9a5050bd4e00e58df --incr --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_4_4 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot design_1_wrapper_behav xil_defaultlib.design_1_wrapper xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package vl.vl_types
+Compiling module xil_defaultlib.glbl
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_axi_regs_fwd_v8_4(C_DATA...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="art...
+Compiling module xil_defaultlib.design_1_blk_mem_gen_0_0
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=9.0,C...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.design_1_clk_wiz_0_0_clk_wiz
+Compiling module xil_defaultlib.design_1_clk_wiz_0_0
+Compiling architecture behavioral of entity xil_defaultlib.cntl [cntl_default]
+Compiling architecture design_1_cntl_0_0_arch of entity xil_defaultlib.design_1_cntl_0_0 [design_1_cntl_0_0_default]
+Compiling architecture behavioral of entity xil_defaultlib.SCCB_sender [sccb_sender_default]
+Compiling architecture behavioral of entity xil_defaultlib.ov7670_registers [ov7670_registers_default]
+Compiling architecture behavioral of entity xil_defaultlib.ov7670_controller [ov7670_controller_default]
+Compiling architecture design_1_ov7670_controller_0_0_arch of entity xil_defaultlib.design_1_ov7670_controller_0_0 [design_1_ov7670_controller_0_0_d...]
+Compiling architecture behavioral of entity xil_defaultlib.ovo_7670_caputre [ovo_7670_caputre_default]
+Compiling architecture design_1_ovo_7670_caputre_0_0_arch of entity xil_defaultlib.design_1_ovo_7670_caputre_0_0 [design_1_ovo_7670_caputre_0_0_de...]
+Compiling architecture behavioral of entity xil_defaultlib.vga [vga_default]
+Compiling architecture design_1_vga_0_0_arch of entity xil_defaultlib.design_1_vga_0_0 [design_1_vga_0_0_default]
+Compiling architecture structure of entity xil_defaultlib.design_1 [design_1_default]
+Compiling architecture structure of entity xil_defaultlib.design_1_wrapper
+Built simulation snapshot design_1_wrapper_behav
+
+****** Webtalk v2019.2 (64-bit)
+  **** SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+  **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.sim/sim_1/behav/xsim/xsim.dir/design_1_wrapper_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Wed Apr 23 21:29:42 2025...
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "design_1_wrapper_behav -key {Behavioral:sim_1:Functional:design_1_wrapper} -tclbatch {design_1_wrapper.tcl} -protoinst "protoinst_files/design_1.protoinst" -view {C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/vga_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.2
+INFO: [Wavedata 42-565] Reading protoinst file protoinst_files/design_1.protoinst
+Time resolution is 1 ps
+open_wave_config C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/vga_behav.wcfg
+WARNING: Simulation object /vga/pix_clk was not found in the design.
+WARNING: Simulation object /vga/h_cnt was not found in the design.
+WARNING: Simulation object /vga/v_cnt[0] was not found in the design.
+WARNING: Simulation object /vga/v_cnt was not found in the design.
+WARNING: Simulation object /vga/blank was not found in the design.
+WARNING: Simulation object /vga/val_zoom was not found in the design.
+WARNING: Simulation object /vga/val_tmp was not found in the design.
+WARNING: Simulation object /vga/fr_address was not found in the design.
+WARNING: Simulation object /vga/zoom_x2 was not found in the design.
+WARNING: Simulation object /vga/cntl was not found in the design.
+WARNING: Simulation object /vga/frame_fix was not found in the design.
+WARNING: Simulation object /vga/frame_adress was not found in the design.
+WARNING: Simulation object /vga/vga_blue was not found in the design.
+WARNING: Simulation object /vga/vga_red was not found in the design.
+WARNING: Simulation object /vga/vga_green was not found in the design.
+source design_1_wrapper.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Block Memory Generator module design_1_wrapper.design_1_i.blk_mem_gen_0.inst.native_mem_module.blk_mem_gen_v8_4_4_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'design_1_wrapper_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 1326.195 ; gain = 0.000
+current_wave_config {vga_behav.wcfg}
+vga_behav.wcfg
+add_wave {{/design_1_wrapper/VGA_H_sync}} {{/design_1_wrapper/camera_h_ref}} {{/design_1_wrapper/camera_v_sync}} {{/design_1_wrapper/clk_in1}} {{/design_1_wrapper/cntl_in}} {{/design_1_wrapper/config_finished}} {{/design_1_wrapper/din}} {{/design_1_wrapper/pclk}} {{/design_1_wrapper/pwdn}} {{/design_1_wrapper/resend_in}} {{/design_1_wrapper/reset}} {{/design_1_wrapper/resetn}} {{/design_1_wrapper/sioc}} {{/design_1_wrapper/siod}} {{/design_1_wrapper/vga_V_sync}} {{/design_1_wrapper/vga_blue}} {{/design_1_wrapper/vga_green}} {{/design_1_wrapper/vga_red}} {{/design_1_wrapper/xclk}} {{/design_1_wrapper/zoom_x2}} 
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+add_force {/design_1_wrapper/pclk} -radix hex {1 0ns} {0 20000ps} -repeat_every 40000ps
+run 100 ns
+Block Memory Generator module design_1_wrapper.design_1_i.blk_mem_gen_0.inst.native_mem_module.blk_mem_gen_v8_4_4_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+run 100 ns
+add_force {/design_1_wrapper/din} -radix hex {252 0ns} {134 20000ps} -repeat_every 40000ps
+ERROR: [Simtcl 6-179] Couldn't add force for the following reason: Illegal value '252': Object size 8 does not match size of given value 252.
+add_force {/design_1_wrapper/din} -radix hex {100 0ns} {50 20000ps} -repeat_every 40000ps
+ERROR: [Simtcl 6-179] Couldn't add force for the following reason: Illegal value '100': Object size 8 does not match size of given value 100.
+add_force {/design_1_wrapper/din} -radix unsigned {100 0ns} {50 20000ps} -repeat_every 40000ps
+run 100 ns
+add_force {/design_1_wrapper/din} -radix hex {100 0ns} {50 29000ps} -repeat_every 100000ps
+ERROR: [Simtcl 6-179] Couldn't add force for the following reason: Illegal value '100': Object size 8 does not match size of given value 100.
+add_force {/design_1_wrapper/din} -radix unsigned {100 0ns} {50 29000ps} -repeat_every 100000ps
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+add_force {/design_1_wrapper/din[7]} -radix hex {1 0ns} {0 50000ps} -repeat_every 100000ps
+add_force {/design_1_wrapper/din[6]} -radix hex {1 0ns} {0 25000ps} -repeat_every 50000ps
+run 100 ns
+run 100 ns
+add_force {/design_1_wrapper/din[3]} -radix hex {1 0ns} {0 100000ps} -repeat_every 200000ps
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+add_force {/design_1_wrapper/resetn} -radix hex {1 0ns}
+run 100 ns
+add_force {/design_1_wrapper/zoom_x2} -radix hex {1 0ns}
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+add_force {/design_1_wrapper/camera_h_ref} -radix hex {1 0ns} {0 2500000ps} -repeat_every 5000000ps
+run 1000 ns
+run 1000 ns
+run 5000 ns
+run 5000 ns
+add_force {/design_1_wrapper/camera_h_ref} -radix hex {1 0ns} {0 12800000ps} -repeat_every 25600000ps
+run 50000 ns

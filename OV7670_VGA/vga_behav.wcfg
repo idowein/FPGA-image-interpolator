@@ -11,20 +11,18 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="21106393722fs"></ZoomStartTime>
-      <ZoomEndTime time="21106494764fs"></ZoomEndTime>
-      <Cursor1Time time="21106480000fs"></Cursor1Time>
+      <ZoomStartTime time="6067965194fs"></ZoomStartTime>
+      <ZoomEndTime time="22786406962fs"></ZoomEndTime>
+      <Cursor1Time time="20000000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="161"></NameColumnWidth>
-      <ValueColumnWidth column_width="115"></ValueColumnWidth>
+      <ValueColumnWidth column_width="111"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="12" />
+   <WVObjectSize size="16" />
    <wave_markers>
-      <marker time="2682600000" label="" />
-      <marker time="26600000" label="" />
-      <marker time="2753000000" label="" />
-      <marker time="21106460000" label="" />
+      <marker time="5400000" label="" />
+      <marker time="16805400000" label="" />
    </wave_markers>
    <wvobject fp_name="/vga/pix_clk" type="logic">
       <obj_property name="ElementShortName">pix_clk</obj_property>
@@ -87,5 +85,21 @@
       <obj_property name="ElementShortName">frame_adress[18:0]</obj_property>
       <obj_property name="ObjectShortName">frame_adress[18:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider13">
+      <obj_property name="label">vga</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga/vga_blue" type="array">
+      <obj_property name="ElementShortName">vga_blue[3:0]</obj_property>
+      <obj_property name="ObjectShortName">vga_blue[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga/vga_red" type="array">
+      <obj_property name="ElementShortName">vga_red[3:0]</obj_property>
+      <obj_property name="ObjectShortName">vga_red[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/vga/vga_green" type="array">
+      <obj_property name="ElementShortName">vga_green[3:0]</obj_property>
+      <obj_property name="ObjectShortName">vga_green[3:0]</obj_property>
    </wvobject>
 </wave_config>

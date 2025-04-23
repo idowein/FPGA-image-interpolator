@@ -165,42 +165,77 @@ architecture Behavioral of vga is
         end if;
     end process;   
     
-    -- pixel address zoom counter
-    process (pix_clk) begin
+    -- Pixel address zoom counter process
+    -- Summary:
+    -- This process calculates the pixel addresses for zoom functionality
+    -- by adjusting the horizontal and vertical scaling. It ensures that
+    -- alternate pixels and rows are skipped when zoom is active, effectively
+    -- implementing a 2x zoom (2x2 replication). The `val_tmp` signal is used
+    -- to track skipped pixels, and `val_zoom` is used to track the zoomed
+    -- pixel address.
+    -- this process multiply each row by 2 (row x col) 2 x 2
+    
+    process (pix_clk) 
+    begin
         if rising_edge(pix_clk) then
-	        if(v_cnt >= CAMERA_HEIGHT) then
-	    	    val_tmp <= (others=>'0');
-	    	    val_zoom <= (others=>'0');
-	        else 
-                if (h_cnt < CAMERA_WIDTH) then
-                    if (h_cnt = CAMERA_WIDTH -1) then
-                        if (v_cnt(0) ='0') then
-	    		            val_tmp<=val_tmp + CAMERA_WIDTH / 2;
-	    		        end if;
-	    		    elsif (h_cnt(0) = '0') then
-	    		        val_tmp <= val_tmp + 1;
-	    		    end if;   
-	    		    val_zoom <= val_zoom + 1;
-	    	    end if;
-	         end if;
-        end if;
-    end process;             
-
-     -- pixel address counter
-    process(pix_clk) begin
-        if rising_edge(pix_clk) then
-            if(v_cnt >= CAMERA_HEIGHT) then
-                blank <= '1';
-                fr_address <= (others=>'0');
+            -- Reset logic: If the vertical counter exceeds the camera height,
+            -- reset both `val_tmp` and `val_zoom` to zero.
+            if (v_cnt >= CAMERA_HEIGHT) then
+                val_tmp <= (others => '0');  -- Reset skipped pixel counter
+                val_zoom <= (others => '0'); -- Reset zoomed pixel address
             else 
-                if(h_cnt <  CAMERA_WIDTH) then
-                    blank <= '0';
-                    if (zoom_x2 ='0') then
+                -- Horizontal scaling logic: Process the horizontal counter
+                -- to calculate skipped pixels and update the zoomed address.
+                if (h_cnt < CAMERA_WIDTH) then
+                    -- At the end of a horizontal line, skip alternate rows
+                    -- by incrementing `val_tmp` with half the camera width.
+                    if (h_cnt = CAMERA_WIDTH - 1) then
+                        if (v_cnt(0) = '0') then
+                            val_tmp <= val_tmp + CAMERA_WIDTH / 2;
+                        end if;
+                    -- Within a horizontal line, skip alternate pixels
+                    -- by incrementing `val_tmp` for even columns.
+                    elsif (h_cnt(0) = '0') then
+                        val_tmp <= val_tmp + 1;
+                    end if;
+    
+                    -- Increment the zoomed pixel address (`val_zoom`) for
+                    -- every valid pixel.
+                    val_zoom <= val_zoom + 1;
+                end if;
+            end if;
+        end if;
+    end process;            
+
+    -- Pixel address counter process
+    -- Summary:
+    -- This process calculates the frame address (`fr_address`) for rendering pixel data
+    -- and determines whether the current pixel is blank or valid. It supports zoom
+    -- functionality by adjusting the frame address when zoom (`zoom_x2`) is enabled.
+    -- this process multiply each pixel for (row x col) 1 x 2
+    
+    process(pix_clk) 
+    begin
+        if rising_edge(pix_clk) then
+            -- Reset condition: If vertical counter exceeds the camera height,
+            -- reset the frame address and mark the pixel as blank.
+            if (v_cnt >= CAMERA_HEIGHT) then
+                blank <= '1'; -- Mark the pixel as blank
+                fr_address <= (others => '0'); -- Reset frame address
+            else 
+                -- Active pixel region logic
+                if (h_cnt < CAMERA_WIDTH) then
+                    blank <= '0'; -- Mark the pixel as valid
+                    -- Frame address update based on zoom state
+                    if (zoom_x2 = '0') then
+                        -- Normal mode: Increment frame address sequentially
                         fr_address <= fr_address + 1;
                     else
-                        fr_address<=val_zoom-val_tmp;
+                        -- Zoom mode: Adjust frame address for skipped pixels and rows
+                        fr_address <= val_zoom - val_tmp;
                     end if;
                 else
+                    -- Blanking region: Mark the pixel as blank
                     blank <= '1';
                 end if;
             end if;
