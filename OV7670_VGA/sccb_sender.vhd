@@ -1,8 +1,10 @@
 ----------------------------------------------------------------------------------
 -- Engineer: <mfield@concepts.co.nz
 -- 
--- Description: Send the commands to the OV7670 over an I2C-like interface
+-- Description: Send the commands to the OV7670 over an I2C-like interface (SCCB)
 --
+-- Edited by: Ido weinstock <ido.weinstock@gmail.com> (23/04/2025)
+--             Dvir Hershkovitz <dvirhersh@gmail.com>
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;

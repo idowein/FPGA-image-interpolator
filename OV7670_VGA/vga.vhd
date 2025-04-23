@@ -1,7 +1,7 @@
 ----------------------------------------------------------------------------------
 -- Company: 
 -- Engineers : Ido weinstock <ido.weinstock@gmail.com> (23/04/2025)
---             Dvir Hershkovitz <dvirhersh@gmail.com?>
+--             Dvir Hershkovitz <dvirhersh@gmail.com>
 -- 
 -- Create Date: 23.04.2025 
 -- Design Name: 
