@@ -81,11 +81,6 @@ begin
                                      wr_en <= '1';
                                     address <= std_logic_vector(unsigned(address)+1);
                                  end if;    
-                            elsif (zoom_x4='1') then
-                                 if(counter_row >= 180) and (counter_row < 300)  and (counter_col >= 240) and (counter_col < 400) then
-                                     wr_en <= '1';
-                                    address <= std_logic_vector(unsigned(address)+1);
-                                 end if;
                             else
                                  wr_en <= '1';
                                  address <= std_logic_vector(unsigned(address)+1);

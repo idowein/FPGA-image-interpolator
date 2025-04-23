@@ -91,9 +91,6 @@
       },
       "zoom_x2": {
         "direction": "I"
-      },
-      "zoom_x4": {
-        "direction": "I"
       }
     },
     "components": {
@@ -537,11 +534,6 @@
           "zoom_x2",
           "ovo_7670_caputre_0/zoom_x2",
           "vga_0/zoom_x2"
-        ]
-      },
-      "zoom_x4_0_1": {
-        "ports": [
-          "zoom_x4"
         ]
       }
     }

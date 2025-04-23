@@ -194,7 +194,7 @@ architecture Behavioral of vga is
             else 
                 if(h_cnt <  CAMERA_WIDTH) then
                     blank <= '0';
-                    if (zoom_x2 ='0' and zoom_x4 = '0') then
+                    if (zoom_x2 ='0') then
                         fr_address <= fr_address + 1;
                     else
                         fr_address<=val_zoom-val_tmp;
