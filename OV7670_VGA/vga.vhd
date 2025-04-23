@@ -179,17 +179,14 @@ begin
 	    	val_zoom <= (others=>'0');
 	     else 
 	    	if(h_cnt <  CAMERA_WIDTH) then
-	    	     if (h_cnt =CAMERA_WIDTH -1) then
+	    	    if (h_cnt =CAMERA_WIDTH -1) then
 	    		     if (v_cnt(0) ='0' ) then
 	    		         val_tmp<=val_tmp+CAMERA_WIDTH/2;
 	    		     end if;
-	    		  elsif (h_cnt(0) = '0') then
+	    		 elsif (h_cnt(0) = '0') then
 	    		      val_tmp<=val_tmp+1;
-	    		  end if;   
+	    		 end if;   
 	    		 val_zoom<=val_zoom+1;
-	    	else
-	    		--val_tmp <= (others=>'0');
-	    		--val_zoom<= (others=>'0');
 	    	end if;
 	    end if;
     end if;
@@ -198,23 +195,23 @@ begin
      -- pixel address counter
     process(pix_clk) 
     begin
-    if(rising_edge(pix_clk)) then
-	     if(v_cnt >= CAMERA_HEIGHT) then
-	    	  blank <= '1';
-	    	fr_address <= (others=>'0');
-	     else 
-	    	if(h_cnt <  CAMERA_WIDTH) then
-	    		blank <= '0';
-	    		if (zoom_x2 ='0') then
-	    		 fr_address <= fr_address + 1;
-	    		else
-	    		fr_address<=val_zoom-val_tmp;
-	    		end if;
-	    	else
-	    		blank <= '1';
-	    	end if;
-	    end if;
-    end if;
+        if(rising_edge(pix_clk)) then
+             if(v_cnt >= CAMERA_HEIGHT) then
+                  blank <= '1';
+                fr_address <= (others=>'0');
+             else 
+                if(h_cnt <  CAMERA_WIDTH) then
+                    blank <= '0';
+                    if (zoom_x2 ='0' and zoom_x4 = '0') then
+                         fr_address <= fr_address + 1;
+                    else
+                         fr_address<=val_zoom-val_tmp;
+                    end if;
+                else
+                    blank <= '1';
+                end if;
+            end if;
+        end if;
     end process;
     
     valid <= '1' when((h_cnt_d < FRAME_WIDTH) and (v_cnt_d < FRAME_HEIGHT)) else '0';

@@ -61,47 +61,42 @@ begin
     
         process(pclk)
         begin
-    	if rising_edge(pclk) then
-    	
-	     if(camera_v_sync = '1') then
-			 address <= (others =>'0');
-			 counter_row<=(others =>'0');
-			counter_col<=(others=>'0');
-			 --address_next <= 0;
-			 write_state <= (others =>'0');
-		 else 
-			 dout <= latced_data(15 downto 12) & latced_data(10 downto 7)  & latced_data(4 downto 1);
-			 --address <= address_next;
-			 --wr_en <= write_state[1];
-			 
-			 if (camera_h_ref = '1' and latch_href = '0') then 
-			     counter_row<=std_logic_vector(unsigned(counter_row)+1);
-			     counter_col<=(others=>'0');
-			 end if;
-			 
-			 write_state <= write_state(0) & (camera_h_ref and not (write_state(0)));
-			 latced_data <= latced_data(7 downto 0) & din;
-			if( write_state(1) = '1') then
-			   counter_col<=std_logic_vector(unsigned(counter_col)+1);
-			    
-			    if (zoom_x2='1') then
-			         if(counter_row >= 120) and (counter_row < 360)  and (counter_col >= 160) and (counter_col < 480) then
-                         wr_en <= '1';
-                        address <= std_logic_vector(unsigned(address)+1);
-	                 end if;
-	              else
-	                    wr_en <= '1';
-                        address <= std_logic_vector(unsigned(address)+1);
-	              end if;
-			 else
-                wr_en <= '0';
-		     end if;
-		     
-		     latch_href<=camera_h_ref;
-		      
-	end if;
-    end if;
+            if rising_edge(pclk) then
+                 if(camera_v_sync = '1') then
+                     address <= (others =>'0');
+                     counter_row<=(others =>'0');
+                     counter_col<=(others=>'0');
+                     write_state <= (others =>'0');
+                 else 
+                     dout <= latced_data(15 downto 12) & latced_data(10 downto 7)  & latced_data(4 downto 1);
+                     if (camera_h_ref = '1' and latch_href = '0') then 
+                         counter_row<=std_logic_vector(unsigned(counter_row)+1);
+                         counter_col<=(others=>'0');
+                     end if;
+                     write_state <= write_state(0) & (camera_h_ref and not (write_state(0)));
+                     latced_data <= latced_data(7 downto 0) & din;
+                     if( write_state(1) = '1') then
+                            counter_col<=std_logic_vector(unsigned(counter_col)+1);
+                            if (zoom_x2='1') then
+                                 if(counter_row >= 120) and (counter_row < 360)  and (counter_col >= 160) and (counter_col < 480) then
+                                     wr_en <= '1';
+                                    address <= std_logic_vector(unsigned(address)+1);
+                                 end if;    
+                            elsif (zoom_x4='1') then
+                                 if(counter_row >= 180) and (counter_row < 300)  and (counter_col >= 240) and (counter_col < 400) then
+                                     wr_en <= '1';
+                                    address <= std_logic_vector(unsigned(address)+1);
+                                 end if;
+                            else
+                                 wr_en <= '1';
+                                 address <= std_logic_vector(unsigned(address)+1);
+                            end if;	              
+                     else
+                        wr_en <= '0';
+                     end if;
+                     latch_href<=camera_h_ref;
+            end if;
+        end if;
     end process;
-    
     
 end Behavioral;
