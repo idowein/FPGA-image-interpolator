@@ -85,7 +85,7 @@ begin
 			   counter_col<=std_logic_vector(unsigned(counter_col)+1);
 			    
 			    if (zoom_x2='1') then
-			         if(counter_row >= 142) and (counter_row < 382)  and (counter_col >= 240) and (counter_col < 560) then
+			         if(counter_row >= 132) and (counter_row < 372)  and (counter_col >= 272) and (counter_col < 592) then
                          wr_en <= '1';
                         address <= std_logic_vector(unsigned(address)+1);
 	                 end if;
@@ -95,7 +95,7 @@ begin
 	              end if;
 	              
 			    if (zoom_x4='1') then
-			         if(counter_row >= 180) and (counter_row < 300)  and (counter_col >= 240) and (counter_col < 400) then
+			         if(counter_row >= 192) and (counter_row < 312)  and (counter_col >= 352) and (counter_col < 512) then
                          wr_en <= '1';
                         address <= std_logic_vector(unsigned(address)+1);
 	                 end if;

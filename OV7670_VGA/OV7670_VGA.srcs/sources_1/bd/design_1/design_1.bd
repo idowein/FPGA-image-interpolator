@@ -12,8 +12,8 @@
       "blk_mem_gen_0": "",
       "clk_wiz_0": "",
       "cntl_0": "",
-      "vga_0": "",
       "ov7670_controller_0": "",
+      "vga_0": "",
       "ovo_7670_caputre_0": ""
     },
     "ports": {
@@ -272,6 +272,61 @@
           }
         }
       },
+      "ov7670_controller_0": {
+        "vlnv": "xilinx.com:module_ref:ov7670_controller:1.0",
+        "xci_name": "design_1_ov7670_controller_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ov7670_controller",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
+              },
+              "FREQ_HZ": {
+                "value": "25000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "resend": {
+            "direction": "I"
+          },
+          "config_finished": {
+            "direction": "O"
+          },
+          "sioc": {
+            "direction": "O"
+          },
+          "siod": {
+            "direction": "IO"
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "O"
+          },
+          "pwdn": {
+            "direction": "O"
+          },
+          "xclk": {
+            "direction": "O"
+          }
+        }
+      },
       "vga_0": {
         "vlnv": "xilinx.com:module_ref:vga:1.0",
         "xci_name": "design_1_vga_0_0",
@@ -338,61 +393,6 @@
             "direction": "O",
             "left": "18",
             "right": "0"
-          }
-        }
-      },
-      "ov7670_controller_0": {
-        "vlnv": "xilinx.com:module_ref:ov7670_controller:1.0",
-        "xci_name": "design_1_ov7670_controller_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "ov7670_controller",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "reset",
-                "value_src": "constant"
-              },
-              "CLK_DOMAIN": {
-                "value": "/clk_wiz_0_clk_out1",
-                "value_src": "ip_prop"
-              },
-              "FREQ_HZ": {
-                "value": "25000000",
-                "value_src": "ip_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "ip_prop"
-              }
-            }
-          },
-          "resend": {
-            "direction": "I"
-          },
-          "config_finished": {
-            "direction": "O"
-          },
-          "sioc": {
-            "direction": "O"
-          },
-          "siod": {
-            "direction": "IO"
-          },
-          "reset": {
-            "type": "rst",
-            "direction": "O"
-          },
-          "pwdn": {
-            "direction": "O"
-          },
-          "xclk": {
-            "direction": "O"
           }
         }
       },

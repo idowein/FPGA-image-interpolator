@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
---Date        : Wed Apr 23 12:39:49 2025
+--Date        : Wed Apr 23 13:16:29 2025
 --Host        : Ido running 64-bit major release  (build 9200)
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -71,6 +71,18 @@ architecture STRUCTURE of design_1 is
     cntl_out : out STD_LOGIC
   );
   end component design_1_cntl_0_0;
+  component design_1_ov7670_controller_0_0 is
+  port (
+    clk : in STD_LOGIC;
+    resend : in STD_LOGIC;
+    config_finished : out STD_LOGIC;
+    sioc : out STD_LOGIC;
+    siod : inout STD_LOGIC;
+    reset : out STD_LOGIC;
+    pwdn : out STD_LOGIC;
+    xclk : out STD_LOGIC
+  );
+  end component design_1_ov7670_controller_0_0;
   component design_1_vga_0_0 is
   port (
     pix_clk : in STD_LOGIC;
@@ -86,18 +98,6 @@ architecture STRUCTURE of design_1 is
     frame_adress : out STD_LOGIC_VECTOR ( 18 downto 0 )
   );
   end component design_1_vga_0_0;
-  component design_1_ov7670_controller_0_0 is
-  port (
-    clk : in STD_LOGIC;
-    resend : in STD_LOGIC;
-    config_finished : out STD_LOGIC;
-    sioc : out STD_LOGIC;
-    siod : inout STD_LOGIC;
-    reset : out STD_LOGIC;
-    pwdn : out STD_LOGIC;
-    xclk : out STD_LOGIC
-  );
-  end component design_1_ov7670_controller_0_0;
   component design_1_ovo_7670_caputre_0_0 is
   port (
     pclk : in STD_LOGIC;
