@@ -117,18 +117,6 @@
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>zoom_x4</spirit:name>
-        <spirit:wire>
-          <spirit:direction>in</spirit:direction>
-          <spirit:wireTypeDefs>
-            <spirit:wireTypeDef>
-              <spirit:typeName>STD_LOGIC</spirit:typeName>
-              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
-            </spirit:wireTypeDef>
-          </spirit:wireTypeDefs>
-        </spirit:wire>
-      </spirit:port>
-      <spirit:port>
         <spirit:name>frame_fix</spirit:name>
         <spirit:wire>
           <spirit:direction>in</spirit:direction>

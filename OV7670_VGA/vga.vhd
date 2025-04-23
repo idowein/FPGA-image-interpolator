@@ -35,7 +35,6 @@ entity vga is
     Port ( pix_clk      : in  STD_LOGIC;
            cntl         : in  STD_LOGIC;
            zoom_x2      : in  STD_LOGIC;
-           zoom_x4      : in  STD_LOGIC;
            frame_fix    : in  STD_LOGIC_VECTOR (11 downto 0);
            VGA_H_sync   : out STD_LOGIC;
            vga_V_sync   : out STD_LOGIC;

@@ -40,7 +40,6 @@ entity ovo_7670_caputre is
            camera_v_sync : in   STD_LOGIC;
            camera_h_ref  : in   STD_LOGIC;
            zoom_x2 : in STD_logic ;
-           zoom_x4 : in STD_logic ;
            din     : in   STD_LOGIC_VECTOR (7 downto 0);
            addr  : out  STD_LOGIC_VECTOR (18 downto 0);
            dout  : out  STD_LOGIC_VECTOR (11 downto 0);

@@ -287,9 +287,6 @@
           "zoom_x2": {
             "direction": "I"
           },
-          "zoom_x4": {
-            "direction": "I"
-          },
           "din": {
             "direction": "I",
             "left": "7",
@@ -327,9 +324,6 @@
             "direction": "I"
           },
           "zoom_x2": {
-            "direction": "I"
-          },
-          "zoom_x4": {
             "direction": "I"
           },
           "frame_fix": {
@@ -547,9 +541,7 @@
       },
       "zoom_x4_0_1": {
         "ports": [
-          "zoom_x4",
-          "ovo_7670_caputre_0/zoom_x4",
-          "vga_0/zoom_x4"
+          "zoom_x4"
         ]
       }
     }
