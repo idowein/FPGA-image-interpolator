@@ -56,11 +56,11 @@ set_property PACKAGE_PIN V10 [get_ports resetn]
 set_property IOSTANDARD LVCMOS33 [get_ports cntl_in]
 set_property PACKAGE_PIN U11 [get_ports cntl_in]
 
-set_property PACKAGE_PIN U12 [get_ports zoom_x2]
-set_property IOSTANDARD LVCMOS33 [get_ports zoom_x2]
-
-set_property PACKAGE_PIN H6 [get_ports resend_in]
+set_property PACKAGE_PIN U12 [get_ports resend_in]
 set_property IOSTANDARD LVCMOS33 [get_ports resend_in]
+
+set_property PACKAGE_PIN H6 [get_ports zoom_x2]
+set_property IOSTANDARD LVCMOS33 [get_ports zoom_x2]
 
 ##Pmod Header JD
 #JD[1]
