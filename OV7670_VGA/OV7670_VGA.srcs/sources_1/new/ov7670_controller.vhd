@@ -12,38 +12,38 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity ov7670_controller is
     Port ( 
-            clk   : in    STD_LOGIC;
-			resend :in    STD_LOGIC;
-		    config_finished : out std_logic;
-            sioc  : out   STD_LOGIC;
-            siod  : inout STD_LOGIC;
-            reset : out   STD_LOGIC;
-            pwdn  : out   STD_LOGIC;
-			xclk  : out   STD_LOGIC
+            clk    			: in    STD_LOGIC;
+			resend 			: in    STD_LOGIC;
+		    config_finished : out 	STD_LOGIC;
+            sioc  			: out   STD_LOGIC;
+            siod  			: inout STD_LOGIC;
+            reset 			: out   STD_LOGIC;
+            pwdn  			: out   STD_LOGIC;
+			xclk  			: out   STD_LOGIC
 );
 end ov7670_controller;
 
 architecture Behavioral of ov7670_controller is
 	COMPONENT ov7670_registers
 	PORT(
-		clk      : IN std_logic;
-		advance  : IN std_logic;          
-		resend   : in STD_LOGIC;
-		command  : OUT std_logic_vector(15 downto 0);
-		finished : OUT std_logic
+		clk      : IN  STD_LOGIC;
+		advance  : IN  STD_LOGIC;          
+		resend   : in  STD_LOGIC;
+		command  : OUT STD_LOGIC_VECTOR(15 downto 0);
+		finished : OUT STD_LOGIC
 		);
 	END COMPONENT;
 
 	COMPONENT SCCB_sender
 	PORT(
-		clk   : IN std_logic;
-		send  : IN std_logic;
-		taken : out std_logic;
-		id    : IN std_logic_vector(7 downto 0);
-		reg   : IN std_logic_vector(7 downto 0);
-		value : IN std_logic_vector(7 downto 0);    
-		siod  : INOUT std_logic;      
-		sioc  : OUT std_logic
+		clk   : IN 	  STD_LOGIC;
+		send  : IN 	  STD_LOGIC;
+		taken : OUT   STD_LOGIC;
+		id    : IN 	  STD_LOGIC_VECTOR(7 downto 0);
+		reg   : IN 	  STD_LOGIC_VECTOR(7 downto 0);
+		value : IN 	  STD_LOGIC_VECTOR(7 downto 0);    
+		siod  : INOUT STD_LOGIC;      
+		sioc  : OUT   STD_LOGIC
 		);
 	END COMPONENT;
 
@@ -69,8 +69,8 @@ begin
 		value => command(7 downto 0)
 	);
 
-	reset <= '1'; 						-- Normal mode
-	pwdn  <= '0'; 						-- Power device up
+	reset <= '1'; -- Normal mode
+	pwdn  <= '0'; -- Power device up
 	xclk  <= sys_clk;
 	
 	Inst_ov7670_registers: ov7670_registers PORT MAP(

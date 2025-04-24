@@ -4,6 +4,7 @@ Running: C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto 56a9619014
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-4940] 'design_1_ovo_7670_caputre_0_0' remains a black box since it has no binding entity [C:/Users/dvirh/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.ip_user_files/bd/design_1/sim/design_1.vhd:206]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
@@ -35,8 +36,6 @@ Compiling architecture behavioral of entity xil_defaultlib.SCCB_sender [sccb_sen
 Compiling architecture behavioral of entity xil_defaultlib.ov7670_registers [ov7670_registers_default]
 Compiling architecture behavioral of entity xil_defaultlib.ov7670_controller [ov7670_controller_default]
 Compiling architecture design_1_ov7670_controller_0_0_arch of entity xil_defaultlib.design_1_ov7670_controller_0_0 [design_1_ov7670_controller_0_0_d...]
-Compiling architecture behavioral of entity xil_defaultlib.ovo_7670_caputre [ovo_7670_caputre_default]
-Compiling architecture design_1_ovo_7670_caputre_0_0_arch of entity xil_defaultlib.design_1_ovo_7670_caputre_0_0 [design_1_ovo_7670_caputre_0_0_de...]
 Compiling architecture behavioral of entity xil_defaultlib.vga [vga_default]
 Compiling architecture design_1_vga_0_0_arch of entity xil_defaultlib.design_1_vga_0_0 [design_1_vga_0_0_default]
 Compiling architecture structure of entity xil_defaultlib.design_1 [design_1_default]

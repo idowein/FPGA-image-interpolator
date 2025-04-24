@@ -33,25 +33,22 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity cntl is
-    Port ( clk : in STD_LOGIC;
-           resend_in : in STD_LOGIC;
-           cntl_in : in STD_LOGIC;
+    Port ( clk        : in  STD_LOGIC;
+           resend_in  : in  STD_LOGIC;
+           cntl_in    : in  STD_LOGIC;
            resend_out : out STD_LOGIC;
-           cntl_out : out STD_LOGIC);
+           cntl_out   : out STD_LOGIC);
 end cntl;
 
 architecture Behavioral of cntl is
 
 begin
 
-process(clk)
-begin
-
-if (rising_edge(clk)) then
-    resend_out<=resend_in;
-    cntl_out<=cntl_in;
-end if;
-
-end process;
+    process(clk) begin
+        if rising_edge(clk) then
+            resend_out <= resend_in;
+            cntl_out   <= cntl_in;
+        end if;
+    end process;
 
 end Behavioral;

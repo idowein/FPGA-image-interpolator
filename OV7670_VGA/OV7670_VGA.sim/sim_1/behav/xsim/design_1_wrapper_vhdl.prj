@@ -4,12 +4,12 @@ vhdl xil_defaultlib  \
 "../../../../sccb_sender.vhd" \
 "../../../../OV7670_VGA.srcs/sources_1/new/ov7670_controller.vhd" \
 "../../../../cntl.vhd" \
-"../../../../ovo_7670_caputre.vhd" \
 "../../../../vga.vhd" \
+"../../../../OV7670_capture.vhd" \
 "../../../../OV7670_VGA.ip_user_files/bd/design_1/ip/design_1_ov7670_controller_0_0_1/sim/design_1_ov7670_controller_0_0.vhd" \
 "../../../../OV7670_VGA.ip_user_files/bd/design_1/ip/design_1_cntl_0_0_1/sim/design_1_cntl_0_0.vhd" \
-"../../../../OV7670_VGA.ip_user_files/bd/design_1/ip/design_1_ovo_7670_caputre_0_0_1/sim/design_1_ovo_7670_caputre_0_0.vhd" \
 "../../../../OV7670_VGA.ip_user_files/bd/design_1/ip/design_1_vga_0_0_1/sim/design_1_vga_0_0.vhd" \
+"../../../../OV7670_VGA.ip_user_files/bd/design_1/ip/design_1_OV7670_capture_0_0/sim/design_1_OV7670_capture_0_0.vhd" \
 "../../../../OV7670_VGA.ip_user_files/bd/design_1/sim/design_1.vhd" \
 "../../../../OV7670_VGA.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd" \
 

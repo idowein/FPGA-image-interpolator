@@ -64,20 +64,20 @@ architecture Behavioral of vga is
 --    constant CAMERA_HEIGHT : integer := 1080; -- Updated camera height
     
     -- Updated constants for 640x480 resolution
-    constant FRAME_WIDTH : integer := 640;   -- Width of the frame
-    constant FRAME_HEIGHT : integer := 480;  -- Height of the frame
-    constant H_FP : integer := 16;           -- Horizontal Front Porch
-    constant H_PW : integer := 96;           -- Horizontal Pulse Width
-    constant H_MAX : integer := 800;         -- Total Horizontal Pixels (640 + Front Porch + Back Porch + Sync)
-    constant V_FP : integer := 10;           -- Vertical Front Porch
-    constant V_PW : integer := 2;            -- Vertical Pulse Width
-    constant V_MAX : integer := 525;         -- Total Vertical Pixels (480 + Front Porch + Back Porch + Sync)
-    constant BITS_WIDTH : integer := 12;     -- Data width for bits
-    constant ADDR_WIDTH : integer := 19;     -- Address width
-    constant PIX_WIDTH : integer := 12;      -- Pixel data width
-    constant VGABIT_WIDTH : integer := 4;    -- VGA color depth
-    constant CAMERA_WIDTH : integer := 640;  -- Camera width
-    constant CAMERA_HEIGHT : integer := 480; -- Camera height
+    constant FRAME_WIDTH    : integer := 640; -- Width of the frame
+    constant FRAME_HEIGHT   : integer := 480; -- Height of the frame
+    constant H_FP           : integer := 16;  -- Horizontal Front Porch
+    constant H_PW           : integer := 96;  -- Horizontal Pulse Width
+    constant H_MAX          : integer := 800; -- Total Horizontal Pixels (640 + Front Porch + Back Porch + Sync)
+    constant V_FP           : integer := 10;  -- Vertical Front Porch
+    constant V_PW           : integer := 2;   -- Vertical Pulse Width
+    constant V_MAX          : integer := 525; -- Total Vertical Pixels (480 + Front Porch + Back Porch + Sync)
+    constant BITS_WIDTH     : integer := 12;  -- Data width for bits
+    constant ADDR_WIDTH     : integer := 19;  -- Address width
+    constant PIX_WIDTH      : integer := 12;  -- Pixel data width
+    constant VGABIT_WIDTH   : integer := 4;   -- VGA color depth
+    constant CAMERA_WIDTH   : integer := 640; -- Camera width
+    constant CAMERA_HEIGHT  : integer := 480; -- Camera height
 
     -- constant
     signal H_POSITIVE: std_logic := '1'; -- Indicates positive polarity for horizontal sync signal
@@ -100,9 +100,6 @@ architecture Behavioral of vga is
     -- synchronization signal for display
     signal h_sync_d: std_logic; -- Delayed horizontal sync signal for stabilized display output
     signal v_sync_d: std_logic; -- Delayed vertical sync signal for stabilized display output
-    
-    -- pix data is valid
-    signal valid: std_logic; -- Indicates if the current pixel data is valid for display
     
     -- pix data is blank or not (blank = HIGH : pix data is valid)
     signal blank: std_logic := '0'; -- Indicates whether the current pixel is blank (1 = blank, 0 = active pixel)
@@ -198,7 +195,6 @@ architecture Behavioral of vga is
                     elsif (h_cnt(0) = '0') then
                         val_tmp <= val_tmp + 1;
                     end if;
-    
                     -- Increment the zoomed pixel address (`val_zoom`) for
                     -- every valid pixel.
                     val_zoom <= val_zoom + 1;
@@ -242,8 +238,6 @@ architecture Behavioral of vga is
         end if;
     end process;
     
-    valid <= '1' when((h_cnt_d < FRAME_WIDTH) and (v_cnt_d < FRAME_HEIGHT)) else '0';
-
     process(pix_clk) begin
         if rising_edge(pix_clk) then
             if cntl = '1' then
@@ -259,43 +253,43 @@ architecture Behavioral of vga is
             else          
                 if h_cnt < FRAME_WIDTH/8 then
                     -- black
-                    bg_red <= "0000";
-                    bg_blue <= "0000";
+                    bg_red   <= "0000";
+                    bg_blue  <= "0000";
                     bg_green <= "0000";
                 elsif(h_cnt >= FRAME_WIDTH/8 and h_cnt < FRAME_WIDTH/4) then
                     -- blue
-                    bg_red <= "0000";
-                    bg_blue <= "1111";
+                    bg_red   <= "0000";
+                    bg_blue  <= "1111";
                     bg_green <= "0000";
                 elsif(h_cnt >= FRAME_WIDTH/4 and h_cnt < FRAME_WIDTH/8 * 3) then
                     -- green
-                    bg_red <= "0000";
-                    bg_blue <= "0000";
+                    bg_red   <= "0000";
+                    bg_blue  <= "0000";
                     bg_green <= "1111";
                 elsif(h_cnt >= FRAME_WIDTH/8 * 3 and h_cnt < FRAME_WIDTH/2) then
                     -- cyan
-                    bg_red <= "0000";
-                    bg_blue <= "1111";
+                    bg_red   <= "0000";
+                    bg_blue  <= "1111";
                     bg_green <= "1111";
                 elsif(h_cnt >= FRAME_WIDTH/2 and h_cnt < FRAME_WIDTH/8 * 5) then
                     -- red 
-                    bg_red <= "1111";
-                    bg_blue <= "0000";
+                    bg_red   <= "1111";
+                    bg_blue  <= "0000";
                     bg_green <= "0000";
                 elsif(h_cnt >= FRAME_WIDTH/8 * 5 and h_cnt < FRAME_WIDTH/4 * 3) then
                     -- magenta
-                    bg_red <= "1111";
-                    bg_blue <= "1111";
+                    bg_red   <= "1111";
+                    bg_blue  <= "1111";
                     bg_green <="0000";
                 elsif(h_cnt >= FRAME_WIDTH/4 * 3 and h_cnt < FRAME_WIDTH/8 * 7) then
                     -- yellow
-                    bg_red <= "1111";
-                    bg_blue <= "0000";
+                    bg_red   <= "1111";
+                    bg_blue  <= "0000";
                     bg_green <= "1111";
                 elsif(h_cnt >= FRAME_WIDTH/8 * 7 and h_cnt < FRAME_WIDTH) then
                     -- white 
-                    bg_red <= "1111";
-                    bg_blue <= "1111";
+                    bg_red   <= "1111";
+                    bg_blue  <= "1111";
                     bg_green <= "1111";
                  end if;
              end if;
