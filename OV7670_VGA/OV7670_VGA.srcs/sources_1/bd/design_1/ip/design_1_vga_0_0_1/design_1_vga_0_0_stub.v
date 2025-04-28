@@ -1,10 +1,10 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Mon Apr 28 17:26:17 2025
-// Host        : dvirhersh_comp running 64-bit major release  (build 9200)
+// Date        : Mon Apr 28 18:01:24 2025
+// Host        : Ido running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
-//               C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_vga_0_0_1/design_1_vga_0_0_stub.v
+//               C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_vga_0_0_1/design_1_vga_0_0_stub.v
 // Design      : design_1_vga_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a100tcsg324-1
