@@ -34,65 +34,65 @@ end bilinear_interpolation_unit;
 
 architecture Behavioral of bilinear_interpolation_unit is
     -- Internal signals for intermediate computations
-    signal AB1, AB2 : std_logic_vector(7 downto 0); -- Horizontal interpolation between A and B
-    signal CD1, CD2 : std_logic_vector(7 downto 0); -- Horizontal interpolation between C and D
-    signal AC1, AC2 : std_logic_vector(7 downto 0); -- Vertical interpolation between A and C
-    signal BD1, BD2 : std_logic_vector(7 downto 0); -- Vertical interpolation between B and D
-    signal ABCD1, ABCD2, ABCD3, ABCD4 : std_logic_vector(7 downto 0); -- Bi-linear interpolation
+    signal P012, P013 : std_logic_vector(7 downto 0); -- Horizontal interpolation between A and B
+    signal P042, P043 : std_logic_vector(7 downto 0); -- Horizontal interpolation between C and D
+    signal P021, P031 : std_logic_vector(7 downto 0); -- Vertical interpolation between A and C
+    signal P024, P034 : std_logic_vector(7 downto 0); -- Vertical interpolation between B and D
+    signal P022, P023, P032, P033 : std_logic_vector(7 downto 0); -- Bi-linear interpolation
 begin
     -- Synchronous process triggered on the rising edge of the clock
     process(clk, rst)
     begin
         if rst = '1' then
             -- Reset all outputs to 0
-            AB1 <= (others => '0');
-            AB2 <= (others => '0');
-            CD1 <= (others => '0');
-            CD2 <= (others => '0');
-            AC1 <= (others => '0');
-            AC2 <= (others => '0');
-            BD1 <= (others => '0');
-            BD2 <= (others => '0');
-            ABCD1 <= (others => '0');
-            ABCD2 <= (others => '0');
-            ABCD3 <= (others => '0');
-            ABCD4 <= (others => '0');
+            P012 <= (others => '0');
+            P013 <= (others => '0');
+            P042 <= (others => '0');
+            P043 <= (others => '0');
+            P021 <= (others => '0');
+            P031 <= (others => '0');
+            P024 <= (others => '0');
+            P034 <= (others => '0');
+            P022 <= (others => '0');
+            P023 <= (others => '0');
+            P032 <= (others => '0');
+            P033 <= (others => '0');
         elsif rising_edge(clk) then
             -- Horizontal interpolation for the top and bottom rows
-            AB1 <= std_logic_vector(resize(unsigned(A)+((unsigned(B) - unsigned(A)) / 3), 8));
-            AB2 <= std_logic_vector(resize(unsigned(A)+ 2 * ((unsigned(B) - unsigned(A)) / 3), 8));
-            CD1 <= std_logic_vector(resize(unsigned(C)+(unsigned(D) - unsigned(C)) / 3, 8));
-            CD2 <= std_logic_vector(resize(unsigned(C)+2 * (unsigned(D) - unsigned(C)) / 3, 8));
+            P012 <= std_logic_vector(resize(unsigned(A)+((unsigned(B) - unsigned(A)) / 3), 8));
+            P013 <= std_logic_vector(resize(unsigned(A)+ 2 * ((unsigned(B) - unsigned(A)) / 3), 8));
+            P042 <= std_logic_vector(resize(unsigned(C)+(unsigned(D) - unsigned(C)) / 3, 8));
+            P043 <= std_logic_vector(resize(unsigned(C)+2 * (unsigned(D) - unsigned(C)) / 3, 8));
 
             -- Vertical interpolation for the left and right columns
-            AC1 <= std_logic_vector(resize(unsigned(A)+((unsigned(C) - unsigned(A)) / 3), 8));
-            AC2 <= std_logic_vector(resize(unsigned(A)+ 2 * ((unsigned(C) - unsigned(A)) / 3), 8));
-            BD1 <= std_logic_vector(resize(unsigned(B)+((unsigned(D) - unsigned(B)) / 3), 8));
-            BD2 <= std_logic_vector(resize(unsigned(B)+ 2 * ((unsigned(D) - unsigned(B)) / 3), 8));
+            P021 <= std_logic_vector(resize(unsigned(A)+((unsigned(C) - unsigned(A)) / 3), 8));
+            P031 <= std_logic_vector(resize(unsigned(A)+ 2 * ((unsigned(C) - unsigned(A)) / 3), 8));
+            P024 <= std_logic_vector(resize(unsigned(B)+((unsigned(D) - unsigned(B)) / 3), 8));
+            P034 <= std_logic_vector(resize(unsigned(B)+ 2 * ((unsigned(D) - unsigned(B)) / 3), 8));
 
             -- Bi-linear interpolation for the center pixels
-            ABCD1 <= std_logic_vector(resize((unsigned(A) + unsigned(B) + unsigned(C) + unsigned(D)) / 4, 8));
-            ABCD2 <= std_logic_vector(resize(((3 * unsigned(A)) + unsigned(B) + (3 * unsigned(C)) + unsigned(D)) / 8, 8));
-            ABCD3 <= std_logic_vector(resize((unsigned(A) + (3 * unsigned(B)) + unsigned(C) + (3 * unsigned(D))) / 8, 8));
-            ABCD4 <= std_logic_vector(resize(((3 * unsigned(A)) + (3 * unsigned(B)) + (3 * unsigned(C)) + (3 * unsigned(D))) / 12, 8));
+            P022 <= std_logic_vector(resize((2 * unsigned(A) + unsigned(B) + 2 * unsigned(C) + unsigned(D)) / 6, 8));
+            P023 <= std_logic_vector(resize((unsigned(A) + 2 * unsigned(B) + 2 * unsigned(C) + unsigned(D)) / 6, 8));
+            P032 <= std_logic_vector(resize((2 * unsigned(A) + unsigned(B) + unsigned(C) + 2 * unsigned(D)) / 6, 8));
+            P033 <= std_logic_vector(resize(( unsigned(A) + 2 * unsigned(B) + unsigned(C) + 2 * unsigned(D)) / 6, 8));
         end if;
     end process;
 
     -- Assign output pixels
     O11 <= A;
-    O12 <= AB1;
-    O13 <= AB2;
+    O12 <= P012;
+    O13 <= P013;
     O14 <= B;
-    O21 <= AC1;
-    O22 <= ABCD2;
-    O23 <= ABCD1;
-    O24 <= BD2;
-    O31 <= AC2;
-    O32 <= ABCD3;
-    O33 <= ABCD4;
-    O34 <= BD1;
+    O21 <= P021;
+    O22 <= P022;
+    O23 <= P023;
+    O24 <= P024;
+    O31 <= P031;
+    O32 <= P032;
+    O33 <= P033;
+    O34 <= P034;
     O41 <= C;
-    O42 <= CD1;
-    O43 <= CD2;
+    O42 <= P042;
+    O43 <= P043;
     O44 <= D;
 end Behavioral;
