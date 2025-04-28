@@ -59,16 +59,16 @@ begin
             ABCD4 <= (others => '0');
         elsif rising_edge(clk) then
             -- Horizontal interpolation for the top and bottom rows
-            AB1 <= std_logic_vector(resize((unsigned(A) + unsigned(B)), 8));
-            AB2 <= std_logic_vector(resize(((3 * unsigned(A)) + unsigned(B)) / 4, 8));
-            CD1 <= std_logic_vector(resize((unsigned(C) + unsigned(D)), 8));
-            CD2 <= std_logic_vector(resize(((3 * unsigned(C)) + unsigned(D)) / 4, 8));
+            AB1 <= std_logic_vector(resize(unsigned(A)+((unsigned(B) - unsigned(A)) / 3), 8));
+            AB2 <= std_logic_vector(resize(unsigned(A)+ 2 * ((unsigned(B) - unsigned(A)) / 3), 8));
+            CD1 <= std_logic_vector(resize(unsigned(C)+(unsigned(D) - unsigned(C)) / 3, 8));
+            CD2 <= std_logic_vector(resize(unsigned(C)+2 * (unsigned(D) - unsigned(C)) / 3, 8));
 
             -- Vertical interpolation for the left and right columns
-            AC1 <= std_logic_vector(resize((unsigned(A) + unsigned(C)), 8));
-            AC2 <= std_logic_vector(resize(((3 * unsigned(A)) + unsigned(C)) / 4, 8));
-            BD1 <= std_logic_vector(resize((unsigned(B) + unsigned(D)), 8));
-            BD2 <= std_logic_vector(resize(((3 * unsigned(B)) + unsigned(D)) / 4, 8));
+            AC1 <= std_logic_vector(resize(unsigned(A)+((unsigned(C) - unsigned(A)) / 3), 8));
+            AC2 <= std_logic_vector(resize(unsigned(A)+ 2 * ((unsigned(C) - unsigned(A)) / 3), 8));
+            BD1 <= std_logic_vector(resize(unsigned(B)+((unsigned(D) - unsigned(B)) / 3), 8));
+            BD2 <= std_logic_vector(resize(unsigned(B)+ 2 * ((unsigned(D) - unsigned(B)) / 3), 8));
 
             -- Bi-linear interpolation for the center pixels
             ABCD1 <= std_logic_vector(resize((unsigned(A) + unsigned(B) + unsigned(C) + unsigned(D)) / 4, 8));
@@ -80,19 +80,19 @@ begin
 
     -- Assign output pixels
     O11 <= A;
-    O12 <= AB2;
-    O13 <= AB1;
+    O12 <= AB1;
+    O13 <= AB2;
     O14 <= B;
-    O21 <= AC2;
+    O21 <= AC1;
     O22 <= ABCD2;
     O23 <= ABCD1;
     O24 <= BD2;
-    O31 <= AC1;
+    O31 <= AC2;
     O32 <= ABCD3;
     O33 <= ABCD4;
     O34 <= BD1;
     O41 <= C;
-    O42 <= CD2;
-    O43 <= CD1;
+    O42 <= CD1;
+    O43 <= CD2;
     O44 <= D;
 end Behavioral;
