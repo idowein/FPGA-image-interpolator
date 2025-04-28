@@ -1,0 +1,122 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Wed Apr 23 20:38:08 2025
+# Process ID: 27940
+# Current directory: C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent13292 C:\Users\idowe\myProjects\Digital-Zoom-FPGA\OV7670_VGA\OV7670_VGA.xpr
+# Log file: C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/vivado.log
+# Journal file: C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/vga_behav.wcfg
+source vga.tcl
+add_force {/vga/pix_clk} -radix hex {1 0ns} {0 20000ps} -repeat_every 40000ps
+run 10000000 ns
+add_force {/vga/zoom_x2} -radix hex {1 0ns}
+run 10000000 ns
+add_force {/vga/cntl} -radix hex {1 0ns}
+run 10000000 ns
+restart
+add_force {/vga/zoom_x2} -radix hex {0 0ns}
+run 10000000 ns
+restart
+add_force {/vga/zoom_x2} -radix hex {U 0ns}
+run 5000 ns
+add_force {/vga/zoom_x2} -radix hex {0 0ns}
+run 5000 ns
+run 5000 ns
+add_force {/vga/zoom_x2} -radix hex {1 0ns}
+run 5000 ns
+run 5000 ns
+restart
+run 5000 ns
+add_force {/vga/zoom_x2} -radix hex {1 0ns}
+run 5000 ns
+run 100000 ns
+run 1000000 ns
+run 10000000 ns
+save_wave_config {C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/vga_behav.wcfg}
+run 10000000 ns
+run 10000000 ns
+current_wave_config {vga_behav.wcfg}
+add_wave {{/vga/vga_blue}} 
+current_wave_config {vga_behav.wcfg}
+add_wave {{/vga/vga_red}} {{/vga/vga_green}} 
+run 20000000 ns
+restart
+run 20000000 ns
+save_wave_config {C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/vga_behav.wcfg}
+open_bd_design {C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/design_1.bd}
+regenerate_bd_layout
+close_sim
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top design_1_wrapper_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+generate_target Simulation [get_files C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/design_1.bd]
+export_ip_user_files -of_objects [get_files C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/design_1.bd] -directory C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.ip_user_files -ipstatic_source_dir C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.cache/compile_simlib/modelsim} {questa=C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.cache/compile_simlib/questa} {riviera=C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.cache/compile_simlib/riviera} {activehdl=C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+launch_simulation
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top design_1_wrapper [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+open_wave_config C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/vga_behav.wcfg
+source design_1_wrapper.tcl
+current_wave_config {vga_behav.wcfg}
+add_wave {{/design_1_wrapper/VGA_H_sync}} {{/design_1_wrapper/camera_h_ref}} {{/design_1_wrapper/camera_v_sync}} {{/design_1_wrapper/clk_in1}} {{/design_1_wrapper/cntl_in}} {{/design_1_wrapper/config_finished}} {{/design_1_wrapper/din}} {{/design_1_wrapper/pclk}} {{/design_1_wrapper/pwdn}} {{/design_1_wrapper/resend_in}} {{/design_1_wrapper/reset}} {{/design_1_wrapper/resetn}} {{/design_1_wrapper/sioc}} {{/design_1_wrapper/siod}} {{/design_1_wrapper/vga_V_sync}} {{/design_1_wrapper/vga_blue}} {{/design_1_wrapper/vga_green}} {{/design_1_wrapper/vga_red}} {{/design_1_wrapper/xclk}} {{/design_1_wrapper/zoom_x2}} 
+restart
+add_force {/design_1_wrapper/pclk} -radix hex {1 0ns} {0 20000ps} -repeat_every 40000ps
+run 100 ns
+run 100 ns
+add_force {/design_1_wrapper/din} -radix hex {252 0ns} {134 20000ps} -repeat_every 40000ps
+add_force {/design_1_wrapper/din} -radix hex {100 0ns} {50 20000ps} -repeat_every 40000ps
+add_force {/design_1_wrapper/din} -radix unsigned {100 0ns} {50 20000ps} -repeat_every 40000ps
+run 100 ns
+add_force {/design_1_wrapper/din} -radix hex {100 0ns} {50 29000ps} -repeat_every 100000ps
+add_force {/design_1_wrapper/din} -radix unsigned {100 0ns} {50 29000ps} -repeat_every 100000ps
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+add_force {/design_1_wrapper/din[7]} -radix hex {1 0ns} {0 50000ps} -repeat_every 100000ps
+add_force {/design_1_wrapper/din[6]} -radix hex {1 0ns} {0 25000ps} -repeat_every 50000ps
+run 100 ns
+run 100 ns
+add_force {/design_1_wrapper/din[3]} -radix hex {1 0ns} {0 100000ps} -repeat_every 200000ps
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+add_force {/design_1_wrapper/resetn} -radix hex {1 0ns}
+run 100 ns
+add_force {/design_1_wrapper/zoom_x2} -radix hex {1 0ns}
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+add_force {/design_1_wrapper/camera_h_ref} -radix hex {1 0ns} {0 2500000ps} -repeat_every 5000000ps
+run 1000 ns
+run 1000 ns
+run 5000 ns
+run 5000 ns
+add_force {/design_1_wrapper/camera_h_ref} -radix hex {1 0ns} {0 12800000ps} -repeat_every 25600000ps
+run 50000 ns
