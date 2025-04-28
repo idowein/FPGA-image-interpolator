@@ -1,0 +1,1 @@
+-wto "56a9619014a94fc9a5050bd4e00e58df" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" -L "xpm" --snapshot "bilinear_interpolation_unit_behav" "xil_defaultlib.bilinear_interpolation_unit" -log "elaborate.log" 

@@ -12,40 +12,40 @@ architecture Behavioral of bilinear_interpolation_unit_tb is
         Port (
             clk : in std_logic;
             rst : in std_logic;
-            A   : in std_logic_vector(7 downto 0);
-            B   : in std_logic_vector(7 downto 0);
-            C   : in std_logic_vector(7 downto 0);
-            D   : in std_logic_vector(7 downto 0);
-            O11 : out std_logic_vector(7 downto 0);
-            O12 : out std_logic_vector(7 downto 0);
-            O13 : out std_logic_vector(7 downto 0);
-            O14 : out std_logic_vector(7 downto 0);
-            O21 : out std_logic_vector(7 downto 0);
-            O22 : out std_logic_vector(7 downto 0);
-            O23 : out std_logic_vector(7 downto 0);
-            O24 : out std_logic_vector(7 downto 0);
-            O31 : out std_logic_vector(7 downto 0);
-            O32 : out std_logic_vector(7 downto 0);
-            O33 : out std_logic_vector(7 downto 0);
-            O34 : out std_logic_vector(7 downto 0);
-            O41 : out std_logic_vector(7 downto 0);
-            O42 : out std_logic_vector(7 downto 0);
-            O43 : out std_logic_vector(7 downto 0);
-            O44 : out std_logic_vector(7 downto 0)
+            A   : in std_logic_vector(11 downto 0);
+            B   : in std_logic_vector(11 downto 0);
+            C   : in std_logic_vector(11 downto 0);
+            D   : in std_logic_vector(11 downto 0);
+            O11 : out std_logic_vector(11 downto 0);
+            O12 : out std_logic_vector(11 downto 0);
+            O13 : out std_logic_vector(11 downto 0);
+            O14 : out std_logic_vector(11 downto 0);
+            O21 : out std_logic_vector(11 downto 0);
+            O22 : out std_logic_vector(11 downto 0);
+            O23 : out std_logic_vector(11 downto 0);
+            O24 : out std_logic_vector(11 downto 0);
+            O31 : out std_logic_vector(11 downto 0);
+            O32 : out std_logic_vector(11 downto 0);
+            O33 : out std_logic_vector(11 downto 0);
+            O34 : out std_logic_vector(11 downto 0);
+            O41 : out std_logic_vector(11 downto 0);
+            O42 : out std_logic_vector(11 downto 0);
+            O43 : out std_logic_vector(11 downto 0);
+            O44 : out std_logic_vector(11 downto 0)
         );
     end component;
 
     -- Testbench signals
     signal clk : std_logic := '0';
     signal rst : std_logic := '0';
-    signal A   : std_logic_vector(7 downto 0) := (others => '0');
-    signal B   : std_logic_vector(7 downto 0) := (others => '0');
-    signal C   : std_logic_vector(7 downto 0) := (others => '0');
-    signal D   : std_logic_vector(7 downto 0) := (others => '0');
-    signal O11, O12, O13, O14 : std_logic_vector(7 downto 0);
-    signal O21, O22, O23, O24 : std_logic_vector(7 downto 0);
-    signal O31, O32, O33, O34 : std_logic_vector(7 downto 0);
-    signal O41, O42, O43, O44 : std_logic_vector(7 downto 0);
+    signal A   : std_logic_vector(11 downto 0) := (others => '0');
+    signal B   : std_logic_vector(11 downto 0) := (others => '0');
+    signal C   : std_logic_vector(11 downto 0) := (others => '0');
+    signal D   : std_logic_vector(11 downto 0) := (others => '0');
+    signal O11, O12, O13, O14 : std_logic_vector(11 downto 0);
+    signal O21, O22, O23, O24 : std_logic_vector(11 downto 0);
+    signal O31, O32, O33, O34 : std_logic_vector(11 downto 0);
+    signal O41, O42, O43, O44 : std_logic_vector(11 downto 0);
 
     -- Clock period constant
     constant clk_period : time := 10 ns;
@@ -105,10 +105,10 @@ begin
 --        wait for clk_period * 10;
 
         -- Test Case 2: Increasing inputs
-        A <= "00001010"; -- 10
-        B <= "00010100"; -- 20
-        C <= "00011110"; -- 30
-        D <= "00101000"; -- 40
+        A <= "000000001010"; -- 10
+        B <= "000000010100"; -- 20
+        C <= "000000011110"; -- 30
+        D <= "000000101000"; -- 40
         wait for clk_period * 10;
 
 --        -- Test Case 3: High values
@@ -127,7 +127,7 @@ begin
 
 --        -- Test Case 5: Random values
 --        A <= "01010101"; -- 85
---        B <= "10101010"; -- 170
+--        B <= "10101010"; -- 1110
 --        C <= "11001100"; -- 204
 --        D <= "00110011"; -- 51
 --        wait for clk_period * 10;
