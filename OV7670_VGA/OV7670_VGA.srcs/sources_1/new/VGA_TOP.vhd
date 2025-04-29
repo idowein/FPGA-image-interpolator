@@ -1,6 +1,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
+use IEEE.std_logic_unsigned.all;
 
 entity VGA_TOP is
     Port (
@@ -18,10 +19,27 @@ entity VGA_TOP is
 end VGA_TOP;
 
 architecture Behavioral of VGA_TOP is
+   
+     -- constant
+    signal H_POSITIVE: std_logic := '1'; -- Indicates positive polarity for horizontal sync signal
+    signal V_POSITIVE: std_logic := '1'; -- Indicates positive polarity for vertical sync signal
+
     signal h_cnt : std_logic_vector(11 downto 0);
     signal v_cnt : std_logic_vector(11 downto 0);
     signal h_sync, v_sync, blank : std_logic;
     signal fr_address : std_logic_vector(18 downto 0);
+    
+    -- colors
+    signal cnt_bg:     std_logic_vector(28 downto 0) := (others => '0'); -- Background color counter for color cycling
+    signal cnt_bg_h:   std_logic_vector(11 downto 0); -- Horizontal component of the background color counter
+    signal cnt_bg_v:   std_logic_vector(11 downto 0); -- Vertical component of the background color counter
+    signal bg_red:     std_logic_vector(3 downto  0); -- Red component of the background color
+    signal bg_blue:    std_logic_vector(3 downto  0); -- Blue component of the background color
+    signal bg_green:   std_logic_vector(3 downto  0); -- Green component of the background color
+    signal bg_red_d:   std_logic_vector(3 downto  0); -- Delayed red component for display stabilization
+    signal bg_blue_d:  std_logic_vector(3 downto  0); -- Delayed blue component for display stabilization
+    signal bg_green_d: std_logic_vector(3 downto  0); -- Delayed green component for display stabilization
+
 begin
     -- Instantiate VGA Timing Block
     vga_timing_inst : entity work.VGA_TX
@@ -46,9 +64,10 @@ begin
             fr_address   => frame_adress,
             vga_red      => vga_red,
             vga_blue     => vga_blue,
-            vga_green    => vga_green
+            vga_green    => vga_green,
+            cntl         => cntl
         );
-
+        
     -- Sync Outputs
     VGA_H_sync <= h_sync;
     vga_V_sync <= v_sync;

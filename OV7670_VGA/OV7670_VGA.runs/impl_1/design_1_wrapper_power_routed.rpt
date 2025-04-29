@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date             : Tue Apr 29 16:48:52 2025
+| Date             : Tue Apr 29 17:10:29 2025
 | Host             : Ido running 64-bit major release  (build 9200)
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.224        |
+| Total On-Chip Power (W)  | 0.225        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.122        |
+| Dynamic (W)              | 0.123        |
 | Device Static (W)        | 0.102        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 84.0         |
@@ -53,19 +53,19 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.001 |        6 |       --- |             --- |
-| Slice Logic    |    <0.001 |     1502 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      543 |     63400 |            0.86 |
-|   CARRY4       |    <0.001 |       39 |     15850 |            0.25 |
-|   Register     |    <0.001 |      278 |    126800 |            0.22 |
+| Slice Logic    |    <0.001 |     1666 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      632 |     63400 |            1.00 |
+|   CARRY4       |    <0.001 |       60 |     15850 |            0.38 |
+|   Register     |    <0.001 |      279 |    126800 |            0.22 |
 |   F7/F8 Muxes  |    <0.001 |      129 |     63400 |            0.20 |
 |   BUFG         |    <0.001 |        1 |        32 |            3.13 |
 |   Others       |     0.000 |      302 |       --- |             --- |
-| Signals        |     0.002 |     1473 |       --- |             --- |
+| Signals        |     0.003 |     1521 |       --- |             --- |
 | Block RAM      |    <0.001 |      104 |       135 |           77.04 |
 | MMCM           |     0.115 |        1 |         6 |           16.67 |
-| I/O            |     0.002 |       35 |       210 |           16.67 |
+| I/O            |     0.003 |       36 |       210 |           17.14 |
 | Static Power   |     0.102 |          |           |                 |
-| Total          |     0.224 |          |           |                 |
+| Total          |     0.225 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -147,7 +147,7 @@ Table of Contents
 +------------------------+-----------+
 | Name                   | Power (W) |
 +------------------------+-----------+
-| design_1_wrapper       |     0.122 |
+| design_1_wrapper       |     0.123 |
 |   design_1_i           |     0.120 |
 |     blk_mem_gen_0      |     0.001 |
 |       U0               |     0.001 |
