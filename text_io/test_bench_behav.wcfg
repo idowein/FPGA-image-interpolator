@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="test_bench_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="test_bench" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="2015000001fs"></ZoomEndTime>
+      <Cursor1Time time="1418906448fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="161"></NameColumnWidth>
+      <ValueColumnWidth column_width="79"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="16" />
+   <wvobject fp_name="/test_bench/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_bench/clkx3" type="logic">
+      <obj_property name="ElementShortName">clkx3</obj_property>
+      <obj_property name="ObjectShortName">clkx3</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_bench/filed_enable" type="logic">
+      <obj_property name="ElementShortName">filed_enable</obj_property>
+      <obj_property name="ObjectShortName">filed_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_bench/line_enable" type="logic">
+      <obj_property name="ElementShortName">line_enable</obj_property>
+      <obj_property name="ObjectShortName">line_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_bench/line_sync" type="logic">
+      <obj_property name="ElementShortName">line_sync</obj_property>
+      <obj_property name="ObjectShortName">line_sync</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_bench/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider25">
+      <obj_property name="label">original</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_bench/uut/PRE_cmos_data" type="array">
+      <obj_property name="ElementShortName">PRE_cmos_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">PRE_cmos_data[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_bench/uut/PRE_cmos_data1" type="array">
+      <obj_property name="ElementShortName">PRE_cmos_data1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">PRE_cmos_data1[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider28">
+      <obj_property name="label">write</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_bench/uut1/bh_num" type="array">
+      <obj_property name="ElementShortName">bh_num[10:0]</obj_property>
+      <obj_property name="ObjectShortName">bh_num[10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_bench/uut1/EZOOM_DATA_OUTPUT" type="array">
+      <obj_property name="ElementShortName">EZOOM_DATA_OUTPUT[7:0]</obj_property>
+      <obj_property name="ObjectShortName">EZOOM_DATA_OUTPUT[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_bench/uut1/EZOOM_DATA_OUTPUT1" type="array">
+      <obj_property name="ElementShortName">EZOOM_DATA_OUTPUT1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">EZOOM_DATA_OUTPUT1[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider197">
+      <obj_property name="label">bili</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_bench/uut2/data_in" type="array">
+      <obj_property name="ElementShortName">data_in[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data_in[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_bench/uut2/data_out" type="array">
+      <obj_property name="ElementShortName">data_out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data_out[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>
