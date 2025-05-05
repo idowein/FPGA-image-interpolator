@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Apr 28 18:00:14 2025" VIVADOVERSION="2019.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Apr 29 17:08:09 2025" VIVADOVERSION="2019.2">
 
   <SYSTEMINFO ARCH="artix7" BOARD="digilentinc.com:nexys-a7-100t:part0:1.3" DEVICE="7a100t" NAME="design_1" PACKAGE="csg324" SPEEDGRADE="-1"/>
 
@@ -76,35 +76,35 @@
         <CONNECTION INSTANCE="clk_wiz_0" PORT="resetn"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="3" NAME="vga_blue" RIGHT="0" SIGIS="undef" SIGNAME="vga_0_vga_blue">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="vga_0" PORT="vga_blue"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="3" NAME="vga_red" RIGHT="0" SIGIS="undef" SIGNAME="vga_0_vga_red">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="vga_0" PORT="vga_red"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="vga_V_sync" SIGIS="undef" SIGNAME="vga_0_vga_V_sync">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="vga_0" PORT="vga_V_sync"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="VGA_H_sync" SIGIS="undef" SIGNAME="vga_0_VGA_H_sync">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="vga_0" PORT="VGA_H_sync"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="3" NAME="vga_green" RIGHT="0" SIGIS="undef" SIGNAME="vga_0_vga_green">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="vga_0" PORT="vga_green"/>
-      </CONNECTIONS>
-    </PORT>
     <PORT DIR="I" NAME="zoom_x2" SIGIS="undef" SIGNAME="External_Ports_zoom_x2">
       <CONNECTIONS>
         <CONNECTION INSTANCE="ovo_7670_caputre_0" PORT="zoom_x2"/>
-        <CONNECTION INSTANCE="vga_0" PORT="zoom_x2"/>
+        <CONNECTION INSTANCE="VGA_TOP_1" PORT="zoom_x2"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="vga_V_sync" SIGIS="undef" SIGNAME="VGA_TOP_1_vga_V_sync">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="VGA_TOP_1" PORT="vga_V_sync"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="VGA_H_sync" SIGIS="undef" SIGNAME="VGA_TOP_1_VGA_H_sync">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="VGA_TOP_1" PORT="VGA_H_sync"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="3" NAME="vga_green" RIGHT="0" SIGIS="undef" SIGNAME="VGA_TOP_1_vga_green">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="VGA_TOP_1" PORT="vga_green"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="3" NAME="vga_blue" RIGHT="0" SIGIS="undef" SIGNAME="VGA_TOP_1_vga_blue">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="VGA_TOP_1" PORT="vga_blue"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="3" NAME="vga_red" RIGHT="0" SIGIS="undef" SIGNAME="VGA_TOP_1_vga_red">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="VGA_TOP_1" PORT="vga_red"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -112,6 +112,66 @@
   <EXTERNALINTERFACES/>
 
   <MODULES>
+    <MODULE COREREVISION="1" FULLNAME="/VGA_TOP_1" HWVERSION="1.0" INSTANCE="VGA_TOP_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="VGA_TOP" VLNV="xilinx.com:module_ref:VGA_TOP:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_VGA_TOP_1_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="25174825" DIR="I" NAME="pix_clk" SIGIS="clk" SIGNAME="clk_wiz_0_clk_vga">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_vga"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="cntl" SIGIS="undef" SIGNAME="cntl_0_cntl_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="cntl_0" PORT="cntl_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="zoom_x2" SIGIS="undef" SIGNAME="External_Ports_zoom_x2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="zoom_x2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="frame_fix" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_0_doutb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="blk_mem_gen_0" PORT="doutb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="VGA_H_sync" SIGIS="undef" SIGNAME="VGA_TOP_1_VGA_H_sync">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="VGA_H_sync"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="vga_V_sync" SIGIS="undef" SIGNAME="VGA_TOP_1_vga_V_sync">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="vga_V_sync"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="vga_red" RIGHT="0" SIGIS="undef" SIGNAME="VGA_TOP_1_vga_red">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="vga_red"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="vga_blue" RIGHT="0" SIGIS="undef" SIGNAME="VGA_TOP_1_vga_blue">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="vga_blue"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="vga_green" RIGHT="0" SIGIS="undef" SIGNAME="VGA_TOP_1_vga_green">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="vga_green"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="18" NAME="frame_adress" RIGHT="0" SIGIS="undef" SIGNAME="VGA_TOP_1_frame_adress">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="blk_mem_gen_0" PORT="addrb"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
     <MODULE COREREVISION="4" FULLNAME="/blk_mem_gen_0" HWVERSION="8.4" INSTANCE="blk_mem_gen_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="MEMORY" MODTYPE="blk_mem_gen" VLNV="xilinx.com:ip:blk_mem_gen:8.4">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=blk_mem_gen;v=v8_4;d=pg058-blk-mem-gen.pdf"/>
@@ -292,14 +352,14 @@
             <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_vga"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="18" NAME="addrb" RIGHT="0" SIGIS="undef" SIGNAME="vga_0_frame_adress">
+        <PORT DIR="I" LEFT="18" NAME="addrb" RIGHT="0" SIGIS="undef" SIGNAME="VGA_TOP_1_frame_adress">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="vga_0" PORT="frame_adress"/>
+            <CONNECTION INSTANCE="VGA_TOP_1" PORT="frame_adress"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="11" NAME="doutb" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_0_doutb">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="vga_0" PORT="frame_fix"/>
+            <CONNECTION INSTANCE="VGA_TOP_1" PORT="frame_fix"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -924,7 +984,7 @@
         <PORT CLKFREQUENCY="25174825" DIR="O" NAME="clk_vga" SIGIS="clk" SIGNAME="clk_wiz_0_clk_vga">
           <CONNECTIONS>
             <CONNECTION INSTANCE="blk_mem_gen_0" PORT="clkb"/>
-            <CONNECTION INSTANCE="vga_0" PORT="pix_clk"/>
+            <CONNECTION INSTANCE="VGA_TOP_1" PORT="pix_clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="25000000" DIR="O" NAME="clk_reg" SIGIS="clk" SIGNAME="clk_wiz_0_clk_reg">
@@ -965,7 +1025,7 @@
         </PORT>
         <PORT DIR="O" NAME="cntl_out" SIGIS="undef" SIGNAME="cntl_0_cntl_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="vga_0" PORT="cntl"/>
+            <CONNECTION INSTANCE="VGA_TOP_1" PORT="cntl"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -1066,66 +1126,6 @@
         <PORT DIR="O" NAME="wr_en" SIGIS="undef" SIGNAME="ovo_7670_caputre_0_wr_en">
           <CONNECTIONS>
             <CONNECTION INSTANCE="blk_mem_gen_0" PORT="wea"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES/>
-    </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/vga_0" HWVERSION="1.0" INSTANCE="vga_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="vga" VLNV="xilinx.com:module_ref:vga:1.0">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_vga_0_0"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT CLKFREQUENCY="25174825" DIR="I" NAME="pix_clk" SIGIS="clk" SIGNAME="clk_wiz_0_clk_vga">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_vga"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="cntl" SIGIS="undef" SIGNAME="cntl_0_cntl_out">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="cntl_0" PORT="cntl_out"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="zoom_x2" SIGIS="undef" SIGNAME="External_Ports_zoom_x2">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="zoom_x2"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="11" NAME="frame_fix" RIGHT="0" SIGIS="undef" SIGNAME="blk_mem_gen_0_doutb">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="blk_mem_gen_0" PORT="doutb"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="VGA_H_sync" SIGIS="undef" SIGNAME="vga_0_VGA_H_sync">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="VGA_H_sync"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="vga_V_sync" SIGIS="undef" SIGNAME="vga_0_vga_V_sync">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="vga_V_sync"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="vga_red" RIGHT="0" SIGIS="undef" SIGNAME="vga_0_vga_red">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="vga_red"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="vga_blue" RIGHT="0" SIGIS="undef" SIGNAME="vga_0_vga_blue">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="vga_blue"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="vga_green" RIGHT="0" SIGIS="undef" SIGNAME="vga_0_vga_green">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="vga_green"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="18" NAME="frame_adress" RIGHT="0" SIGIS="undef" SIGNAME="vga_0_frame_adress">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="blk_mem_gen_0" PORT="addrb"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

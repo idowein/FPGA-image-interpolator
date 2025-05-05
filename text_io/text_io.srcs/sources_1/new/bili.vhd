@@ -8,7 +8,7 @@
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
--- Description: 
+-- Description: Multiply input by 2 using numeric_std
 -- 
 -- Dependencies: 
 -- 
@@ -18,36 +18,29 @@
 -- 
 ----------------------------------------------------------------------------------
 
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-USE ieee.STD_LOGIC_UNSIGNED.all;
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
+use IEEE.NUMERIC_STD.ALL;
 
 entity bili is
     Port ( 
-            clk      : IN  STD_LOGIC;
-            RESET    : IN  STD_LOGIC;
-            data_in  : IN  STD_LOGIC_VECTOR (7 downto 0);
-            data_out : OUT STD_LOGIC_VECTOR (7 downto 0));
+        clk      : IN  STD_LOGIC;
+        RESET    : IN  STD_LOGIC;
+        data_in  : IN  STD_LOGIC_VECTOR (7 downto 0);
+        data_out : OUT STD_LOGIC_VECTOR (7 downto 0)
+    );
 end bili;
 
 architecture Behavioral of bili is
-
 begin
-    process( clk, RESET) begin
-        if RESET = '1' then 
+    process(clk, RESET)
+    begin
+        if RESET = '1' then
             data_out <= (others => '0');
         elsif rising_edge(clk) then
-            data_out <= data_in + 1;
-        end if ;
+--            data_out <= std_logic_vector(unsigned(data_in) * 2); -- doesn't work
+--        data_out <= std_logic_vector(resize(unsigned(data_in) * 2, 8)); -- mul
+        data_out <= std_logic_vector(resize(unsigned(data_in) / 64, 8));
+        end if;
     end process;
 end Behavioral;

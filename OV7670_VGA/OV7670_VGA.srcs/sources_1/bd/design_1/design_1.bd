@@ -14,7 +14,7 @@
       "ov7670_controller_0": "",
       "cntl_0": "",
       "ovo_7670_caputre_0": "",
-      "vga_0": ""
+      "VGA_TOP_1": ""
     },
     "ports": {
       "clk_in1": {
@@ -105,15 +105,8 @@
           }
         }
       },
-      "vga_blue": {
-        "direction": "O",
-        "left": "3",
-        "right": "0"
-      },
-      "vga_red": {
-        "direction": "O",
-        "left": "3",
-        "right": "0"
+      "zoom_x2": {
+        "direction": "I"
       },
       "vga_V_sync": {
         "direction": "O"
@@ -126,8 +119,15 @@
         "left": "3",
         "right": "0"
       },
-      "zoom_x2": {
-        "direction": "I"
+      "vga_blue": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      },
+      "vga_red": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
       }
     },
     "components": {
@@ -365,12 +365,12 @@
           }
         }
       },
-      "vga_0": {
-        "vlnv": "xilinx.com:module_ref:vga:1.0",
-        "xci_name": "design_1_vga_0_0",
+      "VGA_TOP_1": {
+        "vlnv": "xilinx.com:module_ref:VGA_TOP:1.0",
+        "xci_name": "design_1_VGA_TOP_1_0",
         "reference_info": {
           "ref_type": "hdl",
-          "ref_name": "vga",
+          "ref_name": "VGA_TOP",
           "boundary_crc": "0x0"
         },
         "ports": {
@@ -446,12 +446,6 @@
           "ov7670_controller_0/resend"
         ]
       },
-      "cntl_0_cntl_out": {
-        "ports": [
-          "cntl_0/cntl_out",
-          "vga_0/cntl"
-        ]
-      },
       "camera_h_ref_0_1": {
         "ports": [
           "camera_h_ref",
@@ -499,7 +493,7 @@
         "ports": [
           "clk_wiz_0/clk_vga",
           "blk_mem_gen_0/clkb",
-          "vga_0/pix_clk"
+          "VGA_TOP_1/pix_clk"
         ]
       },
       "clk_wiz_0_clk_reg": {
@@ -544,18 +538,6 @@
           "xclk"
         ]
       },
-      "vga_0_frame_adress": {
-        "ports": [
-          "vga_0/frame_adress",
-          "blk_mem_gen_0/addrb"
-        ]
-      },
-      "blk_mem_gen_0_doutb": {
-        "ports": [
-          "blk_mem_gen_0/doutb",
-          "vga_0/frame_fix"
-        ]
-      },
       "resend_in_0_1": {
         "ports": [
           "resend_in",
@@ -574,41 +556,59 @@
           "clk_wiz_0/resetn"
         ]
       },
-      "vga_0_vga_blue": {
-        "ports": [
-          "vga_0/vga_blue",
-          "vga_blue"
-        ]
-      },
-      "vga_0_vga_red": {
-        "ports": [
-          "vga_0/vga_red",
-          "vga_red"
-        ]
-      },
-      "vga_0_vga_V_sync": {
-        "ports": [
-          "vga_0/vga_V_sync",
-          "vga_V_sync"
-        ]
-      },
-      "vga_0_VGA_H_sync": {
-        "ports": [
-          "vga_0/VGA_H_sync",
-          "VGA_H_sync"
-        ]
-      },
-      "vga_0_vga_green": {
-        "ports": [
-          "vga_0/vga_green",
-          "vga_green"
-        ]
-      },
       "zoom_x2_0_1": {
         "ports": [
           "zoom_x2",
           "ovo_7670_caputre_0/zoom_x2",
-          "vga_0/zoom_x2"
+          "VGA_TOP_1/zoom_x2"
+        ]
+      },
+      "VGA_TOP_1_vga_V_sync": {
+        "ports": [
+          "VGA_TOP_1/vga_V_sync",
+          "vga_V_sync"
+        ]
+      },
+      "VGA_TOP_1_VGA_H_sync": {
+        "ports": [
+          "VGA_TOP_1/VGA_H_sync",
+          "VGA_H_sync"
+        ]
+      },
+      "VGA_TOP_1_vga_green": {
+        "ports": [
+          "VGA_TOP_1/vga_green",
+          "vga_green"
+        ]
+      },
+      "VGA_TOP_1_vga_blue": {
+        "ports": [
+          "VGA_TOP_1/vga_blue",
+          "vga_blue"
+        ]
+      },
+      "VGA_TOP_1_vga_red": {
+        "ports": [
+          "VGA_TOP_1/vga_red",
+          "vga_red"
+        ]
+      },
+      "VGA_TOP_1_frame_adress": {
+        "ports": [
+          "VGA_TOP_1/frame_adress",
+          "blk_mem_gen_0/addrb"
+        ]
+      },
+      "blk_mem_gen_0_doutb": {
+        "ports": [
+          "blk_mem_gen_0/doutb",
+          "VGA_TOP_1/frame_fix"
+        ]
+      },
+      "cntl_0_cntl_out": {
+        "ports": [
+          "cntl_0/cntl_out",
+          "VGA_TOP_1/cntl"
         ]
       }
     }
