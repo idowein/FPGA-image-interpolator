@@ -54,3 +54,11 @@ P41 & P42 & P43 & P44
    - P33 = (A + 2*B + C + 2*D) / 6
 
 This provides the formula for calculating each pixel in the 4x4 matrix from the 2x2 matrix corners.
+
+====================================================================
+
+2. **Horizontal Interpolations**:
+   - P12 = A + (1/4) * (B - A)  -- A + ((B - A) srl 2);
+   - P13 = A + (3/4) * (B - A)
+   - P42 = C + (1/4) * (D - C)
+   - P43 = C + (3/4) * (D - C)

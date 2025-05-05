@@ -1,0 +1,195 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x0",
+      "device": "xc7a100tcsg324-1",
+      "name": "design_1",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2019.2"
+    },
+    "design_tree": {
+      "fpga_exp7_0": "",
+      "bh_write_file_0": "",
+      "bili_0": ""
+    },
+    "ports": {
+      "clk_0": {
+        "type": "clk",
+        "direction": "I"
+      },
+      "filed_enable_0": {
+        "direction": "I"
+      },
+      "line_enable_0": {
+        "direction": "I"
+      },
+      "line_sync_0": {
+        "direction": "I"
+      },
+      "reset_0": {
+        "type": "rst",
+        "direction": "I"
+      },
+      "clkx3_0": {
+        "direction": "I"
+      }
+    },
+    "components": {
+      "fpga_exp7_0": {
+        "vlnv": "xilinx.com:module_ref:fpga_exp7:1.0",
+        "xci_name": "design_1_fpga_exp7_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "fpga_exp7",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "clkx3": {
+            "direction": "I"
+          },
+          "filed_enable": {
+            "direction": "I"
+          },
+          "line_enable": {
+            "direction": "I"
+          },
+          "line_sync": {
+            "direction": "I"
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "PRE_cmos_data": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      },
+      "bh_write_file_0": {
+        "vlnv": "xilinx.com:module_ref:bh_write_file:1.0",
+        "xci_name": "design_1_bh_write_file_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "bh_write_file",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "VIDEO_CLK": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "VIDEO_OUT_FIELD_ENABLE": {
+            "direction": "I"
+          },
+          "VIDEO_OUT_LINE_ENABLE": {
+            "direction": "I"
+          },
+          "VIDEO_OUT_LINE_SYNC": {
+            "direction": "I"
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "EZOOM_DATA_OUTPUT": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      },
+      "bili_0": {
+        "vlnv": "xilinx.com:module_ref:bili:1.0",
+        "xci_name": "design_1_bili_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "bili",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "RESET": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "data_in": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "data_out": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "clk_0_1": {
+        "ports": [
+          "clk_0",
+          "fpga_exp7_0/clk",
+          "bh_write_file_0/VIDEO_CLK",
+          "bili_0/clk"
+        ]
+      },
+      "filed_enable_0_1": {
+        "ports": [
+          "filed_enable_0",
+          "fpga_exp7_0/filed_enable",
+          "bh_write_file_0/VIDEO_OUT_FIELD_ENABLE"
+        ]
+      },
+      "line_enable_0_1": {
+        "ports": [
+          "line_enable_0",
+          "fpga_exp7_0/line_enable",
+          "bh_write_file_0/VIDEO_OUT_LINE_ENABLE"
+        ]
+      },
+      "line_sync_0_1": {
+        "ports": [
+          "line_sync_0",
+          "fpga_exp7_0/line_sync",
+          "bh_write_file_0/VIDEO_OUT_LINE_SYNC"
+        ]
+      },
+      "reset_0_1": {
+        "ports": [
+          "reset_0",
+          "fpga_exp7_0/reset",
+          "bh_write_file_0/reset",
+          "bili_0/RESET"
+        ]
+      },
+      "clkx3_0_1": {
+        "ports": [
+          "clkx3_0",
+          "fpga_exp7_0/clkx3"
+        ]
+      },
+      "fpga_exp7_0_PRE_cmos_data": {
+        "ports": [
+          "fpga_exp7_0/PRE_cmos_data",
+          "bili_0/data_in"
+        ]
+      },
+      "bili_0_data_out": {
+        "ports": [
+          "bili_0/data_out",
+          "bh_write_file_0/EZOOM_DATA_OUTPUT"
+        ]
+      }
+    }
+  }
+}
