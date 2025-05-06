@@ -1,43 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1746531096">
-  <File Type="BITSTR-BMM" Name="BILINEAR_INTERPOLATION_TOP_bd.bmm"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="BILINEAR_INTERPOLATION_TOP_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="BILINEAR_INTERPOLATION_TOP_timing_summary_init.rpt"/>
   <File Type="ROUTE-PWR" Name="BILINEAR_INTERPOLATION_TOP_power_routed.rpt"/>
   <File Type="PA-TCL" Name="BILINEAR_INTERPOLATION_TOP.tcl"/>
-  <File Type="OPT-TIMING" Name="BILINEAR_INTERPOLATION_TOP_timing_summary_opted.rpt"/>
-  <File Type="OPT-DCP" Name="BILINEAR_INTERPOLATION_TOP_opt.dcp"/>
+  <File Type="BITSTR-BMM" Name="BILINEAR_INTERPOLATION_TOP_bd.bmm"/>
   <File Type="ROUTE-PWR-SUM" Name="BILINEAR_INTERPOLATION_TOP_power_summary_routed.pb"/>
   <File Type="REPORTS-TCL" Name="BILINEAR_INTERPOLATION_TOP_reports.tcl"/>
+  <File Type="OPT-DCP" Name="BILINEAR_INTERPOLATION_TOP_opt.dcp"/>
   <File Type="OPT-DRC" Name="BILINEAR_INTERPOLATION_TOP_drc_opted.rpt"/>
   <File Type="OPT-HWDEF" Name="BILINEAR_INTERPOLATION_TOP.hwdef"/>
   <File Type="PWROPT-DCP" Name="BILINEAR_INTERPOLATION_TOP_pwropt.dcp"/>
-  <File Type="PWROPT-DRC" Name="BILINEAR_INTERPOLATION_TOP_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="BILINEAR_INTERPOLATION_TOP_timing_summary_pwropted.rpt"/>
   <File Type="PLACE-DCP" Name="BILINEAR_INTERPOLATION_TOP_placed.dcp"/>
   <File Type="PLACE-IO" Name="BILINEAR_INTERPOLATION_TOP_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="BILINEAR_INTERPOLATION_TOP_clock_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL" Name="BILINEAR_INTERPOLATION_TOP_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL-PB" Name="BILINEAR_INTERPOLATION_TOP_utilization_placed.pb"/>
   <File Type="PLACE-CTRL" Name="BILINEAR_INTERPOLATION_TOP_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="BILINEAR_INTERPOLATION_TOP_incremental_reuse_placed.rpt"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="BILINEAR_INTERPOLATION_TOP_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-TIMING" Name="BILINEAR_INTERPOLATION_TOP_timing_summary_placed.rpt"/>
   <File Type="POSTPLACE-PWROPT-DCP" Name="BILINEAR_INTERPOLATION_TOP_postplace_pwropt.dcp"/>
   <File Type="BG-BIN" Name="BILINEAR_INTERPOLATION_TOP.bin"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="BILINEAR_INTERPOLATION_TOP_timing_summary_postplace_pwropted.rpt"/>
   <File Type="PHYSOPT-DCP" Name="BILINEAR_INTERPOLATION_TOP_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="BILINEAR_INTERPOLATION_TOP_drc_physopted.rpt"/>
   <File Type="BITSTR-MSK" Name="BILINEAR_INTERPOLATION_TOP.msk"/>
-  <File Type="PHYSOPT-TIMING" Name="BILINEAR_INTERPOLATION_TOP_timing_summary_physopted.rpt"/>
   <File Type="ROUTE-ERROR-DCP" Name="BILINEAR_INTERPOLATION_TOP_routed_error.dcp"/>
   <File Type="ROUTE-DCP" Name="BILINEAR_INTERPOLATION_TOP_routed.dcp"/>
   <File Type="ROUTE-BLACKBOX-DCP" Name="BILINEAR_INTERPOLATION_TOP_routed_bb.dcp"/>
   <File Type="ROUTE-DRC" Name="BILINEAR_INTERPOLATION_TOP_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="BILINEAR_INTERPOLATION_TOP_drc_routed.pb"/>
   <File Type="ROUTE-DRC-RPX" Name="BILINEAR_INTERPOLATION_TOP_drc_routed.rpx"/>
-  <File Type="BITSTR-MMI" Name="BILINEAR_INTERPOLATION_TOP.mmi"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="BILINEAR_INTERPOLATION_TOP_methodology_drc_routed.rpt"/>
+  <File Type="BITSTR-MMI" Name="BILINEAR_INTERPOLATION_TOP.mmi"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="BILINEAR_INTERPOLATION_TOP_methodology_drc_routed.rpx"/>
   <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="BILINEAR_INTERPOLATION_TOP_methodology_drc_routed.pb"/>
   <File Type="ROUTE-PWR-RPX" Name="BILINEAR_INTERPOLATION_TOP_power_routed.rpx"/>
@@ -46,20 +35,13 @@
   <File Type="ROUTE-TIMINGSUMMARY" Name="BILINEAR_INTERPOLATION_TOP_timing_summary_routed.rpt"/>
   <File Type="ROUTE-TIMING-PB" Name="BILINEAR_INTERPOLATION_TOP_timing_summary_routed.pb"/>
   <File Type="ROUTE-TIMING-RPX" Name="BILINEAR_INTERPOLATION_TOP_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="BILINEAR_INTERPOLATION_TOP_incremental_reuse_routed.rpt"/>
   <File Type="ROUTE-CLK" Name="BILINEAR_INTERPOLATION_TOP_clock_utilization_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW" Name="BILINEAR_INTERPOLATION_TOP_bus_skew_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW-PB" Name="BILINEAR_INTERPOLATION_TOP_bus_skew_routed.pb"/>
   <File Type="ROUTE-BUS-SKEW-RPX" Name="BILINEAR_INTERPOLATION_TOP_bus_skew_routed.rpx"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="BILINEAR_INTERPOLATION_TOP_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="BILINEAR_INTERPOLATION_TOP_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="BILINEAR_INTERPOLATION_TOP_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="BILINEAR_INTERPOLATION_TOP_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="BILINEAR_INTERPOLATION_TOP_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="BILINEAR_INTERPOLATION_TOP_bus_skew_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="BILINEAR_INTERPOLATION_TOP_bus_skew_postroute_physopted.pb"/>
   <File Type="BG-BIT" Name="BILINEAR_INTERPOLATION_TOP.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="BILINEAR_INTERPOLATION_TOP_bus_skew_postroute_physopted.rpx"/>
   <File Type="BITSTR-RBT" Name="BILINEAR_INTERPOLATION_TOP.rbt"/>
   <File Type="BITSTR-NKY" Name="BILINEAR_INTERPOLATION_TOP.nky"/>
   <File Type="PDI-FILE" Name="BILINEAR_INTERPOLATION_TOP.pdi"/>
@@ -68,7 +50,6 @@
   <File Type="RNPI_FILE" Name="BILINEAR_INTERPOLATION_TOP.rnpi"/>
   <File Type="NPI_FILE" Name="BILINEAR_INTERPOLATION_TOP.npi"/>
   <File Type="RBD_FILE" Name="BILINEAR_INTERPOLATION_TOP.rbd"/>
-  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
   <File Type="BITSTR-LTX" Name="BILINEAR_INTERPOLATION_TOP.ltx"/>
   <File Type="BITSTR-SYSDEF" Name="BILINEAR_INTERPOLATION_TOP.sysdef"/>
   <File Type="BG-BGN" Name="BILINEAR_INTERPOLATION_TOP.bgn"/>
@@ -215,6 +196,7 @@
     <Step Id="route_design"/>
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
+    <Step Id="write_device_image"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="design_1_blk_mem_gen_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_ov7670_controller_0_0"/>

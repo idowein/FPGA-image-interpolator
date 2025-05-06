@@ -1,74 +1,74 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"0.853333",
-   "Default View_TopLeft":"-359,0",
+   "Default View_ScaleFactor":"0.872727",
+   "Default View_TopLeft":"-446,0",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0.21  2019-05-29 bk=1.5064 VDI=41 GEI=36 GUI=JA:9.0 non-TLS
 #  -string -flagsOSRD
-preplace port clk_in1 -pg 1 -lvl 0 -x 0 -y 410 -defaultsOSRD
-preplace port camera_h_ref -pg 1 -lvl 0 -x 0 -y 120 -defaultsOSRD
-preplace port camera_v_sync -pg 1 -lvl 0 -x 0 -y 100 -defaultsOSRD
-preplace port pclk -pg 1 -lvl 0 -x 0 -y 20 -defaultsOSRD
-preplace port sioc -pg 1 -lvl 4 -x 960 -y 600 -defaultsOSRD
-preplace port config_finished -pg 1 -lvl 4 -x 960 -y 580 -defaultsOSRD
-preplace port reset -pg 1 -lvl 4 -x 960 -y 640 -defaultsOSRD
-preplace port siod -pg 1 -lvl 4 -x 960 -y 620 -defaultsOSRD
-preplace port pwdn -pg 1 -lvl 4 -x 960 -y 660 -defaultsOSRD
-preplace port xclk -pg 1 -lvl 4 -x 960 -y 680 -defaultsOSRD
-preplace port resend_in -pg 1 -lvl 0 -x 0 -y 650 -defaultsOSRD
-preplace port cntl_in -pg 1 -lvl 0 -x 0 -y 670 -defaultsOSRD
-preplace port resetn -pg 1 -lvl 0 -x 0 -y 390 -defaultsOSRD
-preplace port zoom_x2 -pg 1 -lvl 0 -x 0 -y 730 -defaultsOSRD
-preplace port vga_V_sync -pg 1 -lvl 4 -x 960 -y 760 -defaultsOSRD
-preplace port VGA_H_sync -pg 1 -lvl 4 -x 960 -y 740 -defaultsOSRD
-preplace portBus din -pg 1 -lvl 0 -x 0 -y 160 -defaultsOSRD
-preplace portBus vga_green -pg 1 -lvl 4 -x 960 -y 820 -defaultsOSRD
-preplace portBus vga_blue -pg 1 -lvl 4 -x 960 -y 800 -defaultsOSRD
-preplace portBus vga_red -pg 1 -lvl 4 -x 960 -y 780 -defaultsOSRD
-preplace inst blk_mem_gen_0 -pg 1 -lvl 3 -x 810 -y 140 -defaultsOSRD
-preplace inst clk_wiz_0 -pg 1 -lvl 1 -x 140 -y 400 -defaultsOSRD
-preplace inst ov7670_controller_0 -pg 1 -lvl 3 -x 810 -y 630 -defaultsOSRD
-preplace inst cntl_0 -pg 1 -lvl 1 -x 140 -y 650 -defaultsOSRD
-preplace inst ovo_7670_caputre_0 -pg 1 -lvl 2 -x 470 -y 120 -defaultsOSRD
-preplace inst VGA_TOP_1 -pg 1 -lvl 2 -x 470 -y 790 -defaultsOSRD
-preplace inst blk_mem_gen_1 -pg 1 -lvl 3 -x 810 -y 400 -defaultsOSRD
-preplace inst BILINEAR_INTERPOLATI_0 -pg 1 -lvl 2 -x 470 -y 420 -defaultsOSRD
-preplace netloc clk_in1_0_1 1 0 3 20 310 280 320 650J
-preplace netloc cntl_0_resend_out 1 1 2 N 640 NJ
+preplace port clk_in1 -pg 1 -lvl 0 -x -40 -y 410 -defaultsOSRD
+preplace port camera_h_ref -pg 1 -lvl 0 -x -40 -y 120 -defaultsOSRD
+preplace port camera_v_sync -pg 1 -lvl 0 -x -40 -y 100 -defaultsOSRD
+preplace port pclk -pg 1 -lvl 0 -x -40 -y 20 -defaultsOSRD
+preplace port sioc -pg 1 -lvl 4 -x 1020 -y 580 -defaultsOSRD
+preplace port config_finished -pg 1 -lvl 4 -x 1020 -y 560 -defaultsOSRD
+preplace port reset -pg 1 -lvl 4 -x 1020 -y 620 -defaultsOSRD
+preplace port siod -pg 1 -lvl 4 -x 1020 -y 600 -defaultsOSRD
+preplace port pwdn -pg 1 -lvl 4 -x 1020 -y 640 -defaultsOSRD
+preplace port xclk -pg 1 -lvl 4 -x 1020 -y 660 -defaultsOSRD
+preplace port resend_in -pg 1 -lvl 0 -x -40 -y 630 -defaultsOSRD
+preplace port cntl_in -pg 1 -lvl 0 -x -40 -y 650 -defaultsOSRD
+preplace port resetn -pg 1 -lvl 0 -x -40 -y 390 -defaultsOSRD
+preplace port zoom_x2 -pg 1 -lvl 0 -x -40 -y 710 -defaultsOSRD
+preplace port vga_V_sync -pg 1 -lvl 4 -x 1020 -y 740 -defaultsOSRD
+preplace port VGA_H_sync -pg 1 -lvl 4 -x 1020 -y 720 -defaultsOSRD
+preplace portBus din -pg 1 -lvl 0 -x -40 -y 160 -defaultsOSRD
+preplace portBus vga_green -pg 1 -lvl 4 -x 1020 -y 800 -defaultsOSRD
+preplace portBus vga_blue -pg 1 -lvl 4 -x 1020 -y 780 -defaultsOSRD
+preplace portBus vga_red -pg 1 -lvl 4 -x 1020 -y 760 -defaultsOSRD
+preplace inst blk_mem_gen_0 -pg 1 -lvl 3 -x 820 -y 140 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 1 -x 110 -y 400 -defaultsOSRD
+preplace inst blk_mem_gen_1 -pg 1 -lvl 3 -x 820 -y 400 -defaultsOSRD
+preplace inst ov7670_controller_0 -pg 1 -lvl 3 -x 820 -y 630 -defaultsOSRD
+preplace inst cntl_0 -pg 1 -lvl 1 -x 110 -y 630 -defaultsOSRD
+preplace inst ovo_7670_caputre_0 -pg 1 -lvl 2 -x 460 -y 120 -defaultsOSRD
+preplace inst VGA_TOP_1 -pg 1 -lvl 2 -x 460 -y 770 -defaultsOSRD
+preplace inst BILINEAR_INTERPOLATI_0 -pg 1 -lvl 2 -x 460 -y 400 -defaultsOSRD
+preplace netloc clk_in1_0_1 1 0 3 -20 300 280 300 660J
+preplace netloc cntl_0_resend_out 1 1 2 240 640 NJ
 preplace netloc camera_h_ref_0_1 1 0 2 NJ 120 NJ
 preplace netloc camera_v_sync_0_1 1 0 2 NJ 100 NJ
 preplace netloc din_0_1 1 0 2 NJ 160 NJ
-preplace netloc pclk_0_1 1 0 3 NJ 20 310 20 660J
-preplace netloc ovo_7670_caputre_0_addr 1 2 1 630 80n
+preplace netloc pclk_0_1 1 0 3 NJ 20 300 20 670J
+preplace netloc ovo_7670_caputre_0_addr 1 2 1 620 80n
 preplace netloc ovo_7670_caputre_0_dout 1 2 1 N 120
 preplace netloc ovo_7670_caputre_0_wr_en 1 2 1 N 140
-preplace netloc clk_wiz_0_clk_reg 1 1 2 290 330 630J
-preplace netloc ov7670_controller_0_sioc 1 3 1 NJ 600
-preplace netloc ov7670_controller_0_config_finished 1 3 1 NJ 580
-preplace netloc ov7670_controller_0_reset 1 3 1 NJ 640
-preplace netloc Net1 1 3 1 NJ 620
-preplace netloc ov7670_controller_0_pwdn 1 3 1 NJ 660
-preplace netloc ov7670_controller_0_xclk 1 3 1 NJ 680
-preplace netloc resend_in_0_1 1 0 1 NJ 650
-preplace netloc cntl_in_0_1 1 0 1 NJ 670
-preplace netloc resetn_0_1 1 0 1 NJ 390
-preplace netloc zoom_x2_0_1 1 0 2 NJ 730 270
-preplace netloc VGA_TOP_1_vga_V_sync 1 2 2 NJ 760 NJ
-preplace netloc VGA_TOP_1_VGA_H_sync 1 2 2 NJ 740 NJ
-preplace netloc VGA_TOP_1_vga_green 1 2 2 NJ 820 NJ
-preplace netloc VGA_TOP_1_vga_blue 1 2 2 NJ 800 NJ
-preplace netloc VGA_TOP_1_vga_red 1 2 2 NJ 780 NJ
-preplace netloc cntl_0_cntl_out 1 1 1 260 660n
-preplace netloc blk_mem_gen_1_doutb 1 1 2 310 510 680J
-preplace netloc Net 1 1 2 300 310 660
-preplace netloc VGA_TOP_1_frame_adress 1 2 1 670 440n
-preplace netloc blk_mem_gen_0_doutb 1 1 2 310 220 NJ
-preplace netloc BILINEAR_INTERPOLATI_0_pixel_out 1 2 1 650 380n
-preplace netloc BILINEAR_INTERPOLATI_0_address_out 1 2 1 640 340n
-preplace netloc BILINEAR_INTERPOLATI_0_write_enable 1 2 1 N 400
-preplace netloc clk_wiz_0_clk_interpolation 1 1 1 N 430
-levelinfo -pg 1 0 140 470 810 960
-pagesize -pg 1 -db -bbox -sgen -150 0 1110 900
+preplace netloc clk_wiz_0_clk_reg 1 1 2 260 290 650J
+preplace netloc ov7670_controller_0_sioc 1 3 1 960J 580n
+preplace netloc ov7670_controller_0_config_finished 1 3 1 950J 560n
+preplace netloc ov7670_controller_0_reset 1 3 1 980J 620n
+preplace netloc Net1 1 3 1 970J 600n
+preplace netloc ov7670_controller_0_pwdn 1 3 1 990J 640n
+preplace netloc ov7670_controller_0_xclk 1 3 1 1000J 660n
+preplace netloc resend_in_0_1 1 0 1 NJ 630
+preplace netloc cntl_in_0_1 1 0 1 NJ 650
+preplace netloc resetn_0_1 1 0 2 -10J 310 270
+preplace netloc zoom_x2_0_1 1 0 2 NJ 710 250
+preplace netloc VGA_TOP_1_vga_V_sync 1 2 2 620J 750 990J
+preplace netloc VGA_TOP_1_VGA_H_sync 1 2 2 640J 740 960J
+preplace netloc VGA_TOP_1_vga_green 1 2 2 NJ 800 NJ
+preplace netloc VGA_TOP_1_vga_blue 1 2 2 NJ 780 NJ
+preplace netloc VGA_TOP_1_vga_red 1 2 2 NJ 760 NJ
+preplace netloc cntl_0_cntl_out 1 1 1 230 640n
+preplace netloc blk_mem_gen_1_doutb 1 1 2 300 500 670J
+preplace netloc Net 1 1 2 290 280 670
+preplace netloc VGA_TOP_1_frame_adress 1 2 1 660 440n
+preplace netloc blk_mem_gen_0_doutb 1 1 2 300 220 NJ
+preplace netloc BILINEAR_INTERPOLATI_0_pixel_out 1 2 1 640 380n
+preplace netloc BILINEAR_INTERPOLATI_0_address_out 1 2 1 620 340n
+preplace netloc BILINEAR_INTERPOLATI_0_write_enable 1 2 1 630 380n
+preplace netloc clk_wiz_0_clk_interpolation 1 1 1 280 400n
+levelinfo -pg 1 -40 110 460 820 1020
+pagesize -pg 1 -db -bbox -sgen -190 0 1170 880
 "
 }
 0

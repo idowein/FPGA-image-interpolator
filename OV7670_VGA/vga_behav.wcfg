@@ -10,27 +10,32 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="127676fs"></ZoomStartTime>
-      <ZoomEndTime time="238700fs"></ZoomEndTime>
-      <Cursor1Time time="138887fs"></Cursor1Time>
+      <ZoomStartTime time="505904fs"></ZoomStartTime>
+      <ZoomEndTime time="585605fs"></ZoomEndTime>
+      <Cursor1Time time="540854fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="161"></NameColumnWidth>
-      <ValueColumnWidth column_width="95"></ValueColumnWidth>
+      <NameColumnWidth column_width="193"></NameColumnWidth>
+      <ValueColumnWidth column_width="87"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="26" />
+   <WVObjectSize size="24" />
    <wave_markers>
       <marker time="5400000" label="" />
       <marker time="16805400000" label="" />
-      <marker time="138887" label="" />
+      <marker time="297615" label="" />
+      <marker time="509036" label="" />
    </wave_markers>
-   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/clk_vga" type="logic">
-      <obj_property name="ElementShortName">clk_vga</obj_property>
-      <obj_property name="ObjectShortName">clk_vga</obj_property>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
    </wvobject>
    <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/clk_in1" type="logic">
       <obj_property name="ElementShortName">clk_in1</obj_property>
       <obj_property name="ObjectShortName">clk_in1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/clk_vga" type="logic">
+      <obj_property name="ElementShortName">clk_vga</obj_property>
+      <obj_property name="ObjectShortName">clk_vga</obj_property>
    </wvobject>
    <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/clk_interpolation" type="logic">
       <obj_property name="ElementShortName">clk_interpolation</obj_property>
@@ -41,34 +46,36 @@
       <obj_property name="ObjectShortName">pixel_in[11:0]</obj_property>
       <obj_property name="CustomSignalColor">#FF00FF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/write_enable" type="logic">
       <obj_property name="ElementShortName">write_enable</obj_property>
       <obj_property name="ObjectShortName">write_enable</obj_property>
    </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/wr_en_sig_d" type="logic">
+      <obj_property name="ElementShortName">wr_en_sig_d</obj_property>
+      <obj_property name="ObjectShortName">wr_en_sig_d</obj_property>
+   </wvobject>
    <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/pixel_out" type="array">
       <obj_property name="ElementShortName">pixel_out[11:0]</obj_property>
       <obj_property name="ObjectShortName">pixel_out[11:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/address_out" type="array">
       <obj_property name="ElementShortName">address_out[18:0]</obj_property>
       <obj_property name="ObjectShortName">address_out[18:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/clk_in1_period" type="other">
-      <obj_property name="ElementShortName">clk_in1_period</obj_property>
-      <obj_property name="ObjectShortName">clk_in1_period</obj_property>
-   </wvobject>
-   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/clk_vga_period" type="other">
-      <obj_property name="ElementShortName">clk_vga_period</obj_property>
-      <obj_property name="ObjectShortName">clk_vga_period</obj_property>
-   </wvobject>
-   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/clk_interpolation_period" type="other">
-      <obj_property name="ElementShortName">clk_interpolation_period</obj_property>
-      <obj_property name="ObjectShortName">clk_interpolation_period</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject type="divider" fp_name="divider158">
       <obj_property name="label">uut</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/eight_pixel_in" type="array">
+      <obj_property name="ElementShortName">eight_pixel_in[95:0]</obj_property>
+      <obj_property name="ObjectShortName">eight_pixel_in[95:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/clk_vga" type="logic">
       <obj_property name="ElementShortName">clk_vga</obj_property>
@@ -85,6 +92,7 @@
    <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/pixel_in" type="array">
       <obj_property name="ElementShortName">pixel_in[11:0]</obj_property>
       <obj_property name="ObjectShortName">pixel_in[11:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/write_enable" type="logic">
       <obj_property name="ElementShortName">write_enable</obj_property>
@@ -93,44 +101,51 @@
    <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/pixel_out" type="array">
       <obj_property name="ElementShortName">pixel_out[11:0]</obj_property>
       <obj_property name="ObjectShortName">pixel_out[11:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/filtered_pixel_out" type="array">
+      <obj_property name="ElementShortName">filtered_pixel_out[191:0]</obj_property>
+      <obj_property name="ObjectShortName">filtered_pixel_out[191:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/address_out" type="array">
       <obj_property name="ElementShortName">address_out[18:0]</obj_property>
       <obj_property name="ObjectShortName">address_out[18:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/eight_pixel_in" type="array">
-      <obj_property name="ElementShortName">eight_pixel_in[95:0]</obj_property>
-      <obj_property name="ObjectShortName">eight_pixel_in[95:0]</obj_property>
-      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/filtered_pixel_out" type="array">
-      <obj_property name="ElementShortName">filtered_pixel_out[191:0]</obj_property>
-      <obj_property name="ObjectShortName">filtered_pixel_out[191:0]</obj_property>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/address_out_sig" type="array">
+      <obj_property name="ElementShortName">address_out_sig[18:0]</obj_property>
+      <obj_property name="ObjectShortName">address_out_sig[18:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/A" type="array">
       <obj_property name="ElementShortName">A[11:0]</obj_property>
       <obj_property name="ObjectShortName">A[11:0]</obj_property>
+      <obj_property name="CustomSignalColor">#800080</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/B" type="array">
       <obj_property name="ElementShortName">B[11:0]</obj_property>
       <obj_property name="ObjectShortName">B[11:0]</obj_property>
+      <obj_property name="CustomSignalColor">#800080</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/C" type="array">
       <obj_property name="ElementShortName">C[11:0]</obj_property>
       <obj_property name="ObjectShortName">C[11:0]</obj_property>
+      <obj_property name="CustomSignalColor">#800080</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/D" type="array">
       <obj_property name="ElementShortName">D[11:0]</obj_property>
       <obj_property name="ObjectShortName">D[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/h_cnt" type="array">
-      <obj_property name="ElementShortName">h_cnt[1:0]</obj_property>
-      <obj_property name="ObjectShortName">h_cnt[1:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/v_cnt" type="array">
-      <obj_property name="ElementShortName">v_cnt[1:0]</obj_property>
-      <obj_property name="ObjectShortName">v_cnt[1:0]</obj_property>
+      <obj_property name="CustomSignalColor">#800080</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>
