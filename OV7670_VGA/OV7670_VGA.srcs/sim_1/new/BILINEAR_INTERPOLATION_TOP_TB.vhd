@@ -33,6 +33,7 @@ architecture Behavioral of BILINEAR_INTERPOLATION_TOP_tb is
             clk_vga             : in  std_logic; -- 25.175MHz
             clk_in1             : in  std_logic; -- 100 MHz
             clk_interpolation   : in  std_logic; -- 25.175/4 MHz
+            reset               : in  std_logic;
             pixel_in            : in  std_logic_vector(11 downto 0);
             write_enable        : out std_logic; 
             pixel_out           : out std_logic_vector(11 downto 0); 
@@ -44,6 +45,7 @@ architecture Behavioral of BILINEAR_INTERPOLATION_TOP_tb is
     signal clk_vga             : std_logic := '0';
     signal clk_in1             : std_logic := '0';
     signal clk_interpolation   : std_logic := '0';
+    signal reset               : std_logic := '0';
     signal pixel_in            : std_logic_vector(11 downto 0) := (others => '0');
     signal write_enable        : std_logic;
     signal pixel_out           : std_logic_vector(11 downto 0);
@@ -59,13 +61,14 @@ begin
     -- Instantiate the Unit Under Test (UUT)
     uut: BILINEAR_INTERPOLATION_TOP
         Port map (
-            clk_vga             => clk_vga,
-            clk_in1             => clk_in1,
-            clk_interpolation   => clk_interpolation,
-            pixel_in            => pixel_in,
-            write_enable        => write_enable,
-            pixel_out           => pixel_out,
-            address_out         => address_out
+            clk_vga           => clk_vga,
+            clk_in1           => clk_in1,
+            clk_interpolation => clk_interpolation,
+            reset             => reset,
+            pixel_in          => pixel_in,
+            write_enable      => write_enable,
+            pixel_out         => pixel_out,
+            address_out       => address_out
         );
 
     -- Clock generation for clk_in1 (100 MHz)
@@ -86,6 +89,15 @@ begin
         wait for clk_vga_period / 2;
     end process;
 
+    -- Clock generation for clk_vga (25.175 MHz)
+    reset_process : process
+    begin
+        reset <= '1';
+        wait for clk_in1_period * 10;
+        reset <= '0';
+        wait;
+    end process;
+
     -- Clock generation for clk_interpolation (6.3 MHz)
     clk_interpolation_process : process
     begin
@@ -98,7 +110,8 @@ begin
     -- Stimulus process to provide input to the UUT
     stimulus_process : process
     begin
-        -- Provide sample pixel data
+        -- Provide sample pixel 
+        wait for 138.887ns;
         pixel_in <= "000000000001"; -- Pixel value 1
         wait for clk_vga_period;
         pixel_in <= "000000000010"; -- Pixel value 2

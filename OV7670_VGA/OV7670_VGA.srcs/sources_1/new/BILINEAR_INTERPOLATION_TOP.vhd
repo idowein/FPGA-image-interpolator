@@ -27,6 +27,7 @@ entity BILINEAR_INTERPOLATION_TOP is
         clk_vga             : in  std_logic; -- 25.175MHz
         clk_in1             : in  std_logic; -- 100 MHz
         clk_interpolation   : in  std_logic; -- 25.175/4 MHz
+        reset               : in  std_logic; -- 25.175/4 MHz
         pixel_in            : in  std_logic_vector(11 downto 0);
         write_enable        : out std_logic; 
         pixel_out           : out std_logic_vector(11 downto 0); 
@@ -40,12 +41,13 @@ architecture Behavioral of BILINEAR_INTERPOLATION_TOP is
     signal filtered_pixel_out   : std_logic_vector (191 downto 0) := (others => '0'); -- 16 filtered pixels x 12 bits
     signal A, B, C, D           : std_logic_vector(11 downto 0)   := (others => '0');
 
-    signal h_cnt                : std_logic_vector(1 downto 0) := (others => '0');
-    signal v_cnt                : std_logic_vector(1 downto 0) := (others => '0');
+    -- signal h_cnt                : std_logic_vector(1 downto 0) := (others => '0');
+    -- signal v_cnt                : std_logic_vector(1 downto 0) := (others => '0');
     
     signal address_out_sig      : std_logic_vector(18 downto 0) := (others => '0');
     
     signal wr_en_sig            : std_logic := '0';
+    signal wr_en_sig_d          : std_logic := '0';
 
 begin
 
@@ -53,32 +55,39 @@ begin
     write_enable <= wr_en_sig;
 
     -- Process to collect 4x2 pixels
-    process (clk_vga)
+    process (clk_vga, reset)
     begin
-        if rising_edge(clk_vga) then
+        if reset = '1' then
+            eight_pixel_in <= (others => '0');
+            A              <= (others => '0');
+            B              <= (others => '0');
+            C              <= (others => '0');
+            D              <= (others => '0');
+        elsif rising_edge(clk_vga) then
             eight_pixel_in <= eight_pixel_in(83 downto 0) & pixel_in; -- Shift and append the incoming pixel
+            if clk_interpolation = '1' then
+                A              <= eight_pixel_in(11 downto 0);
+                B              <= eight_pixel_in(23 downto 12);
+                C              <= eight_pixel_in(35 downto 24);
+                D              <= eight_pixel_in(47 downto 36);
+            end if;
         end if;
     end process;
 
     -- Process to calculate bilinear interpolation
-    process (clk_interpolation)
+    process (clk_interpolation, reset)
         variable A_int, B_int, C_int, D_int : unsigned(11 downto 0); -- Internal unsigned representations
         variable P11_int, P12_int, P13_int, P14_int : unsigned(11 downto 0); -- Row 1
         variable P21_int, P22_int, P23_int, P24_int : unsigned(11 downto 0); -- Row 2
         variable P31_int, P32_int, P33_int, P34_int : unsigned(11 downto 0); -- Row 3
         variable P41_int, P42_int, P43_int, P44_int : unsigned(11 downto 0); -- Row 4
     begin
-    
-        if falling_edge(clk_interpolation) then
+        if reset = '1' then
+            wr_en_sig <= '0';
+        elsif rising_edge(clk_interpolation) then
             -- Enable write operation only when 4 pixels received
             wr_en_sig <= '1';
-        end if;
-    
-        if rising_edge(clk_interpolation) then 
-            A <= eight_pixel_in(11 downto 0);
-            B <= eight_pixel_in(23 downto 12);
-            C <= eight_pixel_in(35 downto 24);
-            D <= eight_pixel_in(47 downto 36);
+            wr_en_sig_d <= wr_en_sig;
 
             -- Convert inputs from std_logic_vector to unsigned for arithmetic
             A_int := unsigned(A);
@@ -119,10 +128,13 @@ begin
     end process;
 
     -- Process to transmit pixels to BRAM
-    process (clk_in1)
+    process (clk_in1, reset)
         variable i : integer := 0;
     begin
-        if rising_edge(clk_in1) then
+        if reset = '1' then
+            pixel_out <= (others => '0');
+            i := 0;
+        elsif rising_edge(clk_in1) then
             -- Output the filtered pixel
             pixel_out <= filtered_pixel_out((i * 12 + 11) downto (i * 12));
             -- Increment 'i' and reset to zero when it reaches 16
@@ -134,28 +146,54 @@ begin
     end process;
 
     -- Process to calculate address for BRAM
-    process (clk_in1)
-        variable v_cnt : integer := 0; -- Vertical counter
-        variable h_cnt : integer := 0; -- Horizontal counter
-        variable clk_counter : integer := 0; -- Clock cycle counter
-    begin 
-        if rising_edge(clk_in1) and wr_en_sig = '1' then -- TODO - skip the first 4 pixels
-            -- Increment the clock counter
-            clk_counter := clk_counter + 1;
-    
-            -- Increment v_cnt every 4 clock cycles
-            if clk_counter = 4 then
-                clk_counter := 0; -- Reset clock counter
-                v_cnt := v_cnt + 1;
+-- Process to calculate address for BRAM using 4×4 block-based scan
+process (clk_in1, reset)
+    -- Local variables for block-based scan
+    variable h_block     : integer := 0;  -- Horizontal start of 4×4 block
+    variable v_block     : integer := 0;  -- Vertical start of 4×4 block
+    variable local_h     : integer := 0;  -- Column offset inside 4×4 block
+    variable local_v     : integer := 0;  -- Row offset inside 4×4 block
+    variable h_cnt       : integer := 0;  -- Final horizontal pixel index
+    variable v_cnt       : integer := 0;  -- Final vertical pixel index
+begin
+    if reset = '1' then
+        address_out_sig <= (others => '0');
+        h_block     := 0;
+        v_block     := 0;
+        local_h     := 0;
+        local_v     := 0;
+    elsif rising_edge(clk_in1) and wr_en_sig_d = '1' then
+        -- Calculate actual horizontal and vertical pixel coordinates
+        h_cnt := h_block + local_h;
+        v_cnt := v_block + local_v;
+
+        -- Write address = row × 640 + column
+        address_out_sig <= std_logic_vector(to_unsigned(v_cnt * 640 + h_cnt, address_out_sig'length));
+
+        -- Update counters
+        if local_h = 3 then
+            local_h := 0;
+            if local_v = 3 then
+                local_v := 0;
+                if h_block = 636 then
+                    h_block := 0;
+                    if v_block = 476 then
+                        v_block := 0; -- Full scan complete; restart
+                    else
+                        v_block := v_block + 4; -- Next row of blocks
+                    end if;
+                else
+                    h_block := h_block + 4; -- Next column block
+                end if;
+            else
+                local_v := local_v + 1; -- Next row inside block
             end if;
-    
-            -- Set h_cnt to cycle in ranges (0-3, 4-7, etc.)
-            h_cnt := (v_cnt mod 4) * 4 + clk_counter; -- Calculate h_cnt based on v_cnt and clk_counter
-    
-            -- Calculate and assign the address
-            address_out_sig <= std_logic_vector(to_unsigned(h_cnt + v_cnt * 640, address_out'length)); -- Adjust width
+        else
+            local_h := local_h + 1; -- Next column inside block
         end if;
-    end process;
+    end if;
+end process;
+
 
     address_out <= address_out_sig;
 
