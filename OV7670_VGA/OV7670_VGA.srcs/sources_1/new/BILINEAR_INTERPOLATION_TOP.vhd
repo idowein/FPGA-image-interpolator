@@ -66,10 +66,10 @@ begin
         elsif rising_edge(clk_vga) then
             eight_pixel_in <= eight_pixel_in(83 downto 0) & pixel_in; -- Shift and append the incoming pixel
             if clk_interpolation = '1' then
-                A              <= eight_pixel_in(11 downto 0);
-                B              <= eight_pixel_in(23 downto 12);
-                C              <= eight_pixel_in(35 downto 24);
-                D              <= eight_pixel_in(47 downto 36);
+                A              <= eight_pixel_in(47 downto 36);
+                B              <= eight_pixel_in(35 downto 24);
+                C              <= eight_pixel_in(23 downto 12);
+                D              <= eight_pixel_in(11 downto 0);
             end if;
         end if;
     end process;
@@ -94,30 +94,30 @@ begin
             B_int := unsigned(B);
             C_int := unsigned(C);
             D_int := unsigned(D);
-
+            
             -- Row 1 (Horizontal interpolation)
             P11_int := A_int; -- Top-left corner
-            P12_int := resize(A_int + (B_int - A_int) / 4, 12); -- Horizontal interpolation
-            P13_int := resize(A_int + (3 * (B_int - A_int)) / 4, 12);
+            P12_int := to_unsigned(to_integer(A_int) + (to_integer(B_int) - to_integer(A_int)) / 4, 12);
+            P13_int := to_unsigned(to_integer(A_int) + (3 * (to_integer(B_int) - to_integer(A_int))) / 4, 12);
             P14_int := B_int; -- Top-right corner
-
+            
+            -- Row 2 (Vertical and Bilinear interpolation)
+            P21_int := to_unsigned(to_integer(A_int) + (to_integer(C_int) - to_integer(A_int)) / 4, 12); -- Vertical interpolation
+            P22_int := to_unsigned((2 * to_integer(A_int) + to_integer(B_int) + 2 * to_integer(C_int) + to_integer(D_int)) / 8, 12); -- Bilinear
+            P23_int := to_unsigned((to_integer(A_int) + 2 * to_integer(B_int) + 2 * to_integer(C_int) + to_integer(D_int)) / 8, 12);
+            P24_int := to_unsigned(to_integer(B_int) + (to_integer(D_int) - to_integer(B_int)) / 4, 12);
+            
+            -- Row 3 (Vertical and Bilinear interpolation)
+            P31_int := to_unsigned(to_integer(A_int) + (3 * (to_integer(C_int) - to_integer(A_int))) / 4, 12); -- Vertical interpolation
+            P32_int := to_unsigned((2 * to_integer(A_int) + to_integer(B_int) + to_integer(C_int) + 2 * to_integer(D_int)) / 8, 12);
+            P33_int := to_unsigned((to_integer(A_int) + 2 * to_integer(B_int) + to_integer(C_int) + 2 * to_integer(D_int)) / 8, 12);
+            P34_int := to_unsigned(to_integer(B_int) + (3 * (to_integer(D_int) - to_integer(B_int))) / 4, 12);
+            
             -- Row 4 (Horizontal interpolation)
             P41_int := C_int; -- Bottom-left corner
-            P42_int := resize(C_int + (D_int - C_int) / 4, 12);
-            P43_int := resize(C_int + (3 * (D_int - C_int)) / 4, 12);
+            P42_int := to_unsigned(to_integer(C_int) + (to_integer(D_int) - to_integer(C_int)) / 4, 12);
+            P43_int := to_unsigned(to_integer(C_int) + (3 * (to_integer(D_int) - to_integer(C_int))) / 4, 12);
             P44_int := D_int; -- Bottom-right corner
-
-            -- Row 2 (Vertical and Bilinear interpolation)
-            P21_int := resize(A_int + (C_int - A_int) / 4, 12); -- Vertical interpolation
-            P24_int := resize(B_int + (D_int - B_int) / 4, 12);
-            P22_int := resize((2 * A_int + B_int + 2 * C_int + D_int) / 8, 12); -- Bilinear interpolation
-            P23_int := resize((A_int + 2 * B_int + 2 * C_int + D_int) / 8, 12);
-
-            -- Row 3 (Vertical and Bilinear interpolation)
-            P31_int := resize(A_int + (3 * (C_int - A_int)) / 4, 12); -- Vertical interpolation
-            P34_int := resize(B_int + (3 * (D_int - B_int)) / 4, 12);
-            P32_int := resize((2 * A_int + B_int + C_int + 2 * D_int) / 8, 12); -- Bilinear interpolation
-            P33_int := resize((A_int + 2 * B_int + C_int + 2 * D_int) / 8, 12);
 
             -- Combine filtered pixels into a single output
             filtered_pixel_out <= std_logic_vector(P11_int) & std_logic_vector(P12_int) & std_logic_vector(P13_int) & std_logic_vector(P14_int) &
@@ -133,14 +133,13 @@ begin
     begin
         if reset = '1' then
             pixel_out <= (others => '0');
-            i := 0;
-        elsif rising_edge(clk_in1) then
+            i := 15;
+        elsif rising_edge(clk_in1) and wr_en_sig_d = '1' then
             -- Output the filtered pixel
             pixel_out <= filtered_pixel_out((i * 12 + 11) downto (i * 12));
-            -- Increment 'i' and reset to zero when it reaches 16
-            i := i + 1;
-            if i = 16 then
-                i := 0;
+            i := i - 1;
+            if i = 0 then
+                i := 15;
             end if;
         end if;
     end process;

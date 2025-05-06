@@ -112,23 +112,23 @@ begin
     begin
         -- Provide sample pixel 
         wait for 138.887ns;
-        pixel_in <= "000000000001"; -- Pixel value 1
+        pixel_in <= std_logic_vector(to_unsigned(10, 12));
         wait for clk_vga_period;
-        pixel_in <= "000000000010"; -- Pixel value 2
+        pixel_in <= std_logic_vector(to_unsigned(20, 12));
         wait for clk_vga_period;
-        pixel_in <= "000000000011"; -- Pixel value 3
+        pixel_in <= std_logic_vector(to_unsigned(30, 12));
         wait for clk_vga_period;
-        pixel_in <= "000000000100"; -- Pixel value 4
+        pixel_in <= std_logic_vector(to_unsigned(40, 12));
         wait for clk_vga_period;
 
         -- Continue providing pixels
-        pixel_in <= "000000000101"; -- Pixel value 5
+        pixel_in <= std_logic_vector(to_unsigned(40, 12));
         wait for clk_vga_period;
-        pixel_in <= "000000000110"; -- Pixel value 6
+        pixel_in <= std_logic_vector(to_unsigned(30, 12));
         wait for clk_vga_period;
-        pixel_in <= "000000000111"; -- Pixel value 7
+        pixel_in <= std_logic_vector(to_unsigned(20, 12));
         wait for clk_vga_period;
-        pixel_in <= "000000001000"; -- Pixel value 8
+        pixel_in <= std_logic_vector(to_unsigned(10, 12));
         wait for clk_vga_period;
 
         -- Add a wait to observe the results
