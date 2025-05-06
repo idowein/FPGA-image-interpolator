@@ -3,160 +3,134 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="bilinear_interpolation_unit_tb_behav.wdb" id="1">
+      <db_ref path="BILINEAR_INTERPOLATION_TOP_tb_behav.wdb" id="1">
          <top_modules>
-            <top_module name="bilinear_interpolation_unit_tb" />
+            <top_module name="BILINEAR_INTERPOLATION_TOP_tb" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="119688fs"></ZoomEndTime>
-      <Cursor1Time time="14747fs"></Cursor1Time>
+      <ZoomStartTime time="127676fs"></ZoomStartTime>
+      <ZoomEndTime time="238700fs"></ZoomEndTime>
+      <Cursor1Time time="138887fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="161"></NameColumnWidth>
-      <ValueColumnWidth column_width="99"></ValueColumnWidth>
+      <ValueColumnWidth column_width="95"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="34" />
+   <WVObjectSize size="26" />
    <wave_markers>
       <marker time="5400000" label="" />
       <marker time="16805400000" label="" />
+      <marker time="138887" label="" />
    </wave_markers>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/clk" type="logic">
-      <obj_property name="ElementShortName">clk</obj_property>
-      <obj_property name="ObjectShortName">clk</obj_property>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/clk_vga" type="logic">
+      <obj_property name="ElementShortName">clk_vga</obj_property>
+      <obj_property name="ObjectShortName">clk_vga</obj_property>
    </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/rst" type="logic">
-      <obj_property name="ElementShortName">rst</obj_property>
-      <obj_property name="ObjectShortName">rst</obj_property>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/clk_in1" type="logic">
+      <obj_property name="ElementShortName">clk_in1</obj_property>
+      <obj_property name="ObjectShortName">clk_in1</obj_property>
    </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/A" type="array">
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/clk_interpolation" type="logic">
+      <obj_property name="ElementShortName">clk_interpolation</obj_property>
+      <obj_property name="ObjectShortName">clk_interpolation</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/pixel_in" type="array">
+      <obj_property name="ElementShortName">pixel_in[11:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_in[11:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/write_enable" type="logic">
+      <obj_property name="ElementShortName">write_enable</obj_property>
+      <obj_property name="ObjectShortName">write_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/pixel_out" type="array">
+      <obj_property name="ElementShortName">pixel_out[11:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_out[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/address_out" type="array">
+      <obj_property name="ElementShortName">address_out[18:0]</obj_property>
+      <obj_property name="ObjectShortName">address_out[18:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/clk_in1_period" type="other">
+      <obj_property name="ElementShortName">clk_in1_period</obj_property>
+      <obj_property name="ObjectShortName">clk_in1_period</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/clk_vga_period" type="other">
+      <obj_property name="ElementShortName">clk_vga_period</obj_property>
+      <obj_property name="ObjectShortName">clk_vga_period</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/clk_interpolation_period" type="other">
+      <obj_property name="ElementShortName">clk_interpolation_period</obj_property>
+      <obj_property name="ObjectShortName">clk_interpolation_period</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider158">
+      <obj_property name="label">uut</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/clk_vga" type="logic">
+      <obj_property name="ElementShortName">clk_vga</obj_property>
+      <obj_property name="ObjectShortName">clk_vga</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/clk_in1" type="logic">
+      <obj_property name="ElementShortName">clk_in1</obj_property>
+      <obj_property name="ObjectShortName">clk_in1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/clk_interpolation" type="logic">
+      <obj_property name="ElementShortName">clk_interpolation</obj_property>
+      <obj_property name="ObjectShortName">clk_interpolation</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/pixel_in" type="array">
+      <obj_property name="ElementShortName">pixel_in[11:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_in[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/write_enable" type="logic">
+      <obj_property name="ElementShortName">write_enable</obj_property>
+      <obj_property name="ObjectShortName">write_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/pixel_out" type="array">
+      <obj_property name="ElementShortName">pixel_out[11:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_out[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/address_out" type="array">
+      <obj_property name="ElementShortName">address_out[18:0]</obj_property>
+      <obj_property name="ObjectShortName">address_out[18:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/eight_pixel_in" type="array">
+      <obj_property name="ElementShortName">eight_pixel_in[95:0]</obj_property>
+      <obj_property name="ObjectShortName">eight_pixel_in[95:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/filtered_pixel_out" type="array">
+      <obj_property name="ElementShortName">filtered_pixel_out[191:0]</obj_property>
+      <obj_property name="ObjectShortName">filtered_pixel_out[191:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/A" type="array">
       <obj_property name="ElementShortName">A[11:0]</obj_property>
       <obj_property name="ObjectShortName">A[11:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/B" type="array">
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/B" type="array">
       <obj_property name="ElementShortName">B[11:0]</obj_property>
       <obj_property name="ObjectShortName">B[11:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/C" type="array">
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/C" type="array">
       <obj_property name="ElementShortName">C[11:0]</obj_property>
       <obj_property name="ObjectShortName">C[11:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/D" type="array">
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/D" type="array">
       <obj_property name="ElementShortName">D[11:0]</obj_property>
       <obj_property name="ObjectShortName">D[11:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/O11" type="array">
-      <obj_property name="ElementShortName">O11[11:0]</obj_property>
-      <obj_property name="ObjectShortName">O11[11:0]</obj_property>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/h_cnt" type="array">
+      <obj_property name="ElementShortName">h_cnt[1:0]</obj_property>
+      <obj_property name="ObjectShortName">h_cnt[1:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/O12" type="array">
-      <obj_property name="ElementShortName">O12[11:0]</obj_property>
-      <obj_property name="ObjectShortName">O12[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/O13" type="array">
-      <obj_property name="ElementShortName">O13[11:0]</obj_property>
-      <obj_property name="ObjectShortName">O13[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/O14" type="array">
-      <obj_property name="ElementShortName">O14[11:0]</obj_property>
-      <obj_property name="ObjectShortName">O14[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/O21" type="array">
-      <obj_property name="ElementShortName">O21[11:0]</obj_property>
-      <obj_property name="ObjectShortName">O21[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/O22" type="array">
-      <obj_property name="ElementShortName">O22[11:0]</obj_property>
-      <obj_property name="ObjectShortName">O22[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/O23" type="array">
-      <obj_property name="ElementShortName">O23[11:0]</obj_property>
-      <obj_property name="ObjectShortName">O23[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/O24" type="array">
-      <obj_property name="ElementShortName">O24[11:0]</obj_property>
-      <obj_property name="ObjectShortName">O24[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/O31" type="array">
-      <obj_property name="ElementShortName">O31[11:0]</obj_property>
-      <obj_property name="ObjectShortName">O31[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/O32" type="array">
-      <obj_property name="ElementShortName">O32[11:0]</obj_property>
-      <obj_property name="ObjectShortName">O32[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/O33" type="array">
-      <obj_property name="ElementShortName">O33[11:0]</obj_property>
-      <obj_property name="ObjectShortName">O33[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/O34" type="array">
-      <obj_property name="ElementShortName">O34[11:0]</obj_property>
-      <obj_property name="ObjectShortName">O34[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/O41" type="array">
-      <obj_property name="ElementShortName">O41[11:0]</obj_property>
-      <obj_property name="ObjectShortName">O41[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/O42" type="array">
-      <obj_property name="ElementShortName">O42[11:0]</obj_property>
-      <obj_property name="ObjectShortName">O42[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/O43" type="array">
-      <obj_property name="ElementShortName">O43[11:0]</obj_property>
-      <obj_property name="ObjectShortName">O43[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/O44" type="array">
-      <obj_property name="ElementShortName">O44[11:0]</obj_property>
-      <obj_property name="ObjectShortName">O44[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/P012" type="array">
-      <obj_property name="ElementShortName">P012[11:0]</obj_property>
-      <obj_property name="ObjectShortName">P012[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/P013" type="array">
-      <obj_property name="ElementShortName">P013[11:0]</obj_property>
-      <obj_property name="ObjectShortName">P013[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/P042" type="array">
-      <obj_property name="ElementShortName">P042[11:0]</obj_property>
-      <obj_property name="ObjectShortName">P042[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/P043" type="array">
-      <obj_property name="ElementShortName">P043[11:0]</obj_property>
-      <obj_property name="ObjectShortName">P043[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/P021" type="array">
-      <obj_property name="ElementShortName">P021[11:0]</obj_property>
-      <obj_property name="ObjectShortName">P021[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/P031" type="array">
-      <obj_property name="ElementShortName">P031[11:0]</obj_property>
-      <obj_property name="ObjectShortName">P031[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/P024" type="array">
-      <obj_property name="ElementShortName">P024[11:0]</obj_property>
-      <obj_property name="ObjectShortName">P024[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/P034" type="array">
-      <obj_property name="ElementShortName">P034[11:0]</obj_property>
-      <obj_property name="ObjectShortName">P034[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/P022" type="array">
-      <obj_property name="ElementShortName">P022[11:0]</obj_property>
-      <obj_property name="ObjectShortName">P022[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/P023" type="array">
-      <obj_property name="ElementShortName">P023[11:0]</obj_property>
-      <obj_property name="ObjectShortName">P023[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/P032" type="array">
-      <obj_property name="ElementShortName">P032[11:0]</obj_property>
-      <obj_property name="ObjectShortName">P032[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/P033" type="array">
-      <obj_property name="ElementShortName">P033[11:0]</obj_property>
-      <obj_property name="ObjectShortName">P033[11:0]</obj_property>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/v_cnt" type="array">
+      <obj_property name="ElementShortName">v_cnt[1:0]</obj_property>
+      <obj_property name="ObjectShortName">v_cnt[1:0]</obj_property>
    </wvobject>
 </wave_config>

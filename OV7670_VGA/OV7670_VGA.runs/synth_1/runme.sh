@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log design_1_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
+EAStep vivado -log BILINEAR_INTERPOLATION_TOP.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source BILINEAR_INTERPOLATION_TOP.tcl
