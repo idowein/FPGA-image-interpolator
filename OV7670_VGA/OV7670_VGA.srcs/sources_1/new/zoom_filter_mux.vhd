@@ -39,8 +39,8 @@ entity zoom_filter_mux is
            address_vga : in STD_LOGIC_VECTOR (18 downto 0);
            addrb_bram_1 : out STD_LOGIC_VECTOR (18 downto 0);
            addrb_bram_2 : out STD_LOGIC_VECTOR (18 downto 0);
-           dout_bram_1 : out STD_LOGIC_VECTOR (18 downto 0);
-           dout_bram_2 : out STD_LOGIC_VECTOR (18 downto 0));
+           dout_bram_1 : out STD_LOGIC_VECTOR (11 downto 0);
+           dout_bram_2 : out STD_LOGIC_VECTOR (11 downto 0));
 end zoom_filter_mux;
 
 architecture Behavioral of zoom_filter_mux is
