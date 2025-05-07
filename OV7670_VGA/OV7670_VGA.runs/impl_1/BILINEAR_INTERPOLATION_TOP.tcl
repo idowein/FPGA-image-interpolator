@@ -65,17 +65,18 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param chipscope.maxJobs 1
+  set_param chipscope.maxJobs 3
+  set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7a100tcsg324-1
   set_property board_part digilentinc.com:nexys-a7-100t:part0:1.3 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.cache/wt [current_project]
-  set_property parent.project_path C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.xpr [current_project]
-  set_property ip_output_repo C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.cache/ip [current_project]
+  set_property webtalk.parent_dir C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.cache/wt [current_project]
+  set_property parent.project_path C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.xpr [current_project]
+  set_property ip_output_repo C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/synth_1/BILINEAR_INTERPOLATION_TOP.dcp
-  read_xdc C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/Nexys-A7-100T-Master.xdc
+  add_files -quiet C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/synth_1/BILINEAR_INTERPOLATION_TOP.dcp
+  read_xdc C:/Digital-Zoom-FPGA/OV7670_VGA/Nexys-A7-100T-Master.xdc
   link_design -top BILINEAR_INTERPOLATION_TOP -part xc7a100tcsg324-1
   close_msg_db -file init_design.pb
 } RESULT]
@@ -164,6 +165,24 @@ if {$rc} {
   return -code error $RESULT
 } else {
   end_step route_design
+  unset ACTIVE_STEP 
+}
+
+start_step write_bitstream
+set ACTIVE_STEP write_bitstream
+set rc [catch {
+  create_msg_db write_bitstream.pb
+  catch { write_mem_info -force BILINEAR_INTERPOLATION_TOP.mmi }
+  write_bitstream -force BILINEAR_INTERPOLATION_TOP.bit 
+  catch {write_debug_probes -quiet -force BILINEAR_INTERPOLATION_TOP}
+  catch {file copy -force BILINEAR_INTERPOLATION_TOP.ltx debug_nets.ltx}
+  close_msg_db -file write_bitstream.pb
+} RESULT]
+if {$rc} {
+  step_failed write_bitstream
+  return -code error $RESULT
+} else {
+  end_step write_bitstream
   unset ACTIVE_STEP 
 }
 

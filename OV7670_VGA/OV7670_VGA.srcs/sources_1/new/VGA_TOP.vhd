@@ -9,6 +9,7 @@ entity VGA_TOP is
         cntl         : in  STD_LOGIC;
         zoom_x2      : in  STD_LOGIC;
         frame_fix    : in  STD_LOGIC_VECTOR (11 downto 0);
+        bili_cntl    : in  STD_LOGIC;
         VGA_H_sync   : out STD_LOGIC;
         vga_V_sync   : out STD_LOGIC;
         vga_red      : out STD_LOGIC_VECTOR (3 downto 0);
@@ -60,6 +61,7 @@ begin
             v_cnt        => v_cnt,
             blank        => blank,
             zoom_x2      => zoom_x2,
+            bili_cntl    => bili_cntl,
             frame_fix    => frame_fix,
             fr_address   => frame_adress,
             vga_red      => vga_red,
