@@ -1,10 +1,10 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Mon Apr 28 18:00:56 2025
-// Host        : Ido running 64-bit major release  (build 9200)
+// Date        : Wed May  7 22:00:43 2025
+// Host        : dvirhersh_comp running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_cntl_0_0_1/design_1_cntl_0_0_sim_netlist.v
+//               C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_cntl_0_0_1/design_1_cntl_0_0_sim_netlist.v
 // Design      : design_1_cntl_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -21,7 +21,7 @@ module design_1_cntl_0_0
     cntl_in,
     resend_out,
     cntl_out);
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 clk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME clk, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN design_1_clk_in1_0, INSERT_VIP 0" *) input clk;
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 clk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME clk, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN design_1_clk_in1, INSERT_VIP 0" *) input clk;
   input resend_in;
   input cntl_in;
   output resend_out;

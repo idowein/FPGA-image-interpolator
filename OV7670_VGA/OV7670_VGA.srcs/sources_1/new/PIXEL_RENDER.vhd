@@ -11,7 +11,7 @@ entity pixel_render is
         blank        : in  std_logic;
         zoom_x2      : in  STD_LOGIC;
         frame_fix    : in  STD_LOGIC_VECTOR (11 downto 0);
-        fr_address   : out std_logic_vector(16 downto 0);
+        fr_address   : out std_logic_vector(18 downto 0);
         vga_red      : out std_logic_vector(3 downto 0);
         vga_blue     : out std_logic_vector(3 downto 0);
         vga_green    : out std_logic_vector(3 downto 0);
@@ -20,9 +20,9 @@ entity pixel_render is
 end pixel_render;
 
 architecture Behavioral of pixel_render is
-    signal val_tmp  : std_logic_vector(16 downto 0) := (others => '0'); -- Temporary for zoom calculation
-    signal val_zoom : std_logic_vector(16 downto 0) := (others => '0'); -- Zoomed address calculation
-    signal fr_addr  : std_logic_vector(16 downto 0) := (others => '0'); -- Frame address
+    signal val_tmp  : std_logic_vector(18 downto 0) := (others => '0'); -- Temporary for zoom calculation
+    signal val_zoom : std_logic_vector(18 downto 0) := (others => '0'); -- Zoomed address calculation
+    signal fr_addr  : std_logic_vector(18 downto 0) := (others => '0'); -- Frame address
     signal bg_red   : std_logic_vector(3 downto 0);
     signal bg_blue  : std_logic_vector(3 downto 0);
     signal bg_green : std_logic_vector(3 downto 0);
