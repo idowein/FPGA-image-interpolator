@@ -58,7 +58,6 @@ ENTITY design_1_BILINEAR_INTERPOLATI_0_0 IS
     clk_vga : IN STD_LOGIC;
     clk_in1 : IN STD_LOGIC;
     clk_interpolation : IN STD_LOGIC;
-    reset : IN STD_LOGIC;
     pixel_in : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
     bili_cntl : IN STD_LOGIC;
     write_enable : OUT STD_LOGIC;
@@ -76,7 +75,6 @@ ARCHITECTURE design_1_BILINEAR_INTERPOLATI_0_0_arch OF design_1_BILINEAR_INTERPO
       clk_vga : IN STD_LOGIC;
       clk_in1 : IN STD_LOGIC;
       clk_interpolation : IN STD_LOGIC;
-      reset : IN STD_LOGIC;
       pixel_in : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
       bili_cntl : IN STD_LOGIC;
       write_enable : OUT STD_LOGIC;
@@ -93,17 +91,12 @@ ARCHITECTURE design_1_BILINEAR_INTERPOLATI_0_0_arch OF design_1_BILINEAR_INTERPO
   ATTRIBUTE CORE_GENERATION_INFO OF design_1_BILINEAR_INTERPOLATI_0_0_arch: ARCHITECTURE IS "design_1_BILINEAR_INTERPOLATI_0_0,BILINEAR_INTERPOLATION_TOP,{x_ipProduct=Vivado 2019.2,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=BILINEAR_INTERPOLATION_TOP,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED}";
   ATTRIBUTE IP_DEFINITION_SOURCE : STRING;
   ATTRIBUTE IP_DEFINITION_SOURCE OF design_1_BILINEAR_INTERPOLATI_0_0_arch: ARCHITECTURE IS "module_ref";
-  ATTRIBUTE X_INTERFACE_INFO : STRING;
-  ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
-  ATTRIBUTE X_INTERFACE_PARAMETER OF reset: SIGNAL IS "XIL_INTERFACENAME reset, POLARITY ACTIVE_LOW, INSERT_VIP 0";
-  ATTRIBUTE X_INTERFACE_INFO OF reset: SIGNAL IS "xilinx.com:signal:reset:1.0 reset RST";
 BEGIN
   U0 : BILINEAR_INTERPOLATION_TOP
     PORT MAP (
       clk_vga => clk_vga,
       clk_in1 => clk_in1,
       clk_interpolation => clk_interpolation,
-      reset => reset,
       pixel_in => pixel_in,
       bili_cntl => bili_cntl,
       write_enable => write_enable,

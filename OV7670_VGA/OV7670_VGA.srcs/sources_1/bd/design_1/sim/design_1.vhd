@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
---Date        : Wed May  7 12:54:44 2025
+--Date        : Wed May  7 17:13:44 2025
 --Host        : Ido running 64-bit major release  (build 9200)
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -127,7 +127,6 @@ architecture STRUCTURE of design_1 is
     clk_vga : in STD_LOGIC;
     clk_in1 : in STD_LOGIC;
     clk_interpolation : in STD_LOGIC;
-    reset : in STD_LOGIC;
     pixel_in : in STD_LOGIC_VECTOR ( 11 downto 0 );
     bili_cntl : in STD_LOGIC;
     write_enable : out STD_LOGIC;
@@ -136,11 +135,10 @@ architecture STRUCTURE of design_1 is
     address_read : out STD_LOGIC_VECTOR ( 16 downto 0 )
   );
   end component design_1_BILINEAR_INTERPOLATI_0_0;
-  signal BILINEAR_INTERPOLATI_0_address_out : STD_LOGIC_VECTOR ( 18 downto 0 );
   signal BILINEAR_INTERPOLATI_0_address_read : STD_LOGIC_VECTOR ( 16 downto 0 );
+  signal BILINEAR_INTERPOLATI_0_address_write : STD_LOGIC_VECTOR ( 18 downto 0 );
   signal BILINEAR_INTERPOLATI_0_pixel_out : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal BILINEAR_INTERPOLATI_0_write_enable : STD_LOGIC;
-  signal Net : STD_LOGIC;
   signal Net1 : STD_LOGIC;
   signal VGA_TOP_1_VGA_H_sync : STD_LOGIC;
   signal VGA_TOP_1_frame_adress : STD_LOGIC_VECTOR ( 18 downto 0 );
@@ -148,14 +146,15 @@ architecture STRUCTURE of design_1 is
   signal VGA_TOP_1_vga_blue : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal VGA_TOP_1_vga_green : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal VGA_TOP_1_vga_red : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal bili_cntl_0_1 : STD_LOGIC;
+  signal bili_cntl_1 : STD_LOGIC;
   signal blk_mem_gen_0_doutb : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal blk_mem_gen_1_doutb : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal camera_h_ref_0_1 : STD_LOGIC;
   signal camera_v_sync_0_1 : STD_LOGIC;
-  signal clk_in1_0_1 : STD_LOGIC;
+  signal clk_in1_1 : STD_LOGIC;
   signal clk_wiz_0_clk_interpolation : STD_LOGIC;
   signal clk_wiz_0_clk_reg : STD_LOGIC;
+  signal clk_wiz_0_clk_vga : STD_LOGIC;
   signal cntl_0_cntl_out : STD_LOGIC;
   signal cntl_0_resend_out : STD_LOGIC;
   signal cntl_in_0_1 : STD_LOGIC;
@@ -168,9 +167,9 @@ architecture STRUCTURE of design_1 is
   signal ovo_7670_caputre_0_addr : STD_LOGIC_VECTOR ( 16 downto 0 );
   signal ovo_7670_caputre_0_dout : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal ovo_7670_caputre_0_wr_en : STD_LOGIC;
-  signal pclk_0_1 : STD_LOGIC;
+  signal pclk_1 : STD_LOGIC;
   signal resend_in_0_1 : STD_LOGIC;
-  signal resetn_0_1 : STD_LOGIC;
+  signal resetn_1 : STD_LOGIC;
   signal zoom_x2_0_1 : STD_LOGIC;
   signal NLW_clk_wiz_0_locked_UNCONNECTED : STD_LOGIC;
   attribute X_INTERFACE_INFO : string;
@@ -183,18 +182,18 @@ architecture STRUCTURE of design_1 is
   attribute X_INTERFACE_PARAMETER of resetn : signal is "XIL_INTERFACENAME RST.RESETN, INSERT_VIP 0, POLARITY ACTIVE_LOW";
 begin
   VGA_H_sync <= VGA_TOP_1_VGA_H_sync;
-  bili_cntl_0_1 <= bili_cntl;
+  bili_cntl_1 <= bili_cntl;
   camera_h_ref_0_1 <= camera_h_ref;
   camera_v_sync_0_1 <= camera_v_sync;
-  clk_in1_0_1 <= clk_in1;
+  clk_in1_1 <= clk_in1;
   cntl_in_0_1 <= cntl_in;
   config_finished <= ov7670_controller_0_config_finished;
   din_0_1(7 downto 0) <= din(7 downto 0);
-  pclk_0_1 <= pclk;
+  pclk_1 <= pclk;
   pwdn <= ov7670_controller_0_pwdn;
   resend_in_0_1 <= resend_in;
   reset <= ov7670_controller_0_reset;
-  resetn_0_1 <= resetn;
+  resetn_1 <= resetn;
   sioc <= ov7670_controller_0_sioc;
   vga_V_sync <= VGA_TOP_1_vga_V_sync;
   vga_blue(3 downto 0) <= VGA_TOP_1_vga_blue(3 downto 0);
@@ -205,24 +204,23 @@ begin
 BILINEAR_INTERPOLATI_0: component design_1_BILINEAR_INTERPOLATI_0_0
      port map (
       address_read(16 downto 0) => BILINEAR_INTERPOLATI_0_address_read(16 downto 0),
-      address_write(18 downto 0) => BILINEAR_INTERPOLATI_0_address_out(18 downto 0),
-      bili_cntl => bili_cntl_0_1,
-      clk_in1 => clk_in1_0_1,
+      address_write(18 downto 0) => BILINEAR_INTERPOLATI_0_address_write(18 downto 0),
+      bili_cntl => bili_cntl_1,
+      clk_in1 => clk_in1_1,
       clk_interpolation => clk_wiz_0_clk_interpolation,
-      clk_vga => Net,
+      clk_vga => clk_wiz_0_clk_vga,
       pixel_in(11 downto 0) => blk_mem_gen_0_doutb(11 downto 0),
       pixel_out(11 downto 0) => BILINEAR_INTERPOLATI_0_pixel_out(11 downto 0),
-      reset => resetn_0_1,
       write_enable => BILINEAR_INTERPOLATI_0_write_enable
     );
 VGA_TOP_1: component design_1_VGA_TOP_1_0
      port map (
       VGA_H_sync => VGA_TOP_1_VGA_H_sync,
-      bili_cntl => bili_cntl_0_1,
+      bili_cntl => bili_cntl_1,
       cntl => cntl_0_cntl_out,
       frame_adress(18 downto 0) => VGA_TOP_1_frame_adress(18 downto 0),
       frame_fix(11 downto 0) => blk_mem_gen_1_doutb(11 downto 0),
-      pix_clk => Net,
+      pix_clk => clk_wiz_0_clk_vga,
       vga_V_sync => VGA_TOP_1_vga_V_sync,
       vga_blue(3 downto 0) => VGA_TOP_1_vga_blue(3 downto 0),
       vga_green(3 downto 0) => VGA_TOP_1_vga_green(3 downto 0),
@@ -233,34 +231,34 @@ blk_mem_gen_0: component design_1_blk_mem_gen_0_0
      port map (
       addra(16 downto 0) => ovo_7670_caputre_0_addr(16 downto 0),
       addrb(16 downto 0) => BILINEAR_INTERPOLATI_0_address_read(16 downto 0),
-      clka => pclk_0_1,
-      clkb => Net,
+      clka => pclk_1,
+      clkb => clk_wiz_0_clk_vga,
       dina(11 downto 0) => ovo_7670_caputre_0_dout(11 downto 0),
       doutb(11 downto 0) => blk_mem_gen_0_doutb(11 downto 0),
       wea(0) => ovo_7670_caputre_0_wr_en
     );
 blk_mem_gen_1: component design_1_blk_mem_gen_0_1
      port map (
-      addra(18 downto 0) => BILINEAR_INTERPOLATI_0_address_out(18 downto 0),
+      addra(18 downto 0) => BILINEAR_INTERPOLATI_0_address_write(18 downto 0),
       addrb(18 downto 0) => VGA_TOP_1_frame_adress(18 downto 0),
-      clka => clk_in1_0_1,
-      clkb => Net,
+      clka => clk_in1_1,
+      clkb => clk_wiz_0_clk_vga,
       dina(11 downto 0) => BILINEAR_INTERPOLATI_0_pixel_out(11 downto 0),
       doutb(11 downto 0) => blk_mem_gen_1_doutb(11 downto 0),
       wea(0) => BILINEAR_INTERPOLATI_0_write_enable
     );
 clk_wiz_0: component design_1_clk_wiz_0_0
      port map (
-      clk_in1 => clk_in1_0_1,
+      clk_in1 => clk_in1_1,
       clk_interpolation => clk_wiz_0_clk_interpolation,
       clk_reg => clk_wiz_0_clk_reg,
-      clk_vga => Net,
+      clk_vga => clk_wiz_0_clk_vga,
       locked => NLW_clk_wiz_0_locked_UNCONNECTED,
-      resetn => resetn_0_1
+      resetn => resetn_1
     );
 cntl_0: component design_1_cntl_0_0
      port map (
-      clk => clk_in1_0_1,
+      clk => clk_in1_1,
       cntl_in => cntl_in_0_1,
       cntl_out => cntl_0_cntl_out,
       resend_in => resend_in_0_1,
@@ -284,7 +282,7 @@ ovo_7670_caputre_0: component design_1_ovo_7670_caputre_0_0
       camera_v_sync => camera_v_sync_0_1,
       din(7 downto 0) => din_0_1(7 downto 0),
       dout(11 downto 0) => ovo_7670_caputre_0_dout(11 downto 0),
-      pclk => pclk_0_1,
+      pclk => pclk_1,
       wr_en => ovo_7670_caputre_0_wr_en,
       zoom_x2 => zoom_x2_0_1
     );

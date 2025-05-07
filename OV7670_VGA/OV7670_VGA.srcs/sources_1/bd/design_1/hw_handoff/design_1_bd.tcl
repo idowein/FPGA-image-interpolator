@@ -325,11 +325,10 @@ proc create_root_design { parentCell } {
    }
   
   # Create port connections
-  connect_bd_net -net BILINEAR_INTERPOLATI_0_address_out [get_bd_pins BILINEAR_INTERPOLATI_0/address_write] [get_bd_pins blk_mem_gen_1/addra]
   connect_bd_net -net BILINEAR_INTERPOLATI_0_address_read [get_bd_pins BILINEAR_INTERPOLATI_0/address_read] [get_bd_pins blk_mem_gen_0/addrb]
+  connect_bd_net -net BILINEAR_INTERPOLATI_0_address_write [get_bd_pins BILINEAR_INTERPOLATI_0/address_write] [get_bd_pins blk_mem_gen_1/addra]
   connect_bd_net -net BILINEAR_INTERPOLATI_0_pixel_out [get_bd_pins BILINEAR_INTERPOLATI_0/pixel_out] [get_bd_pins blk_mem_gen_1/dina]
   connect_bd_net -net BILINEAR_INTERPOLATI_0_write_enable [get_bd_pins BILINEAR_INTERPOLATI_0/write_enable] [get_bd_pins blk_mem_gen_1/wea]
-  connect_bd_net -net Net [get_bd_pins BILINEAR_INTERPOLATI_0/clk_vga] [get_bd_pins VGA_TOP_1/pix_clk] [get_bd_pins blk_mem_gen_0/clkb] [get_bd_pins blk_mem_gen_1/clkb] [get_bd_pins clk_wiz_0/clk_vga]
   connect_bd_net -net Net1 [get_bd_ports siod] [get_bd_pins ov7670_controller_0/siod]
   connect_bd_net -net VGA_TOP_1_VGA_H_sync [get_bd_ports VGA_H_sync] [get_bd_pins VGA_TOP_1/VGA_H_sync]
   connect_bd_net -net VGA_TOP_1_frame_adress [get_bd_pins VGA_TOP_1/frame_adress] [get_bd_pins blk_mem_gen_1/addrb]
@@ -337,14 +336,15 @@ proc create_root_design { parentCell } {
   connect_bd_net -net VGA_TOP_1_vga_blue [get_bd_ports vga_blue] [get_bd_pins VGA_TOP_1/vga_blue]
   connect_bd_net -net VGA_TOP_1_vga_green [get_bd_ports vga_green] [get_bd_pins VGA_TOP_1/vga_green]
   connect_bd_net -net VGA_TOP_1_vga_red [get_bd_ports vga_red] [get_bd_pins VGA_TOP_1/vga_red]
-  connect_bd_net -net bili_cntl_0_1 [get_bd_ports bili_cntl] [get_bd_pins BILINEAR_INTERPOLATI_0/bili_cntl] [get_bd_pins VGA_TOP_1/bili_cntl]
+  connect_bd_net -net bili_cntl_1 [get_bd_ports bili_cntl] [get_bd_pins BILINEAR_INTERPOLATI_0/bili_cntl] [get_bd_pins VGA_TOP_1/bili_cntl]
   connect_bd_net -net blk_mem_gen_0_doutb [get_bd_pins BILINEAR_INTERPOLATI_0/pixel_in] [get_bd_pins blk_mem_gen_0/doutb]
   connect_bd_net -net blk_mem_gen_1_doutb [get_bd_pins VGA_TOP_1/frame_fix] [get_bd_pins blk_mem_gen_1/doutb]
   connect_bd_net -net camera_h_ref_0_1 [get_bd_ports camera_h_ref] [get_bd_pins ovo_7670_caputre_0/camera_h_ref]
   connect_bd_net -net camera_v_sync_0_1 [get_bd_ports camera_v_sync] [get_bd_pins ovo_7670_caputre_0/camera_v_sync]
-  connect_bd_net -net clk_in1_0_1 [get_bd_ports clk_in1] [get_bd_pins BILINEAR_INTERPOLATI_0/clk_in1] [get_bd_pins blk_mem_gen_1/clka] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins cntl_0/clk]
+  connect_bd_net -net clk_in1_1 [get_bd_ports clk_in1] [get_bd_pins BILINEAR_INTERPOLATI_0/clk_in1] [get_bd_pins blk_mem_gen_1/clka] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins cntl_0/clk]
   connect_bd_net -net clk_wiz_0_clk_interpolation [get_bd_pins BILINEAR_INTERPOLATI_0/clk_interpolation] [get_bd_pins clk_wiz_0/clk_interpolation]
   connect_bd_net -net clk_wiz_0_clk_reg [get_bd_pins clk_wiz_0/clk_reg] [get_bd_pins ov7670_controller_0/clk]
+  connect_bd_net -net clk_wiz_0_clk_vga [get_bd_pins BILINEAR_INTERPOLATI_0/clk_vga] [get_bd_pins VGA_TOP_1/pix_clk] [get_bd_pins blk_mem_gen_0/clkb] [get_bd_pins blk_mem_gen_1/clkb] [get_bd_pins clk_wiz_0/clk_vga]
   connect_bd_net -net cntl_0_cntl_out [get_bd_pins VGA_TOP_1/cntl] [get_bd_pins cntl_0/cntl_out]
   connect_bd_net -net cntl_0_resend_out [get_bd_pins cntl_0/resend_out] [get_bd_pins ov7670_controller_0/resend]
   connect_bd_net -net cntl_in_0_1 [get_bd_ports cntl_in] [get_bd_pins cntl_0/cntl_in]
@@ -357,9 +357,9 @@ proc create_root_design { parentCell } {
   connect_bd_net -net ovo_7670_caputre_0_addr [get_bd_pins blk_mem_gen_0/addra] [get_bd_pins ovo_7670_caputre_0/addr]
   connect_bd_net -net ovo_7670_caputre_0_dout [get_bd_pins blk_mem_gen_0/dina] [get_bd_pins ovo_7670_caputre_0/dout]
   connect_bd_net -net ovo_7670_caputre_0_wr_en [get_bd_pins blk_mem_gen_0/wea] [get_bd_pins ovo_7670_caputre_0/wr_en]
-  connect_bd_net -net pclk_0_1 [get_bd_ports pclk] [get_bd_pins blk_mem_gen_0/clka] [get_bd_pins ovo_7670_caputre_0/pclk]
+  connect_bd_net -net pclk_1 [get_bd_ports pclk] [get_bd_pins blk_mem_gen_0/clka] [get_bd_pins ovo_7670_caputre_0/pclk]
   connect_bd_net -net resend_in_0_1 [get_bd_ports resend_in] [get_bd_pins cntl_0/resend_in]
-  connect_bd_net -net resetn_0_1 [get_bd_ports resetn] [get_bd_pins BILINEAR_INTERPOLATI_0/reset] [get_bd_pins clk_wiz_0/resetn]
+  connect_bd_net -net resetn_1 [get_bd_ports resetn] [get_bd_pins clk_wiz_0/resetn]
   connect_bd_net -net zoom_x2_0_1 [get_bd_ports zoom_x2] [get_bd_pins VGA_TOP_1/zoom_x2] [get_bd_pins ovo_7670_caputre_0/zoom_x2]
 
   # Create address segments
