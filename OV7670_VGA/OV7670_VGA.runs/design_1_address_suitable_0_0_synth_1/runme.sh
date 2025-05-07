@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/design_1_address_suitable_0_0_synth_1'
+HD_PWD='C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/design_1_address_suitable_0_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

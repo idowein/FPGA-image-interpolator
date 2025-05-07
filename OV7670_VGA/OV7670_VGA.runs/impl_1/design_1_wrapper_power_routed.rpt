@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date             : Wed May  7 22:13:55 2025
-| Host             : dvirhersh_comp running 64-bit major release  (build 9200)
+| Date             : Wed May  7 22:25:52 2025
+| Host             : Ido running 64-bit major release  (build 9200)
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
 | Device           : xc7a100tcsg324-1
@@ -60,7 +60,7 @@ Table of Contents
 |   F7/F8 Muxes  |    <0.001 |      147 |     63400 |            0.23 |
 |   BUFG         |    <0.001 |        1 |        32 |            3.13 |
 |   Others       |     0.000 |      377 |       --- |             --- |
-| Signals        |     0.002 |     1903 |       --- |             --- |
+| Signals        |     0.002 |     1905 |       --- |             --- |
 | Block RAM      |     0.001 |    130.5 |       135 |           96.67 |
 | MMCM           |     0.116 |        1 |         6 |           16.67 |
 | I/O            |     0.003 |       36 |       210 |           17.14 |
