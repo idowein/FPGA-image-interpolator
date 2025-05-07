@@ -14,7 +14,7 @@ entity VGA_TOP is
         vga_red      : out STD_LOGIC_VECTOR (3 downto 0);
         vga_blue     : out STD_LOGIC_VECTOR (3 downto 0);
         vga_green    : out STD_LOGIC_VECTOR (3 downto 0);
-        frame_adress : out STD_LOGIC_VECTOR (18 downto 0)
+        frame_adress : out STD_LOGIC_VECTOR (16 downto 0)
     );
 end VGA_TOP;
 
@@ -27,7 +27,7 @@ architecture Behavioral of VGA_TOP is
     signal h_cnt : std_logic_vector(11 downto 0);
     signal v_cnt : std_logic_vector(11 downto 0);
     signal h_sync, v_sync, blank : std_logic;
-    signal fr_address : std_logic_vector(18 downto 0);
+    signal fr_address : std_logic_vector(16 downto 0);
     
     -- colors
     signal cnt_bg:     std_logic_vector(28 downto 0) := (others => '0'); -- Background color counter for color cycling

@@ -169,7 +169,7 @@
             "value": "false"
           },
           "Write_Depth_A": {
-            "value": "307200"
+            "value": "76800"
           },
           "Write_Width_A": {
             "value": "12"
@@ -352,7 +352,7 @@
           },
           "addr": {
             "direction": "O",
-            "left": "18",
+            "left": "16",
             "right": "0"
           },
           "dout": {
@@ -426,7 +426,7 @@
           },
           "frame_adress": {
             "direction": "O",
-            "left": "18",
+            "left": "16",
             "right": "0"
           }
         }

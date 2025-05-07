@@ -1,10 +1,10 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Tue Apr 29 17:08:41 2025
+// Date        : Wed May  7 14:57:41 2025
 // Host        : Ido running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               c:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_VGA_TOP_1_0/design_1_VGA_TOP_1_0_sim_netlist.v
+//               C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_VGA_TOP_1_0/design_1_VGA_TOP_1_0_sim_netlist.v
 // Design      : design_1_VGA_TOP_1_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -35,11 +35,11 @@ module design_1_VGA_TOP_1_0
   output [3:0]vga_red;
   output [3:0]vga_blue;
   output [3:0]vga_green;
-  output [18:0]frame_adress;
+  output [16:0]frame_adress;
 
   wire VGA_H_sync;
   wire cntl;
-  wire [18:0]frame_adress;
+  wire [16:0]frame_adress;
   wire [11:0]frame_fix;
   wire pix_clk;
   wire vga_V_sync;
@@ -73,7 +73,7 @@ module design_1_VGA_TOP_1_0_VGA_TOP
     cntl,
     zoom_x2,
     frame_fix);
-  output [18:0]frame_adress;
+  output [16:0]frame_adress;
   output [3:0]vga_red;
   output [3:0]vga_blue;
   output [3:0]vga_green;
@@ -89,7 +89,7 @@ module design_1_VGA_TOP_1_0_VGA_TOP
   wire bg_red0;
   wire cntl;
   wire eqOp;
-  wire [18:0]frame_adress;
+  wire [16:0]frame_adress;
   wire [11:0]frame_fix;
   wire ltOp;
   wire pix_clk;
@@ -461,13 +461,13 @@ module design_1_VGA_TOP_1_0_VGA_TX
   wire [0:0]cntl_0;
   wire [3:0]cntl_1;
   wire eqOp;
-  wire \fr_addr[18]_i_2_n_0 ;
-  wire \fr_addr[18]_i_3_n_0 ;
-  wire \fr_addr[18]_i_4_n_0 ;
-  wire \fr_addr[18]_i_5_n_0 ;
-  wire \fr_addr[18]_i_6_n_0 ;
-  wire \fr_addr_reg[18]_i_1_n_2 ;
-  wire \fr_addr_reg[18]_i_1_n_3 ;
+  wire \fr_addr[16]_i_2_n_0 ;
+  wire \fr_addr[16]_i_3_n_0 ;
+  wire \fr_addr[16]_i_4_n_0 ;
+  wire \fr_addr[16]_i_5_n_0 ;
+  wire \fr_addr[16]_i_6_n_0 ;
+  wire \fr_addr_reg[16]_i_1_n_2 ;
+  wire \fr_addr_reg[16]_i_1_n_3 ;
   wire [11:0]frame_fix;
   wire [3:0]\frame_fix[7] ;
   wire geqOp;
@@ -652,8 +652,8 @@ module design_1_VGA_TOP_1_0_VGA_TX
   wire [3:0]\NLW_bg_red_reg[3]_i_65_O_UNCONNECTED ;
   wire [3:0]\NLW_bg_red_reg[3]_i_82_O_UNCONNECTED ;
   wire [3:0]\NLW_bg_red_reg[3]_i_9_O_UNCONNECTED ;
-  wire [3:3]\NLW_fr_addr_reg[18]_i_1_CO_UNCONNECTED ;
-  wire [3:0]\NLW_fr_addr_reg[18]_i_1_O_UNCONNECTED ;
+  wire [3:3]\NLW_fr_addr_reg[16]_i_1_CO_UNCONNECTED ;
+  wire [3:0]\NLW_fr_addr_reg[16]_i_1_O_UNCONNECTED ;
   wire [3:0]\NLW_geqOp_inferred__0/i__carry_O_UNCONNECTED ;
   wire [3:2]\NLW_geqOp_inferred__0/i__carry__0_CO_UNCONNECTED ;
   wire [3:0]\NLW_geqOp_inferred__0/i__carry__0_O_UNCONNECTED ;
@@ -1767,39 +1767,39 @@ module design_1_VGA_TOP_1_0_VGA_TX
         .S({\bg_red[3]_i_29_n_0 ,\bg_red[3]_i_30_n_0 ,\bg_red[3]_i_31_n_0 ,\bg_red[3]_i_32_n_0 }));
   LUT1 #(
     .INIT(2'h1)) 
-    \fr_addr[18]_i_2 
+    \fr_addr[16]_i_2 
        (.I0(h_cnt_reg_reg[9]),
-        .O(\fr_addr[18]_i_2_n_0 ));
+        .O(\fr_addr[16]_i_2_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
-    \fr_addr[18]_i_3 
+    \fr_addr[16]_i_3 
        (.I0(h_cnt_reg_reg[7]),
-        .O(\fr_addr[18]_i_3_n_0 ));
+        .O(\fr_addr[16]_i_3_n_0 ));
   LUT2 #(
     .INIT(4'h1)) 
-    \fr_addr[18]_i_4 
+    \fr_addr[16]_i_4 
        (.I0(h_cnt_reg_reg[10]),
         .I1(h_cnt_reg_reg[11]),
-        .O(\fr_addr[18]_i_4_n_0 ));
+        .O(\fr_addr[16]_i_4_n_0 ));
   LUT2 #(
     .INIT(4'h2)) 
-    \fr_addr[18]_i_5 
+    \fr_addr[16]_i_5 
        (.I0(h_cnt_reg_reg[9]),
         .I1(h_cnt_reg_reg[8]),
-        .O(\fr_addr[18]_i_5_n_0 ));
+        .O(\fr_addr[16]_i_5_n_0 ));
   LUT2 #(
     .INIT(4'h2)) 
-    \fr_addr[18]_i_6 
+    \fr_addr[16]_i_6 
        (.I0(h_cnt_reg_reg[7]),
         .I1(h_cnt_reg_reg[6]),
-        .O(\fr_addr[18]_i_6_n_0 ));
-  CARRY4 \fr_addr_reg[18]_i_1 
+        .O(\fr_addr[16]_i_6_n_0 ));
+  CARRY4 \fr_addr_reg[16]_i_1 
        (.CI(1'b0),
-        .CO({\NLW_fr_addr_reg[18]_i_1_CO_UNCONNECTED [3],CO,\fr_addr_reg[18]_i_1_n_2 ,\fr_addr_reg[18]_i_1_n_3 }),
+        .CO({\NLW_fr_addr_reg[16]_i_1_CO_UNCONNECTED [3],CO,\fr_addr_reg[16]_i_1_n_2 ,\fr_addr_reg[16]_i_1_n_3 }),
         .CYINIT(1'b0),
-        .DI({1'b0,1'b0,\fr_addr[18]_i_2_n_0 ,\fr_addr[18]_i_3_n_0 }),
-        .O(\NLW_fr_addr_reg[18]_i_1_O_UNCONNECTED [3:0]),
-        .S({1'b0,\fr_addr[18]_i_4_n_0 ,\fr_addr[18]_i_5_n_0 ,\fr_addr[18]_i_6_n_0 }));
+        .DI({1'b0,1'b0,\fr_addr[16]_i_2_n_0 ,\fr_addr[16]_i_3_n_0 }),
+        .O(\NLW_fr_addr_reg[16]_i_1_O_UNCONNECTED [3:0]),
+        .S({1'b0,\fr_addr[16]_i_4_n_0 ,\fr_addr[16]_i_5_n_0 ,\fr_addr[16]_i_6_n_0 }));
   LUT2 #(
     .INIT(4'hE)) 
     geqOp_carry__0_i_1
@@ -2387,24 +2387,24 @@ module design_1_VGA_TOP_1_0_VGA_TX
         .O(\NLW_ltOp_inferred__0/i__carry__0_O_UNCONNECTED [3:0]),
         .S({1'b0,1'b0,i__carry__0_i_2__1_n_0,i__carry__0_i_3__0_n_0}));
   LUT6 #(
-    .INIT(64'h0000000000000002)) 
+    .INIT(64'h0000000000000020)) 
     \v_cnt_reg[0]_i_1 
        (.I0(eqOp),
         .I1(\v_cnt_reg[0]_i_3_n_0 ),
-        .I2(v_cnt[7]),
-        .I3(v_cnt[6]),
-        .I4(v_cnt[4]),
-        .I5(v_cnt[5]),
+        .I2(\v_cnt_reg_reg[11]_0 [0]),
+        .I3(v_cnt[8]),
+        .I4(v_cnt[7]),
+        .I5(v_cnt[6]),
         .O(v_cnt_reg));
   LUT6 #(
-    .INIT(64'hFFFBFFFFFFFFFFFF)) 
+    .INIT(64'hFFFFFFFFFFFFEFFF)) 
     \v_cnt_reg[0]_i_3 
-       (.I0(v_cnt[8]),
-        .I1(\v_cnt_reg_reg[11]_0 [0]),
-        .I2(\v_cnt_reg[0]_i_5_n_0 ),
-        .I3(\v_cnt_reg[0]_i_6_n_0 ),
-        .I4(v_cnt[3]),
-        .I5(v_cnt[2]),
+       (.I0(v_cnt[5]),
+        .I1(v_cnt[4]),
+        .I2(v_cnt[3]),
+        .I3(v_cnt[2]),
+        .I4(\v_cnt_reg[0]_i_5_n_0 ),
+        .I5(\v_cnt_reg[0]_i_6_n_0 ),
         .O(\v_cnt_reg[0]_i_3_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
@@ -2639,7 +2639,7 @@ module design_1_VGA_TOP_1_0_pixel_render
   output [0:0]SR;
   output [2:0]\val_tmp_reg[8]_0 ;
   output [0:0]\h_cnt_reg_reg[11] ;
-  output [18:0]frame_adress;
+  output [16:0]frame_adress;
   output [3:0]vga_red;
   output [3:0]vga_blue;
   output [3:0]vga_green;
@@ -2685,8 +2685,6 @@ module design_1_VGA_TOP_1_0_pixel_render
   wire \_inferred__3/i__carry__2_n_1 ;
   wire \_inferred__3/i__carry__2_n_2 ;
   wire \_inferred__3/i__carry__2_n_3 ;
-  wire \_inferred__3/i__carry__3_n_2 ;
-  wire \_inferred__3/i__carry__3_n_3 ;
   wire \_inferred__3/i__carry_n_0 ;
   wire \_inferred__3/i__carry_n_1 ;
   wire \_inferred__3/i__carry_n_2 ;
@@ -2696,8 +2694,8 @@ module design_1_VGA_TOP_1_0_pixel_render
   wire [1:0]\bg_red[3]_i_6 ;
   wire [1:0]\bg_red[3]_i_6_0 ;
   wire [0:0]\bg_red_reg[3]_0 ;
-  wire [18:0]fr_addr;
-  wire [18:0]frame_adress;
+  wire [16:0]fr_addr;
+  wire [16:0]frame_adress;
   wire geqOp_carry__0_n_3;
   wire geqOp_carry_n_0;
   wire geqOp_carry_n_1;
@@ -2723,18 +2721,16 @@ module design_1_VGA_TOP_1_0_pixel_render
   wire i__carry__2_i_6_n_0;
   wire i__carry__2_i_7_n_0;
   wire i__carry__2_i_8_n_0;
-  wire i__carry__3_i_3_n_0;
-  wire i__carry__3_i_4_n_0;
-  wire i__carry__3_i_5_n_0;
+  wire i__carry__3_i_1_n_0;
   wire i__carry_i_1__1_n_0;
   wire i__carry_i_5__2_n_0;
   wire i__carry_i_6__2_n_0;
   wire i__carry_i_7__1_n_0;
   wire i__carry_i_8__0_n_0;
-  wire [17:1]p_1_in;
+  wire [15:1]p_1_in;
   wire pix_clk;
   wire val_tmp;
-  wire [18:1]val_tmp_reg;
+  wire [16:1]val_tmp_reg;
   wire \val_tmp_reg[0]_i_2_n_0 ;
   wire \val_tmp_reg[0]_i_2_n_1 ;
   wire \val_tmp_reg[0]_i_2_n_2 ;
@@ -2753,10 +2749,6 @@ module design_1_VGA_TOP_1_0_pixel_render
   wire \val_tmp_reg[12]_i_1_n_5 ;
   wire \val_tmp_reg[12]_i_1_n_6 ;
   wire \val_tmp_reg[12]_i_1_n_7 ;
-  wire \val_tmp_reg[16]_i_1_n_2 ;
-  wire \val_tmp_reg[16]_i_1_n_3 ;
-  wire \val_tmp_reg[16]_i_1_n_5 ;
-  wire \val_tmp_reg[16]_i_1_n_6 ;
   wire \val_tmp_reg[16]_i_1_n_7 ;
   wire \val_tmp_reg[3]_0 ;
   wire [0:0]\val_tmp_reg[3]_1 ;
@@ -2780,7 +2772,7 @@ module design_1_VGA_TOP_1_0_pixel_render
   wire \val_tmp_reg[8]_i_1_n_6 ;
   wire \val_tmp_reg[8]_i_1_n_7 ;
   wire \val_zoom[0]_i_2_n_0 ;
-  wire [18:0]val_zoom_reg;
+  wire [16:0]val_zoom_reg;
   wire [1:0]\val_zoom_reg[0]_0 ;
   wire [1:0]\val_zoom_reg[0]_1 ;
   wire \val_zoom_reg[0]_i_1_n_0 ;
@@ -2799,10 +2791,6 @@ module design_1_VGA_TOP_1_0_pixel_render
   wire \val_zoom_reg[12]_i_1_n_5 ;
   wire \val_zoom_reg[12]_i_1_n_6 ;
   wire \val_zoom_reg[12]_i_1_n_7 ;
-  wire \val_zoom_reg[16]_i_1_n_2 ;
-  wire \val_zoom_reg[16]_i_1_n_3 ;
-  wire \val_zoom_reg[16]_i_1_n_5 ;
-  wire \val_zoom_reg[16]_i_1_n_6 ;
   wire \val_zoom_reg[16]_i_1_n_7 ;
   wire \val_zoom_reg[4]_i_1_n_0 ;
   wire \val_zoom_reg[4]_i_1_n_1 ;
@@ -2824,18 +2812,18 @@ module design_1_VGA_TOP_1_0_pixel_render
   wire [3:0]vga_green;
   wire [3:0]vga_red;
   wire zoom_x2;
-  wire [3:2]\NLW__inferred__3/i__carry__3_CO_UNCONNECTED ;
-  wire [3:3]\NLW__inferred__3/i__carry__3_O_UNCONNECTED ;
+  wire [3:0]\NLW__inferred__3/i__carry__3_CO_UNCONNECTED ;
+  wire [3:1]\NLW__inferred__3/i__carry__3_O_UNCONNECTED ;
   wire [3:0]NLW_geqOp_carry_O_UNCONNECTED;
   wire [3:2]NLW_geqOp_carry__0_CO_UNCONNECTED;
   wire [3:0]NLW_geqOp_carry__0_O_UNCONNECTED;
   wire [3:0]\NLW_geqOp_inferred__0/i__carry_O_UNCONNECTED ;
   wire [3:2]\NLW_geqOp_inferred__0/i__carry__0_CO_UNCONNECTED ;
   wire [3:0]\NLW_geqOp_inferred__0/i__carry__0_O_UNCONNECTED ;
-  wire [3:2]\NLW_val_tmp_reg[16]_i_1_CO_UNCONNECTED ;
-  wire [3:3]\NLW_val_tmp_reg[16]_i_1_O_UNCONNECTED ;
-  wire [3:2]\NLW_val_zoom_reg[16]_i_1_CO_UNCONNECTED ;
-  wire [3:3]\NLW_val_zoom_reg[16]_i_1_O_UNCONNECTED ;
+  wire [3:0]\NLW_val_tmp_reg[16]_i_1_CO_UNCONNECTED ;
+  wire [3:1]\NLW_val_tmp_reg[16]_i_1_O_UNCONNECTED ;
+  wire [3:0]\NLW_val_zoom_reg[16]_i_1_CO_UNCONNECTED ;
+  wire [3:1]\NLW_val_zoom_reg[16]_i_1_O_UNCONNECTED ;
 
   (* METHODOLOGY_DRC_VIOS = "{SYNTH-8 {cell *THIS*}}" *) 
   CARRY4 \_inferred__3/i__carry 
@@ -2872,11 +2860,11 @@ module design_1_VGA_TOP_1_0_pixel_render
   (* METHODOLOGY_DRC_VIOS = "{SYNTH-8 {cell *THIS*}}" *) 
   CARRY4 \_inferred__3/i__carry__3 
        (.CI(\_inferred__3/i__carry__2_n_0 ),
-        .CO({\NLW__inferred__3/i__carry__3_CO_UNCONNECTED [3:2],\_inferred__3/i__carry__3_n_2 ,\_inferred__3/i__carry__3_n_3 }),
+        .CO(\NLW__inferred__3/i__carry__3_CO_UNCONNECTED [3:0]),
         .CYINIT(1'b0),
-        .DI({1'b0,1'b0,p_1_in[17:16]}),
-        .O({\NLW__inferred__3/i__carry__3_O_UNCONNECTED [3],fr_addr[18:16]}),
-        .S({1'b0,i__carry__3_i_3_n_0,i__carry__3_i_4_n_0,i__carry__3_i_5_n_0}));
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({\NLW__inferred__3/i__carry__3_O_UNCONNECTED [3:1],fr_addr[16]}),
+        .S({1'b0,1'b0,1'b0,i__carry__3_i_1_n_0}));
   FDRE \bg_blue_reg[0] 
        (.C(pix_clk),
         .CE(E),
@@ -3012,22 +3000,6 @@ module design_1_VGA_TOP_1_0_pixel_render
         .CE(CO),
         .D(fr_addr[16]),
         .Q(frame_adress[16]),
-        .R(SR));
-  FDRE #(
-    .INIT(1'b0)) 
-    \fr_addr_reg[17] 
-       (.C(pix_clk),
-        .CE(CO),
-        .D(fr_addr[17]),
-        .Q(frame_adress[17]),
-        .R(SR));
-  FDRE #(
-    .INIT(1'b0)) 
-    \fr_addr_reg[18] 
-       (.C(pix_clk),
-        .CE(CO),
-        .D(fr_addr[18]),
-        .Q(frame_adress[18]),
         .R(SR));
   FDRE #(
     .INIT(1'b0)) 
@@ -3299,42 +3271,14 @@ module design_1_VGA_TOP_1_0_pixel_render
         .I2(zoom_x2),
         .I3(val_zoom_reg[12]),
         .O(i__carry__2_i_8_n_0));
-  LUT2 #(
-    .INIT(4'h2)) 
-    i__carry__3_i_1
-       (.I0(zoom_x2),
-        .I1(val_tmp_reg[17]),
-        .O(p_1_in[17]));
-  LUT2 #(
-    .INIT(4'h2)) 
-    i__carry__3_i_2
-       (.I0(zoom_x2),
-        .I1(val_tmp_reg[16]),
-        .O(p_1_in[16]));
   LUT4 #(
     .INIT(16'hC3AA)) 
-    i__carry__3_i_3
-       (.I0(frame_adress[18]),
-        .I1(val_zoom_reg[18]),
-        .I2(val_tmp_reg[18]),
+    i__carry__3_i_1
+       (.I0(frame_adress[16]),
+        .I1(val_zoom_reg[16]),
+        .I2(val_tmp_reg[16]),
         .I3(zoom_x2),
-        .O(i__carry__3_i_3_n_0));
-  LUT4 #(
-    .INIT(16'hAC5C)) 
-    i__carry__3_i_4
-       (.I0(val_tmp_reg[17]),
-        .I1(frame_adress[17]),
-        .I2(zoom_x2),
-        .I3(val_zoom_reg[17]),
-        .O(i__carry__3_i_4_n_0));
-  LUT4 #(
-    .INIT(16'hAC5C)) 
-    i__carry__3_i_5
-       (.I0(val_tmp_reg[16]),
-        .I1(frame_adress[16]),
-        .I2(zoom_x2),
-        .I3(val_zoom_reg[16]),
-        .O(i__carry__3_i_5_n_0));
+        .O(i__carry__3_i_1_n_0));
   LUT3 #(
     .INIT(8'hB8)) 
     i__carry_i_1__1
@@ -3470,27 +3414,11 @@ module design_1_VGA_TOP_1_0_pixel_render
         .R(SR));
   CARRY4 \val_tmp_reg[16]_i_1 
        (.CI(\val_tmp_reg[12]_i_1_n_0 ),
-        .CO({\NLW_val_tmp_reg[16]_i_1_CO_UNCONNECTED [3:2],\val_tmp_reg[16]_i_1_n_2 ,\val_tmp_reg[16]_i_1_n_3 }),
+        .CO(\NLW_val_tmp_reg[16]_i_1_CO_UNCONNECTED [3:0]),
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\NLW_val_tmp_reg[16]_i_1_O_UNCONNECTED [3],\val_tmp_reg[16]_i_1_n_5 ,\val_tmp_reg[16]_i_1_n_6 ,\val_tmp_reg[16]_i_1_n_7 }),
-        .S({1'b0,val_tmp_reg[18:16]}));
-  FDRE #(
-    .INIT(1'b0)) 
-    \val_tmp_reg[17] 
-       (.C(pix_clk),
-        .CE(val_tmp),
-        .D(\val_tmp_reg[16]_i_1_n_6 ),
-        .Q(val_tmp_reg[17]),
-        .R(SR));
-  FDRE #(
-    .INIT(1'b0)) 
-    \val_tmp_reg[18] 
-       (.C(pix_clk),
-        .CE(val_tmp),
-        .D(\val_tmp_reg[16]_i_1_n_5 ),
-        .Q(val_tmp_reg[18]),
-        .R(SR));
+        .O({\NLW_val_tmp_reg[16]_i_1_O_UNCONNECTED [3:1],\val_tmp_reg[16]_i_1_n_7 }),
+        .S({1'b0,1'b0,1'b0,val_tmp_reg[16]}));
   FDRE #(
     .INIT(1'b0)) 
     \val_tmp_reg[1] 
@@ -3662,27 +3590,11 @@ module design_1_VGA_TOP_1_0_pixel_render
         .R(SR));
   CARRY4 \val_zoom_reg[16]_i_1 
        (.CI(\val_zoom_reg[12]_i_1_n_0 ),
-        .CO({\NLW_val_zoom_reg[16]_i_1_CO_UNCONNECTED [3:2],\val_zoom_reg[16]_i_1_n_2 ,\val_zoom_reg[16]_i_1_n_3 }),
+        .CO(\NLW_val_zoom_reg[16]_i_1_CO_UNCONNECTED [3:0]),
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\NLW_val_zoom_reg[16]_i_1_O_UNCONNECTED [3],\val_zoom_reg[16]_i_1_n_5 ,\val_zoom_reg[16]_i_1_n_6 ,\val_zoom_reg[16]_i_1_n_7 }),
-        .S({1'b0,val_zoom_reg[18:16]}));
-  FDRE #(
-    .INIT(1'b0)) 
-    \val_zoom_reg[17] 
-       (.C(pix_clk),
-        .CE(CO),
-        .D(\val_zoom_reg[16]_i_1_n_6 ),
-        .Q(val_zoom_reg[17]),
-        .R(SR));
-  FDRE #(
-    .INIT(1'b0)) 
-    \val_zoom_reg[18] 
-       (.C(pix_clk),
-        .CE(CO),
-        .D(\val_zoom_reg[16]_i_1_n_5 ),
-        .Q(val_zoom_reg[18]),
-        .R(SR));
+        .O({\NLW_val_zoom_reg[16]_i_1_O_UNCONNECTED [3:1],\val_zoom_reg[16]_i_1_n_7 }),
+        .S({1'b0,1'b0,1'b0,val_zoom_reg[16]}));
   FDRE #(
     .INIT(1'b0)) 
     \val_zoom_reg[1] 

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Apr 29 17:08:09 2025" VIVADOVERSION="2019.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed May  7 14:57:10 2025" VIVADOVERSION="2019.2">
 
   <SYSTEMINFO ARCH="artix7" BOARD="digilentinc.com:nexys-a7-100t:part0:1.3" DEVICE="7a100t" NAME="design_1" PACKAGE="csg324" SPEEDGRADE="-1"/>
 
@@ -164,7 +164,7 @@
             <CONNECTION INSTANCE="External_Ports" PORT="vga_green"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="18" NAME="frame_adress" RIGHT="0" SIGIS="undef" SIGNAME="VGA_TOP_1_frame_adress">
+        <PORT DIR="O" LEFT="16" NAME="frame_adress" RIGHT="0" SIGIS="undef" SIGNAME="VGA_TOP_1_frame_adress">
           <CONNECTIONS>
             <CONNECTION INSTANCE="blk_mem_gen_0" PORT="addrb"/>
           </CONNECTIONS>
@@ -208,9 +208,9 @@
         <PARAMETER NAME="C_WRITE_MODE_A" VALUE="NO_CHANGE"/>
         <PARAMETER NAME="C_WRITE_WIDTH_A" VALUE="12"/>
         <PARAMETER NAME="C_READ_WIDTH_A" VALUE="12"/>
-        <PARAMETER NAME="C_WRITE_DEPTH_A" VALUE="307200"/>
-        <PARAMETER NAME="C_READ_DEPTH_A" VALUE="307200"/>
-        <PARAMETER NAME="C_ADDRA_WIDTH" VALUE="19"/>
+        <PARAMETER NAME="C_WRITE_DEPTH_A" VALUE="76800"/>
+        <PARAMETER NAME="C_READ_DEPTH_A" VALUE="76800"/>
+        <PARAMETER NAME="C_ADDRA_WIDTH" VALUE="17"/>
         <PARAMETER NAME="C_HAS_RSTB" VALUE="0"/>
         <PARAMETER NAME="C_RST_PRIORITY_B" VALUE="CE"/>
         <PARAMETER NAME="C_RSTRAM_B" VALUE="0"/>
@@ -222,9 +222,9 @@
         <PARAMETER NAME="C_WRITE_MODE_B" VALUE="READ_FIRST"/>
         <PARAMETER NAME="C_WRITE_WIDTH_B" VALUE="12"/>
         <PARAMETER NAME="C_READ_WIDTH_B" VALUE="12"/>
-        <PARAMETER NAME="C_WRITE_DEPTH_B" VALUE="307200"/>
-        <PARAMETER NAME="C_READ_DEPTH_B" VALUE="307200"/>
-        <PARAMETER NAME="C_ADDRB_WIDTH" VALUE="19"/>
+        <PARAMETER NAME="C_WRITE_DEPTH_B" VALUE="76800"/>
+        <PARAMETER NAME="C_READ_DEPTH_B" VALUE="76800"/>
+        <PARAMETER NAME="C_ADDRB_WIDTH" VALUE="17"/>
         <PARAMETER NAME="C_HAS_MEM_OUTPUT_REGS_A" VALUE="0"/>
         <PARAMETER NAME="C_HAS_MEM_OUTPUT_REGS_B" VALUE="1"/>
         <PARAMETER NAME="C_HAS_MUX_OUTPUT_REGS_A" VALUE="0"/>
@@ -249,9 +249,9 @@
         <PARAMETER NAME="C_EN_SHUTDOWN_PIN" VALUE="0"/>
         <PARAMETER NAME="C_EN_SAFETY_CKT" VALUE="0"/>
         <PARAMETER NAME="C_DISABLE_WARN_BHV_RANGE" VALUE="0"/>
-        <PARAMETER NAME="C_COUNT_36K_BRAM" VALUE="103"/>
+        <PARAMETER NAME="C_COUNT_36K_BRAM" VALUE="26"/>
         <PARAMETER NAME="C_COUNT_18K_BRAM" VALUE="1"/>
-        <PARAMETER NAME="C_EST_POWER_SUMMARY" VALUE="Estimated Power for IP     :     17.649498 mW"/>
+        <PARAMETER NAME="C_EST_POWER_SUMMARY" VALUE="Estimated Power for IP     :     16.945716 mW"/>
         <PARAMETER NAME="Component_Name" VALUE="design_1_blk_mem_gen_0_0"/>
         <PARAMETER NAME="Interface_Type" VALUE="Native"/>
         <PARAMETER NAME="AXI_Type" VALUE="AXI4_Full"/>
@@ -278,7 +278,7 @@
         <PARAMETER NAME="Primitive" VALUE="8kx2"/>
         <PARAMETER NAME="Assume_Synchronous_Clk" VALUE="true"/>
         <PARAMETER NAME="Write_Width_A" VALUE="12"/>
-        <PARAMETER NAME="Write_Depth_A" VALUE="307200"/>
+        <PARAMETER NAME="Write_Depth_A" VALUE="76800"/>
         <PARAMETER NAME="Read_Width_A" VALUE="12"/>
         <PARAMETER NAME="Operating_Mode_A" VALUE="NO_CHANGE"/>
         <PARAMETER NAME="Enable_A" VALUE="Always_Enabled"/>
@@ -337,7 +337,7 @@
             <CONNECTION INSTANCE="ovo_7670_caputre_0" PORT="wr_en"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="18" NAME="addra" RIGHT="0" SIGIS="undef" SIGNAME="ovo_7670_caputre_0_addr">
+        <PORT DIR="I" LEFT="16" NAME="addra" RIGHT="0" SIGIS="undef" SIGNAME="ovo_7670_caputre_0_addr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ovo_7670_caputre_0" PORT="addr"/>
           </CONNECTIONS>
@@ -352,7 +352,7 @@
             <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_vga"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="18" NAME="addrb" RIGHT="0" SIGIS="undef" SIGNAME="VGA_TOP_1_frame_adress">
+        <PORT DIR="I" LEFT="16" NAME="addrb" RIGHT="0" SIGIS="undef" SIGNAME="VGA_TOP_1_frame_adress">
           <CONNECTIONS>
             <CONNECTION INSTANCE="VGA_TOP_1" PORT="frame_adress"/>
           </CONNECTIONS>
@@ -1113,7 +1113,7 @@
             <CONNECTION INSTANCE="External_Ports" PORT="din"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="18" NAME="addr" RIGHT="0" SIGIS="undef" SIGNAME="ovo_7670_caputre_0_addr">
+        <PORT DIR="O" LEFT="16" NAME="addr" RIGHT="0" SIGIS="undef" SIGNAME="ovo_7670_caputre_0_addr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="blk_mem_gen_0" PORT="addra"/>
           </CONNECTIONS>

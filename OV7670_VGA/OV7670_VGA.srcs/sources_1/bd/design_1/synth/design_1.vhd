@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
---Date        : Tue Apr 29 17:08:09 2025
+--Date        : Wed May  7 14:57:09 2025
 --Host        : Ido running 64-bit major release  (build 9200)
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -45,10 +45,10 @@ architecture STRUCTURE of design_1 is
   port (
     clka : in STD_LOGIC;
     wea : in STD_LOGIC_VECTOR ( 0 to 0 );
-    addra : in STD_LOGIC_VECTOR ( 18 downto 0 );
+    addra : in STD_LOGIC_VECTOR ( 16 downto 0 );
     dina : in STD_LOGIC_VECTOR ( 11 downto 0 );
     clkb : in STD_LOGIC;
-    addrb : in STD_LOGIC_VECTOR ( 18 downto 0 );
+    addrb : in STD_LOGIC_VECTOR ( 16 downto 0 );
     doutb : out STD_LOGIC_VECTOR ( 11 downto 0 )
   );
   end component design_1_blk_mem_gen_0_0;
@@ -89,7 +89,7 @@ architecture STRUCTURE of design_1 is
     camera_h_ref : in STD_LOGIC;
     zoom_x2 : in STD_LOGIC;
     din : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    addr : out STD_LOGIC_VECTOR ( 18 downto 0 );
+    addr : out STD_LOGIC_VECTOR ( 16 downto 0 );
     dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
     wr_en : out STD_LOGIC
   );
@@ -105,12 +105,12 @@ architecture STRUCTURE of design_1 is
     vga_red : out STD_LOGIC_VECTOR ( 3 downto 0 );
     vga_blue : out STD_LOGIC_VECTOR ( 3 downto 0 );
     vga_green : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    frame_adress : out STD_LOGIC_VECTOR ( 18 downto 0 )
+    frame_adress : out STD_LOGIC_VECTOR ( 16 downto 0 )
   );
   end component design_1_VGA_TOP_1_0;
   signal Net1 : STD_LOGIC;
   signal VGA_TOP_1_VGA_H_sync : STD_LOGIC;
-  signal VGA_TOP_1_frame_adress : STD_LOGIC_VECTOR ( 18 downto 0 );
+  signal VGA_TOP_1_frame_adress : STD_LOGIC_VECTOR ( 16 downto 0 );
   signal VGA_TOP_1_vga_V_sync : STD_LOGIC;
   signal VGA_TOP_1_vga_blue : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal VGA_TOP_1_vga_green : STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -130,7 +130,7 @@ architecture STRUCTURE of design_1 is
   signal ov7670_controller_0_reset : STD_LOGIC;
   signal ov7670_controller_0_sioc : STD_LOGIC;
   signal ov7670_controller_0_xclk : STD_LOGIC;
-  signal ovo_7670_caputre_0_addr : STD_LOGIC_VECTOR ( 18 downto 0 );
+  signal ovo_7670_caputre_0_addr : STD_LOGIC_VECTOR ( 16 downto 0 );
   signal ovo_7670_caputre_0_dout : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal ovo_7670_caputre_0_wr_en : STD_LOGIC;
   signal pclk_0_1 : STD_LOGIC;
@@ -170,7 +170,7 @@ VGA_TOP_1: component design_1_VGA_TOP_1_0
      port map (
       VGA_H_sync => VGA_TOP_1_VGA_H_sync,
       cntl => cntl_0_cntl_out,
-      frame_adress(18 downto 0) => VGA_TOP_1_frame_adress(18 downto 0),
+      frame_adress(16 downto 0) => VGA_TOP_1_frame_adress(16 downto 0),
       frame_fix(11 downto 0) => blk_mem_gen_0_doutb(11 downto 0),
       pix_clk => clk_wiz_0_clk_vga,
       vga_V_sync => VGA_TOP_1_vga_V_sync,
@@ -181,8 +181,8 @@ VGA_TOP_1: component design_1_VGA_TOP_1_0
     );
 blk_mem_gen_0: component design_1_blk_mem_gen_0_0
      port map (
-      addra(18 downto 0) => ovo_7670_caputre_0_addr(18 downto 0),
-      addrb(18 downto 0) => VGA_TOP_1_frame_adress(18 downto 0),
+      addra(16 downto 0) => ovo_7670_caputre_0_addr(16 downto 0),
+      addrb(16 downto 0) => VGA_TOP_1_frame_adress(16 downto 0),
       clka => pclk_0_1,
       clkb => clk_wiz_0_clk_vga,
       dina(11 downto 0) => ovo_7670_caputre_0_dout(11 downto 0),
@@ -218,7 +218,7 @@ ov7670_controller_0: component design_1_ov7670_controller_0_0
     );
 ovo_7670_caputre_0: component design_1_ovo_7670_caputre_0_0
      port map (
-      addr(18 downto 0) => ovo_7670_caputre_0_addr(18 downto 0),
+      addr(16 downto 0) => ovo_7670_caputre_0_addr(16 downto 0),
       camera_h_ref => camera_h_ref_0_1,
       camera_v_sync => camera_v_sync_0_1,
       din(7 downto 0) => din_0_1(7 downto 0),

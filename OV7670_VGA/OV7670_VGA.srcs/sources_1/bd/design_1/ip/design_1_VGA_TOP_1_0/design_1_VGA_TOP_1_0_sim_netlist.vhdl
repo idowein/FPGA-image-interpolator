@@ -1,10 +1,10 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
--- Date        : Tue Apr 29 17:08:41 2025
+-- Date        : Wed May  7 14:57:41 2025
 -- Host        : Ido running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
---               c:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_VGA_TOP_1_0/design_1_VGA_TOP_1_0_sim_netlist.vhdl
+--               C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_VGA_TOP_1_0/design_1_VGA_TOP_1_0_sim_netlist.vhdl
 -- Design      : design_1_VGA_TOP_1_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -237,13 +237,13 @@ architecture STRUCTURE of design_1_VGA_TOP_1_0_VGA_TX is
   signal \bg_red_reg[3]_i_9_n_2\ : STD_LOGIC;
   signal \bg_red_reg[3]_i_9_n_3\ : STD_LOGIC;
   signal eqOp : STD_LOGIC;
-  signal \fr_addr[18]_i_2_n_0\ : STD_LOGIC;
-  signal \fr_addr[18]_i_3_n_0\ : STD_LOGIC;
-  signal \fr_addr[18]_i_4_n_0\ : STD_LOGIC;
-  signal \fr_addr[18]_i_5_n_0\ : STD_LOGIC;
-  signal \fr_addr[18]_i_6_n_0\ : STD_LOGIC;
-  signal \fr_addr_reg[18]_i_1_n_2\ : STD_LOGIC;
-  signal \fr_addr_reg[18]_i_1_n_3\ : STD_LOGIC;
+  signal \fr_addr[16]_i_2_n_0\ : STD_LOGIC;
+  signal \fr_addr[16]_i_3_n_0\ : STD_LOGIC;
+  signal \fr_addr[16]_i_4_n_0\ : STD_LOGIC;
+  signal \fr_addr[16]_i_5_n_0\ : STD_LOGIC;
+  signal \fr_addr[16]_i_6_n_0\ : STD_LOGIC;
+  signal \fr_addr_reg[16]_i_1_n_2\ : STD_LOGIC;
+  signal \fr_addr_reg[16]_i_1_n_3\ : STD_LOGIC;
   signal geqOp : STD_LOGIC;
   signal geqOp1_in : STD_LOGIC;
   signal \geqOp_inferred__0/i__carry__0_n_2\ : STD_LOGIC;
@@ -413,8 +413,8 @@ architecture STRUCTURE of design_1_VGA_TOP_1_0_VGA_TX is
   signal \NLW_bg_red_reg[3]_i_65_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \NLW_bg_red_reg[3]_i_82_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \NLW_bg_red_reg[3]_i_9_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \NLW_fr_addr_reg[18]_i_1_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 to 3 );
-  signal \NLW_fr_addr_reg[18]_i_1_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal \NLW_fr_addr_reg[16]_i_1_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 to 3 );
+  signal \NLW_fr_addr_reg[16]_i_1_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \NLW_geqOp_inferred__0/i__carry_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \NLW_geqOp_inferred__0/i__carry__0_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 2 );
   signal \NLW_geqOp_inferred__0/i__carry__0_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -2166,65 +2166,65 @@ begin
       S(1) => \bg_red[3]_i_31_n_0\,
       S(0) => \bg_red[3]_i_32_n_0\
     );
-\fr_addr[18]_i_2\: unisim.vcomponents.LUT1
+\fr_addr[16]_i_2\: unisim.vcomponents.LUT1
     generic map(
       INIT => X"1"
     )
         port map (
       I0 => h_cnt_reg_reg(9),
-      O => \fr_addr[18]_i_2_n_0\
+      O => \fr_addr[16]_i_2_n_0\
     );
-\fr_addr[18]_i_3\: unisim.vcomponents.LUT1
+\fr_addr[16]_i_3\: unisim.vcomponents.LUT1
     generic map(
       INIT => X"1"
     )
         port map (
       I0 => h_cnt_reg_reg(7),
-      O => \fr_addr[18]_i_3_n_0\
+      O => \fr_addr[16]_i_3_n_0\
     );
-\fr_addr[18]_i_4\: unisim.vcomponents.LUT2
+\fr_addr[16]_i_4\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"1"
     )
         port map (
       I0 => h_cnt_reg_reg(10),
       I1 => h_cnt_reg_reg(11),
-      O => \fr_addr[18]_i_4_n_0\
+      O => \fr_addr[16]_i_4_n_0\
     );
-\fr_addr[18]_i_5\: unisim.vcomponents.LUT2
+\fr_addr[16]_i_5\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"2"
     )
         port map (
       I0 => h_cnt_reg_reg(9),
       I1 => h_cnt_reg_reg(8),
-      O => \fr_addr[18]_i_5_n_0\
+      O => \fr_addr[16]_i_5_n_0\
     );
-\fr_addr[18]_i_6\: unisim.vcomponents.LUT2
+\fr_addr[16]_i_6\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"2"
     )
         port map (
       I0 => h_cnt_reg_reg(7),
       I1 => h_cnt_reg_reg(6),
-      O => \fr_addr[18]_i_6_n_0\
+      O => \fr_addr[16]_i_6_n_0\
     );
-\fr_addr_reg[18]_i_1\: unisim.vcomponents.CARRY4
+\fr_addr_reg[16]_i_1\: unisim.vcomponents.CARRY4
      port map (
       CI => '0',
-      CO(3) => \NLW_fr_addr_reg[18]_i_1_CO_UNCONNECTED\(3),
+      CO(3) => \NLW_fr_addr_reg[16]_i_1_CO_UNCONNECTED\(3),
       CO(2) => \^co\(0),
-      CO(1) => \fr_addr_reg[18]_i_1_n_2\,
-      CO(0) => \fr_addr_reg[18]_i_1_n_3\,
+      CO(1) => \fr_addr_reg[16]_i_1_n_2\,
+      CO(0) => \fr_addr_reg[16]_i_1_n_3\,
       CYINIT => '0',
       DI(3 downto 2) => B"00",
-      DI(1) => \fr_addr[18]_i_2_n_0\,
-      DI(0) => \fr_addr[18]_i_3_n_0\,
-      O(3 downto 0) => \NLW_fr_addr_reg[18]_i_1_O_UNCONNECTED\(3 downto 0),
+      DI(1) => \fr_addr[16]_i_2_n_0\,
+      DI(0) => \fr_addr[16]_i_3_n_0\,
+      O(3 downto 0) => \NLW_fr_addr_reg[16]_i_1_O_UNCONNECTED\(3 downto 0),
       S(3) => '0',
-      S(2) => \fr_addr[18]_i_4_n_0\,
-      S(1) => \fr_addr[18]_i_5_n_0\,
-      S(0) => \fr_addr[18]_i_6_n_0\
+      S(2) => \fr_addr[16]_i_4_n_0\,
+      S(1) => \fr_addr[16]_i_5_n_0\,
+      S(0) => \fr_addr[16]_i_6_n_0\
     );
 \geqOp_carry__0_i_1\: unisim.vcomponents.LUT2
     generic map(
@@ -3151,28 +3151,28 @@ ltOp_carry_i_8: unisim.vcomponents.LUT2
     );
 \v_cnt_reg[0]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"0000000000000002"
+      INIT => X"0000000000000020"
     )
         port map (
       I0 => eqOp,
       I1 => \v_cnt_reg[0]_i_3_n_0\,
-      I2 => v_cnt(7),
-      I3 => v_cnt(6),
-      I4 => v_cnt(4),
-      I5 => v_cnt(5),
+      I2 => \^v_cnt_reg_reg[11]_0\(0),
+      I3 => v_cnt(8),
+      I4 => v_cnt(7),
+      I5 => v_cnt(6),
       O => v_cnt_reg
     );
 \v_cnt_reg[0]_i_3\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"FFFBFFFFFFFFFFFF"
+      INIT => X"FFFFFFFFFFFFEFFF"
     )
         port map (
-      I0 => v_cnt(8),
-      I1 => \^v_cnt_reg_reg[11]_0\(0),
-      I2 => \v_cnt_reg[0]_i_5_n_0\,
-      I3 => \v_cnt_reg[0]_i_6_n_0\,
-      I4 => v_cnt(3),
-      I5 => v_cnt(2),
+      I0 => v_cnt(5),
+      I1 => v_cnt(4),
+      I2 => v_cnt(3),
+      I3 => v_cnt(2),
+      I4 => \v_cnt_reg[0]_i_5_n_0\,
+      I5 => \v_cnt_reg[0]_i_6_n_0\,
       O => \v_cnt_reg[0]_i_3_n_0\
     );
 \v_cnt_reg[0]_i_4\: unisim.vcomponents.LUT1
@@ -3477,7 +3477,7 @@ entity design_1_VGA_TOP_1_0_pixel_render is
     SR : out STD_LOGIC_VECTOR ( 0 to 0 );
     \val_tmp_reg[8]_0\ : out STD_LOGIC_VECTOR ( 2 downto 0 );
     \h_cnt_reg_reg[11]\ : out STD_LOGIC_VECTOR ( 0 to 0 );
-    frame_adress : out STD_LOGIC_VECTOR ( 18 downto 0 );
+    frame_adress : out STD_LOGIC_VECTOR ( 16 downto 0 );
     vga_red : out STD_LOGIC_VECTOR ( 3 downto 0 );
     vga_blue : out STD_LOGIC_VECTOR ( 3 downto 0 );
     vga_green : out STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -3523,14 +3523,12 @@ architecture STRUCTURE of design_1_VGA_TOP_1_0_pixel_render is
   signal \_inferred__3/i__carry__2_n_1\ : STD_LOGIC;
   signal \_inferred__3/i__carry__2_n_2\ : STD_LOGIC;
   signal \_inferred__3/i__carry__2_n_3\ : STD_LOGIC;
-  signal \_inferred__3/i__carry__3_n_2\ : STD_LOGIC;
-  signal \_inferred__3/i__carry__3_n_3\ : STD_LOGIC;
   signal \_inferred__3/i__carry_n_0\ : STD_LOGIC;
   signal \_inferred__3/i__carry_n_1\ : STD_LOGIC;
   signal \_inferred__3/i__carry_n_2\ : STD_LOGIC;
   signal \_inferred__3/i__carry_n_3\ : STD_LOGIC;
-  signal fr_addr : STD_LOGIC_VECTOR ( 18 downto 0 );
-  signal \^frame_adress\ : STD_LOGIC_VECTOR ( 18 downto 0 );
+  signal fr_addr : STD_LOGIC_VECTOR ( 16 downto 0 );
+  signal \^frame_adress\ : STD_LOGIC_VECTOR ( 16 downto 0 );
   signal \geqOp_carry__0_n_3\ : STD_LOGIC;
   signal geqOp_carry_n_0 : STD_LOGIC;
   signal geqOp_carry_n_1 : STD_LOGIC;
@@ -3553,16 +3551,14 @@ architecture STRUCTURE of design_1_VGA_TOP_1_0_pixel_render is
   signal \i__carry__2_i_6_n_0\ : STD_LOGIC;
   signal \i__carry__2_i_7_n_0\ : STD_LOGIC;
   signal \i__carry__2_i_8_n_0\ : STD_LOGIC;
-  signal \i__carry__3_i_3_n_0\ : STD_LOGIC;
-  signal \i__carry__3_i_4_n_0\ : STD_LOGIC;
-  signal \i__carry__3_i_5_n_0\ : STD_LOGIC;
+  signal \i__carry__3_i_1_n_0\ : STD_LOGIC;
   signal \i__carry_i_1__1_n_0\ : STD_LOGIC;
   signal \i__carry_i_5__2_n_0\ : STD_LOGIC;
   signal \i__carry_i_6__2_n_0\ : STD_LOGIC;
   signal \i__carry_i_7__1_n_0\ : STD_LOGIC;
   signal \i__carry_i_8__0_n_0\ : STD_LOGIC;
-  signal p_1_in : STD_LOGIC_VECTOR ( 17 downto 1 );
-  signal val_tmp_reg : STD_LOGIC_VECTOR ( 18 downto 1 );
+  signal p_1_in : STD_LOGIC_VECTOR ( 15 downto 1 );
+  signal val_tmp_reg : STD_LOGIC_VECTOR ( 16 downto 1 );
   signal \val_tmp_reg[0]_i_2_n_0\ : STD_LOGIC;
   signal \val_tmp_reg[0]_i_2_n_1\ : STD_LOGIC;
   signal \val_tmp_reg[0]_i_2_n_2\ : STD_LOGIC;
@@ -3579,10 +3575,6 @@ architecture STRUCTURE of design_1_VGA_TOP_1_0_pixel_render is
   signal \val_tmp_reg[12]_i_1_n_5\ : STD_LOGIC;
   signal \val_tmp_reg[12]_i_1_n_6\ : STD_LOGIC;
   signal \val_tmp_reg[12]_i_1_n_7\ : STD_LOGIC;
-  signal \val_tmp_reg[16]_i_1_n_2\ : STD_LOGIC;
-  signal \val_tmp_reg[16]_i_1_n_3\ : STD_LOGIC;
-  signal \val_tmp_reg[16]_i_1_n_5\ : STD_LOGIC;
-  signal \val_tmp_reg[16]_i_1_n_6\ : STD_LOGIC;
   signal \val_tmp_reg[16]_i_1_n_7\ : STD_LOGIC;
   signal \val_tmp_reg[4]_i_1_n_0\ : STD_LOGIC;
   signal \val_tmp_reg[4]_i_1_n_1\ : STD_LOGIC;
@@ -3602,7 +3594,7 @@ architecture STRUCTURE of design_1_VGA_TOP_1_0_pixel_render is
   signal \val_tmp_reg[8]_i_1_n_6\ : STD_LOGIC;
   signal \val_tmp_reg[8]_i_1_n_7\ : STD_LOGIC;
   signal \val_zoom[0]_i_2_n_0\ : STD_LOGIC;
-  signal val_zoom_reg : STD_LOGIC_VECTOR ( 18 downto 0 );
+  signal val_zoom_reg : STD_LOGIC_VECTOR ( 16 downto 0 );
   signal \val_zoom_reg[0]_i_1_n_0\ : STD_LOGIC;
   signal \val_zoom_reg[0]_i_1_n_1\ : STD_LOGIC;
   signal \val_zoom_reg[0]_i_1_n_2\ : STD_LOGIC;
@@ -3619,10 +3611,6 @@ architecture STRUCTURE of design_1_VGA_TOP_1_0_pixel_render is
   signal \val_zoom_reg[12]_i_1_n_5\ : STD_LOGIC;
   signal \val_zoom_reg[12]_i_1_n_6\ : STD_LOGIC;
   signal \val_zoom_reg[12]_i_1_n_7\ : STD_LOGIC;
-  signal \val_zoom_reg[16]_i_1_n_2\ : STD_LOGIC;
-  signal \val_zoom_reg[16]_i_1_n_3\ : STD_LOGIC;
-  signal \val_zoom_reg[16]_i_1_n_5\ : STD_LOGIC;
-  signal \val_zoom_reg[16]_i_1_n_6\ : STD_LOGIC;
   signal \val_zoom_reg[16]_i_1_n_7\ : STD_LOGIC;
   signal \val_zoom_reg[4]_i_1_n_0\ : STD_LOGIC;
   signal \val_zoom_reg[4]_i_1_n_1\ : STD_LOGIC;
@@ -3640,18 +3628,18 @@ architecture STRUCTURE of design_1_VGA_TOP_1_0_pixel_render is
   signal \val_zoom_reg[8]_i_1_n_5\ : STD_LOGIC;
   signal \val_zoom_reg[8]_i_1_n_6\ : STD_LOGIC;
   signal \val_zoom_reg[8]_i_1_n_7\ : STD_LOGIC;
-  signal \NLW__inferred__3/i__carry__3_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 2 );
-  signal \NLW__inferred__3/i__carry__3_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 to 3 );
+  signal \NLW__inferred__3/i__carry__3_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal \NLW__inferred__3/i__carry__3_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 1 );
   signal NLW_geqOp_carry_O_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \NLW_geqOp_carry__0_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 2 );
   signal \NLW_geqOp_carry__0_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \NLW_geqOp_inferred__0/i__carry_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \NLW_geqOp_inferred__0/i__carry__0_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 2 );
   signal \NLW_geqOp_inferred__0/i__carry__0_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \NLW_val_tmp_reg[16]_i_1_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 2 );
-  signal \NLW_val_tmp_reg[16]_i_1_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 to 3 );
-  signal \NLW_val_zoom_reg[16]_i_1_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 2 );
-  signal \NLW_val_zoom_reg[16]_i_1_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 to 3 );
+  signal \NLW_val_tmp_reg[16]_i_1_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal \NLW_val_tmp_reg[16]_i_1_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 1 );
+  signal \NLW_val_zoom_reg[16]_i_1_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal \NLW_val_zoom_reg[16]_i_1_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 1 );
   attribute METHODOLOGY_DRC_VIOS : string;
   attribute METHODOLOGY_DRC_VIOS of \_inferred__3/i__carry\ : label is "{SYNTH-8 {cell *THIS*}}";
   attribute METHODOLOGY_DRC_VIOS of \_inferred__3/i__carry__0\ : label is "{SYNTH-8 {cell *THIS*}}";
@@ -3662,7 +3650,7 @@ architecture STRUCTURE of design_1_VGA_TOP_1_0_pixel_render is
   attribute METHODOLOGY_DRC_VIOS of \geqOp_inferred__0/i__carry__0\ : label is "{SYNTH-8 {cell *THIS*}}";
 begin
   SR(0) <= \^sr\(0);
-  frame_adress(18 downto 0) <= \^frame_adress\(18 downto 0);
+  frame_adress(16 downto 0) <= \^frame_adress\(16 downto 0);
   \val_tmp_reg[8]_0\(2 downto 0) <= \^val_tmp_reg[8]_0\(2 downto 0);
 \_inferred__3/i__carry\: unisim.vcomponents.CARRY4
      port map (
@@ -3728,18 +3716,13 @@ begin
 \_inferred__3/i__carry__3\: unisim.vcomponents.CARRY4
      port map (
       CI => \_inferred__3/i__carry__2_n_0\,
-      CO(3 downto 2) => \NLW__inferred__3/i__carry__3_CO_UNCONNECTED\(3 downto 2),
-      CO(1) => \_inferred__3/i__carry__3_n_2\,
-      CO(0) => \_inferred__3/i__carry__3_n_3\,
+      CO(3 downto 0) => \NLW__inferred__3/i__carry__3_CO_UNCONNECTED\(3 downto 0),
       CYINIT => '0',
-      DI(3 downto 2) => B"00",
-      DI(1 downto 0) => p_1_in(17 downto 16),
-      O(3) => \NLW__inferred__3/i__carry__3_O_UNCONNECTED\(3),
-      O(2 downto 0) => fr_addr(18 downto 16),
-      S(3) => '0',
-      S(2) => \i__carry__3_i_3_n_0\,
-      S(1) => \i__carry__3_i_4_n_0\,
-      S(0) => \i__carry__3_i_5_n_0\
+      DI(3 downto 0) => B"0000",
+      O(3 downto 1) => \NLW__inferred__3/i__carry__3_O_UNCONNECTED\(3 downto 1),
+      O(0) => fr_addr(16),
+      S(3 downto 1) => B"000",
+      S(0) => \i__carry__3_i_1_n_0\
     );
 \bg_blue_reg[0]\: unisim.vcomponents.FDRE
      port map (
@@ -3923,28 +3906,6 @@ begin
       CE => CO(0),
       D => fr_addr(16),
       Q => \^frame_adress\(16),
-      R => \^sr\(0)
-    );
-\fr_addr_reg[17]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => pix_clk,
-      CE => CO(0),
-      D => fr_addr(17),
-      Q => \^frame_adress\(17),
-      R => \^sr\(0)
-    );
-\fr_addr_reg[18]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => pix_clk,
-      CE => CO(0),
-      D => fr_addr(18),
-      Q => \^frame_adress\(18),
       R => \^sr\(0)
     );
 \fr_addr_reg[1]\: unisim.vcomponents.FDRE
@@ -4339,56 +4300,16 @@ geqOp_carry: unisim.vcomponents.CARRY4
       I3 => val_zoom_reg(12),
       O => \i__carry__2_i_8_n_0\
     );
-\i__carry__3_i_1\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"2"
-    )
-        port map (
-      I0 => zoom_x2,
-      I1 => val_tmp_reg(17),
-      O => p_1_in(17)
-    );
-\i__carry__3_i_2\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"2"
-    )
-        port map (
-      I0 => zoom_x2,
-      I1 => val_tmp_reg(16),
-      O => p_1_in(16)
-    );
-\i__carry__3_i_3\: unisim.vcomponents.LUT4
+\i__carry__3_i_1\: unisim.vcomponents.LUT4
     generic map(
       INIT => X"C3AA"
     )
         port map (
-      I0 => \^frame_adress\(18),
-      I1 => val_zoom_reg(18),
-      I2 => val_tmp_reg(18),
+      I0 => \^frame_adress\(16),
+      I1 => val_zoom_reg(16),
+      I2 => val_tmp_reg(16),
       I3 => zoom_x2,
-      O => \i__carry__3_i_3_n_0\
-    );
-\i__carry__3_i_4\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"AC5C"
-    )
-        port map (
-      I0 => val_tmp_reg(17),
-      I1 => \^frame_adress\(17),
-      I2 => zoom_x2,
-      I3 => val_zoom_reg(17),
-      O => \i__carry__3_i_4_n_0\
-    );
-\i__carry__3_i_5\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"AC5C"
-    )
-        port map (
-      I0 => val_tmp_reg(16),
-      I1 => \^frame_adress\(16),
-      I2 => zoom_x2,
-      I3 => val_zoom_reg(16),
-      O => \i__carry__3_i_5_n_0\
+      O => \i__carry__3_i_1_n_0\
     );
 \i__carry_i_1__1\: unisim.vcomponents.LUT3
     generic map(
@@ -4592,39 +4513,13 @@ geqOp_carry: unisim.vcomponents.CARRY4
 \val_tmp_reg[16]_i_1\: unisim.vcomponents.CARRY4
      port map (
       CI => \val_tmp_reg[12]_i_1_n_0\,
-      CO(3 downto 2) => \NLW_val_tmp_reg[16]_i_1_CO_UNCONNECTED\(3 downto 2),
-      CO(1) => \val_tmp_reg[16]_i_1_n_2\,
-      CO(0) => \val_tmp_reg[16]_i_1_n_3\,
+      CO(3 downto 0) => \NLW_val_tmp_reg[16]_i_1_CO_UNCONNECTED\(3 downto 0),
       CYINIT => '0',
       DI(3 downto 0) => B"0000",
-      O(3) => \NLW_val_tmp_reg[16]_i_1_O_UNCONNECTED\(3),
-      O(2) => \val_tmp_reg[16]_i_1_n_5\,
-      O(1) => \val_tmp_reg[16]_i_1_n_6\,
+      O(3 downto 1) => \NLW_val_tmp_reg[16]_i_1_O_UNCONNECTED\(3 downto 1),
       O(0) => \val_tmp_reg[16]_i_1_n_7\,
-      S(3) => '0',
-      S(2 downto 0) => val_tmp_reg(18 downto 16)
-    );
-\val_tmp_reg[17]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => pix_clk,
-      CE => val_tmp,
-      D => \val_tmp_reg[16]_i_1_n_6\,
-      Q => val_tmp_reg(17),
-      R => \^sr\(0)
-    );
-\val_tmp_reg[18]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => pix_clk,
-      CE => val_tmp,
-      D => \val_tmp_reg[16]_i_1_n_5\,
-      Q => val_tmp_reg(18),
-      R => \^sr\(0)
+      S(3 downto 1) => B"000",
+      S(0) => val_tmp_reg(16)
     );
 \val_tmp_reg[1]\: unisim.vcomponents.FDRE
     generic map(
@@ -4891,39 +4786,13 @@ geqOp_carry: unisim.vcomponents.CARRY4
 \val_zoom_reg[16]_i_1\: unisim.vcomponents.CARRY4
      port map (
       CI => \val_zoom_reg[12]_i_1_n_0\,
-      CO(3 downto 2) => \NLW_val_zoom_reg[16]_i_1_CO_UNCONNECTED\(3 downto 2),
-      CO(1) => \val_zoom_reg[16]_i_1_n_2\,
-      CO(0) => \val_zoom_reg[16]_i_1_n_3\,
+      CO(3 downto 0) => \NLW_val_zoom_reg[16]_i_1_CO_UNCONNECTED\(3 downto 0),
       CYINIT => '0',
       DI(3 downto 0) => B"0000",
-      O(3) => \NLW_val_zoom_reg[16]_i_1_O_UNCONNECTED\(3),
-      O(2) => \val_zoom_reg[16]_i_1_n_5\,
-      O(1) => \val_zoom_reg[16]_i_1_n_6\,
+      O(3 downto 1) => \NLW_val_zoom_reg[16]_i_1_O_UNCONNECTED\(3 downto 1),
       O(0) => \val_zoom_reg[16]_i_1_n_7\,
-      S(3) => '0',
-      S(2 downto 0) => val_zoom_reg(18 downto 16)
-    );
-\val_zoom_reg[17]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => pix_clk,
-      CE => CO(0),
-      D => \val_zoom_reg[16]_i_1_n_6\,
-      Q => val_zoom_reg(17),
-      R => \^sr\(0)
-    );
-\val_zoom_reg[18]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => pix_clk,
-      CE => CO(0),
-      D => \val_zoom_reg[16]_i_1_n_5\,
-      Q => val_zoom_reg(18),
-      R => \^sr\(0)
+      S(3 downto 1) => B"000",
+      S(0) => val_zoom_reg(16)
     );
 \val_zoom_reg[1]\: unisim.vcomponents.FDRE
     generic map(
@@ -5061,7 +4930,7 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity design_1_VGA_TOP_1_0_VGA_TOP is
   port (
-    frame_adress : out STD_LOGIC_VECTOR ( 18 downto 0 );
+    frame_adress : out STD_LOGIC_VECTOR ( 16 downto 0 );
     vga_red : out STD_LOGIC_VECTOR ( 3 downto 0 );
     vga_blue : out STD_LOGIC_VECTOR ( 3 downto 0 );
     vga_green : out STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -5154,7 +5023,7 @@ pixel_renderer_inst: entity work.design_1_VGA_TOP_1_0_pixel_render
       \bg_red[3]_i_6_0\(1) => vga_timing_inst_n_44,
       \bg_red[3]_i_6_0\(0) => vga_timing_inst_n_45,
       \bg_red_reg[3]_0\(0) => bg_red,
-      frame_adress(18 downto 0) => frame_adress(18 downto 0),
+      frame_adress(16 downto 0) => frame_adress(16 downto 0),
       \geqOp_inferred__0/i__carry__0_0\(2) => vga_timing_inst_n_19,
       \geqOp_inferred__0/i__carry__0_0\(1) => vga_timing_inst_n_20,
       \geqOp_inferred__0/i__carry__0_0\(0) => vga_timing_inst_n_21,
@@ -5256,7 +5125,7 @@ entity design_1_VGA_TOP_1_0 is
     vga_red : out STD_LOGIC_VECTOR ( 3 downto 0 );
     vga_blue : out STD_LOGIC_VECTOR ( 3 downto 0 );
     vga_green : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    frame_adress : out STD_LOGIC_VECTOR ( 18 downto 0 )
+    frame_adress : out STD_LOGIC_VECTOR ( 16 downto 0 )
   );
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of design_1_VGA_TOP_1_0 : entity is true;
@@ -5280,7 +5149,7 @@ U0: entity work.design_1_VGA_TOP_1_0_VGA_TOP
      port map (
       VGA_H_sync => VGA_H_sync,
       cntl => cntl,
-      frame_adress(18 downto 0) => frame_adress(18 downto 0),
+      frame_adress(16 downto 0) => frame_adress(16 downto 0),
       frame_fix(11 downto 0) => frame_fix(11 downto 0),
       pix_clk => pix_clk,
       vga_V_sync => vga_V_sync,

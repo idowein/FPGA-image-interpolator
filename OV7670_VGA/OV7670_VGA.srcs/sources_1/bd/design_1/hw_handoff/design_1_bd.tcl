@@ -220,7 +220,7 @@ proc create_root_design { parentCell } {
    CONFIG.Register_PortB_Output_of_Memory_Primitives {true} \
    CONFIG.Use_Byte_Write_Enable {false} \
    CONFIG.Use_RSTA_Pin {false} \
-   CONFIG.Write_Depth_A {307200} \
+   CONFIG.Write_Depth_A {76800} \
    CONFIG.Write_Width_A {12} \
    CONFIG.Write_Width_B {12} \
    CONFIG.use_bram_block {Stand_Alone} \

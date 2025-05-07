@@ -64,7 +64,7 @@ ENTITY design_1_VGA_TOP_1_0 IS
     vga_red : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
     vga_blue : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
     vga_green : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
-    frame_adress : OUT STD_LOGIC_VECTOR(18 DOWNTO 0)
+    frame_adress : OUT STD_LOGIC_VECTOR(16 DOWNTO 0)
   );
 END design_1_VGA_TOP_1_0;
 
@@ -82,7 +82,7 @@ ARCHITECTURE design_1_VGA_TOP_1_0_arch OF design_1_VGA_TOP_1_0 IS
       vga_red : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
       vga_blue : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
       vga_green : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
-      frame_adress : OUT STD_LOGIC_VECTOR(18 DOWNTO 0)
+      frame_adress : OUT STD_LOGIC_VECTOR(16 DOWNTO 0)
     );
   END COMPONENT VGA_TOP;
   ATTRIBUTE X_CORE_INFO : STRING;
