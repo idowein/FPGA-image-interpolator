@@ -57,14 +57,18 @@ ENTITY design_1_BRAM_MUX_0_0 IS
   PORT (
     addr_in : IN STD_LOGIC_VECTOR(18 DOWNTO 0);
     data_in : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
-    write_enable : IN STD_LOGIC;
-    bram_select : IN STD_LOGIC;
-    addr_bram1 : OUT STD_LOGIC_VECTOR(18 DOWNTO 0);
-    data_bram1 : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
-    we_bram1 : OUT STD_LOGIC;
-    addr_bram2 : OUT STD_LOGIC_VECTOR(16 DOWNTO 0);
-    data_bram2 : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
-    we_bram2 : OUT STD_LOGIC
+    capture_wea : IN STD_LOGIC;
+    zoom : IN STD_LOGIC;
+    bili_cntl : IN STD_LOGIC;
+    bili_pixel_in : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
+    bili_address_write : IN STD_LOGIC_VECTOR(18 DOWNTO 0);
+    bili_wea : IN STD_LOGIC;
+    addr_bram_full : OUT STD_LOGIC_VECTOR(18 DOWNTO 0);
+    data_bram_full : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
+    we_bram_full : OUT STD_LOGIC;
+    addr_bram_small : OUT STD_LOGIC_VECTOR(16 DOWNTO 0);
+    data_bram_small : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
+    we_bram_small : OUT STD_LOGIC
   );
 END design_1_BRAM_MUX_0_0;
 
@@ -75,14 +79,18 @@ ARCHITECTURE design_1_BRAM_MUX_0_0_arch OF design_1_BRAM_MUX_0_0 IS
     PORT (
       addr_in : IN STD_LOGIC_VECTOR(18 DOWNTO 0);
       data_in : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
-      write_enable : IN STD_LOGIC;
-      bram_select : IN STD_LOGIC;
-      addr_bram1 : OUT STD_LOGIC_VECTOR(18 DOWNTO 0);
-      data_bram1 : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
-      we_bram1 : OUT STD_LOGIC;
-      addr_bram2 : OUT STD_LOGIC_VECTOR(16 DOWNTO 0);
-      data_bram2 : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
-      we_bram2 : OUT STD_LOGIC
+      capture_wea : IN STD_LOGIC;
+      zoom : IN STD_LOGIC;
+      bili_cntl : IN STD_LOGIC;
+      bili_pixel_in : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
+      bili_address_write : IN STD_LOGIC_VECTOR(18 DOWNTO 0);
+      bili_wea : IN STD_LOGIC;
+      addr_bram_full : OUT STD_LOGIC_VECTOR(18 DOWNTO 0);
+      data_bram_full : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
+      we_bram_full : OUT STD_LOGIC;
+      addr_bram_small : OUT STD_LOGIC_VECTOR(16 DOWNTO 0);
+      data_bram_small : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
+      we_bram_small : OUT STD_LOGIC
     );
   END COMPONENT BRAM_MUX;
   ATTRIBUTE IP_DEFINITION_SOURCE : STRING;
@@ -92,13 +100,17 @@ BEGIN
     PORT MAP (
       addr_in => addr_in,
       data_in => data_in,
-      write_enable => write_enable,
-      bram_select => bram_select,
-      addr_bram1 => addr_bram1,
-      data_bram1 => data_bram1,
-      we_bram1 => we_bram1,
-      addr_bram2 => addr_bram2,
-      data_bram2 => data_bram2,
-      we_bram2 => we_bram2
+      capture_wea => capture_wea,
+      zoom => zoom,
+      bili_cntl => bili_cntl,
+      bili_pixel_in => bili_pixel_in,
+      bili_address_write => bili_address_write,
+      bili_wea => bili_wea,
+      addr_bram_full => addr_bram_full,
+      data_bram_full => data_bram_full,
+      we_bram_full => we_bram_full,
+      addr_bram_small => addr_bram_small,
+      data_bram_small => data_bram_small,
+      we_bram_small => we_bram_small
     );
 END design_1_BRAM_MUX_0_0_arch;

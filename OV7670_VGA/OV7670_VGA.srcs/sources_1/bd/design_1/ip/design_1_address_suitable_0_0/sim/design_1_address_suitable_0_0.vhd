@@ -55,7 +55,9 @@ USE ieee.numeric_std.ALL;
 
 ENTITY design_1_address_suitable_0_0 IS
   PORT (
-    addr_in : IN STD_LOGIC_VECTOR(18 DOWNTO 0);
+    bili_cntl : IN STD_LOGIC;
+    bili_addr : IN STD_LOGIC_VECTOR(16 DOWNTO 0);
+    addr_in_full_image : IN STD_LOGIC_VECTOR(18 DOWNTO 0);
     addr_out : OUT STD_LOGIC_VECTOR(16 DOWNTO 0)
   );
 END design_1_address_suitable_0_0;
@@ -65,7 +67,9 @@ ARCHITECTURE design_1_address_suitable_0_0_arch OF design_1_address_suitable_0_0
   ATTRIBUTE DowngradeIPIdentifiedWarnings OF design_1_address_suitable_0_0_arch: ARCHITECTURE IS "yes";
   COMPONENT address_suitable IS
     PORT (
-      addr_in : IN STD_LOGIC_VECTOR(18 DOWNTO 0);
+      bili_cntl : IN STD_LOGIC;
+      bili_addr : IN STD_LOGIC_VECTOR(16 DOWNTO 0);
+      addr_in_full_image : IN STD_LOGIC_VECTOR(18 DOWNTO 0);
       addr_out : OUT STD_LOGIC_VECTOR(16 DOWNTO 0)
     );
   END COMPONENT address_suitable;
@@ -74,7 +78,9 @@ ARCHITECTURE design_1_address_suitable_0_0_arch OF design_1_address_suitable_0_0
 BEGIN
   U0 : address_suitable
     PORT MAP (
-      addr_in => addr_in,
+      bili_cntl => bili_cntl,
+      bili_addr => bili_addr,
+      addr_in_full_image => addr_in_full_image,
       addr_out => addr_out
     );
 END design_1_address_suitable_0_0_arch;

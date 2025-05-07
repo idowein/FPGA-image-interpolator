@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x3547BADBB9A4E431",
+      "boundary_crc": "0x2650E4DCC926C6EF",
       "device": "xc7a100tcsg324-1",
       "name": "design_1",
       "synth_flow_mode": "Hierarchical",
@@ -21,8 +21,9 @@
       },
       "cntl_0": "",
       "ovo_7670_caputre_0": "",
-      "BRAM_MUX_0": "",
-      "ov7670_controller_0": ""
+      "ov7670_controller_0": "",
+      "BILINEAR_INTERPOLATI_0": "",
+      "BRAM_MUX_0": ""
     },
     "ports": {
       "clk_in1": {
@@ -136,6 +137,9 @@
         "direction": "O",
         "left": "3",
         "right": "0"
+      },
+      "bili_cntl": {
+        "direction": "I"
       }
     },
     "components": {
@@ -195,10 +199,10 @@
         "xci_name": "design_1_clk_wiz_0_0",
         "parameters": {
           "CLKOUT1_JITTER": {
-            "value": "181.828"
+            "value": "191.696"
           },
           "CLKOUT1_PHASE_ERROR": {
-            "value": "104.359"
+            "value": "114.212"
           },
           "CLKOUT1_REQUESTED_OUT_FREQ": {
             "value": "25"
@@ -207,37 +211,37 @@
             "value": "true"
           },
           "CLKOUT2_JITTER": {
-            "value": "175.402"
+            "value": "251.196"
           },
           "CLKOUT2_PHASE_ERROR": {
-            "value": "98.575"
+            "value": "114.212"
           },
           "CLKOUT2_REQUESTED_OUT_FREQ": {
-            "value": "25"
+            "value": "6.25"
           },
           "CLKOUT2_USED": {
-            "value": "false"
+            "value": "true"
           },
           "CLK_OUT1_PORT": {
             "value": "clk_vga"
           },
           "CLK_OUT2_PORT": {
-            "value": "clk_reg"
+            "value": "clk_interpolation"
           },
           "MMCM_CLKFBOUT_MULT_F": {
-            "value": "9.125"
+            "value": "8.000"
           },
           "MMCM_CLKOUT0_DIVIDE_F": {
-            "value": "36.500"
+            "value": "32.000"
           },
           "MMCM_CLKOUT1_DIVIDE": {
-            "value": "1"
+            "value": "128"
           },
           "MMCM_DIVCLK_DIVIDE": {
             "value": "1"
           },
           "NUM_OUT_CLKS": {
-            "value": "1"
+            "value": "2"
           },
           "RESET_PORT": {
             "value": "resetn"
@@ -284,6 +288,19 @@
             "direction": "I",
             "left": "18",
             "right": "0"
+          },
+          "doutb1": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          },
+          "bili_addr": {
+            "direction": "I",
+            "left": "16",
+            "right": "0"
+          },
+          "bili_cntl": {
+            "direction": "I"
           }
         },
         "components": {
@@ -347,7 +364,15 @@
               "boundary_crc": "0x0"
             },
             "ports": {
-              "addr_in": {
+              "bili_cntl": {
+                "direction": "I"
+              },
+              "bili_addr": {
+                "direction": "I",
+                "left": "16",
+                "right": "0"
+              },
+              "addr_in_full_image": {
                 "direction": "I",
                 "left": "18",
                 "right": "0"
@@ -397,16 +422,28 @@
               "blk_mem_gen_1/clkb"
             ]
           },
-          "blk_mem_gen_1_doutb": {
-            "ports": [
-              "blk_mem_gen_1/doutb",
-              "doutb"
-            ]
-          },
           "VGA_TOP_1_frame_adress": {
             "ports": [
               "addr_in",
-              "address_suitable_0/addr_in"
+              "address_suitable_0/addr_in_full_image"
+            ]
+          },
+          "blk_mem_gen_1_doutb": {
+            "ports": [
+              "blk_mem_gen_1/doutb",
+              "doutb1"
+            ]
+          },
+          "bili_addr_1": {
+            "ports": [
+              "bili_addr",
+              "address_suitable_0/bili_addr"
+            ]
+          },
+          "bili_cntl_1": {
+            "ports": [
+              "bili_cntl",
+              "address_suitable_0/bili_cntl"
             ]
           }
         }
@@ -726,59 +763,6 @@
           }
         }
       },
-      "BRAM_MUX_0": {
-        "vlnv": "xilinx.com:module_ref:BRAM_MUX:1.0",
-        "xci_name": "design_1_BRAM_MUX_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "BRAM_MUX",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "addr_in": {
-            "direction": "I",
-            "left": "18",
-            "right": "0"
-          },
-          "data_in": {
-            "direction": "I",
-            "left": "11",
-            "right": "0"
-          },
-          "write_enable": {
-            "direction": "I"
-          },
-          "bram_select": {
-            "direction": "I"
-          },
-          "addr_bram1": {
-            "direction": "O",
-            "left": "18",
-            "right": "0"
-          },
-          "data_bram1": {
-            "direction": "O",
-            "left": "11",
-            "right": "0"
-          },
-          "we_bram1": {
-            "direction": "O"
-          },
-          "addr_bram2": {
-            "direction": "O",
-            "left": "16",
-            "right": "0"
-          },
-          "data_bram2": {
-            "direction": "O",
-            "left": "11",
-            "right": "0"
-          },
-          "we_bram2": {
-            "direction": "O"
-          }
-        }
-      },
       "ov7670_controller_0": {
         "vlnv": "xilinx.com:module_ref:ov7670_controller:1.0",
         "xci_name": "design_1_ov7670_controller_0_0",
@@ -833,6 +817,163 @@
             "direction": "O"
           }
         }
+      },
+      "BILINEAR_INTERPOLATI_0": {
+        "vlnv": "xilinx.com:module_ref:BILINEAR_INTERPOLATION_TOP:1.0",
+        "xci_name": "design_1_BILINEAR_INTERPOLATI_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "BILINEAR_INTERPOLATION_TOP",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk_vga": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
+              },
+              "FREQ_HZ": {
+                "value": "25000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "clk_in1": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "design_1_clk_in1",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "default_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "clk_interpolation": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
+              },
+              "FREQ_HZ": {
+                "value": "6250000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "pixel_in": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "bili_cntl": {
+            "direction": "I"
+          },
+          "write_enable": {
+            "direction": "O"
+          },
+          "pixel_out": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          },
+          "address_write": {
+            "direction": "O",
+            "left": "18",
+            "right": "0"
+          },
+          "address_read": {
+            "direction": "O",
+            "left": "16",
+            "right": "0"
+          }
+        }
+      },
+      "BRAM_MUX_0": {
+        "vlnv": "xilinx.com:module_ref:BRAM_MUX:1.0",
+        "xci_name": "design_1_BRAM_MUX_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "BRAM_MUX",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "addr_in": {
+            "direction": "I",
+            "left": "18",
+            "right": "0"
+          },
+          "data_in": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "capture_wea": {
+            "direction": "I"
+          },
+          "zoom": {
+            "direction": "I"
+          },
+          "bili_cntl": {
+            "direction": "I"
+          },
+          "bili_pixel_in": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "bili_address_write": {
+            "direction": "I",
+            "left": "18",
+            "right": "0"
+          },
+          "bili_wea": {
+            "direction": "I"
+          },
+          "addr_bram_full": {
+            "direction": "O",
+            "left": "18",
+            "right": "0"
+          },
+          "data_bram_full": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          },
+          "we_bram_full": {
+            "direction": "O"
+          },
+          "addr_bram_small": {
+            "direction": "O",
+            "left": "16",
+            "right": "0"
+          },
+          "data_bram_small": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          },
+          "we_bram_small": {
+            "direction": "O"
+          }
+        }
       }
     },
     "nets": {
@@ -840,7 +981,8 @@
         "ports": [
           "clk_in1",
           "clk_wiz_0/clk_in1",
-          "cntl_0/clk"
+          "cntl_0/clk",
+          "BILINEAR_INTERPOLATI_0/clk_in1"
         ]
       },
       "cntl_0_resend_out": {
@@ -881,7 +1023,8 @@
           "blk_mem_gen_0/clkb",
           "zoom_bram_address_suit/clkb",
           "VGA_TOP_WITH_DATA_MUX/pix_clk",
-          "ov7670_controller_0/clk"
+          "ov7670_controller_0/clk",
+          "BILINEAR_INTERPOLATI_0/clk_vga"
         ]
       },
       "ov7670_controller_0_sioc": {
@@ -943,7 +1086,7 @@
           "zoom_x2",
           "VGA_TOP_WITH_DATA_MUX/zoom_x2",
           "ovo_7670_caputre_0/zoom_x2",
-          "BRAM_MUX_0/bram_select"
+          "BRAM_MUX_0/zoom"
         ]
       },
       "VGA_TOP_1_vga_V_sync": {
@@ -988,39 +1131,33 @@
           "BRAM_MUX_0/data_in"
         ]
       },
-      "BRAM_MUX_0_addr_bram2": {
-        "ports": [
-          "BRAM_MUX_0/addr_bram2",
-          "zoom_bram_address_suit/addra"
-        ]
-      },
       "BRAM_MUX_0_addr_bram1": {
         "ports": [
-          "BRAM_MUX_0/addr_bram1",
+          "BRAM_MUX_0/addr_bram_full",
           "blk_mem_gen_0/addra"
         ]
       },
       "BRAM_MUX_0_data_bram1": {
         "ports": [
-          "BRAM_MUX_0/data_bram1",
+          "BRAM_MUX_0/data_bram_full",
           "blk_mem_gen_0/dina"
         ]
       },
       "BRAM_MUX_0_we_bram2": {
         "ports": [
-          "BRAM_MUX_0/we_bram2",
+          "BRAM_MUX_0/we_bram_small",
           "zoom_bram_address_suit/wea"
         ]
       },
       "BRAM_MUX_0_data_bram2": {
         "ports": [
-          "BRAM_MUX_0/data_bram2",
+          "BRAM_MUX_0/data_bram_small",
           "zoom_bram_address_suit/dina"
         ]
       },
       "BRAM_MUX_0_we_bram1": {
         "ports": [
-          "BRAM_MUX_0/we_bram1",
+          "BRAM_MUX_0/we_bram_full",
           "blk_mem_gen_0/wea"
         ]
       },
@@ -1052,7 +1189,57 @@
       "ovo_7670_caputre_0_wr_en": {
         "ports": [
           "ovo_7670_caputre_0/wr_en",
-          "BRAM_MUX_0/write_enable"
+          "BRAM_MUX_0/capture_wea"
+        ]
+      },
+      "addra_1": {
+        "ports": [
+          "BRAM_MUX_0/addr_bram_small",
+          "zoom_bram_address_suit/addra"
+        ]
+      },
+      "clk_wiz_0_clk_interpolation": {
+        "ports": [
+          "clk_wiz_0/clk_interpolation",
+          "BILINEAR_INTERPOLATI_0/clk_interpolation"
+        ]
+      },
+      "zoom_bram_address_suit_doutb1": {
+        "ports": [
+          "zoom_bram_address_suit/doutb1",
+          "BILINEAR_INTERPOLATI_0/pixel_in"
+        ]
+      },
+      "BILINEAR_INTERPOLATI_0_address_read": {
+        "ports": [
+          "BILINEAR_INTERPOLATI_0/address_read",
+          "zoom_bram_address_suit/bili_addr"
+        ]
+      },
+      "bili_cntl_0_1": {
+        "ports": [
+          "bili_cntl",
+          "BILINEAR_INTERPOLATI_0/bili_cntl",
+          "zoom_bram_address_suit/bili_cntl",
+          "BRAM_MUX_0/bili_cntl"
+        ]
+      },
+      "BILINEAR_INTERPOLATI_0_write_enable": {
+        "ports": [
+          "BILINEAR_INTERPOLATI_0/write_enable",
+          "BRAM_MUX_0/bili_wea"
+        ]
+      },
+      "BILINEAR_INTERPOLATI_0_pixel_out": {
+        "ports": [
+          "BILINEAR_INTERPOLATI_0/pixel_out",
+          "BRAM_MUX_0/bili_pixel_in"
+        ]
+      },
+      "BILINEAR_INTERPOLATI_0_address_write": {
+        "ports": [
+          "BILINEAR_INTERPOLATI_0/address_write",
+          "BRAM_MUX_0/bili_address_write"
         ]
       }
     }

@@ -1,7 +1,7 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
--- Date        : Wed May  7 22:23:29 2025
+-- Date        : Wed May  7 23:34:17 2025
 -- Host        : Ido running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_BRAM_MUX_0_0/design_1_BRAM_MUX_0_0_sim_netlist.vhdl
@@ -16,10 +16,13 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity design_1_BRAM_MUX_0_0_BRAM_MUX is
   port (
-    addr_bram1 : out STD_LOGIC_VECTOR ( 18 downto 0 );
-    data_bram1 : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    addr_bram_full : out STD_LOGIC_VECTOR ( 18 downto 0 );
+    data_bram_full : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    bili_cntl : in STD_LOGIC;
+    bili_address_write : in STD_LOGIC_VECTOR ( 18 downto 0 );
+    zoom : in STD_LOGIC;
     addr_in : in STD_LOGIC_VECTOR ( 18 downto 0 );
-    bram_select : in STD_LOGIC;
+    bili_pixel_in : in STD_LOGIC_VECTOR ( 11 downto 0 );
     data_in : in STD_LOGIC_VECTOR ( 11 downto 0 )
   );
   attribute ORIG_REF_NAME : string;
@@ -27,316 +30,347 @@ entity design_1_BRAM_MUX_0_0_BRAM_MUX is
 end design_1_BRAM_MUX_0_0_BRAM_MUX;
 
 architecture STRUCTURE of design_1_BRAM_MUX_0_0_BRAM_MUX is
-  attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \addr_bram1[0]_INST_0\ : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of \addr_bram1[10]_INST_0\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of \addr_bram1[11]_INST_0\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of \addr_bram1[12]_INST_0\ : label is "soft_lutpair6";
-  attribute SOFT_HLUTNM of \addr_bram1[13]_INST_0\ : label is "soft_lutpair6";
-  attribute SOFT_HLUTNM of \addr_bram1[14]_INST_0\ : label is "soft_lutpair7";
-  attribute SOFT_HLUTNM of \addr_bram1[15]_INST_0\ : label is "soft_lutpair7";
-  attribute SOFT_HLUTNM of \addr_bram1[16]_INST_0\ : label is "soft_lutpair8";
-  attribute SOFT_HLUTNM of \addr_bram1[17]_INST_0\ : label is "soft_lutpair8";
-  attribute SOFT_HLUTNM of \addr_bram1[18]_INST_0\ : label is "soft_lutpair9";
-  attribute SOFT_HLUTNM of \addr_bram1[1]_INST_0\ : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of \addr_bram1[2]_INST_0\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \addr_bram1[3]_INST_0\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \addr_bram1[4]_INST_0\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \addr_bram1[5]_INST_0\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \addr_bram1[6]_INST_0\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \addr_bram1[7]_INST_0\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \addr_bram1[8]_INST_0\ : label is "soft_lutpair4";
-  attribute SOFT_HLUTNM of \addr_bram1[9]_INST_0\ : label is "soft_lutpair4";
-  attribute SOFT_HLUTNM of \data_bram1[0]_INST_0\ : label is "soft_lutpair9";
-  attribute SOFT_HLUTNM of \data_bram1[10]_INST_0\ : label is "soft_lutpair14";
-  attribute SOFT_HLUTNM of \data_bram1[1]_INST_0\ : label is "soft_lutpair10";
-  attribute SOFT_HLUTNM of \data_bram1[2]_INST_0\ : label is "soft_lutpair10";
-  attribute SOFT_HLUTNM of \data_bram1[3]_INST_0\ : label is "soft_lutpair11";
-  attribute SOFT_HLUTNM of \data_bram1[4]_INST_0\ : label is "soft_lutpair11";
-  attribute SOFT_HLUTNM of \data_bram1[5]_INST_0\ : label is "soft_lutpair12";
-  attribute SOFT_HLUTNM of \data_bram1[6]_INST_0\ : label is "soft_lutpair12";
-  attribute SOFT_HLUTNM of \data_bram1[7]_INST_0\ : label is "soft_lutpair13";
-  attribute SOFT_HLUTNM of \data_bram1[8]_INST_0\ : label is "soft_lutpair13";
-  attribute SOFT_HLUTNM of \data_bram1[9]_INST_0\ : label is "soft_lutpair14";
 begin
-\addr_bram1[0]_INST_0\: unisim.vcomponents.LUT2
+\addr_bram_full[0]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"2"
+      INIT => X"8F80"
     )
         port map (
-      I0 => addr_in(0),
-      I1 => bram_select,
-      O => addr_bram1(0)
+      I0 => bili_cntl,
+      I1 => bili_address_write(0),
+      I2 => zoom,
+      I3 => addr_in(0),
+      O => addr_bram_full(0)
     );
-\addr_bram1[10]_INST_0\: unisim.vcomponents.LUT2
+\addr_bram_full[10]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"2"
+      INIT => X"8F80"
     )
         port map (
-      I0 => addr_in(10),
-      I1 => bram_select,
-      O => addr_bram1(10)
+      I0 => bili_cntl,
+      I1 => bili_address_write(10),
+      I2 => zoom,
+      I3 => addr_in(10),
+      O => addr_bram_full(10)
     );
-\addr_bram1[11]_INST_0\: unisim.vcomponents.LUT2
+\addr_bram_full[11]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"2"
+      INIT => X"8F80"
     )
         port map (
-      I0 => addr_in(11),
-      I1 => bram_select,
-      O => addr_bram1(11)
+      I0 => bili_cntl,
+      I1 => bili_address_write(11),
+      I2 => zoom,
+      I3 => addr_in(11),
+      O => addr_bram_full(11)
     );
-\addr_bram1[12]_INST_0\: unisim.vcomponents.LUT2
+\addr_bram_full[12]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"2"
+      INIT => X"8F80"
     )
         port map (
-      I0 => addr_in(12),
-      I1 => bram_select,
-      O => addr_bram1(12)
+      I0 => bili_cntl,
+      I1 => bili_address_write(12),
+      I2 => zoom,
+      I3 => addr_in(12),
+      O => addr_bram_full(12)
     );
-\addr_bram1[13]_INST_0\: unisim.vcomponents.LUT2
+\addr_bram_full[13]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"2"
+      INIT => X"8F80"
     )
         port map (
-      I0 => addr_in(13),
-      I1 => bram_select,
-      O => addr_bram1(13)
+      I0 => bili_cntl,
+      I1 => bili_address_write(13),
+      I2 => zoom,
+      I3 => addr_in(13),
+      O => addr_bram_full(13)
     );
-\addr_bram1[14]_INST_0\: unisim.vcomponents.LUT2
+\addr_bram_full[14]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"2"
+      INIT => X"8F80"
     )
         port map (
-      I0 => addr_in(14),
-      I1 => bram_select,
-      O => addr_bram1(14)
+      I0 => bili_cntl,
+      I1 => bili_address_write(14),
+      I2 => zoom,
+      I3 => addr_in(14),
+      O => addr_bram_full(14)
     );
-\addr_bram1[15]_INST_0\: unisim.vcomponents.LUT2
+\addr_bram_full[15]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"2"
+      INIT => X"8F80"
     )
         port map (
-      I0 => addr_in(15),
-      I1 => bram_select,
-      O => addr_bram1(15)
+      I0 => bili_cntl,
+      I1 => bili_address_write(15),
+      I2 => zoom,
+      I3 => addr_in(15),
+      O => addr_bram_full(15)
     );
-\addr_bram1[16]_INST_0\: unisim.vcomponents.LUT2
+\addr_bram_full[16]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"2"
+      INIT => X"8F80"
     )
         port map (
-      I0 => addr_in(16),
-      I1 => bram_select,
-      O => addr_bram1(16)
+      I0 => bili_cntl,
+      I1 => bili_address_write(16),
+      I2 => zoom,
+      I3 => addr_in(16),
+      O => addr_bram_full(16)
     );
-\addr_bram1[17]_INST_0\: unisim.vcomponents.LUT2
+\addr_bram_full[17]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"2"
+      INIT => X"8F80"
     )
         port map (
-      I0 => addr_in(17),
-      I1 => bram_select,
-      O => addr_bram1(17)
+      I0 => bili_cntl,
+      I1 => bili_address_write(17),
+      I2 => zoom,
+      I3 => addr_in(17),
+      O => addr_bram_full(17)
     );
-\addr_bram1[18]_INST_0\: unisim.vcomponents.LUT2
+\addr_bram_full[18]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"2"
+      INIT => X"8F80"
     )
         port map (
-      I0 => addr_in(18),
-      I1 => bram_select,
-      O => addr_bram1(18)
+      I0 => bili_cntl,
+      I1 => bili_address_write(18),
+      I2 => zoom,
+      I3 => addr_in(18),
+      O => addr_bram_full(18)
     );
-\addr_bram1[1]_INST_0\: unisim.vcomponents.LUT2
+\addr_bram_full[1]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"2"
+      INIT => X"8F80"
     )
         port map (
-      I0 => addr_in(1),
-      I1 => bram_select,
-      O => addr_bram1(1)
+      I0 => bili_cntl,
+      I1 => bili_address_write(1),
+      I2 => zoom,
+      I3 => addr_in(1),
+      O => addr_bram_full(1)
     );
-\addr_bram1[2]_INST_0\: unisim.vcomponents.LUT2
+\addr_bram_full[2]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"2"
+      INIT => X"8F80"
     )
         port map (
-      I0 => addr_in(2),
-      I1 => bram_select,
-      O => addr_bram1(2)
+      I0 => bili_cntl,
+      I1 => bili_address_write(2),
+      I2 => zoom,
+      I3 => addr_in(2),
+      O => addr_bram_full(2)
     );
-\addr_bram1[3]_INST_0\: unisim.vcomponents.LUT2
+\addr_bram_full[3]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"2"
+      INIT => X"8F80"
     )
         port map (
-      I0 => addr_in(3),
-      I1 => bram_select,
-      O => addr_bram1(3)
+      I0 => bili_cntl,
+      I1 => bili_address_write(3),
+      I2 => zoom,
+      I3 => addr_in(3),
+      O => addr_bram_full(3)
     );
-\addr_bram1[4]_INST_0\: unisim.vcomponents.LUT2
+\addr_bram_full[4]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"2"
+      INIT => X"8F80"
     )
         port map (
-      I0 => addr_in(4),
-      I1 => bram_select,
-      O => addr_bram1(4)
+      I0 => bili_cntl,
+      I1 => bili_address_write(4),
+      I2 => zoom,
+      I3 => addr_in(4),
+      O => addr_bram_full(4)
     );
-\addr_bram1[5]_INST_0\: unisim.vcomponents.LUT2
+\addr_bram_full[5]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"2"
+      INIT => X"8F80"
     )
         port map (
-      I0 => addr_in(5),
-      I1 => bram_select,
-      O => addr_bram1(5)
+      I0 => bili_cntl,
+      I1 => bili_address_write(5),
+      I2 => zoom,
+      I3 => addr_in(5),
+      O => addr_bram_full(5)
     );
-\addr_bram1[6]_INST_0\: unisim.vcomponents.LUT2
+\addr_bram_full[6]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"2"
+      INIT => X"8F80"
     )
         port map (
-      I0 => addr_in(6),
-      I1 => bram_select,
-      O => addr_bram1(6)
+      I0 => bili_cntl,
+      I1 => bili_address_write(6),
+      I2 => zoom,
+      I3 => addr_in(6),
+      O => addr_bram_full(6)
     );
-\addr_bram1[7]_INST_0\: unisim.vcomponents.LUT2
+\addr_bram_full[7]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"2"
+      INIT => X"8F80"
     )
         port map (
-      I0 => addr_in(7),
-      I1 => bram_select,
-      O => addr_bram1(7)
+      I0 => bili_cntl,
+      I1 => bili_address_write(7),
+      I2 => zoom,
+      I3 => addr_in(7),
+      O => addr_bram_full(7)
     );
-\addr_bram1[8]_INST_0\: unisim.vcomponents.LUT2
+\addr_bram_full[8]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"2"
+      INIT => X"8F80"
     )
         port map (
-      I0 => addr_in(8),
-      I1 => bram_select,
-      O => addr_bram1(8)
+      I0 => bili_cntl,
+      I1 => bili_address_write(8),
+      I2 => zoom,
+      I3 => addr_in(8),
+      O => addr_bram_full(8)
     );
-\addr_bram1[9]_INST_0\: unisim.vcomponents.LUT2
+\addr_bram_full[9]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"2"
+      INIT => X"8F80"
     )
         port map (
-      I0 => addr_in(9),
-      I1 => bram_select,
-      O => addr_bram1(9)
+      I0 => bili_cntl,
+      I1 => bili_address_write(9),
+      I2 => zoom,
+      I3 => addr_in(9),
+      O => addr_bram_full(9)
     );
-\data_bram1[0]_INST_0\: unisim.vcomponents.LUT2
+\data_bram_full[0]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"2"
+      INIT => X"8F80"
     )
         port map (
-      I0 => data_in(0),
-      I1 => bram_select,
-      O => data_bram1(0)
+      I0 => bili_cntl,
+      I1 => bili_pixel_in(0),
+      I2 => zoom,
+      I3 => data_in(0),
+      O => data_bram_full(0)
     );
-\data_bram1[10]_INST_0\: unisim.vcomponents.LUT2
+\data_bram_full[10]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"2"
+      INIT => X"8F80"
     )
         port map (
-      I0 => data_in(10),
-      I1 => bram_select,
-      O => data_bram1(10)
+      I0 => bili_cntl,
+      I1 => bili_pixel_in(10),
+      I2 => zoom,
+      I3 => data_in(10),
+      O => data_bram_full(10)
     );
-\data_bram1[11]_INST_0\: unisim.vcomponents.LUT2
+\data_bram_full[11]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"2"
+      INIT => X"8F80"
     )
         port map (
-      I0 => data_in(11),
-      I1 => bram_select,
-      O => data_bram1(11)
+      I0 => bili_cntl,
+      I1 => bili_pixel_in(11),
+      I2 => zoom,
+      I3 => data_in(11),
+      O => data_bram_full(11)
     );
-\data_bram1[1]_INST_0\: unisim.vcomponents.LUT2
+\data_bram_full[1]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"2"
+      INIT => X"8F80"
     )
         port map (
-      I0 => data_in(1),
-      I1 => bram_select,
-      O => data_bram1(1)
+      I0 => bili_cntl,
+      I1 => bili_pixel_in(1),
+      I2 => zoom,
+      I3 => data_in(1),
+      O => data_bram_full(1)
     );
-\data_bram1[2]_INST_0\: unisim.vcomponents.LUT2
+\data_bram_full[2]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"2"
+      INIT => X"8F80"
     )
         port map (
-      I0 => data_in(2),
-      I1 => bram_select,
-      O => data_bram1(2)
+      I0 => bili_cntl,
+      I1 => bili_pixel_in(2),
+      I2 => zoom,
+      I3 => data_in(2),
+      O => data_bram_full(2)
     );
-\data_bram1[3]_INST_0\: unisim.vcomponents.LUT2
+\data_bram_full[3]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"2"
+      INIT => X"8F80"
     )
         port map (
-      I0 => data_in(3),
-      I1 => bram_select,
-      O => data_bram1(3)
+      I0 => bili_cntl,
+      I1 => bili_pixel_in(3),
+      I2 => zoom,
+      I3 => data_in(3),
+      O => data_bram_full(3)
     );
-\data_bram1[4]_INST_0\: unisim.vcomponents.LUT2
+\data_bram_full[4]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"2"
+      INIT => X"8F80"
     )
         port map (
-      I0 => data_in(4),
-      I1 => bram_select,
-      O => data_bram1(4)
+      I0 => bili_cntl,
+      I1 => bili_pixel_in(4),
+      I2 => zoom,
+      I3 => data_in(4),
+      O => data_bram_full(4)
     );
-\data_bram1[5]_INST_0\: unisim.vcomponents.LUT2
+\data_bram_full[5]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"2"
+      INIT => X"8F80"
     )
         port map (
-      I0 => data_in(5),
-      I1 => bram_select,
-      O => data_bram1(5)
+      I0 => bili_cntl,
+      I1 => bili_pixel_in(5),
+      I2 => zoom,
+      I3 => data_in(5),
+      O => data_bram_full(5)
     );
-\data_bram1[6]_INST_0\: unisim.vcomponents.LUT2
+\data_bram_full[6]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"2"
+      INIT => X"8F80"
     )
         port map (
-      I0 => data_in(6),
-      I1 => bram_select,
-      O => data_bram1(6)
+      I0 => bili_cntl,
+      I1 => bili_pixel_in(6),
+      I2 => zoom,
+      I3 => data_in(6),
+      O => data_bram_full(6)
     );
-\data_bram1[7]_INST_0\: unisim.vcomponents.LUT2
+\data_bram_full[7]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"2"
+      INIT => X"8F80"
     )
         port map (
-      I0 => data_in(7),
-      I1 => bram_select,
-      O => data_bram1(7)
+      I0 => bili_cntl,
+      I1 => bili_pixel_in(7),
+      I2 => zoom,
+      I3 => data_in(7),
+      O => data_bram_full(7)
     );
-\data_bram1[8]_INST_0\: unisim.vcomponents.LUT2
+\data_bram_full[8]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"2"
+      INIT => X"8F80"
     )
         port map (
-      I0 => data_in(8),
-      I1 => bram_select,
-      O => data_bram1(8)
+      I0 => bili_cntl,
+      I1 => bili_pixel_in(8),
+      I2 => zoom,
+      I3 => data_in(8),
+      O => data_bram_full(8)
     );
-\data_bram1[9]_INST_0\: unisim.vcomponents.LUT2
+\data_bram_full[9]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"2"
+      INIT => X"8F80"
     )
         port map (
-      I0 => data_in(9),
-      I1 => bram_select,
-      O => data_bram1(9)
+      I0 => bili_cntl,
+      I1 => bili_pixel_in(9),
+      I2 => zoom,
+      I3 => data_in(9),
+      O => data_bram_full(9)
     );
 end STRUCTURE;
 library IEEE;
@@ -347,14 +381,18 @@ entity design_1_BRAM_MUX_0_0 is
   port (
     addr_in : in STD_LOGIC_VECTOR ( 18 downto 0 );
     data_in : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    write_enable : in STD_LOGIC;
-    bram_select : in STD_LOGIC;
-    addr_bram1 : out STD_LOGIC_VECTOR ( 18 downto 0 );
-    data_bram1 : out STD_LOGIC_VECTOR ( 11 downto 0 );
-    we_bram1 : out STD_LOGIC;
-    addr_bram2 : out STD_LOGIC_VECTOR ( 16 downto 0 );
-    data_bram2 : out STD_LOGIC_VECTOR ( 11 downto 0 );
-    we_bram2 : out STD_LOGIC
+    capture_wea : in STD_LOGIC;
+    zoom : in STD_LOGIC;
+    bili_cntl : in STD_LOGIC;
+    bili_pixel_in : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    bili_address_write : in STD_LOGIC_VECTOR ( 18 downto 0 );
+    bili_wea : in STD_LOGIC;
+    addr_bram_full : out STD_LOGIC_VECTOR ( 18 downto 0 );
+    data_bram_full : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    we_bram_full : out STD_LOGIC;
+    addr_bram_small : out STD_LOGIC_VECTOR ( 16 downto 0 );
+    data_bram_small : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    we_bram_small : out STD_LOGIC
   );
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of design_1_BRAM_MUX_0_0 : entity is true;
@@ -372,289 +410,294 @@ architecture STRUCTURE of design_1_BRAM_MUX_0_0 is
 begin
 U0: entity work.design_1_BRAM_MUX_0_0_BRAM_MUX
      port map (
-      addr_bram1(18 downto 0) => addr_bram1(18 downto 0),
+      addr_bram_full(18 downto 0) => addr_bram_full(18 downto 0),
       addr_in(18 downto 0) => addr_in(18 downto 0),
-      bram_select => bram_select,
-      data_bram1(11 downto 0) => data_bram1(11 downto 0),
-      data_in(11 downto 0) => data_in(11 downto 0)
+      bili_address_write(18 downto 0) => bili_address_write(18 downto 0),
+      bili_cntl => bili_cntl,
+      bili_pixel_in(11 downto 0) => bili_pixel_in(11 downto 0),
+      data_bram_full(11 downto 0) => data_bram_full(11 downto 0),
+      data_in(11 downto 0) => data_in(11 downto 0),
+      zoom => zoom
     );
-\addr_bram2[0]_INST_0\: unisim.vcomponents.LUT2
+\addr_bram_small[0]_INST_0\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"8"
     )
         port map (
-      I0 => bram_select,
+      I0 => zoom,
       I1 => addr_in(0),
-      O => addr_bram2(0)
+      O => addr_bram_small(0)
     );
-\addr_bram2[10]_INST_0\: unisim.vcomponents.LUT2
+\addr_bram_small[10]_INST_0\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"8"
     )
         port map (
-      I0 => bram_select,
+      I0 => zoom,
       I1 => addr_in(10),
-      O => addr_bram2(10)
+      O => addr_bram_small(10)
     );
-\addr_bram2[11]_INST_0\: unisim.vcomponents.LUT2
+\addr_bram_small[11]_INST_0\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"8"
     )
         port map (
-      I0 => bram_select,
+      I0 => zoom,
       I1 => addr_in(11),
-      O => addr_bram2(11)
+      O => addr_bram_small(11)
     );
-\addr_bram2[12]_INST_0\: unisim.vcomponents.LUT2
+\addr_bram_small[12]_INST_0\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"8"
     )
         port map (
-      I0 => bram_select,
+      I0 => zoom,
       I1 => addr_in(12),
-      O => addr_bram2(12)
+      O => addr_bram_small(12)
     );
-\addr_bram2[13]_INST_0\: unisim.vcomponents.LUT2
+\addr_bram_small[13]_INST_0\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"8"
     )
         port map (
-      I0 => bram_select,
+      I0 => zoom,
       I1 => addr_in(13),
-      O => addr_bram2(13)
+      O => addr_bram_small(13)
     );
-\addr_bram2[14]_INST_0\: unisim.vcomponents.LUT2
+\addr_bram_small[14]_INST_0\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"8"
     )
         port map (
-      I0 => bram_select,
+      I0 => zoom,
       I1 => addr_in(14),
-      O => addr_bram2(14)
+      O => addr_bram_small(14)
     );
-\addr_bram2[15]_INST_0\: unisim.vcomponents.LUT2
+\addr_bram_small[15]_INST_0\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"8"
     )
         port map (
-      I0 => bram_select,
+      I0 => zoom,
       I1 => addr_in(15),
-      O => addr_bram2(15)
+      O => addr_bram_small(15)
     );
-\addr_bram2[16]_INST_0\: unisim.vcomponents.LUT2
+\addr_bram_small[16]_INST_0\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"8"
     )
         port map (
-      I0 => bram_select,
+      I0 => zoom,
       I1 => addr_in(16),
-      O => addr_bram2(16)
+      O => addr_bram_small(16)
     );
-\addr_bram2[1]_INST_0\: unisim.vcomponents.LUT2
+\addr_bram_small[1]_INST_0\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"8"
     )
         port map (
-      I0 => bram_select,
+      I0 => zoom,
       I1 => addr_in(1),
-      O => addr_bram2(1)
+      O => addr_bram_small(1)
     );
-\addr_bram2[2]_INST_0\: unisim.vcomponents.LUT2
+\addr_bram_small[2]_INST_0\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"8"
     )
         port map (
-      I0 => bram_select,
+      I0 => zoom,
       I1 => addr_in(2),
-      O => addr_bram2(2)
+      O => addr_bram_small(2)
     );
-\addr_bram2[3]_INST_0\: unisim.vcomponents.LUT2
+\addr_bram_small[3]_INST_0\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"8"
     )
         port map (
-      I0 => bram_select,
+      I0 => zoom,
       I1 => addr_in(3),
-      O => addr_bram2(3)
+      O => addr_bram_small(3)
     );
-\addr_bram2[4]_INST_0\: unisim.vcomponents.LUT2
+\addr_bram_small[4]_INST_0\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"8"
     )
         port map (
-      I0 => bram_select,
+      I0 => zoom,
       I1 => addr_in(4),
-      O => addr_bram2(4)
+      O => addr_bram_small(4)
     );
-\addr_bram2[5]_INST_0\: unisim.vcomponents.LUT2
+\addr_bram_small[5]_INST_0\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"8"
     )
         port map (
-      I0 => bram_select,
+      I0 => zoom,
       I1 => addr_in(5),
-      O => addr_bram2(5)
+      O => addr_bram_small(5)
     );
-\addr_bram2[6]_INST_0\: unisim.vcomponents.LUT2
+\addr_bram_small[6]_INST_0\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"8"
     )
         port map (
-      I0 => bram_select,
+      I0 => zoom,
       I1 => addr_in(6),
-      O => addr_bram2(6)
+      O => addr_bram_small(6)
     );
-\addr_bram2[7]_INST_0\: unisim.vcomponents.LUT2
+\addr_bram_small[7]_INST_0\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"8"
     )
         port map (
-      I0 => bram_select,
+      I0 => zoom,
       I1 => addr_in(7),
-      O => addr_bram2(7)
+      O => addr_bram_small(7)
     );
-\addr_bram2[8]_INST_0\: unisim.vcomponents.LUT2
+\addr_bram_small[8]_INST_0\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"8"
     )
         port map (
-      I0 => bram_select,
+      I0 => zoom,
       I1 => addr_in(8),
-      O => addr_bram2(8)
+      O => addr_bram_small(8)
     );
-\addr_bram2[9]_INST_0\: unisim.vcomponents.LUT2
+\addr_bram_small[9]_INST_0\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"8"
     )
         port map (
-      I0 => bram_select,
+      I0 => zoom,
       I1 => addr_in(9),
-      O => addr_bram2(9)
+      O => addr_bram_small(9)
     );
-\data_bram2[0]_INST_0\: unisim.vcomponents.LUT2
+\data_bram_small[0]_INST_0\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"8"
     )
         port map (
-      I0 => bram_select,
+      I0 => zoom,
       I1 => data_in(0),
-      O => data_bram2(0)
+      O => data_bram_small(0)
     );
-\data_bram2[10]_INST_0\: unisim.vcomponents.LUT2
+\data_bram_small[10]_INST_0\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"8"
     )
         port map (
-      I0 => bram_select,
+      I0 => zoom,
       I1 => data_in(10),
-      O => data_bram2(10)
+      O => data_bram_small(10)
     );
-\data_bram2[11]_INST_0\: unisim.vcomponents.LUT2
+\data_bram_small[11]_INST_0\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"8"
     )
         port map (
-      I0 => bram_select,
+      I0 => zoom,
       I1 => data_in(11),
-      O => data_bram2(11)
+      O => data_bram_small(11)
     );
-\data_bram2[1]_INST_0\: unisim.vcomponents.LUT2
+\data_bram_small[1]_INST_0\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"8"
     )
         port map (
-      I0 => bram_select,
+      I0 => zoom,
       I1 => data_in(1),
-      O => data_bram2(1)
+      O => data_bram_small(1)
     );
-\data_bram2[2]_INST_0\: unisim.vcomponents.LUT2
+\data_bram_small[2]_INST_0\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"8"
     )
         port map (
-      I0 => bram_select,
+      I0 => zoom,
       I1 => data_in(2),
-      O => data_bram2(2)
+      O => data_bram_small(2)
     );
-\data_bram2[3]_INST_0\: unisim.vcomponents.LUT2
+\data_bram_small[3]_INST_0\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"8"
     )
         port map (
-      I0 => bram_select,
+      I0 => zoom,
       I1 => data_in(3),
-      O => data_bram2(3)
+      O => data_bram_small(3)
     );
-\data_bram2[4]_INST_0\: unisim.vcomponents.LUT2
+\data_bram_small[4]_INST_0\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"8"
     )
         port map (
-      I0 => bram_select,
+      I0 => zoom,
       I1 => data_in(4),
-      O => data_bram2(4)
+      O => data_bram_small(4)
     );
-\data_bram2[5]_INST_0\: unisim.vcomponents.LUT2
+\data_bram_small[5]_INST_0\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"8"
     )
         port map (
-      I0 => bram_select,
+      I0 => zoom,
       I1 => data_in(5),
-      O => data_bram2(5)
+      O => data_bram_small(5)
     );
-\data_bram2[6]_INST_0\: unisim.vcomponents.LUT2
+\data_bram_small[6]_INST_0\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"8"
     )
         port map (
-      I0 => bram_select,
+      I0 => zoom,
       I1 => data_in(6),
-      O => data_bram2(6)
+      O => data_bram_small(6)
     );
-\data_bram2[7]_INST_0\: unisim.vcomponents.LUT2
+\data_bram_small[7]_INST_0\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"8"
     )
         port map (
-      I0 => bram_select,
+      I0 => zoom,
       I1 => data_in(7),
-      O => data_bram2(7)
+      O => data_bram_small(7)
     );
-\data_bram2[8]_INST_0\: unisim.vcomponents.LUT2
+\data_bram_small[8]_INST_0\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"8"
     )
         port map (
-      I0 => bram_select,
+      I0 => zoom,
       I1 => data_in(8),
-      O => data_bram2(8)
+      O => data_bram_small(8)
     );
-\data_bram2[9]_INST_0\: unisim.vcomponents.LUT2
+\data_bram_small[9]_INST_0\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"8"
     )
         port map (
-      I0 => bram_select,
+      I0 => zoom,
       I1 => data_in(9),
-      O => data_bram2(9)
+      O => data_bram_small(9)
     );
-we_bram1_INST_0: unisim.vcomponents.LUT2
+we_bram_full_INST_0: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"2"
+      INIT => X"8F80"
     )
         port map (
-      I0 => write_enable,
-      I1 => bram_select,
-      O => we_bram1
+      I0 => bili_cntl,
+      I1 => bili_wea,
+      I2 => zoom,
+      I3 => capture_wea,
+      O => we_bram_full
     );
-we_bram2_INST_0: unisim.vcomponents.LUT2
+we_bram_small_INST_0: unisim.vcomponents.LUT2
     generic map(
       INIT => X"8"
     )
         port map (
-      I0 => bram_select,
-      I1 => write_enable,
-      O => we_bram2
+      I0 => zoom,
+      I1 => capture_wea,
+      O => we_bram_small
     );
 end STRUCTURE;

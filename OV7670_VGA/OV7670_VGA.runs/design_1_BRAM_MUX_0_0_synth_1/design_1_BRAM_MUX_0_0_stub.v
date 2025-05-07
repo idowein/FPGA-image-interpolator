@@ -1,7 +1,7 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Wed May  7 22:23:29 2025
+// Date        : Wed May  7 23:34:17 2025
 // Host        : Ido running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_1_BRAM_MUX_0_0_stub.v
@@ -14,17 +14,22 @@
 // The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
 (* x_core_info = "BRAM_MUX,Vivado 2019.2" *)
-module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix(addr_in, data_in, write_enable, bram_select, 
-  addr_bram1, data_bram1, we_bram1, addr_bram2, data_bram2, we_bram2)
-/* synthesis syn_black_box black_box_pad_pin="addr_in[18:0],data_in[11:0],write_enable,bram_select,addr_bram1[18:0],data_bram1[11:0],we_bram1,addr_bram2[16:0],data_bram2[11:0],we_bram2" */;
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix(addr_in, data_in, capture_wea, zoom, bili_cntl, 
+  bili_pixel_in, bili_address_write, bili_wea, addr_bram_full, data_bram_full, we_bram_full, 
+  addr_bram_small, data_bram_small, we_bram_small)
+/* synthesis syn_black_box black_box_pad_pin="addr_in[18:0],data_in[11:0],capture_wea,zoom,bili_cntl,bili_pixel_in[11:0],bili_address_write[18:0],bili_wea,addr_bram_full[18:0],data_bram_full[11:0],we_bram_full,addr_bram_small[16:0],data_bram_small[11:0],we_bram_small" */;
   input [18:0]addr_in;
   input [11:0]data_in;
-  input write_enable;
-  input bram_select;
-  output [18:0]addr_bram1;
-  output [11:0]data_bram1;
-  output we_bram1;
-  output [16:0]addr_bram2;
-  output [11:0]data_bram2;
-  output we_bram2;
+  input capture_wea;
+  input zoom;
+  input bili_cntl;
+  input [11:0]bili_pixel_in;
+  input [18:0]bili_address_write;
+  input bili_wea;
+  output [18:0]addr_bram_full;
+  output [11:0]data_bram_full;
+  output we_bram_full;
+  output [16:0]addr_bram_small;
+  output [11:0]data_bram_small;
+  output we_bram_small;
 endmodule

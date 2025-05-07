@@ -1,7 +1,7 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Wed May  7 22:23:29 2025
+// Date        : Wed May  7 23:34:17 2025
 // Host        : Ido running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_1_BRAM_MUX_0_0_sim_netlist.v
@@ -13,239 +13,280 @@
 `timescale 1 ps / 1 ps
 
 module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BRAM_MUX
-   (addr_bram1,
-    data_bram1,
+   (addr_bram_full,
+    data_bram_full,
+    bili_cntl,
+    bili_address_write,
+    zoom,
     addr_in,
-    bram_select,
+    bili_pixel_in,
     data_in);
-  output [18:0]addr_bram1;
-  output [11:0]data_bram1;
+  output [18:0]addr_bram_full;
+  output [11:0]data_bram_full;
+  input bili_cntl;
+  input [18:0]bili_address_write;
+  input zoom;
   input [18:0]addr_in;
-  input bram_select;
+  input [11:0]bili_pixel_in;
   input [11:0]data_in;
 
-  wire [18:0]addr_bram1;
+  wire [18:0]addr_bram_full;
   wire [18:0]addr_in;
-  wire bram_select;
-  wire [11:0]data_bram1;
+  wire [18:0]bili_address_write;
+  wire bili_cntl;
+  wire [11:0]bili_pixel_in;
+  wire [11:0]data_bram_full;
   wire [11:0]data_in;
+  wire zoom;
 
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \addr_bram1[0]_INST_0 
-       (.I0(addr_in[0]),
-        .I1(bram_select),
-        .O(addr_bram1[0]));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \addr_bram1[10]_INST_0 
-       (.I0(addr_in[10]),
-        .I1(bram_select),
-        .O(addr_bram1[10]));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \addr_bram1[11]_INST_0 
-       (.I0(addr_in[11]),
-        .I1(bram_select),
-        .O(addr_bram1[11]));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \addr_bram1[12]_INST_0 
-       (.I0(addr_in[12]),
-        .I1(bram_select),
-        .O(addr_bram1[12]));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \addr_bram1[13]_INST_0 
-       (.I0(addr_in[13]),
-        .I1(bram_select),
-        .O(addr_bram1[13]));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \addr_bram1[14]_INST_0 
-       (.I0(addr_in[14]),
-        .I1(bram_select),
-        .O(addr_bram1[14]));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \addr_bram1[15]_INST_0 
-       (.I0(addr_in[15]),
-        .I1(bram_select),
-        .O(addr_bram1[15]));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \addr_bram1[16]_INST_0 
-       (.I0(addr_in[16]),
-        .I1(bram_select),
-        .O(addr_bram1[16]));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \addr_bram1[17]_INST_0 
-       (.I0(addr_in[17]),
-        .I1(bram_select),
-        .O(addr_bram1[17]));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \addr_bram1[18]_INST_0 
-       (.I0(addr_in[18]),
-        .I1(bram_select),
-        .O(addr_bram1[18]));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \addr_bram1[1]_INST_0 
-       (.I0(addr_in[1]),
-        .I1(bram_select),
-        .O(addr_bram1[1]));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \addr_bram1[2]_INST_0 
-       (.I0(addr_in[2]),
-        .I1(bram_select),
-        .O(addr_bram1[2]));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \addr_bram1[3]_INST_0 
-       (.I0(addr_in[3]),
-        .I1(bram_select),
-        .O(addr_bram1[3]));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \addr_bram1[4]_INST_0 
-       (.I0(addr_in[4]),
-        .I1(bram_select),
-        .O(addr_bram1[4]));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \addr_bram1[5]_INST_0 
-       (.I0(addr_in[5]),
-        .I1(bram_select),
-        .O(addr_bram1[5]));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \addr_bram1[6]_INST_0 
-       (.I0(addr_in[6]),
-        .I1(bram_select),
-        .O(addr_bram1[6]));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \addr_bram1[7]_INST_0 
-       (.I0(addr_in[7]),
-        .I1(bram_select),
-        .O(addr_bram1[7]));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \addr_bram1[8]_INST_0 
-       (.I0(addr_in[8]),
-        .I1(bram_select),
-        .O(addr_bram1[8]));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \addr_bram1[9]_INST_0 
-       (.I0(addr_in[9]),
-        .I1(bram_select),
-        .O(addr_bram1[9]));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \data_bram1[0]_INST_0 
-       (.I0(data_in[0]),
-        .I1(bram_select),
-        .O(data_bram1[0]));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \data_bram1[10]_INST_0 
-       (.I0(data_in[10]),
-        .I1(bram_select),
-        .O(data_bram1[10]));
-  LUT2 #(
-    .INIT(4'h2)) 
-    \data_bram1[11]_INST_0 
-       (.I0(data_in[11]),
-        .I1(bram_select),
-        .O(data_bram1[11]));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \data_bram1[1]_INST_0 
-       (.I0(data_in[1]),
-        .I1(bram_select),
-        .O(data_bram1[1]));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \data_bram1[2]_INST_0 
-       (.I0(data_in[2]),
-        .I1(bram_select),
-        .O(data_bram1[2]));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \data_bram1[3]_INST_0 
-       (.I0(data_in[3]),
-        .I1(bram_select),
-        .O(data_bram1[3]));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \data_bram1[4]_INST_0 
-       (.I0(data_in[4]),
-        .I1(bram_select),
-        .O(data_bram1[4]));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \data_bram1[5]_INST_0 
-       (.I0(data_in[5]),
-        .I1(bram_select),
-        .O(data_bram1[5]));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \data_bram1[6]_INST_0 
-       (.I0(data_in[6]),
-        .I1(bram_select),
-        .O(data_bram1[6]));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \data_bram1[7]_INST_0 
-       (.I0(data_in[7]),
-        .I1(bram_select),
-        .O(data_bram1[7]));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \data_bram1[8]_INST_0 
-       (.I0(data_in[8]),
-        .I1(bram_select),
-        .O(data_bram1[8]));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \data_bram1[9]_INST_0 
-       (.I0(data_in[9]),
-        .I1(bram_select),
-        .O(data_bram1[9]));
+  LUT4 #(
+    .INIT(16'h8F80)) 
+    \addr_bram_full[0]_INST_0 
+       (.I0(bili_cntl),
+        .I1(bili_address_write[0]),
+        .I2(zoom),
+        .I3(addr_in[0]),
+        .O(addr_bram_full[0]));
+  LUT4 #(
+    .INIT(16'h8F80)) 
+    \addr_bram_full[10]_INST_0 
+       (.I0(bili_cntl),
+        .I1(bili_address_write[10]),
+        .I2(zoom),
+        .I3(addr_in[10]),
+        .O(addr_bram_full[10]));
+  LUT4 #(
+    .INIT(16'h8F80)) 
+    \addr_bram_full[11]_INST_0 
+       (.I0(bili_cntl),
+        .I1(bili_address_write[11]),
+        .I2(zoom),
+        .I3(addr_in[11]),
+        .O(addr_bram_full[11]));
+  LUT4 #(
+    .INIT(16'h8F80)) 
+    \addr_bram_full[12]_INST_0 
+       (.I0(bili_cntl),
+        .I1(bili_address_write[12]),
+        .I2(zoom),
+        .I3(addr_in[12]),
+        .O(addr_bram_full[12]));
+  LUT4 #(
+    .INIT(16'h8F80)) 
+    \addr_bram_full[13]_INST_0 
+       (.I0(bili_cntl),
+        .I1(bili_address_write[13]),
+        .I2(zoom),
+        .I3(addr_in[13]),
+        .O(addr_bram_full[13]));
+  LUT4 #(
+    .INIT(16'h8F80)) 
+    \addr_bram_full[14]_INST_0 
+       (.I0(bili_cntl),
+        .I1(bili_address_write[14]),
+        .I2(zoom),
+        .I3(addr_in[14]),
+        .O(addr_bram_full[14]));
+  LUT4 #(
+    .INIT(16'h8F80)) 
+    \addr_bram_full[15]_INST_0 
+       (.I0(bili_cntl),
+        .I1(bili_address_write[15]),
+        .I2(zoom),
+        .I3(addr_in[15]),
+        .O(addr_bram_full[15]));
+  LUT4 #(
+    .INIT(16'h8F80)) 
+    \addr_bram_full[16]_INST_0 
+       (.I0(bili_cntl),
+        .I1(bili_address_write[16]),
+        .I2(zoom),
+        .I3(addr_in[16]),
+        .O(addr_bram_full[16]));
+  LUT4 #(
+    .INIT(16'h8F80)) 
+    \addr_bram_full[17]_INST_0 
+       (.I0(bili_cntl),
+        .I1(bili_address_write[17]),
+        .I2(zoom),
+        .I3(addr_in[17]),
+        .O(addr_bram_full[17]));
+  LUT4 #(
+    .INIT(16'h8F80)) 
+    \addr_bram_full[18]_INST_0 
+       (.I0(bili_cntl),
+        .I1(bili_address_write[18]),
+        .I2(zoom),
+        .I3(addr_in[18]),
+        .O(addr_bram_full[18]));
+  LUT4 #(
+    .INIT(16'h8F80)) 
+    \addr_bram_full[1]_INST_0 
+       (.I0(bili_cntl),
+        .I1(bili_address_write[1]),
+        .I2(zoom),
+        .I3(addr_in[1]),
+        .O(addr_bram_full[1]));
+  LUT4 #(
+    .INIT(16'h8F80)) 
+    \addr_bram_full[2]_INST_0 
+       (.I0(bili_cntl),
+        .I1(bili_address_write[2]),
+        .I2(zoom),
+        .I3(addr_in[2]),
+        .O(addr_bram_full[2]));
+  LUT4 #(
+    .INIT(16'h8F80)) 
+    \addr_bram_full[3]_INST_0 
+       (.I0(bili_cntl),
+        .I1(bili_address_write[3]),
+        .I2(zoom),
+        .I3(addr_in[3]),
+        .O(addr_bram_full[3]));
+  LUT4 #(
+    .INIT(16'h8F80)) 
+    \addr_bram_full[4]_INST_0 
+       (.I0(bili_cntl),
+        .I1(bili_address_write[4]),
+        .I2(zoom),
+        .I3(addr_in[4]),
+        .O(addr_bram_full[4]));
+  LUT4 #(
+    .INIT(16'h8F80)) 
+    \addr_bram_full[5]_INST_0 
+       (.I0(bili_cntl),
+        .I1(bili_address_write[5]),
+        .I2(zoom),
+        .I3(addr_in[5]),
+        .O(addr_bram_full[5]));
+  LUT4 #(
+    .INIT(16'h8F80)) 
+    \addr_bram_full[6]_INST_0 
+       (.I0(bili_cntl),
+        .I1(bili_address_write[6]),
+        .I2(zoom),
+        .I3(addr_in[6]),
+        .O(addr_bram_full[6]));
+  LUT4 #(
+    .INIT(16'h8F80)) 
+    \addr_bram_full[7]_INST_0 
+       (.I0(bili_cntl),
+        .I1(bili_address_write[7]),
+        .I2(zoom),
+        .I3(addr_in[7]),
+        .O(addr_bram_full[7]));
+  LUT4 #(
+    .INIT(16'h8F80)) 
+    \addr_bram_full[8]_INST_0 
+       (.I0(bili_cntl),
+        .I1(bili_address_write[8]),
+        .I2(zoom),
+        .I3(addr_in[8]),
+        .O(addr_bram_full[8]));
+  LUT4 #(
+    .INIT(16'h8F80)) 
+    \addr_bram_full[9]_INST_0 
+       (.I0(bili_cntl),
+        .I1(bili_address_write[9]),
+        .I2(zoom),
+        .I3(addr_in[9]),
+        .O(addr_bram_full[9]));
+  LUT4 #(
+    .INIT(16'h8F80)) 
+    \data_bram_full[0]_INST_0 
+       (.I0(bili_cntl),
+        .I1(bili_pixel_in[0]),
+        .I2(zoom),
+        .I3(data_in[0]),
+        .O(data_bram_full[0]));
+  LUT4 #(
+    .INIT(16'h8F80)) 
+    \data_bram_full[10]_INST_0 
+       (.I0(bili_cntl),
+        .I1(bili_pixel_in[10]),
+        .I2(zoom),
+        .I3(data_in[10]),
+        .O(data_bram_full[10]));
+  LUT4 #(
+    .INIT(16'h8F80)) 
+    \data_bram_full[11]_INST_0 
+       (.I0(bili_cntl),
+        .I1(bili_pixel_in[11]),
+        .I2(zoom),
+        .I3(data_in[11]),
+        .O(data_bram_full[11]));
+  LUT4 #(
+    .INIT(16'h8F80)) 
+    \data_bram_full[1]_INST_0 
+       (.I0(bili_cntl),
+        .I1(bili_pixel_in[1]),
+        .I2(zoom),
+        .I3(data_in[1]),
+        .O(data_bram_full[1]));
+  LUT4 #(
+    .INIT(16'h8F80)) 
+    \data_bram_full[2]_INST_0 
+       (.I0(bili_cntl),
+        .I1(bili_pixel_in[2]),
+        .I2(zoom),
+        .I3(data_in[2]),
+        .O(data_bram_full[2]));
+  LUT4 #(
+    .INIT(16'h8F80)) 
+    \data_bram_full[3]_INST_0 
+       (.I0(bili_cntl),
+        .I1(bili_pixel_in[3]),
+        .I2(zoom),
+        .I3(data_in[3]),
+        .O(data_bram_full[3]));
+  LUT4 #(
+    .INIT(16'h8F80)) 
+    \data_bram_full[4]_INST_0 
+       (.I0(bili_cntl),
+        .I1(bili_pixel_in[4]),
+        .I2(zoom),
+        .I3(data_in[4]),
+        .O(data_bram_full[4]));
+  LUT4 #(
+    .INIT(16'h8F80)) 
+    \data_bram_full[5]_INST_0 
+       (.I0(bili_cntl),
+        .I1(bili_pixel_in[5]),
+        .I2(zoom),
+        .I3(data_in[5]),
+        .O(data_bram_full[5]));
+  LUT4 #(
+    .INIT(16'h8F80)) 
+    \data_bram_full[6]_INST_0 
+       (.I0(bili_cntl),
+        .I1(bili_pixel_in[6]),
+        .I2(zoom),
+        .I3(data_in[6]),
+        .O(data_bram_full[6]));
+  LUT4 #(
+    .INIT(16'h8F80)) 
+    \data_bram_full[7]_INST_0 
+       (.I0(bili_cntl),
+        .I1(bili_pixel_in[7]),
+        .I2(zoom),
+        .I3(data_in[7]),
+        .O(data_bram_full[7]));
+  LUT4 #(
+    .INIT(16'h8F80)) 
+    \data_bram_full[8]_INST_0 
+       (.I0(bili_cntl),
+        .I1(bili_pixel_in[8]),
+        .I2(zoom),
+        .I3(data_in[8]),
+        .O(data_bram_full[8]));
+  LUT4 #(
+    .INIT(16'h8F80)) 
+    \data_bram_full[9]_INST_0 
+       (.I0(bili_cntl),
+        .I1(bili_pixel_in[9]),
+        .I2(zoom),
+        .I3(data_in[9]),
+        .O(data_bram_full[9]));
 endmodule
 
 (* CHECK_LICENSE_TYPE = "design_1_BRAM_MUX_0_0,BRAM_MUX,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* ip_definition_source = "module_ref" *) 
@@ -254,228 +295,245 @@ endmodule
 module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
    (addr_in,
     data_in,
-    write_enable,
-    bram_select,
-    addr_bram1,
-    data_bram1,
-    we_bram1,
-    addr_bram2,
-    data_bram2,
-    we_bram2);
+    capture_wea,
+    zoom,
+    bili_cntl,
+    bili_pixel_in,
+    bili_address_write,
+    bili_wea,
+    addr_bram_full,
+    data_bram_full,
+    we_bram_full,
+    addr_bram_small,
+    data_bram_small,
+    we_bram_small);
   input [18:0]addr_in;
   input [11:0]data_in;
-  input write_enable;
-  input bram_select;
-  output [18:0]addr_bram1;
-  output [11:0]data_bram1;
-  output we_bram1;
-  output [16:0]addr_bram2;
-  output [11:0]data_bram2;
-  output we_bram2;
+  input capture_wea;
+  input zoom;
+  input bili_cntl;
+  input [11:0]bili_pixel_in;
+  input [18:0]bili_address_write;
+  input bili_wea;
+  output [18:0]addr_bram_full;
+  output [11:0]data_bram_full;
+  output we_bram_full;
+  output [16:0]addr_bram_small;
+  output [11:0]data_bram_small;
+  output we_bram_small;
 
-  wire [18:0]addr_bram1;
-  wire [16:0]addr_bram2;
+  wire [18:0]addr_bram_full;
+  wire [16:0]addr_bram_small;
   wire [18:0]addr_in;
-  wire bram_select;
-  wire [11:0]data_bram1;
-  wire [11:0]data_bram2;
+  wire [18:0]bili_address_write;
+  wire bili_cntl;
+  wire [11:0]bili_pixel_in;
+  wire bili_wea;
+  wire capture_wea;
+  wire [11:0]data_bram_full;
+  wire [11:0]data_bram_small;
   wire [11:0]data_in;
-  wire we_bram1;
-  wire we_bram2;
-  wire write_enable;
+  wire we_bram_full;
+  wire we_bram_small;
+  wire zoom;
 
   decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BRAM_MUX U0
-       (.addr_bram1(addr_bram1),
+       (.addr_bram_full(addr_bram_full),
         .addr_in(addr_in),
-        .bram_select(bram_select),
-        .data_bram1(data_bram1),
-        .data_in(data_in));
+        .bili_address_write(bili_address_write),
+        .bili_cntl(bili_cntl),
+        .bili_pixel_in(bili_pixel_in),
+        .data_bram_full(data_bram_full),
+        .data_in(data_in),
+        .zoom(zoom));
   LUT2 #(
     .INIT(4'h8)) 
-    \addr_bram2[0]_INST_0 
-       (.I0(bram_select),
+    \addr_bram_small[0]_INST_0 
+       (.I0(zoom),
         .I1(addr_in[0]),
-        .O(addr_bram2[0]));
+        .O(addr_bram_small[0]));
   LUT2 #(
     .INIT(4'h8)) 
-    \addr_bram2[10]_INST_0 
-       (.I0(bram_select),
+    \addr_bram_small[10]_INST_0 
+       (.I0(zoom),
         .I1(addr_in[10]),
-        .O(addr_bram2[10]));
+        .O(addr_bram_small[10]));
   LUT2 #(
     .INIT(4'h8)) 
-    \addr_bram2[11]_INST_0 
-       (.I0(bram_select),
+    \addr_bram_small[11]_INST_0 
+       (.I0(zoom),
         .I1(addr_in[11]),
-        .O(addr_bram2[11]));
+        .O(addr_bram_small[11]));
   LUT2 #(
     .INIT(4'h8)) 
-    \addr_bram2[12]_INST_0 
-       (.I0(bram_select),
+    \addr_bram_small[12]_INST_0 
+       (.I0(zoom),
         .I1(addr_in[12]),
-        .O(addr_bram2[12]));
+        .O(addr_bram_small[12]));
   LUT2 #(
     .INIT(4'h8)) 
-    \addr_bram2[13]_INST_0 
-       (.I0(bram_select),
+    \addr_bram_small[13]_INST_0 
+       (.I0(zoom),
         .I1(addr_in[13]),
-        .O(addr_bram2[13]));
+        .O(addr_bram_small[13]));
   LUT2 #(
     .INIT(4'h8)) 
-    \addr_bram2[14]_INST_0 
-       (.I0(bram_select),
+    \addr_bram_small[14]_INST_0 
+       (.I0(zoom),
         .I1(addr_in[14]),
-        .O(addr_bram2[14]));
+        .O(addr_bram_small[14]));
   LUT2 #(
     .INIT(4'h8)) 
-    \addr_bram2[15]_INST_0 
-       (.I0(bram_select),
+    \addr_bram_small[15]_INST_0 
+       (.I0(zoom),
         .I1(addr_in[15]),
-        .O(addr_bram2[15]));
+        .O(addr_bram_small[15]));
   LUT2 #(
     .INIT(4'h8)) 
-    \addr_bram2[16]_INST_0 
-       (.I0(bram_select),
+    \addr_bram_small[16]_INST_0 
+       (.I0(zoom),
         .I1(addr_in[16]),
-        .O(addr_bram2[16]));
+        .O(addr_bram_small[16]));
   LUT2 #(
     .INIT(4'h8)) 
-    \addr_bram2[1]_INST_0 
-       (.I0(bram_select),
+    \addr_bram_small[1]_INST_0 
+       (.I0(zoom),
         .I1(addr_in[1]),
-        .O(addr_bram2[1]));
+        .O(addr_bram_small[1]));
   LUT2 #(
     .INIT(4'h8)) 
-    \addr_bram2[2]_INST_0 
-       (.I0(bram_select),
+    \addr_bram_small[2]_INST_0 
+       (.I0(zoom),
         .I1(addr_in[2]),
-        .O(addr_bram2[2]));
+        .O(addr_bram_small[2]));
   LUT2 #(
     .INIT(4'h8)) 
-    \addr_bram2[3]_INST_0 
-       (.I0(bram_select),
+    \addr_bram_small[3]_INST_0 
+       (.I0(zoom),
         .I1(addr_in[3]),
-        .O(addr_bram2[3]));
+        .O(addr_bram_small[3]));
   LUT2 #(
     .INIT(4'h8)) 
-    \addr_bram2[4]_INST_0 
-       (.I0(bram_select),
+    \addr_bram_small[4]_INST_0 
+       (.I0(zoom),
         .I1(addr_in[4]),
-        .O(addr_bram2[4]));
+        .O(addr_bram_small[4]));
   LUT2 #(
     .INIT(4'h8)) 
-    \addr_bram2[5]_INST_0 
-       (.I0(bram_select),
+    \addr_bram_small[5]_INST_0 
+       (.I0(zoom),
         .I1(addr_in[5]),
-        .O(addr_bram2[5]));
+        .O(addr_bram_small[5]));
   LUT2 #(
     .INIT(4'h8)) 
-    \addr_bram2[6]_INST_0 
-       (.I0(bram_select),
+    \addr_bram_small[6]_INST_0 
+       (.I0(zoom),
         .I1(addr_in[6]),
-        .O(addr_bram2[6]));
+        .O(addr_bram_small[6]));
   LUT2 #(
     .INIT(4'h8)) 
-    \addr_bram2[7]_INST_0 
-       (.I0(bram_select),
+    \addr_bram_small[7]_INST_0 
+       (.I0(zoom),
         .I1(addr_in[7]),
-        .O(addr_bram2[7]));
+        .O(addr_bram_small[7]));
   LUT2 #(
     .INIT(4'h8)) 
-    \addr_bram2[8]_INST_0 
-       (.I0(bram_select),
+    \addr_bram_small[8]_INST_0 
+       (.I0(zoom),
         .I1(addr_in[8]),
-        .O(addr_bram2[8]));
+        .O(addr_bram_small[8]));
   LUT2 #(
     .INIT(4'h8)) 
-    \addr_bram2[9]_INST_0 
-       (.I0(bram_select),
+    \addr_bram_small[9]_INST_0 
+       (.I0(zoom),
         .I1(addr_in[9]),
-        .O(addr_bram2[9]));
+        .O(addr_bram_small[9]));
   LUT2 #(
     .INIT(4'h8)) 
-    \data_bram2[0]_INST_0 
-       (.I0(bram_select),
+    \data_bram_small[0]_INST_0 
+       (.I0(zoom),
         .I1(data_in[0]),
-        .O(data_bram2[0]));
+        .O(data_bram_small[0]));
   LUT2 #(
     .INIT(4'h8)) 
-    \data_bram2[10]_INST_0 
-       (.I0(bram_select),
+    \data_bram_small[10]_INST_0 
+       (.I0(zoom),
         .I1(data_in[10]),
-        .O(data_bram2[10]));
+        .O(data_bram_small[10]));
   LUT2 #(
     .INIT(4'h8)) 
-    \data_bram2[11]_INST_0 
-       (.I0(bram_select),
+    \data_bram_small[11]_INST_0 
+       (.I0(zoom),
         .I1(data_in[11]),
-        .O(data_bram2[11]));
+        .O(data_bram_small[11]));
   LUT2 #(
     .INIT(4'h8)) 
-    \data_bram2[1]_INST_0 
-       (.I0(bram_select),
+    \data_bram_small[1]_INST_0 
+       (.I0(zoom),
         .I1(data_in[1]),
-        .O(data_bram2[1]));
+        .O(data_bram_small[1]));
   LUT2 #(
     .INIT(4'h8)) 
-    \data_bram2[2]_INST_0 
-       (.I0(bram_select),
+    \data_bram_small[2]_INST_0 
+       (.I0(zoom),
         .I1(data_in[2]),
-        .O(data_bram2[2]));
+        .O(data_bram_small[2]));
   LUT2 #(
     .INIT(4'h8)) 
-    \data_bram2[3]_INST_0 
-       (.I0(bram_select),
+    \data_bram_small[3]_INST_0 
+       (.I0(zoom),
         .I1(data_in[3]),
-        .O(data_bram2[3]));
+        .O(data_bram_small[3]));
   LUT2 #(
     .INIT(4'h8)) 
-    \data_bram2[4]_INST_0 
-       (.I0(bram_select),
+    \data_bram_small[4]_INST_0 
+       (.I0(zoom),
         .I1(data_in[4]),
-        .O(data_bram2[4]));
+        .O(data_bram_small[4]));
   LUT2 #(
     .INIT(4'h8)) 
-    \data_bram2[5]_INST_0 
-       (.I0(bram_select),
+    \data_bram_small[5]_INST_0 
+       (.I0(zoom),
         .I1(data_in[5]),
-        .O(data_bram2[5]));
+        .O(data_bram_small[5]));
   LUT2 #(
     .INIT(4'h8)) 
-    \data_bram2[6]_INST_0 
-       (.I0(bram_select),
+    \data_bram_small[6]_INST_0 
+       (.I0(zoom),
         .I1(data_in[6]),
-        .O(data_bram2[6]));
+        .O(data_bram_small[6]));
   LUT2 #(
     .INIT(4'h8)) 
-    \data_bram2[7]_INST_0 
-       (.I0(bram_select),
+    \data_bram_small[7]_INST_0 
+       (.I0(zoom),
         .I1(data_in[7]),
-        .O(data_bram2[7]));
+        .O(data_bram_small[7]));
   LUT2 #(
     .INIT(4'h8)) 
-    \data_bram2[8]_INST_0 
-       (.I0(bram_select),
+    \data_bram_small[8]_INST_0 
+       (.I0(zoom),
         .I1(data_in[8]),
-        .O(data_bram2[8]));
+        .O(data_bram_small[8]));
   LUT2 #(
     .INIT(4'h8)) 
-    \data_bram2[9]_INST_0 
-       (.I0(bram_select),
+    \data_bram_small[9]_INST_0 
+       (.I0(zoom),
         .I1(data_in[9]),
-        .O(data_bram2[9]));
-  LUT2 #(
-    .INIT(4'h2)) 
-    we_bram1_INST_0
-       (.I0(write_enable),
-        .I1(bram_select),
-        .O(we_bram1));
+        .O(data_bram_small[9]));
+  LUT4 #(
+    .INIT(16'h8F80)) 
+    we_bram_full_INST_0
+       (.I0(bili_cntl),
+        .I1(bili_wea),
+        .I2(zoom),
+        .I3(capture_wea),
+        .O(we_bram_full));
   LUT2 #(
     .INIT(4'h8)) 
-    we_bram2_INST_0
-       (.I0(bram_select),
-        .I1(write_enable),
-        .O(we_bram2));
+    we_bram_small_INST_0
+       (.I0(zoom),
+        .I1(capture_wea),
+        .O(we_bram_small));
 endmodule
 `ifndef GLBL
 `define GLBL
