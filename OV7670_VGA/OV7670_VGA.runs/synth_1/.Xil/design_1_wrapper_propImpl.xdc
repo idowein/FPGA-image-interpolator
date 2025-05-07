@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/Nexys-A7-100T-Master.xdc rfile:../../../Nexys-A7-100T-Master.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:C:/Digital-Zoom-FPGA/OV7670_VGA/Nexys-A7-100T-Master.xdc rfile:../../../Nexys-A7-100T-Master.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:3 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN E3 [get_ports clk_in1]
 set_property src_info {type:XDC file:1 line:6 export:INPUT save:INPUT read:READ} [current_design]

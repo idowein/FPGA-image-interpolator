@@ -35,9 +35,9 @@ entity bram_datain_mux is
   Port ( 
         clk                     : in  STD_LOGIC;
         zoom_x2                 : in  STD_LOGIC;
-        data_in_zoomed_bram     : in  std_logic_vector(18 downto 0); 
-        data_in_full_bram       : in std_logic_vector(16 downto 0);
-        data_out                : out std_logic_vector(18 downto 0)   
+        data_in_zoomed_bram     : in  std_logic_vector(11 downto 0); 
+        data_in_full_bram       : in std_logic_vector(11 downto 0);
+        data_out                : out std_logic_vector(11 downto 0)   
   );
 end bram_datain_mux;
 
@@ -45,10 +45,10 @@ architecture Behavioral of bram_datain_mux is
 
 begin
 
-        process(clk)
+        process(zoom_x2, data_in_zoomed_bram, data_in_full_bram)
         begin 
             if zoom_x2 = '1' then
-                data_out <= "00" & data_in_zoomed_bram;
+                data_out <= data_in_zoomed_bram;
             else 
                 data_out <= data_in_full_bram;
             end if;
