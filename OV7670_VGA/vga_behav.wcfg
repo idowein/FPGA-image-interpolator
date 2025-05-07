@@ -10,20 +10,21 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="505904fs"></ZoomStartTime>
-      <ZoomEndTime time="585605fs"></ZoomEndTime>
-      <Cursor1Time time="540854fs"></Cursor1Time>
+      <ZoomStartTime time="13123334fs"></ZoomStartTime>
+      <ZoomEndTime time="13323335fs"></ZoomEndTime>
+      <Cursor1Time time="13205000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="193"></NameColumnWidth>
-      <ValueColumnWidth column_width="87"></ValueColumnWidth>
+      <ValueColumnWidth column_width="83"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="24" />
+   <WVObjectSize size="23" />
    <wave_markers>
       <marker time="5400000" label="" />
       <marker time="16805400000" label="" />
       <marker time="297615" label="" />
       <marker time="509036" label="" />
+      <marker time="13205000" label="" />
    </wave_markers>
    <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/reset" type="logic">
       <obj_property name="ElementShortName">reset</obj_property>
@@ -61,14 +62,19 @@
       <obj_property name="ObjectShortName">pixel_out[11:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/address_out" type="array">
-      <obj_property name="ElementShortName">address_out[18:0]</obj_property>
-      <obj_property name="ObjectShortName">address_out[18:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
    <wvobject type="divider" fp_name="divider158">
       <obj_property name="label">uut</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/address_read" type="array">
+      <obj_property name="ElementShortName">address_read[18:0]</obj_property>
+      <obj_property name="ObjectShortName">address_read[18:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/address_write" type="array">
+      <obj_property name="ElementShortName">address_write[18:0]</obj_property>
+      <obj_property name="ObjectShortName">address_write[18:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/eight_pixel_in" type="array">
       <obj_property name="ElementShortName">eight_pixel_in[95:0]</obj_property>
@@ -107,18 +113,6 @@
       <obj_property name="ElementShortName">filtered_pixel_out[191:0]</obj_property>
       <obj_property name="ObjectShortName">filtered_pixel_out[191:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/address_out" type="array">
-      <obj_property name="ElementShortName">address_out[18:0]</obj_property>
-      <obj_property name="ObjectShortName">address_out[18:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/address_out_sig" type="array">
-      <obj_property name="ElementShortName">address_out_sig[18:0]</obj_property>
-      <obj_property name="ObjectShortName">address_out_sig[18:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/A" type="array">
       <obj_property name="ElementShortName">A[11:0]</obj_property>

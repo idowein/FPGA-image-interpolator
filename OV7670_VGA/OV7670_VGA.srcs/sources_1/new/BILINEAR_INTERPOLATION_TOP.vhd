@@ -24,14 +24,16 @@ use IEEE.NUMERIC_STD.ALL; -- Use this for proper arithmetic operations
 
 entity BILINEAR_INTERPOLATION_TOP is
   Port ( 
-        clk_vga             : in  std_logic; -- 25.175MHz
+        clk_vga             : in  std_logic; -- 25.2 MHz
         clk_in1             : in  std_logic; -- 100 MHz
-        clk_interpolation   : in  std_logic; -- 25.175/4 MHz
-        reset               : in  std_logic; -- 25.175/4 MHz
+        clk_interpolation   : in  std_logic; -- 25.2/4 MHz = 6.3 MHz
+        reset               : in  std_logic;
         pixel_in            : in  std_logic_vector(11 downto 0);
+        bili_cntl           : in  std_logic; -- external switch
         write_enable        : out std_logic; 
         pixel_out           : out std_logic_vector(11 downto 0); 
-        address_out         : out std_logic_vector(18 downto 0) 
+        address_write       : out std_logic_vector(18 downto 0); 
+        address_read        : out std_logic_vector(18 downto 0) 
   );
 end BILINEAR_INTERPOLATION_TOP;
 
@@ -44,7 +46,8 @@ architecture Behavioral of BILINEAR_INTERPOLATION_TOP is
     -- signal h_cnt                : std_logic_vector(1 downto 0) := (others => '0');
     -- signal v_cnt                : std_logic_vector(1 downto 0) := (others => '0');
     
-    signal address_out_sig      : std_logic_vector(18 downto 0) := (others => '0');
+    signal address_write_sig      : std_logic_vector(18 downto 0) := (others => '0');
+    signal address_read_sig       : std_logic_vector(18 downto 0) := (others => '0');
     
     signal wr_en_sig            : std_logic := '0';
     signal wr_en_sig_d          : std_logic := '0';
@@ -144,56 +147,103 @@ begin
         end if;
     end process;
 
-    -- Process to calculate address for BRAM
--- Process to calculate address for BRAM using 4×4 block-based scan
-process (clk_in1, reset)
-    -- Local variables for block-based scan
-    variable h_block     : integer := 0;  -- Horizontal start of 4×4 block
-    variable v_block     : integer := 0;  -- Vertical start of 4×4 block
-    variable local_h     : integer := 0;  -- Column offset inside 4×4 block
-    variable local_v     : integer := 0;  -- Row offset inside 4×4 block
-    variable h_cnt       : integer := 0;  -- Final horizontal pixel index
-    variable v_cnt       : integer := 0;  -- Final vertical pixel index
-begin
-    if reset = '1' then
-        address_out_sig <= (others => '0');
-        h_block     := 0;
-        v_block     := 0;
-        local_h     := 0;
-        local_v     := 0;
-    elsif rising_edge(clk_in1) and wr_en_sig_d = '1' then
-        -- Calculate actual horizontal and vertical pixel coordinates
-        h_cnt := h_block + local_h;
-        v_cnt := v_block + local_v;
-
-        -- Write address = row × 640 + column
-        address_out_sig <= std_logic_vector(to_unsigned(v_cnt * 640 + h_cnt, address_out_sig'length));
-
-        -- Update counters
-        if local_h = 3 then
-            local_h := 0;
-            if local_v = 3 then
-                local_v := 0;
-                if h_block = 636 then
-                    h_block := 0;
-                    if v_block = 476 then
-                        v_block := 0; -- Full scan complete; restart
+    -- Process to calculate address for writing to second BRAM using 4×4 block-based scan
+    process (clk_in1, reset)
+        -- Local variables for block-based scan
+        variable h_block     : integer := 0;  -- Horizontal start of 4×4 block
+        variable v_block     : integer := 0;  -- Vertical start of 4×4 block
+        variable local_h     : integer := 0;  -- Column offset inside 4×4 block
+        variable local_v     : integer := 0;  -- Row offset inside 4×4 block
+        variable h_cnt       : integer := 0;  -- Final horizontal pixel index
+        variable v_cnt       : integer := 0;  -- Final vertical pixel index
+    begin
+        if reset = '1' then
+            address_write_sig <= (others => '0');
+            h_block     := 0;
+            v_block     := 0;
+            local_h     := 0;
+            local_v     := 0;
+        elsif rising_edge(clk_in1) and wr_en_sig_d = '1' then
+            -- Calculate actual horizontal and vertical pixel coordinates
+            h_cnt := h_block + local_h;
+            v_cnt := v_block + local_v;
+    
+            -- Write address = row × 640 + column
+            address_write_sig <= std_logic_vector(to_unsigned(v_cnt * 640 + h_cnt, address_write_sig'length));
+    
+            -- Update counters
+            if local_h = 3 then
+                local_h := 0;
+                if local_v = 3 then
+                    local_v := 0;
+                    if h_block = 636 then
+                        h_block := 0;
+                        if v_block = 476 then
+                            v_block := 0; -- Full scan complete; restart
+                        else
+                            v_block := v_block + 4; -- Next row of blocks
+                        end if;
                     else
-                        v_block := v_block + 4; -- Next row of blocks
+                        h_block := h_block + 4; -- Next column block
                     end if;
                 else
-                    h_block := h_block + 4; -- Next column block
+                    local_v := local_v + 1; -- Next row inside block
                 end if;
             else
-                local_v := local_v + 1; -- Next row inside block
+                local_h := local_h + 1; -- Next column inside block
             end if;
-        else
-            local_h := local_h + 1; -- Next column inside block
         end if;
-    end if;
-end process;
+    end process;
 
+-- Process to calculate address for reading from first BRAM using 2x2 block-based scan
+    process (clk_in1, reset)
+        -- Local variables for block-based scan
+        variable h_block     : integer := 0;  -- Horizontal start of 2x2 block
+        variable v_block     : integer := 0;  -- Vertical start of 2x2 block
+        variable local_h     : integer := 0;  -- Column offset inside 2x2 block
+        variable local_v     : integer := 0;  -- Row offset inside 2x2 block
+        variable h_cnt       : integer := 0;  -- Final horizontal pixel index
+        variable v_cnt       : integer := 0;  -- Final vertical pixel index
+    begin
+        if reset = '1' then
+            address_read_sig <= (others => '0');
+            h_block     := 0;
+            v_block     := 0;
+            local_h     := 0;
+            local_v     := 0;
+        elsif rising_edge(clk_in1) and wr_en_sig_d = '1' then
+            -- Calculate actual horizontal and vertical pixel coordinates
+            h_cnt := h_block + local_h;
+            v_cnt := v_block + local_v;
+    
+            -- read address = row × 640 + column
+            address_read_sig <= std_logic_vector(to_unsigned(v_cnt * 640 + h_cnt, address_read_sig'length));
+    
+            -- Update counters
+            if local_h = 1 then
+                local_h := 0;
+                if local_v = 1 then
+                    local_v := 0;
+                    if h_block = 638 then
+                        h_block := 0;
+                        if v_block = 478 then
+                            v_block := 0; -- Full scan complete; restart
+                        else
+                            v_block := v_block + 2; -- Next row of blocks
+                        end if;
+                    else
+                        h_block := h_block + 2; -- Next column block
+                    end if;
+                else
+                    local_v := local_v + 1; -- Next row inside block
+                end if;
+            else
+                local_h := local_h + 1; -- Next column inside block
+            end if;
+        end if;
+    end process;
 
-    address_out <= address_out_sig;
+    address_write <= address_write_sig;
+    address_read <= address_read_sig;
 
 end Behavioral;

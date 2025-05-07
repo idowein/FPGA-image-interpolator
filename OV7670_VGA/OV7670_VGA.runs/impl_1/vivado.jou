@@ -2,11 +2,11 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Tue May  6 14:31:43 2025
-# Process ID: 10760
-# Current directory: C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/impl_1
+# Start of session at: Wed May  7 11:05:54 2025
+# Process ID: 16020
+# Current directory: C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/impl_1
 # Command line: vivado.exe -log BILINEAR_INTERPOLATION_TOP.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source BILINEAR_INTERPOLATION_TOP.tcl -notrace
-# Log file: C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/impl_1/BILINEAR_INTERPOLATION_TOP.vdi
-# Journal file: C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/impl_1\vivado.jou
+# Log file: C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/impl_1/BILINEAR_INTERPOLATION_TOP.vdi
+# Journal file: C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/impl_1\vivado.jou
 #-----------------------------------------------------------
 source BILINEAR_INTERPOLATION_TOP.tcl -notrace

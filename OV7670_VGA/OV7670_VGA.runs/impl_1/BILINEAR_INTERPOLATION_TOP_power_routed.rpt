@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date             : Tue May  6 14:32:27 2025
-| Host             : Ido running 64-bit major release  (build 9200)
+| Date             : Wed May  7 11:09:06 2025
+| Host             : dvirhersh_comp running 64-bit major release  (build 9200)
 | Command          : report_power -file BILINEAR_INTERPOLATION_TOP_power_routed.rpt -pb BILINEAR_INTERPOLATION_TOP_power_summary_routed.pb -rpx BILINEAR_INTERPOLATION_TOP_power_routed.rpx
 | Design           : BILINEAR_INTERPOLATION_TOP
 | Device           : xc7a100tcsg324-1
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+----------------------------------+
-| Total On-Chip Power (W)  | 38.644 (Junction temp exceeded!) |
+| Total On-Chip Power (W)  | 34.933 (Junction temp exceeded!) |
 | Design Power Budget (W)  | Unspecified*                     |
 | Power Budget Margin (W)  | NA                               |
-| Dynamic (W)              | 37.854                           |
+| Dynamic (W)              | 34.142                           |
 | Device Static (W)        | 0.791                            |
 | Effective TJA (C/W)      | 4.6                              |
 | Max Ambient (C)          | 0.0                              |
@@ -52,18 +52,18 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     4.214 |     1001 |       --- |             --- |
-|   LUT as Logic |     3.337 |      404 |     63400 |            0.64 |
-|   CARRY4       |     0.552 |      117 |     15850 |            0.74 |
-|   Register     |     0.256 |      402 |    126800 |            0.32 |
-|   F7/F8 Muxes  |     0.052 |       24 |     63400 |            0.04 |
-|   BUFG         |     0.017 |        3 |        32 |            9.38 |
-|   Others       |     0.000 |        3 |       --- |             --- |
-| Signals        |     4.827 |      856 |       --- |             --- |
-| DSPs           |     0.603 |        1 |       240 |            0.42 |
-| I/O            |    28.210 |       47 |       210 |           22.38 |
+| Slice Logic    |     5.869 |     1470 |       --- |             --- |
+|   LUT as Logic |     4.811 |      723 |     63400 |            1.14 |
+|   CARRY4       |     0.735 |      159 |     15850 |            1.00 |
+|   Register     |     0.255 |      462 |    126800 |            0.36 |
+|   F7/F8 Muxes  |     0.056 |       24 |     63400 |            0.04 |
+|   BUFG         |     0.012 |        3 |        32 |            9.38 |
+|   Others       |     0.000 |        4 |       --- |             --- |
+| Signals        |     5.729 |     1167 |       --- |             --- |
+| DSPs           |     0.422 |        2 |       240 |            0.83 |
+| I/O            |    22.122 |       48 |       210 |           22.86 |
 | Static Power   |     0.791 |          |           |                 |
-| Total          |    38.644 |          |           |                 |
+| Total          |    34.933 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,11 +73,11 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |    10.267 |       9.704 |      0.563 |
-| Vccaux    |       1.800 |     2.397 |       2.304 |      0.093 |
+| Vccint    |       1.000 |    12.640 |      12.077 |      0.563 |
+| Vccaux    |       1.800 |     1.899 |       1.806 |      0.093 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
-| Vcco18    |       1.800 |    13.338 |      13.334 |      0.004 |
+| Vcco18    |       1.800 |    10.456 |      10.452 |      0.004 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
@@ -140,7 +140,7 @@ Table of Contents
 +----------------------------+-----------+
 | Name                       | Power (W) |
 +----------------------------+-----------+
-| BILINEAR_INTERPOLATION_TOP |    37.854 |
+| BILINEAR_INTERPOLATION_TOP |    34.142 |
 +----------------------------+-----------+
 
 

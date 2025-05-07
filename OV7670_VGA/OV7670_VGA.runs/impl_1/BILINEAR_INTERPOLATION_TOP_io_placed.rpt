@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date                      : Tue May  6 14:32:05 2025
-| Host                      : Ido running 64-bit major release  (build 9200)
+| Date                      : Wed May  7 11:07:26 2025
+| Host                      : dvirhersh_comp running 64-bit major release  (build 9200)
 | Command                   : report_io -file BILINEAR_INTERPOLATION_TOP_io_placed.rpt
 | Design                    : BILINEAR_INTERPOLATION_TOP
 | Device                    : xc7a100t
@@ -25,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|            47 |
+|            48 |
 +---------------+
 
 
@@ -113,7 +113,7 @@ Table of Contents
 | E4         |                   |            | GND                          | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | E5         |                   | High Range | IO_L5N_T0_AD13N_35           | User IO     |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | E6         |                   | High Range | IO_L5P_T0_AD13P_35           | User IO     |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
-| E7         |                   | High Range | IO_L6P_T0_35                 | User IO     |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
+| E7         | reset             | High Range | IO_L6P_T0_35                 | INPUT       | LVCMOS33    |      35 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | E8         |                   | Dedicated  | VCCBATT_0                    | Config      |             |       0 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | E9         |                   | Dedicated  | CCLK_0                       | Config      |             |       0 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | E10        |                   | Dedicated  | TCK_0                        | Config      |             |       0 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
