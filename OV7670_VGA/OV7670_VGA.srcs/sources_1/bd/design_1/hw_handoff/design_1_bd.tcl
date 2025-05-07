@@ -229,22 +229,24 @@ proc create_root_design { parentCell } {
   # Create instance: clk_wiz_0, and set properties
   set clk_wiz_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_0 ]
   set_property -dict [ list \
-   CONFIG.CLKOUT1_JITTER {183.215} \
-   CONFIG.CLKOUT1_PHASE_ERROR {105.461} \
-   CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {25.175} \
-   CONFIG.CLKOUT2_JITTER {183.467} \
-   CONFIG.CLKOUT2_PHASE_ERROR {105.461} \
+   CONFIG.CLKOUT1_JITTER {181.828} \
+   CONFIG.CLKOUT1_PHASE_ERROR {104.359} \
+   CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {25} \
+   CONFIG.CLKOUT1_USED {true} \
+   CONFIG.CLKOUT2_JITTER {175.402} \
+   CONFIG.CLKOUT2_PHASE_ERROR {98.575} \
    CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {25} \
-   CONFIG.CLKOUT2_USED {true} \
+   CONFIG.CLKOUT2_USED {false} \
    CONFIG.CLK_OUT1_PORT {clk_vga} \
    CONFIG.CLK_OUT2_PORT {clk_reg} \
-   CONFIG.MMCM_CLKFBOUT_MULT_F {9.000} \
-   CONFIG.MMCM_CLKOUT0_DIVIDE_F {35.750} \
-   CONFIG.MMCM_CLKOUT1_DIVIDE {36} \
+   CONFIG.MMCM_CLKFBOUT_MULT_F {9.125} \
+   CONFIG.MMCM_CLKOUT0_DIVIDE_F {36.500} \
+   CONFIG.MMCM_CLKOUT1_DIVIDE {1} \
    CONFIG.MMCM_DIVCLK_DIVIDE {1} \
-   CONFIG.NUM_OUT_CLKS {2} \
+   CONFIG.NUM_OUT_CLKS {1} \
    CONFIG.RESET_PORT {resetn} \
    CONFIG.RESET_TYPE {ACTIVE_LOW} \
+   CONFIG.USE_LOCKED {false} \
  ] $clk_wiz_0
 
   # Create instance: cntl_0, and set properties
@@ -292,8 +294,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net camera_h_ref_0_1 [get_bd_ports camera_h_ref] [get_bd_pins ovo_7670_caputre_0/camera_h_ref]
   connect_bd_net -net camera_v_sync_0_1 [get_bd_ports camera_v_sync] [get_bd_pins ovo_7670_caputre_0/camera_v_sync]
   connect_bd_net -net clk_in1_0_1 [get_bd_ports clk_in1] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins cntl_0/clk]
-  connect_bd_net -net clk_wiz_0_clk_reg [get_bd_pins clk_wiz_0/clk_reg] [get_bd_pins ov7670_controller_0/clk]
-  connect_bd_net -net clk_wiz_0_clk_vga [get_bd_pins VGA_TOP_1/pix_clk] [get_bd_pins blk_mem_gen_0/clkb] [get_bd_pins clk_wiz_0/clk_vga]
+  connect_bd_net -net clk_wiz_0_clk_vga [get_bd_pins VGA_TOP_1/pix_clk] [get_bd_pins blk_mem_gen_0/clkb] [get_bd_pins clk_wiz_0/clk_vga] [get_bd_pins ov7670_controller_0/clk]
   connect_bd_net -net cntl_0_cntl_out [get_bd_pins VGA_TOP_1/cntl] [get_bd_pins cntl_0/cntl_out]
   connect_bd_net -net cntl_0_resend_out [get_bd_pins cntl_0/resend_out] [get_bd_pins ov7670_controller_0/resend]
   connect_bd_net -net cntl_in_0_1 [get_bd_ports cntl_in] [get_bd_pins cntl_0/cntl_in]

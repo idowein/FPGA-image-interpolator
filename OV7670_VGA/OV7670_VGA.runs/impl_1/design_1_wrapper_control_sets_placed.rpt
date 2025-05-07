@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Wed May  7 14:58:48 2025
+| Date         : Wed May  7 17:26:43 2025
 | Host         : Ido running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file design_1_wrapper_control_sets_placed.rpt
 | Design       : design_1_wrapper
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    18 |
-|    Minimum number of control sets                        |    18 |
+| Total control sets                                       |    17 |
+|    Minimum number of control sets                        |    17 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    72 |
+| Unused register locations in slices containing registers |    64 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,10 +39,10 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    18 |
-| >= 0 to < 4        |     2 |
-| >= 4 to < 6        |     1 |
-| >= 6 to < 8        |     0 |
+| Total control sets |    17 |
+| >= 0 to < 4        |     1 |
+| >= 4 to < 6        |     0 |
+| >= 6 to < 8        |     1 |
 | >= 8 to < 10       |     1 |
 | >= 10 to < 12      |     3 |
 | >= 12 to < 14      |     3 |
@@ -61,9 +61,9 @@ Table of Contents
 | No           | No                    | No                     |              23 |           16 |
 | No           | No                    | Yes                    |               0 |            0 |
 | No           | Yes                   | No                     |              12 |            3 |
-| Yes          | No                    | No                     |              57 |           21 |
+| Yes          | No                    | No                     |              57 |           22 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |             172 |           51 |
+| Yes          | Yes                   | No                     |             172 |           49 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -74,22 +74,21 @@ Table of Contents
 |            Clock Signal            |                                Enable Signal                               |                            Set/Reset Signal                            | Slice Load Count | Bel Load Count |
 +------------------------------------+----------------------------------------------------------------------------+------------------------------------------------------------------------+------------------+----------------+
 |  clk_in1_IBUF                      |                                                                            |                                                                        |                2 |              2 |
-|  design_1_i/clk_wiz_0/inst/clk_vga |                                                                            |                                                                        |                2 |              2 |
-|  design_1_i/clk_wiz_0/inst/clk_reg |                                                                            |                                                                        |                4 |              5 |
-|  design_1_i/clk_wiz_0/inst/clk_reg | design_1_i/ov7670_controller_0/U0/Inst_ov7670_registers/busy_sr_reg[31][0] |                                                                        |                2 |              8 |
+|  design_1_i/clk_wiz_0/inst/clk_vga |                                                                            |                                                                        |                6 |              7 |
+|  design_1_i/clk_wiz_0/inst/clk_vga | design_1_i/ov7670_controller_0/U0/Inst_ov7670_registers/busy_sr_reg[31][0] |                                                                        |                2 |              8 |
+|  design_1_i/clk_wiz_0/inst/clk_vga | design_1_i/ov7670_controller_0/U0/Inst_SCCB_sender/busy_sr0                | design_1_i/ov7670_controller_0/U0/Inst_SCCB_sender/data_sr[30]_i_1_n_0 |                4 |             11 |
 |  pclk_IBUF_BUFG                    | design_1_i/ovo_7670_caputre_0/U0/p_0_in_0                                  | design_1_i/ovo_7670_caputre_0/U0/counter_col[10]_i_1_n_0               |                4 |             11 |
-|  pclk_IBUF_BUFG                    | design_1_i/ovo_7670_caputre_0/U0/counter_row0                              | camera_v_sync_IBUF                                                     |                5 |             11 |
-|  design_1_i/clk_wiz_0/inst/clk_reg | design_1_i/ov7670_controller_0/U0/Inst_SCCB_sender/busy_sr0                | design_1_i/ov7670_controller_0/U0/Inst_SCCB_sender/data_sr[30]_i_1_n_0 |                4 |             11 |
+|  pclk_IBUF_BUFG                    | design_1_i/ovo_7670_caputre_0/U0/counter_row0                              | camera_v_sync_IBUF                                                     |                3 |             11 |
 |  design_1_i/clk_wiz_0/inst/clk_vga |                                                                            | design_1_i/VGA_TOP_1/U0/vga_timing_inst/eqOp                           |                3 |             12 |
 |  design_1_i/clk_wiz_0/inst/clk_vga | design_1_i/VGA_TOP_1/U0/vga_timing_inst/eqOp                               | design_1_i/VGA_TOP_1/U0/vga_timing_inst/v_cnt_reg                      |                3 |             12 |
 |  design_1_i/clk_wiz_0/inst/clk_vga | design_1_i/VGA_TOP_1/U0/vga_timing_inst/E[0]                               | design_1_i/VGA_TOP_1/U0/vga_timing_inst/cntl_0[0]                      |                6 |             12 |
 |  pclk_IBUF_BUFG                    |                                                                            |                                                                        |                8 |             14 |
-|  design_1_i/clk_wiz_0/inst/clk_reg | design_1_i/ov7670_controller_0/U0/Inst_SCCB_sender/E[0]                    | design_1_i/cntl_0/U0/resend_out                                        |                3 |             16 |
-|  pclk_IBUF_BUFG                    | design_1_i/ovo_7670_caputre_0/U0/address                                   | camera_v_sync_IBUF                                                     |                5 |             17 |
+|  design_1_i/clk_wiz_0/inst/clk_vga | design_1_i/ov7670_controller_0/U0/Inst_SCCB_sender/E[0]                    | design_1_i/cntl_0/U0/resend_out                                        |                3 |             16 |
 |  design_1_i/clk_wiz_0/inst/clk_vga | design_1_i/VGA_TOP_1/U0/vga_timing_inst/val_tmp                            | design_1_i/VGA_TOP_1/U0/pixel_renderer_inst/SR[0]                      |                5 |             17 |
-|  design_1_i/clk_wiz_0/inst/clk_reg | design_1_i/ov7670_controller_0/U0/Inst_SCCB_sender/busy_sr0                |                                                                        |                6 |             21 |
-|  pclk_IBUF_BUFG                    | design_1_i/ovo_7670_caputre_0/U0/p_0_in1_in                                |                                                                        |               13 |             28 |
-|  design_1_i/clk_wiz_0/inst/clk_reg | design_1_i/ov7670_controller_0/U0/Inst_SCCB_sender/busy_sr0                | design_1_i/ov7670_controller_0/U0/Inst_SCCB_sender/busy_sr[31]_i_1_n_0 |                6 |             31 |
+|  pclk_IBUF_BUFG                    | design_1_i/ovo_7670_caputre_0/U0/address                                   | camera_v_sync_IBUF                                                     |                5 |             17 |
+|  design_1_i/clk_wiz_0/inst/clk_vga | design_1_i/ov7670_controller_0/U0/Inst_SCCB_sender/busy_sr0                |                                                                        |                6 |             21 |
+|  pclk_IBUF_BUFG                    | design_1_i/ovo_7670_caputre_0/U0/p_0_in1_in                                |                                                                        |               14 |             28 |
+|  design_1_i/clk_wiz_0/inst/clk_vga | design_1_i/ov7670_controller_0/U0/Inst_SCCB_sender/busy_sr0                | design_1_i/ov7670_controller_0/U0/Inst_SCCB_sender/busy_sr[31]_i_1_n_0 |                6 |             31 |
 |  design_1_i/clk_wiz_0/inst/clk_vga | design_1_i/VGA_TOP_1/U0/vga_timing_inst/CO[0]                              | design_1_i/VGA_TOP_1/U0/pixel_renderer_inst/SR[0]                      |               10 |             34 |
 +------------------------------------+----------------------------------------------------------------------------+------------------------------------------------------------------------+------------------+----------------+
 

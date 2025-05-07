@@ -187,25 +187,28 @@
         "xci_name": "design_1_clk_wiz_0_0",
         "parameters": {
           "CLKOUT1_JITTER": {
-            "value": "183.215"
+            "value": "181.828"
           },
           "CLKOUT1_PHASE_ERROR": {
-            "value": "105.461"
+            "value": "104.359"
           },
           "CLKOUT1_REQUESTED_OUT_FREQ": {
-            "value": "25.175"
+            "value": "25"
+          },
+          "CLKOUT1_USED": {
+            "value": "true"
           },
           "CLKOUT2_JITTER": {
-            "value": "183.467"
+            "value": "175.402"
           },
           "CLKOUT2_PHASE_ERROR": {
-            "value": "105.461"
+            "value": "98.575"
           },
           "CLKOUT2_REQUESTED_OUT_FREQ": {
             "value": "25"
           },
           "CLKOUT2_USED": {
-            "value": "true"
+            "value": "false"
           },
           "CLK_OUT1_PORT": {
             "value": "clk_vga"
@@ -214,25 +217,28 @@
             "value": "clk_reg"
           },
           "MMCM_CLKFBOUT_MULT_F": {
-            "value": "9.000"
+            "value": "9.125"
           },
           "MMCM_CLKOUT0_DIVIDE_F": {
-            "value": "35.750"
+            "value": "36.500"
           },
           "MMCM_CLKOUT1_DIVIDE": {
-            "value": "36"
+            "value": "1"
           },
           "MMCM_DIVCLK_DIVIDE": {
             "value": "1"
           },
           "NUM_OUT_CLKS": {
-            "value": "2"
+            "value": "1"
           },
           "RESET_PORT": {
             "value": "resetn"
           },
           "RESET_TYPE": {
             "value": "ACTIVE_LOW"
+          },
+          "USE_LOCKED": {
+            "value": "false"
           }
         }
       },
@@ -383,7 +389,7 @@
                 "value_src": "ip_prop"
               },
               "FREQ_HZ": {
-                "value": "25174825",
+                "value": "25000000",
                 "value_src": "ip_prop"
               },
               "PHASE": {
@@ -493,12 +499,7 @@
         "ports": [
           "clk_wiz_0/clk_vga",
           "blk_mem_gen_0/clkb",
-          "VGA_TOP_1/pix_clk"
-        ]
-      },
-      "clk_wiz_0_clk_reg": {
-        "ports": [
-          "clk_wiz_0/clk_reg",
+          "VGA_TOP_1/pix_clk",
           "ov7670_controller_0/clk"
         ]
       },

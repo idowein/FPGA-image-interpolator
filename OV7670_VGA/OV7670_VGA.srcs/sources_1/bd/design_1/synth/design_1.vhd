@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
---Date        : Wed May  7 14:57:09 2025
+--Date        : Wed May  7 17:25:07 2025
 --Host        : Ido running 64-bit major release  (build 9200)
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -56,9 +56,7 @@ architecture STRUCTURE of design_1 is
   port (
     resetn : in STD_LOGIC;
     clk_in1 : in STD_LOGIC;
-    clk_vga : out STD_LOGIC;
-    clk_reg : out STD_LOGIC;
-    locked : out STD_LOGIC
+    clk_vga : out STD_LOGIC
   );
   end component design_1_clk_wiz_0_0;
   component design_1_ov7670_controller_0_0 is
@@ -119,7 +117,6 @@ architecture STRUCTURE of design_1 is
   signal camera_h_ref_0_1 : STD_LOGIC;
   signal camera_v_sync_0_1 : STD_LOGIC;
   signal clk_in1_0_1 : STD_LOGIC;
-  signal clk_wiz_0_clk_reg : STD_LOGIC;
   signal clk_wiz_0_clk_vga : STD_LOGIC;
   signal cntl_0_cntl_out : STD_LOGIC;
   signal cntl_0_resend_out : STD_LOGIC;
@@ -137,7 +134,6 @@ architecture STRUCTURE of design_1 is
   signal resend_in_0_1 : STD_LOGIC;
   signal resetn_0_1 : STD_LOGIC;
   signal zoom_x2_0_1 : STD_LOGIC;
-  signal NLW_clk_wiz_0_locked_UNCONNECTED : STD_LOGIC;
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of clk_in1 : signal is "xilinx.com:signal:clock:1.0 CLK.CLK_IN1 CLK";
   attribute X_INTERFACE_PARAMETER : string;
@@ -192,9 +188,7 @@ blk_mem_gen_0: component design_1_blk_mem_gen_0_0
 clk_wiz_0: component design_1_clk_wiz_0_0
      port map (
       clk_in1 => clk_in1_0_1,
-      clk_reg => clk_wiz_0_clk_reg,
       clk_vga => clk_wiz_0_clk_vga,
-      locked => NLW_clk_wiz_0_locked_UNCONNECTED,
       resetn => resetn_0_1
     );
 cntl_0: component design_1_cntl_0_0
@@ -207,7 +201,7 @@ cntl_0: component design_1_cntl_0_0
     );
 ov7670_controller_0: component design_1_ov7670_controller_0_0
      port map (
-      clk => clk_wiz_0_clk_reg,
+      clk => clk_wiz_0_clk_vga,
       config_finished => ov7670_controller_0_config_finished,
       pwdn => ov7670_controller_0_pwdn,
       resend => cntl_0_resend_out,
