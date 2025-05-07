@@ -62,6 +62,9 @@ set_property IOSTANDARD LVCMOS33 [get_ports resend_in]
 set_property PACKAGE_PIN H6 [get_ports zoom_x2]
 set_property IOSTANDARD LVCMOS33 [get_ports zoom_x2]
 
+set_property PACKAGE_PIN T13 [get_ports bili_cntl]
+set_property IOSTANDARD LVCMOS33 [get_ports bili_cntl]
+
 ##Pmod Header JD
 #JD[1]
 set_property PACKAGE_PIN H4 [get_ports {din[6]}]

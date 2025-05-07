@@ -33,7 +33,7 @@ entity BILINEAR_INTERPOLATION_TOP is
         write_enable        : out std_logic; 
         pixel_out           : out std_logic_vector(11 downto 0); 
         address_write       : out std_logic_vector(18 downto 0); 
-        address_read        : out std_logic_vector(18 downto 0) 
+        address_read        : out std_logic_vector(16 downto 0) 
   );
 end BILINEAR_INTERPOLATION_TOP;
 
@@ -47,7 +47,7 @@ architecture Behavioral of BILINEAR_INTERPOLATION_TOP is
     -- signal v_cnt                : std_logic_vector(1 downto 0) := (others => '0');
     
     signal address_write_sig      : std_logic_vector(18 downto 0) := (others => '0');
-    signal address_read_sig       : std_logic_vector(18 downto 0) := (others => '0');
+    signal address_read_sig       : std_logic_vector(16 downto 0) := (others => '0');
     
     signal wr_en_sig            : std_logic := '0';
     signal wr_en_sig_d          : std_logic := '0';

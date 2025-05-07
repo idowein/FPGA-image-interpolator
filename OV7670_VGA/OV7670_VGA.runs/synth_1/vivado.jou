@@ -2,11 +2,11 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Wed May  7 11:04:14 2025
-# Process ID: 2732
-# Current directory: C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/synth_1
-# Command line: vivado.exe -log BILINEAR_INTERPOLATION_TOP.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source BILINEAR_INTERPOLATION_TOP.tcl
-# Log file: C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/synth_1/BILINEAR_INTERPOLATION_TOP.vds
-# Journal file: C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/synth_1\vivado.jou
+# Start of session at: Wed May  7 12:55:52 2025
+# Process ID: 24936
+# Current directory: C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/synth_1
+# Command line: vivado.exe -log design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
+# Log file: C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/synth_1/design_1_wrapper.vds
+# Journal file: C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
-source BILINEAR_INTERPOLATION_TOP.tcl -notrace
+source design_1_wrapper.tcl -notrace
