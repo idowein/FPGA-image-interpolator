@@ -1,6 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../OV7670_VGA.srcs/sources_1/new/BILINEAR_INTERPOLATION_UNIT.vhd" \
-
-# Do not sort compile order
-nosort

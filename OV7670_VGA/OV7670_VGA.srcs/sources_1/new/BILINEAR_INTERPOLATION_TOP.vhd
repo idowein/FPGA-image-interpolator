@@ -21,6 +21,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL; -- Use this for proper arithmetic operations
+use IEEE.std_logic_unsigned.all;
 
 entity BILINEAR_INTERPOLATION_TOP is
   Port ( 
@@ -49,7 +50,9 @@ architecture Behavioral of BILINEAR_INTERPOLATION_TOP is
     signal address_read_sig       : std_logic_vector(16 downto 0) := (others => '0');
     
     signal wr_en_sig            : std_logic := '0';
-    signal wr_en_sig_d          : std_logic := '0';
+--    signal wr_en_sig_d          : std_logic := '0';
+    
+    signal write_state : std_logic_vector(1 downto 0) := (others => '0');
 
 begin
 
@@ -60,12 +63,13 @@ begin
     process (clk_vga)
     begin
         if rising_edge(clk_vga) then
+            write_state <= write_state + 1;
             eight_pixel_in <= eight_pixel_in(83 downto 0) & pixel_in; -- Shift and append the incoming pixel
-            if clk_interpolation = '1' then
-                A              <= eight_pixel_in(47 downto 36);
-                B              <= eight_pixel_in(35 downto 24);
-                C              <= eight_pixel_in(23 downto 12);
-                D              <= eight_pixel_in(11 downto 0);
+            if write_state = "00" then
+                A <= eight_pixel_in(47 downto 36);
+                B <= eight_pixel_in(35 downto 24);
+                C <= eight_pixel_in(23 downto 12);
+                D <= eight_pixel_in(11 downto 0 );
             end if;
         end if;
     end process;
@@ -81,7 +85,7 @@ begin
         if rising_edge(clk_interpolation) then
             -- Enable write operation only when 4 pixels received
             wr_en_sig <= '1';
-            wr_en_sig_d <= wr_en_sig;
+--            wr_en_sig_d <= wr_en_sig;
 
             -- Convert inputs from std_logic_vector to unsigned for arithmetic
             A_int := unsigned(A);
@@ -123,14 +127,14 @@ begin
 
     -- Process to transmit pixels to BRAM
     process (clk_in1)
-        variable i : integer := 15;
+        variable i : integer := 16;
     begin
-        if rising_edge(clk_in1) and wr_en_sig_d = '1' then
+        if rising_edge(clk_in1) and wr_en_sig = '1' then
             -- Output the filtered pixel
-            pixel_out <= filtered_pixel_out((i * 12 + 11) downto (i * 12));
             i := i - 1;
+            pixel_out <= filtered_pixel_out((i * 12 + 11) downto (i * 12));
             if i = 0 then
-                i := 15;
+                i := 16;
             end if;
         end if;
     end process;
@@ -145,7 +149,7 @@ begin
         variable h_cnt       : integer := 0;  -- Final horizontal pixel index
         variable v_cnt       : integer := 0;  -- Final vertical pixel index
     begin
-        if rising_edge(clk_in1) and wr_en_sig_d = '1' then
+        if rising_edge(clk_in1) and wr_en_sig = '1' then
             -- Calculate actual horizontal and vertical pixel coordinates
             h_cnt := h_block + local_h;
             v_cnt := v_block + local_v;
@@ -187,7 +191,7 @@ begin
         variable h_cnt       : integer := 0;  -- Final horizontal pixel index
         variable v_cnt       : integer := 0;  -- Final vertical pixel index
     begin
-        if rising_edge(clk_in1) and wr_en_sig_d = '1' then
+        if rising_edge(clk_vga) then
             -- Calculate actual horizontal and vertical pixel coordinates
             h_cnt := h_block + local_h;
             v_cnt := v_block + local_v;

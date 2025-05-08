@@ -33,13 +33,12 @@ architecture Behavioral of BILINEAR_INTERPOLATION_TOP_tb is
             clk_vga             : in  std_logic; -- 25.175MHz
             clk_in1             : in  std_logic; -- 100 MHz
             clk_interpolation   : in  std_logic; -- 25.175/4 MHz
-            reset               : in  std_logic;
             bili_cntl           : in  std_logic;
             pixel_in            : in  std_logic_vector(11 downto 0);
             write_enable        : out std_logic; 
             pixel_out           : out std_logic_vector(11 downto 0); 
             address_write       : out std_logic_vector(18 downto 0);
-            address_read        : out std_logic_vector(18 downto 0) 
+            address_read        : out std_logic_vector(16 downto 0) 
         );
     end component;
 
@@ -47,18 +46,17 @@ architecture Behavioral of BILINEAR_INTERPOLATION_TOP_tb is
     signal clk_vga             : std_logic := '0';
     signal clk_in1             : std_logic := '0';
     signal clk_interpolation   : std_logic := '0';
-    signal reset               : std_logic := '0';
     signal bili_cntl           : std_logic := '0';
     signal pixel_in            : std_logic_vector(11 downto 0) := (others => '0');
     signal write_enable        : std_logic;
     signal pixel_out           : std_logic_vector(11 downto 0);
     signal address_write       : std_logic_vector(18 downto 0);
-    signal address_read        : std_logic_vector(18 downto 0);
+    signal address_read        : std_logic_vector(16 downto 0);
 
     -- Clock periods
     constant clk_in1_period    : time := 10 ns;  -- 100 MHz
-    constant clk_vga_period    : time := 39.682 ns; -- 25.175 MHz
-    constant clk_interpolation_period : time := 158.730 ns; -- 6.3 MHz
+    constant clk_vga_period    : time := 40 ns; -- 25.175 MHz
+    constant clk_interpolation_period : time := 160 ns; -- 6.3 MHz
 
 begin
 
@@ -68,7 +66,6 @@ begin
             clk_vga           => clk_vga,
             clk_in1           => clk_in1,
             clk_interpolation => clk_interpolation,
-            reset             => reset,
             bili_cntl         => bili_cntl,
             pixel_in          => pixel_in,
             write_enable      => write_enable,
@@ -95,15 +92,6 @@ begin
         wait for clk_vga_period / 2;
     end process;
 
-    -- Clock generation for clk_vga (25.175 MHz)
-    reset_process : process
-    begin
-        reset <= '1';
-        wait for clk_in1_period * 10;
-        reset <= '0';
-        wait;
-    end process;
-
     -- Clock generation for clk_interpolation (6.3 MHz)
     clk_interpolation_process : process
     begin
@@ -117,7 +105,7 @@ begin
     stimulus_process : process
     begin
         -- Provide sample pixel 
-        wait for 138.887ns;
+        wait for clk_vga_period / 2;
         pixel_in <= std_logic_vector(to_unsigned(10, 12));
         wait for clk_vga_period;
         pixel_in <= std_logic_vector(to_unsigned(20, 12));

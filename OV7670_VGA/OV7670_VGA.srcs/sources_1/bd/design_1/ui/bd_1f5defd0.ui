@@ -1,100 +1,83 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"0.712431",
-   "Default View_TopLeft":"-149,-139",
+   "Default View_ScaleFactor":"0.904043",
+   "Default View_TopLeft":"-70,69",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0.21  2019-05-29 bk=1.5064 VDI=41 GEI=36 GUI=JA:9.0 non-TLS
 #  -string -flagsOSRD
-preplace port clk_in1 -pg 1 -lvl 0 -x -10 -y 280 -defaultsOSRD
-preplace port camera_h_ref -pg 1 -lvl 0 -x -10 -y 100 -defaultsOSRD
-preplace port camera_v_sync -pg 1 -lvl 0 -x -10 -y 80 -defaultsOSRD
-preplace port pclk -pg 1 -lvl 0 -x -10 -y 60 -defaultsOSRD
-preplace port sioc -pg 1 -lvl 6 -x 2550 -y 700 -defaultsOSRD
-preplace port config_finished -pg 1 -lvl 6 -x 2550 -y 680 -defaultsOSRD
-preplace port reset -pg 1 -lvl 6 -x 2550 -y 740 -defaultsOSRD
-preplace port siod -pg 1 -lvl 6 -x 2550 -y 720 -defaultsOSRD
-preplace port pwdn -pg 1 -lvl 6 -x 2550 -y 760 -defaultsOSRD
-preplace port xclk -pg 1 -lvl 6 -x 2550 -y 780 -defaultsOSRD
-preplace port resend_in -pg 1 -lvl 0 -x -10 -y 750 -defaultsOSRD
-preplace port cntl_in -pg 1 -lvl 0 -x -10 -y 770 -defaultsOSRD
-preplace port resetn -pg 1 -lvl 0 -x -10 -y 260 -defaultsOSRD
-preplace port zoom_x2 -pg 1 -lvl 0 -x -10 -y 340 -defaultsOSRD
-preplace port vga_V_sync -pg 1 -lvl 6 -x 2550 -y 510 -defaultsOSRD
-preplace port VGA_H_sync -pg 1 -lvl 6 -x 2550 -y 490 -defaultsOSRD
-preplace port bili_cntl -pg 1 -lvl 0 -x -10 -y 200 -defaultsOSRD
-preplace portBus din -pg 1 -lvl 0 -x -10 -y 140 -defaultsOSRD
-preplace portBus vga_green -pg 1 -lvl 6 -x 2550 -y 570 -defaultsOSRD
-preplace portBus vga_blue -pg 1 -lvl 6 -x 2550 -y 550 -defaultsOSRD
-preplace portBus vga_red -pg 1 -lvl 6 -x 2550 -y 530 -defaultsOSRD
-preplace inst blk_mem_gen_0 -pg 1 -lvl 5 -x 1720 -y 280 -defaultsOSRD
-preplace inst clk_wiz_0 -pg 1 -lvl 1 -x 130 -y 270 -defaultsOSRD
-preplace inst zoom_bram_address_suit -pg 1 -lvl 4 -x 1220 -y 380 -defaultsOSRD
-preplace inst VGA_TOP_WITH_DATA_MUX -pg 1 -lvl 5 -x 1720 -y 540 -defaultsOSRD
-preplace inst cntl_0 -pg 1 -lvl 4 -x 1220 -y 750 -defaultsOSRD
-preplace inst ovo_7670_caputre_0 -pg 1 -lvl 2 -x 450 -y 100 -defaultsOSRD
-preplace inst ov7670_controller_0 -pg 1 -lvl 5 -x 1720 -y 830 -defaultsOSRD
-preplace inst BILINEAR_INTERPOLATI_0 -pg 1 -lvl 2 -x 450 -y 280 -defaultsOSRD
-preplace inst BRAM_MUX_0 -pg 1 -lvl 3 -x 840 -y 240 -defaultsOSRD
-preplace inst VGA_TOP_WITH_DATA_MUX|VGA_TOP_1 -pg 1 -lvl 2 -x 2160 -y 570 -defaultsOSRD
-preplace inst VGA_TOP_WITH_DATA_MUX|bram_datain_mux_0 -pg 1 -lvl 1 -x 1800 -y 600 -defaultsOSRD
-preplace netloc cntl_0_resend_out 1 4 1 1340 740n
+preplace port clk_in1 -pg 1 -lvl 0 -x -20 -y 300 -defaultsOSRD
+preplace port camera_h_ref -pg 1 -lvl 0 -x -20 -y 100 -defaultsOSRD
+preplace port camera_v_sync -pg 1 -lvl 0 -x -20 -y 80 -defaultsOSRD
+preplace port pclk -pg 1 -lvl 0 -x -20 -y 60 -defaultsOSRD
+preplace port sioc -pg 1 -lvl 6 -x 1960 -y 710 -defaultsOSRD
+preplace port config_finished -pg 1 -lvl 6 -x 1960 -y 690 -defaultsOSRD
+preplace port reset -pg 1 -lvl 6 -x 1960 -y 750 -defaultsOSRD
+preplace port siod -pg 1 -lvl 6 -x 1960 -y 730 -defaultsOSRD
+preplace port pwdn -pg 1 -lvl 6 -x 1960 -y 770 -defaultsOSRD
+preplace port xclk -pg 1 -lvl 6 -x 1960 -y 790 -defaultsOSRD
+preplace port resend_in -pg 1 -lvl 0 -x -20 -y 760 -defaultsOSRD
+preplace port cntl_in -pg 1 -lvl 0 -x -20 -y 780 -defaultsOSRD
+preplace port resetn -pg 1 -lvl 0 -x -20 -y 280 -defaultsOSRD
+preplace port zoom_x2 -pg 1 -lvl 0 -x -20 -y 360 -defaultsOSRD
+preplace port vga_V_sync -pg 1 -lvl 6 -x 1960 -y 520 -defaultsOSRD
+preplace port VGA_H_sync -pg 1 -lvl 6 -x 1960 -y 500 -defaultsOSRD
+preplace port bili_cntl -pg 1 -lvl 0 -x -20 -y 220 -defaultsOSRD
+preplace portBus din -pg 1 -lvl 0 -x -20 -y 140 -defaultsOSRD
+preplace portBus vga_green -pg 1 -lvl 6 -x 1960 -y 580 -defaultsOSRD
+preplace portBus vga_blue -pg 1 -lvl 6 -x 1960 -y 560 -defaultsOSRD
+preplace portBus vga_red -pg 1 -lvl 6 -x 1960 -y 540 -defaultsOSRD
+preplace inst blk_mem_gen_0 -pg 1 -lvl 5 -x 1750 -y 210 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 1 -x 130 -y 290 -defaultsOSRD
+preplace inst zoom_bram_address_suit -pg 1 -lvl 4 -x 1320 -y 460 -defaultsOSRD
+preplace inst VGA_TOP_WITH_DATA_MUX -pg 1 -lvl 5 -x 1750 -y 542 -defaultsOSRD
+preplace inst cntl_0 -pg 1 -lvl 4 -x 1320 -y 760 -defaultsOSRD
+preplace inst ovo_7670_caputre_0 -pg 1 -lvl 2 -x 480 -y 100 -defaultsOSRD
+preplace inst ov7670_controller_0 -pg 1 -lvl 5 -x 1750 -y 740 -defaultsOSRD
+preplace inst BRAM_MUX_0 -pg 1 -lvl 3 -x 910 -y 200 -defaultsOSRD
+preplace inst BILINEAR_INTERPOLATI_0 -pg 1 -lvl 2 -x 480 -y 300 -defaultsOSRD
+preplace netloc cntl_0_resend_out 1 4 1 N 750
 preplace netloc camera_h_ref_0_1 1 0 2 NJ 100 NJ
 preplace netloc camera_v_sync_0_1 1 0 2 NJ 80 NJ
 preplace netloc din_0_1 1 0 2 NJ 140 NJ
-preplace netloc pclk_0_1 1 0 5 NJ 60 240 420 NJ 420 1080 230 1370J
-preplace netloc ov7670_controller_0_sioc 1 5 1 2490J 700n
-preplace netloc ov7670_controller_0_config_finished 1 5 1 2480J 680n
-preplace netloc ov7670_controller_0_reset 1 5 1 2510J 740n
-preplace netloc Net1 1 5 1 2500J 720n
-preplace netloc ov7670_controller_0_pwdn 1 5 1 2520J 760n
-preplace netloc ov7670_controller_0_xclk 1 5 1 2530J 780n
-preplace netloc resend_in_0_1 1 0 4 NJ 750 NJ 750 NJ 750 NJ
-preplace netloc cntl_in_0_1 1 0 4 NJ 770 NJ 770 NJ 770 NJ
-preplace netloc resetn_0_1 1 0 1 NJ 260
-preplace netloc zoom_x2_0_1 1 0 5 NJ 340 260 400 630 110 NJ 110 1390J
-preplace netloc VGA_TOP_1_vga_V_sync 1 5 1 2500J 510n
-preplace netloc VGA_TOP_1_VGA_H_sync 1 5 1 2490J 490n
-preplace netloc VGA_TOP_1_vga_green 1 5 1 2530J 570n
-preplace netloc VGA_TOP_1_vga_blue 1 5 1 2520J 550n
-preplace netloc VGA_TOP_1_vga_red 1 5 1 2510J 530n
-preplace netloc cntl_0_cntl_out 1 4 1 1410 560n
-preplace netloc ovo_7670_caputre_0_dout 1 2 1 640 100n
-preplace netloc BRAM_MUX_0_addr_bram1 1 3 2 NJ 190 1420
-preplace netloc BRAM_MUX_0_data_bram1 1 3 2 1030J 200 1400
-preplace netloc BRAM_MUX_0_we_bram2 1 3 1 1050 290n
-preplace netloc BRAM_MUX_0_data_bram2 1 3 1 1040 270n
-preplace netloc BRAM_MUX_0_we_bram1 1 3 2 1040J 210 1380
-preplace netloc blk_mem_gen_0_doutb 1 4 1 1420 360n
-preplace netloc blk_mem_gen_1_doutb 1 1 4 290 410 NJ 410 1090J 250 1340
-preplace netloc ovo_7670_caputre_0_addr 1 2 1 650 80n
-preplace netloc VGA_TOP_1_frame_adress 1 3 3 1100 180 1410 140 2480
-preplace netloc ovo_7670_caputre_0_wr_en 1 2 1 610 120n
-preplace netloc addra_1 1 3 1 1060 250n
-preplace netloc clk_in1_1 1 0 4 10 350 280 730 NJ 730 NJ
-preplace netloc clk_wiz_0_clk_vga 1 1 4 270 390 NJ 390 1070 220 1360
-preplace netloc bili_cntl_1 1 0 5 NJ 200 250 380 650 370 1030J 240 1350
-preplace netloc clk_wiz_0_clk_interpolation 1 1 1 N 280
-preplace netloc BILINEAR_INTERPOLATI_0_address_write 1 2 1 N 290
-preplace netloc BILINEAR_INTERPOLATI_0_write_enable 1 2 1 620 250n
-preplace netloc BILINEAR_INTERPOLATI_0_pixel_out 1 2 1 N 270
-preplace netloc BILINEAR_INTERPOLATI_0_address_read 1 2 2 610 430 NJ
-preplace netloc VGA_TOP_WITH_DATA_MUX|bram_datain_mux_0_data_out 1 1 1 N 600
-preplace netloc VGA_TOP_WITH_DATA_MUX|clk_wiz_0_clk_vga 1 0 2 1620 480 2000
-preplace netloc VGA_TOP_WITH_DATA_MUX|zoom_x2_0_1 1 0 2 1610 500 1980
-preplace netloc VGA_TOP_WITH_DATA_MUX|blk_mem_gen_1_doutb 1 0 1 1590 520n
-preplace netloc VGA_TOP_WITH_DATA_MUX|blk_mem_gen_0_doutb 1 0 1 1580 540n
-preplace netloc VGA_TOP_WITH_DATA_MUX|cntl_0_cntl_out 1 0 2 1600J 490 1990
-preplace netloc VGA_TOP_WITH_DATA_MUX|VGA_TOP_1_VGA_H_sync 1 2 1 N 520
-preplace netloc VGA_TOP_WITH_DATA_MUX|VGA_TOP_1_vga_V_sync 1 2 1 N 540
-preplace netloc VGA_TOP_WITH_DATA_MUX|VGA_TOP_1_vga_red 1 2 1 N 560
-preplace netloc VGA_TOP_WITH_DATA_MUX|VGA_TOP_1_vga_blue 1 2 1 N 580
-preplace netloc VGA_TOP_WITH_DATA_MUX|VGA_TOP_1_vga_green 1 2 1 N 600
-preplace netloc VGA_TOP_WITH_DATA_MUX|VGA_TOP_1_frame_adress 1 2 1 N 620
-preplace netloc VGA_TOP_WITH_DATA_MUX|bili_cntl_1 1 0 1 N 580
-levelinfo -pg 1 -10 130 450 840 1220 1720 2550
-levelinfo -hier VGA_TOP_WITH_DATA_MUX * 1800 2160 *
-pagesize -pg 1 -db -bbox -sgen -160 0 2700 940
-pagesize -hier VGA_TOP_WITH_DATA_MUX -db -bbox -sgen 1550 460 2350 700
+preplace netloc pclk_0_1 1 0 5 NJ 60 250 400 NJ 400 1120 180 1450J
+preplace netloc ov7670_controller_0_sioc 1 5 1 NJ 710
+preplace netloc ov7670_controller_0_config_finished 1 5 1 NJ 690
+preplace netloc ov7670_controller_0_reset 1 5 1 NJ 750
+preplace netloc Net1 1 5 1 NJ 730
+preplace netloc ov7670_controller_0_pwdn 1 5 1 NJ 770
+preplace netloc ov7670_controller_0_xclk 1 5 1 NJ 790
+preplace netloc resend_in_0_1 1 0 4 NJ 760 NJ 760 NJ 760 NJ
+preplace netloc cntl_in_0_1 1 0 4 NJ 780 NJ 780 NJ 780 NJ
+preplace netloc resetn_0_1 1 0 1 NJ 280
+preplace netloc zoom_x2_0_1 1 0 5 0J 210 240 200 640 70 NJ 70 1460J
+preplace netloc VGA_TOP_1_vga_V_sync 1 5 1 1940J 512n
+preplace netloc VGA_TOP_1_VGA_H_sync 1 5 1 1940J 492n
+preplace netloc VGA_TOP_1_vga_green 1 5 1 1940J 572n
+preplace netloc VGA_TOP_1_vga_blue 1 5 1 1940J 552n
+preplace netloc VGA_TOP_1_vga_red 1 5 1 1940J 532n
+preplace netloc cntl_0_cntl_out 1 4 1 1490 572n
+preplace netloc ovo_7670_caputre_0_dout 1 2 1 660 100n
+preplace netloc BRAM_MUX_0_addr_bram1 1 3 2 N 150 NJ
+preplace netloc BRAM_MUX_0_data_bram1 1 3 2 N 170 1440J
+preplace netloc BRAM_MUX_0_we_bram2 1 3 1 1160 250n
+preplace netloc BRAM_MUX_0_data_bram2 1 3 1 1130 230n
+preplace netloc BRAM_MUX_0_we_bram1 1 3 2 1180 210 NJ
+preplace netloc blk_mem_gen_0_doutb 1 4 1 1490 290n
+preplace netloc blk_mem_gen_1_doutb 1 1 4 280 410 670J 340 1150J 330 1450
+preplace netloc ovo_7670_caputre_0_addr 1 2 1 670 80n
+preplace netloc VGA_TOP_1_frame_adress 1 3 3 1180 310 1480 350 1930
+preplace netloc ovo_7670_caputre_0_wr_en 1 2 1 650 120n
+preplace netloc addra_1 1 3 1 1170 210n
+preplace netloc clk_in1_1 1 0 4 10 360 270 740 NJ 740 NJ
+preplace netloc clk_wiz_0_clk_vga 1 1 4 260 430 NJ 430 1140 320 1470
+preplace netloc bili_cntl_1 1 0 5 NJ 220 240 420 650 420 1100 592 N
+preplace netloc clk_wiz_0_clk_interpolation 1 1 1 N 300
+preplace netloc BILINEAR_INTERPOLATI_0_address_write 1 2 1 670 250n
+preplace netloc BILINEAR_INTERPOLATI_0_write_enable 1 2 1 N 270
+preplace netloc BILINEAR_INTERPOLATI_0_pixel_out 1 2 1 640 230n
+preplace netloc BILINEAR_INTERPOLATI_0_address_read 1 2 2 N 330 1110J
+levelinfo -pg 1 -20 130 480 910 1320 1750 1960
+pagesize -pg 1 -db -bbox -sgen -170 0 2110 1020
 "
 }
 0

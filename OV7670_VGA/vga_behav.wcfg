@@ -3,160 +3,81 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="bilinear_interpolation_unit_tb_behav.wdb" id="1">
+      <db_ref path="ovo_7670_caputre_behav.wdb" id="1">
          <top_modules>
-            <top_module name="bilinear_interpolation_unit_tb" />
+            <top_module name="glbl" />
+            <top_module name="ovo_7670_caputre" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="119688fs"></ZoomEndTime>
+      <ZoomEndTime time="1040001fs"></ZoomEndTime>
       <Cursor1Time time="14747fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="161"></NameColumnWidth>
-      <ValueColumnWidth column_width="99"></ValueColumnWidth>
+      <ValueColumnWidth column_width="95"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="34" />
+   <WVObjectSize size="14" />
    <wave_markers>
       <marker time="5400000" label="" />
       <marker time="16805400000" label="" />
    </wave_markers>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/clk" type="logic">
-      <obj_property name="ElementShortName">clk</obj_property>
-      <obj_property name="ObjectShortName">clk</obj_property>
+   <wvobject fp_name="/ovo_7670_caputre/pclk" type="logic">
+      <obj_property name="ElementShortName">pclk</obj_property>
+      <obj_property name="ObjectShortName">pclk</obj_property>
    </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/rst" type="logic">
-      <obj_property name="ElementShortName">rst</obj_property>
-      <obj_property name="ObjectShortName">rst</obj_property>
+   <wvobject fp_name="/ovo_7670_caputre/camera_v_sync" type="logic">
+      <obj_property name="ElementShortName">camera_v_sync</obj_property>
+      <obj_property name="ObjectShortName">camera_v_sync</obj_property>
    </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/A" type="array">
-      <obj_property name="ElementShortName">A[11:0]</obj_property>
-      <obj_property name="ObjectShortName">A[11:0]</obj_property>
+   <wvobject fp_name="/ovo_7670_caputre/camera_h_ref" type="logic">
+      <obj_property name="ElementShortName">camera_h_ref</obj_property>
+      <obj_property name="ObjectShortName">camera_h_ref</obj_property>
    </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/B" type="array">
-      <obj_property name="ElementShortName">B[11:0]</obj_property>
-      <obj_property name="ObjectShortName">B[11:0]</obj_property>
+   <wvobject fp_name="/ovo_7670_caputre/zoom_x2" type="logic">
+      <obj_property name="ElementShortName">zoom_x2</obj_property>
+      <obj_property name="ObjectShortName">zoom_x2</obj_property>
    </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/C" type="array">
-      <obj_property name="ElementShortName">C[11:0]</obj_property>
-      <obj_property name="ObjectShortName">C[11:0]</obj_property>
+   <wvobject fp_name="/ovo_7670_caputre/din" type="array">
+      <obj_property name="ElementShortName">din[7:0]</obj_property>
+      <obj_property name="ObjectShortName">din[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/D" type="array">
-      <obj_property name="ElementShortName">D[11:0]</obj_property>
-      <obj_property name="ObjectShortName">D[11:0]</obj_property>
+   <wvobject fp_name="/ovo_7670_caputre/addr" type="array">
+      <obj_property name="ElementShortName">addr[18:0]</obj_property>
+      <obj_property name="ObjectShortName">addr[18:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/O11" type="array">
-      <obj_property name="ElementShortName">O11[11:0]</obj_property>
-      <obj_property name="ObjectShortName">O11[11:0]</obj_property>
+   <wvobject fp_name="/ovo_7670_caputre/dout" type="array">
+      <obj_property name="ElementShortName">dout[11:0]</obj_property>
+      <obj_property name="ObjectShortName">dout[11:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/O12" type="array">
-      <obj_property name="ElementShortName">O12[11:0]</obj_property>
-      <obj_property name="ObjectShortName">O12[11:0]</obj_property>
+   <wvobject fp_name="/ovo_7670_caputre/wr_en" type="logic">
+      <obj_property name="ElementShortName">wr_en</obj_property>
+      <obj_property name="ObjectShortName">wr_en</obj_property>
    </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/O13" type="array">
-      <obj_property name="ElementShortName">O13[11:0]</obj_property>
-      <obj_property name="ObjectShortName">O13[11:0]</obj_property>
+   <wvobject fp_name="/ovo_7670_caputre/address" type="array">
+      <obj_property name="ElementShortName">address[18:0]</obj_property>
+      <obj_property name="ObjectShortName">address[18:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/O14" type="array">
-      <obj_property name="ElementShortName">O14[11:0]</obj_property>
-      <obj_property name="ObjectShortName">O14[11:0]</obj_property>
+   <wvobject fp_name="/ovo_7670_caputre/write_state" type="array">
+      <obj_property name="ElementShortName">write_state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">write_state[1:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/O21" type="array">
-      <obj_property name="ElementShortName">O21[11:0]</obj_property>
-      <obj_property name="ObjectShortName">O21[11:0]</obj_property>
+   <wvobject fp_name="/ovo_7670_caputre/latch_href" type="logic">
+      <obj_property name="ElementShortName">latch_href</obj_property>
+      <obj_property name="ObjectShortName">latch_href</obj_property>
    </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/O22" type="array">
-      <obj_property name="ElementShortName">O22[11:0]</obj_property>
-      <obj_property name="ObjectShortName">O22[11:0]</obj_property>
+   <wvobject fp_name="/ovo_7670_caputre/latced_data" type="array">
+      <obj_property name="ElementShortName">latced_data[15:0]</obj_property>
+      <obj_property name="ObjectShortName">latced_data[15:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/O23" type="array">
-      <obj_property name="ElementShortName">O23[11:0]</obj_property>
-      <obj_property name="ObjectShortName">O23[11:0]</obj_property>
+   <wvobject fp_name="/ovo_7670_caputre/counter_col" type="array">
+      <obj_property name="ElementShortName">counter_col[10:0]</obj_property>
+      <obj_property name="ObjectShortName">counter_col[10:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/O24" type="array">
-      <obj_property name="ElementShortName">O24[11:0]</obj_property>
-      <obj_property name="ObjectShortName">O24[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/O31" type="array">
-      <obj_property name="ElementShortName">O31[11:0]</obj_property>
-      <obj_property name="ObjectShortName">O31[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/O32" type="array">
-      <obj_property name="ElementShortName">O32[11:0]</obj_property>
-      <obj_property name="ObjectShortName">O32[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/O33" type="array">
-      <obj_property name="ElementShortName">O33[11:0]</obj_property>
-      <obj_property name="ObjectShortName">O33[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/O34" type="array">
-      <obj_property name="ElementShortName">O34[11:0]</obj_property>
-      <obj_property name="ObjectShortName">O34[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/O41" type="array">
-      <obj_property name="ElementShortName">O41[11:0]</obj_property>
-      <obj_property name="ObjectShortName">O41[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/O42" type="array">
-      <obj_property name="ElementShortName">O42[11:0]</obj_property>
-      <obj_property name="ObjectShortName">O42[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/O43" type="array">
-      <obj_property name="ElementShortName">O43[11:0]</obj_property>
-      <obj_property name="ObjectShortName">O43[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/O44" type="array">
-      <obj_property name="ElementShortName">O44[11:0]</obj_property>
-      <obj_property name="ObjectShortName">O44[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/P012" type="array">
-      <obj_property name="ElementShortName">P012[11:0]</obj_property>
-      <obj_property name="ObjectShortName">P012[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/P013" type="array">
-      <obj_property name="ElementShortName">P013[11:0]</obj_property>
-      <obj_property name="ObjectShortName">P013[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/P042" type="array">
-      <obj_property name="ElementShortName">P042[11:0]</obj_property>
-      <obj_property name="ObjectShortName">P042[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/P043" type="array">
-      <obj_property name="ElementShortName">P043[11:0]</obj_property>
-      <obj_property name="ObjectShortName">P043[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/P021" type="array">
-      <obj_property name="ElementShortName">P021[11:0]</obj_property>
-      <obj_property name="ObjectShortName">P021[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/P031" type="array">
-      <obj_property name="ElementShortName">P031[11:0]</obj_property>
-      <obj_property name="ObjectShortName">P031[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/P024" type="array">
-      <obj_property name="ElementShortName">P024[11:0]</obj_property>
-      <obj_property name="ObjectShortName">P024[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/P034" type="array">
-      <obj_property name="ElementShortName">P034[11:0]</obj_property>
-      <obj_property name="ObjectShortName">P034[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/P022" type="array">
-      <obj_property name="ElementShortName">P022[11:0]</obj_property>
-      <obj_property name="ObjectShortName">P022[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/P023" type="array">
-      <obj_property name="ElementShortName">P023[11:0]</obj_property>
-      <obj_property name="ObjectShortName">P023[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/P032" type="array">
-      <obj_property name="ElementShortName">P032[11:0]</obj_property>
-      <obj_property name="ObjectShortName">P032[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/bilinear_interpolation_unit_tb/uut/P033" type="array">
-      <obj_property name="ElementShortName">P033[11:0]</obj_property>
-      <obj_property name="ObjectShortName">P033[11:0]</obj_property>
+   <wvobject fp_name="/ovo_7670_caputre/counter_row" type="array">
+      <obj_property name="ElementShortName">counter_row[10:0]</obj_property>
+      <obj_property name="ObjectShortName">counter_row[10:0]</obj_property>
    </wvobject>
 </wave_config>
