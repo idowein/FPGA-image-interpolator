@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x0",
+      "boundary_crc": "0x83A22927B299716C",
       "device": "xc7a100tcsg324-1",
       "name": "design_1",
       "synth_flow_mode": "Hierarchical",
@@ -10,7 +10,8 @@
     "design_tree": {
       "fpga_exp7_0": "",
       "bh_write_file_0": "",
-      "bili_0": ""
+      "bili_0": "",
+      "BILINEAR_INTERPOLATI_0": ""
     },
     "ports": {
       "clk_0": {
@@ -129,6 +130,52 @@
           "data_out": {
             "direction": "O",
             "left": "7",
+            "right": "0"
+          }
+        }
+      },
+      "BILINEAR_INTERPOLATI_0": {
+        "vlnv": "xilinx.com:module_ref:BILINEAR_INTERPOLATION_TOP:1.0",
+        "xci_name": "design_1_BILINEAR_INTERPOLATI_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "BILINEAR_INTERPOLATION_TOP",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk_vga": {
+            "direction": "I"
+          },
+          "clk_in1": {
+            "direction": "I"
+          },
+          "clk_interpolation": {
+            "direction": "I"
+          },
+          "pixel_in": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "bili_cntl": {
+            "direction": "I"
+          },
+          "write_enable": {
+            "direction": "O"
+          },
+          "pixel_out": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          },
+          "address_write": {
+            "direction": "O",
+            "left": "18",
+            "right": "0"
+          },
+          "address_read": {
+            "direction": "O",
+            "left": "16",
             "right": "0"
           }
         }

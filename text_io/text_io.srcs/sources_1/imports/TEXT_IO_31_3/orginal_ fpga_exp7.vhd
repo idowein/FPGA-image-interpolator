@@ -9,7 +9,7 @@ USE ieee.std_logic_textio.ALL;
 ENTITY fpga_exp7 IS
    PORT( 
       clk           : IN  std_logic;
-		clkx3         : IN  std_logic;
+	  clkx3         : IN  std_logic;
       filed_enable  : IN  std_logic;
       line_enable   : IN  std_logic;
       line_sync     : IN  std_logic;
@@ -24,7 +24,7 @@ ARCHITECTURE bh_fpga_exp7 OF fpga_exp7 IS
 BEGIN
 
    process(clk, RESET)
-      variable l		     : line;
+      variable l		  : line;
       variable temp_input : integer;
    begin
       if RESET = '1' then 
