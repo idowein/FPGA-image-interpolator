@@ -1,0 +1,9 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../text_io.srcs/sources_1/imports/TEXT_IO_31_3/bh_write_file_write_file.vhd" \
+"../../../../text_io.srcs/sources_1/new/bili.vhd" \
+"../../../../text_io.srcs/sources_1/imports/TEXT_IO_31_3/orginal_ fpga_exp7.vhd" \
+"../../../../text_io.srcs/sim_1/imports/TEXT_IO_31_3/test_bench.vhd" \
+
+# Do not sort compile order
+nosort
