@@ -1,7 +1,7 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Wed May  7 22:23:54 2025
+// Date        : Thu May  8 13:16:53 2025
 // Host        : Ido running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_bram_datain_mux_0_0/design_1_bram_datain_mux_0_0_sim_netlist.v
@@ -17,23 +17,27 @@
 (* NotValidForBitStream *)
 module design_1_bram_datain_mux_0_0
    (clk,
+    bili_cntl,
     zoom_x2,
     data_in_zoomed_bram,
     data_in_full_bram,
     data_out);
   (* x_interface_info = "xilinx.com:signal:clock:1.0 clk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME clk, FREQ_HZ 25000000, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0" *) input clk;
+  input bili_cntl;
   input zoom_x2;
   input [11:0]data_in_zoomed_bram;
   input [11:0]data_in_full_bram;
   output [11:0]data_out;
 
+  wire bili_cntl;
   wire [11:0]data_in_full_bram;
   wire [11:0]data_in_zoomed_bram;
   wire [11:0]data_out;
   wire zoom_x2;
 
   design_1_bram_datain_mux_0_0_bram_datain_mux U0
-       (.data_in_full_bram(data_in_full_bram),
+       (.bili_cntl(bili_cntl),
+        .data_in_full_bram(data_in_full_bram),
         .data_in_zoomed_bram(data_in_zoomed_bram),
         .data_out(data_out),
         .zoom_x2(zoom_x2));
@@ -42,114 +46,117 @@ endmodule
 (* ORIG_REF_NAME = "bram_datain_mux" *) 
 module design_1_bram_datain_mux_0_0_bram_datain_mux
    (data_out,
+    bili_cntl,
     data_in_zoomed_bram,
-    data_in_full_bram,
-    zoom_x2);
+    zoom_x2,
+    data_in_full_bram);
   output [11:0]data_out;
+  input bili_cntl;
   input [11:0]data_in_zoomed_bram;
-  input [11:0]data_in_full_bram;
   input zoom_x2;
+  input [11:0]data_in_full_bram;
 
+  wire bili_cntl;
   wire [11:0]data_in_full_bram;
   wire [11:0]data_in_zoomed_bram;
   wire [11:0]data_out;
   wire zoom_x2;
 
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT4 #(
+    .INIT(16'hEF40)) 
     \data_out[0]_INST_0 
-       (.I0(data_in_zoomed_bram[0]),
-        .I1(data_in_full_bram[0]),
+       (.I0(bili_cntl),
+        .I1(data_in_zoomed_bram[0]),
         .I2(zoom_x2),
+        .I3(data_in_full_bram[0]),
         .O(data_out[0]));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT4 #(
+    .INIT(16'hEF40)) 
     \data_out[10]_INST_0 
-       (.I0(data_in_zoomed_bram[10]),
-        .I1(data_in_full_bram[10]),
+       (.I0(bili_cntl),
+        .I1(data_in_zoomed_bram[10]),
         .I2(zoom_x2),
+        .I3(data_in_full_bram[10]),
         .O(data_out[10]));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT4 #(
+    .INIT(16'hEF40)) 
     \data_out[11]_INST_0 
-       (.I0(data_in_zoomed_bram[11]),
-        .I1(data_in_full_bram[11]),
+       (.I0(bili_cntl),
+        .I1(data_in_zoomed_bram[11]),
         .I2(zoom_x2),
+        .I3(data_in_full_bram[11]),
         .O(data_out[11]));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT4 #(
+    .INIT(16'hEF40)) 
     \data_out[1]_INST_0 
-       (.I0(data_in_zoomed_bram[1]),
-        .I1(data_in_full_bram[1]),
+       (.I0(bili_cntl),
+        .I1(data_in_zoomed_bram[1]),
         .I2(zoom_x2),
+        .I3(data_in_full_bram[1]),
         .O(data_out[1]));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT4 #(
+    .INIT(16'hEF40)) 
     \data_out[2]_INST_0 
-       (.I0(data_in_zoomed_bram[2]),
-        .I1(data_in_full_bram[2]),
+       (.I0(bili_cntl),
+        .I1(data_in_zoomed_bram[2]),
         .I2(zoom_x2),
+        .I3(data_in_full_bram[2]),
         .O(data_out[2]));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT4 #(
+    .INIT(16'hEF40)) 
     \data_out[3]_INST_0 
-       (.I0(data_in_zoomed_bram[3]),
-        .I1(data_in_full_bram[3]),
+       (.I0(bili_cntl),
+        .I1(data_in_zoomed_bram[3]),
         .I2(zoom_x2),
+        .I3(data_in_full_bram[3]),
         .O(data_out[3]));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT4 #(
+    .INIT(16'hEF40)) 
     \data_out[4]_INST_0 
-       (.I0(data_in_zoomed_bram[4]),
-        .I1(data_in_full_bram[4]),
+       (.I0(bili_cntl),
+        .I1(data_in_zoomed_bram[4]),
         .I2(zoom_x2),
+        .I3(data_in_full_bram[4]),
         .O(data_out[4]));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT4 #(
+    .INIT(16'hEF40)) 
     \data_out[5]_INST_0 
-       (.I0(data_in_zoomed_bram[5]),
-        .I1(data_in_full_bram[5]),
+       (.I0(bili_cntl),
+        .I1(data_in_zoomed_bram[5]),
         .I2(zoom_x2),
+        .I3(data_in_full_bram[5]),
         .O(data_out[5]));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT4 #(
+    .INIT(16'hEF40)) 
     \data_out[6]_INST_0 
-       (.I0(data_in_zoomed_bram[6]),
-        .I1(data_in_full_bram[6]),
+       (.I0(bili_cntl),
+        .I1(data_in_zoomed_bram[6]),
         .I2(zoom_x2),
+        .I3(data_in_full_bram[6]),
         .O(data_out[6]));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT4 #(
+    .INIT(16'hEF40)) 
     \data_out[7]_INST_0 
-       (.I0(data_in_zoomed_bram[7]),
-        .I1(data_in_full_bram[7]),
+       (.I0(bili_cntl),
+        .I1(data_in_zoomed_bram[7]),
         .I2(zoom_x2),
+        .I3(data_in_full_bram[7]),
         .O(data_out[7]));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT4 #(
+    .INIT(16'hEF40)) 
     \data_out[8]_INST_0 
-       (.I0(data_in_zoomed_bram[8]),
-        .I1(data_in_full_bram[8]),
+       (.I0(bili_cntl),
+        .I1(data_in_zoomed_bram[8]),
         .I2(zoom_x2),
+        .I3(data_in_full_bram[8]),
         .O(data_out[8]));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
+  LUT4 #(
+    .INIT(16'hEF40)) 
     \data_out[9]_INST_0 
-       (.I0(data_in_zoomed_bram[9]),
-        .I1(data_in_full_bram[9]),
+       (.I0(bili_cntl),
+        .I1(data_in_zoomed_bram[9]),
         .I2(zoom_x2),
+        .I3(data_in_full_bram[9]),
         .O(data_out[9]));
 endmodule
 `ifndef GLBL

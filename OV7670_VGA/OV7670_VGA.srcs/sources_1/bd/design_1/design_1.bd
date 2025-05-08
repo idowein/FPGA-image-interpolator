@@ -490,6 +490,9 @@
             "direction": "O",
             "left": "18",
             "right": "0"
+          },
+          "bili_cntl": {
+            "direction": "I"
           }
         },
         "components": {
@@ -586,6 +589,9 @@
                   }
                 }
               },
+              "bili_cntl": {
+                "direction": "I"
+              },
               "zoom_x2": {
                 "direction": "I"
               },
@@ -680,6 +686,12 @@
             "ports": [
               "VGA_TOP_1/frame_adress",
               "frame_adress"
+            ]
+          },
+          "bili_cntl_1": {
+            "ports": [
+              "bili_cntl",
+              "bram_datain_mux_0/bili_cntl"
             ]
           }
         }
@@ -1147,7 +1159,8 @@
       "blk_mem_gen_1_doutb": {
         "ports": [
           "zoom_bram_address_suit/doutb",
-          "VGA_TOP_WITH_DATA_MUX/data_in_zoomed_bram"
+          "VGA_TOP_WITH_DATA_MUX/data_in_zoomed_bram",
+          "BILINEAR_INTERPOLATI_0/pixel_in"
         ]
       },
       "ovo_7670_caputre_0_addr": {
@@ -1179,7 +1192,8 @@
         "ports": [
           "clk_in1",
           "clk_wiz_0/clk_in1",
-          "cntl_0/clk"
+          "cntl_0/clk",
+          "BILINEAR_INTERPOLATI_0/clk_in1"
         ]
       },
       "clk_wiz_0_clk_vga": {
@@ -1188,7 +1202,47 @@
           "zoom_bram_address_suit/clkb",
           "blk_mem_gen_0/clkb",
           "VGA_TOP_WITH_DATA_MUX/pix_clk",
-          "ov7670_controller_0/clk"
+          "ov7670_controller_0/clk",
+          "BILINEAR_INTERPOLATI_0/clk_vga"
+        ]
+      },
+      "bili_cntl_1": {
+        "ports": [
+          "bili_cntl",
+          "BILINEAR_INTERPOLATI_0/bili_cntl",
+          "BRAM_MUX_0/bili_cntl",
+          "zoom_bram_address_suit/bili_cntl",
+          "VGA_TOP_WITH_DATA_MUX/bili_cntl"
+        ]
+      },
+      "clk_wiz_0_clk_interpolation": {
+        "ports": [
+          "clk_wiz_0/clk_interpolation",
+          "BILINEAR_INTERPOLATI_0/clk_interpolation"
+        ]
+      },
+      "BILINEAR_INTERPOLATI_0_address_write": {
+        "ports": [
+          "BILINEAR_INTERPOLATI_0/address_write",
+          "BRAM_MUX_0/bili_address_write"
+        ]
+      },
+      "BILINEAR_INTERPOLATI_0_write_enable": {
+        "ports": [
+          "BILINEAR_INTERPOLATI_0/write_enable",
+          "BRAM_MUX_0/bili_wea"
+        ]
+      },
+      "BILINEAR_INTERPOLATI_0_pixel_out": {
+        "ports": [
+          "BILINEAR_INTERPOLATI_0/pixel_out",
+          "BRAM_MUX_0/bili_pixel_in"
+        ]
+      },
+      "BILINEAR_INTERPOLATI_0_address_read": {
+        "ports": [
+          "BILINEAR_INTERPOLATI_0/address_read",
+          "zoom_bram_address_suit/bili_addr"
         ]
       }
     }

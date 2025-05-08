@@ -56,6 +56,7 @@ USE ieee.numeric_std.ALL;
 ENTITY design_1_bram_datain_mux_0_0 IS
   PORT (
     clk : IN STD_LOGIC;
+    bili_cntl : IN STD_LOGIC;
     zoom_x2 : IN STD_LOGIC;
     data_in_zoomed_bram : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
     data_in_full_bram : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
@@ -69,6 +70,7 @@ ARCHITECTURE design_1_bram_datain_mux_0_0_arch OF design_1_bram_datain_mux_0_0 I
   COMPONENT bram_datain_mux IS
     PORT (
       clk : IN STD_LOGIC;
+      bili_cntl : IN STD_LOGIC;
       zoom_x2 : IN STD_LOGIC;
       data_in_zoomed_bram : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
       data_in_full_bram : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
@@ -85,6 +87,7 @@ BEGIN
   U0 : bram_datain_mux
     PORT MAP (
       clk => clk,
+      bili_cntl => bili_cntl,
       zoom_x2 => zoom_x2,
       data_in_zoomed_bram => data_in_zoomed_bram,
       data_in_full_bram => data_in_full_bram,

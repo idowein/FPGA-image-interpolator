@@ -1,7 +1,7 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
--- Date        : Wed May  7 22:23:54 2025
+-- Date        : Thu May  8 13:16:53 2025
 -- Host        : Ido running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 --               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_1_bram_datain_mux_0_0_sim_netlist.vhdl
@@ -17,145 +17,145 @@ use UNISIM.VCOMPONENTS.ALL;
 entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_bram_datain_mux is
   port (
     data_out : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    bili_cntl : in STD_LOGIC;
     data_in_zoomed_bram : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    data_in_full_bram : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    zoom_x2 : in STD_LOGIC
+    zoom_x2 : in STD_LOGIC;
+    data_in_full_bram : in STD_LOGIC_VECTOR ( 11 downto 0 )
   );
 end decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_bram_datain_mux;
 
 architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_bram_datain_mux is
-  attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \data_out[0]_INST_0\ : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of \data_out[10]_INST_0\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of \data_out[11]_INST_0\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of \data_out[1]_INST_0\ : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of \data_out[2]_INST_0\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \data_out[3]_INST_0\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \data_out[4]_INST_0\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \data_out[5]_INST_0\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \data_out[6]_INST_0\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \data_out[7]_INST_0\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \data_out[8]_INST_0\ : label is "soft_lutpair4";
-  attribute SOFT_HLUTNM of \data_out[9]_INST_0\ : label is "soft_lutpair4";
 begin
-\data_out[0]_INST_0\: unisim.vcomponents.LUT3
+\data_out[0]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"AC"
+      INIT => X"EF40"
     )
         port map (
-      I0 => data_in_zoomed_bram(0),
-      I1 => data_in_full_bram(0),
+      I0 => bili_cntl,
+      I1 => data_in_zoomed_bram(0),
       I2 => zoom_x2,
+      I3 => data_in_full_bram(0),
       O => data_out(0)
     );
-\data_out[10]_INST_0\: unisim.vcomponents.LUT3
+\data_out[10]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"AC"
+      INIT => X"EF40"
     )
         port map (
-      I0 => data_in_zoomed_bram(10),
-      I1 => data_in_full_bram(10),
+      I0 => bili_cntl,
+      I1 => data_in_zoomed_bram(10),
       I2 => zoom_x2,
+      I3 => data_in_full_bram(10),
       O => data_out(10)
     );
-\data_out[11]_INST_0\: unisim.vcomponents.LUT3
+\data_out[11]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"AC"
+      INIT => X"EF40"
     )
         port map (
-      I0 => data_in_zoomed_bram(11),
-      I1 => data_in_full_bram(11),
+      I0 => bili_cntl,
+      I1 => data_in_zoomed_bram(11),
       I2 => zoom_x2,
+      I3 => data_in_full_bram(11),
       O => data_out(11)
     );
-\data_out[1]_INST_0\: unisim.vcomponents.LUT3
+\data_out[1]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"AC"
+      INIT => X"EF40"
     )
         port map (
-      I0 => data_in_zoomed_bram(1),
-      I1 => data_in_full_bram(1),
+      I0 => bili_cntl,
+      I1 => data_in_zoomed_bram(1),
       I2 => zoom_x2,
+      I3 => data_in_full_bram(1),
       O => data_out(1)
     );
-\data_out[2]_INST_0\: unisim.vcomponents.LUT3
+\data_out[2]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"AC"
+      INIT => X"EF40"
     )
         port map (
-      I0 => data_in_zoomed_bram(2),
-      I1 => data_in_full_bram(2),
+      I0 => bili_cntl,
+      I1 => data_in_zoomed_bram(2),
       I2 => zoom_x2,
+      I3 => data_in_full_bram(2),
       O => data_out(2)
     );
-\data_out[3]_INST_0\: unisim.vcomponents.LUT3
+\data_out[3]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"AC"
+      INIT => X"EF40"
     )
         port map (
-      I0 => data_in_zoomed_bram(3),
-      I1 => data_in_full_bram(3),
+      I0 => bili_cntl,
+      I1 => data_in_zoomed_bram(3),
       I2 => zoom_x2,
+      I3 => data_in_full_bram(3),
       O => data_out(3)
     );
-\data_out[4]_INST_0\: unisim.vcomponents.LUT3
+\data_out[4]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"AC"
+      INIT => X"EF40"
     )
         port map (
-      I0 => data_in_zoomed_bram(4),
-      I1 => data_in_full_bram(4),
+      I0 => bili_cntl,
+      I1 => data_in_zoomed_bram(4),
       I2 => zoom_x2,
+      I3 => data_in_full_bram(4),
       O => data_out(4)
     );
-\data_out[5]_INST_0\: unisim.vcomponents.LUT3
+\data_out[5]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"AC"
+      INIT => X"EF40"
     )
         port map (
-      I0 => data_in_zoomed_bram(5),
-      I1 => data_in_full_bram(5),
+      I0 => bili_cntl,
+      I1 => data_in_zoomed_bram(5),
       I2 => zoom_x2,
+      I3 => data_in_full_bram(5),
       O => data_out(5)
     );
-\data_out[6]_INST_0\: unisim.vcomponents.LUT3
+\data_out[6]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"AC"
+      INIT => X"EF40"
     )
         port map (
-      I0 => data_in_zoomed_bram(6),
-      I1 => data_in_full_bram(6),
+      I0 => bili_cntl,
+      I1 => data_in_zoomed_bram(6),
       I2 => zoom_x2,
+      I3 => data_in_full_bram(6),
       O => data_out(6)
     );
-\data_out[7]_INST_0\: unisim.vcomponents.LUT3
+\data_out[7]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"AC"
+      INIT => X"EF40"
     )
         port map (
-      I0 => data_in_zoomed_bram(7),
-      I1 => data_in_full_bram(7),
+      I0 => bili_cntl,
+      I1 => data_in_zoomed_bram(7),
       I2 => zoom_x2,
+      I3 => data_in_full_bram(7),
       O => data_out(7)
     );
-\data_out[8]_INST_0\: unisim.vcomponents.LUT3
+\data_out[8]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"AC"
+      INIT => X"EF40"
     )
         port map (
-      I0 => data_in_zoomed_bram(8),
-      I1 => data_in_full_bram(8),
+      I0 => bili_cntl,
+      I1 => data_in_zoomed_bram(8),
       I2 => zoom_x2,
+      I3 => data_in_full_bram(8),
       O => data_out(8)
     );
-\data_out[9]_INST_0\: unisim.vcomponents.LUT3
+\data_out[9]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"AC"
+      INIT => X"EF40"
     )
         port map (
-      I0 => data_in_zoomed_bram(9),
-      I1 => data_in_full_bram(9),
+      I0 => bili_cntl,
+      I1 => data_in_zoomed_bram(9),
       I2 => zoom_x2,
+      I3 => data_in_full_bram(9),
       O => data_out(9)
     );
 end STRUCTURE;
@@ -166,6 +166,7 @@ use UNISIM.VCOMPONENTS.ALL;
 entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
   port (
     clk : in STD_LOGIC;
+    bili_cntl : in STD_LOGIC;
     zoom_x2 : in STD_LOGIC;
     data_in_zoomed_bram : in STD_LOGIC_VECTOR ( 11 downto 0 );
     data_in_full_bram : in STD_LOGIC_VECTOR ( 11 downto 0 );
@@ -191,6 +192,7 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
 begin
 U0: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_bram_datain_mux
      port map (
+      bili_cntl => bili_cntl,
       data_in_full_bram(11 downto 0) => data_in_full_bram(11 downto 0),
       data_in_zoomed_bram(11 downto 0) => data_in_zoomed_bram(11 downto 0),
       data_out(11 downto 0) => data_out(11 downto 0),

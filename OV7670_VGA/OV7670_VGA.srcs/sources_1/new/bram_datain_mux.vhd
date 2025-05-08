@@ -34,6 +34,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity bram_datain_mux is
   Port ( 
         clk                     : in  STD_LOGIC;
+        bili_cntl               : in  STD_LOGIC;
         zoom_x2                 : in  STD_LOGIC;
         data_in_zoomed_bram     : in  std_logic_vector(11 downto 0); 
         data_in_full_bram       : in std_logic_vector(11 downto 0);
@@ -45,10 +46,14 @@ architecture Behavioral of bram_datain_mux is
 
 begin
 
-        process(zoom_x2, data_in_zoomed_bram, data_in_full_bram)
+        process(zoom_x2, data_in_zoomed_bram, data_in_full_bram, bili_cntl)
         begin 
-            if zoom_x2 = '1' then
-                data_out <= data_in_zoomed_bram;
+            if zoom_x2 = '1' then -- improve - if zoom = '1' and bili = '0' - only 1 if
+                if bili_cntl = '1' then
+                    data_out <= data_in_full_bram;
+                else
+                    data_out <= data_in_zoomed_bram; -- small bram
+                end if;
             else 
                 data_out <= data_in_full_bram;
             end if;

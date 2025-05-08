@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1746698055">
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1746699386">
   <File Type="PA-TCL" Name="design_1_wrapper.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="design_1_wrapper_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="design_1_wrapper_reports.tcl"/>
@@ -154,8 +154,8 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_BRAM_MUX_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_bram_datain_mux_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_BRAM_MUX_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_clk_wiz_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_ovo_7670_caputre_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_VGA_TOP_1_0"/>
