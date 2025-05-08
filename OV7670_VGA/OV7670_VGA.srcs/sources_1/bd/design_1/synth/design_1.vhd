@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
---Date        : Wed May  7 23:33:13 2025
+--Date        : Thu May  8 12:54:11 2025
 --Host        : Ido running 64-bit major release  (build 9200)
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -110,7 +110,6 @@ entity zoom_bram_address_suit_imp_RWFJA0 is
     clkb : in STD_LOGIC;
     dina : in STD_LOGIC_VECTOR ( 11 downto 0 );
     doutb : out STD_LOGIC_VECTOR ( 11 downto 0 );
-    doutb1 : out STD_LOGIC_VECTOR ( 11 downto 0 );
     pclk : in STD_LOGIC;
     wea : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
@@ -154,20 +153,8 @@ begin
   bili_addr_1(16 downto 0) <= bili_addr(16 downto 0);
   bili_cntl_1 <= bili_cntl;
   clk_wiz_0_clk_vga <= clkb;
-  doutb1(11 downto 0) <= blk_mem_gen_1_doutb(11 downto 0);
+  doutb(11 downto 0) <= blk_mem_gen_1_doutb(11 downto 0);
   pclk_0_1 <= pclk;
-  doutb(0) <= 'Z';
-  doutb(1) <= 'Z';
-  doutb(2) <= 'Z';
-  doutb(3) <= 'Z';
-  doutb(4) <= 'Z';
-  doutb(5) <= 'Z';
-  doutb(6) <= 'Z';
-  doutb(7) <= 'Z';
-  doutb(8) <= 'Z';
-  doutb(9) <= 'Z';
-  doutb(10) <= 'Z';
-  doutb(11) <= 'Z';
 address_suitable_0: component design_1_address_suitable_0_0
      port map (
       addr_in_full_image(18 downto 0) => VGA_TOP_1_frame_adress(18 downto 0),
@@ -304,10 +291,6 @@ architecture STRUCTURE of design_1 is
     we_bram_small : out STD_LOGIC
   );
   end component design_1_BRAM_MUX_0_0;
-  signal BILINEAR_INTERPOLATI_0_address_read : STD_LOGIC_VECTOR ( 16 downto 0 );
-  signal BILINEAR_INTERPOLATI_0_address_write : STD_LOGIC_VECTOR ( 18 downto 0 );
-  signal BILINEAR_INTERPOLATI_0_pixel_out : STD_LOGIC_VECTOR ( 11 downto 0 );
-  signal BILINEAR_INTERPOLATI_0_write_enable : STD_LOGIC;
   signal BRAM_MUX_0_addr_bram1 : STD_LOGIC_VECTOR ( 18 downto 0 );
   signal BRAM_MUX_0_data_bram1 : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal BRAM_MUX_0_data_bram2 : STD_LOGIC_VECTOR ( 11 downto 0 );
@@ -321,13 +304,11 @@ architecture STRUCTURE of design_1 is
   signal VGA_TOP_1_vga_green : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal VGA_TOP_1_vga_red : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal addra_1 : STD_LOGIC_VECTOR ( 16 downto 0 );
-  signal bili_cntl_0_1 : STD_LOGIC;
   signal blk_mem_gen_0_doutb : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal blk_mem_gen_1_doutb : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal camera_h_ref_0_1 : STD_LOGIC;
   signal camera_v_sync_0_1 : STD_LOGIC;
-  signal clk_in1_0_1 : STD_LOGIC;
-  signal clk_wiz_0_clk_interpolation : STD_LOGIC;
+  signal clk_in1_1 : STD_LOGIC;
   signal clk_wiz_0_clk_vga : STD_LOGIC;
   signal cntl_0_cntl_out : STD_LOGIC;
   signal cntl_0_resend_out : STD_LOGIC;
@@ -344,8 +325,12 @@ architecture STRUCTURE of design_1 is
   signal pclk_0_1 : STD_LOGIC;
   signal resend_in_0_1 : STD_LOGIC;
   signal resetn_0_1 : STD_LOGIC;
-  signal zoom_bram_address_suit_doutb1 : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal zoom_x2_0_1 : STD_LOGIC;
+  signal NLW_BILINEAR_INTERPOLATI_0_write_enable_UNCONNECTED : STD_LOGIC;
+  signal NLW_BILINEAR_INTERPOLATI_0_address_read_UNCONNECTED : STD_LOGIC_VECTOR ( 16 downto 0 );
+  signal NLW_BILINEAR_INTERPOLATI_0_address_write_UNCONNECTED : STD_LOGIC_VECTOR ( 18 downto 0 );
+  signal NLW_BILINEAR_INTERPOLATI_0_pixel_out_UNCONNECTED : STD_LOGIC_VECTOR ( 11 downto 0 );
+  signal NLW_clk_wiz_0_clk_interpolation_UNCONNECTED : STD_LOGIC;
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of clk_in1 : signal is "xilinx.com:signal:clock:1.0 CLK.CLK_IN1 CLK";
   attribute X_INTERFACE_PARAMETER : string;
@@ -356,10 +341,9 @@ architecture STRUCTURE of design_1 is
   attribute X_INTERFACE_PARAMETER of resetn : signal is "XIL_INTERFACENAME RST.RESETN, INSERT_VIP 0, POLARITY ACTIVE_LOW";
 begin
   VGA_H_sync <= VGA_TOP_1_VGA_H_sync;
-  bili_cntl_0_1 <= bili_cntl;
   camera_h_ref_0_1 <= camera_h_ref;
   camera_v_sync_0_1 <= camera_v_sync;
-  clk_in1_0_1 <= clk_in1;
+  clk_in1_1 <= clk_in1;
   cntl_in_0_1 <= cntl_in;
   config_finished <= ov7670_controller_0_config_finished;
   din_0_1(7 downto 0) <= din(7 downto 0);
@@ -377,25 +361,25 @@ begin
   zoom_x2_0_1 <= zoom_x2;
 BILINEAR_INTERPOLATI_0: component design_1_BILINEAR_INTERPOLATI_0_0
      port map (
-      address_read(16 downto 0) => BILINEAR_INTERPOLATI_0_address_read(16 downto 0),
-      address_write(18 downto 0) => BILINEAR_INTERPOLATI_0_address_write(18 downto 0),
-      bili_cntl => bili_cntl_0_1,
-      clk_in1 => clk_in1_0_1,
-      clk_interpolation => clk_wiz_0_clk_interpolation,
-      clk_vga => clk_wiz_0_clk_vga,
-      pixel_in(11 downto 0) => zoom_bram_address_suit_doutb1(11 downto 0),
-      pixel_out(11 downto 0) => BILINEAR_INTERPOLATI_0_pixel_out(11 downto 0),
-      write_enable => BILINEAR_INTERPOLATI_0_write_enable
+      address_read(16 downto 0) => NLW_BILINEAR_INTERPOLATI_0_address_read_UNCONNECTED(16 downto 0),
+      address_write(18 downto 0) => NLW_BILINEAR_INTERPOLATI_0_address_write_UNCONNECTED(18 downto 0),
+      bili_cntl => '0',
+      clk_in1 => '0',
+      clk_interpolation => '0',
+      clk_vga => '0',
+      pixel_in(11 downto 0) => B"000000000000",
+      pixel_out(11 downto 0) => NLW_BILINEAR_INTERPOLATI_0_pixel_out_UNCONNECTED(11 downto 0),
+      write_enable => NLW_BILINEAR_INTERPOLATI_0_write_enable_UNCONNECTED
     );
 BRAM_MUX_0: component design_1_BRAM_MUX_0_0
      port map (
       addr_bram_full(18 downto 0) => BRAM_MUX_0_addr_bram1(18 downto 0),
       addr_bram_small(16 downto 0) => addra_1(16 downto 0),
       addr_in(18 downto 0) => ovo_7670_caputre_0_addr(18 downto 0),
-      bili_address_write(18 downto 0) => BILINEAR_INTERPOLATI_0_address_write(18 downto 0),
-      bili_cntl => bili_cntl_0_1,
-      bili_pixel_in(11 downto 0) => BILINEAR_INTERPOLATI_0_pixel_out(11 downto 0),
-      bili_wea => BILINEAR_INTERPOLATI_0_write_enable,
+      bili_address_write(18 downto 0) => B"0000000000000000000",
+      bili_cntl => '0',
+      bili_pixel_in(11 downto 0) => B"000000000000",
+      bili_wea => '0',
       capture_wea => ovo_7670_caputre_0_wr_en,
       data_bram_full(11 downto 0) => BRAM_MUX_0_data_bram1(11 downto 0),
       data_bram_small(11 downto 0) => BRAM_MUX_0_data_bram2(11 downto 0),
@@ -430,14 +414,14 @@ blk_mem_gen_0: component design_1_blk_mem_gen_0_0
     );
 clk_wiz_0: component design_1_clk_wiz_0_0
      port map (
-      clk_in1 => clk_in1_0_1,
-      clk_interpolation => clk_wiz_0_clk_interpolation,
+      clk_in1 => clk_in1_1,
+      clk_interpolation => NLW_clk_wiz_0_clk_interpolation_UNCONNECTED,
       clk_vga => clk_wiz_0_clk_vga,
       resetn => resetn_0_1
     );
 cntl_0: component design_1_cntl_0_0
      port map (
-      clk => clk_in1_0_1,
+      clk => clk_in1_1,
       cntl_in => cntl_in_0_1,
       cntl_out => cntl_0_cntl_out,
       resend_in => resend_in_0_1,
@@ -469,12 +453,11 @@ zoom_bram_address_suit: entity work.zoom_bram_address_suit_imp_RWFJA0
      port map (
       addr_in(18 downto 0) => VGA_TOP_1_frame_adress(18 downto 0),
       addra(16 downto 0) => addra_1(16 downto 0),
-      bili_addr(16 downto 0) => BILINEAR_INTERPOLATI_0_address_read(16 downto 0),
-      bili_cntl => bili_cntl_0_1,
+      bili_addr(16 downto 0) => B"00000000000000000",
+      bili_cntl => '0',
       clkb => clk_wiz_0_clk_vga,
       dina(11 downto 0) => BRAM_MUX_0_data_bram2(11 downto 0),
       doutb(11 downto 0) => blk_mem_gen_1_doutb(11 downto 0),
-      doutb1(11 downto 0) => zoom_bram_address_suit_doutb1(11 downto 0),
       pclk => pclk_0_1,
       wea(0) => BRAM_MUX_0_we_bram2
     );

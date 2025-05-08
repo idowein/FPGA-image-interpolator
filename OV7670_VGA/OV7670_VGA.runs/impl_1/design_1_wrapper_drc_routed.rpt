@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Wed May  7 23:36:22 2025
+| Date         : Thu May  8 12:56:08 2025
 | Host         : Ido running 64-bit major release  (build 9200)
 | Command      : report_drc -file design_1_wrapper_drc_routed.rpt -pb design_1_wrapper_drc_routed.pb -rpx design_1_wrapper_drc_routed.rpx
 | Design       : design_1_wrapper
@@ -24,12 +24,11 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 5
+             Violations found: 3
 +----------+----------+-----------------------------------------------------+------------+
 | Rule     | Severity | Description                                         | Violations |
 +----------+----------+-----------------------------------------------------+------------+
 | CFGBVS-1 | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties | 1          |
-| DPIP-1   | Warning  | Input pipelining                                    | 2          |
 | PLCK-12  | Warning  | Clock Placer Checks                                 | 1          |
 | RPBF-3   | Warning  | IO port buffering is incomplete                     | 1          |
 +----------+----------+-----------------------------------------------------+------------+
@@ -49,16 +48,6 @@ Neither the CFGBVS nor CONFIG_VOLTAGE voltage property is set in the current_des
 Refer to the device configuration user guide for more information.
 Related violations: <none>
 
-DPIP-1#1 Warning
-Input pipelining  
-DSP design_1_i/BILINEAR_INTERPOLATI_0/U0/address_read_sig1 input design_1_i/BILINEAR_INTERPOLATI_0/U0/address_read_sig1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#2 Warning
-Input pipelining  
-DSP design_1_i/BILINEAR_INTERPOLATI_0/U0/address_write_sig1 input design_1_i/BILINEAR_INTERPOLATI_0/U0/address_write_sig1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
 PLCK-12#1 Warning
 Clock Placer Checks  
 Poor placement for routing between an IO pin and BUFG. 
@@ -66,7 +55,7 @@ Resolution: Poor placement of an IO pin and a BUFG has resulted in the router us
  This is normally an ERROR but the CLOCK_DEDICATED_ROUTE constraint is set to FALSE allowing your design to continue. The use of this override is highly discouraged as it may lead to very poor timing results. It is recommended that this error condition be corrected in the design.
 
 	pclk_IBUF_inst (IBUF.O) is locked to G4
-	pclk_IBUF_BUFG_inst (BUFG.I) is provisionally placed by clockplacer on BUFGCTRL_X0Y2
+	pclk_IBUF_BUFG_inst (BUFG.I) is provisionally placed by clockplacer on BUFGCTRL_X0Y0
 
 Related violations: <none>
 

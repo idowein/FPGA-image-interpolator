@@ -289,11 +289,6 @@
             "left": "18",
             "right": "0"
           },
-          "doutb1": {
-            "direction": "O",
-            "left": "11",
-            "right": "0"
-          },
           "bili_addr": {
             "direction": "I",
             "left": "16",
@@ -428,12 +423,6 @@
               "address_suitable_0/addr_in_full_image"
             ]
           },
-          "blk_mem_gen_1_doutb": {
-            "ports": [
-              "blk_mem_gen_1/doutb",
-              "doutb1"
-            ]
-          },
           "bili_addr_1": {
             "ports": [
               "bili_addr",
@@ -444,6 +433,12 @@
             "ports": [
               "bili_cntl",
               "address_suitable_0/bili_cntl"
+            ]
+          },
+          "blk_mem_gen_1_doutb": {
+            "ports": [
+              "blk_mem_gen_1/doutb",
+              "doutb"
             ]
           }
         }
@@ -977,14 +972,6 @@
       }
     },
     "nets": {
-      "clk_in1_0_1": {
-        "ports": [
-          "clk_in1",
-          "clk_wiz_0/clk_in1",
-          "cntl_0/clk",
-          "BILINEAR_INTERPOLATI_0/clk_in1"
-        ]
-      },
       "cntl_0_resend_out": {
         "ports": [
           "cntl_0/resend_out",
@@ -1015,16 +1002,6 @@
           "blk_mem_gen_0/clka",
           "zoom_bram_address_suit/pclk",
           "ovo_7670_caputre_0/pclk"
-        ]
-      },
-      "clk_wiz_0_clk_vga": {
-        "ports": [
-          "clk_wiz_0/clk_vga",
-          "blk_mem_gen_0/clkb",
-          "zoom_bram_address_suit/clkb",
-          "VGA_TOP_WITH_DATA_MUX/pix_clk",
-          "ov7670_controller_0/clk",
-          "BILINEAR_INTERPOLATI_0/clk_vga"
         ]
       },
       "ov7670_controller_0_sioc": {
@@ -1198,48 +1175,20 @@
           "zoom_bram_address_suit/addra"
         ]
       },
-      "clk_wiz_0_clk_interpolation": {
+      "clk_in1_1": {
         "ports": [
-          "clk_wiz_0/clk_interpolation",
-          "BILINEAR_INTERPOLATI_0/clk_interpolation"
+          "clk_in1",
+          "clk_wiz_0/clk_in1",
+          "cntl_0/clk"
         ]
       },
-      "zoom_bram_address_suit_doutb1": {
+      "clk_wiz_0_clk_vga": {
         "ports": [
-          "zoom_bram_address_suit/doutb1",
-          "BILINEAR_INTERPOLATI_0/pixel_in"
-        ]
-      },
-      "BILINEAR_INTERPOLATI_0_address_read": {
-        "ports": [
-          "BILINEAR_INTERPOLATI_0/address_read",
-          "zoom_bram_address_suit/bili_addr"
-        ]
-      },
-      "bili_cntl_0_1": {
-        "ports": [
-          "bili_cntl",
-          "BILINEAR_INTERPOLATI_0/bili_cntl",
-          "zoom_bram_address_suit/bili_cntl",
-          "BRAM_MUX_0/bili_cntl"
-        ]
-      },
-      "BILINEAR_INTERPOLATI_0_write_enable": {
-        "ports": [
-          "BILINEAR_INTERPOLATI_0/write_enable",
-          "BRAM_MUX_0/bili_wea"
-        ]
-      },
-      "BILINEAR_INTERPOLATI_0_pixel_out": {
-        "ports": [
-          "BILINEAR_INTERPOLATI_0/pixel_out",
-          "BRAM_MUX_0/bili_pixel_in"
-        ]
-      },
-      "BILINEAR_INTERPOLATI_0_address_write": {
-        "ports": [
-          "BILINEAR_INTERPOLATI_0/address_write",
-          "BRAM_MUX_0/bili_address_write"
+          "clk_wiz_0/clk_vga",
+          "zoom_bram_address_suit/clkb",
+          "blk_mem_gen_0/clkb",
+          "VGA_TOP_WITH_DATA_MUX/pix_clk",
+          "ov7670_controller_0/clk"
         ]
       }
     }
