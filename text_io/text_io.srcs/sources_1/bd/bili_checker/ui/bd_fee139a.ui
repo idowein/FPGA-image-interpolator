@@ -1,0 +1,29 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"1.0",
+   "Default View_TopLeft":"-221,-213",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0.21  2019-05-29 bk=1.5064 VDI=41 GEI=36 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace port clk_0 -pg 1 -lvl 0 -x 0 -y 60 -defaultsOSRD
+preplace port reset_0 -pg 1 -lvl 0 -x 0 -y 160 -defaultsOSRD
+preplace port field_enable_0 -pg 1 -lvl 0 -x 0 -y 100 -defaultsOSRD
+preplace port line_enable_0 -pg 1 -lvl 0 -x 0 -y 120 -defaultsOSRD
+preplace port line_sync_0 -pg 1 -lvl 0 -x 0 -y 140 -defaultsOSRD
+preplace port clkx3_0 -pg 1 -lvl 0 -x 0 -y 230 -defaultsOSRD
+preplace inst read_320x240_tb_0 -pg 1 -lvl 1 -x 200 -y 260 -defaultsOSRD
+preplace inst write_640x480_tb_0 -pg 1 -lvl 3 -x 780 -y 110 -defaultsOSRD
+preplace inst BILINEAR_INTERPOLATI_0 -pg 1 -lvl 2 -x 510 -y 240 -defaultsOSRD
+preplace netloc read_320x240_tb_0_pixel_out 1 1 1 NJ 260
+preplace netloc BILINEAR_INTERPOLATI_0_pixel_out 1 2 1 670 160n
+preplace netloc clk_0_1 1 0 3 60 60 NJ 60 N
+preplace netloc reset_0_1 1 0 3 40 80 NJ 80 N
+preplace netloc field_enable_0_1 1 0 3 50 100 NJ 100 N
+preplace netloc line_enable_0_1 1 0 3 30 120 NJ 120 N
+preplace netloc line_sync_0_1 1 0 3 20 140 NJ 140 N
+preplace netloc clkx3_0_1 1 0 1 N 230
+levelinfo -pg 1 0 200 510 780 900
+pagesize -pg 1 -db -bbox -sgen -150 0 900 370
+"
+}
+

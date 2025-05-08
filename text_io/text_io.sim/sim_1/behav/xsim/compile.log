@@ -1,0 +1,12 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Digital-Zoom-FPGA/text_io/text_io.ip_user_files/bd/design_1/ip/design_1_bh_write_file_0_0/sim/design_1_bh_write_file_0_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'design_1_bh_write_file_0_0'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Digital-Zoom-FPGA/text_io/text_io.ip_user_files/bd/design_1/ip/design_1_fpga_exp7_0_0/sim/design_1_fpga_exp7_0_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'design_1_fpga_exp7_0_0'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Digital-Zoom-FPGA/text_io/text_io.ip_user_files/bd/design_1/ip/design_1_bili_0_0/sim/design_1_bili_0_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'design_1_bili_0_0'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Digital-Zoom-FPGA/text_io/text_io.ip_user_files/bd/design_1/sim/design_1.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'design_1'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Digital-Zoom-FPGA/text_io/text_io.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'design_1_wrapper'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Digital-Zoom-FPGA/text_io/text_io.srcs/sim_1/new/design_wrapper_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'design_1_wrapper_tb'

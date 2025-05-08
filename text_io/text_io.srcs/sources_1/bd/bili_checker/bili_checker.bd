@@ -1,0 +1,210 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x0",
+      "device": "xc7a100tcsg324-1",
+      "name": "bili_checker",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2019.2"
+    },
+    "design_tree": {
+      "read_320x240_tb_0": "",
+      "write_640x480_tb_0": "",
+      "BILINEAR_INTERPOLATI_0": ""
+    },
+    "ports": {
+      "clk_0": {
+        "type": "clk",
+        "direction": "I"
+      },
+      "reset_0": {
+        "type": "rst",
+        "direction": "I"
+      },
+      "field_enable_0": {
+        "direction": "I"
+      },
+      "line_enable_0": {
+        "direction": "I"
+      },
+      "line_sync_0": {
+        "direction": "I"
+      },
+      "clkx3_0": {
+        "direction": "I"
+      }
+    },
+    "components": {
+      "read_320x240_tb_0": {
+        "vlnv": "xilinx.com:module_ref:read_320x240_tb:1.0",
+        "xci_name": "bili_checker_read_320x240_tb_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "read_320x240_tb",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "clkx3": {
+            "direction": "I"
+          },
+          "filed_enable": {
+            "direction": "I"
+          },
+          "line_enable": {
+            "direction": "I"
+          },
+          "line_sync": {
+            "direction": "I"
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "pixel_out": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "write_640x480_tb_0": {
+        "vlnv": "xilinx.com:module_ref:write_640x480_tb:1.0",
+        "xci_name": "bili_checker_write_640x480_tb_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "write_640x480_tb",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "field_enable": {
+            "direction": "I"
+          },
+          "line_enable": {
+            "direction": "I"
+          },
+          "line_sync": {
+            "direction": "I"
+          },
+          "pixel_in": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "BILINEAR_INTERPOLATI_0": {
+        "vlnv": "xilinx.com:module_ref:BILINEAR_INTERPOLATION_TOP:1.0",
+        "xci_name": "bili_checker_BILINEAR_INTERPOLATI_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "BILINEAR_INTERPOLATION_TOP",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk_vga": {
+            "direction": "I"
+          },
+          "clk_in1": {
+            "direction": "I"
+          },
+          "clk_interpolation": {
+            "direction": "I"
+          },
+          "pixel_in": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "bili_cntl": {
+            "direction": "I"
+          },
+          "write_enable": {
+            "direction": "O"
+          },
+          "pixel_out": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          },
+          "address_write": {
+            "direction": "O",
+            "left": "18",
+            "right": "0"
+          },
+          "address_read": {
+            "direction": "O",
+            "left": "16",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "read_320x240_tb_0_pixel_out": {
+        "ports": [
+          "read_320x240_tb_0/pixel_out",
+          "BILINEAR_INTERPOLATI_0/pixel_in"
+        ]
+      },
+      "BILINEAR_INTERPOLATI_0_pixel_out": {
+        "ports": [
+          "BILINEAR_INTERPOLATI_0/pixel_out",
+          "write_640x480_tb_0/pixel_in"
+        ]
+      },
+      "clk_0_1": {
+        "ports": [
+          "clk_0",
+          "write_640x480_tb_0/clk",
+          "read_320x240_tb_0/clk"
+        ]
+      },
+      "reset_0_1": {
+        "ports": [
+          "reset_0",
+          "write_640x480_tb_0/reset",
+          "read_320x240_tb_0/reset"
+        ]
+      },
+      "field_enable_0_1": {
+        "ports": [
+          "field_enable_0",
+          "write_640x480_tb_0/field_enable",
+          "read_320x240_tb_0/filed_enable"
+        ]
+      },
+      "line_enable_0_1": {
+        "ports": [
+          "line_enable_0",
+          "write_640x480_tb_0/line_enable",
+          "read_320x240_tb_0/line_enable"
+        ]
+      },
+      "line_sync_0_1": {
+        "ports": [
+          "line_sync_0",
+          "read_320x240_tb_0/line_sync",
+          "write_640x480_tb_0/line_sync"
+        ]
+      },
+      "clkx3_0_1": {
+        "ports": [
+          "clkx3_0",
+          "read_320x240_tb_0/clkx3"
+        ]
+      }
+    }
+  }
+}

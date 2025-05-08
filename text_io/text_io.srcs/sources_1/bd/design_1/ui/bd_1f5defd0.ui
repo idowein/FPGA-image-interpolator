@@ -1,0 +1,30 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"1.0",
+   "Default View_TopLeft":"-370,-71",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0.21  2019-05-29 bk=1.5064 VDI=41 GEI=36 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace port clk_0 -pg 1 -lvl 0 -x -10 -y 70 -defaultsOSRD
+preplace port filed_enable_0 -pg 1 -lvl 0 -x -10 -y 110 -defaultsOSRD
+preplace port line_enable_0 -pg 1 -lvl 0 -x -10 -y 130 -defaultsOSRD
+preplace port line_sync_0 -pg 1 -lvl 0 -x -10 -y 150 -defaultsOSRD
+preplace port reset_0 -pg 1 -lvl 0 -x -10 -y 170 -defaultsOSRD
+preplace port clkx3_0 -pg 1 -lvl 0 -x -10 -y 90 -defaultsOSRD
+preplace inst fpga_exp7_0 -pg 1 -lvl 1 -x 210 -y 120 -defaultsOSRD
+preplace inst bh_write_file_0 -pg 1 -lvl 3 -x 880 -y 290 -defaultsOSRD
+preplace inst bili_0 -pg 1 -lvl 2 -x 550 -y 340 -defaultsOSRD
+preplace inst BILINEAR_INTERPOLATI_0 -pg 1 -lvl 2 -x 550 -y 530 -defaultsOSRD
+preplace netloc clk_0_1 1 0 3 50 240 390 240 NJ
+preplace netloc filed_enable_0_1 1 0 3 40 230 NJ 230 730
+preplace netloc line_enable_0_1 1 0 3 30 250 NJ 250 720
+preplace netloc line_sync_0_1 1 0 3 20 260 NJ 260 710J
+preplace netloc reset_0_1 1 0 3 10 270 370 420 720J
+preplace netloc clkx3_0_1 1 0 1 NJ 90
+preplace netloc fpga_exp7_0_PRE_cmos_data 1 1 1 380 120n
+preplace netloc bili_0_data_out 1 2 1 N 340
+levelinfo -pg 1 -10 210 550 880 1040
+pagesize -pg 1 -db -bbox -sgen -160 0 1040 630
+"
+}
+0
