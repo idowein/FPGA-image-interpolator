@@ -1,8 +1,8 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
---Date        : Thu May  8 16:45:37 2025
---Host        : Ido running 64-bit major release  (build 9200)
+--Date        : Thu May  8 18:28:18 2025
+--Host        : dvirhersh_comp running 64-bit major release  (build 9200)
 --Command     : generate_target design_1.bd
 --Design      : design_1
 --Purpose     : IP block netlist
@@ -233,6 +233,18 @@ architecture STRUCTURE of design_1 is
     clk_bili_wr : out STD_LOGIC
   );
   end component design_1_clk_wiz_0_0;
+  component design_1_ov7670_controller_0_0 is
+  port (
+    clk : in STD_LOGIC;
+    resend : in STD_LOGIC;
+    config_finished : out STD_LOGIC;
+    sioc : out STD_LOGIC;
+    siod : inout STD_LOGIC;
+    reset : out STD_LOGIC;
+    pwdn : out STD_LOGIC;
+    xclk : out STD_LOGIC
+  );
+  end component design_1_ov7670_controller_0_0;
   component design_1_cntl_0_0 is
   port (
     clk : in STD_LOGIC;
@@ -254,36 +266,6 @@ architecture STRUCTURE of design_1 is
     wr_en : out STD_LOGIC
   );
   end component design_1_ovo_7670_caputre_0_0;
-  component design_1_ov7670_controller_0_0 is
-  port (
-    clk : in STD_LOGIC;
-    resend : in STD_LOGIC;
-    config_finished : out STD_LOGIC;
-    sioc : out STD_LOGIC;
-    siod : inout STD_LOGIC;
-    reset : out STD_LOGIC;
-    pwdn : out STD_LOGIC;
-    xclk : out STD_LOGIC
-  );
-  end component design_1_ov7670_controller_0_0;
-  component design_1_BRAM_MUX_0_0 is
-  port (
-    addr_in : in STD_LOGIC_VECTOR ( 18 downto 0 );
-    data_in : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    capture_wea : in STD_LOGIC;
-    zoom : in STD_LOGIC;
-    bili_cntl : in STD_LOGIC;
-    bili_pixel_in : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    bili_address_write : in STD_LOGIC_VECTOR ( 18 downto 0 );
-    bili_wea : in STD_LOGIC;
-    addr_bram_full : out STD_LOGIC_VECTOR ( 18 downto 0 );
-    data_bram_full : out STD_LOGIC_VECTOR ( 11 downto 0 );
-    we_bram_full : out STD_LOGIC;
-    addr_bram_small : out STD_LOGIC_VECTOR ( 16 downto 0 );
-    data_bram_small : out STD_LOGIC_VECTOR ( 11 downto 0 );
-    we_bram_small : out STD_LOGIC
-  );
-  end component design_1_BRAM_MUX_0_0;
   component design_1_BILINEAR_INTERPOLATI_0_0 is
   port (
     clk_vga : in STD_LOGIC;
@@ -297,11 +279,33 @@ architecture STRUCTURE of design_1 is
     address_read : out STD_LOGIC_VECTOR ( 16 downto 0 )
   );
   end component design_1_BILINEAR_INTERPOLATI_0_0;
+  component design_1_BRAM_MUX_0_0 is
+  port (
+    addr_in : in STD_LOGIC_VECTOR ( 18 downto 0 );
+    data_in : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    capture_wea : in STD_LOGIC;
+    zoom : in STD_LOGIC;
+    bili_cntl : in STD_LOGIC;
+    clk_50_MHz : in STD_LOGIC;
+    clk_25_MHz : in STD_LOGIC;
+    clka_bram_full : out STD_LOGIC;
+    bili_pixel_in : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    bili_address_write : in STD_LOGIC_VECTOR ( 18 downto 0 );
+    bili_wea : in STD_LOGIC;
+    addr_bram_full : out STD_LOGIC_VECTOR ( 18 downto 0 );
+    data_bram_full : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    we_bram_full : out STD_LOGIC;
+    addr_bram_small : out STD_LOGIC_VECTOR ( 16 downto 0 );
+    data_bram_small : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    we_bram_small : out STD_LOGIC
+  );
+  end component design_1_BRAM_MUX_0_0;
   signal BILINEAR_INTERPOLATI_0_address_read : STD_LOGIC_VECTOR ( 16 downto 0 );
   signal BILINEAR_INTERPOLATI_0_address_write : STD_LOGIC_VECTOR ( 18 downto 0 );
   signal BILINEAR_INTERPOLATI_0_pixel_out : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal BILINEAR_INTERPOLATI_0_write_enable : STD_LOGIC;
   signal BRAM_MUX_0_addr_bram1 : STD_LOGIC_VECTOR ( 18 downto 0 );
+  signal BRAM_MUX_0_clka_bram_full : STD_LOGIC;
   signal BRAM_MUX_0_data_bram1 : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal BRAM_MUX_0_data_bram2 : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal BRAM_MUX_0_we_bram1 : STD_LOGIC;
@@ -335,7 +339,7 @@ architecture STRUCTURE of design_1 is
   signal ovo_7670_caputre_0_addr : STD_LOGIC_VECTOR ( 18 downto 0 );
   signal ovo_7670_caputre_0_dout : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal ovo_7670_caputre_0_wr_en : STD_LOGIC;
-  signal pclk_0_1 : STD_LOGIC;
+  signal pclk_1 : STD_LOGIC;
   signal resend_in_0_1 : STD_LOGIC;
   signal resetn_0_1 : STD_LOGIC;
   signal zoom_x2_0_1 : STD_LOGIC;
@@ -356,7 +360,7 @@ begin
   cntl_in_0_1 <= cntl_in;
   config_finished <= ov7670_controller_0_config_finished;
   din_0_1(7 downto 0) <= din(7 downto 0);
-  pclk_0_1 <= pclk;
+  pclk_1 <= pclk;
   pwdn <= ov7670_controller_0_pwdn;
   resend_in_0_1 <= resend_in;
   reset <= ov7670_controller_0_reset;
@@ -390,6 +394,9 @@ BRAM_MUX_0: component design_1_BRAM_MUX_0_0
       bili_pixel_in(11 downto 0) => BILINEAR_INTERPOLATI_0_pixel_out(11 downto 0),
       bili_wea => BILINEAR_INTERPOLATI_0_write_enable,
       capture_wea => ovo_7670_caputre_0_wr_en,
+      clk_25_MHz => pclk_1,
+      clk_50_MHz => clk_wiz_0_clk_bili_wr,
+      clka_bram_full => BRAM_MUX_0_clka_bram_full,
       data_bram_full(11 downto 0) => BRAM_MUX_0_data_bram1(11 downto 0),
       data_bram_small(11 downto 0) => BRAM_MUX_0_data_bram2(11 downto 0),
       data_in(11 downto 0) => ovo_7670_caputre_0_dout(11 downto 0),
@@ -416,7 +423,7 @@ blk_mem_gen_0: component design_1_blk_mem_gen_0_0
      port map (
       addra(18 downto 0) => BRAM_MUX_0_addr_bram1(18 downto 0),
       addrb(18 downto 0) => VGA_TOP_1_frame_adress(18 downto 0),
-      clka => pclk_0_1,
+      clka => BRAM_MUX_0_clka_bram_full,
       clkb => clk_wiz_0_clk_vga,
       dina(11 downto 0) => BRAM_MUX_0_data_bram1(11 downto 0),
       doutb(11 downto 0) => blk_mem_gen_0_doutb(11 downto 0),
@@ -456,7 +463,7 @@ ovo_7670_caputre_0: component design_1_ovo_7670_caputre_0_0
       camera_v_sync => camera_v_sync_0_1,
       din(7 downto 0) => din_0_1(7 downto 0),
       dout(11 downto 0) => ovo_7670_caputre_0_dout(11 downto 0),
-      pclk => pclk_0_1,
+      pclk => pclk_1,
       wr_en => ovo_7670_caputre_0_wr_en,
       zoom_x2 => zoom_x2_0_1
     );
@@ -469,7 +476,7 @@ zoom_bram_address_suit: entity work.zoom_bram_address_suit_imp_RWFJA0
       clkb => clk_wiz_0_clk_vga,
       dina(11 downto 0) => BRAM_MUX_0_data_bram2(11 downto 0),
       doutb(11 downto 0) => blk_mem_gen_1_doutb(11 downto 0),
-      pclk => pclk_0_1,
+      pclk => pclk_1,
       wea(0) => BRAM_MUX_0_we_bram2
     );
 end STRUCTURE;
