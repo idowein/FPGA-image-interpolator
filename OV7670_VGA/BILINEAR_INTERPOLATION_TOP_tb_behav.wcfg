@@ -11,9 +11,9 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="25670fs"></ZoomStartTime>
-      <ZoomEndTime time="299871fs"></ZoomEndTime>
-      <Cursor1Time time="95000fs"></Cursor1Time>
+      <ZoomStartTime time="223194fs"></ZoomStartTime>
+      <ZoomEndTime time="321663fs"></ZoomEndTime>
+      <Cursor1Time time="235000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="233"></NameColumnWidth>
@@ -50,9 +50,12 @@
       <obj_property name="ElementShortName">bili_cntl</obj_property>
       <obj_property name="ObjectShortName">bili_cntl</obj_property>
    </wvobject>
-   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/write_enable" type="logic">
-      <obj_property name="ElementShortName">write_enable</obj_property>
-      <obj_property name="ObjectShortName">write_enable</obj_property>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/address_write" type="array">
+      <obj_property name="ElementShortName">address_write[18:0]</obj_property>
+      <obj_property name="ObjectShortName">address_write[18:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/pixel_out" type="array">
       <obj_property name="ElementShortName">pixel_out[11:0]</obj_property>
@@ -61,10 +64,15 @@
       <obj_property name="CustomSignalColor">#FF00FF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/address_write" type="array">
-      <obj_property name="ElementShortName">address_write[18:0]</obj_property>
-      <obj_property name="ObjectShortName">address_write[18:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/write_enable" type="logic">
+      <obj_property name="ElementShortName">write_enable</obj_property>
+      <obj_property name="ObjectShortName">write_enable</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/wr_en_sig" type="logic">
+      <obj_property name="ElementShortName">wr_en_sig</obj_property>
+      <obj_property name="ObjectShortName">wr_en_sig</obj_property>
       <obj_property name="CustomSignalColor">#FF00FF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
@@ -105,10 +113,6 @@
       <obj_property name="ElementShortName">address_read_sig[16:0]</obj_property>
       <obj_property name="ObjectShortName">address_read_sig[16:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/wr_en_sig" type="logic">
-      <obj_property name="ElementShortName">wr_en_sig</obj_property>
-      <obj_property name="ObjectShortName">wr_en_sig</obj_property>
    </wvobject>
    <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/write_state" type="array">
       <obj_property name="ElementShortName">write_state[1:0]</obj_property>

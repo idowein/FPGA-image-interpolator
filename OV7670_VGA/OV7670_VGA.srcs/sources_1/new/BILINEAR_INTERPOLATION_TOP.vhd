@@ -50,14 +50,14 @@ architecture Behavioral of BILINEAR_INTERPOLATION_TOP is
     signal address_read_sig       : std_logic_vector(16 downto 0) := (others => '0');
     
     signal wr_en_sig            : std_logic := '0';
---    signal wr_en_sig_d          : std_logic := '0';
+    signal wr_en_sig_d          : std_logic := '0'; -- for enable write to full BRAM after interpolation calc
     
     signal write_state : std_logic_vector(1 downto 0) := (others => '0');
 
 begin
 
     -- Enable write operation
-    write_enable <= wr_en_sig;
+    write_enable <= wr_en_sig_d;
 
     -- Process to collect 4x2 pixels
     process (clk_vga)
@@ -85,7 +85,7 @@ begin
         if rising_edge(clk_interpolation) then
             -- Enable write operation only when 4 pixels received
             wr_en_sig <= '1';
---            wr_en_sig_d <= wr_en_sig;
+            wr_en_sig_d <= wr_en_sig;
 
             -- Convert inputs from std_logic_vector to unsigned for arithmetic
             A_int := unsigned(A);
@@ -149,7 +149,7 @@ begin
         variable h_cnt       : integer := 0;  -- Final horizontal pixel index
         variable v_cnt       : integer := 0;  -- Final vertical pixel index
     begin
-        if rising_edge(clk_in1) and wr_en_sig = '1' then
+        if rising_edge(clk_in1) and wr_en_sig_d = '1' then
             -- Calculate actual horizontal and vertical pixel coordinates
             h_cnt := h_block + local_h;
             v_cnt := v_block + local_v;
@@ -191,12 +191,12 @@ begin
         variable h_cnt       : integer := 0;  -- Final horizontal pixel index
         variable v_cnt       : integer := 0;  -- Final vertical pixel index
     begin
-        if rising_edge(clk_vga) then
+        if rising_edge(clk_vga) and wr_en_sig = '1' then
             -- Calculate actual horizontal and vertical pixel coordinates
             h_cnt := h_block + local_h;
             v_cnt := v_block + local_v;
     
-            -- read address = row � 640 + column
+            -- read address = row 640 + column
             address_read_sig <= std_logic_vector(to_unsigned(v_cnt * 640 + h_cnt, address_read_sig'length));
     
             -- Update counters
