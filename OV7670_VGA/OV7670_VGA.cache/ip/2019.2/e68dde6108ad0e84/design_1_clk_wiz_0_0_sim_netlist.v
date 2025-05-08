@@ -1,10 +1,10 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Thu May  8 16:46:12 2025
+// Date        : Thu May  8 16:46:11 2025
 // Host        : Ido running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0_1/design_1_clk_wiz_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
+//               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_1_clk_wiz_0_0_sim_netlist.v
 // Design      : design_1_clk_wiz_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -13,7 +13,7 @@
 `timescale 1 ps / 1 ps
 
 (* NotValidForBitStream *)
-module design_1_clk_wiz_0_0
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
    (clk_vga,
     clk_interpolation,
     clk_bili_wr,
@@ -31,7 +31,7 @@ module design_1_clk_wiz_0_0
   wire clk_vga;
   wire resetn;
 
-  design_1_clk_wiz_0_0_design_1_clk_wiz_0_0_clk_wiz inst
+  decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_design_1_clk_wiz_0_0_clk_wiz inst
        (.clk_bili_wr(clk_bili_wr),
         .clk_in1(clk_in1),
         .clk_interpolation(clk_interpolation),
@@ -39,8 +39,7 @@ module design_1_clk_wiz_0_0
         .resetn(resetn));
 endmodule
 
-(* ORIG_REF_NAME = "design_1_clk_wiz_0_0_clk_wiz" *) 
-module design_1_clk_wiz_0_0_design_1_clk_wiz_0_0_clk_wiz
+module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_design_1_clk_wiz_0_0_clk_wiz
    (clk_vga,
     clk_interpolation,
     clk_bili_wr,

@@ -222,11 +222,26 @@
           "CLKOUT2_USED": {
             "value": "true"
           },
+          "CLKOUT3_JITTER": {
+            "value": "167.017"
+          },
+          "CLKOUT3_PHASE_ERROR": {
+            "value": "114.212"
+          },
+          "CLKOUT3_REQUESTED_OUT_FREQ": {
+            "value": "50.000"
+          },
+          "CLKOUT3_USED": {
+            "value": "true"
+          },
           "CLK_OUT1_PORT": {
             "value": "clk_vga"
           },
           "CLK_OUT2_PORT": {
             "value": "clk_interpolation"
+          },
+          "CLK_OUT3_PORT": {
+            "value": "clk_bili_wr"
           },
           "MMCM_CLKFBOUT_MULT_F": {
             "value": "8.000"
@@ -237,11 +252,14 @@
           "MMCM_CLKOUT1_DIVIDE": {
             "value": "128"
           },
+          "MMCM_CLKOUT2_DIVIDE": {
+            "value": "16"
+          },
           "MMCM_DIVCLK_DIVIDE": {
             "value": "1"
           },
           "NUM_OUT_CLKS": {
-            "value": "2"
+            "value": "3"
           },
           "RESET_PORT": {
             "value": "resetn"
@@ -924,16 +942,16 @@
             "direction": "I",
             "parameters": {
               "CLK_DOMAIN": {
-                "value": "design_1_clk_in1",
-                "value_src": "default_prop"
+                "value": "/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
               },
               "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "default_prop"
+                "value": "50000000",
+                "value_src": "ip_prop"
               },
               "PHASE": {
-                "value": "0.000",
-                "value_src": "default_prop"
+                "value": "0.0",
+                "value_src": "ip_prop"
               }
             }
           },
@@ -1188,14 +1206,6 @@
           "zoom_bram_address_suit/addra"
         ]
       },
-      "clk_in1_1": {
-        "ports": [
-          "clk_in1",
-          "clk_wiz_0/clk_in1",
-          "cntl_0/clk",
-          "BILINEAR_INTERPOLATI_0/clk_in1"
-        ]
-      },
       "clk_wiz_0_clk_vga": {
         "ports": [
           "clk_wiz_0/clk_vga",
@@ -1243,6 +1253,19 @@
         "ports": [
           "BILINEAR_INTERPOLATI_0/address_read",
           "zoom_bram_address_suit/bili_addr"
+        ]
+      },
+      "clk_wiz_0_clk_bili_wr": {
+        "ports": [
+          "clk_wiz_0/clk_bili_wr",
+          "BILINEAR_INTERPOLATI_0/clk_in1"
+        ]
+      },
+      "clk_in1_1": {
+        "ports": [
+          "clk_in1",
+          "clk_wiz_0/clk_in1",
+          "cntl_0/clk"
         ]
       }
     }

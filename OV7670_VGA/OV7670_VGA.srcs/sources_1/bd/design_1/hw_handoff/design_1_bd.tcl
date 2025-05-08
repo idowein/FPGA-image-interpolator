@@ -443,13 +443,19 @@ proc create_root_design { parentCell } {
    CONFIG.CLKOUT2_PHASE_ERROR {114.212} \
    CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {6.25} \
    CONFIG.CLKOUT2_USED {true} \
+   CONFIG.CLKOUT3_JITTER {167.017} \
+   CONFIG.CLKOUT3_PHASE_ERROR {114.212} \
+   CONFIG.CLKOUT3_REQUESTED_OUT_FREQ {50.000} \
+   CONFIG.CLKOUT3_USED {true} \
    CONFIG.CLK_OUT1_PORT {clk_vga} \
    CONFIG.CLK_OUT2_PORT {clk_interpolation} \
+   CONFIG.CLK_OUT3_PORT {clk_bili_wr} \
    CONFIG.MMCM_CLKFBOUT_MULT_F {8.000} \
    CONFIG.MMCM_CLKOUT0_DIVIDE_F {32.000} \
    CONFIG.MMCM_CLKOUT1_DIVIDE {128} \
+   CONFIG.MMCM_CLKOUT2_DIVIDE {16} \
    CONFIG.MMCM_DIVCLK_DIVIDE {1} \
-   CONFIG.NUM_OUT_CLKS {2} \
+   CONFIG.NUM_OUT_CLKS {3} \
    CONFIG.RESET_PORT {resetn} \
    CONFIG.RESET_TYPE {ACTIVE_LOW} \
    CONFIG.USE_LOCKED {false} \
@@ -514,7 +520,8 @@ proc create_root_design { parentCell } {
   connect_bd_net -net blk_mem_gen_1_doutb [get_bd_pins BILINEAR_INTERPOLATI_0/pixel_in] [get_bd_pins VGA_TOP_WITH_DATA_MUX/data_in_zoomed_bram] [get_bd_pins zoom_bram_address_suit/doutb]
   connect_bd_net -net camera_h_ref_0_1 [get_bd_ports camera_h_ref] [get_bd_pins ovo_7670_caputre_0/camera_h_ref]
   connect_bd_net -net camera_v_sync_0_1 [get_bd_ports camera_v_sync] [get_bd_pins ovo_7670_caputre_0/camera_v_sync]
-  connect_bd_net -net clk_in1_1 [get_bd_ports clk_in1] [get_bd_pins BILINEAR_INTERPOLATI_0/clk_in1] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins cntl_0/clk]
+  connect_bd_net -net clk_in1_1 [get_bd_ports clk_in1] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins cntl_0/clk]
+  connect_bd_net -net clk_wiz_0_clk_bili_wr [get_bd_pins BILINEAR_INTERPOLATI_0/clk_in1] [get_bd_pins clk_wiz_0/clk_bili_wr]
   connect_bd_net -net clk_wiz_0_clk_interpolation [get_bd_pins BILINEAR_INTERPOLATI_0/clk_interpolation] [get_bd_pins clk_wiz_0/clk_interpolation]
   connect_bd_net -net clk_wiz_0_clk_vga [get_bd_pins BILINEAR_INTERPOLATI_0/clk_vga] [get_bd_pins VGA_TOP_WITH_DATA_MUX/pix_clk] [get_bd_pins blk_mem_gen_0/clkb] [get_bd_pins clk_wiz_0/clk_vga] [get_bd_pins ov7670_controller_0/clk] [get_bd_pins zoom_bram_address_suit/clkb]
   connect_bd_net -net cntl_0_cntl_out [get_bd_pins VGA_TOP_WITH_DATA_MUX/cntl] [get_bd_pins cntl_0/cntl_out]

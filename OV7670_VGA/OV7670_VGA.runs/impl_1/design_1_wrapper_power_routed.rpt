@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date             : Thu May  8 16:36:24 2025
+| Date             : Thu May  8 16:48:16 2025
 | Host             : Ido running 64-bit major release  (build 9200)
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
@@ -33,7 +33,7 @@ Table of Contents
 | Total On-Chip Power (W)  | 0.213        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.110        |
+| Dynamic (W)              | 0.109        |
 | Device Static (W)        | 0.104        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 84.0         |
@@ -52,15 +52,15 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.003 |        6 |       --- |             --- |
+| Clocks         |     0.002 |        7 |       --- |             --- |
 | Slice Logic    |     0.002 |     3867 |       --- |             --- |
-|   LUT as Logic |     0.002 |     1686 |     63400 |            2.66 |
+|   LUT as Logic |     0.002 |     1675 |     63400 |            2.64 |
 |   CARRY4       |    <0.001 |      277 |     15850 |            1.75 |
 |   Register     |    <0.001 |      952 |    126800 |            0.75 |
 |   F7/F8 Muxes  |    <0.001 |      171 |     63400 |            0.27 |
 |   BUFG         |    <0.001 |        1 |        32 |            3.13 |
 |   Others       |     0.000 |      381 |       --- |             --- |
-| Signals        |     0.004 |     3496 |       --- |             --- |
+| Signals        |     0.005 |     3497 |       --- |             --- |
 | Block RAM      |     0.001 |    130.5 |       135 |           96.67 |
 | MMCM           |     0.095 |        1 |         6 |           16.67 |
 | DSPs           |    <0.001 |        4 |       240 |            1.67 |
@@ -132,10 +132,11 @@ Table of Contents
 +----------------------------------------+------------------------------------------------------------------+-----------------+
 | Clock                                  | Domain                                                           | Constraint (ns) |
 +----------------------------------------+------------------------------------------------------------------+-----------------+
+| clk_bili_wr_design_1_clk_wiz_0_0       | design_1_i/clk_wiz_0/inst/clk_bili_wr_design_1_clk_wiz_0_0       |            20.0 |
 | clk_interpolation_design_1_clk_wiz_0_0 | design_1_i/clk_wiz_0/inst/clk_interpolation_design_1_clk_wiz_0_0 |           160.0 |
 | clk_vga_design_1_clk_wiz_0_0           | design_1_i/clk_wiz_0/inst/clk_vga_design_1_clk_wiz_0_0           |            40.0 |
 | clkfbout_design_1_clk_wiz_0_0          | design_1_i/clk_wiz_0/inst/clkfbout_design_1_clk_wiz_0_0          |            10.0 |
-| design_1_i/clk_wiz_0/inst/clk_in1      | clk_in1_IBUF_BUFG                                                |            10.0 |
+| design_1_i/clk_wiz_0/inst/clk_in1      | clk_in1_IBUF                                                     |            10.0 |
 +----------------------------------------+------------------------------------------------------------------+-----------------+
 
 
@@ -148,16 +149,17 @@ Table of Contents
 +----------------------------+-----------+
 | Name                       | Power (W) |
 +----------------------------+-----------+
-| design_1_wrapper           |     0.110 |
-|   design_1_i               |     0.107 |
-|     BILINEAR_INTERPOLATI_0 |     0.006 |
-|       U0                   |     0.006 |
-|     BRAM_MUX_0             |     0.001 |
+| design_1_wrapper           |     0.109 |
+|   design_1_i               |     0.106 |
+|     BILINEAR_INTERPOLATI_0 |     0.004 |
+|       U0                   |     0.004 |
+|     BRAM_MUX_0             |     0.002 |
+|       U0                   |     0.002 |
 |     blk_mem_gen_0          |     0.001 |
 |       U0                   |     0.001 |
 |     clk_wiz_0              |     0.096 |
 |       inst                 |     0.096 |
-|     zoom_bram_address_suit |     0.002 |
+|     zoom_bram_address_suit |     0.001 |
 |       blk_mem_gen_1        |     0.001 |
 +----------------------------+-----------+
 

@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
---Date        : Thu May  8 16:33:46 2025
+--Date        : Thu May  8 16:45:37 2025
 --Host        : Ido running 64-bit major release  (build 9200)
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -229,7 +229,8 @@ architecture STRUCTURE of design_1 is
     resetn : in STD_LOGIC;
     clk_in1 : in STD_LOGIC;
     clk_vga : out STD_LOGIC;
-    clk_interpolation : out STD_LOGIC
+    clk_interpolation : out STD_LOGIC;
+    clk_bili_wr : out STD_LOGIC
   );
   end component design_1_clk_wiz_0_0;
   component design_1_cntl_0_0 is
@@ -319,6 +320,7 @@ architecture STRUCTURE of design_1 is
   signal camera_h_ref_0_1 : STD_LOGIC;
   signal camera_v_sync_0_1 : STD_LOGIC;
   signal clk_in1_1 : STD_LOGIC;
+  signal clk_wiz_0_clk_bili_wr : STD_LOGIC;
   signal clk_wiz_0_clk_interpolation : STD_LOGIC;
   signal clk_wiz_0_clk_vga : STD_LOGIC;
   signal cntl_0_cntl_out : STD_LOGIC;
@@ -371,7 +373,7 @@ BILINEAR_INTERPOLATI_0: component design_1_BILINEAR_INTERPOLATI_0_0
       address_read(16 downto 0) => BILINEAR_INTERPOLATI_0_address_read(16 downto 0),
       address_write(18 downto 0) => BILINEAR_INTERPOLATI_0_address_write(18 downto 0),
       bili_cntl => bili_cntl_1,
-      clk_in1 => clk_in1_1,
+      clk_in1 => clk_wiz_0_clk_bili_wr,
       clk_interpolation => clk_wiz_0_clk_interpolation,
       clk_vga => clk_wiz_0_clk_vga,
       pixel_in(11 downto 0) => blk_mem_gen_1_doutb(11 downto 0),
@@ -422,6 +424,7 @@ blk_mem_gen_0: component design_1_blk_mem_gen_0_0
     );
 clk_wiz_0: component design_1_clk_wiz_0_0
      port map (
+      clk_bili_wr => clk_wiz_0_clk_bili_wr,
       clk_in1 => clk_in1_1,
       clk_interpolation => clk_wiz_0_clk_interpolation,
       clk_vga => clk_wiz_0_clk_vga,
