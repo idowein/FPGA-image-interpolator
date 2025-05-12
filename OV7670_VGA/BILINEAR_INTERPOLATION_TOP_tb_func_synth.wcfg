@@ -11,17 +11,18 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="166666fs"></ZoomStartTime>
-      <ZoomEndTime time="1166667fs"></ZoomEndTime>
-      <Cursor1Time time="1000000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="835508fs"></ZoomEndTime>
+      <Cursor1Time time="540000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="230"></NameColumnWidth>
       <ValueColumnWidth column_width="218"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="20" />
+   <WVObjectSize size="19" />
    <wave_markers>
-      <marker time="270000" label="" />
+      <marker time="340000" label="" />
+      <marker time="180000" label="" />
    </wave_markers>
    <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/clk_vga" type="logic">
       <obj_property name="ElementShortName">clk_vga</obj_property>
@@ -94,10 +95,6 @@
    <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/wr_en_sig" type="logic">
       <obj_property name="ElementShortName">wr_en_sig</obj_property>
       <obj_property name="ObjectShortName">wr_en_sig</obj_property>
-   </wvobject>
-   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/wr_en_sig_d" type="logic">
-      <obj_property name="ElementShortName">wr_en_sig_d</obj_property>
-      <obj_property name="ObjectShortName">wr_en_sig_d</obj_property>
    </wvobject>
    <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/read_pix_cnt" type="array">
       <obj_property name="ElementShortName">read_pix_cnt[2:0]</obj_property>
