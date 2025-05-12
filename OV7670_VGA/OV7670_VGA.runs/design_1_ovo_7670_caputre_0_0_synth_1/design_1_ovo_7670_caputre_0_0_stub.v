@@ -1,7 +1,7 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Mon Apr 28 18:01:22 2025
+// Date        : Mon May 12 15:07:54 2025
 // Host        : Ido running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_1_ovo_7670_caputre_0_0_stub.v
@@ -15,8 +15,8 @@
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
 (* x_core_info = "ovo_7670_caputre,Vivado 2019.2" *)
 module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix(pclk, camera_v_sync, camera_h_ref, zoom_x2, din, 
-  addr, dout, wr_en)
-/* synthesis syn_black_box black_box_pad_pin="pclk,camera_v_sync,camera_h_ref,zoom_x2,din[7:0],addr[18:0],dout[11:0],wr_en" */;
+  addr, dout, wr_en, clk_bram)
+/* synthesis syn_black_box black_box_pad_pin="pclk,camera_v_sync,camera_h_ref,zoom_x2,din[7:0],addr[18:0],dout[11:0],wr_en,clk_bram" */;
   input pclk;
   input camera_v_sync;
   input camera_h_ref;
@@ -25,4 +25,5 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix(pclk, camera_v_sync, camera_h_r
   output [18:0]addr;
   output [11:0]dout;
   output wr_en;
+  output clk_bram;
 endmodule

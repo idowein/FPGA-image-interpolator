@@ -1,7 +1,7 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Mon Apr 28 18:01:22 2025
+// Date        : Mon May 12 15:07:54 2025
 // Host        : Ido running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_1_ovo_7670_caputre_0_0_sim_netlist.v
@@ -23,7 +23,8 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
     din,
     addr,
     dout,
-    wr_en);
+    wr_en,
+    clk_bram);
   input pclk;
   input camera_v_sync;
   input camera_h_ref;
@@ -32,10 +33,12 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
   output [18:0]addr;
   output [11:0]dout;
   output wr_en;
+  output clk_bram;
 
   wire [18:0]addr;
   wire camera_h_ref;
   wire camera_v_sync;
+  wire clk_bram;
   wire [7:0]din;
   wire [11:0]dout;
   wire pclk;
@@ -46,6 +49,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
        (.addr(addr),
         .camera_h_ref(camera_h_ref),
         .camera_v_sync(camera_v_sync),
+        .clk_bram(clk_bram),
         .din(din),
         .dout(dout),
         .pclk(pclk),
@@ -55,6 +59,7 @@ endmodule
 
 module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre
    (dout,
+    clk_bram,
     addr,
     wr_en,
     camera_h_ref,
@@ -63,6 +68,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre
     din,
     zoom_x2);
   output [11:0]dout;
+  output clk_bram;
   output [18:0]addr;
   output wr_en;
   input camera_h_ref;
@@ -117,6 +123,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre
   wire \address_reg[7]_i_1_n_7 ;
   wire camera_h_ref;
   wire camera_v_sync;
+  wire clk_bram;
   wire \counter_col[10]_i_1_n_0 ;
   wire \counter_col[10]_i_3_n_0 ;
   wire [10:5]counter_col_reg;
@@ -134,15 +141,9 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre
   wire [7:0]din;
   wire [11:0]dout;
   wire geqOp__8;
-  wire \latced_data_reg_n_0_[10] ;
-  wire \latced_data_reg_n_0_[12] ;
-  wire \latced_data_reg_n_0_[13] ;
-  wire \latced_data_reg_n_0_[14] ;
-  wire \latced_data_reg_n_0_[15] ;
-  wire \latced_data_reg_n_0_[8] ;
-  wire \latced_data_reg_n_0_[9] ;
+  wire [15:0]latced_data;
   wire latch_href;
-  wire [15:8]p_0_in;
+  wire p_0_in;
   wire p_0_in1_in;
   wire p_0_in_0;
   wire pclk;
@@ -408,6 +409,19 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre
         .R(camera_v_sync));
   LUT1 #(
     .INIT(2'h1)) 
+    clk_bram_sig_i_1
+       (.I0(clk_bram),
+        .O(p_0_in));
+  FDRE #(
+    .INIT(1'b0)) 
+    clk_bram_sig_reg
+       (.C(pclk),
+        .CE(1'b1),
+        .D(p_0_in),
+        .Q(clk_bram),
+        .R(1'b0));
+  LUT1 #(
+    .INIT(2'h1)) 
     \counter_col[0]_i_1 
        (.I0(\counter_col_reg_n_0_[0] ),
         .O(plusOp__0[0]));
@@ -439,14 +453,14 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre
         .I4(\counter_col_reg_n_0_[2] ),
         .I5(\counter_col_reg_n_0_[4] ),
         .O(\counter_col[10]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \counter_col[1]_i_1 
        (.I0(\counter_col_reg_n_0_[0] ),
         .I1(\counter_col_reg_n_0_[1] ),
         .O(plusOp__0[1]));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT3 #(
     .INIT(8'h78)) 
     \counter_col[2]_i_1 
@@ -454,7 +468,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre
         .I1(\counter_col_reg_n_0_[1] ),
         .I2(\counter_col_reg_n_0_[2] ),
         .O(plusOp__0[2]));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT4 #(
     .INIT(16'h7F80)) 
     \counter_col[3]_i_1 
@@ -463,7 +477,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre
         .I2(\counter_col_reg_n_0_[2] ),
         .I3(\counter_col_reg_n_0_[3] ),
         .O(plusOp__0[3]));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT5 #(
     .INIT(32'h7FFF8000)) 
     \counter_col[4]_i_1 
@@ -498,7 +512,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre
         .I1(counter_col_reg[6]),
         .I2(counter_col_reg[7]),
         .O(plusOp__0[7]));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT4 #(
     .INIT(16'h7F80)) 
     \counter_col[8]_i_1 
@@ -507,7 +521,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre
         .I2(counter_col_reg[7]),
         .I3(counter_col_reg[8]),
         .O(plusOp__0[8]));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT5 #(
     .INIT(32'h7FFF8000)) 
     \counter_col[9]_i_1 
@@ -636,14 +650,14 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre
         .I4(\counter_row_reg_n_0_[2] ),
         .I5(counter_row_reg[4]),
         .O(\counter_row[10]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \counter_row[1]_i_1 
        (.I0(\counter_row_reg_n_0_[0] ),
         .I1(\counter_row_reg_n_0_[1] ),
         .O(plusOp[1]));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT3 #(
     .INIT(8'h78)) 
     \counter_row[2]_i_1 
@@ -651,7 +665,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre
         .I1(\counter_row_reg_n_0_[1] ),
         .I2(\counter_row_reg_n_0_[2] ),
         .O(plusOp[2]));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT4 #(
     .INIT(16'h7F80)) 
     \counter_row[3]_i_1 
@@ -660,7 +674,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre
         .I2(\counter_row_reg_n_0_[2] ),
         .I3(counter_row_reg[3]),
         .O(plusOp[3]));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT5 #(
     .INIT(32'h7FFF8000)) 
     \counter_row[4]_i_1 
@@ -680,14 +694,14 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre
         .I4(counter_row_reg[4]),
         .I5(counter_row_reg[5]),
         .O(plusOp[5]));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \counter_row[6]_i_1 
        (.I0(\counter_row[10]_i_3_n_0 ),
         .I1(counter_row_reg[6]),
         .O(plusOp[6]));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT3 #(
     .INIT(8'h78)) 
     \counter_row[7]_i_1 
@@ -695,7 +709,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre
         .I1(counter_row_reg[6]),
         .I2(counter_row_reg[7]),
         .O(plusOp[7]));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT4 #(
     .INIT(16'h7F80)) 
     \counter_row[8]_i_1 
@@ -704,7 +718,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre
         .I2(counter_row_reg[7]),
         .I3(counter_row_reg[8]),
         .O(plusOp[8]));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT5 #(
     .INIT(32'h7FFF8000)) 
     \counter_row[9]_i_1 
@@ -810,73 +824,73 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre
   FDRE \dout_reg[0] 
        (.C(pclk),
         .CE(p_0_in1_in),
-        .D(p_0_in[9]),
+        .D(latced_data[1]),
         .Q(dout[0]),
         .R(1'b0));
   FDRE \dout_reg[10] 
        (.C(pclk),
         .CE(p_0_in1_in),
-        .D(\latced_data_reg_n_0_[14] ),
+        .D(latced_data[14]),
         .Q(dout[10]),
         .R(1'b0));
   FDRE \dout_reg[11] 
        (.C(pclk),
         .CE(p_0_in1_in),
-        .D(\latced_data_reg_n_0_[15] ),
+        .D(latced_data[15]),
         .Q(dout[11]),
         .R(1'b0));
   FDRE \dout_reg[1] 
        (.C(pclk),
         .CE(p_0_in1_in),
-        .D(p_0_in[10]),
+        .D(latced_data[2]),
         .Q(dout[1]),
         .R(1'b0));
   FDRE \dout_reg[2] 
        (.C(pclk),
         .CE(p_0_in1_in),
-        .D(p_0_in[11]),
+        .D(latced_data[3]),
         .Q(dout[2]),
         .R(1'b0));
   FDRE \dout_reg[3] 
        (.C(pclk),
         .CE(p_0_in1_in),
-        .D(p_0_in[12]),
+        .D(latced_data[4]),
         .Q(dout[3]),
         .R(1'b0));
   FDRE \dout_reg[4] 
        (.C(pclk),
         .CE(p_0_in1_in),
-        .D(p_0_in[15]),
+        .D(latced_data[7]),
         .Q(dout[4]),
         .R(1'b0));
   FDRE \dout_reg[5] 
        (.C(pclk),
         .CE(p_0_in1_in),
-        .D(\latced_data_reg_n_0_[8] ),
+        .D(latced_data[8]),
         .Q(dout[5]),
         .R(1'b0));
   FDRE \dout_reg[6] 
        (.C(pclk),
         .CE(p_0_in1_in),
-        .D(\latced_data_reg_n_0_[9] ),
+        .D(latced_data[9]),
         .Q(dout[6]),
         .R(1'b0));
   FDRE \dout_reg[7] 
        (.C(pclk),
         .CE(p_0_in1_in),
-        .D(\latced_data_reg_n_0_[10] ),
+        .D(latced_data[10]),
         .Q(dout[7]),
         .R(1'b0));
   FDRE \dout_reg[8] 
        (.C(pclk),
         .CE(p_0_in1_in),
-        .D(\latced_data_reg_n_0_[12] ),
+        .D(latced_data[12]),
         .Q(dout[8]),
         .R(1'b0));
   FDRE \dout_reg[9] 
        (.C(pclk),
         .CE(p_0_in1_in),
-        .D(\latced_data_reg_n_0_[13] ),
+        .D(latced_data[13]),
         .Q(dout[9]),
         .R(1'b0));
   FDRE #(
@@ -885,47 +899,47 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre
        (.C(pclk),
         .CE(p_0_in1_in),
         .D(din[0]),
-        .Q(p_0_in[8]),
+        .Q(latced_data[0]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \latced_data_reg[10] 
        (.C(pclk),
         .CE(p_0_in1_in),
-        .D(p_0_in[10]),
-        .Q(\latced_data_reg_n_0_[10] ),
+        .D(latced_data[2]),
+        .Q(latced_data[10]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \latced_data_reg[12] 
        (.C(pclk),
         .CE(p_0_in1_in),
-        .D(p_0_in[12]),
-        .Q(\latced_data_reg_n_0_[12] ),
+        .D(latced_data[4]),
+        .Q(latced_data[12]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \latced_data_reg[13] 
        (.C(pclk),
         .CE(p_0_in1_in),
-        .D(p_0_in[13]),
-        .Q(\latced_data_reg_n_0_[13] ),
+        .D(latced_data[5]),
+        .Q(latced_data[13]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \latced_data_reg[14] 
        (.C(pclk),
         .CE(p_0_in1_in),
-        .D(p_0_in[14]),
-        .Q(\latced_data_reg_n_0_[14] ),
+        .D(latced_data[6]),
+        .Q(latced_data[14]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \latced_data_reg[15] 
        (.C(pclk),
         .CE(p_0_in1_in),
-        .D(p_0_in[15]),
-        .Q(\latced_data_reg_n_0_[15] ),
+        .D(latced_data[7]),
+        .Q(latced_data[15]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
@@ -933,7 +947,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre
        (.C(pclk),
         .CE(p_0_in1_in),
         .D(din[1]),
-        .Q(p_0_in[9]),
+        .Q(latced_data[1]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
@@ -941,7 +955,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre
        (.C(pclk),
         .CE(p_0_in1_in),
         .D(din[2]),
-        .Q(p_0_in[10]),
+        .Q(latced_data[2]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
@@ -949,7 +963,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre
        (.C(pclk),
         .CE(p_0_in1_in),
         .D(din[3]),
-        .Q(p_0_in[11]),
+        .Q(latced_data[3]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
@@ -957,7 +971,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre
        (.C(pclk),
         .CE(p_0_in1_in),
         .D(din[4]),
-        .Q(p_0_in[12]),
+        .Q(latced_data[4]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
@@ -965,7 +979,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre
        (.C(pclk),
         .CE(p_0_in1_in),
         .D(din[5]),
-        .Q(p_0_in[13]),
+        .Q(latced_data[5]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
@@ -973,7 +987,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre
        (.C(pclk),
         .CE(p_0_in1_in),
         .D(din[6]),
-        .Q(p_0_in[14]),
+        .Q(latced_data[6]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
@@ -981,23 +995,23 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre
        (.C(pclk),
         .CE(p_0_in1_in),
         .D(din[7]),
-        .Q(p_0_in[15]),
+        .Q(latced_data[7]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \latced_data_reg[8] 
        (.C(pclk),
         .CE(p_0_in1_in),
-        .D(p_0_in[8]),
-        .Q(\latced_data_reg_n_0_[8] ),
+        .D(latced_data[0]),
+        .Q(latced_data[8]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \latced_data_reg[9] 
        (.C(pclk),
         .CE(p_0_in1_in),
-        .D(p_0_in[9]),
-        .Q(\latced_data_reg_n_0_[9] ),
+        .D(latced_data[1]),
+        .Q(latced_data[9]),
         .R(1'b0));
   FDRE latch_href_reg
        (.C(pclk),
@@ -1020,7 +1034,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre
         .D(wr_en_i_1_n_0),
         .Q(wr_en),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT3 #(
     .INIT(8'h04)) 
     \write_state[0]_i_1 
@@ -1028,7 +1042,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre
         .I1(camera_h_ref),
         .I2(camera_v_sync),
         .O(\write_state[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \write_state[1]_i_1 

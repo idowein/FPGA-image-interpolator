@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date             : Tue Apr 29 17:10:29 2025
+| Date             : Mon May 12 15:17:06 2025
 | Host             : Ido running 64-bit major release  (build 9200)
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
@@ -53,14 +53,14 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.001 |        6 |       --- |             --- |
-| Slice Logic    |    <0.001 |     1666 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      632 |     63400 |            1.00 |
+| Slice Logic    |    <0.001 |     1669 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      647 |     63400 |            1.02 |
 |   CARRY4       |    <0.001 |       60 |     15850 |            0.38 |
-|   Register     |    <0.001 |      279 |    126800 |            0.22 |
+|   Register     |    <0.001 |      280 |    126800 |            0.22 |
+|   BUFG         |    <0.001 |        2 |        32 |            6.25 |
 |   F7/F8 Muxes  |    <0.001 |      129 |     63400 |            0.20 |
-|   BUFG         |    <0.001 |        1 |        32 |            3.13 |
 |   Others       |     0.000 |      302 |       --- |             --- |
-| Signals        |     0.003 |     1521 |       --- |             --- |
+| Signals        |     0.003 |     1522 |       --- |             --- |
 | Block RAM      |    <0.001 |      104 |       135 |           77.04 |
 | MMCM           |     0.115 |        1 |         6 |           16.67 |
 | I/O            |     0.003 |       36 |       210 |           17.14 |

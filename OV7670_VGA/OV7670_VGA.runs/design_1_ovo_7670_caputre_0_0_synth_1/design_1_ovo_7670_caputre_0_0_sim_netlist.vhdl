@@ -1,7 +1,7 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
--- Date        : Mon Apr 28 18:01:22 2025
+-- Date        : Mon May 12 15:07:54 2025
 -- Host        : Ido running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 --               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_1_ovo_7670_caputre_0_0_sim_netlist.vhdl
@@ -17,6 +17,7 @@ use UNISIM.VCOMPONENTS.ALL;
 entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre is
   port (
     dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    clk_bram : out STD_LOGIC;
     addr : out STD_LOGIC_VECTOR ( 18 downto 0 );
     wr_en : out STD_LOGIC;
     camera_h_ref : in STD_LOGIC;
@@ -72,6 +73,7 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_cap
   signal \address_reg[7]_i_1_n_5\ : STD_LOGIC;
   signal \address_reg[7]_i_1_n_6\ : STD_LOGIC;
   signal \address_reg[7]_i_1_n_7\ : STD_LOGIC;
+  signal \^clk_bram\ : STD_LOGIC;
   signal \counter_col[10]_i_1_n_0\ : STD_LOGIC;
   signal \counter_col[10]_i_3_n_0\ : STD_LOGIC;
   signal counter_col_reg : STD_LOGIC_VECTOR ( 10 downto 5 );
@@ -87,15 +89,9 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_cap
   signal \counter_row_reg_n_0_[1]\ : STD_LOGIC;
   signal \counter_row_reg_n_0_[2]\ : STD_LOGIC;
   signal \geqOp__8\ : STD_LOGIC;
-  signal \latced_data_reg_n_0_[10]\ : STD_LOGIC;
-  signal \latced_data_reg_n_0_[12]\ : STD_LOGIC;
-  signal \latced_data_reg_n_0_[13]\ : STD_LOGIC;
-  signal \latced_data_reg_n_0_[14]\ : STD_LOGIC;
-  signal \latced_data_reg_n_0_[15]\ : STD_LOGIC;
-  signal \latced_data_reg_n_0_[8]\ : STD_LOGIC;
-  signal \latced_data_reg_n_0_[9]\ : STD_LOGIC;
+  signal latced_data : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal latch_href : STD_LOGIC;
-  signal p_0_in : STD_LOGIC_VECTOR ( 15 downto 8 );
+  signal p_0_in : STD_LOGIC;
   signal p_0_in1_in : STD_LOGIC;
   signal p_0_in_0 : STD_LOGIC;
   signal plusOp : STD_LOGIC_VECTOR ( 10 downto 0 );
@@ -108,26 +104,27 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_cap
   signal \NLW_address_reg[18]_i_2_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 2 );
   signal \NLW_address_reg[18]_i_2_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 to 3 );
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \counter_col[1]_i_1\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of \counter_col[2]_i_1\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of \counter_col[3]_i_1\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \counter_col[4]_i_1\ : label is "soft_lutpair2";
+  attribute SOFT_HLUTNM of \counter_col[1]_i_1\ : label is "soft_lutpair8";
+  attribute SOFT_HLUTNM of \counter_col[2]_i_1\ : label is "soft_lutpair8";
+  attribute SOFT_HLUTNM of \counter_col[3]_i_1\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \counter_col[4]_i_1\ : label is "soft_lutpair3";
   attribute SOFT_HLUTNM of \counter_col[6]_i_1\ : label is "soft_lutpair6";
   attribute SOFT_HLUTNM of \counter_col[7]_i_1\ : label is "soft_lutpair6";
-  attribute SOFT_HLUTNM of \counter_col[8]_i_1\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \counter_col[9]_i_1\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \counter_row[1]_i_1\ : label is "soft_lutpair4";
-  attribute SOFT_HLUTNM of \counter_row[2]_i_1\ : label is "soft_lutpair4";
-  attribute SOFT_HLUTNM of \counter_row[3]_i_1\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \counter_row[4]_i_1\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \counter_row[6]_i_1\ : label is "soft_lutpair7";
-  attribute SOFT_HLUTNM of \counter_row[7]_i_1\ : label is "soft_lutpair7";
-  attribute SOFT_HLUTNM of \counter_row[8]_i_1\ : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of \counter_row[9]_i_1\ : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of \write_state[0]_i_1\ : label is "soft_lutpair8";
-  attribute SOFT_HLUTNM of \write_state[1]_i_1\ : label is "soft_lutpair8";
+  attribute SOFT_HLUTNM of \counter_col[8]_i_1\ : label is "soft_lutpair2";
+  attribute SOFT_HLUTNM of \counter_col[9]_i_1\ : label is "soft_lutpair2";
+  attribute SOFT_HLUTNM of \counter_row[1]_i_1\ : label is "soft_lutpair7";
+  attribute SOFT_HLUTNM of \counter_row[2]_i_1\ : label is "soft_lutpair7";
+  attribute SOFT_HLUTNM of \counter_row[3]_i_1\ : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of \counter_row[4]_i_1\ : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of \counter_row[6]_i_1\ : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of \counter_row[7]_i_1\ : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of \counter_row[8]_i_1\ : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of \counter_row[9]_i_1\ : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of \write_state[0]_i_1\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of \write_state[1]_i_1\ : label is "soft_lutpair4";
 begin
   addr(18 downto 0) <= \^addr\(18 downto 0);
+  clk_bram <= \^clk_bram\;
   wr_en <= \^wr_en\;
 \address[18]_i_1\: unisim.vcomponents.LUT3
     generic map(
@@ -496,6 +493,25 @@ begin
       D => \address_reg[11]_i_1_n_6\,
       Q => \^addr\(9),
       R => camera_v_sync
+    );
+clk_bram_sig_i_1: unisim.vcomponents.LUT1
+    generic map(
+      INIT => X"1"
+    )
+        port map (
+      I0 => \^clk_bram\,
+      O => p_0_in
+    );
+clk_bram_sig_reg: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => pclk,
+      CE => '1',
+      D => p_0_in,
+      Q => \^clk_bram\,
+      R => '0'
     );
 \counter_col[0]_i_1\: unisim.vcomponents.LUT1
     generic map(
@@ -1033,7 +1049,7 @@ begin
      port map (
       C => pclk,
       CE => p_0_in1_in,
-      D => p_0_in(9),
+      D => latced_data(1),
       Q => dout(0),
       R => '0'
     );
@@ -1041,7 +1057,7 @@ begin
      port map (
       C => pclk,
       CE => p_0_in1_in,
-      D => \latced_data_reg_n_0_[14]\,
+      D => latced_data(14),
       Q => dout(10),
       R => '0'
     );
@@ -1049,7 +1065,7 @@ begin
      port map (
       C => pclk,
       CE => p_0_in1_in,
-      D => \latced_data_reg_n_0_[15]\,
+      D => latced_data(15),
       Q => dout(11),
       R => '0'
     );
@@ -1057,7 +1073,7 @@ begin
      port map (
       C => pclk,
       CE => p_0_in1_in,
-      D => p_0_in(10),
+      D => latced_data(2),
       Q => dout(1),
       R => '0'
     );
@@ -1065,7 +1081,7 @@ begin
      port map (
       C => pclk,
       CE => p_0_in1_in,
-      D => p_0_in(11),
+      D => latced_data(3),
       Q => dout(2),
       R => '0'
     );
@@ -1073,7 +1089,7 @@ begin
      port map (
       C => pclk,
       CE => p_0_in1_in,
-      D => p_0_in(12),
+      D => latced_data(4),
       Q => dout(3),
       R => '0'
     );
@@ -1081,7 +1097,7 @@ begin
      port map (
       C => pclk,
       CE => p_0_in1_in,
-      D => p_0_in(15),
+      D => latced_data(7),
       Q => dout(4),
       R => '0'
     );
@@ -1089,7 +1105,7 @@ begin
      port map (
       C => pclk,
       CE => p_0_in1_in,
-      D => \latced_data_reg_n_0_[8]\,
+      D => latced_data(8),
       Q => dout(5),
       R => '0'
     );
@@ -1097,7 +1113,7 @@ begin
      port map (
       C => pclk,
       CE => p_0_in1_in,
-      D => \latced_data_reg_n_0_[9]\,
+      D => latced_data(9),
       Q => dout(6),
       R => '0'
     );
@@ -1105,7 +1121,7 @@ begin
      port map (
       C => pclk,
       CE => p_0_in1_in,
-      D => \latced_data_reg_n_0_[10]\,
+      D => latced_data(10),
       Q => dout(7),
       R => '0'
     );
@@ -1113,7 +1129,7 @@ begin
      port map (
       C => pclk,
       CE => p_0_in1_in,
-      D => \latced_data_reg_n_0_[12]\,
+      D => latced_data(12),
       Q => dout(8),
       R => '0'
     );
@@ -1121,7 +1137,7 @@ begin
      port map (
       C => pclk,
       CE => p_0_in1_in,
-      D => \latced_data_reg_n_0_[13]\,
+      D => latced_data(13),
       Q => dout(9),
       R => '0'
     );
@@ -1133,7 +1149,7 @@ begin
       C => pclk,
       CE => p_0_in1_in,
       D => din(0),
-      Q => p_0_in(8),
+      Q => latced_data(0),
       R => '0'
     );
 \latced_data_reg[10]\: unisim.vcomponents.FDRE
@@ -1143,8 +1159,8 @@ begin
         port map (
       C => pclk,
       CE => p_0_in1_in,
-      D => p_0_in(10),
-      Q => \latced_data_reg_n_0_[10]\,
+      D => latced_data(2),
+      Q => latced_data(10),
       R => '0'
     );
 \latced_data_reg[12]\: unisim.vcomponents.FDRE
@@ -1154,8 +1170,8 @@ begin
         port map (
       C => pclk,
       CE => p_0_in1_in,
-      D => p_0_in(12),
-      Q => \latced_data_reg_n_0_[12]\,
+      D => latced_data(4),
+      Q => latced_data(12),
       R => '0'
     );
 \latced_data_reg[13]\: unisim.vcomponents.FDRE
@@ -1165,8 +1181,8 @@ begin
         port map (
       C => pclk,
       CE => p_0_in1_in,
-      D => p_0_in(13),
-      Q => \latced_data_reg_n_0_[13]\,
+      D => latced_data(5),
+      Q => latced_data(13),
       R => '0'
     );
 \latced_data_reg[14]\: unisim.vcomponents.FDRE
@@ -1176,8 +1192,8 @@ begin
         port map (
       C => pclk,
       CE => p_0_in1_in,
-      D => p_0_in(14),
-      Q => \latced_data_reg_n_0_[14]\,
+      D => latced_data(6),
+      Q => latced_data(14),
       R => '0'
     );
 \latced_data_reg[15]\: unisim.vcomponents.FDRE
@@ -1187,8 +1203,8 @@ begin
         port map (
       C => pclk,
       CE => p_0_in1_in,
-      D => p_0_in(15),
-      Q => \latced_data_reg_n_0_[15]\,
+      D => latced_data(7),
+      Q => latced_data(15),
       R => '0'
     );
 \latced_data_reg[1]\: unisim.vcomponents.FDRE
@@ -1199,7 +1215,7 @@ begin
       C => pclk,
       CE => p_0_in1_in,
       D => din(1),
-      Q => p_0_in(9),
+      Q => latced_data(1),
       R => '0'
     );
 \latced_data_reg[2]\: unisim.vcomponents.FDRE
@@ -1210,7 +1226,7 @@ begin
       C => pclk,
       CE => p_0_in1_in,
       D => din(2),
-      Q => p_0_in(10),
+      Q => latced_data(2),
       R => '0'
     );
 \latced_data_reg[3]\: unisim.vcomponents.FDRE
@@ -1221,7 +1237,7 @@ begin
       C => pclk,
       CE => p_0_in1_in,
       D => din(3),
-      Q => p_0_in(11),
+      Q => latced_data(3),
       R => '0'
     );
 \latced_data_reg[4]\: unisim.vcomponents.FDRE
@@ -1232,7 +1248,7 @@ begin
       C => pclk,
       CE => p_0_in1_in,
       D => din(4),
-      Q => p_0_in(12),
+      Q => latced_data(4),
       R => '0'
     );
 \latced_data_reg[5]\: unisim.vcomponents.FDRE
@@ -1243,7 +1259,7 @@ begin
       C => pclk,
       CE => p_0_in1_in,
       D => din(5),
-      Q => p_0_in(13),
+      Q => latced_data(5),
       R => '0'
     );
 \latced_data_reg[6]\: unisim.vcomponents.FDRE
@@ -1254,7 +1270,7 @@ begin
       C => pclk,
       CE => p_0_in1_in,
       D => din(6),
-      Q => p_0_in(14),
+      Q => latced_data(6),
       R => '0'
     );
 \latced_data_reg[7]\: unisim.vcomponents.FDRE
@@ -1265,7 +1281,7 @@ begin
       C => pclk,
       CE => p_0_in1_in,
       D => din(7),
-      Q => p_0_in(15),
+      Q => latced_data(7),
       R => '0'
     );
 \latced_data_reg[8]\: unisim.vcomponents.FDRE
@@ -1275,8 +1291,8 @@ begin
         port map (
       C => pclk,
       CE => p_0_in1_in,
-      D => p_0_in(8),
-      Q => \latced_data_reg_n_0_[8]\,
+      D => latced_data(0),
+      Q => latced_data(8),
       R => '0'
     );
 \latced_data_reg[9]\: unisim.vcomponents.FDRE
@@ -1286,8 +1302,8 @@ begin
         port map (
       C => pclk,
       CE => p_0_in1_in,
-      D => p_0_in(9),
-      Q => \latced_data_reg_n_0_[9]\,
+      D => latced_data(1),
+      Q => latced_data(9),
       R => '0'
     );
 latch_href_reg: unisim.vcomponents.FDRE
@@ -1367,7 +1383,8 @@ entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
     din : in STD_LOGIC_VECTOR ( 7 downto 0 );
     addr : out STD_LOGIC_VECTOR ( 18 downto 0 );
     dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
-    wr_en : out STD_LOGIC
+    wr_en : out STD_LOGIC;
+    clk_bram : out STD_LOGIC
   );
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix : entity is true;
@@ -1388,6 +1405,7 @@ U0: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre
       addr(18 downto 0) => addr(18 downto 0),
       camera_h_ref => camera_h_ref,
       camera_v_sync => camera_v_sync,
+      clk_bram => clk_bram,
       din(7 downto 0) => din(7 downto 0),
       dout(11 downto 0) => dout(11 downto 0),
       pclk => pclk,

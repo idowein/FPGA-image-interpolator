@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Apr 29 17:08:09 2025" VIVADOVERSION="2019.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon May 12 15:07:19 2025" VIVADOVERSION="2019.2">
 
   <SYSTEMINFO ARCH="artix7" BOARD="digilentinc.com:nexys-a7-100t:part0:1.3" DEVICE="7a100t" NAME="design_1" PACKAGE="csg324" SPEEDGRADE="-1"/>
 
@@ -27,7 +27,6 @@
     </PORT>
     <PORT DIR="I" NAME="pclk" SIGIS="undef" SIGNAME="External_Ports_pclk">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="blk_mem_gen_0" PORT="clka"/>
         <CONNECTION INSTANCE="ovo_7670_caputre_0" PORT="pclk"/>
       </CONNECTIONS>
     </PORT>
@@ -78,8 +77,8 @@
     </PORT>
     <PORT DIR="I" NAME="zoom_x2" SIGIS="undef" SIGNAME="External_Ports_zoom_x2">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="ovo_7670_caputre_0" PORT="zoom_x2"/>
         <CONNECTION INSTANCE="VGA_TOP_1" PORT="zoom_x2"/>
+        <CONNECTION INSTANCE="ovo_7670_caputre_0" PORT="zoom_x2"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="O" NAME="vga_V_sync" SIGIS="undef" SIGNAME="VGA_TOP_1_vga_V_sync">
@@ -327,9 +326,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" NAME="clka" SIGIS="clk" SIGNAME="External_Ports_pclk">
+        <PORT DIR="I" NAME="clka" SIGIS="clk" SIGNAME="ovo_7670_caputre_0_clk_bram">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="pclk"/>
+            <CONNECTION INSTANCE="ovo_7670_caputre_0" PORT="clk_bram"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="0" NAME="wea" RIGHT="0" SIGIS="undef" SIGNAME="ovo_7670_caputre_0_wr_en">
@@ -1126,6 +1125,11 @@
         <PORT DIR="O" NAME="wr_en" SIGIS="undef" SIGNAME="ovo_7670_caputre_0_wr_en">
           <CONNECTIONS>
             <CONNECTION INSTANCE="blk_mem_gen_0" PORT="wea"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="clk_bram" SIGIS="undef" SIGNAME="ovo_7670_caputre_0_clk_bram">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="blk_mem_gen_0" PORT="clka"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
---Date        : Tue Apr 29 17:08:09 2025
+--Date        : Mon May 12 15:07:19 2025
 --Host        : Ido running 64-bit major release  (build 9200)
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -82,18 +82,6 @@ architecture STRUCTURE of design_1 is
     cntl_out : out STD_LOGIC
   );
   end component design_1_cntl_0_0;
-  component design_1_ovo_7670_caputre_0_0 is
-  port (
-    pclk : in STD_LOGIC;
-    camera_v_sync : in STD_LOGIC;
-    camera_h_ref : in STD_LOGIC;
-    zoom_x2 : in STD_LOGIC;
-    din : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    addr : out STD_LOGIC_VECTOR ( 18 downto 0 );
-    dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
-    wr_en : out STD_LOGIC
-  );
-  end component design_1_ovo_7670_caputre_0_0;
   component design_1_VGA_TOP_1_0 is
   port (
     pix_clk : in STD_LOGIC;
@@ -108,6 +96,19 @@ architecture STRUCTURE of design_1 is
     frame_adress : out STD_LOGIC_VECTOR ( 18 downto 0 )
   );
   end component design_1_VGA_TOP_1_0;
+  component design_1_ovo_7670_caputre_0_0 is
+  port (
+    pclk : in STD_LOGIC;
+    camera_v_sync : in STD_LOGIC;
+    camera_h_ref : in STD_LOGIC;
+    zoom_x2 : in STD_LOGIC;
+    din : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    addr : out STD_LOGIC_VECTOR ( 18 downto 0 );
+    dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    wr_en : out STD_LOGIC;
+    clk_bram : out STD_LOGIC
+  );
+  end component design_1_ovo_7670_caputre_0_0;
   signal Net1 : STD_LOGIC;
   signal VGA_TOP_1_VGA_H_sync : STD_LOGIC;
   signal VGA_TOP_1_frame_adress : STD_LOGIC_VECTOR ( 18 downto 0 );
@@ -131,9 +132,10 @@ architecture STRUCTURE of design_1 is
   signal ov7670_controller_0_sioc : STD_LOGIC;
   signal ov7670_controller_0_xclk : STD_LOGIC;
   signal ovo_7670_caputre_0_addr : STD_LOGIC_VECTOR ( 18 downto 0 );
+  signal ovo_7670_caputre_0_clk_bram : STD_LOGIC;
   signal ovo_7670_caputre_0_dout : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal ovo_7670_caputre_0_wr_en : STD_LOGIC;
-  signal pclk_0_1 : STD_LOGIC;
+  signal pclk_1 : STD_LOGIC;
   signal resend_in_0_1 : STD_LOGIC;
   signal resetn_0_1 : STD_LOGIC;
   signal zoom_x2_0_1 : STD_LOGIC;
@@ -154,7 +156,7 @@ begin
   cntl_in_0_1 <= cntl_in;
   config_finished <= ov7670_controller_0_config_finished;
   din_0_1(7 downto 0) <= din(7 downto 0);
-  pclk_0_1 <= pclk;
+  pclk_1 <= pclk;
   pwdn <= ov7670_controller_0_pwdn;
   resend_in_0_1 <= resend_in;
   reset <= ov7670_controller_0_reset;
@@ -183,7 +185,7 @@ blk_mem_gen_0: component design_1_blk_mem_gen_0_0
      port map (
       addra(18 downto 0) => ovo_7670_caputre_0_addr(18 downto 0),
       addrb(18 downto 0) => VGA_TOP_1_frame_adress(18 downto 0),
-      clka => pclk_0_1,
+      clka => ovo_7670_caputre_0_clk_bram,
       clkb => clk_wiz_0_clk_vga,
       dina(11 downto 0) => ovo_7670_caputre_0_dout(11 downto 0),
       doutb(11 downto 0) => blk_mem_gen_0_doutb(11 downto 0),
@@ -221,9 +223,10 @@ ovo_7670_caputre_0: component design_1_ovo_7670_caputre_0_0
       addr(18 downto 0) => ovo_7670_caputre_0_addr(18 downto 0),
       camera_h_ref => camera_h_ref_0_1,
       camera_v_sync => camera_v_sync_0_1,
+      clk_bram => ovo_7670_caputre_0_clk_bram,
       din(7 downto 0) => din_0_1(7 downto 0),
       dout(11 downto 0) => ovo_7670_caputre_0_dout(11 downto 0),
-      pclk => pclk_0_1,
+      pclk => pclk_1,
       wr_en => ovo_7670_caputre_0_wr_en,
       zoom_x2 => zoom_x2_0_1
     );
