@@ -3,7 +3,7 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="BILINEAR_INTERPOLATION_TOP_tb_behav.wdb" id="1">
+      <db_ref path="BILINEAR_INTERPOLATION_TOP_tb_func_synth.wdb" id="1">
          <top_modules>
             <top_module name="BILINEAR_INTERPOLATION_TOP_tb" />
             <top_module name="glbl" />
@@ -11,26 +11,26 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="208478fs"></ZoomStartTime>
-      <ZoomEndTime time="557090fs"></ZoomEndTime>
-      <Cursor1Time time="285000fs"></Cursor1Time>
+      <ZoomStartTime time="142131fs"></ZoomStartTime>
+      <ZoomEndTime time="419145fs"></ZoomEndTime>
+      <Cursor1Time time="340000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="233"></NameColumnWidth>
-      <ValueColumnWidth column_width="220"></ValueColumnWidth>
+      <ValueColumnWidth column_width="216"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="19" />
    <wave_markers>
-      <marker time="300000" label="" />
-      <marker time="245000" label="" />
+      <marker time="180000" label="" />
+      <marker time="240000" label="" />
    </wave_markers>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/clk_bili_wr" type="logic">
+      <obj_property name="ElementShortName">clk_bili_wr</obj_property>
+      <obj_property name="ObjectShortName">clk_bili_wr</obj_property>
+   </wvobject>
    <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/clk_vga" type="logic">
       <obj_property name="ElementShortName">clk_vga</obj_property>
       <obj_property name="ObjectShortName">clk_vga</obj_property>
-   </wvobject>
-   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/clk_in1" type="logic">
-      <obj_property name="ElementShortName">clk_in1</obj_property>
-      <obj_property name="ObjectShortName">clk_in1</obj_property>
    </wvobject>
    <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/clk_interpolation" type="logic">
       <obj_property name="ElementShortName">clk_interpolation</obj_property>

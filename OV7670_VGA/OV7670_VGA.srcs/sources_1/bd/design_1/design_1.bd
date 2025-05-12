@@ -961,22 +961,8 @@
               }
             }
           },
-          "clk_in1": {
-            "direction": "I",
-            "parameters": {
-              "CLK_DOMAIN": {
-                "value": "/clk_wiz_0_clk_out1",
-                "value_src": "ip_prop"
-              },
-              "FREQ_HZ": {
-                "value": "50000000",
-                "value_src": "ip_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "ip_prop"
-              }
-            }
+          "clk_bili_wr": {
+            "direction": "I"
           },
           "clk_interpolation": {
             "direction": "I",
@@ -1273,8 +1259,7 @@
       "clk_wiz_0_clk_bili_wr": {
         "ports": [
           "clk_wiz_0/clk_bili_wr",
-          "BRAM_MUX_0/clk_50_MHz",
-          "BILINEAR_INTERPOLATI_0/clk_in1"
+          "BRAM_MUX_0/clk_50_MHz"
         ]
       },
       "clk_in1_1": {

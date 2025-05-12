@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
---Date        : Thu May  8 18:36:02 2025
+--Date        : Mon May 12 18:44:33 2025
 --Host        : Ido running 64-bit major release  (build 9200)
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -290,7 +290,7 @@ architecture STRUCTURE of design_1 is
   component design_1_BILINEAR_INTERPOLATI_0_0 is
   port (
     clk_vga : in STD_LOGIC;
-    clk_in1 : in STD_LOGIC;
+    clk_bili_wr : in STD_LOGIC;
     clk_interpolation : in STD_LOGIC;
     pixel_in : in STD_LOGIC_VECTOR ( 11 downto 0 );
     bili_cntl : in STD_LOGIC;
@@ -377,7 +377,7 @@ BILINEAR_INTERPOLATI_0: component design_1_BILINEAR_INTERPOLATI_0_0
       address_read(16 downto 0) => BILINEAR_INTERPOLATI_0_address_read(16 downto 0),
       address_write(18 downto 0) => BILINEAR_INTERPOLATI_0_address_write(18 downto 0),
       bili_cntl => bili_cntl_1,
-      clk_in1 => clk_wiz_0_clk_bili_wr,
+      clk_bili_wr => '0',
       clk_interpolation => clk_wiz_0_clk_interpolation,
       clk_vga => clk_wiz_0_clk_vga,
       pixel_in(11 downto 0) => blk_mem_gen_1_doutb(11 downto 0),

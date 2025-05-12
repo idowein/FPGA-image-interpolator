@@ -31,7 +31,7 @@ architecture Behavioral of BILINEAR_INTERPOLATION_TOP_tb is
     component BILINEAR_INTERPOLATION_TOP
         Port ( 
             clk_vga             : in  std_logic; -- 25.175MHz
-            clk_in1             : in  std_logic; -- 100 MHz
+            clk_bili_wr             : in  std_logic; -- 100 MHz
             clk_interpolation   : in  std_logic; -- 25.175/4 MHz
             bili_cntl           : in  std_logic;
             pixel_in            : in  std_logic_vector(11 downto 0);
@@ -44,7 +44,7 @@ architecture Behavioral of BILINEAR_INTERPOLATION_TOP_tb is
 
     -- Signals for connecting to UUT
     signal clk_vga             : std_logic := '0';
-    signal clk_in1             : std_logic := '0';
+    signal clk_bili_wr             : std_logic := '0';
     signal clk_interpolation   : std_logic := '0';
     signal bili_cntl           : std_logic := '0';
     signal pixel_in            : std_logic_vector(11 downto 0) := (others => '0');
@@ -54,7 +54,7 @@ architecture Behavioral of BILINEAR_INTERPOLATION_TOP_tb is
     signal address_read        : std_logic_vector(16 downto 0);
 
     -- Clock periods
-    constant clk_in1_period    : time := 10 ns;  -- 100 MHz
+    constant clk_in1_period    : time := 20 ns;  -- 50 MHz
     constant clk_vga_period    : time := 40 ns; -- 25.175 MHz
     constant clk_interpolation_period : time := 160 ns; -- 6.3 MHz
 
@@ -64,7 +64,7 @@ begin
     uut: BILINEAR_INTERPOLATION_TOP
         Port map (
             clk_vga           => clk_vga,
-            clk_in1           => clk_in1,
+            clk_bili_wr           => clk_bili_wr,
             clk_interpolation => clk_interpolation,
             bili_cntl         => bili_cntl,
             pixel_in          => pixel_in,
@@ -74,12 +74,12 @@ begin
             address_read      => address_read
         );
 
-    -- Clock generation for clk_in1 (100 MHz)
+    -- Clock generation for clk_bili_wr (100 MHz)
     clk_in1_process : process
     begin
-        clk_in1 <= '0';
+        clk_bili_wr <= '0';
         wait for clk_in1_period / 2;
-        clk_in1 <= '1';
+        clk_bili_wr <= '1';
         wait for clk_in1_period / 2;
     end process;
 
@@ -105,7 +105,7 @@ begin
     stimulus_process : process
     begin
         -- Provide sample pixel 
-        wait for clk_vga_period / 2;
+--        wait for 60 ns;
         pixel_in <= std_logic_vector(to_unsigned(10, 12));
         wait for clk_vga_period;
         pixel_in <= std_logic_vector(to_unsigned(20, 12));

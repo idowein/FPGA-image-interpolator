@@ -56,7 +56,7 @@ USE ieee.numeric_std.ALL;
 ENTITY design_1_BILINEAR_INTERPOLATI_0_0 IS
   PORT (
     clk_vga : IN STD_LOGIC;
-    clk_in1 : IN STD_LOGIC;
+    clk_bili_wr : IN STD_LOGIC;
     clk_interpolation : IN STD_LOGIC;
     pixel_in : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
     bili_cntl : IN STD_LOGIC;
@@ -73,7 +73,7 @@ ARCHITECTURE design_1_BILINEAR_INTERPOLATI_0_0_arch OF design_1_BILINEAR_INTERPO
   COMPONENT BILINEAR_INTERPOLATION_TOP IS
     PORT (
       clk_vga : IN STD_LOGIC;
-      clk_in1 : IN STD_LOGIC;
+      clk_bili_wr : IN STD_LOGIC;
       clk_interpolation : IN STD_LOGIC;
       pixel_in : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
       bili_cntl : IN STD_LOGIC;
@@ -89,7 +89,7 @@ BEGIN
   U0 : BILINEAR_INTERPOLATION_TOP
     PORT MAP (
       clk_vga => clk_vga,
-      clk_in1 => clk_in1,
+      clk_bili_wr => clk_bili_wr,
       clk_interpolation => clk_interpolation,
       pixel_in => pixel_in,
       bili_cntl => bili_cntl,
