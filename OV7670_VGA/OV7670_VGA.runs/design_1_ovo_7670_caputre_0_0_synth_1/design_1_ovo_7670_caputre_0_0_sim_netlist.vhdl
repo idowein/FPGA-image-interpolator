@@ -1,7 +1,7 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
--- Date        : Wed May  7 12:55:17 2025
+-- Date        : Thu May  8 18:38:08 2025
 -- Host        : Ido running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 --               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_1_ovo_7670_caputre_0_0_sim_netlist.vhdl
@@ -17,7 +17,7 @@ use UNISIM.VCOMPONENTS.ALL;
 entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre is
   port (
     dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
-    addr : out STD_LOGIC_VECTOR ( 16 downto 0 );
+    addr : out STD_LOGIC_VECTOR ( 18 downto 0 );
     wr_en : out STD_LOGIC;
     camera_h_ref : in STD_LOGIC;
     pclk : in STD_LOGIC;
@@ -28,12 +28,12 @@ entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre is
 end decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre;
 
 architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre is
-  signal \^addr\ : STD_LOGIC_VECTOR ( 16 downto 0 );
+  signal \^addr\ : STD_LOGIC_VECTOR ( 18 downto 0 );
   signal address : STD_LOGIC;
   signal \address0__2\ : STD_LOGIC;
-  signal \address[16]_i_4_n_0\ : STD_LOGIC;
-  signal \address[16]_i_5_n_0\ : STD_LOGIC;
-  signal \address[16]_i_6_n_0\ : STD_LOGIC;
+  signal \address[18]_i_4_n_0\ : STD_LOGIC;
+  signal \address[18]_i_5_n_0\ : STD_LOGIC;
+  signal \address[18]_i_6_n_0\ : STD_LOGIC;
   signal \address[3]_i_2_n_0\ : STD_LOGIC;
   signal \address_reg[11]_i_1_n_0\ : STD_LOGIC;
   signal \address_reg[11]_i_1_n_1\ : STD_LOGIC;
@@ -51,7 +51,11 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_cap
   signal \address_reg[15]_i_1_n_5\ : STD_LOGIC;
   signal \address_reg[15]_i_1_n_6\ : STD_LOGIC;
   signal \address_reg[15]_i_1_n_7\ : STD_LOGIC;
-  signal \address_reg[16]_i_2_n_7\ : STD_LOGIC;
+  signal \address_reg[18]_i_2_n_2\ : STD_LOGIC;
+  signal \address_reg[18]_i_2_n_3\ : STD_LOGIC;
+  signal \address_reg[18]_i_2_n_5\ : STD_LOGIC;
+  signal \address_reg[18]_i_2_n_6\ : STD_LOGIC;
+  signal \address_reg[18]_i_2_n_7\ : STD_LOGIC;
   signal \address_reg[3]_i_1_n_0\ : STD_LOGIC;
   signal \address_reg[3]_i_1_n_1\ : STD_LOGIC;
   signal \address_reg[3]_i_1_n_2\ : STD_LOGIC;
@@ -101,8 +105,8 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_cap
   signal \write_state[0]_i_1_n_0\ : STD_LOGIC;
   signal \write_state[1]_i_1_n_0\ : STD_LOGIC;
   signal \write_state_reg_n_0_[0]\ : STD_LOGIC;
-  signal \NLW_address_reg[16]_i_2_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \NLW_address_reg[16]_i_2_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 1 );
+  signal \NLW_address_reg[18]_i_2_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 2 );
+  signal \NLW_address_reg[18]_i_2_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 to 3 );
   attribute SOFT_HLUTNM : string;
   attribute SOFT_HLUTNM of \counter_col[1]_i_1\ : label is "soft_lutpair5";
   attribute SOFT_HLUTNM of \counter_col[2]_i_1\ : label is "soft_lutpair5";
@@ -123,9 +127,9 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_cap
   attribute SOFT_HLUTNM of \write_state[0]_i_1\ : label is "soft_lutpair8";
   attribute SOFT_HLUTNM of \write_state[1]_i_1\ : label is "soft_lutpair8";
 begin
-  addr(16 downto 0) <= \^addr\(16 downto 0);
+  addr(18 downto 0) <= \^addr\(18 downto 0);
   wr_en <= \^wr_en\;
-\address[16]_i_1\: unisim.vcomponents.LUT3
+\address[18]_i_1\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"A2"
     )
@@ -135,20 +139,20 @@ begin
       I2 => \address0__2\,
       O => address
     );
-\address[16]_i_3\: unisim.vcomponents.LUT6
+\address[18]_i_3\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"0000080000000000"
     )
         port map (
-      I0 => \address[16]_i_4_n_0\,
-      I1 => \address[16]_i_5_n_0\,
+      I0 => \address[18]_i_4_n_0\,
+      I1 => \address[18]_i_5_n_0\,
       I2 => counter_row_reg(9),
-      I3 => \address[16]_i_6_n_0\,
+      I3 => \address[18]_i_6_n_0\,
       I4 => counter_row_reg(10),
       I5 => \geqOp__8\,
       O => \address0__2\
     );
-\address[16]_i_4\: unisim.vcomponents.LUT6
+\address[18]_i_4\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"0000000015555555"
     )
@@ -159,9 +163,9 @@ begin
       I3 => counter_col_reg(7),
       I4 => counter_col_reg(8),
       I5 => counter_col_reg(10),
-      O => \address[16]_i_4_n_0\
+      O => \address[18]_i_4_n_0\
     );
-\address[16]_i_5\: unisim.vcomponents.LUT6
+\address[18]_i_5\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"FFFFFFFFFFFF8000"
     )
@@ -172,9 +176,9 @@ begin
       I3 => counter_row_reg(6),
       I4 => counter_row_reg(7),
       I5 => counter_row_reg(8),
-      O => \address[16]_i_5_n_0\
+      O => \address[18]_i_5_n_0\
     );
-\address[16]_i_6\: unisim.vcomponents.LUT6
+\address[18]_i_6\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"0000777FFFFFFFFF"
     )
@@ -185,9 +189,9 @@ begin
       I3 => counter_row_reg(3),
       I4 => counter_row_reg(7),
       I5 => counter_row_reg(8),
-      O => \address[16]_i_6_n_0\
+      O => \address[18]_i_6_n_0\
     );
-\address[16]_i_7\: unisim.vcomponents.LUT6
+\address[18]_i_7\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"FFFFFFFFFFFFFFE0"
     )
@@ -322,20 +326,46 @@ begin
         port map (
       C => pclk,
       CE => address,
-      D => \address_reg[16]_i_2_n_7\,
+      D => \address_reg[18]_i_2_n_7\,
       Q => \^addr\(16),
       R => camera_v_sync
     );
-\address_reg[16]_i_2\: unisim.vcomponents.CARRY4
+\address_reg[17]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => pclk,
+      CE => address,
+      D => \address_reg[18]_i_2_n_6\,
+      Q => \^addr\(17),
+      R => camera_v_sync
+    );
+\address_reg[18]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => pclk,
+      CE => address,
+      D => \address_reg[18]_i_2_n_5\,
+      Q => \^addr\(18),
+      R => camera_v_sync
+    );
+\address_reg[18]_i_2\: unisim.vcomponents.CARRY4
      port map (
       CI => \address_reg[15]_i_1_n_0\,
-      CO(3 downto 0) => \NLW_address_reg[16]_i_2_CO_UNCONNECTED\(3 downto 0),
+      CO(3 downto 2) => \NLW_address_reg[18]_i_2_CO_UNCONNECTED\(3 downto 2),
+      CO(1) => \address_reg[18]_i_2_n_2\,
+      CO(0) => \address_reg[18]_i_2_n_3\,
       CYINIT => '0',
       DI(3 downto 0) => B"0000",
-      O(3 downto 1) => \NLW_address_reg[16]_i_2_O_UNCONNECTED\(3 downto 1),
-      O(0) => \address_reg[16]_i_2_n_7\,
-      S(3 downto 1) => B"000",
-      S(0) => \^addr\(16)
+      O(3) => \NLW_address_reg[18]_i_2_O_UNCONNECTED\(3),
+      O(2) => \address_reg[18]_i_2_n_5\,
+      O(1) => \address_reg[18]_i_2_n_6\,
+      O(0) => \address_reg[18]_i_2_n_7\,
+      S(3) => '0',
+      S(2 downto 0) => \^addr\(18 downto 16)
     );
 \address_reg[1]\: unisim.vcomponents.FDRE
     generic map(
@@ -1335,7 +1365,7 @@ entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
     camera_h_ref : in STD_LOGIC;
     zoom_x2 : in STD_LOGIC;
     din : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    addr : out STD_LOGIC_VECTOR ( 16 downto 0 );
+    addr : out STD_LOGIC_VECTOR ( 18 downto 0 );
     dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
     wr_en : out STD_LOGIC
   );
@@ -1355,7 +1385,7 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
 begin
 U0: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre
      port map (
-      addr(16 downto 0) => addr(16 downto 0),
+      addr(18 downto 0) => addr(18 downto 0),
       camera_h_ref => camera_h_ref,
       camera_v_sync => camera_v_sync,
       din(7 downto 0) => din(7 downto 0),

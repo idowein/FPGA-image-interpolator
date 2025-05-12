@@ -1,7 +1,7 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Wed May  7 12:55:17 2025
+// Date        : Thu May  8 18:38:08 2025
 // Host        : Ido running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_ovo_7670_caputre_0_0_1/design_1_ovo_7670_caputre_0_0_sim_netlist.v
@@ -29,11 +29,11 @@ module design_1_ovo_7670_caputre_0_0
   input camera_h_ref;
   input zoom_x2;
   input [7:0]din;
-  output [16:0]addr;
+  output [18:0]addr;
   output [11:0]dout;
   output wr_en;
 
-  wire [16:0]addr;
+  wire [18:0]addr;
   wire camera_h_ref;
   wire camera_v_sync;
   wire [7:0]din;
@@ -64,7 +64,7 @@ module design_1_ovo_7670_caputre_0_0_ovo_7670_caputre
     din,
     zoom_x2);
   output [11:0]dout;
-  output [16:0]addr;
+  output [18:0]addr;
   output wr_en;
   input camera_h_ref;
   input pclk;
@@ -72,12 +72,12 @@ module design_1_ovo_7670_caputre_0_0_ovo_7670_caputre
   input [7:0]din;
   input zoom_x2;
 
-  wire [16:0]addr;
+  wire [18:0]addr;
   wire address;
   wire address0__2;
-  wire \address[16]_i_4_n_0 ;
-  wire \address[16]_i_5_n_0 ;
-  wire \address[16]_i_6_n_0 ;
+  wire \address[18]_i_4_n_0 ;
+  wire \address[18]_i_5_n_0 ;
+  wire \address[18]_i_6_n_0 ;
   wire \address[3]_i_2_n_0 ;
   wire \address_reg[11]_i_1_n_0 ;
   wire \address_reg[11]_i_1_n_1 ;
@@ -95,7 +95,11 @@ module design_1_ovo_7670_caputre_0_0_ovo_7670_caputre
   wire \address_reg[15]_i_1_n_5 ;
   wire \address_reg[15]_i_1_n_6 ;
   wire \address_reg[15]_i_1_n_7 ;
-  wire \address_reg[16]_i_2_n_7 ;
+  wire \address_reg[18]_i_2_n_2 ;
+  wire \address_reg[18]_i_2_n_3 ;
+  wire \address_reg[18]_i_2_n_5 ;
+  wire \address_reg[18]_i_2_n_6 ;
+  wire \address_reg[18]_i_2_n_7 ;
   wire \address_reg[3]_i_1_n_0 ;
   wire \address_reg[3]_i_1_n_1 ;
   wire \address_reg[3]_i_1_n_2 ;
@@ -151,59 +155,59 @@ module design_1_ovo_7670_caputre_0_0_ovo_7670_caputre
   wire \write_state[1]_i_1_n_0 ;
   wire \write_state_reg_n_0_[0] ;
   wire zoom_x2;
-  wire [3:0]\NLW_address_reg[16]_i_2_CO_UNCONNECTED ;
-  wire [3:1]\NLW_address_reg[16]_i_2_O_UNCONNECTED ;
+  wire [3:2]\NLW_address_reg[18]_i_2_CO_UNCONNECTED ;
+  wire [3:3]\NLW_address_reg[18]_i_2_O_UNCONNECTED ;
 
   LUT3 #(
     .INIT(8'hA2)) 
-    \address[16]_i_1 
+    \address[18]_i_1 
        (.I0(p_0_in_0),
         .I1(zoom_x2),
         .I2(address0__2),
         .O(address));
   LUT6 #(
     .INIT(64'h0000080000000000)) 
-    \address[16]_i_3 
-       (.I0(\address[16]_i_4_n_0 ),
-        .I1(\address[16]_i_5_n_0 ),
+    \address[18]_i_3 
+       (.I0(\address[18]_i_4_n_0 ),
+        .I1(\address[18]_i_5_n_0 ),
         .I2(counter_row_reg[9]),
-        .I3(\address[16]_i_6_n_0 ),
+        .I3(\address[18]_i_6_n_0 ),
         .I4(counter_row_reg[10]),
         .I5(geqOp__8),
         .O(address0__2));
   LUT6 #(
     .INIT(64'h0000000015555555)) 
-    \address[16]_i_4 
+    \address[18]_i_4 
        (.I0(counter_col_reg[9]),
         .I1(counter_col_reg[5]),
         .I2(counter_col_reg[6]),
         .I3(counter_col_reg[7]),
         .I4(counter_col_reg[8]),
         .I5(counter_col_reg[10]),
-        .O(\address[16]_i_4_n_0 ));
+        .O(\address[18]_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hFFFFFFFFFFFF8000)) 
-    \address[16]_i_5 
+    \address[18]_i_5 
        (.I0(counter_row_reg[5]),
         .I1(counter_row_reg[3]),
         .I2(counter_row_reg[4]),
         .I3(counter_row_reg[6]),
         .I4(counter_row_reg[7]),
         .I5(counter_row_reg[8]),
-        .O(\address[16]_i_5_n_0 ));
+        .O(\address[18]_i_5_n_0 ));
   LUT6 #(
     .INIT(64'h0000777FFFFFFFFF)) 
-    \address[16]_i_6 
+    \address[18]_i_6 
        (.I0(counter_row_reg[6]),
         .I1(counter_row_reg[5]),
         .I2(counter_row_reg[4]),
         .I3(counter_row_reg[3]),
         .I4(counter_row_reg[7]),
         .I5(counter_row_reg[8]),
-        .O(\address[16]_i_6_n_0 ));
+        .O(\address[18]_i_6_n_0 ));
   LUT6 #(
     .INIT(64'hFFFFFFFFFFFFFFE0)) 
-    \address[16]_i_7 
+    \address[18]_i_7 
        (.I0(counter_col_reg[6]),
         .I1(counter_col_reg[5]),
         .I2(counter_col_reg[7]),
@@ -291,16 +295,32 @@ module design_1_ovo_7670_caputre_0_0_ovo_7670_caputre
     \address_reg[16] 
        (.C(pclk),
         .CE(address),
-        .D(\address_reg[16]_i_2_n_7 ),
+        .D(\address_reg[18]_i_2_n_7 ),
         .Q(addr[16]),
         .R(camera_v_sync));
-  CARRY4 \address_reg[16]_i_2 
+  FDRE #(
+    .INIT(1'b0)) 
+    \address_reg[17] 
+       (.C(pclk),
+        .CE(address),
+        .D(\address_reg[18]_i_2_n_6 ),
+        .Q(addr[17]),
+        .R(camera_v_sync));
+  FDRE #(
+    .INIT(1'b0)) 
+    \address_reg[18] 
+       (.C(pclk),
+        .CE(address),
+        .D(\address_reg[18]_i_2_n_5 ),
+        .Q(addr[18]),
+        .R(camera_v_sync));
+  CARRY4 \address_reg[18]_i_2 
        (.CI(\address_reg[15]_i_1_n_0 ),
-        .CO(\NLW_address_reg[16]_i_2_CO_UNCONNECTED [3:0]),
+        .CO({\NLW_address_reg[18]_i_2_CO_UNCONNECTED [3:2],\address_reg[18]_i_2_n_2 ,\address_reg[18]_i_2_n_3 }),
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\NLW_address_reg[16]_i_2_O_UNCONNECTED [3:1],\address_reg[16]_i_2_n_7 }),
-        .S({1'b0,1'b0,1'b0,addr[16]}));
+        .O({\NLW_address_reg[18]_i_2_O_UNCONNECTED [3],\address_reg[18]_i_2_n_5 ,\address_reg[18]_i_2_n_6 ,\address_reg[18]_i_2_n_7 }),
+        .S({1'b0,addr[18:16]}));
   FDRE #(
     .INIT(1'b0)) 
     \address_reg[1] 

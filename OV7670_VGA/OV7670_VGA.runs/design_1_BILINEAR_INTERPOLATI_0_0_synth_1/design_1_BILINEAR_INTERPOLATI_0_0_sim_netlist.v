@@ -1,7 +1,7 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Wed May  7 17:14:19 2025
+// Date        : Thu May  8 18:37:45 2025
 // Host        : Ido running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_1_BILINEAR_INTERPOLATI_0_0_sim_netlist.v
@@ -80,6 +80,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   wire \B_reg_n_0_[8] ;
   wire \B_reg_n_0_[9] ;
   wire [18:1]C;
+  wire CEA2;
   wire \C_reg[0]__0_n_0 ;
   wire \C_reg[10]__0_n_0 ;
   wire \C_reg[11]__0_n_0 ;
@@ -2585,12 +2586,27 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   wire [11:0]pixel_out;
   wire pixel_out1_carry__0_i_1_n_0;
   wire pixel_out1_carry__0_i_2_n_0;
+  wire pixel_out1_carry__0_i_3_n_7;
+  wire pixel_out1_carry__0_i_4_n_0;
   wire pixel_out1_carry__0_n_3;
   wire pixel_out1_carry__0_n_6;
   wire pixel_out1_carry__0_n_7;
   wire pixel_out1_carry_i_1_n_0;
+  wire pixel_out1_carry_i_1_n_1;
+  wire pixel_out1_carry_i_1_n_2;
+  wire pixel_out1_carry_i_1_n_3;
+  wire pixel_out1_carry_i_1_n_4;
+  wire pixel_out1_carry_i_1_n_5;
+  wire pixel_out1_carry_i_1_n_6;
+  wire pixel_out1_carry_i_1_n_7;
   wire pixel_out1_carry_i_2_n_0;
   wire pixel_out1_carry_i_3_n_0;
+  wire pixel_out1_carry_i_4_n_0;
+  wire pixel_out1_carry_i_5_n_0;
+  wire pixel_out1_carry_i_6_n_0;
+  wire pixel_out1_carry_i_7_n_0;
+  wire pixel_out1_carry_i_8_n_0;
+  wire pixel_out1_carry_i_9_n_0;
   wire pixel_out1_carry_n_0;
   wire pixel_out1_carry_n_1;
   wire pixel_out1_carry_n_2;
@@ -2598,7 +2614,6 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   wire pixel_out1_carry_n_4;
   wire pixel_out1_carry_n_5;
   wire pixel_out1_carry_n_6;
-  wire pixel_out1_carry_n_7;
   wire \pixel_out[0]_i_1_n_0 ;
   wire \pixel_out[0]_i_2_n_0 ;
   wire \pixel_out[0]_i_3_n_0 ;
@@ -2723,6 +2738,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   wire \pixel_out_reg[9]_i_17_n_0 ;
   wire \pixel_out_reg[9]_i_3_n_0 ;
   wire \pixel_out_reg[9]_i_5_n_0 ;
+  wire [1:0]plusOp;
   wire v_block0;
   wire \v_block[31]__0_i_10_n_0 ;
   wire \v_block[31]__0_i_11_n_0 ;
@@ -2901,8 +2917,9 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   wire \v_block_reg_n_0_[7] ;
   wire \v_block_reg_n_0_[8] ;
   wire \v_block_reg_n_0_[9] ;
-  wire wr_en_sig_d;
+  wire wr_en_sig;
   wire write_enable;
+  wire [1:0]write_state;
   wire NLW_address_read_sig1_CARRYCASCOUT_UNCONNECTED;
   wire NLW_address_read_sig1_MULTSIGNOUT_UNCONNECTED;
   wire NLW_address_read_sig1_OVERFLOW_UNCONNECTED;
@@ -3036,8 +3053,11 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   wire [3:3]\NLW_local_h_reg[28]_i_1_CO_UNCONNECTED ;
   wire [3:3]\NLW_local_v_reg[28]__0_i_1_CO_UNCONNECTED ;
   wire [3:3]\NLW_local_v_reg[28]_i_1_CO_UNCONNECTED ;
+  wire [0:0]NLW_pixel_out1_carry_O_UNCONNECTED;
   wire [3:1]NLW_pixel_out1_carry__0_CO_UNCONNECTED;
   wire [3:2]NLW_pixel_out1_carry__0_O_UNCONNECTED;
+  wire [3:0]NLW_pixel_out1_carry__0_i_3_CO_UNCONNECTED;
+  wire [3:1]NLW_pixel_out1_carry__0_i_3_O_UNCONNECTED;
   wire [3:3]\NLW_v_block_reg[31]__0_i_3_CO_UNCONNECTED ;
   wire [3:2]\NLW_v_block_reg[31]_i_3_CO_UNCONNECTED ;
   wire [3:3]\NLW_v_block_reg[31]_i_3_O_UNCONNECTED ;
@@ -3046,7 +3066,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \A_reg[0] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(p_0_in[0]),
         .Q(\A_reg_n_0_[0] ),
         .R(1'b0));
@@ -3054,7 +3074,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \A_reg[0]__0 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\filtered_pixel_out3[-1111111111]__0_n_0 ),
         .Q(\A_reg[0]__0_n_0 ),
         .R(1'b0));
@@ -3062,7 +3082,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \A_reg[10] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(p_0_in[10]),
         .Q(\A_reg_n_0_[10] ),
         .R(1'b0));
@@ -3070,7 +3090,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \A_reg[10]__0 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\filtered_pixel_out3[-1111111101]__0_n_0 ),
         .Q(\A_reg[10]__0_n_0 ),
         .R(1'b0));
@@ -3078,7 +3098,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \A_reg[11] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(p_0_in[11]),
         .Q(\A_reg_n_0_[11] ),
         .R(1'b0));
@@ -3086,7 +3106,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \A_reg[11]__0 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\filtered_pixel_out3[-1111111100]__0_n_0 ),
         .Q(\A_reg[11]__0_n_0 ),
         .R(1'b0));
@@ -3094,7 +3114,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \A_reg[1] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(p_0_in[1]),
         .Q(\A_reg_n_0_[1] ),
         .R(1'b0));
@@ -3102,7 +3122,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \A_reg[1]__0 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\filtered_pixel_out3[-1111111110]__0_n_0 ),
         .Q(\A_reg[1]__0_n_0 ),
         .R(1'b0));
@@ -3110,7 +3130,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \A_reg[2] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(p_0_in[2]),
         .Q(\A_reg_n_0_[2] ),
         .R(1'b0));
@@ -3118,7 +3138,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \A_reg[2]__0 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\filtered_pixel_out3[-1111111109]__0_n_0 ),
         .Q(\A_reg[2]__0_n_0 ),
         .R(1'b0));
@@ -3126,7 +3146,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \A_reg[3] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(p_0_in[3]),
         .Q(\A_reg_n_0_[3] ),
         .R(1'b0));
@@ -3134,7 +3154,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \A_reg[3]__0 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\filtered_pixel_out3[-1111111108]__0_n_0 ),
         .Q(\A_reg[3]__0_n_0 ),
         .R(1'b0));
@@ -3142,7 +3162,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \A_reg[4] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(p_0_in[4]),
         .Q(\A_reg_n_0_[4] ),
         .R(1'b0));
@@ -3150,7 +3170,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \A_reg[4]__0 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\filtered_pixel_out3[-1111111107]__0_n_0 ),
         .Q(\A_reg[4]__0_n_0 ),
         .R(1'b0));
@@ -3158,7 +3178,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \A_reg[5] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(p_0_in[5]),
         .Q(\A_reg_n_0_[5] ),
         .R(1'b0));
@@ -3166,7 +3186,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \A_reg[5]__0 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\filtered_pixel_out3[-1111111106]__0_n_0 ),
         .Q(\A_reg[5]__0_n_0 ),
         .R(1'b0));
@@ -3174,7 +3194,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \A_reg[6] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(p_0_in[6]),
         .Q(\A_reg_n_0_[6] ),
         .R(1'b0));
@@ -3182,7 +3202,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \A_reg[6]__0 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\filtered_pixel_out3[-1111111105]__0_n_0 ),
         .Q(\A_reg[6]__0_n_0 ),
         .R(1'b0));
@@ -3190,7 +3210,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \A_reg[7] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(p_0_in[7]),
         .Q(\A_reg_n_0_[7] ),
         .R(1'b0));
@@ -3198,7 +3218,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \A_reg[7]__0 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\filtered_pixel_out3[-1111111104]__0_n_0 ),
         .Q(\A_reg[7]__0_n_0 ),
         .R(1'b0));
@@ -3206,7 +3226,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \A_reg[8] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(p_0_in[8]),
         .Q(\A_reg_n_0_[8] ),
         .R(1'b0));
@@ -3214,7 +3234,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \A_reg[8]__0 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\filtered_pixel_out3[-1111111103]__0_n_0 ),
         .Q(\A_reg[8]__0_n_0 ),
         .R(1'b0));
@@ -3222,7 +3242,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \A_reg[9] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(p_0_in[9]),
         .Q(\A_reg_n_0_[9] ),
         .R(1'b0));
@@ -3230,7 +3250,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \A_reg[9]__0 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\filtered_pixel_out3[-1111111102]__0_n_0 ),
         .Q(\A_reg[9]__0_n_0 ),
         .R(1'b0));
@@ -3238,7 +3258,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \B_reg[0] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\eight_pixel_in_reg_n_0_[24] ),
         .Q(\B_reg_n_0_[0] ),
         .R(1'b0));
@@ -3246,7 +3266,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \B_reg[0]__0 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\filtered_pixel_out3[-_n_0_1111111111] ),
         .Q(\B_reg[0]__0_n_0 ),
         .R(1'b0));
@@ -3254,7 +3274,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \B_reg[10] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\eight_pixel_in_reg_n_0_[34] ),
         .Q(\B_reg_n_0_[10] ),
         .R(1'b0));
@@ -3262,7 +3282,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \B_reg[10]__0 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\filtered_pixel_out3[-_n_0_1111111101] ),
         .Q(\B_reg[10]__0_n_0 ),
         .R(1'b0));
@@ -3270,7 +3290,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \B_reg[11] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\eight_pixel_in_reg_n_0_[35] ),
         .Q(\B_reg_n_0_[11] ),
         .R(1'b0));
@@ -3278,7 +3298,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \B_reg[11]__0 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\filtered_pixel_out3[-_n_0_1111111100] ),
         .Q(\B_reg[11]__0_n_0 ),
         .R(1'b0));
@@ -3286,7 +3306,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \B_reg[1] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\eight_pixel_in_reg_n_0_[25] ),
         .Q(\B_reg_n_0_[1] ),
         .R(1'b0));
@@ -3294,7 +3314,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \B_reg[1]__0 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\filtered_pixel_out3[-_n_0_1111111110] ),
         .Q(\B_reg[1]__0_n_0 ),
         .R(1'b0));
@@ -3302,7 +3322,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \B_reg[2] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\eight_pixel_in_reg_n_0_[26] ),
         .Q(\B_reg_n_0_[2] ),
         .R(1'b0));
@@ -3310,7 +3330,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \B_reg[2]__0 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\filtered_pixel_out3[-_n_0_1111111109] ),
         .Q(\B_reg[2]__0_n_0 ),
         .R(1'b0));
@@ -3318,7 +3338,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \B_reg[3] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\eight_pixel_in_reg_n_0_[27] ),
         .Q(\B_reg_n_0_[3] ),
         .R(1'b0));
@@ -3326,7 +3346,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \B_reg[3]__0 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\filtered_pixel_out3[-_n_0_1111111108] ),
         .Q(\B_reg[3]__0_n_0 ),
         .R(1'b0));
@@ -3334,7 +3354,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \B_reg[4] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\eight_pixel_in_reg_n_0_[28] ),
         .Q(\B_reg_n_0_[4] ),
         .R(1'b0));
@@ -3342,7 +3362,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \B_reg[4]__0 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\filtered_pixel_out3[-_n_0_1111111107] ),
         .Q(\B_reg[4]__0_n_0 ),
         .R(1'b0));
@@ -3350,7 +3370,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \B_reg[5] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\eight_pixel_in_reg_n_0_[29] ),
         .Q(\B_reg_n_0_[5] ),
         .R(1'b0));
@@ -3358,7 +3378,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \B_reg[5]__0 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\filtered_pixel_out3[-_n_0_1111111106] ),
         .Q(\B_reg[5]__0_n_0 ),
         .R(1'b0));
@@ -3366,7 +3386,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \B_reg[6] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\eight_pixel_in_reg_n_0_[30] ),
         .Q(\B_reg_n_0_[6] ),
         .R(1'b0));
@@ -3374,7 +3394,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \B_reg[6]__0 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\filtered_pixel_out3[-_n_0_1111111105] ),
         .Q(\B_reg[6]__0_n_0 ),
         .R(1'b0));
@@ -3382,7 +3402,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \B_reg[7] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\eight_pixel_in_reg_n_0_[31] ),
         .Q(\B_reg_n_0_[7] ),
         .R(1'b0));
@@ -3390,7 +3410,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \B_reg[7]__0 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\filtered_pixel_out3[-_n_0_1111111104] ),
         .Q(\B_reg[7]__0_n_0 ),
         .R(1'b0));
@@ -3398,7 +3418,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \B_reg[8] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\eight_pixel_in_reg_n_0_[32] ),
         .Q(\B_reg_n_0_[8] ),
         .R(1'b0));
@@ -3406,7 +3426,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \B_reg[8]__0 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\filtered_pixel_out3[-_n_0_1111111103] ),
         .Q(\B_reg[8]__0_n_0 ),
         .R(1'b0));
@@ -3414,7 +3434,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \B_reg[9] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\eight_pixel_in_reg_n_0_[33] ),
         .Q(\B_reg_n_0_[9] ),
         .R(1'b0));
@@ -3422,7 +3442,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \B_reg[9]__0 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\filtered_pixel_out3[-_n_0_1111111102] ),
         .Q(\B_reg[9]__0_n_0 ),
         .R(1'b0));
@@ -3430,7 +3450,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \C_reg[0] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(A[0]),
         .Q(\C_reg_n_0_[0] ),
         .R(1'b0));
@@ -3438,7 +3458,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \C_reg[0]__0 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\filtered_pixel_out3[-1111111111]__1_n_0 ),
         .Q(\C_reg[0]__0_n_0 ),
         .R(1'b0));
@@ -3446,7 +3466,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \C_reg[10] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(A[10]),
         .Q(\C_reg_n_0_[10] ),
         .R(1'b0));
@@ -3454,7 +3474,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \C_reg[10]__0 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\filtered_pixel_out3[-1111111101]__1_n_0 ),
         .Q(\C_reg[10]__0_n_0 ),
         .R(1'b0));
@@ -3462,7 +3482,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \C_reg[11] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(A[11]),
         .Q(\C_reg_n_0_[11] ),
         .R(1'b0));
@@ -3470,7 +3490,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \C_reg[11]__0 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\filtered_pixel_out3[-1111111100]__1_n_0 ),
         .Q(\C_reg[11]__0_n_0 ),
         .R(1'b0));
@@ -3478,7 +3498,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \C_reg[1] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(A[1]),
         .Q(\C_reg_n_0_[1] ),
         .R(1'b0));
@@ -3486,7 +3506,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \C_reg[1]__0 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\filtered_pixel_out3[-1111111110]__1_n_0 ),
         .Q(\C_reg[1]__0_n_0 ),
         .R(1'b0));
@@ -3494,7 +3514,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \C_reg[2] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(A[2]),
         .Q(\C_reg_n_0_[2] ),
         .R(1'b0));
@@ -3502,7 +3522,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \C_reg[2]__0 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\filtered_pixel_out3[-1111111109]__1_n_0 ),
         .Q(\C_reg[2]__0_n_0 ),
         .R(1'b0));
@@ -3510,7 +3530,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \C_reg[3] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(A[3]),
         .Q(\C_reg_n_0_[3] ),
         .R(1'b0));
@@ -3518,7 +3538,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \C_reg[3]__0 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\filtered_pixel_out3[-1111111108]__1_n_0 ),
         .Q(\C_reg[3]__0_n_0 ),
         .R(1'b0));
@@ -3526,7 +3546,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \C_reg[4] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(A[4]),
         .Q(\C_reg_n_0_[4] ),
         .R(1'b0));
@@ -3534,7 +3554,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \C_reg[4]__0 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\filtered_pixel_out3[-1111111107]__1_n_0 ),
         .Q(\C_reg[4]__0_n_0 ),
         .R(1'b0));
@@ -3542,7 +3562,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \C_reg[5] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(A[5]),
         .Q(\C_reg_n_0_[5] ),
         .R(1'b0));
@@ -3550,7 +3570,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \C_reg[5]__0 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\filtered_pixel_out3[-1111111106]__1_n_0 ),
         .Q(\C_reg[5]__0_n_0 ),
         .R(1'b0));
@@ -3558,7 +3578,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \C_reg[6] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(A[6]),
         .Q(\C_reg_n_0_[6] ),
         .R(1'b0));
@@ -3566,7 +3586,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \C_reg[6]__0 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\filtered_pixel_out3[-1111111105]__1_n_0 ),
         .Q(\C_reg[6]__0_n_0 ),
         .R(1'b0));
@@ -3574,7 +3594,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \C_reg[7] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(A[7]),
         .Q(\C_reg_n_0_[7] ),
         .R(1'b0));
@@ -3582,7 +3602,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \C_reg[7]__0 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\filtered_pixel_out3[-1111111104]__1_n_0 ),
         .Q(\C_reg[7]__0_n_0 ),
         .R(1'b0));
@@ -3590,7 +3610,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \C_reg[8] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(A[8]),
         .Q(\C_reg_n_0_[8] ),
         .R(1'b0));
@@ -3598,7 +3618,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \C_reg[8]__0 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\filtered_pixel_out3[-1111111103]__1_n_0 ),
         .Q(\C_reg[8]__0_n_0 ),
         .R(1'b0));
@@ -3606,7 +3626,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \C_reg[9] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(A[9]),
         .Q(\C_reg_n_0_[9] ),
         .R(1'b0));
@@ -3614,15 +3634,21 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \C_reg[9]__0 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\filtered_pixel_out3[-1111111102]__1_n_0 ),
         .Q(\C_reg[9]__0_n_0 ),
         .R(1'b0));
+  LUT2 #(
+    .INIT(4'h1)) 
+    \D[11]_i_1 
+       (.I0(write_state[1]),
+        .I1(write_state[0]),
+        .O(CEA2));
   FDRE #(
     .INIT(1'b0)) 
     \D_reg[0] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\eight_pixel_in_reg_n_0_[0] ),
         .Q(\D_reg_n_0_[0] ),
         .R(1'b0));
@@ -3630,7 +3656,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \D_reg[10] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\eight_pixel_in_reg_n_0_[10] ),
         .Q(\D_reg_n_0_[10] ),
         .R(1'b0));
@@ -3638,7 +3664,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \D_reg[11] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\eight_pixel_in_reg_n_0_[11] ),
         .Q(\D_reg_n_0_[11] ),
         .R(1'b0));
@@ -3646,7 +3672,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \D_reg[1] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\eight_pixel_in_reg_n_0_[1] ),
         .Q(\D_reg_n_0_[1] ),
         .R(1'b0));
@@ -3654,7 +3680,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \D_reg[2] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\eight_pixel_in_reg_n_0_[2] ),
         .Q(\D_reg_n_0_[2] ),
         .R(1'b0));
@@ -3662,7 +3688,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \D_reg[3] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\eight_pixel_in_reg_n_0_[3] ),
         .Q(\D_reg_n_0_[3] ),
         .R(1'b0));
@@ -3670,7 +3696,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \D_reg[4] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\eight_pixel_in_reg_n_0_[4] ),
         .Q(\D_reg_n_0_[4] ),
         .R(1'b0));
@@ -3678,7 +3704,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \D_reg[5] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\eight_pixel_in_reg_n_0_[5] ),
         .Q(\D_reg_n_0_[5] ),
         .R(1'b0));
@@ -3686,7 +3712,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \D_reg[6] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\eight_pixel_in_reg_n_0_[6] ),
         .Q(\D_reg_n_0_[6] ),
         .R(1'b0));
@@ -3694,7 +3720,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \D_reg[7] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\eight_pixel_in_reg_n_0_[7] ),
         .Q(\D_reg_n_0_[7] ),
         .R(1'b0));
@@ -3702,7 +3728,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \D_reg[8] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\eight_pixel_in_reg_n_0_[8] ),
         .Q(\D_reg_n_0_[8] ),
         .R(1'b0));
@@ -3710,7 +3736,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \D_reg[9] 
        (.C(clk_vga),
-        .CE(clk_interpolation),
+        .CE(CEA2),
         .D(\eight_pixel_in_reg_n_0_[9] ),
         .Q(\D_reg_n_0_[9] ),
         .R(1'b0));
@@ -3969,19 +3995,19 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
         .CARRYINSEL({1'b0,1'b0,1'b0}),
         .CARRYOUT(NLW_address_read_sig_reg_CARRYOUT_UNCONNECTED[3:0]),
         .CEA1(1'b0),
-        .CEA2(wr_en_sig_d),
+        .CEA2(wr_en_sig),
         .CEAD(1'b0),
         .CEALUMODE(1'b0),
         .CEB1(1'b0),
-        .CEB2(wr_en_sig_d),
+        .CEB2(wr_en_sig),
         .CEC(address_read_sig_reg_i_1_n_0),
         .CECARRYIN(1'b0),
         .CECTRL(1'b0),
         .CED(1'b0),
         .CEINMODE(1'b0),
         .CEM(1'b0),
-        .CEP(wr_en_sig_d),
-        .CLK(clk_in1),
+        .CEP(wr_en_sig),
+        .CLK(clk_vga),
         .D({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .INMODE({1'b0,1'b0,1'b0,1'b0,1'b0}),
         .MULTSIGNIN(1'b0),
@@ -4007,7 +4033,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   LUT3 #(
     .INIT(8'h80)) 
     address_read_sig_reg_i_1
-       (.I0(wr_en_sig_d),
+       (.I0(wr_en_sig),
         .I1(address_read_sig_reg_i_36_n_0),
         .I2(address_read_sig_reg_i_37_n_0),
         .O(address_read_sig_reg_i_1_n_0));
@@ -4674,18 +4700,18 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
         .CARRYINSEL({1'b0,1'b0,1'b0}),
         .CARRYOUT(NLW_address_write_sig_reg_CARRYOUT_UNCONNECTED[3:0]),
         .CEA1(1'b0),
-        .CEA2(wr_en_sig_d),
+        .CEA2(write_enable),
         .CEAD(1'b0),
         .CEALUMODE(1'b0),
         .CEB1(1'b0),
-        .CEB2(wr_en_sig_d),
+        .CEB2(write_enable),
         .CEC(h_block0),
         .CECARRYIN(1'b0),
         .CECTRL(1'b0),
         .CED(1'b0),
         .CEINMODE(1'b0),
         .CEM(1'b0),
-        .CEP(wr_en_sig_d),
+        .CEP(write_enable),
         .CLK(clk_in1),
         .D({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .INMODE({1'b0,1'b0,1'b0,1'b0,1'b0}),
@@ -4712,7 +4738,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   LUT3 #(
     .INIT(8'h80)) 
     address_write_sig_reg_i_1
-       (.I0(wr_en_sig_d),
+       (.I0(write_enable),
         .I1(address_write_sig_reg_i_39_n_0),
         .I2(address_write_sig_reg_i_40_n_0),
         .O(h_block0));
@@ -11432,7 +11458,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \h_block_reg[0]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(address_read_sig_reg_i_1_n_0),
         .D(\h_block_reg[0]__0_i_1_n_7 ),
         .Q(\h_block_reg[0]__0_n_0 ),
@@ -11455,7 +11481,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \h_block_reg[10]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(address_read_sig_reg_i_1_n_0),
         .D(\h_block_reg[8]__0_i_1_n_5 ),
         .Q(\h_block_reg[10]__0_n_0 ),
@@ -11471,7 +11497,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \h_block_reg[11]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(address_read_sig_reg_i_1_n_0),
         .D(\h_block_reg[8]__0_i_1_n_4 ),
         .Q(\h_block_reg[11]__0_n_0 ),
@@ -11487,7 +11513,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \h_block_reg[12]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(address_read_sig_reg_i_1_n_0),
         .D(\h_block_reg[12]__0_i_1_n_7 ),
         .Q(\h_block_reg[12]__0_n_0 ),
@@ -11510,7 +11536,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \h_block_reg[13]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(address_read_sig_reg_i_1_n_0),
         .D(\h_block_reg[12]__0_i_1_n_6 ),
         .Q(\h_block_reg[13]__0_n_0 ),
@@ -11533,7 +11559,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \h_block_reg[14]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(address_read_sig_reg_i_1_n_0),
         .D(\h_block_reg[12]__0_i_1_n_5 ),
         .Q(\h_block_reg[14]__0_n_0 ),
@@ -11549,7 +11575,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \h_block_reg[15]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(address_read_sig_reg_i_1_n_0),
         .D(\h_block_reg[12]__0_i_1_n_4 ),
         .Q(\h_block_reg[15]__0_n_0 ),
@@ -11565,7 +11591,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \h_block_reg[16]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(address_read_sig_reg_i_1_n_0),
         .D(\h_block_reg[16]__0_i_1_n_7 ),
         .Q(\h_block_reg[16]__0_n_0 ),
@@ -11588,7 +11614,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \h_block_reg[17]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(address_read_sig_reg_i_1_n_0),
         .D(\h_block_reg[16]__0_i_1_n_6 ),
         .Q(\h_block_reg[17]__0_n_0 ),
@@ -11611,7 +11637,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \h_block_reg[18]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(address_read_sig_reg_i_1_n_0),
         .D(\h_block_reg[16]__0_i_1_n_5 ),
         .Q(\h_block_reg[18]__0_n_0 ),
@@ -11627,7 +11653,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \h_block_reg[19]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(address_read_sig_reg_i_1_n_0),
         .D(\h_block_reg[16]__0_i_1_n_4 ),
         .Q(\h_block_reg[19]__0_n_0 ),
@@ -11643,7 +11669,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \h_block_reg[1]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(address_read_sig_reg_i_1_n_0),
         .D(\h_block_reg[0]__0_i_1_n_6 ),
         .Q(\h_block_reg[1]__0_n_0 ),
@@ -11666,7 +11692,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \h_block_reg[20]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(address_read_sig_reg_i_1_n_0),
         .D(\h_block_reg[20]__0_i_1_n_7 ),
         .Q(\h_block_reg[20]__0_n_0 ),
@@ -11689,7 +11715,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \h_block_reg[21]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(address_read_sig_reg_i_1_n_0),
         .D(\h_block_reg[20]__0_i_1_n_6 ),
         .Q(\h_block_reg[21]__0_n_0 ),
@@ -11712,7 +11738,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \h_block_reg[22]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(address_read_sig_reg_i_1_n_0),
         .D(\h_block_reg[20]__0_i_1_n_5 ),
         .Q(\h_block_reg[22]__0_n_0 ),
@@ -11728,7 +11754,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \h_block_reg[23]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(address_read_sig_reg_i_1_n_0),
         .D(\h_block_reg[20]__0_i_1_n_4 ),
         .Q(\h_block_reg[23]__0_n_0 ),
@@ -11744,7 +11770,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \h_block_reg[24]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(address_read_sig_reg_i_1_n_0),
         .D(\h_block_reg[24]__0_i_1_n_7 ),
         .Q(\h_block_reg[24]__0_n_0 ),
@@ -11767,7 +11793,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \h_block_reg[25]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(address_read_sig_reg_i_1_n_0),
         .D(\h_block_reg[24]__0_i_1_n_6 ),
         .Q(\h_block_reg[25]__0_n_0 ),
@@ -11790,7 +11816,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \h_block_reg[26]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(address_read_sig_reg_i_1_n_0),
         .D(\h_block_reg[24]__0_i_1_n_5 ),
         .Q(\h_block_reg[26]__0_n_0 ),
@@ -11806,7 +11832,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \h_block_reg[27]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(address_read_sig_reg_i_1_n_0),
         .D(\h_block_reg[24]__0_i_1_n_4 ),
         .Q(\h_block_reg[27]__0_n_0 ),
@@ -11822,7 +11848,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \h_block_reg[28]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(address_read_sig_reg_i_1_n_0),
         .D(\h_block_reg[28]__0_i_1_n_7 ),
         .Q(\h_block_reg[28]__0_n_0 ),
@@ -11845,7 +11871,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \h_block_reg[29]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(address_read_sig_reg_i_1_n_0),
         .D(\h_block_reg[28]__0_i_1_n_6 ),
         .Q(\h_block_reg[29]__0_n_0 ),
@@ -11868,7 +11894,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \h_block_reg[2]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(address_read_sig_reg_i_1_n_0),
         .D(\h_block_reg[0]__0_i_1_n_5 ),
         .Q(\h_block_reg[2]__0_n_0 ),
@@ -11884,7 +11910,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \h_block_reg[30]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(address_read_sig_reg_i_1_n_0),
         .D(\h_block_reg[28]__0_i_1_n_5 ),
         .Q(\h_block_reg[30]__0_n_0 ),
@@ -11900,7 +11926,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \h_block_reg[31]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(address_read_sig_reg_i_1_n_0),
         .D(\h_block_reg[28]__0_i_1_n_4 ),
         .Q(\h_block_reg[31]__0_n_0 ),
@@ -11916,7 +11942,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \h_block_reg[3]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(address_read_sig_reg_i_1_n_0),
         .D(\h_block_reg[0]__0_i_1_n_4 ),
         .Q(\h_block_reg[3]__0_n_0 ),
@@ -11932,7 +11958,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \h_block_reg[4]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(address_read_sig_reg_i_1_n_0),
         .D(\h_block_reg[4]__0_i_1_n_7 ),
         .Q(\h_block_reg[4]__0_n_0 ),
@@ -11955,7 +11981,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \h_block_reg[5]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(address_read_sig_reg_i_1_n_0),
         .D(\h_block_reg[4]__0_i_1_n_6 ),
         .Q(\h_block_reg[5]__0_n_0 ),
@@ -11978,7 +12004,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \h_block_reg[6]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(address_read_sig_reg_i_1_n_0),
         .D(\h_block_reg[4]__0_i_1_n_5 ),
         .Q(\h_block_reg[6]__0_n_0 ),
@@ -11994,7 +12020,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \h_block_reg[7]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(address_read_sig_reg_i_1_n_0),
         .D(\h_block_reg[4]__0_i_1_n_4 ),
         .Q(\h_block_reg[7]__0_n_0 ),
@@ -12010,7 +12036,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \h_block_reg[8]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(address_read_sig_reg_i_1_n_0),
         .D(\h_block_reg[8]__0_i_1_n_7 ),
         .Q(\h_block_reg[8]__0_n_0 ),
@@ -12033,7 +12059,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \h_block_reg[9]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(address_read_sig_reg_i_1_n_0),
         .D(\h_block_reg[8]__0_i_1_n_6 ),
         .Q(\h_block_reg[9]__0_n_0 ),
@@ -12048,7 +12074,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   LUT5 #(
     .INIT(32'h00000002)) 
     \i[0]_i_1 
-       (.I0(wr_en_sig_d),
+       (.I0(wr_en_sig),
         .I1(\i[0]_i_3_n_0 ),
         .I2(\i[0]_i_4_n_0 ),
         .I3(\i[0]_i_5_n_0 ),
@@ -12282,14 +12308,14 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     \i[8]_i_5 
        (.I0(i_reg[8]),
         .O(\i[8]_i_5_n_0 ));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \i_reg[0] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\i_reg[0]_i_2_n_7 ),
         .Q(i_reg[0]),
-        .S(i0));
+        .R(i0));
   CARRY4 \i_reg[0]_i_2 
        (.CI(1'b0),
         .CO({\i_reg[0]_i_2_n_0 ,\i_reg[0]_i_2_n_1 ,\i_reg[0]_i_2_n_2 ,\i_reg[0]_i_2_n_3 }),
@@ -12301,7 +12327,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \i_reg[10] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\i_reg[8]_i_1_n_5 ),
         .Q(i_reg[10]),
         .R(i0));
@@ -12309,7 +12335,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \i_reg[11] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\i_reg[8]_i_1_n_4 ),
         .Q(i_reg[11]),
         .R(i0));
@@ -12317,7 +12343,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \i_reg[12] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\i_reg[12]_i_1_n_7 ),
         .Q(i_reg[12]),
         .R(i0));
@@ -12332,7 +12358,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \i_reg[13] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\i_reg[12]_i_1_n_6 ),
         .Q(i_reg[13]),
         .R(i0));
@@ -12340,7 +12366,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \i_reg[14] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\i_reg[12]_i_1_n_5 ),
         .Q(i_reg[14]),
         .R(i0));
@@ -12348,7 +12374,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \i_reg[15] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\i_reg[12]_i_1_n_4 ),
         .Q(i_reg[15]),
         .R(i0));
@@ -12356,7 +12382,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \i_reg[16] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\i_reg[16]_i_1_n_7 ),
         .Q(i_reg[16]),
         .R(i0));
@@ -12371,7 +12397,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \i_reg[17] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\i_reg[16]_i_1_n_6 ),
         .Q(i_reg[17]),
         .R(i0));
@@ -12379,7 +12405,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \i_reg[18] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\i_reg[16]_i_1_n_5 ),
         .Q(i_reg[18]),
         .R(i0));
@@ -12387,23 +12413,23 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \i_reg[19] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\i_reg[16]_i_1_n_4 ),
         .Q(i_reg[19]),
         .R(i0));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \i_reg[1] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\i_reg[0]_i_2_n_6 ),
         .Q(i_reg[1]),
-        .S(i0));
+        .R(i0));
   FDRE #(
     .INIT(1'b0)) 
     \i_reg[20] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\i_reg[20]_i_1_n_7 ),
         .Q(i_reg[20]),
         .R(i0));
@@ -12418,7 +12444,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \i_reg[21] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\i_reg[20]_i_1_n_6 ),
         .Q(i_reg[21]),
         .R(i0));
@@ -12426,7 +12452,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \i_reg[22] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\i_reg[20]_i_1_n_5 ),
         .Q(i_reg[22]),
         .R(i0));
@@ -12434,7 +12460,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \i_reg[23] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\i_reg[20]_i_1_n_4 ),
         .Q(i_reg[23]),
         .R(i0));
@@ -12442,7 +12468,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \i_reg[24] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\i_reg[24]_i_1_n_7 ),
         .Q(i_reg[24]),
         .R(i0));
@@ -12457,7 +12483,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \i_reg[25] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\i_reg[24]_i_1_n_6 ),
         .Q(i_reg[25]),
         .R(i0));
@@ -12465,7 +12491,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \i_reg[26] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\i_reg[24]_i_1_n_5 ),
         .Q(i_reg[26]),
         .R(i0));
@@ -12473,7 +12499,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \i_reg[27] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\i_reg[24]_i_1_n_4 ),
         .Q(i_reg[27]),
         .R(i0));
@@ -12481,7 +12507,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \i_reg[28] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\i_reg[28]_i_1_n_7 ),
         .Q(i_reg[28]),
         .R(i0));
@@ -12496,23 +12522,23 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \i_reg[29] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\i_reg[28]_i_1_n_6 ),
         .Q(i_reg[29]),
         .R(i0));
-  FDSE #(
-    .INIT(1'b1)) 
+  FDRE #(
+    .INIT(1'b0)) 
     \i_reg[2] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\i_reg[0]_i_2_n_5 ),
         .Q(i_reg[2]),
-        .S(i0));
+        .R(i0));
   FDRE #(
     .INIT(1'b0)) 
     \i_reg[30] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\i_reg[28]_i_1_n_5 ),
         .Q(i_reg[30]),
         .R(i0));
@@ -12520,26 +12546,26 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \i_reg[31] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\i_reg[28]_i_1_n_4 ),
         .Q(i_reg[31]),
         .R(i0));
-  FDSE #(
-    .INIT(1'b1)) 
-    \i_reg[3] 
-       (.C(clk_in1),
-        .CE(wr_en_sig_d),
-        .D(\i_reg[0]_i_2_n_4 ),
-        .Q(i_reg[3]),
-        .S(i0));
   FDRE #(
     .INIT(1'b0)) 
+    \i_reg[3] 
+       (.C(clk_in1),
+        .CE(wr_en_sig),
+        .D(\i_reg[0]_i_2_n_4 ),
+        .Q(i_reg[3]),
+        .R(i0));
+  FDSE #(
+    .INIT(1'b1)) 
     \i_reg[4] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\i_reg[4]_i_1_n_7 ),
         .Q(i_reg[4]),
-        .R(i0));
+        .S(i0));
   CARRY4 \i_reg[4]_i_1 
        (.CI(\i_reg[0]_i_2_n_0 ),
         .CO({\i_reg[4]_i_1_n_0 ,\i_reg[4]_i_1_n_1 ,\i_reg[4]_i_1_n_2 ,\i_reg[4]_i_1_n_3 }),
@@ -12551,7 +12577,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \i_reg[5] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\i_reg[4]_i_1_n_6 ),
         .Q(i_reg[5]),
         .R(i0));
@@ -12559,7 +12585,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \i_reg[6] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\i_reg[4]_i_1_n_5 ),
         .Q(i_reg[6]),
         .R(i0));
@@ -12567,7 +12593,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \i_reg[7] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\i_reg[4]_i_1_n_4 ),
         .Q(i_reg[7]),
         .R(i0));
@@ -12575,7 +12601,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \i_reg[8] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\i_reg[8]_i_1_n_7 ),
         .Q(i_reg[8]),
         .R(i0));
@@ -12590,7 +12616,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \i_reg[9] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\i_reg[8]_i_1_n_6 ),
         .Q(i_reg[9]),
         .R(i0));
@@ -13057,15 +13083,15 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \local_h_reg[0] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(write_enable),
         .D(\local_h_reg[0]_i_1_n_7 ),
         .Q(local_h_reg[0]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \local_h_reg[0]__0 
-       (.C(clk_in1),
-        .CE(wr_en_sig_d),
+       (.C(clk_vga),
+        .CE(wr_en_sig),
         .D(\local_h_reg[0]__0_i_1_n_7 ),
         .Q(\local_h_reg[0]__0_n_0 ),
         .R(1'b0));
@@ -13087,15 +13113,15 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \local_h_reg[10] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(write_enable),
         .D(\local_h_reg[8]_i_1_n_5 ),
         .Q(local_h_reg[10]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \local_h_reg[10]__0 
-       (.C(clk_in1),
-        .CE(wr_en_sig_d),
+       (.C(clk_vga),
+        .CE(wr_en_sig),
         .D(\local_h_reg[8]__0_i_1_n_5 ),
         .Q(\local_h_reg[10]__0_n_0 ),
         .R(1'b0));
@@ -13103,15 +13129,15 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \local_h_reg[11] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(write_enable),
         .D(\local_h_reg[8]_i_1_n_4 ),
         .Q(local_h_reg[11]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \local_h_reg[11]__0 
-       (.C(clk_in1),
-        .CE(wr_en_sig_d),
+       (.C(clk_vga),
+        .CE(wr_en_sig),
         .D(\local_h_reg[8]__0_i_1_n_4 ),
         .Q(\local_h_reg[11]__0_n_0 ),
         .R(1'b0));
@@ -13119,15 +13145,15 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \local_h_reg[12] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(write_enable),
         .D(\local_h_reg[12]_i_1_n_7 ),
         .Q(local_h_reg[12]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \local_h_reg[12]__0 
-       (.C(clk_in1),
-        .CE(wr_en_sig_d),
+       (.C(clk_vga),
+        .CE(wr_en_sig),
         .D(\local_h_reg[12]__0_i_1_n_7 ),
         .Q(\local_h_reg[12]__0_n_0 ),
         .R(1'b0));
@@ -13149,15 +13175,15 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \local_h_reg[13] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(write_enable),
         .D(\local_h_reg[12]_i_1_n_6 ),
         .Q(local_h_reg[13]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \local_h_reg[13]__0 
-       (.C(clk_in1),
-        .CE(wr_en_sig_d),
+       (.C(clk_vga),
+        .CE(wr_en_sig),
         .D(\local_h_reg[12]__0_i_1_n_6 ),
         .Q(\local_h_reg[13]__0_n_0 ),
         .R(1'b0));
@@ -13165,15 +13191,15 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \local_h_reg[14] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(write_enable),
         .D(\local_h_reg[12]_i_1_n_5 ),
         .Q(local_h_reg[14]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \local_h_reg[14]__0 
-       (.C(clk_in1),
-        .CE(wr_en_sig_d),
+       (.C(clk_vga),
+        .CE(wr_en_sig),
         .D(\local_h_reg[12]__0_i_1_n_5 ),
         .Q(\local_h_reg[14]__0_n_0 ),
         .R(1'b0));
@@ -13181,15 +13207,15 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \local_h_reg[15] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(write_enable),
         .D(\local_h_reg[12]_i_1_n_4 ),
         .Q(local_h_reg[15]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \local_h_reg[15]__0 
-       (.C(clk_in1),
-        .CE(wr_en_sig_d),
+       (.C(clk_vga),
+        .CE(wr_en_sig),
         .D(\local_h_reg[12]__0_i_1_n_4 ),
         .Q(\local_h_reg[15]__0_n_0 ),
         .R(1'b0));
@@ -13197,15 +13223,15 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \local_h_reg[16] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(write_enable),
         .D(\local_h_reg[16]_i_1_n_7 ),
         .Q(local_h_reg[16]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \local_h_reg[16]__0 
-       (.C(clk_in1),
-        .CE(wr_en_sig_d),
+       (.C(clk_vga),
+        .CE(wr_en_sig),
         .D(\local_h_reg[16]__0_i_1_n_7 ),
         .Q(\local_h_reg[16]__0_n_0 ),
         .R(1'b0));
@@ -13227,15 +13253,15 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \local_h_reg[17] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(write_enable),
         .D(\local_h_reg[16]_i_1_n_6 ),
         .Q(local_h_reg[17]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \local_h_reg[17]__0 
-       (.C(clk_in1),
-        .CE(wr_en_sig_d),
+       (.C(clk_vga),
+        .CE(wr_en_sig),
         .D(\local_h_reg[16]__0_i_1_n_6 ),
         .Q(\local_h_reg[17]__0_n_0 ),
         .R(1'b0));
@@ -13243,15 +13269,15 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \local_h_reg[18] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(write_enable),
         .D(\local_h_reg[16]_i_1_n_5 ),
         .Q(local_h_reg[18]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \local_h_reg[18]__0 
-       (.C(clk_in1),
-        .CE(wr_en_sig_d),
+       (.C(clk_vga),
+        .CE(wr_en_sig),
         .D(\local_h_reg[16]__0_i_1_n_5 ),
         .Q(\local_h_reg[18]__0_n_0 ),
         .R(1'b0));
@@ -13259,15 +13285,15 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \local_h_reg[19] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(write_enable),
         .D(\local_h_reg[16]_i_1_n_4 ),
         .Q(local_h_reg[19]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \local_h_reg[19]__0 
-       (.C(clk_in1),
-        .CE(wr_en_sig_d),
+       (.C(clk_vga),
+        .CE(wr_en_sig),
         .D(\local_h_reg[16]__0_i_1_n_4 ),
         .Q(\local_h_reg[19]__0_n_0 ),
         .R(1'b0));
@@ -13275,15 +13301,15 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \local_h_reg[1] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(write_enable),
         .D(\local_h_reg[0]_i_1_n_6 ),
         .Q(local_h_reg[1]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \local_h_reg[1]__0 
-       (.C(clk_in1),
-        .CE(wr_en_sig_d),
+       (.C(clk_vga),
+        .CE(wr_en_sig),
         .D(\local_h_reg[0]__0_i_1_n_6 ),
         .Q(\local_h_reg[1]__0_n_0 ),
         .R(1'b0));
@@ -13291,15 +13317,15 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \local_h_reg[20] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(write_enable),
         .D(\local_h_reg[20]_i_1_n_7 ),
         .Q(local_h_reg[20]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \local_h_reg[20]__0 
-       (.C(clk_in1),
-        .CE(wr_en_sig_d),
+       (.C(clk_vga),
+        .CE(wr_en_sig),
         .D(\local_h_reg[20]__0_i_1_n_7 ),
         .Q(\local_h_reg[20]__0_n_0 ),
         .R(1'b0));
@@ -13321,15 +13347,15 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \local_h_reg[21] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(write_enable),
         .D(\local_h_reg[20]_i_1_n_6 ),
         .Q(local_h_reg[21]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \local_h_reg[21]__0 
-       (.C(clk_in1),
-        .CE(wr_en_sig_d),
+       (.C(clk_vga),
+        .CE(wr_en_sig),
         .D(\local_h_reg[20]__0_i_1_n_6 ),
         .Q(\local_h_reg[21]__0_n_0 ),
         .R(1'b0));
@@ -13337,15 +13363,15 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \local_h_reg[22] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(write_enable),
         .D(\local_h_reg[20]_i_1_n_5 ),
         .Q(local_h_reg[22]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \local_h_reg[22]__0 
-       (.C(clk_in1),
-        .CE(wr_en_sig_d),
+       (.C(clk_vga),
+        .CE(wr_en_sig),
         .D(\local_h_reg[20]__0_i_1_n_5 ),
         .Q(\local_h_reg[22]__0_n_0 ),
         .R(1'b0));
@@ -13353,15 +13379,15 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \local_h_reg[23] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(write_enable),
         .D(\local_h_reg[20]_i_1_n_4 ),
         .Q(local_h_reg[23]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \local_h_reg[23]__0 
-       (.C(clk_in1),
-        .CE(wr_en_sig_d),
+       (.C(clk_vga),
+        .CE(wr_en_sig),
         .D(\local_h_reg[20]__0_i_1_n_4 ),
         .Q(\local_h_reg[23]__0_n_0 ),
         .R(1'b0));
@@ -13369,15 +13395,15 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \local_h_reg[24] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(write_enable),
         .D(\local_h_reg[24]_i_1_n_7 ),
         .Q(local_h_reg[24]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \local_h_reg[24]__0 
-       (.C(clk_in1),
-        .CE(wr_en_sig_d),
+       (.C(clk_vga),
+        .CE(wr_en_sig),
         .D(\local_h_reg[24]__0_i_1_n_7 ),
         .Q(\local_h_reg[24]__0_n_0 ),
         .R(1'b0));
@@ -13399,15 +13425,15 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \local_h_reg[25] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(write_enable),
         .D(\local_h_reg[24]_i_1_n_6 ),
         .Q(local_h_reg[25]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \local_h_reg[25]__0 
-       (.C(clk_in1),
-        .CE(wr_en_sig_d),
+       (.C(clk_vga),
+        .CE(wr_en_sig),
         .D(\local_h_reg[24]__0_i_1_n_6 ),
         .Q(\local_h_reg[25]__0_n_0 ),
         .R(1'b0));
@@ -13415,15 +13441,15 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \local_h_reg[26] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(write_enable),
         .D(\local_h_reg[24]_i_1_n_5 ),
         .Q(local_h_reg[26]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \local_h_reg[26]__0 
-       (.C(clk_in1),
-        .CE(wr_en_sig_d),
+       (.C(clk_vga),
+        .CE(wr_en_sig),
         .D(\local_h_reg[24]__0_i_1_n_5 ),
         .Q(\local_h_reg[26]__0_n_0 ),
         .R(1'b0));
@@ -13431,15 +13457,15 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \local_h_reg[27] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(write_enable),
         .D(\local_h_reg[24]_i_1_n_4 ),
         .Q(local_h_reg[27]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \local_h_reg[27]__0 
-       (.C(clk_in1),
-        .CE(wr_en_sig_d),
+       (.C(clk_vga),
+        .CE(wr_en_sig),
         .D(\local_h_reg[24]__0_i_1_n_4 ),
         .Q(\local_h_reg[27]__0_n_0 ),
         .R(1'b0));
@@ -13447,15 +13473,15 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \local_h_reg[28] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(write_enable),
         .D(\local_h_reg[28]_i_1_n_7 ),
         .Q(local_h_reg[28]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \local_h_reg[28]__0 
-       (.C(clk_in1),
-        .CE(wr_en_sig_d),
+       (.C(clk_vga),
+        .CE(wr_en_sig),
         .D(\local_h_reg[28]__0_i_1_n_7 ),
         .Q(\local_h_reg[28]__0_n_0 ),
         .R(1'b0));
@@ -13477,15 +13503,15 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \local_h_reg[29] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(write_enable),
         .D(\local_h_reg[28]_i_1_n_6 ),
         .Q(local_h_reg[29]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \local_h_reg[29]__0 
-       (.C(clk_in1),
-        .CE(wr_en_sig_d),
+       (.C(clk_vga),
+        .CE(wr_en_sig),
         .D(\local_h_reg[28]__0_i_1_n_6 ),
         .Q(\local_h_reg[29]__0_n_0 ),
         .R(1'b0));
@@ -13493,15 +13519,15 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \local_h_reg[2] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(write_enable),
         .D(\local_h_reg[0]_i_1_n_5 ),
         .Q(local_h_reg[2]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \local_h_reg[2]__0 
-       (.C(clk_in1),
-        .CE(wr_en_sig_d),
+       (.C(clk_vga),
+        .CE(wr_en_sig),
         .D(\local_h_reg[0]__0_i_1_n_5 ),
         .Q(\local_h_reg[2]__0_n_0 ),
         .R(1'b0));
@@ -13509,15 +13535,15 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \local_h_reg[30] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(write_enable),
         .D(\local_h_reg[28]_i_1_n_5 ),
         .Q(local_h_reg[30]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \local_h_reg[30]__0 
-       (.C(clk_in1),
-        .CE(wr_en_sig_d),
+       (.C(clk_vga),
+        .CE(wr_en_sig),
         .D(\local_h_reg[28]__0_i_1_n_5 ),
         .Q(\local_h_reg[30]__0_n_0 ),
         .R(1'b0));
@@ -13525,15 +13551,15 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \local_h_reg[31] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(write_enable),
         .D(\local_h_reg[28]_i_1_n_4 ),
         .Q(local_h_reg[31]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \local_h_reg[31]__0 
-       (.C(clk_in1),
-        .CE(wr_en_sig_d),
+       (.C(clk_vga),
+        .CE(wr_en_sig),
         .D(\local_h_reg[28]__0_i_1_n_4 ),
         .Q(\local_h_reg[31]__0_n_0 ),
         .R(1'b0));
@@ -13541,15 +13567,15 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \local_h_reg[3] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(write_enable),
         .D(\local_h_reg[0]_i_1_n_4 ),
         .Q(local_h_reg[3]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \local_h_reg[3]__0 
-       (.C(clk_in1),
-        .CE(wr_en_sig_d),
+       (.C(clk_vga),
+        .CE(wr_en_sig),
         .D(\local_h_reg[0]__0_i_1_n_4 ),
         .Q(\local_h_reg[3]__0_n_0 ),
         .R(1'b0));
@@ -13557,15 +13583,15 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \local_h_reg[4] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(write_enable),
         .D(\local_h_reg[4]_i_1_n_7 ),
         .Q(local_h_reg[4]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \local_h_reg[4]__0 
-       (.C(clk_in1),
-        .CE(wr_en_sig_d),
+       (.C(clk_vga),
+        .CE(wr_en_sig),
         .D(\local_h_reg[4]__0_i_1_n_7 ),
         .Q(\local_h_reg[4]__0_n_0 ),
         .R(1'b0));
@@ -13587,15 +13613,15 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \local_h_reg[5] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(write_enable),
         .D(\local_h_reg[4]_i_1_n_6 ),
         .Q(local_h_reg[5]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \local_h_reg[5]__0 
-       (.C(clk_in1),
-        .CE(wr_en_sig_d),
+       (.C(clk_vga),
+        .CE(wr_en_sig),
         .D(\local_h_reg[4]__0_i_1_n_6 ),
         .Q(\local_h_reg[5]__0_n_0 ),
         .R(1'b0));
@@ -13603,15 +13629,15 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \local_h_reg[6] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(write_enable),
         .D(\local_h_reg[4]_i_1_n_5 ),
         .Q(local_h_reg[6]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \local_h_reg[6]__0 
-       (.C(clk_in1),
-        .CE(wr_en_sig_d),
+       (.C(clk_vga),
+        .CE(wr_en_sig),
         .D(\local_h_reg[4]__0_i_1_n_5 ),
         .Q(\local_h_reg[6]__0_n_0 ),
         .R(1'b0));
@@ -13619,15 +13645,15 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \local_h_reg[7] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(write_enable),
         .D(\local_h_reg[4]_i_1_n_4 ),
         .Q(local_h_reg[7]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \local_h_reg[7]__0 
-       (.C(clk_in1),
-        .CE(wr_en_sig_d),
+       (.C(clk_vga),
+        .CE(wr_en_sig),
         .D(\local_h_reg[4]__0_i_1_n_4 ),
         .Q(\local_h_reg[7]__0_n_0 ),
         .R(1'b0));
@@ -13635,15 +13661,15 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \local_h_reg[8] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(write_enable),
         .D(\local_h_reg[8]_i_1_n_7 ),
         .Q(local_h_reg[8]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \local_h_reg[8]__0 
-       (.C(clk_in1),
-        .CE(wr_en_sig_d),
+       (.C(clk_vga),
+        .CE(wr_en_sig),
         .D(\local_h_reg[8]__0_i_1_n_7 ),
         .Q(\local_h_reg[8]__0_n_0 ),
         .R(1'b0));
@@ -13665,22 +13691,22 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(1'b0)) 
     \local_h_reg[9] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(write_enable),
         .D(\local_h_reg[8]_i_1_n_6 ),
         .Q(local_h_reg[9]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \local_h_reg[9]__0 
-       (.C(clk_in1),
-        .CE(wr_en_sig_d),
+       (.C(clk_vga),
+        .CE(wr_en_sig),
         .D(\local_h_reg[8]__0_i_1_n_6 ),
         .Q(\local_h_reg[9]__0_n_0 ),
         .R(1'b0));
   LUT2 #(
     .INIT(4'h8)) 
     \local_v[0]__0_i_1 
-       (.I0(wr_en_sig_d),
+       (.I0(wr_en_sig),
         .I1(address_read_sig_reg_i_37_n_0),
         .O(\local_v[0]__0_i_1_n_0 ));
   LUT2 #(
@@ -13716,7 +13742,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   LUT2 #(
     .INIT(4'h8)) 
     \local_v[0]_i_1 
-       (.I0(wr_en_sig_d),
+       (.I0(write_enable),
         .I1(address_write_sig_reg_i_40_n_0),
         .O(local_v0));
   LUT2 #(
@@ -14096,7 +14122,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \local_v_reg[0]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\local_v[0]__0_i_1_n_0 ),
         .D(\local_v_reg[0]__0_i_2_n_7 ),
         .Q(\local_v_reg[0]__0_n_0 ),
@@ -14126,7 +14152,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \local_v_reg[10]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\local_v[0]__0_i_1_n_0 ),
         .D(\local_v_reg[8]__0_i_1_n_5 ),
         .Q(\local_v_reg[10]__0_n_0 ),
@@ -14142,7 +14168,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \local_v_reg[11]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\local_v[0]__0_i_1_n_0 ),
         .D(\local_v_reg[8]__0_i_1_n_4 ),
         .Q(\local_v_reg[11]__0_n_0 ),
@@ -14158,7 +14184,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \local_v_reg[12]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\local_v[0]__0_i_1_n_0 ),
         .D(\local_v_reg[12]__0_i_1_n_7 ),
         .Q(\local_v_reg[12]__0_n_0 ),
@@ -14188,7 +14214,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \local_v_reg[13]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\local_v[0]__0_i_1_n_0 ),
         .D(\local_v_reg[12]__0_i_1_n_6 ),
         .Q(\local_v_reg[13]__0_n_0 ),
@@ -14204,7 +14230,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \local_v_reg[14]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\local_v[0]__0_i_1_n_0 ),
         .D(\local_v_reg[12]__0_i_1_n_5 ),
         .Q(\local_v_reg[14]__0_n_0 ),
@@ -14220,7 +14246,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \local_v_reg[15]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\local_v[0]__0_i_1_n_0 ),
         .D(\local_v_reg[12]__0_i_1_n_4 ),
         .Q(\local_v_reg[15]__0_n_0 ),
@@ -14236,7 +14262,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \local_v_reg[16]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\local_v[0]__0_i_1_n_0 ),
         .D(\local_v_reg[16]__0_i_1_n_7 ),
         .Q(\local_v_reg[16]__0_n_0 ),
@@ -14266,7 +14292,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \local_v_reg[17]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\local_v[0]__0_i_1_n_0 ),
         .D(\local_v_reg[16]__0_i_1_n_6 ),
         .Q(\local_v_reg[17]__0_n_0 ),
@@ -14282,7 +14308,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \local_v_reg[18]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\local_v[0]__0_i_1_n_0 ),
         .D(\local_v_reg[16]__0_i_1_n_5 ),
         .Q(\local_v_reg[18]__0_n_0 ),
@@ -14298,7 +14324,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \local_v_reg[19]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\local_v[0]__0_i_1_n_0 ),
         .D(\local_v_reg[16]__0_i_1_n_4 ),
         .Q(\local_v_reg[19]__0_n_0 ),
@@ -14314,7 +14340,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \local_v_reg[1]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\local_v[0]__0_i_1_n_0 ),
         .D(\local_v_reg[0]__0_i_2_n_6 ),
         .Q(\local_v_reg[1]__0_n_0 ),
@@ -14330,7 +14356,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \local_v_reg[20]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\local_v[0]__0_i_1_n_0 ),
         .D(\local_v_reg[20]__0_i_1_n_7 ),
         .Q(\local_v_reg[20]__0_n_0 ),
@@ -14360,7 +14386,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \local_v_reg[21]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\local_v[0]__0_i_1_n_0 ),
         .D(\local_v_reg[20]__0_i_1_n_6 ),
         .Q(\local_v_reg[21]__0_n_0 ),
@@ -14376,7 +14402,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \local_v_reg[22]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\local_v[0]__0_i_1_n_0 ),
         .D(\local_v_reg[20]__0_i_1_n_5 ),
         .Q(\local_v_reg[22]__0_n_0 ),
@@ -14392,7 +14418,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \local_v_reg[23]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\local_v[0]__0_i_1_n_0 ),
         .D(\local_v_reg[20]__0_i_1_n_4 ),
         .Q(\local_v_reg[23]__0_n_0 ),
@@ -14408,7 +14434,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \local_v_reg[24]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\local_v[0]__0_i_1_n_0 ),
         .D(\local_v_reg[24]__0_i_1_n_7 ),
         .Q(\local_v_reg[24]__0_n_0 ),
@@ -14438,7 +14464,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \local_v_reg[25]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\local_v[0]__0_i_1_n_0 ),
         .D(\local_v_reg[24]__0_i_1_n_6 ),
         .Q(\local_v_reg[25]__0_n_0 ),
@@ -14454,7 +14480,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \local_v_reg[26]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\local_v[0]__0_i_1_n_0 ),
         .D(\local_v_reg[24]__0_i_1_n_5 ),
         .Q(\local_v_reg[26]__0_n_0 ),
@@ -14470,7 +14496,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \local_v_reg[27]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\local_v[0]__0_i_1_n_0 ),
         .D(\local_v_reg[24]__0_i_1_n_4 ),
         .Q(\local_v_reg[27]__0_n_0 ),
@@ -14486,7 +14512,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \local_v_reg[28]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\local_v[0]__0_i_1_n_0 ),
         .D(\local_v_reg[28]__0_i_1_n_7 ),
         .Q(\local_v_reg[28]__0_n_0 ),
@@ -14516,7 +14542,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \local_v_reg[29]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\local_v[0]__0_i_1_n_0 ),
         .D(\local_v_reg[28]__0_i_1_n_6 ),
         .Q(\local_v_reg[29]__0_n_0 ),
@@ -14532,7 +14558,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \local_v_reg[2]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\local_v[0]__0_i_1_n_0 ),
         .D(\local_v_reg[0]__0_i_2_n_5 ),
         .Q(\local_v_reg[2]__0_n_0 ),
@@ -14548,7 +14574,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \local_v_reg[30]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\local_v[0]__0_i_1_n_0 ),
         .D(\local_v_reg[28]__0_i_1_n_5 ),
         .Q(\local_v_reg[30]__0_n_0 ),
@@ -14564,7 +14590,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \local_v_reg[31]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\local_v[0]__0_i_1_n_0 ),
         .D(\local_v_reg[28]__0_i_1_n_4 ),
         .Q(\local_v_reg[31]__0_n_0 ),
@@ -14580,7 +14606,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \local_v_reg[3]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\local_v[0]__0_i_1_n_0 ),
         .D(\local_v_reg[0]__0_i_2_n_4 ),
         .Q(\local_v_reg[3]__0_n_0 ),
@@ -14596,7 +14622,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \local_v_reg[4]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\local_v[0]__0_i_1_n_0 ),
         .D(\local_v_reg[4]__0_i_1_n_7 ),
         .Q(\local_v_reg[4]__0_n_0 ),
@@ -14626,7 +14652,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \local_v_reg[5]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\local_v[0]__0_i_1_n_0 ),
         .D(\local_v_reg[4]__0_i_1_n_6 ),
         .Q(\local_v_reg[5]__0_n_0 ),
@@ -14642,7 +14668,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \local_v_reg[6]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\local_v[0]__0_i_1_n_0 ),
         .D(\local_v_reg[4]__0_i_1_n_5 ),
         .Q(\local_v_reg[6]__0_n_0 ),
@@ -14658,7 +14684,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \local_v_reg[7]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\local_v[0]__0_i_1_n_0 ),
         .D(\local_v_reg[4]__0_i_1_n_4 ),
         .Q(\local_v_reg[7]__0_n_0 ),
@@ -14674,7 +14700,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \local_v_reg[8]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\local_v[0]__0_i_1_n_0 ),
         .D(\local_v_reg[8]__0_i_1_n_7 ),
         .Q(\local_v_reg[8]__0_n_0 ),
@@ -14704,7 +14730,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \local_v_reg[9]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\local_v[0]__0_i_1_n_0 ),
         .D(\local_v_reg[8]__0_i_1_n_6 ),
         .Q(\local_v_reg[9]__0_n_0 ),
@@ -14713,67 +14739,111 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
        (.CI(1'b0),
         .CO({pixel_out1_carry_n_0,pixel_out1_carry_n_1,pixel_out1_carry_n_2,pixel_out1_carry_n_3}),
         .CYINIT(1'b0),
-        .DI({i_reg[2:0],1'b0}),
-        .O({pixel_out1_carry_n_4,pixel_out1_carry_n_5,pixel_out1_carry_n_6,pixel_out1_carry_n_7}),
-        .S({pixel_out1_carry_i_1_n_0,pixel_out1_carry_i_2_n_0,pixel_out1_carry_i_3_n_0,i_reg[0]}));
+        .DI({pixel_out1_carry_i_1_n_6,pixel_out1_carry_i_1_n_7,pixel_out1_carry_i_1_n_7,1'b0}),
+        .O({pixel_out1_carry_n_4,pixel_out1_carry_n_5,pixel_out1_carry_n_6,NLW_pixel_out1_carry_O_UNCONNECTED[0]}),
+        .S({pixel_out1_carry_i_2_n_0,pixel_out1_carry_i_3_n_0,pixel_out1_carry_i_4_n_0,pixel_out1_carry_i_5_n_0}));
   CARRY4 pixel_out1_carry__0
        (.CI(pixel_out1_carry_n_0),
         .CO({NLW_pixel_out1_carry__0_CO_UNCONNECTED[3:1],pixel_out1_carry__0_n_3}),
         .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,i_reg[3]}),
+        .DI({1'b0,1'b0,1'b0,pixel_out1_carry_i_1_n_5}),
         .O({NLW_pixel_out1_carry__0_O_UNCONNECTED[3:2],pixel_out1_carry__0_n_6,pixel_out1_carry__0_n_7}),
         .S({1'b0,1'b0,pixel_out1_carry__0_i_1_n_0,pixel_out1_carry__0_i_2_n_0}));
   LUT2 #(
     .INIT(4'h6)) 
     pixel_out1_carry__0_i_1
-       (.I0(i_reg[4]),
-        .I1(i_reg[5]),
+       (.I0(pixel_out1_carry_i_1_n_4),
+        .I1(pixel_out1_carry__0_i_3_n_7),
         .O(pixel_out1_carry__0_i_1_n_0));
   LUT2 #(
     .INIT(4'h6)) 
     pixel_out1_carry__0_i_2
-       (.I0(i_reg[3]),
-        .I1(i_reg[4]),
+       (.I0(pixel_out1_carry_i_1_n_5),
+        .I1(pixel_out1_carry_i_1_n_4),
         .O(pixel_out1_carry__0_i_2_n_0));
-  LUT2 #(
-    .INIT(4'h6)) 
-    pixel_out1_carry_i_1
-       (.I0(i_reg[2]),
-        .I1(i_reg[3]),
-        .O(pixel_out1_carry_i_1_n_0));
+  CARRY4 pixel_out1_carry__0_i_3
+       (.CI(pixel_out1_carry_i_1_n_0),
+        .CO(NLW_pixel_out1_carry__0_i_3_CO_UNCONNECTED[3:0]),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({NLW_pixel_out1_carry__0_i_3_O_UNCONNECTED[3:1],pixel_out1_carry__0_i_3_n_7}),
+        .S({1'b0,1'b0,1'b0,pixel_out1_carry__0_i_4_n_0}));
+  LUT1 #(
+    .INIT(2'h1)) 
+    pixel_out1_carry__0_i_4
+       (.I0(i_reg[5]),
+        .O(pixel_out1_carry__0_i_4_n_0));
+  CARRY4 pixel_out1_carry_i_1
+       (.CI(1'b0),
+        .CO({pixel_out1_carry_i_1_n_0,pixel_out1_carry_i_1_n_1,pixel_out1_carry_i_1_n_2,pixel_out1_carry_i_1_n_3}),
+        .CYINIT(i_reg[0]),
+        .DI(i_reg[4:1]),
+        .O({pixel_out1_carry_i_1_n_4,pixel_out1_carry_i_1_n_5,pixel_out1_carry_i_1_n_6,pixel_out1_carry_i_1_n_7}),
+        .S({pixel_out1_carry_i_6_n_0,pixel_out1_carry_i_7_n_0,pixel_out1_carry_i_8_n_0,pixel_out1_carry_i_9_n_0}));
   LUT2 #(
     .INIT(4'h6)) 
     pixel_out1_carry_i_2
-       (.I0(i_reg[1]),
-        .I1(i_reg[2]),
+       (.I0(pixel_out1_carry_i_1_n_6),
+        .I1(pixel_out1_carry_i_1_n_5),
         .O(pixel_out1_carry_i_2_n_0));
   LUT2 #(
     .INIT(4'h6)) 
     pixel_out1_carry_i_3
-       (.I0(i_reg[0]),
-        .I1(i_reg[1]),
+       (.I0(pixel_out1_carry_i_1_n_7),
+        .I1(pixel_out1_carry_i_1_n_6),
         .O(pixel_out1_carry_i_3_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    pixel_out1_carry_i_4
+       (.I0(i_reg[0]),
+        .I1(pixel_out1_carry_i_1_n_7),
+        .O(pixel_out1_carry_i_4_n_0));
+  LUT1 #(
+    .INIT(2'h1)) 
+    pixel_out1_carry_i_5
+       (.I0(i_reg[0]),
+        .O(pixel_out1_carry_i_5_n_0));
+  LUT1 #(
+    .INIT(2'h1)) 
+    pixel_out1_carry_i_6
+       (.I0(i_reg[4]),
+        .O(pixel_out1_carry_i_6_n_0));
+  LUT1 #(
+    .INIT(2'h1)) 
+    pixel_out1_carry_i_7
+       (.I0(i_reg[3]),
+        .O(pixel_out1_carry_i_7_n_0));
+  LUT1 #(
+    .INIT(2'h1)) 
+    pixel_out1_carry_i_8
+       (.I0(i_reg[2]),
+        .O(pixel_out1_carry_i_8_n_0));
+  LUT1 #(
+    .INIT(2'h1)) 
+    pixel_out1_carry_i_9
+       (.I0(i_reg[1]),
+        .O(pixel_out1_carry_i_9_n_0));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \pixel_out[0]_i_1 
        (.I0(\pixel_out_reg[8]_i_3_n_0 ),
-        .I1(\pixel_out[4]_i_2_n_0 ),
-        .I2(pixel_out1_carry_n_7),
+        .I1(\pixel_out[0]_i_2_n_0 ),
+        .I2(i_reg[0]),
         .I3(\pixel_out_reg[8]_i_5_n_0 ),
         .I4(pixel_out1_carry_n_6),
-        .I5(\pixel_out[0]_i_2_n_0 ),
+        .I5(\pixel_out[4]_i_2_n_0 ),
         .O(\pixel_out[0]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \pixel_out[0]_i_2 
-       (.I0(\pixel_out[8]_i_14_n_0 ),
-        .I1(\pixel_out[8]_i_15_n_0 ),
+       (.I0(\pixel_out[8]_i_8_n_0 ),
+        .I1(\pixel_out[8]_i_9_n_0 ),
         .I2(pixel_out1_carry_n_5),
-        .I3(\pixel_out[8]_i_13_n_0 ),
+        .I3(\pixel_out[8]_i_7_n_0 ),
         .I4(pixel_out1_carry_n_4),
         .I5(\pixel_out[0]_i_3_n_0 ),
         .O(\pixel_out[0]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[0]_i_3 
@@ -14788,63 +14858,63 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     \pixel_out[10]_i_1 
        (.I0(\pixel_out[10]_i_2_n_0 ),
         .I1(\pixel_out_reg[10]_i_3_n_0 ),
-        .I2(pixel_out1_carry_n_7),
+        .I2(i_reg[0]),
         .I3(\pixel_out[10]_i_4_n_0 ),
         .I4(pixel_out1_carry_n_6),
         .I5(\pixel_out_reg[10]_i_5_n_0 ),
         .O(\pixel_out[10]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \pixel_out[10]_i_12 
-       (.I0(filtered_pixel_out[130]),
+       (.I0(filtered_pixel_out[134]),
         .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[66]),
+        .I2(filtered_pixel_out[70]),
         .O(\pixel_out[10]_i_12_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[10]_i_13 
-       (.I0(filtered_pixel_out[98]),
+       (.I0(filtered_pixel_out[102]),
         .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[162]),
+        .I2(filtered_pixel_out[166]),
         .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[34]),
+        .I4(filtered_pixel_out[38]),
         .O(\pixel_out[10]_i_13_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[10]_i_14 
-       (.I0(filtered_pixel_out[114]),
+       (.I0(filtered_pixel_out[118]),
         .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[178]),
+        .I2(filtered_pixel_out[182]),
         .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[50]),
+        .I4(filtered_pixel_out[54]),
         .O(\pixel_out[10]_i_14_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[10]_i_15 
-       (.I0(filtered_pixel_out[82]),
+       (.I0(filtered_pixel_out[86]),
         .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[146]),
+        .I2(filtered_pixel_out[150]),
         .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[18]),
+        .I4(filtered_pixel_out[22]),
         .O(\pixel_out[10]_i_15_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[10]_i_18 
-       (.I0(filtered_pixel_out[78]),
+       (.I0(filtered_pixel_out[74]),
         .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[142]),
+        .I2(filtered_pixel_out[138]),
         .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[14]),
+        .I4(filtered_pixel_out[10]),
         .O(\pixel_out[10]_i_18_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[10]_i_19 
-       (.I0(filtered_pixel_out[110]),
+       (.I0(filtered_pixel_out[106]),
         .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[174]),
+        .I2(filtered_pixel_out[170]),
         .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[46]),
+        .I4(filtered_pixel_out[42]),
         .O(\pixel_out[10]_i_19_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -14859,56 +14929,56 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[10]_i_20 
-       (.I0(filtered_pixel_out[94]),
-        .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[158]),
-        .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[30]),
-        .O(\pixel_out[10]_i_20_n_0 ));
-  LUT5 #(
-    .INIT(32'hB8BBB888)) 
-    \pixel_out[10]_i_21 
-       (.I0(filtered_pixel_out[126]),
-        .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[190]),
-        .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[62]),
-        .O(\pixel_out[10]_i_21_n_0 ));
-  LUT5 #(
-    .INIT(32'hB8BBB888)) 
-    \pixel_out[10]_i_22 
-       (.I0(filtered_pixel_out[74]),
-        .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[138]),
-        .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[10]),
-        .O(\pixel_out[10]_i_22_n_0 ));
-  LUT5 #(
-    .INIT(32'hB8BBB888)) 
-    \pixel_out[10]_i_23 
-       (.I0(filtered_pixel_out[106]),
-        .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[170]),
-        .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[42]),
-        .O(\pixel_out[10]_i_23_n_0 ));
-  LUT5 #(
-    .INIT(32'hB8BBB888)) 
-    \pixel_out[10]_i_24 
        (.I0(filtered_pixel_out[90]),
         .I1(pixel_out1_carry__0_n_7),
         .I2(filtered_pixel_out[154]),
         .I3(pixel_out1_carry__0_n_6),
         .I4(filtered_pixel_out[26]),
-        .O(\pixel_out[10]_i_24_n_0 ));
+        .O(\pixel_out[10]_i_20_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
-    \pixel_out[10]_i_25 
+    \pixel_out[10]_i_21 
        (.I0(filtered_pixel_out[122]),
         .I1(pixel_out1_carry__0_n_7),
         .I2(filtered_pixel_out[186]),
         .I3(pixel_out1_carry__0_n_6),
         .I4(filtered_pixel_out[58]),
+        .O(\pixel_out[10]_i_21_n_0 ));
+  LUT5 #(
+    .INIT(32'hB8BBB888)) 
+    \pixel_out[10]_i_22 
+       (.I0(filtered_pixel_out[78]),
+        .I1(pixel_out1_carry__0_n_7),
+        .I2(filtered_pixel_out[142]),
+        .I3(pixel_out1_carry__0_n_6),
+        .I4(filtered_pixel_out[14]),
+        .O(\pixel_out[10]_i_22_n_0 ));
+  LUT5 #(
+    .INIT(32'hB8BBB888)) 
+    \pixel_out[10]_i_23 
+       (.I0(filtered_pixel_out[110]),
+        .I1(pixel_out1_carry__0_n_7),
+        .I2(filtered_pixel_out[174]),
+        .I3(pixel_out1_carry__0_n_6),
+        .I4(filtered_pixel_out[46]),
+        .O(\pixel_out[10]_i_23_n_0 ));
+  LUT5 #(
+    .INIT(32'hB8BBB888)) 
+    \pixel_out[10]_i_24 
+       (.I0(filtered_pixel_out[94]),
+        .I1(pixel_out1_carry__0_n_7),
+        .I2(filtered_pixel_out[158]),
+        .I3(pixel_out1_carry__0_n_6),
+        .I4(filtered_pixel_out[30]),
+        .O(\pixel_out[10]_i_24_n_0 ));
+  LUT5 #(
+    .INIT(32'hB8BBB888)) 
+    \pixel_out[10]_i_25 
+       (.I0(filtered_pixel_out[126]),
+        .I1(pixel_out1_carry__0_n_7),
+        .I2(filtered_pixel_out[190]),
+        .I3(pixel_out1_carry__0_n_6),
+        .I4(filtered_pixel_out[62]),
         .O(\pixel_out[10]_i_25_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -14920,103 +14990,103 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
         .I4(pixel_out1_carry_n_4),
         .I5(\pixel_out[10]_i_15_n_0 ),
         .O(\pixel_out[10]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \pixel_out[10]_i_6 
-       (.I0(filtered_pixel_out[134]),
+       (.I0(filtered_pixel_out[130]),
         .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[70]),
+        .I2(filtered_pixel_out[66]),
         .O(\pixel_out[10]_i_6_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[10]_i_7 
-       (.I0(filtered_pixel_out[102]),
+       (.I0(filtered_pixel_out[98]),
         .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[166]),
+        .I2(filtered_pixel_out[162]),
         .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[38]),
+        .I4(filtered_pixel_out[34]),
         .O(\pixel_out[10]_i_7_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[10]_i_8 
-       (.I0(filtered_pixel_out[118]),
+       (.I0(filtered_pixel_out[114]),
         .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[182]),
+        .I2(filtered_pixel_out[178]),
         .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[54]),
+        .I4(filtered_pixel_out[50]),
         .O(\pixel_out[10]_i_8_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[10]_i_9 
-       (.I0(filtered_pixel_out[86]),
+       (.I0(filtered_pixel_out[82]),
         .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[150]),
+        .I2(filtered_pixel_out[146]),
         .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[22]),
+        .I4(filtered_pixel_out[18]),
         .O(\pixel_out[10]_i_9_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \pixel_out[11]_i_1 
        (.I0(\pixel_out[11]_i_2_n_0 ),
         .I1(\pixel_out_reg[11]_i_3_n_0 ),
-        .I2(pixel_out1_carry_n_7),
+        .I2(i_reg[0]),
         .I3(\pixel_out[11]_i_4_n_0 ),
         .I4(pixel_out1_carry_n_6),
         .I5(\pixel_out_reg[11]_i_5_n_0 ),
         .O(\pixel_out[11]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \pixel_out[11]_i_12 
-       (.I0(filtered_pixel_out[131]),
+       (.I0(filtered_pixel_out[135]),
         .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[67]),
+        .I2(filtered_pixel_out[71]),
         .O(\pixel_out[11]_i_12_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[11]_i_13 
-       (.I0(filtered_pixel_out[99]),
+       (.I0(filtered_pixel_out[103]),
         .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[163]),
+        .I2(filtered_pixel_out[167]),
         .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[35]),
+        .I4(filtered_pixel_out[39]),
         .O(\pixel_out[11]_i_13_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[11]_i_14 
-       (.I0(filtered_pixel_out[115]),
+       (.I0(filtered_pixel_out[119]),
         .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[179]),
+        .I2(filtered_pixel_out[183]),
         .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[51]),
+        .I4(filtered_pixel_out[55]),
         .O(\pixel_out[11]_i_14_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[11]_i_15 
-       (.I0(filtered_pixel_out[83]),
+       (.I0(filtered_pixel_out[87]),
         .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[147]),
+        .I2(filtered_pixel_out[151]),
         .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[19]),
+        .I4(filtered_pixel_out[23]),
         .O(\pixel_out[11]_i_15_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[11]_i_18 
-       (.I0(filtered_pixel_out[79]),
+       (.I0(filtered_pixel_out[75]),
         .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[143]),
+        .I2(filtered_pixel_out[139]),
         .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[15]),
+        .I4(filtered_pixel_out[11]),
         .O(\pixel_out[11]_i_18_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[11]_i_19 
-       (.I0(filtered_pixel_out[111]),
+       (.I0(filtered_pixel_out[107]),
         .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[175]),
+        .I2(filtered_pixel_out[171]),
         .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[47]),
+        .I4(filtered_pixel_out[43]),
         .O(\pixel_out[11]_i_19_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -15031,56 +15101,56 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[11]_i_20 
-       (.I0(filtered_pixel_out[95]),
-        .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[159]),
-        .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[31]),
-        .O(\pixel_out[11]_i_20_n_0 ));
-  LUT5 #(
-    .INIT(32'hB8BBB888)) 
-    \pixel_out[11]_i_21 
-       (.I0(filtered_pixel_out[127]),
-        .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[191]),
-        .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[63]),
-        .O(\pixel_out[11]_i_21_n_0 ));
-  LUT5 #(
-    .INIT(32'hB8BBB888)) 
-    \pixel_out[11]_i_22 
-       (.I0(filtered_pixel_out[75]),
-        .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[139]),
-        .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[11]),
-        .O(\pixel_out[11]_i_22_n_0 ));
-  LUT5 #(
-    .INIT(32'hB8BBB888)) 
-    \pixel_out[11]_i_23 
-       (.I0(filtered_pixel_out[107]),
-        .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[171]),
-        .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[43]),
-        .O(\pixel_out[11]_i_23_n_0 ));
-  LUT5 #(
-    .INIT(32'hB8BBB888)) 
-    \pixel_out[11]_i_24 
        (.I0(filtered_pixel_out[91]),
         .I1(pixel_out1_carry__0_n_7),
         .I2(filtered_pixel_out[155]),
         .I3(pixel_out1_carry__0_n_6),
         .I4(filtered_pixel_out[27]),
-        .O(\pixel_out[11]_i_24_n_0 ));
+        .O(\pixel_out[11]_i_20_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
-    \pixel_out[11]_i_25 
+    \pixel_out[11]_i_21 
        (.I0(filtered_pixel_out[123]),
         .I1(pixel_out1_carry__0_n_7),
         .I2(filtered_pixel_out[187]),
         .I3(pixel_out1_carry__0_n_6),
         .I4(filtered_pixel_out[59]),
+        .O(\pixel_out[11]_i_21_n_0 ));
+  LUT5 #(
+    .INIT(32'hB8BBB888)) 
+    \pixel_out[11]_i_22 
+       (.I0(filtered_pixel_out[79]),
+        .I1(pixel_out1_carry__0_n_7),
+        .I2(filtered_pixel_out[143]),
+        .I3(pixel_out1_carry__0_n_6),
+        .I4(filtered_pixel_out[15]),
+        .O(\pixel_out[11]_i_22_n_0 ));
+  LUT5 #(
+    .INIT(32'hB8BBB888)) 
+    \pixel_out[11]_i_23 
+       (.I0(filtered_pixel_out[111]),
+        .I1(pixel_out1_carry__0_n_7),
+        .I2(filtered_pixel_out[175]),
+        .I3(pixel_out1_carry__0_n_6),
+        .I4(filtered_pixel_out[47]),
+        .O(\pixel_out[11]_i_23_n_0 ));
+  LUT5 #(
+    .INIT(32'hB8BBB888)) 
+    \pixel_out[11]_i_24 
+       (.I0(filtered_pixel_out[95]),
+        .I1(pixel_out1_carry__0_n_7),
+        .I2(filtered_pixel_out[159]),
+        .I3(pixel_out1_carry__0_n_6),
+        .I4(filtered_pixel_out[31]),
+        .O(\pixel_out[11]_i_24_n_0 ));
+  LUT5 #(
+    .INIT(32'hB8BBB888)) 
+    \pixel_out[11]_i_25 
+       (.I0(filtered_pixel_out[127]),
+        .I1(pixel_out1_carry__0_n_7),
+        .I2(filtered_pixel_out[191]),
+        .I3(pixel_out1_carry__0_n_6),
+        .I4(filtered_pixel_out[63]),
         .O(\pixel_out[11]_i_25_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -15096,58 +15166,58 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   LUT3 #(
     .INIT(8'hB8)) 
     \pixel_out[11]_i_6 
-       (.I0(filtered_pixel_out[135]),
+       (.I0(filtered_pixel_out[131]),
         .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[71]),
+        .I2(filtered_pixel_out[67]),
         .O(\pixel_out[11]_i_6_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[11]_i_7 
-       (.I0(filtered_pixel_out[103]),
+       (.I0(filtered_pixel_out[99]),
         .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[167]),
+        .I2(filtered_pixel_out[163]),
         .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[39]),
+        .I4(filtered_pixel_out[35]),
         .O(\pixel_out[11]_i_7_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[11]_i_8 
-       (.I0(filtered_pixel_out[119]),
+       (.I0(filtered_pixel_out[115]),
         .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[183]),
+        .I2(filtered_pixel_out[179]),
         .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[55]),
+        .I4(filtered_pixel_out[51]),
         .O(\pixel_out[11]_i_8_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[11]_i_9 
-       (.I0(filtered_pixel_out[87]),
+       (.I0(filtered_pixel_out[83]),
         .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[151]),
+        .I2(filtered_pixel_out[147]),
         .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[23]),
+        .I4(filtered_pixel_out[19]),
         .O(\pixel_out[11]_i_9_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \pixel_out[1]_i_1 
        (.I0(\pixel_out_reg[9]_i_3_n_0 ),
-        .I1(\pixel_out[5]_i_2_n_0 ),
-        .I2(pixel_out1_carry_n_7),
+        .I1(\pixel_out[1]_i_2_n_0 ),
+        .I2(i_reg[0]),
         .I3(\pixel_out_reg[9]_i_5_n_0 ),
         .I4(pixel_out1_carry_n_6),
-        .I5(\pixel_out[1]_i_2_n_0 ),
+        .I5(\pixel_out[5]_i_2_n_0 ),
         .O(\pixel_out[1]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \pixel_out[1]_i_2 
-       (.I0(\pixel_out[9]_i_14_n_0 ),
-        .I1(\pixel_out[9]_i_15_n_0 ),
+       (.I0(\pixel_out[9]_i_8_n_0 ),
+        .I1(\pixel_out[9]_i_9_n_0 ),
         .I2(pixel_out1_carry_n_5),
-        .I3(\pixel_out[9]_i_13_n_0 ),
+        .I3(\pixel_out[9]_i_7_n_0 ),
         .I4(pixel_out1_carry_n_4),
         .I5(\pixel_out[1]_i_3_n_0 ),
         .O(\pixel_out[1]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[1]_i_3 
@@ -15161,23 +15231,23 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \pixel_out[2]_i_1 
        (.I0(\pixel_out_reg[10]_i_3_n_0 ),
-        .I1(\pixel_out[6]_i_2_n_0 ),
-        .I2(pixel_out1_carry_n_7),
+        .I1(\pixel_out[2]_i_2_n_0 ),
+        .I2(i_reg[0]),
         .I3(\pixel_out_reg[10]_i_5_n_0 ),
         .I4(pixel_out1_carry_n_6),
-        .I5(\pixel_out[2]_i_2_n_0 ),
+        .I5(\pixel_out[6]_i_2_n_0 ),
         .O(\pixel_out[2]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \pixel_out[2]_i_2 
-       (.I0(\pixel_out[10]_i_14_n_0 ),
-        .I1(\pixel_out[10]_i_15_n_0 ),
+       (.I0(\pixel_out[10]_i_8_n_0 ),
+        .I1(\pixel_out[10]_i_9_n_0 ),
         .I2(pixel_out1_carry_n_5),
-        .I3(\pixel_out[10]_i_13_n_0 ),
+        .I3(\pixel_out[10]_i_7_n_0 ),
         .I4(pixel_out1_carry_n_4),
         .I5(\pixel_out[2]_i_3_n_0 ),
         .O(\pixel_out[2]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[2]_i_3 
@@ -15191,23 +15261,23 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \pixel_out[3]_i_1 
        (.I0(\pixel_out_reg[11]_i_3_n_0 ),
-        .I1(\pixel_out[7]_i_2_n_0 ),
-        .I2(pixel_out1_carry_n_7),
+        .I1(\pixel_out[3]_i_2_n_0 ),
+        .I2(i_reg[0]),
         .I3(\pixel_out_reg[11]_i_5_n_0 ),
         .I4(pixel_out1_carry_n_6),
-        .I5(\pixel_out[3]_i_2_n_0 ),
+        .I5(\pixel_out[7]_i_2_n_0 ),
         .O(\pixel_out[3]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \pixel_out[3]_i_2 
-       (.I0(\pixel_out[11]_i_14_n_0 ),
-        .I1(\pixel_out[11]_i_15_n_0 ),
+       (.I0(\pixel_out[11]_i_8_n_0 ),
+        .I1(\pixel_out[11]_i_9_n_0 ),
         .I2(pixel_out1_carry_n_5),
-        .I3(\pixel_out[11]_i_13_n_0 ),
+        .I3(\pixel_out[11]_i_7_n_0 ),
         .I4(pixel_out1_carry_n_4),
         .I5(\pixel_out[3]_i_3_n_0 ),
         .O(\pixel_out[3]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[3]_i_3 
@@ -15220,24 +15290,24 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \pixel_out[4]_i_1 
-       (.I0(\pixel_out[8]_i_4_n_0 ),
-        .I1(\pixel_out_reg[8]_i_5_n_0 ),
-        .I2(pixel_out1_carry_n_7),
-        .I3(\pixel_out_reg[8]_i_3_n_0 ),
+       (.I0(\pixel_out_reg[8]_i_5_n_0 ),
+        .I1(\pixel_out[4]_i_2_n_0 ),
+        .I2(i_reg[0]),
+        .I3(\pixel_out[8]_i_2_n_0 ),
         .I4(pixel_out1_carry_n_6),
-        .I5(\pixel_out[4]_i_2_n_0 ),
+        .I5(\pixel_out_reg[8]_i_3_n_0 ),
         .O(\pixel_out[4]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \pixel_out[4]_i_2 
-       (.I0(\pixel_out[8]_i_8_n_0 ),
-        .I1(\pixel_out[8]_i_9_n_0 ),
+       (.I0(\pixel_out[8]_i_14_n_0 ),
+        .I1(\pixel_out[8]_i_15_n_0 ),
         .I2(pixel_out1_carry_n_5),
-        .I3(\pixel_out[8]_i_7_n_0 ),
+        .I3(\pixel_out[8]_i_13_n_0 ),
         .I4(pixel_out1_carry_n_4),
         .I5(\pixel_out[4]_i_3_n_0 ),
         .O(\pixel_out[4]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[4]_i_3 
@@ -15250,24 +15320,24 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \pixel_out[5]_i_1 
-       (.I0(\pixel_out[9]_i_4_n_0 ),
-        .I1(\pixel_out_reg[9]_i_5_n_0 ),
-        .I2(pixel_out1_carry_n_7),
-        .I3(\pixel_out_reg[9]_i_3_n_0 ),
+       (.I0(\pixel_out_reg[9]_i_5_n_0 ),
+        .I1(\pixel_out[5]_i_2_n_0 ),
+        .I2(i_reg[0]),
+        .I3(\pixel_out[9]_i_2_n_0 ),
         .I4(pixel_out1_carry_n_6),
-        .I5(\pixel_out[5]_i_2_n_0 ),
+        .I5(\pixel_out_reg[9]_i_3_n_0 ),
         .O(\pixel_out[5]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \pixel_out[5]_i_2 
-       (.I0(\pixel_out[9]_i_8_n_0 ),
-        .I1(\pixel_out[9]_i_9_n_0 ),
+       (.I0(\pixel_out[9]_i_14_n_0 ),
+        .I1(\pixel_out[9]_i_15_n_0 ),
         .I2(pixel_out1_carry_n_5),
-        .I3(\pixel_out[9]_i_7_n_0 ),
+        .I3(\pixel_out[9]_i_13_n_0 ),
         .I4(pixel_out1_carry_n_4),
         .I5(\pixel_out[5]_i_3_n_0 ),
         .O(\pixel_out[5]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[5]_i_3 
@@ -15280,20 +15350,20 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \pixel_out[6]_i_1 
-       (.I0(\pixel_out[10]_i_4_n_0 ),
-        .I1(\pixel_out_reg[10]_i_5_n_0 ),
-        .I2(pixel_out1_carry_n_7),
-        .I3(\pixel_out_reg[10]_i_3_n_0 ),
+       (.I0(\pixel_out_reg[10]_i_5_n_0 ),
+        .I1(\pixel_out[6]_i_2_n_0 ),
+        .I2(i_reg[0]),
+        .I3(\pixel_out[10]_i_2_n_0 ),
         .I4(pixel_out1_carry_n_6),
-        .I5(\pixel_out[6]_i_2_n_0 ),
+        .I5(\pixel_out_reg[10]_i_3_n_0 ),
         .O(\pixel_out[6]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \pixel_out[6]_i_2 
-       (.I0(\pixel_out[10]_i_8_n_0 ),
-        .I1(\pixel_out[10]_i_9_n_0 ),
+       (.I0(\pixel_out[10]_i_14_n_0 ),
+        .I1(\pixel_out[10]_i_15_n_0 ),
         .I2(pixel_out1_carry_n_5),
-        .I3(\pixel_out[10]_i_7_n_0 ),
+        .I3(\pixel_out[10]_i_13_n_0 ),
         .I4(pixel_out1_carry_n_4),
         .I5(\pixel_out[6]_i_3_n_0 ),
         .O(\pixel_out[6]_i_2_n_0 ));
@@ -15310,24 +15380,24 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \pixel_out[7]_i_1 
-       (.I0(\pixel_out[11]_i_4_n_0 ),
-        .I1(\pixel_out_reg[11]_i_5_n_0 ),
-        .I2(pixel_out1_carry_n_7),
-        .I3(\pixel_out_reg[11]_i_3_n_0 ),
+       (.I0(\pixel_out_reg[11]_i_5_n_0 ),
+        .I1(\pixel_out[7]_i_2_n_0 ),
+        .I2(i_reg[0]),
+        .I3(\pixel_out[11]_i_2_n_0 ),
         .I4(pixel_out1_carry_n_6),
-        .I5(\pixel_out[7]_i_2_n_0 ),
+        .I5(\pixel_out_reg[11]_i_3_n_0 ),
         .O(\pixel_out[7]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \pixel_out[7]_i_2 
-       (.I0(\pixel_out[11]_i_8_n_0 ),
-        .I1(\pixel_out[11]_i_9_n_0 ),
+       (.I0(\pixel_out[11]_i_14_n_0 ),
+        .I1(\pixel_out[11]_i_15_n_0 ),
         .I2(pixel_out1_carry_n_5),
-        .I3(\pixel_out[11]_i_7_n_0 ),
+        .I3(\pixel_out[11]_i_13_n_0 ),
         .I4(pixel_out1_carry_n_4),
         .I5(\pixel_out[7]_i_3_n_0 ),
         .O(\pixel_out[7]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[7]_i_3 
@@ -15342,63 +15412,63 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     \pixel_out[8]_i_1 
        (.I0(\pixel_out[8]_i_2_n_0 ),
         .I1(\pixel_out_reg[8]_i_3_n_0 ),
-        .I2(pixel_out1_carry_n_7),
+        .I2(i_reg[0]),
         .I3(\pixel_out[8]_i_4_n_0 ),
         .I4(pixel_out1_carry_n_6),
         .I5(\pixel_out_reg[8]_i_5_n_0 ),
         .O(\pixel_out[8]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \pixel_out[8]_i_12 
-       (.I0(filtered_pixel_out[128]),
+       (.I0(filtered_pixel_out[132]),
         .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[64]),
+        .I2(filtered_pixel_out[68]),
         .O(\pixel_out[8]_i_12_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[8]_i_13 
-       (.I0(filtered_pixel_out[96]),
+       (.I0(filtered_pixel_out[100]),
         .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[160]),
+        .I2(filtered_pixel_out[164]),
         .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[32]),
+        .I4(filtered_pixel_out[36]),
         .O(\pixel_out[8]_i_13_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[8]_i_14 
-       (.I0(filtered_pixel_out[112]),
+       (.I0(filtered_pixel_out[116]),
         .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[176]),
+        .I2(filtered_pixel_out[180]),
         .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[48]),
+        .I4(filtered_pixel_out[52]),
         .O(\pixel_out[8]_i_14_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[8]_i_15 
-       (.I0(filtered_pixel_out[80]),
+       (.I0(filtered_pixel_out[84]),
         .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[144]),
+        .I2(filtered_pixel_out[148]),
         .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[16]),
+        .I4(filtered_pixel_out[20]),
         .O(\pixel_out[8]_i_15_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[8]_i_18 
-       (.I0(filtered_pixel_out[76]),
+       (.I0(filtered_pixel_out[72]),
         .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[140]),
+        .I2(filtered_pixel_out[136]),
         .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[12]),
+        .I4(filtered_pixel_out[8]),
         .O(\pixel_out[8]_i_18_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[8]_i_19 
-       (.I0(filtered_pixel_out[108]),
+       (.I0(filtered_pixel_out[104]),
         .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[172]),
+        .I2(filtered_pixel_out[168]),
         .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[44]),
+        .I4(filtered_pixel_out[40]),
         .O(\pixel_out[8]_i_19_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -15413,56 +15483,56 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[8]_i_20 
-       (.I0(filtered_pixel_out[92]),
-        .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[156]),
-        .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[28]),
-        .O(\pixel_out[8]_i_20_n_0 ));
-  LUT5 #(
-    .INIT(32'hB8BBB888)) 
-    \pixel_out[8]_i_21 
-       (.I0(filtered_pixel_out[124]),
-        .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[188]),
-        .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[60]),
-        .O(\pixel_out[8]_i_21_n_0 ));
-  LUT5 #(
-    .INIT(32'hB8BBB888)) 
-    \pixel_out[8]_i_22 
-       (.I0(filtered_pixel_out[72]),
-        .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[136]),
-        .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[8]),
-        .O(\pixel_out[8]_i_22_n_0 ));
-  LUT5 #(
-    .INIT(32'hB8BBB888)) 
-    \pixel_out[8]_i_23 
-       (.I0(filtered_pixel_out[104]),
-        .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[168]),
-        .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[40]),
-        .O(\pixel_out[8]_i_23_n_0 ));
-  LUT5 #(
-    .INIT(32'hB8BBB888)) 
-    \pixel_out[8]_i_24 
        (.I0(filtered_pixel_out[88]),
         .I1(pixel_out1_carry__0_n_7),
         .I2(filtered_pixel_out[152]),
         .I3(pixel_out1_carry__0_n_6),
         .I4(filtered_pixel_out[24]),
-        .O(\pixel_out[8]_i_24_n_0 ));
+        .O(\pixel_out[8]_i_20_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
-    \pixel_out[8]_i_25 
+    \pixel_out[8]_i_21 
        (.I0(filtered_pixel_out[120]),
         .I1(pixel_out1_carry__0_n_7),
         .I2(filtered_pixel_out[184]),
         .I3(pixel_out1_carry__0_n_6),
         .I4(filtered_pixel_out[56]),
+        .O(\pixel_out[8]_i_21_n_0 ));
+  LUT5 #(
+    .INIT(32'hB8BBB888)) 
+    \pixel_out[8]_i_22 
+       (.I0(filtered_pixel_out[76]),
+        .I1(pixel_out1_carry__0_n_7),
+        .I2(filtered_pixel_out[140]),
+        .I3(pixel_out1_carry__0_n_6),
+        .I4(filtered_pixel_out[12]),
+        .O(\pixel_out[8]_i_22_n_0 ));
+  LUT5 #(
+    .INIT(32'hB8BBB888)) 
+    \pixel_out[8]_i_23 
+       (.I0(filtered_pixel_out[108]),
+        .I1(pixel_out1_carry__0_n_7),
+        .I2(filtered_pixel_out[172]),
+        .I3(pixel_out1_carry__0_n_6),
+        .I4(filtered_pixel_out[44]),
+        .O(\pixel_out[8]_i_23_n_0 ));
+  LUT5 #(
+    .INIT(32'hB8BBB888)) 
+    \pixel_out[8]_i_24 
+       (.I0(filtered_pixel_out[92]),
+        .I1(pixel_out1_carry__0_n_7),
+        .I2(filtered_pixel_out[156]),
+        .I3(pixel_out1_carry__0_n_6),
+        .I4(filtered_pixel_out[28]),
+        .O(\pixel_out[8]_i_24_n_0 ));
+  LUT5 #(
+    .INIT(32'hB8BBB888)) 
+    \pixel_out[8]_i_25 
+       (.I0(filtered_pixel_out[124]),
+        .I1(pixel_out1_carry__0_n_7),
+        .I2(filtered_pixel_out[188]),
+        .I3(pixel_out1_carry__0_n_6),
+        .I4(filtered_pixel_out[60]),
         .O(\pixel_out[8]_i_25_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -15474,103 +15544,103 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
         .I4(pixel_out1_carry_n_4),
         .I5(\pixel_out[8]_i_15_n_0 ),
         .O(\pixel_out[8]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \pixel_out[8]_i_6 
-       (.I0(filtered_pixel_out[132]),
+       (.I0(filtered_pixel_out[128]),
         .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[68]),
+        .I2(filtered_pixel_out[64]),
         .O(\pixel_out[8]_i_6_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[8]_i_7 
-       (.I0(filtered_pixel_out[100]),
+       (.I0(filtered_pixel_out[96]),
         .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[164]),
+        .I2(filtered_pixel_out[160]),
         .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[36]),
+        .I4(filtered_pixel_out[32]),
         .O(\pixel_out[8]_i_7_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[8]_i_8 
-       (.I0(filtered_pixel_out[116]),
+       (.I0(filtered_pixel_out[112]),
         .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[180]),
+        .I2(filtered_pixel_out[176]),
         .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[52]),
+        .I4(filtered_pixel_out[48]),
         .O(\pixel_out[8]_i_8_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[8]_i_9 
-       (.I0(filtered_pixel_out[84]),
+       (.I0(filtered_pixel_out[80]),
         .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[148]),
+        .I2(filtered_pixel_out[144]),
         .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[20]),
+        .I4(filtered_pixel_out[16]),
         .O(\pixel_out[8]_i_9_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \pixel_out[9]_i_1 
        (.I0(\pixel_out[9]_i_2_n_0 ),
         .I1(\pixel_out_reg[9]_i_3_n_0 ),
-        .I2(pixel_out1_carry_n_7),
+        .I2(i_reg[0]),
         .I3(\pixel_out[9]_i_4_n_0 ),
         .I4(pixel_out1_carry_n_6),
         .I5(\pixel_out_reg[9]_i_5_n_0 ),
         .O(\pixel_out[9]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \pixel_out[9]_i_12 
-       (.I0(filtered_pixel_out[129]),
+       (.I0(filtered_pixel_out[133]),
         .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[65]),
+        .I2(filtered_pixel_out[69]),
         .O(\pixel_out[9]_i_12_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[9]_i_13 
-       (.I0(filtered_pixel_out[97]),
+       (.I0(filtered_pixel_out[101]),
         .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[161]),
+        .I2(filtered_pixel_out[165]),
         .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[33]),
+        .I4(filtered_pixel_out[37]),
         .O(\pixel_out[9]_i_13_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[9]_i_14 
-       (.I0(filtered_pixel_out[113]),
+       (.I0(filtered_pixel_out[117]),
         .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[177]),
+        .I2(filtered_pixel_out[181]),
         .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[49]),
+        .I4(filtered_pixel_out[53]),
         .O(\pixel_out[9]_i_14_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[9]_i_15 
-       (.I0(filtered_pixel_out[81]),
+       (.I0(filtered_pixel_out[85]),
         .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[145]),
+        .I2(filtered_pixel_out[149]),
         .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[17]),
+        .I4(filtered_pixel_out[21]),
         .O(\pixel_out[9]_i_15_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[9]_i_18 
-       (.I0(filtered_pixel_out[77]),
+       (.I0(filtered_pixel_out[73]),
         .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[141]),
+        .I2(filtered_pixel_out[137]),
         .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[13]),
+        .I4(filtered_pixel_out[9]),
         .O(\pixel_out[9]_i_18_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[9]_i_19 
-       (.I0(filtered_pixel_out[109]),
+       (.I0(filtered_pixel_out[105]),
         .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[173]),
+        .I2(filtered_pixel_out[169]),
         .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[45]),
+        .I4(filtered_pixel_out[41]),
         .O(\pixel_out[9]_i_19_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -15585,56 +15655,56 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[9]_i_20 
-       (.I0(filtered_pixel_out[93]),
-        .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[157]),
-        .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[29]),
-        .O(\pixel_out[9]_i_20_n_0 ));
-  LUT5 #(
-    .INIT(32'hB8BBB888)) 
-    \pixel_out[9]_i_21 
-       (.I0(filtered_pixel_out[125]),
-        .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[189]),
-        .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[61]),
-        .O(\pixel_out[9]_i_21_n_0 ));
-  LUT5 #(
-    .INIT(32'hB8BBB888)) 
-    \pixel_out[9]_i_22 
-       (.I0(filtered_pixel_out[73]),
-        .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[137]),
-        .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[9]),
-        .O(\pixel_out[9]_i_22_n_0 ));
-  LUT5 #(
-    .INIT(32'hB8BBB888)) 
-    \pixel_out[9]_i_23 
-       (.I0(filtered_pixel_out[105]),
-        .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[169]),
-        .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[41]),
-        .O(\pixel_out[9]_i_23_n_0 ));
-  LUT5 #(
-    .INIT(32'hB8BBB888)) 
-    \pixel_out[9]_i_24 
        (.I0(filtered_pixel_out[89]),
         .I1(pixel_out1_carry__0_n_7),
         .I2(filtered_pixel_out[153]),
         .I3(pixel_out1_carry__0_n_6),
         .I4(filtered_pixel_out[25]),
-        .O(\pixel_out[9]_i_24_n_0 ));
+        .O(\pixel_out[9]_i_20_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
-    \pixel_out[9]_i_25 
+    \pixel_out[9]_i_21 
        (.I0(filtered_pixel_out[121]),
         .I1(pixel_out1_carry__0_n_7),
         .I2(filtered_pixel_out[185]),
         .I3(pixel_out1_carry__0_n_6),
         .I4(filtered_pixel_out[57]),
+        .O(\pixel_out[9]_i_21_n_0 ));
+  LUT5 #(
+    .INIT(32'hB8BBB888)) 
+    \pixel_out[9]_i_22 
+       (.I0(filtered_pixel_out[77]),
+        .I1(pixel_out1_carry__0_n_7),
+        .I2(filtered_pixel_out[141]),
+        .I3(pixel_out1_carry__0_n_6),
+        .I4(filtered_pixel_out[13]),
+        .O(\pixel_out[9]_i_22_n_0 ));
+  LUT5 #(
+    .INIT(32'hB8BBB888)) 
+    \pixel_out[9]_i_23 
+       (.I0(filtered_pixel_out[109]),
+        .I1(pixel_out1_carry__0_n_7),
+        .I2(filtered_pixel_out[173]),
+        .I3(pixel_out1_carry__0_n_6),
+        .I4(filtered_pixel_out[45]),
+        .O(\pixel_out[9]_i_23_n_0 ));
+  LUT5 #(
+    .INIT(32'hB8BBB888)) 
+    \pixel_out[9]_i_24 
+       (.I0(filtered_pixel_out[93]),
+        .I1(pixel_out1_carry__0_n_7),
+        .I2(filtered_pixel_out[157]),
+        .I3(pixel_out1_carry__0_n_6),
+        .I4(filtered_pixel_out[29]),
+        .O(\pixel_out[9]_i_24_n_0 ));
+  LUT5 #(
+    .INIT(32'hB8BBB888)) 
+    \pixel_out[9]_i_25 
+       (.I0(filtered_pixel_out[125]),
+        .I1(pixel_out1_carry__0_n_7),
+        .I2(filtered_pixel_out[189]),
+        .I3(pixel_out1_carry__0_n_6),
+        .I4(filtered_pixel_out[61]),
         .O(\pixel_out[9]_i_25_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -15646,50 +15716,50 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
         .I4(pixel_out1_carry_n_4),
         .I5(\pixel_out[9]_i_15_n_0 ),
         .O(\pixel_out[9]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \pixel_out[9]_i_6 
-       (.I0(filtered_pixel_out[133]),
+       (.I0(filtered_pixel_out[129]),
         .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[69]),
+        .I2(filtered_pixel_out[65]),
         .O(\pixel_out[9]_i_6_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[9]_i_7 
-       (.I0(filtered_pixel_out[101]),
+       (.I0(filtered_pixel_out[97]),
         .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[165]),
+        .I2(filtered_pixel_out[161]),
         .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[37]),
+        .I4(filtered_pixel_out[33]),
         .O(\pixel_out[9]_i_7_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[9]_i_8 
-       (.I0(filtered_pixel_out[117]),
+       (.I0(filtered_pixel_out[113]),
         .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[181]),
+        .I2(filtered_pixel_out[177]),
         .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[53]),
+        .I4(filtered_pixel_out[49]),
         .O(\pixel_out[9]_i_8_n_0 ));
   LUT5 #(
     .INIT(32'hB8BBB888)) 
     \pixel_out[9]_i_9 
-       (.I0(filtered_pixel_out[85]),
+       (.I0(filtered_pixel_out[81]),
         .I1(pixel_out1_carry__0_n_7),
-        .I2(filtered_pixel_out[149]),
+        .I2(filtered_pixel_out[145]),
         .I3(pixel_out1_carry__0_n_6),
-        .I4(filtered_pixel_out[21]),
+        .I4(filtered_pixel_out[17]),
         .O(\pixel_out[9]_i_9_n_0 ));
   FDRE \pixel_out_reg[0] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\pixel_out[0]_i_1_n_0 ),
         .Q(pixel_out[0]),
         .R(1'b0));
   FDRE \pixel_out_reg[10] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\pixel_out[10]_i_1_n_0 ),
         .Q(pixel_out[10]),
         .R(1'b0));
@@ -15725,7 +15795,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
         .S(pixel_out1_carry_n_5));
   FDRE \pixel_out_reg[11] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\pixel_out[11]_i_1_n_0 ),
         .Q(pixel_out[11]),
         .R(1'b0));
@@ -15761,49 +15831,49 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
         .S(pixel_out1_carry_n_5));
   FDRE \pixel_out_reg[1] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\pixel_out[1]_i_1_n_0 ),
         .Q(pixel_out[1]),
         .R(1'b0));
   FDRE \pixel_out_reg[2] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\pixel_out[2]_i_1_n_0 ),
         .Q(pixel_out[2]),
         .R(1'b0));
   FDRE \pixel_out_reg[3] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\pixel_out[3]_i_1_n_0 ),
         .Q(pixel_out[3]),
         .R(1'b0));
   FDRE \pixel_out_reg[4] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\pixel_out[4]_i_1_n_0 ),
         .Q(pixel_out[4]),
         .R(1'b0));
   FDRE \pixel_out_reg[5] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\pixel_out[5]_i_1_n_0 ),
         .Q(pixel_out[5]),
         .R(1'b0));
   FDRE \pixel_out_reg[6] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\pixel_out[6]_i_1_n_0 ),
         .Q(pixel_out[6]),
         .R(1'b0));
   FDRE \pixel_out_reg[7] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\pixel_out[7]_i_1_n_0 ),
         .Q(pixel_out[7]),
         .R(1'b0));
   FDRE \pixel_out_reg[8] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\pixel_out[8]_i_1_n_0 ),
         .Q(pixel_out[8]),
         .R(1'b0));
@@ -15839,7 +15909,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
         .S(pixel_out1_carry_n_5));
   FDRE \pixel_out_reg[9] 
        (.C(clk_in1),
-        .CE(wr_en_sig_d),
+        .CE(wr_en_sig),
         .D(\pixel_out[9]_i_1_n_0 ),
         .Q(pixel_out[9]),
         .R(1'b0));
@@ -15876,7 +15946,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   LUT6 #(
     .INIT(64'h0000000000008000)) 
     \v_block[31]__0_i_1 
-       (.I0(wr_en_sig_d),
+       (.I0(wr_en_sig),
         .I1(address_read_sig_reg_i_36_n_0),
         .I2(address_read_sig_reg_i_38_n_0),
         .I3(address_read_sig_reg_i_37_n_0),
@@ -15902,7 +15972,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   LUT4 #(
     .INIT(16'h8000)) 
     \v_block[31]__0_i_2 
-       (.I0(wr_en_sig_d),
+       (.I0(wr_en_sig),
         .I1(address_read_sig_reg_i_36_n_0),
         .I2(address_read_sig_reg_i_38_n_0),
         .I3(address_read_sig_reg_i_37_n_0),
@@ -15964,7 +16034,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   LUT6 #(
     .INIT(64'h0000000000008000)) 
     \v_block[31]_i_1 
-       (.I0(wr_en_sig_d),
+       (.I0(write_enable),
         .I1(address_write_sig_reg_i_39_n_0),
         .I2(address_write_sig_reg_i_41_n_0),
         .I3(address_write_sig_reg_i_40_n_0),
@@ -15991,7 +16061,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   LUT4 #(
     .INIT(16'h8000)) 
     \v_block[31]_i_2 
-       (.I0(wr_en_sig_d),
+       (.I0(write_enable),
         .I1(address_write_sig_reg_i_39_n_0),
         .I2(address_write_sig_reg_i_41_n_0),
         .I3(address_write_sig_reg_i_40_n_0),
@@ -16061,7 +16131,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \v_block_reg[0]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\v_block[31]__0_i_2_n_0 ),
         .D(\v_block_reg[3]__0_i_1_n_7 ),
         .Q(\v_block_reg[0]__0_n_0 ),
@@ -16077,7 +16147,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \v_block_reg[10]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\v_block[31]__0_i_2_n_0 ),
         .D(\v_block_reg[11]__0_i_1_n_5 ),
         .Q(\v_block_reg[10]__0_n_0 ),
@@ -16093,7 +16163,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \v_block_reg[11]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\v_block[31]__0_i_2_n_0 ),
         .D(\v_block_reg[11]__0_i_1_n_4 ),
         .Q(\v_block_reg[11]__0_n_0 ),
@@ -16116,7 +16186,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \v_block_reg[12]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\v_block[31]__0_i_2_n_0 ),
         .D(\v_block_reg[15]__0_i_1_n_7 ),
         .Q(\v_block_reg[12]__0_n_0 ),
@@ -16139,7 +16209,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \v_block_reg[13]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\v_block[31]__0_i_2_n_0 ),
         .D(\v_block_reg[15]__0_i_1_n_6 ),
         .Q(\v_block_reg[13]__0_n_0 ),
@@ -16155,7 +16225,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \v_block_reg[14]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\v_block[31]__0_i_2_n_0 ),
         .D(\v_block_reg[15]__0_i_1_n_5 ),
         .Q(\v_block_reg[14]__0_n_0 ),
@@ -16171,7 +16241,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \v_block_reg[15]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\v_block[31]__0_i_2_n_0 ),
         .D(\v_block_reg[15]__0_i_1_n_4 ),
         .Q(\v_block_reg[15]__0_n_0 ),
@@ -16194,7 +16264,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \v_block_reg[16]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\v_block[31]__0_i_2_n_0 ),
         .D(\v_block_reg[19]__0_i_1_n_7 ),
         .Q(\v_block_reg[16]__0_n_0 ),
@@ -16217,7 +16287,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \v_block_reg[17]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\v_block[31]__0_i_2_n_0 ),
         .D(\v_block_reg[19]__0_i_1_n_6 ),
         .Q(\v_block_reg[17]__0_n_0 ),
@@ -16233,7 +16303,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \v_block_reg[18]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\v_block[31]__0_i_2_n_0 ),
         .D(\v_block_reg[19]__0_i_1_n_5 ),
         .Q(\v_block_reg[18]__0_n_0 ),
@@ -16249,7 +16319,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \v_block_reg[19]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\v_block[31]__0_i_2_n_0 ),
         .D(\v_block_reg[19]__0_i_1_n_4 ),
         .Q(\v_block_reg[19]__0_n_0 ),
@@ -16272,7 +16342,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \v_block_reg[1]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\v_block[31]__0_i_2_n_0 ),
         .D(\v_block_reg[3]__0_i_1_n_6 ),
         .Q(\v_block_reg[1]__0_n_0 ),
@@ -16288,7 +16358,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \v_block_reg[20]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\v_block[31]__0_i_2_n_0 ),
         .D(\v_block_reg[23]__0_i_1_n_7 ),
         .Q(\v_block_reg[20]__0_n_0 ),
@@ -16311,7 +16381,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \v_block_reg[21]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\v_block[31]__0_i_2_n_0 ),
         .D(\v_block_reg[23]__0_i_1_n_6 ),
         .Q(\v_block_reg[21]__0_n_0 ),
@@ -16327,7 +16397,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \v_block_reg[22]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\v_block[31]__0_i_2_n_0 ),
         .D(\v_block_reg[23]__0_i_1_n_5 ),
         .Q(\v_block_reg[22]__0_n_0 ),
@@ -16343,7 +16413,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \v_block_reg[23]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\v_block[31]__0_i_2_n_0 ),
         .D(\v_block_reg[23]__0_i_1_n_4 ),
         .Q(\v_block_reg[23]__0_n_0 ),
@@ -16366,7 +16436,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \v_block_reg[24]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\v_block[31]__0_i_2_n_0 ),
         .D(\v_block_reg[27]__0_i_1_n_7 ),
         .Q(\v_block_reg[24]__0_n_0 ),
@@ -16389,7 +16459,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \v_block_reg[25]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\v_block[31]__0_i_2_n_0 ),
         .D(\v_block_reg[27]__0_i_1_n_6 ),
         .Q(\v_block_reg[25]__0_n_0 ),
@@ -16405,7 +16475,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \v_block_reg[26]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\v_block[31]__0_i_2_n_0 ),
         .D(\v_block_reg[27]__0_i_1_n_5 ),
         .Q(\v_block_reg[26]__0_n_0 ),
@@ -16421,7 +16491,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \v_block_reg[27]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\v_block[31]__0_i_2_n_0 ),
         .D(\v_block_reg[27]__0_i_1_n_4 ),
         .Q(\v_block_reg[27]__0_n_0 ),
@@ -16444,7 +16514,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \v_block_reg[28]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\v_block[31]__0_i_2_n_0 ),
         .D(\v_block_reg[31]__0_i_3_n_7 ),
         .Q(\v_block_reg[28]__0_n_0 ),
@@ -16467,7 +16537,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \v_block_reg[29]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\v_block[31]__0_i_2_n_0 ),
         .D(\v_block_reg[31]__0_i_3_n_6 ),
         .Q(\v_block_reg[29]__0_n_0 ),
@@ -16483,7 +16553,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \v_block_reg[2]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\v_block[31]__0_i_2_n_0 ),
         .D(\v_block_reg[3]__0_i_1_n_5 ),
         .Q(\v_block_reg[2]__0_n_0 ),
@@ -16499,7 +16569,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \v_block_reg[30]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\v_block[31]__0_i_2_n_0 ),
         .D(\v_block_reg[31]__0_i_3_n_5 ),
         .Q(\v_block_reg[30]__0_n_0 ),
@@ -16515,7 +16585,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \v_block_reg[31]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\v_block[31]__0_i_2_n_0 ),
         .D(\v_block_reg[31]__0_i_3_n_4 ),
         .Q(\v_block_reg[31]__0_n_0 ),
@@ -16545,7 +16615,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \v_block_reg[3]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\v_block[31]__0_i_2_n_0 ),
         .D(\v_block_reg[3]__0_i_1_n_4 ),
         .Q(\v_block_reg[3]__0_n_0 ),
@@ -16568,7 +16638,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \v_block_reg[4]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\v_block[31]__0_i_2_n_0 ),
         .D(\v_block_reg[7]__0_i_1_n_7 ),
         .Q(\v_block_reg[4]__0_n_0 ),
@@ -16591,7 +16661,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \v_block_reg[5]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\v_block[31]__0_i_2_n_0 ),
         .D(\v_block_reg[7]__0_i_1_n_6 ),
         .Q(\v_block_reg[5]__0_n_0 ),
@@ -16607,7 +16677,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \v_block_reg[6]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\v_block[31]__0_i_2_n_0 ),
         .D(\v_block_reg[7]__0_i_1_n_5 ),
         .Q(\v_block_reg[6]__0_n_0 ),
@@ -16623,7 +16693,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \v_block_reg[7]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\v_block[31]__0_i_2_n_0 ),
         .D(\v_block_reg[7]__0_i_1_n_4 ),
         .Q(\v_block_reg[7]__0_n_0 ),
@@ -16646,7 +16716,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \v_block_reg[8]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\v_block[31]__0_i_2_n_0 ),
         .D(\v_block_reg[11]__0_i_1_n_7 ),
         .Q(\v_block_reg[8]__0_n_0 ),
@@ -16669,7 +16739,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
   FDRE #(
     .INIT(1'b0)) 
     \v_block_reg[9]__0 
-       (.C(clk_in1),
+       (.C(clk_vga),
         .CE(\v_block[31]__0_i_2_n_0 ),
         .D(\v_block_reg[11]__0_i_1_n_6 ),
         .Q(\v_block_reg[9]__0_n_0 ),
@@ -16679,8 +16749,8 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
     wr_en_sig_d_reg
        (.C(clk_interpolation),
         .CE(1'b1),
-        .D(write_enable),
-        .Q(wr_en_sig_d),
+        .D(wr_en_sig),
+        .Q(write_enable),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
@@ -16688,7 +16758,36 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BILINEAR_INTERPOLATION_TOP
        (.C(clk_interpolation),
         .CE(1'b1),
         .D(1'b1),
-        .Q(write_enable),
+        .Q(wr_en_sig),
+        .R(1'b0));
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  LUT1 #(
+    .INIT(2'h1)) 
+    \write_state[0]_i_1 
+       (.I0(write_state[0]),
+        .O(plusOp[0]));
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  LUT2 #(
+    .INIT(4'h6)) 
+    \write_state[1]_i_1 
+       (.I0(write_state[0]),
+        .I1(write_state[1]),
+        .O(plusOp[1]));
+  FDRE #(
+    .INIT(1'b0)) 
+    \write_state_reg[0] 
+       (.C(clk_vga),
+        .CE(1'b1),
+        .D(plusOp[0]),
+        .Q(write_state[0]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \write_state_reg[1] 
+       (.C(clk_vga),
+        .CE(1'b1),
+        .D(plusOp[1]),
+        .Q(write_state[1]),
         .R(1'b0));
 endmodule
 

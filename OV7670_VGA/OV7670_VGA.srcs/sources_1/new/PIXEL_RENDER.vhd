@@ -11,7 +11,6 @@ entity pixel_render is
         blank        : in  std_logic;
         zoom_x2      : in  STD_LOGIC;
         frame_fix    : in  STD_LOGIC_VECTOR (11 downto 0);
-        bili_cntl    : in  STD_LOGIC;
         fr_address   : out std_logic_vector(18 downto 0);
         vga_red      : out std_logic_vector(3 downto 0);
         vga_blue     : out std_logic_vector(3 downto 0);
@@ -52,6 +51,7 @@ begin
                     elsif h_cnt(0) = '0' then
                         val_tmp <= val_tmp + 1;
                     end if;
+
                     val_zoom <= val_zoom + 1;
                 end if;
             end if;
@@ -66,9 +66,9 @@ begin
                 fr_addr <= (others => '0');
             else
                 if h_cnt < CAMERA_WIDTH then
-                    if zoom_x2 = '0' then -- without zoom
+                    if zoom_x2 = '0' then
                         fr_addr <= fr_addr + 1;
-                    elsif bili_cntl = '0' then -- with zoom switch + no bili filter switch
+                    else
                         fr_addr <= val_zoom - val_tmp;
                     end if;
                 end if;

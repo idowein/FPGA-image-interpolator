@@ -1,7 +1,7 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
--- Date        : Wed May  7 12:35:03 2025
+-- Date        : Thu May  8 16:46:12 2025
 -- Host        : Ido running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0_1/design_1_clk_wiz_0_0_sim_netlist.vhdl
@@ -17,10 +17,9 @@ use UNISIM.VCOMPONENTS.ALL;
 entity design_1_clk_wiz_0_0_design_1_clk_wiz_0_0_clk_wiz is
   port (
     clk_vga : out STD_LOGIC;
-    clk_reg : out STD_LOGIC;
     clk_interpolation : out STD_LOGIC;
+    clk_bili_wr : out STD_LOGIC;
     resetn : in STD_LOGIC;
-    locked : out STD_LOGIC;
     clk_in1 : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
@@ -28,9 +27,9 @@ entity design_1_clk_wiz_0_0_design_1_clk_wiz_0_0_clk_wiz is
 end design_1_clk_wiz_0_0_design_1_clk_wiz_0_0_clk_wiz;
 
 architecture STRUCTURE of design_1_clk_wiz_0_0_design_1_clk_wiz_0_0_clk_wiz is
+  signal clk_bili_wr_design_1_clk_wiz_0_0 : STD_LOGIC;
   signal clk_in1_design_1_clk_wiz_0_0 : STD_LOGIC;
   signal clk_interpolation_design_1_clk_wiz_0_0 : STD_LOGIC;
-  signal clk_reg_design_1_clk_wiz_0_0 : STD_LOGIC;
   signal clk_vga_design_1_clk_wiz_0_0 : STD_LOGIC;
   signal clkfbout_buf_design_1_clk_wiz_0_0 : STD_LOGIC;
   signal clkfbout_design_1_clk_wiz_0_0 : STD_LOGIC;
@@ -47,6 +46,7 @@ architecture STRUCTURE of design_1_clk_wiz_0_0_design_1_clk_wiz_0_0_clk_wiz is
   signal NLW_mmcm_adv_inst_CLKOUT5_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKOUT6_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_DRDY_UNCONNECTED : STD_LOGIC;
+  signal NLW_mmcm_adv_inst_LOCKED_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_PSDONE_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_DO_UNCONNECTED : STD_LOGIC_VECTOR ( 15 downto 0 );
   attribute BOX_TYPE : string;
@@ -83,13 +83,13 @@ clkout1_buf: unisim.vcomponents.BUFG
     );
 clkout2_buf: unisim.vcomponents.BUFG
      port map (
-      I => clk_reg_design_1_clk_wiz_0_0,
-      O => clk_reg
+      I => clk_interpolation_design_1_clk_wiz_0_0,
+      O => clk_interpolation
     );
 clkout3_buf: unisim.vcomponents.BUFG
      port map (
-      I => clk_interpolation_design_1_clk_wiz_0_0,
-      O => clk_interpolation
+      I => clk_bili_wr_design_1_clk_wiz_0_0,
+      O => clk_bili_wr
     );
 mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
     generic map(
@@ -99,15 +99,15 @@ mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
       CLKFBOUT_USE_FINE_PS => false,
       CLKIN1_PERIOD => 10.000000,
       CLKIN2_PERIOD => 0.000000,
-      CLKOUT0_DIVIDE_F => 31.750000,
+      CLKOUT0_DIVIDE_F => 32.000000,
       CLKOUT0_DUTY_CYCLE => 0.500000,
       CLKOUT0_PHASE => 0.000000,
       CLKOUT0_USE_FINE_PS => false,
-      CLKOUT1_DIVIDE => 32,
+      CLKOUT1_DIVIDE => 128,
       CLKOUT1_DUTY_CYCLE => 0.500000,
       CLKOUT1_PHASE => 0.000000,
       CLKOUT1_USE_FINE_PS => false,
-      CLKOUT2_DIVIDE => 127,
+      CLKOUT2_DIVIDE => 16,
       CLKOUT2_DUTY_CYCLE => 0.500000,
       CLKOUT2_PHASE => 0.000000,
       CLKOUT2_USE_FINE_PS => false,
@@ -153,9 +153,9 @@ mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
       CLKINSTOPPED => NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED,
       CLKOUT0 => clk_vga_design_1_clk_wiz_0_0,
       CLKOUT0B => NLW_mmcm_adv_inst_CLKOUT0B_UNCONNECTED,
-      CLKOUT1 => clk_reg_design_1_clk_wiz_0_0,
+      CLKOUT1 => clk_interpolation_design_1_clk_wiz_0_0,
       CLKOUT1B => NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED,
-      CLKOUT2 => clk_interpolation_design_1_clk_wiz_0_0,
+      CLKOUT2 => clk_bili_wr_design_1_clk_wiz_0_0,
       CLKOUT2B => NLW_mmcm_adv_inst_CLKOUT2B_UNCONNECTED,
       CLKOUT3 => NLW_mmcm_adv_inst_CLKOUT3_UNCONNECTED,
       CLKOUT3B => NLW_mmcm_adv_inst_CLKOUT3B_UNCONNECTED,
@@ -169,7 +169,7 @@ mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
       DO(15 downto 0) => NLW_mmcm_adv_inst_DO_UNCONNECTED(15 downto 0),
       DRDY => NLW_mmcm_adv_inst_DRDY_UNCONNECTED,
       DWE => '0',
-      LOCKED => locked,
+      LOCKED => NLW_mmcm_adv_inst_LOCKED_UNCONNECTED,
       PSCLK => '0',
       PSDONE => NLW_mmcm_adv_inst_PSDONE_UNCONNECTED,
       PSEN => '0',
@@ -193,10 +193,9 @@ use UNISIM.VCOMPONENTS.ALL;
 entity design_1_clk_wiz_0_0 is
   port (
     clk_vga : out STD_LOGIC;
-    clk_reg : out STD_LOGIC;
     clk_interpolation : out STD_LOGIC;
+    clk_bili_wr : out STD_LOGIC;
     resetn : in STD_LOGIC;
-    locked : out STD_LOGIC;
     clk_in1 : in STD_LOGIC
   );
   attribute NotValidForBitStream : boolean;
@@ -207,11 +206,10 @@ architecture STRUCTURE of design_1_clk_wiz_0_0 is
 begin
 inst: entity work.design_1_clk_wiz_0_0_design_1_clk_wiz_0_0_clk_wiz
      port map (
+      clk_bili_wr => clk_bili_wr,
       clk_in1 => clk_in1,
       clk_interpolation => clk_interpolation,
-      clk_reg => clk_reg,
       clk_vga => clk_vga,
-      locked => locked,
       resetn => resetn
     );
 end STRUCTURE;

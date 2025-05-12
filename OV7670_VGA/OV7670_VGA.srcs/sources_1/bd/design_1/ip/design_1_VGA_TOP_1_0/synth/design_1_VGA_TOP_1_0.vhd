@@ -59,7 +59,6 @@ ENTITY design_1_VGA_TOP_1_0 IS
     cntl : IN STD_LOGIC;
     zoom_x2 : IN STD_LOGIC;
     frame_fix : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
-    bili_cntl : IN STD_LOGIC;
     VGA_H_sync : OUT STD_LOGIC;
     vga_V_sync : OUT STD_LOGIC;
     vga_red : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
@@ -78,7 +77,6 @@ ARCHITECTURE design_1_VGA_TOP_1_0_arch OF design_1_VGA_TOP_1_0 IS
       cntl : IN STD_LOGIC;
       zoom_x2 : IN STD_LOGIC;
       frame_fix : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
-      bili_cntl : IN STD_LOGIC;
       VGA_H_sync : OUT STD_LOGIC;
       vga_V_sync : OUT STD_LOGIC;
       vga_red : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
@@ -97,7 +95,7 @@ ARCHITECTURE design_1_VGA_TOP_1_0_arch OF design_1_VGA_TOP_1_0 IS
   ATTRIBUTE IP_DEFINITION_SOURCE OF design_1_VGA_TOP_1_0_arch: ARCHITECTURE IS "module_ref";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
-  ATTRIBUTE X_INTERFACE_PARAMETER OF pix_clk: SIGNAL IS "XIL_INTERFACENAME pix_clk, FREQ_HZ 25196850, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF pix_clk: SIGNAL IS "XIL_INTERFACENAME pix_clk, FREQ_HZ 25000000, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF pix_clk: SIGNAL IS "xilinx.com:signal:clock:1.0 pix_clk CLK";
 BEGIN
   U0 : VGA_TOP
@@ -106,7 +104,6 @@ BEGIN
       cntl => cntl,
       zoom_x2 => zoom_x2,
       frame_fix => frame_fix,
-      bili_cntl => bili_cntl,
       VGA_H_sync => VGA_H_sync,
       vga_V_sync => vga_V_sync,
       vga_red => vga_red,

@@ -1,7 +1,7 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Wed May  7 12:55:17 2025
+// Date        : Thu May  8 18:38:08 2025
 // Host        : Ido running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_1_ovo_7670_caputre_0_0_stub.v
@@ -16,13 +16,13 @@
 (* x_core_info = "ovo_7670_caputre,Vivado 2019.2" *)
 module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix(pclk, camera_v_sync, camera_h_ref, zoom_x2, din, 
   addr, dout, wr_en)
-/* synthesis syn_black_box black_box_pad_pin="pclk,camera_v_sync,camera_h_ref,zoom_x2,din[7:0],addr[16:0],dout[11:0],wr_en" */;
+/* synthesis syn_black_box black_box_pad_pin="pclk,camera_v_sync,camera_h_ref,zoom_x2,din[7:0],addr[18:0],dout[11:0],wr_en" */;
   input pclk;
   input camera_v_sync;
   input camera_h_ref;
   input zoom_x2;
   input [7:0]din;
-  output [16:0]addr;
+  output [18:0]addr;
   output [11:0]dout;
   output wr_en;
 endmodule

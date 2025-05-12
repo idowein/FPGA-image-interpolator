@@ -48,6 +48,9 @@ set_property IOSTANDARD LVCMOS33 [get_ports vga_V_sync]
 set_property PACKAGE_PIN H17 [get_ports config_finished]
 set_property IOSTANDARD LVCMOS33 [get_ports config_finished]
 
+set_property PACKAGE_PIN T13 [get_ports bili_cntl]
+set_property IOSTANDARD LVCMOS33 [get_ports bili_cntl]
+
 ##SW
 
 set_property IOSTANDARD LVCMOS33 [get_ports resetn]
@@ -61,9 +64,6 @@ set_property IOSTANDARD LVCMOS33 [get_ports resend_in]
 
 set_property PACKAGE_PIN H6 [get_ports zoom_x2]
 set_property IOSTANDARD LVCMOS33 [get_ports zoom_x2]
-
-set_property PACKAGE_PIN T13 [get_ports bili_cntl]
-set_property IOSTANDARD LVCMOS33 [get_ports bili_cntl]
 
 ##Pmod Header JD
 #JD[1]

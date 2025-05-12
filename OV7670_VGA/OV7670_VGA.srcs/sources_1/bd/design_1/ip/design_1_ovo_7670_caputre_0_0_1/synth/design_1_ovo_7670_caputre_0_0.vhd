@@ -60,7 +60,7 @@ ENTITY design_1_ovo_7670_caputre_0_0 IS
     camera_h_ref : IN STD_LOGIC;
     zoom_x2 : IN STD_LOGIC;
     din : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-    addr : OUT STD_LOGIC_VECTOR(16 DOWNTO 0);
+    addr : OUT STD_LOGIC_VECTOR(18 DOWNTO 0);
     dout : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
     wr_en : OUT STD_LOGIC
   );
@@ -76,7 +76,7 @@ ARCHITECTURE design_1_ovo_7670_caputre_0_0_arch OF design_1_ovo_7670_caputre_0_0
       camera_h_ref : IN STD_LOGIC;
       zoom_x2 : IN STD_LOGIC;
       din : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-      addr : OUT STD_LOGIC_VECTOR(16 DOWNTO 0);
+      addr : OUT STD_LOGIC_VECTOR(18 DOWNTO 0);
       dout : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
       wr_en : OUT STD_LOGIC
     );

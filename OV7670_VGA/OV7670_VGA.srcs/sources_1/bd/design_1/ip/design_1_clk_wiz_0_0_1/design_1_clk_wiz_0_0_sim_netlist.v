@@ -1,7 +1,7 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Wed May  7 12:35:03 2025
+// Date        : Thu May  8 16:46:12 2025
 // Host        : Ido running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0_1/design_1_clk_wiz_0_0_sim_netlist.v
@@ -15,60 +15,53 @@
 (* NotValidForBitStream *)
 module design_1_clk_wiz_0_0
    (clk_vga,
-    clk_reg,
     clk_interpolation,
+    clk_bili_wr,
     resetn,
-    locked,
     clk_in1);
   output clk_vga;
-  output clk_reg;
   output clk_interpolation;
+  output clk_bili_wr;
   input resetn;
-  output locked;
   input clk_in1;
 
+  wire clk_bili_wr;
   (* IBUF_LOW_PWR *) wire clk_in1;
   wire clk_interpolation;
-  wire clk_reg;
   wire clk_vga;
-  wire locked;
   wire resetn;
 
   design_1_clk_wiz_0_0_design_1_clk_wiz_0_0_clk_wiz inst
-       (.clk_in1(clk_in1),
+       (.clk_bili_wr(clk_bili_wr),
+        .clk_in1(clk_in1),
         .clk_interpolation(clk_interpolation),
-        .clk_reg(clk_reg),
         .clk_vga(clk_vga),
-        .locked(locked),
         .resetn(resetn));
 endmodule
 
 (* ORIG_REF_NAME = "design_1_clk_wiz_0_0_clk_wiz" *) 
 module design_1_clk_wiz_0_0_design_1_clk_wiz_0_0_clk_wiz
    (clk_vga,
-    clk_reg,
     clk_interpolation,
+    clk_bili_wr,
     resetn,
-    locked,
     clk_in1);
   output clk_vga;
-  output clk_reg;
   output clk_interpolation;
+  output clk_bili_wr;
   input resetn;
-  output locked;
   input clk_in1;
 
+  wire clk_bili_wr;
+  wire clk_bili_wr_design_1_clk_wiz_0_0;
   wire clk_in1;
   wire clk_in1_design_1_clk_wiz_0_0;
   wire clk_interpolation;
   wire clk_interpolation_design_1_clk_wiz_0_0;
-  wire clk_reg;
-  wire clk_reg_design_1_clk_wiz_0_0;
   wire clk_vga;
   wire clk_vga_design_1_clk_wiz_0_0;
   wire clkfbout_buf_design_1_clk_wiz_0_0;
   wire clkfbout_design_1_clk_wiz_0_0;
-  wire locked;
   wire reset_high;
   wire resetn;
   wire NLW_mmcm_adv_inst_CLKFBOUTB_UNCONNECTED;
@@ -83,6 +76,7 @@ module design_1_clk_wiz_0_0_design_1_clk_wiz_0_0_clk_wiz
   wire NLW_mmcm_adv_inst_CLKOUT5_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT6_UNCONNECTED;
   wire NLW_mmcm_adv_inst_DRDY_UNCONNECTED;
+  wire NLW_mmcm_adv_inst_LOCKED_UNCONNECTED;
   wire NLW_mmcm_adv_inst_PSDONE_UNCONNECTED;
   wire [15:0]NLW_mmcm_adv_inst_DO_UNCONNECTED;
 
@@ -105,12 +99,12 @@ module design_1_clk_wiz_0_0_design_1_clk_wiz_0_0_clk_wiz
         .O(clk_vga));
   (* BOX_TYPE = "PRIMITIVE" *) 
   BUFG clkout2_buf
-       (.I(clk_reg_design_1_clk_wiz_0_0),
-        .O(clk_reg));
-  (* BOX_TYPE = "PRIMITIVE" *) 
-  BUFG clkout3_buf
        (.I(clk_interpolation_design_1_clk_wiz_0_0),
         .O(clk_interpolation));
+  (* BOX_TYPE = "PRIMITIVE" *) 
+  BUFG clkout3_buf
+       (.I(clk_bili_wr_design_1_clk_wiz_0_0),
+        .O(clk_bili_wr));
   (* BOX_TYPE = "PRIMITIVE" *) 
   MMCME2_ADV #(
     .BANDWIDTH("OPTIMIZED"),
@@ -119,15 +113,15 @@ module design_1_clk_wiz_0_0_design_1_clk_wiz_0_0_clk_wiz
     .CLKFBOUT_USE_FINE_PS("FALSE"),
     .CLKIN1_PERIOD(10.000000),
     .CLKIN2_PERIOD(0.000000),
-    .CLKOUT0_DIVIDE_F(31.750000),
+    .CLKOUT0_DIVIDE_F(32.000000),
     .CLKOUT0_DUTY_CYCLE(0.500000),
     .CLKOUT0_PHASE(0.000000),
     .CLKOUT0_USE_FINE_PS("FALSE"),
-    .CLKOUT1_DIVIDE(32),
+    .CLKOUT1_DIVIDE(128),
     .CLKOUT1_DUTY_CYCLE(0.500000),
     .CLKOUT1_PHASE(0.000000),
     .CLKOUT1_USE_FINE_PS("FALSE"),
-    .CLKOUT2_DIVIDE(127),
+    .CLKOUT2_DIVIDE(16),
     .CLKOUT2_DUTY_CYCLE(0.500000),
     .CLKOUT2_PHASE(0.000000),
     .CLKOUT2_USE_FINE_PS("FALSE"),
@@ -172,9 +166,9 @@ module design_1_clk_wiz_0_0_design_1_clk_wiz_0_0_clk_wiz
         .CLKINSTOPPED(NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED),
         .CLKOUT0(clk_vga_design_1_clk_wiz_0_0),
         .CLKOUT0B(NLW_mmcm_adv_inst_CLKOUT0B_UNCONNECTED),
-        .CLKOUT1(clk_reg_design_1_clk_wiz_0_0),
+        .CLKOUT1(clk_interpolation_design_1_clk_wiz_0_0),
         .CLKOUT1B(NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED),
-        .CLKOUT2(clk_interpolation_design_1_clk_wiz_0_0),
+        .CLKOUT2(clk_bili_wr_design_1_clk_wiz_0_0),
         .CLKOUT2B(NLW_mmcm_adv_inst_CLKOUT2B_UNCONNECTED),
         .CLKOUT3(NLW_mmcm_adv_inst_CLKOUT3_UNCONNECTED),
         .CLKOUT3B(NLW_mmcm_adv_inst_CLKOUT3B_UNCONNECTED),
@@ -188,7 +182,7 @@ module design_1_clk_wiz_0_0_design_1_clk_wiz_0_0_clk_wiz
         .DO(NLW_mmcm_adv_inst_DO_UNCONNECTED[15:0]),
         .DRDY(NLW_mmcm_adv_inst_DRDY_UNCONNECTED),
         .DWE(1'b0),
-        .LOCKED(locked),
+        .LOCKED(NLW_mmcm_adv_inst_LOCKED_UNCONNECTED),
         .PSCLK(1'b0),
         .PSDONE(NLW_mmcm_adv_inst_PSDONE_UNCONNECTED),
         .PSEN(1'b0),
