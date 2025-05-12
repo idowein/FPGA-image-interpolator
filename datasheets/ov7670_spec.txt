@@ -37,3 +37,7 @@ Data Collection:
    - The `dout` signal is based on the 4 most significant bits (MSBs) of each color channel:
      dout <= latced_data(15 downto 12) & latced_data(10 downto 7) & latced_data(4 downto 1); 
 
+Data Overlapping:
+
+The capture module writes data into the BRAM at a rate of 30 frames per second (fps), while the VGA controller reads data at a rate of 60 fps. There is no data overlapping in this system because the VGA controller operates at twice the speed of the capture module. As a result, the VGA controller transmits the same frame to the monitor twice without overwriting any data in the BRAM.
+
