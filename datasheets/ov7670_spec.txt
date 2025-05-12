@@ -20,8 +20,20 @@ purpose: The XCLK is the input clock to the OV7670 camera module. It serves as t
 The OV7670 requires an external clock source (usually 24 MHz) provided by the host system (e.g., an FPGA or microcontroller).
 
 
-Data collection:
+Data Collection:
 
-The OV7670 camera outputs 8-bit pixel data, which is reconstructed into 16-bit RGB565 format (full image each 2 cycles). This is then converted to 12-bit RGB444 format for VGA:
-dout <= latced_data(15 downto 12) & latced_data(10 downto 7) & latced_data(4 downto 1);
-The dout signal based on the 4 MSB of each color. 
+1. Camera Output:
+   - The OV7670 camera generates 8-bit pixel data.
+   - This data is reconstructed into a 16-bit RGB565 format, where each full image is transmitted every 2 clock cycles.
+   - The camera transmits at a rate of 30 frames per second, with the capture process operating at 25 MHz. For every 2 clock cycles, 1 pixel is read.
+
+2. Format Conversion:
+   - The 16-bit RGB565 data is converted to a 12-bit RGB444 format for VGA display.
+
+3. Data Writing:
+   - The capture process writes data to BRAM (Block RAM) at 12.5 MHz, where each complete pixel is written.
+
+4. dout Signal:
+   - The `dout` signal is based on the 4 most significant bits (MSBs) of each color channel:
+     dout <= latced_data(15 downto 12) & latced_data(10 downto 7) & latced_data(4 downto 1); 
+
