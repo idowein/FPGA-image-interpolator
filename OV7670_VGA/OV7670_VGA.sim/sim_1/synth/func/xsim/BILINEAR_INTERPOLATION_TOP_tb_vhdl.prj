@@ -1,0 +1,8 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"BILINEAR_INTERPOLATION_TOP_tb_func_synth.vhd" \
+"../../../../../OV7670_VGA.srcs/sources_1/new/BILINEAR_INTERPOLATION_TOP.vhd" \
+"../../../../../OV7670_VGA.srcs/sim_1/new/BILINEAR_INTERPOLATION_TOP_TB.vhd" \
+
+# Do not sort compile order
+nosort

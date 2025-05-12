@@ -25,9 +25,9 @@ use IEEE.std_logic_unsigned.all;
 
 entity BILINEAR_INTERPOLATION_TOP is
   Port ( 
-        clk_vga             : in  std_logic; -- 25.2 MHz
-        clk_in1             : in  std_logic; -- 100 MHz
-        clk_interpolation   : in  std_logic; -- 25.2/4 MHz = 6.3 MHz
+        clk_vga             : in  std_logic; -- 25 MHz
+        clk_bili_wr         : in  std_logic; -- 50 MHz
+        clk_interpolation   : in  std_logic; -- 25/4 MHz = 6.25 MHz
         pixel_in            : in  std_logic_vector(11 downto 0);
         bili_cntl           : in  std_logic; -- external switch
         write_enable        : out std_logic; 
@@ -50,22 +50,22 @@ architecture Behavioral of BILINEAR_INTERPOLATION_TOP is
     signal address_read_sig       : std_logic_vector(16 downto 0) := (others => '0');
     
     signal wr_en_sig            : std_logic := '0';
-    signal wr_en_sig_d          : std_logic := '0'; -- for enable write to full BRAM after interpolation calc
+--    signal wr_en_sig_d          : std_logic := '0'; -- for enable write to full BRAM after interpolation calc
     
-    signal write_state : std_logic_vector(1 downto 0) := (others => '0');
+    signal read_pix_cnt  : std_logic_vector(2 downto 0) := (others => '0'); -- 0 - 7 for reading 8 pixels..
 
 begin
 
     -- Enable write operation
-    write_enable <= wr_en_sig_d;
+    write_enable <= wr_en_sig;
 
     -- Process to collect 4x2 pixels
     process (clk_vga)
     begin
         if rising_edge(clk_vga) then
-            write_state <= write_state + 1;
+            read_pix_cnt <= read_pix_cnt + 1;
             eight_pixel_in <= eight_pixel_in(83 downto 0) & pixel_in; -- Shift and append the incoming pixel
-            if write_state = "00" then
+            if read_pix_cnt = "000" or read_pix_cnt = "100" then
                 A <= eight_pixel_in(47 downto 36);
                 B <= eight_pixel_in(35 downto 24);
                 C <= eight_pixel_in(23 downto 12);
@@ -75,17 +75,21 @@ begin
     end process;
 
     -- Process to calculate bilinear interpolation
-    process (clk_interpolation)
+    process (clk_vga)
         variable A_int, B_int, C_int, D_int : unsigned(11 downto 0); -- Internal unsigned representations
         variable P11_int, P12_int, P13_int, P14_int : unsigned(11 downto 0); -- Row 1
         variable P21_int, P22_int, P23_int, P24_int : unsigned(11 downto 0); -- Row 2
         variable P31_int, P32_int, P33_int, P34_int : unsigned(11 downto 0); -- Row 3
         variable P41_int, P42_int, P43_int, P44_int : unsigned(11 downto 0); -- Row 4
     begin
-        if rising_edge(clk_interpolation) then
+        if rising_edge(clk_vga) then
             -- Enable write operation only when 4 pixels received
-            wr_en_sig <= '1';
-            wr_en_sig_d <= wr_en_sig;
+            if read_pix_cnt = "110" then
+                wr_en_sig <= '1';
+--                wr_en_sig_d <= wr_en_sig;
+--            else
+--                wr_en_sig <= '0';    
+            end if ;
 
             -- Convert inputs from std_logic_vector to unsigned for arithmetic
             A_int := unsigned(A);
@@ -118,18 +122,20 @@ begin
             P44_int := D_int; -- Bottom-right corner
 
             -- Combine filtered pixels into a single output
-            filtered_pixel_out <= std_logic_vector(P11_int) & std_logic_vector(P12_int) & std_logic_vector(P13_int) & std_logic_vector(P14_int) &
+           if read_pix_cnt = "001" or read_pix_cnt = "101" then
+                filtered_pixel_out <= std_logic_vector(P11_int) & std_logic_vector(P12_int) & std_logic_vector(P13_int) & std_logic_vector(P14_int) &
                                   std_logic_vector(P21_int) & std_logic_vector(P22_int) & std_logic_vector(P23_int) & std_logic_vector(P24_int) &
                                   std_logic_vector(P31_int) & std_logic_vector(P32_int) & std_logic_vector(P33_int) & std_logic_vector(P34_int) &
                                   std_logic_vector(P41_int) & std_logic_vector(P42_int) & std_logic_vector(P43_int) & std_logic_vector(P44_int);
+            end if;
         end if;
     end process;
 
     -- Process to transmit pixels to BRAM
-    process (clk_in1)
+    process (clk_bili_wr)
         variable i : integer := 16;
     begin
-        if rising_edge(clk_in1) and wr_en_sig = '1' then
+        if rising_edge(clk_bili_wr) and wr_en_sig = '1' then
             -- Output the filtered pixel
             i := i - 1;
             pixel_out <= filtered_pixel_out((i * 12 + 11) downto (i * 12));
@@ -140,7 +146,7 @@ begin
     end process;
 
     -- Process to calculate address for writing to second BRAM using 4�4 block-based scan
-    process (clk_in1)
+    process (clk_bili_wr)
         -- Local variables for block-based scan
         variable h_block     : integer := 0;  -- Horizontal start of 4�4 block
         variable v_block     : integer := 0;  -- Vertical start of 4�4 block
@@ -149,7 +155,7 @@ begin
         variable h_cnt       : integer := 0;  -- Final horizontal pixel index
         variable v_cnt       : integer := 0;  -- Final vertical pixel index
     begin
-        if rising_edge(clk_in1) and wr_en_sig_d = '1' then
+        if rising_edge(clk_bili_wr) and wr_en_sig = '1' then
             -- Calculate actual horizontal and vertical pixel coordinates
             h_cnt := h_block + local_h;
             v_cnt := v_block + local_v;
@@ -182,7 +188,7 @@ begin
     end process;
 
 -- Process to calculate address for reading from first BRAM using 2x2 block-based scan
-    process (clk_in1)
+    process (clk_bili_wr)
         -- Local variables for block-based scan
         variable h_block     : integer := 0;  -- Horizontal start of 2x2 block
         variable v_block     : integer := 0;  -- Vertical start of 2x2 block
@@ -191,7 +197,7 @@ begin
         variable h_cnt       : integer := 0;  -- Final horizontal pixel index
         variable v_cnt       : integer := 0;  -- Final vertical pixel index
     begin
-        if rising_edge(clk_vga) and wr_en_sig = '1' then
+        if rising_edge(clk_vga) then
             -- Calculate actual horizontal and vertical pixel coordinates
             h_cnt := h_block + local_h;
             v_cnt := v_block + local_v;

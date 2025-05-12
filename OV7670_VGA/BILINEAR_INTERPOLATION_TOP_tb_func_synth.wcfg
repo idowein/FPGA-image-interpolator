@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="BILINEAR_INTERPOLATION_TOP_tb_func_synth.wdb" id="1">
+         <top_modules>
+            <top_module name="BILINEAR_INTERPOLATION_TOP_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="166666fs"></ZoomStartTime>
+      <ZoomEndTime time="1166667fs"></ZoomEndTime>
+      <Cursor1Time time="1000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="230"></NameColumnWidth>
+      <ValueColumnWidth column_width="218"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="20" />
+   <wave_markers>
+      <marker time="270000" label="" />
+   </wave_markers>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/clk_vga" type="logic">
+      <obj_property name="ElementShortName">clk_vga</obj_property>
+      <obj_property name="ObjectShortName">clk_vga</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/clk_bili_wr" type="logic">
+      <obj_property name="ElementShortName">clk_bili_wr</obj_property>
+      <obj_property name="ObjectShortName">clk_bili_wr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/clk_interpolation" type="logic">
+      <obj_property name="ElementShortName">clk_interpolation</obj_property>
+      <obj_property name="ObjectShortName">clk_interpolation</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/address_read" type="array">
+      <obj_property name="ElementShortName">address_read[16:0]</obj_property>
+      <obj_property name="ObjectShortName">address_read[16:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/pixel_in" type="array">
+      <obj_property name="ElementShortName">pixel_in[11:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_in[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/bili_cntl" type="logic">
+      <obj_property name="ElementShortName">bili_cntl</obj_property>
+      <obj_property name="ObjectShortName">bili_cntl</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/write_enable" type="logic">
+      <obj_property name="ElementShortName">write_enable</obj_property>
+      <obj_property name="ObjectShortName">write_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/pixel_out" type="array">
+      <obj_property name="ElementShortName">pixel_out[11:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_out[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/address_write" type="array">
+      <obj_property name="ElementShortName">address_write[18:0]</obj_property>
+      <obj_property name="ObjectShortName">address_write[18:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/eight_pixel_in" type="array">
+      <obj_property name="ElementShortName">eight_pixel_in[95:0]</obj_property>
+      <obj_property name="ObjectShortName">eight_pixel_in[95:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/filtered_pixel_out" type="array">
+      <obj_property name="ElementShortName">filtered_pixel_out[191:0]</obj_property>
+      <obj_property name="ObjectShortName">filtered_pixel_out[191:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/A" type="array">
+      <obj_property name="ElementShortName">A[11:0]</obj_property>
+      <obj_property name="ObjectShortName">A[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/B" type="array">
+      <obj_property name="ElementShortName">B[11:0]</obj_property>
+      <obj_property name="ObjectShortName">B[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/C" type="array">
+      <obj_property name="ElementShortName">C[11:0]</obj_property>
+      <obj_property name="ObjectShortName">C[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/D" type="array">
+      <obj_property name="ElementShortName">D[11:0]</obj_property>
+      <obj_property name="ObjectShortName">D[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/address_write_sig" type="array">
+      <obj_property name="ElementShortName">address_write_sig[18:0]</obj_property>
+      <obj_property name="ObjectShortName">address_write_sig[18:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/address_read_sig" type="array">
+      <obj_property name="ElementShortName">address_read_sig[16:0]</obj_property>
+      <obj_property name="ObjectShortName">address_read_sig[16:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/wr_en_sig" type="logic">
+      <obj_property name="ElementShortName">wr_en_sig</obj_property>
+      <obj_property name="ObjectShortName">wr_en_sig</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/wr_en_sig_d" type="logic">
+      <obj_property name="ElementShortName">wr_en_sig_d</obj_property>
+      <obj_property name="ObjectShortName">wr_en_sig_d</obj_property>
+   </wvobject>
+   <wvobject fp_name="/BILINEAR_INTERPOLATION_TOP_tb/uut/read_pix_cnt" type="array">
+      <obj_property name="ElementShortName">read_pix_cnt[2:0]</obj_property>
+      <obj_property name="ObjectShortName">read_pix_cnt[2:0]</obj_property>
+   </wvobject>
+</wave_config>
