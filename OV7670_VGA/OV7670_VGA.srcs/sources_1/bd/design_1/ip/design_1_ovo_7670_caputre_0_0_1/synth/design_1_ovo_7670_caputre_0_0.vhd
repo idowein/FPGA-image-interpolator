@@ -62,7 +62,8 @@ ENTITY design_1_ovo_7670_caputre_0_0 IS
     din : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
     addr : OUT STD_LOGIC_VECTOR(18 DOWNTO 0);
     dout : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
-    wr_en : OUT STD_LOGIC
+    wr_en : OUT STD_LOGIC;
+    clk_bram : OUT STD_LOGIC
   );
 END design_1_ovo_7670_caputre_0_0;
 
@@ -78,7 +79,8 @@ ARCHITECTURE design_1_ovo_7670_caputre_0_0_arch OF design_1_ovo_7670_caputre_0_0
       din : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
       addr : OUT STD_LOGIC_VECTOR(18 DOWNTO 0);
       dout : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
-      wr_en : OUT STD_LOGIC
+      wr_en : OUT STD_LOGIC;
+      clk_bram : OUT STD_LOGIC
     );
   END COMPONENT ovo_7670_caputre;
   ATTRIBUTE X_CORE_INFO : STRING;
@@ -99,6 +101,7 @@ BEGIN
       din => din,
       addr => addr,
       dout => dout,
-      wr_en => wr_en
+      wr_en => wr_en,
+      clk_bram => clk_bram
     );
 END design_1_ovo_7670_caputre_0_0_arch;

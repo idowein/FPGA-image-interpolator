@@ -1,10 +1,10 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
--- Date        : Mon Apr 28 18:01:22 2025
--- Host        : Ido running 64-bit major release  (build 9200)
+-- Date        : Mon May 12 14:23:41 2025
+-- Host        : dvirhersh_comp running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
---               C:/Users/idowe/myProjects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_ovo_7670_caputre_0_0_1/design_1_ovo_7670_caputre_0_0_sim_netlist.vhdl
+--               C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_ovo_7670_caputre_0_0_1/design_1_ovo_7670_caputre_0_0_sim_netlist.vhdl
 -- Design      : design_1_ovo_7670_caputre_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -17,6 +17,7 @@ use UNISIM.VCOMPONENTS.ALL;
 entity design_1_ovo_7670_caputre_0_0_ovo_7670_caputre is
   port (
     dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    clk_bram : out STD_LOGIC;
     addr : out STD_LOGIC_VECTOR ( 18 downto 0 );
     wr_en : out STD_LOGIC;
     camera_h_ref : in STD_LOGIC;
@@ -31,11 +32,9 @@ end design_1_ovo_7670_caputre_0_0_ovo_7670_caputre;
 
 architecture STRUCTURE of design_1_ovo_7670_caputre_0_0_ovo_7670_caputre is
   signal \^addr\ : STD_LOGIC_VECTOR ( 18 downto 0 );
-  signal address : STD_LOGIC;
-  signal \address0__2\ : STD_LOGIC;
+  signal \address[18]_i_3_n_0\ : STD_LOGIC;
   signal \address[18]_i_4_n_0\ : STD_LOGIC;
   signal \address[18]_i_5_n_0\ : STD_LOGIC;
-  signal \address[18]_i_6_n_0\ : STD_LOGIC;
   signal \address[3]_i_2_n_0\ : STD_LOGIC;
   signal \address_reg[11]_i_1_n_0\ : STD_LOGIC;
   signal \address_reg[11]_i_1_n_1\ : STD_LOGIC;
@@ -74,8 +73,11 @@ architecture STRUCTURE of design_1_ovo_7670_caputre_0_0_ovo_7670_caputre is
   signal \address_reg[7]_i_1_n_5\ : STD_LOGIC;
   signal \address_reg[7]_i_1_n_6\ : STD_LOGIC;
   signal \address_reg[7]_i_1_n_7\ : STD_LOGIC;
+  signal \^clk_bram\ : STD_LOGIC;
+  signal clk_bram_int_i_1_n_0 : STD_LOGIC;
   signal \counter_col[10]_i_1_n_0\ : STD_LOGIC;
   signal \counter_col[10]_i_3_n_0\ : STD_LOGIC;
+  signal \counter_col[9]_i_2_n_0\ : STD_LOGIC;
   signal counter_col_reg : STD_LOGIC_VECTOR ( 10 downto 5 );
   signal \counter_col_reg_n_0_[0]\ : STD_LOGIC;
   signal \counter_col_reg_n_0_[1]\ : STD_LOGIC;
@@ -84,11 +86,11 @@ architecture STRUCTURE of design_1_ovo_7670_caputre_0_0_ovo_7670_caputre is
   signal \counter_col_reg_n_0_[4]\ : STD_LOGIC;
   signal counter_row0 : STD_LOGIC;
   signal \counter_row[10]_i_3_n_0\ : STD_LOGIC;
+  signal \counter_row[10]_i_4_n_0\ : STD_LOGIC;
   signal counter_row_reg : STD_LOGIC_VECTOR ( 10 downto 3 );
   signal \counter_row_reg_n_0_[0]\ : STD_LOGIC;
   signal \counter_row_reg_n_0_[1]\ : STD_LOGIC;
   signal \counter_row_reg_n_0_[2]\ : STD_LOGIC;
-  signal \geqOp__8\ : STD_LOGIC;
   signal \latced_data_reg_n_0_[10]\ : STD_LOGIC;
   signal \latced_data_reg_n_0_[12]\ : STD_LOGIC;
   signal \latced_data_reg_n_0_[13]\ : STD_LOGIC;
@@ -97,12 +99,13 @@ architecture STRUCTURE of design_1_ovo_7670_caputre_0_0_ovo_7670_caputre is
   signal \latced_data_reg_n_0_[8]\ : STD_LOGIC;
   signal \latced_data_reg_n_0_[9]\ : STD_LOGIC;
   signal latch_href : STD_LOGIC;
-  signal p_0_in : STD_LOGIC_VECTOR ( 15 downto 8 );
-  signal p_0_in1_in : STD_LOGIC;
-  signal p_0_in_0 : STD_LOGIC;
+  signal p_0_in : STD_LOGIC;
+  signal p_1_in : STD_LOGIC_VECTOR ( 15 downto 8 );
+  signal p_1_in_0 : STD_LOGIC;
   signal plusOp : STD_LOGIC_VECTOR ( 10 downto 0 );
   signal \plusOp__0\ : STD_LOGIC_VECTOR ( 10 downto 0 );
   signal \^wr_en\ : STD_LOGIC;
+  signal wr_en0_out : STD_LOGIC;
   signal wr_en_i_1_n_0 : STD_LOGIC;
   signal \write_state[0]_i_1_n_0\ : STD_LOGIC;
   signal \write_state[1]_i_1_n_0\ : STD_LOGIC;
@@ -110,101 +113,78 @@ architecture STRUCTURE of design_1_ovo_7670_caputre_0_0_ovo_7670_caputre is
   signal \NLW_address_reg[18]_i_2_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 2 );
   signal \NLW_address_reg[18]_i_2_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 to 3 );
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \counter_col[1]_i_1\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of \counter_col[2]_i_1\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of \counter_col[3]_i_1\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \counter_col[4]_i_1\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \counter_col[6]_i_1\ : label is "soft_lutpair6";
-  attribute SOFT_HLUTNM of \counter_col[7]_i_1\ : label is "soft_lutpair6";
-  attribute SOFT_HLUTNM of \counter_col[8]_i_1\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \counter_col[9]_i_1\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \counter_row[1]_i_1\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of \address[18]_i_3\ : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of \counter_col[0]_i_1\ : label is "soft_lutpair9";
+  attribute SOFT_HLUTNM of \counter_col[1]_i_1\ : label is "soft_lutpair9";
+  attribute SOFT_HLUTNM of \counter_col[2]_i_1\ : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of \counter_col[3]_i_1\ : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of \counter_col[4]_i_1\ : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of \counter_col[6]_i_1\ : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of \counter_col[7]_i_1\ : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of \counter_col[8]_i_1\ : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of \counter_col[9]_i_2\ : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of \counter_row[0]_i_1\ : label is "soft_lutpair10";
+  attribute SOFT_HLUTNM of \counter_row[10]_i_3\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \counter_row[10]_i_4\ : label is "soft_lutpair8";
+  attribute SOFT_HLUTNM of \counter_row[1]_i_1\ : label is "soft_lutpair10";
   attribute SOFT_HLUTNM of \counter_row[2]_i_1\ : label is "soft_lutpair4";
-  attribute SOFT_HLUTNM of \counter_row[3]_i_1\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \counter_row[3]_i_1\ : label is "soft_lutpair4";
   attribute SOFT_HLUTNM of \counter_row[4]_i_1\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \counter_row[6]_i_1\ : label is "soft_lutpair7";
-  attribute SOFT_HLUTNM of \counter_row[7]_i_1\ : label is "soft_lutpair7";
-  attribute SOFT_HLUTNM of \counter_row[8]_i_1\ : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of \counter_row[9]_i_1\ : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of \write_state[0]_i_1\ : label is "soft_lutpair8";
-  attribute SOFT_HLUTNM of \write_state[1]_i_1\ : label is "soft_lutpair8";
+  attribute SOFT_HLUTNM of \counter_row[6]_i_1\ : label is "soft_lutpair8";
+  attribute SOFT_HLUTNM of \counter_row[7]_i_1\ : label is "soft_lutpair2";
+  attribute SOFT_HLUTNM of \counter_row[8]_i_1\ : label is "soft_lutpair2";
+  attribute SOFT_HLUTNM of \write_state[0]_i_1\ : label is "soft_lutpair7";
+  attribute SOFT_HLUTNM of \write_state[1]_i_1\ : label is "soft_lutpair7";
 begin
   addr(18 downto 0) <= \^addr\(18 downto 0);
+  clk_bram <= \^clk_bram\;
   wr_en <= \^wr_en\;
-\address[18]_i_1\: unisim.vcomponents.LUT3
+\address[18]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"A2"
+      INIT => X"C4444444"
     )
         port map (
-      I0 => p_0_in_0,
-      I1 => zoom_x2,
-      I2 => \address0__2\,
-      O => address
+      I0 => zoom_x2,
+      I1 => p_1_in_0,
+      I2 => \address[18]_i_3_n_0\,
+      I3 => \address[18]_i_4_n_0\,
+      I4 => \address[18]_i_5_n_0\,
+      O => wr_en0_out
     );
-\address[18]_i_3\: unisim.vcomponents.LUT6
+\address[18]_i_3\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"0000080000000000"
+      INIT => X"7AF8"
     )
         port map (
-      I0 => \address[18]_i_4_n_0\,
-      I1 => \address[18]_i_5_n_0\,
-      I2 => counter_row_reg(9),
-      I3 => \address[18]_i_6_n_0\,
-      I4 => counter_row_reg(10),
-      I5 => \geqOp__8\,
-      O => \address0__2\
-    );
-\address[18]_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0000000015555555"
-    )
-        port map (
-      I0 => counter_col_reg(9),
+      I0 => counter_col_reg(7),
       I1 => counter_col_reg(5),
-      I2 => counter_col_reg(6),
-      I3 => counter_col_reg(7),
-      I4 => counter_col_reg(8),
-      I5 => counter_col_reg(10),
+      I2 => counter_col_reg(8),
+      I3 => counter_col_reg(6),
+      O => \address[18]_i_3_n_0\
+    );
+\address[18]_i_4\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"0001"
+    )
+        port map (
+      I0 => counter_col_reg(10),
+      I1 => counter_col_reg(9),
+      I2 => counter_row_reg(10),
+      I3 => counter_row_reg(9),
       O => \address[18]_i_4_n_0\
     );
 \address[18]_i_5\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"FFFFFFFFFFFF8000"
+      INIT => X"3666266626666666"
     )
         port map (
-      I0 => counter_row_reg(5),
-      I1 => counter_row_reg(3),
-      I2 => counter_row_reg(4),
+      I0 => counter_row_reg(7),
+      I1 => counter_row_reg(8),
+      I2 => counter_row_reg(5),
       I3 => counter_row_reg(6),
-      I4 => counter_row_reg(7),
-      I5 => counter_row_reg(8),
+      I4 => counter_row_reg(3),
+      I5 => counter_row_reg(4),
       O => \address[18]_i_5_n_0\
-    );
-\address[18]_i_6\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0000777FFFFFFFFF"
-    )
-        port map (
-      I0 => counter_row_reg(6),
-      I1 => counter_row_reg(5),
-      I2 => counter_row_reg(4),
-      I3 => counter_row_reg(3),
-      I4 => counter_row_reg(7),
-      I5 => counter_row_reg(8),
-      O => \address[18]_i_6_n_0\
-    );
-\address[18]_i_7\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFFFFFFFFFFFFE0"
-    )
-        port map (
-      I0 => counter_col_reg(6),
-      I1 => counter_col_reg(5),
-      I2 => counter_col_reg(7),
-      I3 => counter_col_reg(8),
-      I4 => counter_col_reg(9),
-      I5 => counter_col_reg(10),
-      O => \geqOp__8\
     );
 \address[3]_i_2\: unisim.vcomponents.LUT1
     generic map(
@@ -220,7 +200,7 @@ begin
     )
         port map (
       C => pclk,
-      CE => address,
+      CE => wr_en0_out,
       D => \address_reg[3]_i_1_n_7\,
       Q => \^addr\(0),
       R => camera_v_sync
@@ -231,7 +211,7 @@ begin
     )
         port map (
       C => pclk,
-      CE => address,
+      CE => wr_en0_out,
       D => \address_reg[11]_i_1_n_5\,
       Q => \^addr\(10),
       R => camera_v_sync
@@ -242,7 +222,7 @@ begin
     )
         port map (
       C => pclk,
-      CE => address,
+      CE => wr_en0_out,
       D => \address_reg[11]_i_1_n_4\,
       Q => \^addr\(11),
       R => camera_v_sync
@@ -268,7 +248,7 @@ begin
     )
         port map (
       C => pclk,
-      CE => address,
+      CE => wr_en0_out,
       D => \address_reg[15]_i_1_n_7\,
       Q => \^addr\(12),
       R => camera_v_sync
@@ -279,7 +259,7 @@ begin
     )
         port map (
       C => pclk,
-      CE => address,
+      CE => wr_en0_out,
       D => \address_reg[15]_i_1_n_6\,
       Q => \^addr\(13),
       R => camera_v_sync
@@ -290,7 +270,7 @@ begin
     )
         port map (
       C => pclk,
-      CE => address,
+      CE => wr_en0_out,
       D => \address_reg[15]_i_1_n_5\,
       Q => \^addr\(14),
       R => camera_v_sync
@@ -301,7 +281,7 @@ begin
     )
         port map (
       C => pclk,
-      CE => address,
+      CE => wr_en0_out,
       D => \address_reg[15]_i_1_n_4\,
       Q => \^addr\(15),
       R => camera_v_sync
@@ -327,7 +307,7 @@ begin
     )
         port map (
       C => pclk,
-      CE => address,
+      CE => wr_en0_out,
       D => \address_reg[18]_i_2_n_7\,
       Q => \^addr\(16),
       R => camera_v_sync
@@ -338,7 +318,7 @@ begin
     )
         port map (
       C => pclk,
-      CE => address,
+      CE => wr_en0_out,
       D => \address_reg[18]_i_2_n_6\,
       Q => \^addr\(17),
       R => camera_v_sync
@@ -349,7 +329,7 @@ begin
     )
         port map (
       C => pclk,
-      CE => address,
+      CE => wr_en0_out,
       D => \address_reg[18]_i_2_n_5\,
       Q => \^addr\(18),
       R => camera_v_sync
@@ -375,7 +355,7 @@ begin
     )
         port map (
       C => pclk,
-      CE => address,
+      CE => wr_en0_out,
       D => \address_reg[3]_i_1_n_6\,
       Q => \^addr\(1),
       R => camera_v_sync
@@ -386,7 +366,7 @@ begin
     )
         port map (
       C => pclk,
-      CE => address,
+      CE => wr_en0_out,
       D => \address_reg[3]_i_1_n_5\,
       Q => \^addr\(2),
       R => camera_v_sync
@@ -397,7 +377,7 @@ begin
     )
         port map (
       C => pclk,
-      CE => address,
+      CE => wr_en0_out,
       D => \address_reg[3]_i_1_n_4\,
       Q => \^addr\(3),
       R => camera_v_sync
@@ -424,7 +404,7 @@ begin
     )
         port map (
       C => pclk,
-      CE => address,
+      CE => wr_en0_out,
       D => \address_reg[7]_i_1_n_7\,
       Q => \^addr\(4),
       R => camera_v_sync
@@ -435,7 +415,7 @@ begin
     )
         port map (
       C => pclk,
-      CE => address,
+      CE => wr_en0_out,
       D => \address_reg[7]_i_1_n_6\,
       Q => \^addr\(5),
       R => camera_v_sync
@@ -446,7 +426,7 @@ begin
     )
         port map (
       C => pclk,
-      CE => address,
+      CE => wr_en0_out,
       D => \address_reg[7]_i_1_n_5\,
       Q => \^addr\(6),
       R => camera_v_sync
@@ -457,7 +437,7 @@ begin
     )
         port map (
       C => pclk,
-      CE => address,
+      CE => wr_en0_out,
       D => \address_reg[7]_i_1_n_4\,
       Q => \^addr\(7),
       R => camera_v_sync
@@ -483,7 +463,7 @@ begin
     )
         port map (
       C => pclk,
-      CE => address,
+      CE => wr_en0_out,
       D => \address_reg[11]_i_1_n_7\,
       Q => \^addr\(8),
       R => camera_v_sync
@@ -494,10 +474,29 @@ begin
     )
         port map (
       C => pclk,
-      CE => address,
+      CE => wr_en0_out,
       D => \address_reg[11]_i_1_n_6\,
       Q => \^addr\(9),
       R => camera_v_sync
+    );
+clk_bram_int_i_1: unisim.vcomponents.LUT1
+    generic map(
+      INIT => X"1"
+    )
+        port map (
+      I0 => \^clk_bram\,
+      O => clk_bram_int_i_1_n_0
+    );
+clk_bram_int_reg: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => pclk,
+      CE => '1',
+      D => clk_bram_int_i_1_n_0,
+      Q => \^clk_bram\,
+      R => '0'
     );
 \counter_col[0]_i_1\: unisim.vcomponents.LUT1
     generic map(
@@ -509,39 +508,39 @@ begin
     );
 \counter_col[10]_i_1\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"AABA"
+      INIT => X"FF04"
     )
         port map (
-      I0 => camera_v_sync,
-      I1 => p_0_in_0,
-      I2 => camera_h_ref,
-      I3 => latch_href,
+      I0 => p_1_in_0,
+      I1 => camera_h_ref,
+      I2 => latch_href,
+      I3 => camera_v_sync,
       O => \counter_col[10]_i_1_n_0\
     );
 \counter_col[10]_i_2\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"7FFFFFFF80000000"
+      INIT => X"FF7FFFFF00800000"
     )
         port map (
-      I0 => counter_col_reg(8),
-      I1 => counter_col_reg(6),
-      I2 => \counter_col[10]_i_3_n_0\,
-      I3 => counter_col_reg(7),
-      I4 => counter_col_reg(9),
+      I0 => counter_col_reg(9),
+      I1 => counter_col_reg(5),
+      I2 => counter_col_reg(7),
+      I3 => \counter_col[10]_i_3_n_0\,
+      I4 => counter_col_reg(8),
       I5 => counter_col_reg(10),
       O => \plusOp__0\(10)
     );
 \counter_col[10]_i_3\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"8000000000000000"
+      INIT => X"7FFFFFFFFFFFFFFF"
     )
         port map (
-      I0 => counter_col_reg(5),
-      I1 => \counter_col_reg_n_0_[3]\,
-      I2 => \counter_col_reg_n_0_[1]\,
-      I3 => \counter_col_reg_n_0_[0]\,
-      I4 => \counter_col_reg_n_0_[2]\,
-      I5 => \counter_col_reg_n_0_[4]\,
+      I0 => \counter_col_reg_n_0_[4]\,
+      I1 => \counter_col_reg_n_0_[2]\,
+      I2 => \counter_col_reg_n_0_[0]\,
+      I3 => \counter_col_reg_n_0_[1]\,
+      I4 => \counter_col_reg_n_0_[3]\,
+      I5 => counter_col_reg(6),
       O => \counter_col[10]_i_3_n_0\
     );
 \counter_col[1]_i_1\: unisim.vcomponents.LUT2
@@ -558,8 +557,8 @@ begin
       INIT => X"78"
     )
         port map (
-      I0 => \counter_col_reg_n_0_[0]\,
-      I1 => \counter_col_reg_n_0_[1]\,
+      I0 => \counter_col_reg_n_0_[1]\,
+      I1 => \counter_col_reg_n_0_[0]\,
       I2 => \counter_col_reg_n_0_[2]\,
       O => \plusOp__0\(2)
     );
@@ -568,9 +567,9 @@ begin
       INIT => X"7F80"
     )
         port map (
-      I0 => \counter_col_reg_n_0_[1]\,
+      I0 => \counter_col_reg_n_0_[2]\,
       I1 => \counter_col_reg_n_0_[0]\,
-      I2 => \counter_col_reg_n_0_[2]\,
+      I2 => \counter_col_reg_n_0_[1]\,
       I3 => \counter_col_reg_n_0_[3]\,
       O => \plusOp__0\(3)
     );
@@ -579,10 +578,10 @@ begin
       INIT => X"7FFF8000"
     )
         port map (
-      I0 => \counter_col_reg_n_0_[2]\,
-      I1 => \counter_col_reg_n_0_[0]\,
-      I2 => \counter_col_reg_n_0_[1]\,
-      I3 => \counter_col_reg_n_0_[3]\,
+      I0 => \counter_col_reg_n_0_[3]\,
+      I1 => \counter_col_reg_n_0_[1]\,
+      I2 => \counter_col_reg_n_0_[0]\,
+      I3 => \counter_col_reg_n_0_[2]\,
       I4 => \counter_col_reg_n_0_[4]\,
       O => \plusOp__0\(4)
     );
@@ -591,55 +590,71 @@ begin
       INIT => X"7FFFFFFF80000000"
     )
         port map (
+      I0 => \counter_col_reg_n_0_[4]\,
+      I1 => \counter_col_reg_n_0_[2]\,
+      I2 => \counter_col_reg_n_0_[0]\,
+      I3 => \counter_col_reg_n_0_[1]\,
+      I4 => \counter_col_reg_n_0_[3]\,
+      I5 => counter_col_reg(5),
+      O => \plusOp__0\(5)
+    );
+\counter_col[6]_i_1\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"D2"
+    )
+        port map (
+      I0 => counter_col_reg(5),
+      I1 => \counter_col[9]_i_2_n_0\,
+      I2 => counter_col_reg(6),
+      O => \plusOp__0\(6)
+    );
+\counter_col[7]_i_1\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"DF20"
+    )
+        port map (
+      I0 => counter_col_reg(5),
+      I1 => \counter_col[9]_i_2_n_0\,
+      I2 => counter_col_reg(6),
+      I3 => counter_col_reg(7),
+      O => \plusOp__0\(7)
+    );
+\counter_col[8]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"F7FF0800"
+    )
+        port map (
+      I0 => counter_col_reg(5),
+      I1 => counter_col_reg(7),
+      I2 => \counter_col[9]_i_2_n_0\,
+      I3 => counter_col_reg(6),
+      I4 => counter_col_reg(8),
+      O => \plusOp__0\(8)
+    );
+\counter_col[9]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"F7FFFFFF08000000"
+    )
+        port map (
+      I0 => counter_col_reg(8),
+      I1 => counter_col_reg(6),
+      I2 => \counter_col[9]_i_2_n_0\,
+      I3 => counter_col_reg(7),
+      I4 => counter_col_reg(5),
+      I5 => counter_col_reg(9),
+      O => \plusOp__0\(9)
+    );
+\counter_col[9]_i_2\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"7FFFFFFF"
+    )
+        port map (
       I0 => \counter_col_reg_n_0_[3]\,
       I1 => \counter_col_reg_n_0_[1]\,
       I2 => \counter_col_reg_n_0_[0]\,
       I3 => \counter_col_reg_n_0_[2]\,
       I4 => \counter_col_reg_n_0_[4]\,
-      I5 => counter_col_reg(5),
-      O => \plusOp__0\(5)
-    );
-\counter_col[6]_i_1\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => \counter_col[10]_i_3_n_0\,
-      I1 => counter_col_reg(6),
-      O => \plusOp__0\(6)
-    );
-\counter_col[7]_i_1\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"78"
-    )
-        port map (
-      I0 => \counter_col[10]_i_3_n_0\,
-      I1 => counter_col_reg(6),
-      I2 => counter_col_reg(7),
-      O => \plusOp__0\(7)
-    );
-\counter_col[8]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"7F80"
-    )
-        port map (
-      I0 => counter_col_reg(6),
-      I1 => \counter_col[10]_i_3_n_0\,
-      I2 => counter_col_reg(7),
-      I3 => counter_col_reg(8),
-      O => \plusOp__0\(8)
-    );
-\counter_col[9]_i_1\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"7FFF8000"
-    )
-        port map (
-      I0 => counter_col_reg(7),
-      I1 => \counter_col[10]_i_3_n_0\,
-      I2 => counter_col_reg(6),
-      I3 => counter_col_reg(8),
-      I4 => counter_col_reg(9),
-      O => \plusOp__0\(9)
+      O => \counter_col[9]_i_2_n_0\
     );
 \counter_col_reg[0]\: unisim.vcomponents.FDRE
     generic map(
@@ -647,7 +662,7 @@ begin
     )
         port map (
       C => pclk,
-      CE => p_0_in_0,
+      CE => p_1_in_0,
       D => \plusOp__0\(0),
       Q => \counter_col_reg_n_0_[0]\,
       R => \counter_col[10]_i_1_n_0\
@@ -658,7 +673,7 @@ begin
     )
         port map (
       C => pclk,
-      CE => p_0_in_0,
+      CE => p_1_in_0,
       D => \plusOp__0\(10),
       Q => counter_col_reg(10),
       R => \counter_col[10]_i_1_n_0\
@@ -669,7 +684,7 @@ begin
     )
         port map (
       C => pclk,
-      CE => p_0_in_0,
+      CE => p_1_in_0,
       D => \plusOp__0\(1),
       Q => \counter_col_reg_n_0_[1]\,
       R => \counter_col[10]_i_1_n_0\
@@ -680,7 +695,7 @@ begin
     )
         port map (
       C => pclk,
-      CE => p_0_in_0,
+      CE => p_1_in_0,
       D => \plusOp__0\(2),
       Q => \counter_col_reg_n_0_[2]\,
       R => \counter_col[10]_i_1_n_0\
@@ -691,7 +706,7 @@ begin
     )
         port map (
       C => pclk,
-      CE => p_0_in_0,
+      CE => p_1_in_0,
       D => \plusOp__0\(3),
       Q => \counter_col_reg_n_0_[3]\,
       R => \counter_col[10]_i_1_n_0\
@@ -702,7 +717,7 @@ begin
     )
         port map (
       C => pclk,
-      CE => p_0_in_0,
+      CE => p_1_in_0,
       D => \plusOp__0\(4),
       Q => \counter_col_reg_n_0_[4]\,
       R => \counter_col[10]_i_1_n_0\
@@ -713,7 +728,7 @@ begin
     )
         port map (
       C => pclk,
-      CE => p_0_in_0,
+      CE => p_1_in_0,
       D => \plusOp__0\(5),
       Q => counter_col_reg(5),
       R => \counter_col[10]_i_1_n_0\
@@ -724,7 +739,7 @@ begin
     )
         port map (
       C => pclk,
-      CE => p_0_in_0,
+      CE => p_1_in_0,
       D => \plusOp__0\(6),
       Q => counter_col_reg(6),
       R => \counter_col[10]_i_1_n_0\
@@ -735,7 +750,7 @@ begin
     )
         port map (
       C => pclk,
-      CE => p_0_in_0,
+      CE => p_1_in_0,
       D => \plusOp__0\(7),
       Q => counter_col_reg(7),
       R => \counter_col[10]_i_1_n_0\
@@ -746,7 +761,7 @@ begin
     )
         port map (
       C => pclk,
-      CE => p_0_in_0,
+      CE => p_1_in_0,
       D => \plusOp__0\(8),
       Q => counter_col_reg(8),
       R => \counter_col[10]_i_1_n_0\
@@ -757,7 +772,7 @@ begin
     )
         port map (
       C => pclk,
-      CE => p_0_in_0,
+      CE => p_1_in_0,
       D => \plusOp__0\(9),
       Q => counter_col_reg(9),
       R => \counter_col[10]_i_1_n_0\
@@ -781,29 +796,37 @@ begin
     );
 \counter_row[10]_i_2\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"7FFFFFFF80000000"
+      INIT => X"FFF7FFFF00080000"
     )
         port map (
-      I0 => counter_row_reg(8),
-      I1 => counter_row_reg(6),
+      I0 => counter_row_reg(9),
+      I1 => counter_row_reg(7),
       I2 => \counter_row[10]_i_3_n_0\,
-      I3 => counter_row_reg(7),
-      I4 => counter_row_reg(9),
+      I3 => \counter_row[10]_i_4_n_0\,
+      I4 => counter_row_reg(8),
       I5 => counter_row_reg(10),
       O => plusOp(10)
     );
-\counter_row[10]_i_3\: unisim.vcomponents.LUT6
+\counter_row[10]_i_3\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"8000000000000000"
+      INIT => X"7FFFFFFF"
+    )
+        port map (
+      I0 => counter_row_reg(3),
+      I1 => \counter_row_reg_n_0_[1]\,
+      I2 => \counter_row_reg_n_0_[0]\,
+      I3 => \counter_row_reg_n_0_[2]\,
+      I4 => counter_row_reg(4),
+      O => \counter_row[10]_i_3_n_0\
+    );
+\counter_row[10]_i_4\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"7"
     )
         port map (
       I0 => counter_row_reg(5),
-      I1 => counter_row_reg(3),
-      I2 => \counter_row_reg_n_0_[1]\,
-      I3 => \counter_row_reg_n_0_[0]\,
-      I4 => \counter_row_reg_n_0_[2]\,
-      I5 => counter_row_reg(4),
-      O => \counter_row[10]_i_3_n_0\
+      I1 => counter_row_reg(6),
+      O => \counter_row[10]_i_4_n_0\
     );
 \counter_row[1]_i_1\: unisim.vcomponents.LUT2
     generic map(
@@ -819,8 +842,8 @@ begin
       INIT => X"78"
     )
         port map (
-      I0 => \counter_row_reg_n_0_[0]\,
-      I1 => \counter_row_reg_n_0_[1]\,
+      I0 => \counter_row_reg_n_0_[1]\,
+      I1 => \counter_row_reg_n_0_[0]\,
       I2 => \counter_row_reg_n_0_[2]\,
       O => plusOp(2)
     );
@@ -829,9 +852,9 @@ begin
       INIT => X"7F80"
     )
         port map (
-      I0 => \counter_row_reg_n_0_[1]\,
+      I0 => \counter_row_reg_n_0_[2]\,
       I1 => \counter_row_reg_n_0_[0]\,
-      I2 => \counter_row_reg_n_0_[2]\,
+      I2 => \counter_row_reg_n_0_[1]\,
       I3 => counter_row_reg(3),
       O => plusOp(3)
     );
@@ -840,10 +863,10 @@ begin
       INIT => X"7FFF8000"
     )
         port map (
-      I0 => \counter_row_reg_n_0_[2]\,
-      I1 => \counter_row_reg_n_0_[0]\,
-      I2 => \counter_row_reg_n_0_[1]\,
-      I3 => counter_row_reg(3),
+      I0 => counter_row_reg(3),
+      I1 => \counter_row_reg_n_0_[1]\,
+      I2 => \counter_row_reg_n_0_[0]\,
+      I3 => \counter_row_reg_n_0_[2]\,
       I4 => counter_row_reg(4),
       O => plusOp(4)
     );
@@ -852,54 +875,58 @@ begin
       INIT => X"7FFFFFFF80000000"
     )
         port map (
-      I0 => counter_row_reg(3),
-      I1 => \counter_row_reg_n_0_[1]\,
+      I0 => counter_row_reg(4),
+      I1 => \counter_row_reg_n_0_[2]\,
       I2 => \counter_row_reg_n_0_[0]\,
-      I3 => \counter_row_reg_n_0_[2]\,
-      I4 => counter_row_reg(4),
+      I3 => \counter_row_reg_n_0_[1]\,
+      I4 => counter_row_reg(3),
       I5 => counter_row_reg(5),
       O => plusOp(5)
     );
-\counter_row[6]_i_1\: unisim.vcomponents.LUT2
+\counter_row[6]_i_1\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"6"
+      INIT => X"D2"
     )
         port map (
-      I0 => \counter_row[10]_i_3_n_0\,
-      I1 => counter_row_reg(6),
+      I0 => counter_row_reg(5),
+      I1 => \counter_row[10]_i_3_n_0\,
+      I2 => counter_row_reg(6),
       O => plusOp(6)
     );
-\counter_row[7]_i_1\: unisim.vcomponents.LUT3
+\counter_row[7]_i_1\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"78"
+      INIT => X"F708"
     )
         port map (
-      I0 => \counter_row[10]_i_3_n_0\,
+      I0 => counter_row_reg(5),
       I1 => counter_row_reg(6),
-      I2 => counter_row_reg(7),
+      I2 => \counter_row[10]_i_3_n_0\,
+      I3 => counter_row_reg(7),
       O => plusOp(7)
     );
-\counter_row[8]_i_1\: unisim.vcomponents.LUT4
+\counter_row[8]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"7F80"
-    )
-        port map (
-      I0 => counter_row_reg(6),
-      I1 => \counter_row[10]_i_3_n_0\,
-      I2 => counter_row_reg(7),
-      I3 => counter_row_reg(8),
-      O => plusOp(8)
-    );
-\counter_row[9]_i_1\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"7FFF8000"
+      INIT => X"DFFF2000"
     )
         port map (
       I0 => counter_row_reg(7),
       I1 => \counter_row[10]_i_3_n_0\,
       I2 => counter_row_reg(6),
-      I3 => counter_row_reg(8),
-      I4 => counter_row_reg(9),
+      I3 => counter_row_reg(5),
+      I4 => counter_row_reg(8),
+      O => plusOp(8)
+    );
+\counter_row[9]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FF7FFFFF00800000"
+    )
+        port map (
+      I0 => counter_row_reg(8),
+      I1 => counter_row_reg(5),
+      I2 => counter_row_reg(6),
+      I3 => \counter_row[10]_i_3_n_0\,
+      I4 => counter_row_reg(7),
+      I5 => counter_row_reg(9),
       O => plusOp(9)
     );
 \counter_row_reg[0]\: unisim.vcomponents.FDRE
@@ -1029,20 +1056,20 @@ begin
     )
         port map (
       I0 => camera_v_sync,
-      O => p_0_in1_in
+      O => p_0_in
     );
 \dout_reg[0]\: unisim.vcomponents.FDRE
      port map (
       C => pclk,
-      CE => p_0_in1_in,
-      D => p_0_in(9),
+      CE => p_0_in,
+      D => p_1_in(9),
       Q => dout(0),
       R => '0'
     );
 \dout_reg[10]\: unisim.vcomponents.FDRE
      port map (
       C => pclk,
-      CE => p_0_in1_in,
+      CE => p_0_in,
       D => \latced_data_reg_n_0_[14]\,
       Q => dout(10),
       R => '0'
@@ -1050,7 +1077,7 @@ begin
 \dout_reg[11]\: unisim.vcomponents.FDRE
      port map (
       C => pclk,
-      CE => p_0_in1_in,
+      CE => p_0_in,
       D => \latced_data_reg_n_0_[15]\,
       Q => dout(11),
       R => '0'
@@ -1058,39 +1085,39 @@ begin
 \dout_reg[1]\: unisim.vcomponents.FDRE
      port map (
       C => pclk,
-      CE => p_0_in1_in,
-      D => p_0_in(10),
+      CE => p_0_in,
+      D => p_1_in(10),
       Q => dout(1),
       R => '0'
     );
 \dout_reg[2]\: unisim.vcomponents.FDRE
      port map (
       C => pclk,
-      CE => p_0_in1_in,
-      D => p_0_in(11),
+      CE => p_0_in,
+      D => p_1_in(11),
       Q => dout(2),
       R => '0'
     );
 \dout_reg[3]\: unisim.vcomponents.FDRE
      port map (
       C => pclk,
-      CE => p_0_in1_in,
-      D => p_0_in(12),
+      CE => p_0_in,
+      D => p_1_in(12),
       Q => dout(3),
       R => '0'
     );
 \dout_reg[4]\: unisim.vcomponents.FDRE
      port map (
       C => pclk,
-      CE => p_0_in1_in,
-      D => p_0_in(15),
+      CE => p_0_in,
+      D => p_1_in(15),
       Q => dout(4),
       R => '0'
     );
 \dout_reg[5]\: unisim.vcomponents.FDRE
      port map (
       C => pclk,
-      CE => p_0_in1_in,
+      CE => p_0_in,
       D => \latced_data_reg_n_0_[8]\,
       Q => dout(5),
       R => '0'
@@ -1098,7 +1125,7 @@ begin
 \dout_reg[6]\: unisim.vcomponents.FDRE
      port map (
       C => pclk,
-      CE => p_0_in1_in,
+      CE => p_0_in,
       D => \latced_data_reg_n_0_[9]\,
       Q => dout(6),
       R => '0'
@@ -1106,7 +1133,7 @@ begin
 \dout_reg[7]\: unisim.vcomponents.FDRE
      port map (
       C => pclk,
-      CE => p_0_in1_in,
+      CE => p_0_in,
       D => \latced_data_reg_n_0_[10]\,
       Q => dout(7),
       R => '0'
@@ -1114,7 +1141,7 @@ begin
 \dout_reg[8]\: unisim.vcomponents.FDRE
      port map (
       C => pclk,
-      CE => p_0_in1_in,
+      CE => p_0_in,
       D => \latced_data_reg_n_0_[12]\,
       Q => dout(8),
       R => '0'
@@ -1122,7 +1149,7 @@ begin
 \dout_reg[9]\: unisim.vcomponents.FDRE
      port map (
       C => pclk,
-      CE => p_0_in1_in,
+      CE => p_0_in,
       D => \latced_data_reg_n_0_[13]\,
       Q => dout(9),
       R => '0'
@@ -1133,9 +1160,9 @@ begin
     )
         port map (
       C => pclk,
-      CE => p_0_in1_in,
+      CE => p_0_in,
       D => din(0),
-      Q => p_0_in(8),
+      Q => p_1_in(8),
       R => '0'
     );
 \latced_data_reg[10]\: unisim.vcomponents.FDRE
@@ -1144,8 +1171,8 @@ begin
     )
         port map (
       C => pclk,
-      CE => p_0_in1_in,
-      D => p_0_in(10),
+      CE => p_0_in,
+      D => p_1_in(10),
       Q => \latced_data_reg_n_0_[10]\,
       R => '0'
     );
@@ -1155,8 +1182,8 @@ begin
     )
         port map (
       C => pclk,
-      CE => p_0_in1_in,
-      D => p_0_in(12),
+      CE => p_0_in,
+      D => p_1_in(12),
       Q => \latced_data_reg_n_0_[12]\,
       R => '0'
     );
@@ -1166,8 +1193,8 @@ begin
     )
         port map (
       C => pclk,
-      CE => p_0_in1_in,
-      D => p_0_in(13),
+      CE => p_0_in,
+      D => p_1_in(13),
       Q => \latced_data_reg_n_0_[13]\,
       R => '0'
     );
@@ -1177,8 +1204,8 @@ begin
     )
         port map (
       C => pclk,
-      CE => p_0_in1_in,
-      D => p_0_in(14),
+      CE => p_0_in,
+      D => p_1_in(14),
       Q => \latced_data_reg_n_0_[14]\,
       R => '0'
     );
@@ -1188,8 +1215,8 @@ begin
     )
         port map (
       C => pclk,
-      CE => p_0_in1_in,
-      D => p_0_in(15),
+      CE => p_0_in,
+      D => p_1_in(15),
       Q => \latced_data_reg_n_0_[15]\,
       R => '0'
     );
@@ -1199,9 +1226,9 @@ begin
     )
         port map (
       C => pclk,
-      CE => p_0_in1_in,
+      CE => p_0_in,
       D => din(1),
-      Q => p_0_in(9),
+      Q => p_1_in(9),
       R => '0'
     );
 \latced_data_reg[2]\: unisim.vcomponents.FDRE
@@ -1210,9 +1237,9 @@ begin
     )
         port map (
       C => pclk,
-      CE => p_0_in1_in,
+      CE => p_0_in,
       D => din(2),
-      Q => p_0_in(10),
+      Q => p_1_in(10),
       R => '0'
     );
 \latced_data_reg[3]\: unisim.vcomponents.FDRE
@@ -1221,9 +1248,9 @@ begin
     )
         port map (
       C => pclk,
-      CE => p_0_in1_in,
+      CE => p_0_in,
       D => din(3),
-      Q => p_0_in(11),
+      Q => p_1_in(11),
       R => '0'
     );
 \latced_data_reg[4]\: unisim.vcomponents.FDRE
@@ -1232,9 +1259,9 @@ begin
     )
         port map (
       C => pclk,
-      CE => p_0_in1_in,
+      CE => p_0_in,
       D => din(4),
-      Q => p_0_in(12),
+      Q => p_1_in(12),
       R => '0'
     );
 \latced_data_reg[5]\: unisim.vcomponents.FDRE
@@ -1243,9 +1270,9 @@ begin
     )
         port map (
       C => pclk,
-      CE => p_0_in1_in,
+      CE => p_0_in,
       D => din(5),
-      Q => p_0_in(13),
+      Q => p_1_in(13),
       R => '0'
     );
 \latced_data_reg[6]\: unisim.vcomponents.FDRE
@@ -1254,9 +1281,9 @@ begin
     )
         port map (
       C => pclk,
-      CE => p_0_in1_in,
+      CE => p_0_in,
       D => din(6),
-      Q => p_0_in(14),
+      Q => p_1_in(14),
       R => '0'
     );
 \latced_data_reg[7]\: unisim.vcomponents.FDRE
@@ -1265,9 +1292,9 @@ begin
     )
         port map (
       C => pclk,
-      CE => p_0_in1_in,
+      CE => p_0_in,
       D => din(7),
-      Q => p_0_in(15),
+      Q => p_1_in(15),
       R => '0'
     );
 \latced_data_reg[8]\: unisim.vcomponents.FDRE
@@ -1276,8 +1303,8 @@ begin
     )
         port map (
       C => pclk,
-      CE => p_0_in1_in,
-      D => p_0_in(8),
+      CE => p_0_in,
+      D => p_1_in(8),
       Q => \latced_data_reg_n_0_[8]\,
       R => '0'
     );
@@ -1287,29 +1314,27 @@ begin
     )
         port map (
       C => pclk,
-      CE => p_0_in1_in,
-      D => p_0_in(9),
+      CE => p_0_in,
+      D => p_1_in(9),
       Q => \latced_data_reg_n_0_[9]\,
       R => '0'
     );
 latch_href_reg: unisim.vcomponents.FDRE
      port map (
       C => pclk,
-      CE => p_0_in1_in,
+      CE => p_0_in,
       D => camera_h_ref,
       Q => latch_href,
       R => '0'
     );
-wr_en_i_1: unisim.vcomponents.LUT5
+wr_en_i_1: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"B8B8A8B8"
+      INIT => X"0E"
     )
         port map (
       I0 => \^wr_en\,
-      I1 => camera_v_sync,
-      I2 => p_0_in_0,
-      I3 => zoom_x2,
-      I4 => \address0__2\,
+      I1 => wr_en0_out,
+      I2 => camera_v_sync,
       O => wr_en_i_1_n_0
     );
 wr_en_reg: unisim.vcomponents.FDRE
@@ -1352,7 +1377,7 @@ wr_en_reg: unisim.vcomponents.FDRE
       C => pclk,
       CE => '1',
       D => \write_state[1]_i_1_n_0\,
-      Q => p_0_in_0,
+      Q => p_1_in_0,
       R => '0'
     );
 end STRUCTURE;
@@ -1369,7 +1394,8 @@ entity design_1_ovo_7670_caputre_0_0 is
     din : in STD_LOGIC_VECTOR ( 7 downto 0 );
     addr : out STD_LOGIC_VECTOR ( 18 downto 0 );
     dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
-    wr_en : out STD_LOGIC
+    wr_en : out STD_LOGIC;
+    clk_bram : out STD_LOGIC
   );
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of design_1_ovo_7670_caputre_0_0 : entity is true;
@@ -1390,6 +1416,7 @@ U0: entity work.design_1_ovo_7670_caputre_0_0_ovo_7670_caputre
       addr(18 downto 0) => addr(18 downto 0),
       camera_h_ref => camera_h_ref,
       camera_v_sync => camera_v_sync,
+      clk_bram => clk_bram,
       din(7 downto 0) => din(7 downto 0),
       dout(11 downto 0) => dout(11 downto 0),
       pclk => pclk,

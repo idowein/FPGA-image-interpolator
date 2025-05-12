@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Tue Apr 29 17:10:29 2025
-| Host         : Ido running 64-bit major release  (build 9200)
+| Date         : Mon May 12 14:31:43 2025
+| Host         : dvirhersh_comp running 64-bit major release  (build 9200)
 | Command      : report_methodology -file design_1_wrapper_methodology_drc_routed.rpt -pb design_1_wrapper_methodology_drc_routed.pb -rpx design_1_wrapper_methodology_drc_routed.rpx
 | Design       : design_1_wrapper
 | Device       : xc7a100tcsg324-1
@@ -23,11 +23,11 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 302
+             Violations found: 303
 +-----------+------------------+------------------------------------------------------------------+------------+
 | Rule      | Severity         | Description                                                      | Violations |
 +-----------+------------------+------------------------------------------------------------------+------------+
-| TIMING-17 | Critical Warning | Non-clocked sequential cell                                      | 300        |
+| TIMING-17 | Critical Warning | Non-clocked sequential cell                                      | 301        |
 | TIMING-27 | Critical Warning | Invalid primary clock on hierarchical pin                        | 1          |
 | CKLD-2    | Warning          | Clock Net has IO Driver, not a Clock Buf, and/or non-Clock loads | 1          |
 +-----------+------------------+------------------------------------------------------------------+------------+
@@ -1271,265 +1271,270 @@ Related violations: <none>
 
 TIMING-17#248 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_col_reg[0]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/clk_bram_int_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#249 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_col_reg[10]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_col_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#250 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_col_reg[1]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_col_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#251 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_col_reg[2]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_col_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#252 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_col_reg[3]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_col_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#253 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_col_reg[4]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_col_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#254 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_col_reg[5]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_col_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#255 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_col_reg[6]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_col_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#256 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_col_reg[7]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_col_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#257 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_col_reg[8]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_col_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#258 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_col_reg[9]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_col_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#259 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_row_reg[0]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_col_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#260 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_row_reg[10]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_row_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#261 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_row_reg[1]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_row_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#262 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_row_reg[2]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_row_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#263 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_row_reg[3]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_row_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#264 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_row_reg[4]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_row_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#265 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_row_reg[5]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_row_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#266 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_row_reg[6]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_row_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#267 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_row_reg[7]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_row_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#268 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_row_reg[8]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_row_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#269 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_row_reg[9]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_row_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#270 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/dout_reg[0]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/counter_row_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#271 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/dout_reg[10]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/dout_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#272 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/dout_reg[11]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/dout_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#273 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/dout_reg[1]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/dout_reg[11]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#274 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/dout_reg[2]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/dout_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#275 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/dout_reg[3]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/dout_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#276 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/dout_reg[4]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/dout_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#277 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/dout_reg[5]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/dout_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#278 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/dout_reg[6]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/dout_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#279 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/dout_reg[7]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/dout_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#280 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/dout_reg[8]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/dout_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#281 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/dout_reg[9]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/dout_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#282 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/latced_data_reg[0]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/dout_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#283 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/latced_data_reg[10]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/latced_data_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#284 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/latced_data_reg[12]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/latced_data_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#285 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/latced_data_reg[13]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/latced_data_reg[12]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#286 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/latced_data_reg[14]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/latced_data_reg[13]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#287 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/latced_data_reg[15]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/latced_data_reg[14]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#288 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/latced_data_reg[1]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/latced_data_reg[15]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#289 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/latced_data_reg[2]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/latced_data_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#290 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/latced_data_reg[3]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/latced_data_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#291 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/latced_data_reg[4]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/latced_data_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#292 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/latced_data_reg[5]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/latced_data_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#293 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/latced_data_reg[6]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/latced_data_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#294 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/latced_data_reg[7]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/latced_data_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#295 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/latced_data_reg[8]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/latced_data_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#296 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/latced_data_reg[9]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/latced_data_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#297 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/latch_href_reg/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/latced_data_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#298 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/wr_en_reg/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/latch_href_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#299 Critical Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/ovo_7670_caputre_0/U0/write_state_reg[0]/C is not reached by a timing clock
+The clock pin design_1_i/ovo_7670_caputre_0/U0/wr_en_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#300 Critical Warning
+Non-clocked sequential cell  
+The clock pin design_1_i/ovo_7670_caputre_0/U0/write_state_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#301 Critical Warning
 Non-clocked sequential cell  
 The clock pin design_1_i/ovo_7670_caputre_0/U0/write_state_reg[1]/C is not reached by a timing clock
 Related violations: <none>

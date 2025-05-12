@@ -1,0 +1,6 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Digital-Zoom-FPGA/OV7670_VGA/ovo_7670_caputre.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ovo_7670_caputre'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sim_1/new/capture_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_ovo_7670_caputre'

@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../ovo_7670_caputre.vhd" \
+"../../../../OV7670_VGA.srcs/sim_1/new/capture_tb.vhd" \
+
+# Do not sort compile order
+nosort

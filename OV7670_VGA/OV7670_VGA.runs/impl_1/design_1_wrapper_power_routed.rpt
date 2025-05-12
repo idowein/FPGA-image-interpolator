@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date             : Tue Apr 29 17:10:29 2025
-| Host             : Ido running 64-bit major release  (build 9200)
+| Date             : Mon May 12 14:31:47 2025
+| Host             : dvirhersh_comp running 64-bit major release  (build 9200)
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
 | Device           : xc7a100tcsg324-1
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.225        |
+| Total On-Chip Power (W)  | 0.226        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.123        |
+| Dynamic (W)              | 0.124        |
 | Device Static (W)        | 0.102        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 84.0         |
@@ -52,20 +52,20 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.001 |        6 |       --- |             --- |
-| Slice Logic    |    <0.001 |     1666 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      632 |     63400 |            1.00 |
+| Clocks         |     0.001 |        5 |       --- |             --- |
+| Slice Logic    |    <0.001 |     1669 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      643 |     63400 |            1.01 |
 |   CARRY4       |    <0.001 |       60 |     15850 |            0.38 |
-|   Register     |    <0.001 |      279 |    126800 |            0.22 |
+|   Register     |    <0.001 |      280 |    126800 |            0.22 |
+|   BUFG         |    <0.001 |        2 |        32 |            6.25 |
 |   F7/F8 Muxes  |    <0.001 |      129 |     63400 |            0.20 |
-|   BUFG         |    <0.001 |        1 |        32 |            3.13 |
 |   Others       |     0.000 |      302 |       --- |             --- |
-| Signals        |     0.003 |     1521 |       --- |             --- |
+| Signals        |     0.003 |     1527 |       --- |             --- |
 | Block RAM      |    <0.001 |      104 |       135 |           77.04 |
-| MMCM           |     0.115 |        1 |         6 |           16.67 |
+| MMCM           |     0.116 |        1 |         6 |           16.67 |
 | I/O            |     0.003 |       36 |       210 |           17.14 |
 | Static Power   |     0.102 |          |           |                 |
-| Total          |     0.225 |          |           |                 |
+| Total          |     0.226 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,7 +76,7 @@ Table of Contents
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
 | Vccint    |       1.000 |     0.023 |       0.005 |      0.018 |
-| Vccaux    |       1.800 |     0.082 |       0.064 |      0.018 |
+| Vccaux    |       1.800 |     0.083 |       0.064 |      0.018 |
 | Vcco33    |       3.300 |     0.005 |       0.001 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
@@ -131,8 +131,7 @@ Table of Contents
 +-----------------------------------+---------------------------------------------------------+-----------------+
 | Clock                             | Domain                                                  | Constraint (ns) |
 +-----------------------------------+---------------------------------------------------------+-----------------+
-| clk_reg_design_1_clk_wiz_0_0      | design_1_i/clk_wiz_0/inst/clk_reg_design_1_clk_wiz_0_0  |            40.0 |
-| clk_vga_design_1_clk_wiz_0_0      | design_1_i/clk_wiz_0/inst/clk_vga_design_1_clk_wiz_0_0  |            39.7 |
+| clk_vga_design_1_clk_wiz_0_0      | design_1_i/clk_wiz_0/inst/clk_vga_design_1_clk_wiz_0_0  |            40.0 |
 | clkfbout_design_1_clk_wiz_0_0     | design_1_i/clk_wiz_0/inst/clkfbout_design_1_clk_wiz_0_0 |            10.0 |
 | design_1_i/clk_wiz_0/inst/clk_in1 | clk_in1_IBUF                                            |            10.0 |
 +-----------------------------------+---------------------------------------------------------+-----------------+
@@ -147,12 +146,12 @@ Table of Contents
 +------------------------+-----------+
 | Name                   | Power (W) |
 +------------------------+-----------+
-| design_1_wrapper       |     0.123 |
-|   design_1_i           |     0.120 |
+| design_1_wrapper       |     0.124 |
+|   design_1_i           |     0.121 |
 |     blk_mem_gen_0      |     0.001 |
 |       U0               |     0.001 |
-|     clk_wiz_0          |     0.116 |
-|       inst             |     0.116 |
+|     clk_wiz_0          |     0.117 |
+|       inst             |     0.117 |
 |     ovo_7670_caputre_0 |     0.002 |
 |       U0               |     0.002 |
 +------------------------+-----------+

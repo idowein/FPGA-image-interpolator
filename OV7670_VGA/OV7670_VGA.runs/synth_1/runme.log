@@ -9,38 +9,40 @@
     ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 
 source design_1_wrapper.tcl -notrace
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 427.363 ; gain = 124.496
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.2/data/ip'.
+add_files: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 458.910 ; gain = 31.547
 Command: synth_design -top design_1_wrapper -part xc7a100tcsg324-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 27052 
+INFO: Helper process launched with PID 9896 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1008.898 ; gain = 233.699
+Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 982.461 ; gain = 234.449
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'design_1_wrapper' [C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:39]
-INFO: [Synth 8-3491] module 'design_1' declared at 'C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/synth/design_1.vhd:14' bound to instance 'design_1_i' of component 'design_1' [C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:65]
-INFO: [Synth 8-638] synthesizing module 'design_1' [C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/synth/design_1.vhd:43]
-INFO: [Synth 8-3491] module 'design_1_VGA_TOP_1_0' declared at 'C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/synth_1/.Xil/Vivado-28048-Ido/realtime/design_1_VGA_TOP_1_0_stub.vhdl:5' bound to instance 'VGA_TOP_1' of component 'design_1_VGA_TOP_1_0' [C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/synth/design_1.vhd:169]
-INFO: [Synth 8-638] synthesizing module 'design_1_VGA_TOP_1_0' [C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/synth_1/.Xil/Vivado-28048-Ido/realtime/design_1_VGA_TOP_1_0_stub.vhdl:21]
-INFO: [Synth 8-3491] module 'design_1_blk_mem_gen_0_0' declared at 'C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/synth_1/.Xil/Vivado-28048-Ido/realtime/design_1_blk_mem_gen_0_0_stub.vhdl:5' bound to instance 'blk_mem_gen_0' of component 'design_1_blk_mem_gen_0_0' [C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/synth/design_1.vhd:182]
-INFO: [Synth 8-638] synthesizing module 'design_1_blk_mem_gen_0_0' [C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/synth_1/.Xil/Vivado-28048-Ido/realtime/design_1_blk_mem_gen_0_0_stub.vhdl:18]
-INFO: [Synth 8-3491] module 'design_1_clk_wiz_0_0' declared at 'C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/synth_1/.Xil/Vivado-28048-Ido/realtime/design_1_clk_wiz_0_0_stub.vhdl:5' bound to instance 'clk_wiz_0' of component 'design_1_clk_wiz_0_0' [C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/synth/design_1.vhd:192]
-INFO: [Synth 8-638] synthesizing module 'design_1_clk_wiz_0_0' [C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/synth_1/.Xil/Vivado-28048-Ido/realtime/design_1_clk_wiz_0_0_stub.vhdl:16]
-INFO: [Synth 8-3491] module 'design_1_cntl_0_0' declared at 'C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/synth_1/.Xil/Vivado-28048-Ido/realtime/design_1_cntl_0_0_stub.vhdl:5' bound to instance 'cntl_0' of component 'design_1_cntl_0_0' [C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/synth/design_1.vhd:200]
-INFO: [Synth 8-638] synthesizing module 'design_1_cntl_0_0' [C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/synth_1/.Xil/Vivado-28048-Ido/realtime/design_1_cntl_0_0_stub.vhdl:16]
-INFO: [Synth 8-3491] module 'design_1_ov7670_controller_0_0' declared at 'C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/synth_1/.Xil/Vivado-28048-Ido/realtime/design_1_ov7670_controller_0_0_stub.vhdl:5' bound to instance 'ov7670_controller_0' of component 'design_1_ov7670_controller_0_0' [C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/synth/design_1.vhd:208]
-INFO: [Synth 8-638] synthesizing module 'design_1_ov7670_controller_0_0' [C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/synth_1/.Xil/Vivado-28048-Ido/realtime/design_1_ov7670_controller_0_0_stub.vhdl:19]
-INFO: [Synth 8-3491] module 'design_1_ovo_7670_caputre_0_0' declared at 'C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/synth_1/.Xil/Vivado-28048-Ido/realtime/design_1_ovo_7670_caputre_0_0_stub.vhdl:5' bound to instance 'ovo_7670_caputre_0' of component 'design_1_ovo_7670_caputre_0_0' [C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/synth/design_1.vhd:219]
-INFO: [Synth 8-638] synthesizing module 'design_1_ovo_7670_caputre_0_0' [C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/synth_1/.Xil/Vivado-28048-Ido/realtime/design_1_ovo_7670_caputre_0_0_stub.vhdl:19]
-INFO: [Synth 8-256] done synthesizing module 'design_1' (1#1) [C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/synth/design_1.vhd:43]
-INFO: [Synth 8-256] done synthesizing module 'design_1_wrapper' (2#1) [C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:39]
+INFO: [Synth 8-638] synthesizing module 'design_1_wrapper' [C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:39]
+INFO: [Synth 8-3491] module 'design_1' declared at 'C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/synth/design_1.vhd:14' bound to instance 'design_1_i' of component 'design_1' [C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:65]
+INFO: [Synth 8-638] synthesizing module 'design_1' [C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/synth/design_1.vhd:43]
+INFO: [Synth 8-3491] module 'design_1_VGA_TOP_1_0' declared at 'C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/synth_1/.Xil/Vivado-2164-dvirhersh_comp/realtime/design_1_VGA_TOP_1_0_stub.vhdl:5' bound to instance 'VGA_TOP_1' of component 'design_1_VGA_TOP_1_0' [C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/synth/design_1.vhd:167]
+INFO: [Synth 8-638] synthesizing module 'design_1_VGA_TOP_1_0' [C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/synth_1/.Xil/Vivado-2164-dvirhersh_comp/realtime/design_1_VGA_TOP_1_0_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'design_1_blk_mem_gen_0_0' declared at 'C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/synth_1/.Xil/Vivado-2164-dvirhersh_comp/realtime/design_1_blk_mem_gen_0_0_stub.vhdl:5' bound to instance 'blk_mem_gen_0' of component 'design_1_blk_mem_gen_0_0' [C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/synth/design_1.vhd:180]
+INFO: [Synth 8-638] synthesizing module 'design_1_blk_mem_gen_0_0' [C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/synth_1/.Xil/Vivado-2164-dvirhersh_comp/realtime/design_1_blk_mem_gen_0_0_stub.vhdl:18]
+INFO: [Synth 8-3491] module 'design_1_clk_wiz_0_0' declared at 'C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/synth_1/.Xil/Vivado-2164-dvirhersh_comp/realtime/design_1_clk_wiz_0_0_stub.vhdl:5' bound to instance 'clk_wiz_0' of component 'design_1_clk_wiz_0_0' [C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/synth/design_1.vhd:190]
+INFO: [Synth 8-638] synthesizing module 'design_1_clk_wiz_0_0' [C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/synth_1/.Xil/Vivado-2164-dvirhersh_comp/realtime/design_1_clk_wiz_0_0_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'design_1_cntl_0_0' declared at 'C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/synth_1/.Xil/Vivado-2164-dvirhersh_comp/realtime/design_1_cntl_0_0_stub.vhdl:5' bound to instance 'cntl_0' of component 'design_1_cntl_0_0' [C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/synth/design_1.vhd:196]
+INFO: [Synth 8-638] synthesizing module 'design_1_cntl_0_0' [C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/synth_1/.Xil/Vivado-2164-dvirhersh_comp/realtime/design_1_cntl_0_0_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'design_1_ov7670_controller_0_0' declared at 'C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/synth_1/.Xil/Vivado-2164-dvirhersh_comp/realtime/design_1_ov7670_controller_0_0_stub.vhdl:5' bound to instance 'ov7670_controller_0' of component 'design_1_ov7670_controller_0_0' [C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/synth/design_1.vhd:204]
+INFO: [Synth 8-638] synthesizing module 'design_1_ov7670_controller_0_0' [C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/synth_1/.Xil/Vivado-2164-dvirhersh_comp/realtime/design_1_ov7670_controller_0_0_stub.vhdl:19]
+INFO: [Synth 8-3491] module 'design_1_ovo_7670_caputre_0_0' declared at 'C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/synth_1/.Xil/Vivado-2164-dvirhersh_comp/realtime/design_1_ovo_7670_caputre_0_0_stub.vhdl:5' bound to instance 'ovo_7670_caputre_0' of component 'design_1_ovo_7670_caputre_0_0' [C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/synth/design_1.vhd:215]
+INFO: [Synth 8-638] synthesizing module 'design_1_ovo_7670_caputre_0_0' [C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/synth_1/.Xil/Vivado-2164-dvirhersh_comp/realtime/design_1_ovo_7670_caputre_0_0_stub.vhdl:20]
+INFO: [Synth 8-256] done synthesizing module 'design_1' (1#1) [C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/synth/design_1.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'design_1_wrapper' (2#1) [C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:39]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1084.879 ; gain = 309.680
+Finished RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1058.020 ; gain = 310.008
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -53,56 +55,56 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1084.879 ; gain = 309.680
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1058.020 ; gain = 310.008
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1084.879 ; gain = 309.680
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1058.020 ; gain = 310.008
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1084.879 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1058.020 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [c:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_ov7670_controller_0_0_1/design_1_ov7670_controller_0_0/design_1_ov7670_controller_0_0_in_context.xdc] for cell 'design_1_i/ov7670_controller_0'
-Finished Parsing XDC File [c:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_ov7670_controller_0_0_1/design_1_ov7670_controller_0_0/design_1_ov7670_controller_0_0_in_context.xdc] for cell 'design_1_i/ov7670_controller_0'
-Parsing XDC File [c:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_cntl_0_0_1/design_1_cntl_0_0/design_1_cntl_0_0_in_context.xdc] for cell 'design_1_i/cntl_0'
-Finished Parsing XDC File [c:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_cntl_0_0_1/design_1_cntl_0_0/design_1_cntl_0_0_in_context.xdc] for cell 'design_1_i/cntl_0'
-Parsing XDC File [c:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_ovo_7670_caputre_0_0_1/design_1_ovo_7670_caputre_0_0/design_1_ovo_7670_caputre_0_0_in_context.xdc] for cell 'design_1_i/ovo_7670_caputre_0'
-Finished Parsing XDC File [c:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_ovo_7670_caputre_0_0_1/design_1_ovo_7670_caputre_0_0/design_1_ovo_7670_caputre_0_0_in_context.xdc] for cell 'design_1_i/ovo_7670_caputre_0'
-Parsing XDC File [c:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_blk_mem_gen_0_0_1/design_1_blk_mem_gen_0_0/design_1_blk_mem_gen_0_0_in_context.xdc] for cell 'design_1_i/blk_mem_gen_0'
-Finished Parsing XDC File [c:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_blk_mem_gen_0_0_1/design_1_blk_mem_gen_0_0/design_1_blk_mem_gen_0_0_in_context.xdc] for cell 'design_1_i/blk_mem_gen_0'
-Parsing XDC File [c:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0_1/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_in_context.xdc] for cell 'design_1_i/clk_wiz_0'
-Finished Parsing XDC File [c:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0_1/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_in_context.xdc] for cell 'design_1_i/clk_wiz_0'
-Parsing XDC File [c:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_VGA_TOP_1_0/design_1_VGA_TOP_1_0/design_1_VGA_TOP_1_0_in_context.xdc] for cell 'design_1_i/VGA_TOP_1'
-Finished Parsing XDC File [c:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_VGA_TOP_1_0/design_1_VGA_TOP_1_0/design_1_VGA_TOP_1_0_in_context.xdc] for cell 'design_1_i/VGA_TOP_1'
-Parsing XDC File [C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/Nexys-A7-100T-Master.xdc]
-Finished Parsing XDC File [C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/Nexys-A7-100T-Master.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/Nexys-A7-100T-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/design_1_wrapper_propImpl.xdc].
+Parsing XDC File [c:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_ov7670_controller_0_0_1/design_1_ov7670_controller_0_0/design_1_ov7670_controller_0_0_in_context.xdc] for cell 'design_1_i/ov7670_controller_0'
+Finished Parsing XDC File [c:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_ov7670_controller_0_0_1/design_1_ov7670_controller_0_0/design_1_ov7670_controller_0_0_in_context.xdc] for cell 'design_1_i/ov7670_controller_0'
+Parsing XDC File [c:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_cntl_0_0_1/design_1_cntl_0_0/design_1_cntl_0_0_in_context.xdc] for cell 'design_1_i/cntl_0'
+Finished Parsing XDC File [c:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_cntl_0_0_1/design_1_cntl_0_0/design_1_cntl_0_0_in_context.xdc] for cell 'design_1_i/cntl_0'
+Parsing XDC File [c:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_ovo_7670_caputre_0_0_1/design_1_ovo_7670_caputre_0_0/design_1_ovo_7670_caputre_0_0_in_context.xdc] for cell 'design_1_i/ovo_7670_caputre_0'
+Finished Parsing XDC File [c:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_ovo_7670_caputre_0_0_1/design_1_ovo_7670_caputre_0_0/design_1_ovo_7670_caputre_0_0_in_context.xdc] for cell 'design_1_i/ovo_7670_caputre_0'
+Parsing XDC File [c:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_blk_mem_gen_0_0_1/design_1_blk_mem_gen_0_0/design_1_blk_mem_gen_0_0_in_context.xdc] for cell 'design_1_i/blk_mem_gen_0'
+Finished Parsing XDC File [c:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_blk_mem_gen_0_0_1/design_1_blk_mem_gen_0_0/design_1_blk_mem_gen_0_0_in_context.xdc] for cell 'design_1_i/blk_mem_gen_0'
+Parsing XDC File [c:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0_1/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_in_context.xdc] for cell 'design_1_i/clk_wiz_0'
+Finished Parsing XDC File [c:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0_1/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_in_context.xdc] for cell 'design_1_i/clk_wiz_0'
+Parsing XDC File [c:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_VGA_TOP_1_0/design_1_VGA_TOP_1_0/design_1_VGA_TOP_1_0_in_context.xdc] for cell 'design_1_i/VGA_TOP_1'
+Finished Parsing XDC File [c:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_VGA_TOP_1_0/design_1_VGA_TOP_1_0/design_1_VGA_TOP_1_0_in_context.xdc] for cell 'design_1_i/VGA_TOP_1'
+Parsing XDC File [C:/Digital-Zoom-FPGA/OV7670_VGA/Nexys-A7-100T-Master.xdc]
+Finished Parsing XDC File [C:/Digital-Zoom-FPGA/OV7670_VGA/Nexys-A7-100T-Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Digital-Zoom-FPGA/OV7670_VGA/Nexys-A7-100T-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/design_1_wrapper_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/design_1_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/synth_1/dont_touch.xdc]
-Finished Parsing XDC File [C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/synth_1/dont_touch.xdc]
+Parsing XDC File [C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1110.945 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1084.441 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1110.945 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 1084.441 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1110.945 ; gain = 335.746
+Finished Constraint Validation : Time (s): cpu = 00:00:34 ; elapsed = 00:00:40 . Memory (MB): peak = 1084.441 ; gain = 336.430
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1110.945 ; gain = 335.746
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:34 ; elapsed = 00:00:40 . Memory (MB): peak = 1084.441 ; gain = 336.430
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for clk_in1. (constraint file  c:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0_1/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_in_context.xdc, line 4).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for clk_in1. (constraint file  c:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0_1/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_in_context.xdc, line 5).
+Applied set_property IO_BUFFER_TYPE = NONE for clk_in1. (constraint file  c:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0_1/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clk_in1. (constraint file  c:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0_1/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_in_context.xdc, line 4).
 Applied set_property DONT_TOUCH = true for design_1_i. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_1_i/ov7670_controller_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_1_i/cntl_0. (constraint file  auto generated constraint, line ).
@@ -111,10 +113,10 @@ Applied set_property DONT_TOUCH = true for design_1_i/blk_mem_gen_0. (constraint
 Applied set_property DONT_TOUCH = true for design_1_i/clk_wiz_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_1_i/VGA_TOP_1. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1110.945 ; gain = 335.746
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:34 ; elapsed = 00:00:40 . Memory (MB): peak = 1084.441 ; gain = 336.430
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1110.945 ; gain = 335.746
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:34 ; elapsed = 00:00:41 . Memory (MB): peak = 1084.441 ; gain = 336.430
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -150,7 +152,7 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1110.945 ; gain = 335.746
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:38 ; elapsed = 00:00:45 . Memory (MB): peak = 1084.441 ; gain = 336.430
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -162,13 +164,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1144.539 ; gain = 369.340
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:02 ; elapsed = 00:01:13 . Memory (MB): peak = 1116.164 ; gain = 368.152
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1144.539 ; gain = 369.340
+Finished Timing Optimization : Time (s): cpu = 00:01:02 ; elapsed = 00:01:13 . Memory (MB): peak = 1116.238 ; gain = 368.227
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -180,7 +182,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1154.133 ; gain = 378.934
+Finished Technology Mapping : Time (s): cpu = 00:01:02 ; elapsed = 00:01:13 . Memory (MB): peak = 1126.090 ; gain = 378.078
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -204,13 +206,13 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1169.934 ; gain = 394.734
+Finished IO Insertion : Time (s): cpu = 00:01:14 ; elapsed = 00:01:27 . Memory (MB): peak = 1141.875 ; gain = 393.863
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1169.934 ; gain = 394.734
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:14 ; elapsed = 00:01:27 . Memory (MB): peak = 1141.875 ; gain = 393.863
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -229,25 +231,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1169.934 ; gain = 394.734
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:14 ; elapsed = 00:01:27 . Memory (MB): peak = 1141.875 ; gain = 393.863
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1169.934 ; gain = 394.734
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:14 ; elapsed = 00:01:27 . Memory (MB): peak = 1141.875 ; gain = 393.863
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1169.934 ; gain = 394.734
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:14 ; elapsed = 00:01:27 . Memory (MB): peak = 1141.875 ; gain = 393.863
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1169.934 ; gain = 394.734
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:14 ; elapsed = 00:01:27 . Memory (MB): peak = 1141.875 ; gain = 393.863
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -283,30 +285,30 @@ Report Instance Areas:
 +------+-------------+---------+------+
 |      |Instance     |Module   |Cells |
 +------+-------------+---------+------+
-|1     |top          |         |   121|
-|2     |  design_1_i |design_1 |    87|
+|1     |top          |         |   120|
+|2     |  design_1_i |design_1 |    86|
 +------+-------------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1169.934 ; gain = 394.734
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:14 ; elapsed = 00:01:27 . Memory (MB): peak = 1141.875 ; gain = 393.863
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 1169.934 ; gain = 368.668
-Synthesis Optimization Complete : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1169.934 ; gain = 394.734
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:53 ; elapsed = 00:01:20 . Memory (MB): peak = 1141.875 ; gain = 367.441
+Synthesis Optimization Complete : Time (s): cpu = 00:01:14 ; elapsed = 00:01:28 . Memory (MB): peak = 1141.875 ; gain = 393.863
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1180.922 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1152.398 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1189.109 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1158.539 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
 30 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1189.109 ; gain = 699.156
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1189.109 ; gain = 0.000
+synth_design: Time (s): cpu = 00:01:27 ; elapsed = 00:01:45 . Memory (MB): peak = 1158.539 ; gain = 699.629
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1158.539 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint 'C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/synth_1/design_1_wrapper.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'C:/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.runs/synth_1/design_1_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Apr 29 17:09:12 2025...
+INFO: [Common 17-206] Exiting Vivado at Mon May 12 14:26:03 2025...

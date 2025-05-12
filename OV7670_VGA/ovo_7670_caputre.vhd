@@ -44,7 +44,8 @@ entity ovo_7670_caputre is
            din     : in   STD_LOGIC_VECTOR (7 downto 0);
            addr  : out  STD_LOGIC_VECTOR (18 downto 0);
            dout  : out  STD_LOGIC_VECTOR (11 downto 0);
-           wr_en    : out  STD_LOGIC);
+           wr_en    : out  STD_LOGIC;
+           clk_bram      : out STD_LOGIC);
 end ovo_7670_caputre;
 
 architecture Behavioral of ovo_7670_caputre is
@@ -55,10 +56,20 @@ architecture Behavioral of ovo_7670_caputre is
 	signal  latch_href :std_logic;
 	signal 	latced_data :std_logic_vector (15 downto 0):= (others =>'0');
 	signal  counter_col,counter_row:std_logic_Vector(10 downto 0 ):= (others=> '0');
+    signal clk_bram_int : std_logic := '0';
 
 begin
     addr <=address;
-    
+
+    clk_bram <= clk_bram_int;
+
+    -- Clock divider: clk_bram = pclk / 2
+    process(pclk)
+    begin
+        if rising_edge(pclk) then
+            clk_bram_int <= not clk_bram_int;
+        end if;
+    end process;
         process(pclk)
         begin
             if rising_edge(pclk) then
@@ -67,6 +78,7 @@ begin
                      counter_row<=(others =>'0');
                      counter_col<=(others=>'0');
                      write_state <= (others =>'0');
+                     wr_en <= '0';
                  else 
                      dout <= latced_data(15 downto 12) & latced_data(10 downto 7)  & latced_data(4 downto 1);
                      if (camera_h_ref = '1' and latch_href = '0') then 
@@ -87,7 +99,7 @@ begin
                                  address <= std_logic_vector(unsigned(address)+1);
                             end if;	              
                      else
-                        wr_en <= '0';
+                        -- wr_en <= '0';
                      end if;
                      latch_href<=camera_h_ref;
             end if;
