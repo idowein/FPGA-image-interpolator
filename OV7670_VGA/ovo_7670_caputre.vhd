@@ -40,7 +40,7 @@ entity ovo_7670_caputre is
     Port ( pclk  : in   STD_LOGIC;
            camera_v_sync    : in   STD_LOGIC;
            camera_h_ref     : in   STD_LOGIC;
-           zoom_x2          : in STD_logic ;
+           zoom_x2          : in   STD_LOGIC ;
            din              : in   STD_LOGIC_VECTOR (7 downto 0);
            addr             : out  STD_LOGIC_VECTOR (18 downto 0);
            dout             : out  STD_LOGIC_VECTOR (11 downto 0);
@@ -49,11 +49,11 @@ end ovo_7670_caputre;
 
 architecture Behavioral of ovo_7670_caputre is
 
-	signal  address                : STD_LOGIC_VECTOR (18 downto 0):= (others =>'0');
-	signal 	write_state            :std_logic_vector (1 downto 0);
-	signal  latch_href             :std_logic;
-	signal 	latced_data            :std_logic_vector (15 downto 0):= (others =>'0');
-	signal  counter_col,counter_row:std_logic_Vector(10 downto 0 ):= (others=> '0');
+	signal  address                 : STD_LOGIC_VECTOR (18 downto 0) := (others =>'0');
+	signal 	write_state             : STD_LOGIC_VECTOR (1  downto 0);
+	signal  latch_href              : STD_LOGIC;
+	signal 	latced_data             : STD_LOGIC_VECTOR (15 downto 0 ) := (others =>'0');
+	signal  counter_col,counter_row : STD_LOGIC_VECTOR (10 downto 0 ) := (others=> '0');
 
 begin
     addr <=address;
