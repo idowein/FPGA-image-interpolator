@@ -32,25 +32,24 @@ entity ov7670_registers is
         clk      : in  STD_LOGIC;  -- Clock signal to drive the sequential process
         resend   : in  STD_LOGIC;  -- Resets the address to restart the register configuration process
         advance  : in  STD_LOGIC;  -- Increments the address to move to the next register configuration
-        command  : out std_logic_vector(15 downto 0); -- Current command (register address and value) being sent to the camera
-        finished : out  STD_LOGIC  -- Signal indicating the completion of the register configuration
+        command  : out STD_LOGIC_VECTOR(15 downto 0); -- Current command (register address and value) being sent to the camera
+        finished : out STD_LOGIC  -- Signal indicating the completion of the register configuration
     );
 end ov7670_registers;
 
 architecture Behavioral of ov7670_registers is
-   signal sreg   : std_logic_vector(15 downto 0);
+   signal sreg    : std_logic_vector(15 downto 0);
    signal address : std_logic_vector(7 downto 0) := (others => '0');
 begin
    command <= sreg;
    with sreg select finished  <= '1' when x"FFFF", '0' when others;
    
-   process(clk)
-   begin
+   process (clk) begin
       if rising_edge(clk) then
          if resend = '1' then 
             address <= (others => '0');
          elsif advance = '1' then
-            address <= std_logic_vector(unsigned(address)+1);
+            address <= std_logic_vector(unsigned(address) + 1);
          end if;
 
          case address is

@@ -11,14 +11,14 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
 entity SCCB_sender is
-	Port (  clk   : in     	STD_LOGIC;	 
-			siod  : inout  	STD_LOGIC;
-			sioc  : out  	STD_LOGIC;
-			taken : out  	STD_LOGIC;
-			send  : in  	STD_LOGIC;
-			id    : in  	STD_LOGIC_VECTOR (7 downto 0);
-			reg   : in  	STD_LOGIC_VECTOR (7 downto 0);
-			value : in  	STD_LOGIC_VECTOR (7 downto 0));
+	Port (  clk   : in    STD_LOGIC;	 
+			siod  : inout STD_LOGIC;
+			sioc  : out   STD_LOGIC;
+			taken : out   STD_LOGIC;
+			send  : in 	  STD_LOGIC;
+			id    : in 	  STD_LOGIC_VECTOR (7 downto 0);
+			reg   : in 	  STD_LOGIC_VECTOR (7 downto 0);
+			value : in 	  STD_LOGIC_VECTOR (7 downto 0));
 end SCCB_sender;
 
 architecture Behavioral of SCCB_sender is
@@ -43,8 +43,7 @@ begin
 		end if;
 	end process;
 	
-	process(clk)
-	begin
+	process (clk) begin
 		if rising_edge(clk) then
 			taken <= '0'; -- pulse when data is accepted for sending
 			if busy_sr(31) = '0' then -- if not busy sending
