@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1746698055">
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1747579499">
   <File Type="PA-TCL" Name="design_1_wrapper.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="design_1_wrapper_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="design_1_wrapper_reports.tcl"/>
@@ -161,6 +161,6 @@
   <BlockFileSet Type="BlockSrcs" Name="design_1_VGA_TOP_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_cntl_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_ov7670_controller_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_address_suitable_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_BILINEAR_INTERPOLATI_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_address_suitable_0_0"/>
 </GenRun>

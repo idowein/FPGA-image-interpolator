@@ -1,7 +1,7 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Thu May  8 12:42:26 2025
+// Date        : Sun May 18 17:44:21 2025
 // Host        : Ido running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
 //               C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_BRAM_MUX_0_0/design_1_BRAM_MUX_0_0_stub.v
@@ -15,14 +15,16 @@
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
 (* x_core_info = "BRAM_MUX,Vivado 2019.2" *)
 module design_1_BRAM_MUX_0_0(addr_in, data_in, capture_wea, zoom, bili_cntl, 
-  bili_pixel_in, bili_address_write, bili_wea, addr_bram_full, data_bram_full, we_bram_full, 
-  addr_bram_small, data_bram_small, we_bram_small)
-/* synthesis syn_black_box black_box_pad_pin="addr_in[18:0],data_in[11:0],capture_wea,zoom,bili_cntl,bili_pixel_in[11:0],bili_address_write[18:0],bili_wea,addr_bram_full[18:0],data_bram_full[11:0],we_bram_full,addr_bram_small[16:0],data_bram_small[11:0],we_bram_small" */;
+  pclk, bili_clk, bili_pixel_in, bili_address_write, bili_wea, addr_bram_full, data_bram_full, 
+  we_bram_full, addr_bram_small, data_bram_small, we_bram_small, wr_clk)
+/* synthesis syn_black_box black_box_pad_pin="addr_in[18:0],data_in[11:0],capture_wea,zoom,bili_cntl,pclk,bili_clk,bili_pixel_in[11:0],bili_address_write[18:0],bili_wea,addr_bram_full[18:0],data_bram_full[11:0],we_bram_full,addr_bram_small[16:0],data_bram_small[11:0],we_bram_small,wr_clk" */;
   input [18:0]addr_in;
   input [11:0]data_in;
   input capture_wea;
   input zoom;
   input bili_cntl;
+  input pclk;
+  input bili_clk;
   input [11:0]bili_pixel_in;
   input [18:0]bili_address_write;
   input bili_wea;
@@ -32,4 +34,5 @@ module design_1_BRAM_MUX_0_0(addr_in, data_in, capture_wea, zoom, bili_cntl,
   output [16:0]addr_bram_small;
   output [11:0]data_bram_small;
   output we_bram_small;
+  output wr_clk;
 endmodule

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu May  8 12:54:11 2025" VIVADOVERSION="2019.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sun May 18 17:44:55 2025" VIVADOVERSION="2019.2">
 
   <SYSTEMINFO ARCH="artix7" BOARD="digilentinc.com:nexys-a7-100t:part0:1.3" DEVICE="7a100t" NAME="design_1" PACKAGE="csg324" SPEEDGRADE="-1"/>
 
@@ -8,6 +8,8 @@
       <CONNECTIONS>
         <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_in1"/>
         <CONNECTION INSTANCE="cntl_0" PORT="clk"/>
+        <CONNECTION INSTANCE="BILINEAR_INTERPOLATI_0" PORT="clk_in1"/>
+        <CONNECTION INSTANCE="BRAM_MUX_0" PORT="bili_clk"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="camera_h_ref" SIGIS="undef" SIGNAME="External_Ports_camera_h_ref">
@@ -27,9 +29,9 @@
     </PORT>
     <PORT DIR="I" NAME="pclk" SIGIS="undef" SIGNAME="External_Ports_pclk">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="blk_mem_gen_0" PORT="clka"/>
-        <CONNECTION INSTANCE="zoom_bram_address_suit_blk_mem_gen_1" PORT="clka"/>
         <CONNECTION INSTANCE="ovo_7670_caputre_0" PORT="pclk"/>
+        <CONNECTION INSTANCE="zoom_bram_address_suit_blk_mem_gen_1" PORT="clka"/>
+        <CONNECTION INSTANCE="BRAM_MUX_0" PORT="pclk"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="O" NAME="sioc" SIGIS="undef" SIGNAME="ov7670_controller_0_sioc">
@@ -110,7 +112,12 @@
         <CONNECTION INSTANCE="VGA_TOP_WITH_DATA_MUX_VGA_TOP_1" PORT="vga_red"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="bili_cntl" SIGIS="undef"/>
+    <PORT DIR="I" NAME="bili_cntl" SIGIS="undef" SIGNAME="External_Ports_bili_cntl">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="zoom_bram_address_suit_address_suitable_0" PORT="bili_cntl"/>
+        <CONNECTION INSTANCE="BRAM_MUX_0" PORT="bili_cntl"/>
+      </CONNECTIONS>
+    </PORT>
   </EXTERNALPORTS>
 
   <EXTERNALINTERFACES/>
@@ -123,15 +130,36 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" NAME="clk_vga" SIGIS="undef"/>
-        <PORT DIR="I" NAME="clk_in1" SIGIS="undef"/>
-        <PORT DIR="I" NAME="clk_interpolation" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="11" NAME="pixel_in" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" NAME="bili_cntl" SIGIS="undef"/>
-        <PORT DIR="O" NAME="write_enable" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="11" NAME="pixel_out" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="18" NAME="address_write" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="16" NAME="address_read" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" NAME="clk_in1" SIGIS="undef" SIGNAME="External_Ports_clk_in1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk_in1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="pixel_in" RIGHT="0" SIGIS="undef" SIGNAME="zoom_bram_address_suit_blk_mem_gen_1_doutb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="zoom_bram_address_suit_blk_mem_gen_1" PORT="doutb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="write_enable" SIGIS="undef" SIGNAME="BILINEAR_INTERPOLATI_0_write_enable">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="BRAM_MUX_0" PORT="bili_wea"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="pixel_out" RIGHT="0" SIGIS="undef" SIGNAME="BILINEAR_INTERPOLATI_0_pixel_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="BRAM_MUX_0" PORT="bili_pixel_in"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="18" NAME="address_write" RIGHT="0" SIGIS="undef" SIGNAME="BILINEAR_INTERPOLATI_0_address_write">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="BRAM_MUX_0" PORT="bili_address_write"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="16" NAME="address_read" RIGHT="0" SIGIS="undef" SIGNAME="BILINEAR_INTERPOLATI_0_address_read">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="zoom_bram_address_suit_address_suitable_0" PORT="bili_addr"/>
+          </CONNECTIONS>
+        </PORT>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
@@ -162,10 +190,36 @@
             <CONNECTION INSTANCE="External_Ports" PORT="zoom_x2"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="bili_cntl" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="11" NAME="bili_pixel_in" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="18" NAME="bili_address_write" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" NAME="bili_wea" SIGIS="undef"/>
+        <PORT DIR="I" NAME="bili_cntl" SIGIS="undef" SIGNAME="External_Ports_bili_cntl">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="bili_cntl"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="pclk" SIGIS="undef" SIGNAME="External_Ports_pclk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="pclk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="bili_clk" SIGIS="clk" SIGNAME="External_Ports_clk_in1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk_in1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="bili_pixel_in" RIGHT="0" SIGIS="undef" SIGNAME="BILINEAR_INTERPOLATI_0_pixel_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="BILINEAR_INTERPOLATI_0" PORT="pixel_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="18" NAME="bili_address_write" RIGHT="0" SIGIS="undef" SIGNAME="BILINEAR_INTERPOLATI_0_address_write">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="BILINEAR_INTERPOLATI_0" PORT="address_write"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="bili_wea" SIGIS="undef" SIGNAME="BILINEAR_INTERPOLATI_0_write_enable">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="BILINEAR_INTERPOLATI_0" PORT="write_enable"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="O" LEFT="18" NAME="addr_bram_full" RIGHT="0" SIGIS="undef" SIGNAME="BRAM_MUX_0_addr_bram_full">
           <CONNECTIONS>
             <CONNECTION INSTANCE="blk_mem_gen_0" PORT="addra"/>
@@ -194,6 +248,11 @@
         <PORT DIR="O" NAME="we_bram_small" SIGIS="undef" SIGNAME="BRAM_MUX_0_we_bram_small">
           <CONNECTIONS>
             <CONNECTION INSTANCE="zoom_bram_address_suit_blk_mem_gen_1" PORT="wea"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="100000000" DIR="O" NAME="wr_clk" SIGIS="clk" SIGNAME="BRAM_MUX_0_wr_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="blk_mem_gen_0" PORT="clka"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -450,9 +509,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" NAME="clka" SIGIS="clk" SIGNAME="External_Ports_pclk">
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clka" SIGIS="clk" SIGNAME="BRAM_MUX_0_wr_clk">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="pclk"/>
+            <CONNECTION INSTANCE="BRAM_MUX_0" PORT="wr_clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="0" NAME="wea" RIGHT="0" SIGIS="undef" SIGNAME="BRAM_MUX_0_we_bram_full">
@@ -521,7 +580,7 @@
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=clk_wiz;v=v6_0;d=pg065-clk-wiz.pdf"/>
       </DOCUMENTS>
       <PARAMETERS>
-        <PARAMETER NAME="C_CLKOUT2_USED" VALUE="1"/>
+        <PARAMETER NAME="C_CLKOUT2_USED" VALUE="0"/>
         <PARAMETER NAME="C_USER_CLK_FREQ0" VALUE="100.0"/>
         <PARAMETER NAME="C_AUTO_PRIMITIVE" VALUE="MMCM"/>
         <PARAMETER NAME="C_USER_CLK_FREQ1" VALUE="100.0"/>
@@ -580,7 +639,7 @@
         <PARAMETER NAME="C_USE_POWER_DOWN" VALUE="0"/>
         <PARAMETER NAME="C_USE_STATUS" VALUE="0"/>
         <PARAMETER NAME="C_USE_FREEZE" VALUE="0"/>
-        <PARAMETER NAME="C_NUM_OUT_CLKS" VALUE="2"/>
+        <PARAMETER NAME="C_NUM_OUT_CLKS" VALUE="1"/>
         <PARAMETER NAME="C_CLKOUT1_DRIVES" VALUE="BUFG"/>
         <PARAMETER NAME="C_CLKOUT2_DRIVES" VALUE="BUFG"/>
         <PARAMETER NAME="C_CLKOUT3_DRIVES" VALUE="BUFG"/>
@@ -593,8 +652,8 @@
         <PARAMETER NAME="C_INCLK_SUM_ROW2" VALUE="no_secondary_input_clock"/>
         <PARAMETER NAME="C_OUTCLK_SUM_ROW0A" VALUE="Output     Output      Phase    Duty Cycle   Pk-to-Pk     Phase"/>
         <PARAMETER NAME="C_OUTCLK_SUM_ROW0B" VALUE="Clock     Freq (MHz)  (degrees)    (%)     Jitter (ps)  Error (ps)"/>
-        <PARAMETER NAME="C_OUTCLK_SUM_ROW1" VALUE="_clk_vga__25.00000______0.000______50.0______191.696____114.212"/>
-        <PARAMETER NAME="C_OUTCLK_SUM_ROW2" VALUE="clk_interpolation___6.25000______0.000______50.0______251.196____114.212"/>
+        <PARAMETER NAME="C_OUTCLK_SUM_ROW1" VALUE="_clk_vga__25.00000______0.000______50.0______181.828____104.359"/>
+        <PARAMETER NAME="C_OUTCLK_SUM_ROW2" VALUE="no_CLK_OUT2_output"/>
         <PARAMETER NAME="C_OUTCLK_SUM_ROW3" VALUE="no_CLK_OUT3_output"/>
         <PARAMETER NAME="C_OUTCLK_SUM_ROW4" VALUE="no_CLK_OUT4_output"/>
         <PARAMETER NAME="C_OUTCLK_SUM_ROW5" VALUE="no_CLK_OUT5_output"/>
@@ -653,7 +712,7 @@
         <PARAMETER NAME="C_CLKOUT7_SEQUENCE_NUMBER" VALUE="1"/>
         <PARAMETER NAME="C_MMCM_NOTES" VALUE="None"/>
         <PARAMETER NAME="C_MMCM_BANDWIDTH" VALUE="OPTIMIZED"/>
-        <PARAMETER NAME="C_MMCM_CLKFBOUT_MULT_F" VALUE="8.000"/>
+        <PARAMETER NAME="C_MMCM_CLKFBOUT_MULT_F" VALUE="9.125"/>
         <PARAMETER NAME="C_MMCM_CLKIN1_PERIOD" VALUE="10.000"/>
         <PARAMETER NAME="C_MMCM_CLKIN2_PERIOD" VALUE="10.000"/>
         <PARAMETER NAME="C_MMCM_CLKOUT4_CASCADE" VALUE="FALSE"/>
@@ -663,8 +722,8 @@
         <PARAMETER NAME="C_MMCM_REF_JITTER1" VALUE="0.010"/>
         <PARAMETER NAME="C_MMCM_REF_JITTER2" VALUE="0.010"/>
         <PARAMETER NAME="C_MMCM_STARTUP_WAIT" VALUE="FALSE"/>
-        <PARAMETER NAME="C_MMCM_CLKOUT0_DIVIDE_F" VALUE="32.000"/>
-        <PARAMETER NAME="C_MMCM_CLKOUT1_DIVIDE" VALUE="128"/>
+        <PARAMETER NAME="C_MMCM_CLKOUT0_DIVIDE_F" VALUE="36.500"/>
+        <PARAMETER NAME="C_MMCM_CLKOUT1_DIVIDE" VALUE="1"/>
         <PARAMETER NAME="C_MMCM_CLKOUT2_DIVIDE" VALUE="1"/>
         <PARAMETER NAME="C_MMCM_CLKOUT3_DIVIDE" VALUE="1"/>
         <PARAMETER NAME="C_MMCM_CLKOUT4_DIVIDE" VALUE="1"/>
@@ -879,13 +938,13 @@
         <PARAMETER NAME="CLKIN1_JITTER_PS" VALUE="100.0"/>
         <PARAMETER NAME="CLKIN2_JITTER_PS" VALUE="100.0"/>
         <PARAMETER NAME="CLKOUT1_USED" VALUE="true"/>
-        <PARAMETER NAME="CLKOUT2_USED" VALUE="true"/>
+        <PARAMETER NAME="CLKOUT2_USED" VALUE="false"/>
         <PARAMETER NAME="CLKOUT3_USED" VALUE="false"/>
         <PARAMETER NAME="CLKOUT4_USED" VALUE="false"/>
         <PARAMETER NAME="CLKOUT5_USED" VALUE="false"/>
         <PARAMETER NAME="CLKOUT6_USED" VALUE="false"/>
         <PARAMETER NAME="CLKOUT7_USED" VALUE="false"/>
-        <PARAMETER NAME="NUM_OUT_CLKS" VALUE="2"/>
+        <PARAMETER NAME="NUM_OUT_CLKS" VALUE="1"/>
         <PARAMETER NAME="CLK_OUT1_USE_FINE_PS_GUI" VALUE="false"/>
         <PARAMETER NAME="CLK_OUT2_USE_FINE_PS_GUI" VALUE="false"/>
         <PARAMETER NAME="CLK_OUT3_USE_FINE_PS_GUI" VALUE="false"/>
@@ -984,7 +1043,7 @@
         <PARAMETER NAME="MMCM_NOTES" VALUE="None"/>
         <PARAMETER NAME="MMCM_DIVCLK_DIVIDE" VALUE="1"/>
         <PARAMETER NAME="MMCM_BANDWIDTH" VALUE="OPTIMIZED"/>
-        <PARAMETER NAME="MMCM_CLKFBOUT_MULT_F" VALUE="8.000"/>
+        <PARAMETER NAME="MMCM_CLKFBOUT_MULT_F" VALUE="9.125"/>
         <PARAMETER NAME="MMCM_CLKFBOUT_PHASE" VALUE="0.000"/>
         <PARAMETER NAME="MMCM_CLKFBOUT_USE_FINE_PS" VALUE="false"/>
         <PARAMETER NAME="MMCM_CLKIN1_PERIOD" VALUE="10.000"/>
@@ -995,11 +1054,11 @@
         <PARAMETER NAME="MMCM_REF_JITTER1" VALUE="0.010"/>
         <PARAMETER NAME="MMCM_REF_JITTER2" VALUE="0.010"/>
         <PARAMETER NAME="MMCM_STARTUP_WAIT" VALUE="false"/>
-        <PARAMETER NAME="MMCM_CLKOUT0_DIVIDE_F" VALUE="32.000"/>
+        <PARAMETER NAME="MMCM_CLKOUT0_DIVIDE_F" VALUE="36.500"/>
         <PARAMETER NAME="MMCM_CLKOUT0_DUTY_CYCLE" VALUE="0.500"/>
         <PARAMETER NAME="MMCM_CLKOUT0_PHASE" VALUE="0.000"/>
         <PARAMETER NAME="MMCM_CLKOUT0_USE_FINE_PS" VALUE="false"/>
-        <PARAMETER NAME="MMCM_CLKOUT1_DIVIDE" VALUE="128"/>
+        <PARAMETER NAME="MMCM_CLKOUT1_DIVIDE" VALUE="1"/>
         <PARAMETER NAME="MMCM_CLKOUT1_DUTY_CYCLE" VALUE="0.500"/>
         <PARAMETER NAME="MMCM_CLKOUT1_PHASE" VALUE="0.000"/>
         <PARAMETER NAME="MMCM_CLKOUT1_USE_FINE_PS" VALUE="false"/>
@@ -1073,8 +1132,8 @@
         <PARAMETER NAME="CDDCREQ_PORT" VALUE="cddcreq"/>
         <PARAMETER NAME="ENABLE_CLKOUTPHY" VALUE="false"/>
         <PARAMETER NAME="CLKOUTPHY_REQUESTED_FREQ" VALUE="600.000"/>
-        <PARAMETER NAME="CLKOUT1_JITTER" VALUE="191.696"/>
-        <PARAMETER NAME="CLKOUT1_PHASE_ERROR" VALUE="114.212"/>
+        <PARAMETER NAME="CLKOUT1_JITTER" VALUE="181.828"/>
+        <PARAMETER NAME="CLKOUT1_PHASE_ERROR" VALUE="104.359"/>
         <PARAMETER NAME="CLKOUT2_JITTER" VALUE="251.196"/>
         <PARAMETER NAME="CLKOUT2_PHASE_ERROR" VALUE="114.212"/>
         <PARAMETER NAME="CLKOUT3_JITTER" VALUE="0.0"/>
@@ -1113,7 +1172,6 @@
             <CONNECTION INSTANCE="ov7670_controller_0" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="6250000" DIR="O" NAME="clk_interpolation" SIGIS="clk"/>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
@@ -1259,8 +1317,16 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" NAME="bili_cntl" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="16" NAME="bili_addr" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" NAME="bili_cntl" SIGIS="undef" SIGNAME="External_Ports_bili_cntl">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="bili_cntl"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="16" NAME="bili_addr" RIGHT="0" SIGIS="undef" SIGNAME="BILINEAR_INTERPOLATI_0_address_read">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="BILINEAR_INTERPOLATI_0" PORT="address_read"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" LEFT="18" NAME="addr_in_full_image" RIGHT="0" SIGIS="undef" SIGNAME="VGA_TOP_WITH_DATA_MUX_VGA_TOP_1_frame_adress">
           <CONNECTIONS>
             <CONNECTION INSTANCE="VGA_TOP_WITH_DATA_MUX_VGA_TOP_1" PORT="frame_adress"/>
@@ -1462,6 +1528,7 @@
         <PORT DIR="O" LEFT="11" NAME="doutb" RIGHT="0" SIGIS="undef" SIGNAME="zoom_bram_address_suit_blk_mem_gen_1_doutb">
           <CONNECTIONS>
             <CONNECTION INSTANCE="VGA_TOP_WITH_DATA_MUX_bram_datain_mux_0" PORT="data_in_zoomed_bram"/>
+            <CONNECTION INSTANCE="BILINEAR_INTERPOLATI_0" PORT="pixel_in"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

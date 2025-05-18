@@ -1,7 +1,7 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
--- Date        : Thu May  8 12:42:26 2025
+-- Date        : Sun May 18 17:44:21 2025
 -- Host        : Ido running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_BRAM_MUX_0_0/design_1_BRAM_MUX_0_0_sim_netlist.vhdl
@@ -16,11 +16,14 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity design_1_BRAM_MUX_0_0_BRAM_MUX is
   port (
+    wr_clk : out STD_LOGIC;
     addr_bram_full : out STD_LOGIC_VECTOR ( 18 downto 0 );
     data_bram_full : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    bili_clk : in STD_LOGIC;
     bili_cntl : in STD_LOGIC;
-    bili_address_write : in STD_LOGIC_VECTOR ( 18 downto 0 );
     zoom : in STD_LOGIC;
+    pclk : in STD_LOGIC;
+    bili_address_write : in STD_LOGIC_VECTOR ( 18 downto 0 );
     addr_in : in STD_LOGIC_VECTOR ( 18 downto 0 );
     bili_pixel_in : in STD_LOGIC_VECTOR ( 11 downto 0 );
     data_in : in STD_LOGIC_VECTOR ( 11 downto 0 )
@@ -372,6 +375,17 @@ begin
       I3 => data_in(9),
       O => data_bram_full(9)
     );
+\wr_clk__0\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"BF80"
+    )
+        port map (
+      I0 => bili_clk,
+      I1 => bili_cntl,
+      I2 => zoom,
+      I3 => pclk,
+      O => wr_clk
+    );
 end STRUCTURE;
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -384,6 +398,8 @@ entity design_1_BRAM_MUX_0_0 is
     capture_wea : in STD_LOGIC;
     zoom : in STD_LOGIC;
     bili_cntl : in STD_LOGIC;
+    pclk : in STD_LOGIC;
+    bili_clk : in STD_LOGIC;
     bili_pixel_in : in STD_LOGIC_VECTOR ( 11 downto 0 );
     bili_address_write : in STD_LOGIC_VECTOR ( 18 downto 0 );
     bili_wea : in STD_LOGIC;
@@ -392,7 +408,8 @@ entity design_1_BRAM_MUX_0_0 is
     we_bram_full : out STD_LOGIC;
     addr_bram_small : out STD_LOGIC_VECTOR ( 16 downto 0 );
     data_bram_small : out STD_LOGIC_VECTOR ( 11 downto 0 );
-    we_bram_small : out STD_LOGIC
+    we_bram_small : out STD_LOGIC;
+    wr_clk : out STD_LOGIC
   );
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of design_1_BRAM_MUX_0_0 : entity is true;
@@ -407,16 +424,25 @@ entity design_1_BRAM_MUX_0_0 is
 end design_1_BRAM_MUX_0_0;
 
 architecture STRUCTURE of design_1_BRAM_MUX_0_0 is
+  attribute x_interface_info : string;
+  attribute x_interface_info of bili_clk : signal is "xilinx.com:signal:clock:1.0 bili_clk CLK";
+  attribute x_interface_parameter : string;
+  attribute x_interface_parameter of bili_clk : signal is "XIL_INTERFACENAME bili_clk, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN design_1_clk_in1, INSERT_VIP 0";
+  attribute x_interface_info of wr_clk : signal is "xilinx.com:signal:clock:1.0 wr_clk CLK";
+  attribute x_interface_parameter of wr_clk : signal is "XIL_INTERFACENAME wr_clk, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN design_1_BRAM_MUX_0_0_wr_clk, INSERT_VIP 0";
 begin
 U0: entity work.design_1_BRAM_MUX_0_0_BRAM_MUX
      port map (
       addr_bram_full(18 downto 0) => addr_bram_full(18 downto 0),
       addr_in(18 downto 0) => addr_in(18 downto 0),
       bili_address_write(18 downto 0) => bili_address_write(18 downto 0),
+      bili_clk => bili_clk,
       bili_cntl => bili_cntl,
       bili_pixel_in(11 downto 0) => bili_pixel_in(11 downto 0),
       data_bram_full(11 downto 0) => data_bram_full(11 downto 0),
       data_in(11 downto 0) => data_in(11 downto 0),
+      pclk => pclk,
+      wr_clk => wr_clk,
       zoom => zoom
     );
 \addr_bram_small[0]_INST_0\: unisim.vcomponents.LUT2

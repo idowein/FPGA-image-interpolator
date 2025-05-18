@@ -1,7 +1,7 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
--- Date        : Thu May  8 12:42:26 2025
+-- Date        : Sun May 18 17:44:21 2025
 -- Host        : Ido running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
 --               C:/Users/idowe/Projects/Digital-Zoom-FPGA/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/ip/design_1_BRAM_MUX_0_0/design_1_BRAM_MUX_0_0_stub.vhdl
@@ -19,6 +19,8 @@ entity design_1_BRAM_MUX_0_0 is
     capture_wea : in STD_LOGIC;
     zoom : in STD_LOGIC;
     bili_cntl : in STD_LOGIC;
+    pclk : in STD_LOGIC;
+    bili_clk : in STD_LOGIC;
     bili_pixel_in : in STD_LOGIC_VECTOR ( 11 downto 0 );
     bili_address_write : in STD_LOGIC_VECTOR ( 18 downto 0 );
     bili_wea : in STD_LOGIC;
@@ -27,7 +29,8 @@ entity design_1_BRAM_MUX_0_0 is
     we_bram_full : out STD_LOGIC;
     addr_bram_small : out STD_LOGIC_VECTOR ( 16 downto 0 );
     data_bram_small : out STD_LOGIC_VECTOR ( 11 downto 0 );
-    we_bram_small : out STD_LOGIC
+    we_bram_small : out STD_LOGIC;
+    wr_clk : out STD_LOGIC
   );
 
 end design_1_BRAM_MUX_0_0;
@@ -36,7 +39,7 @@ architecture stub of design_1_BRAM_MUX_0_0 is
 attribute syn_black_box : boolean;
 attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
-attribute black_box_pad_pin of stub : architecture is "addr_in[18:0],data_in[11:0],capture_wea,zoom,bili_cntl,bili_pixel_in[11:0],bili_address_write[18:0],bili_wea,addr_bram_full[18:0],data_bram_full[11:0],we_bram_full,addr_bram_small[16:0],data_bram_small[11:0],we_bram_small";
+attribute black_box_pad_pin of stub : architecture is "addr_in[18:0],data_in[11:0],capture_wea,zoom,bili_cntl,pclk,bili_clk,bili_pixel_in[11:0],bili_address_write[18:0],bili_wea,addr_bram_full[18:0],data_bram_full[11:0],we_bram_full,addr_bram_small[16:0],data_bram_small[11:0],we_bram_small,wr_clk";
 attribute x_core_info : string;
 attribute x_core_info of stub : architecture is "BRAM_MUX,Vivado 2019.2";
 begin

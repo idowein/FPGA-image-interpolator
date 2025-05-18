@@ -1,7 +1,7 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Thu May  8 12:42:26 2025
+// Date        : Sun May 18 17:44:21 2025
 // Host        : Ido running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_1_BRAM_MUX_0_0_sim_netlist.v
@@ -13,19 +13,25 @@
 `timescale 1 ps / 1 ps
 
 module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BRAM_MUX
-   (addr_bram_full,
+   (wr_clk,
+    addr_bram_full,
     data_bram_full,
+    bili_clk,
     bili_cntl,
-    bili_address_write,
     zoom,
+    pclk,
+    bili_address_write,
     addr_in,
     bili_pixel_in,
     data_in);
+  output wr_clk;
   output [18:0]addr_bram_full;
   output [11:0]data_bram_full;
+  input bili_clk;
   input bili_cntl;
-  input [18:0]bili_address_write;
   input zoom;
+  input pclk;
+  input [18:0]bili_address_write;
   input [18:0]addr_in;
   input [11:0]bili_pixel_in;
   input [11:0]data_in;
@@ -33,10 +39,13 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BRAM_MUX
   wire [18:0]addr_bram_full;
   wire [18:0]addr_in;
   wire [18:0]bili_address_write;
+  wire bili_clk;
   wire bili_cntl;
   wire [11:0]bili_pixel_in;
   wire [11:0]data_bram_full;
   wire [11:0]data_in;
+  wire pclk;
+  wire wr_clk;
   wire zoom;
 
   LUT4 #(
@@ -287,6 +296,14 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BRAM_MUX
         .I2(zoom),
         .I3(data_in[9]),
         .O(data_bram_full[9]));
+  LUT4 #(
+    .INIT(16'hBF80)) 
+    wr_clk__0
+       (.I0(bili_clk),
+        .I1(bili_cntl),
+        .I2(zoom),
+        .I3(pclk),
+        .O(wr_clk));
 endmodule
 
 (* CHECK_LICENSE_TYPE = "design_1_BRAM_MUX_0_0,BRAM_MUX,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* ip_definition_source = "module_ref" *) 
@@ -298,6 +315,8 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
     capture_wea,
     zoom,
     bili_cntl,
+    pclk,
+    bili_clk,
     bili_pixel_in,
     bili_address_write,
     bili_wea,
@@ -306,12 +325,15 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
     we_bram_full,
     addr_bram_small,
     data_bram_small,
-    we_bram_small);
+    we_bram_small,
+    wr_clk);
   input [18:0]addr_in;
   input [11:0]data_in;
   input capture_wea;
   input zoom;
   input bili_cntl;
+  input pclk;
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 bili_clk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME bili_clk, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN design_1_clk_in1, INSERT_VIP 0" *) input bili_clk;
   input [11:0]bili_pixel_in;
   input [18:0]bili_address_write;
   input bili_wea;
@@ -321,11 +343,13 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
   output [16:0]addr_bram_small;
   output [11:0]data_bram_small;
   output we_bram_small;
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 wr_clk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME wr_clk, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN design_1_BRAM_MUX_0_0_wr_clk, INSERT_VIP 0" *) output wr_clk;
 
   wire [18:0]addr_bram_full;
   wire [16:0]addr_bram_small;
   wire [18:0]addr_in;
   wire [18:0]bili_address_write;
+  wire bili_clk;
   wire bili_cntl;
   wire [11:0]bili_pixel_in;
   wire bili_wea;
@@ -333,18 +357,23 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
   wire [11:0]data_bram_full;
   wire [11:0]data_bram_small;
   wire [11:0]data_in;
+  wire pclk;
   wire we_bram_full;
   wire we_bram_small;
+  wire wr_clk;
   wire zoom;
 
   decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BRAM_MUX U0
        (.addr_bram_full(addr_bram_full),
         .addr_in(addr_in),
         .bili_address_write(bili_address_write),
+        .bili_clk(bili_clk),
         .bili_cntl(bili_cntl),
         .bili_pixel_in(bili_pixel_in),
         .data_bram_full(data_bram_full),
         .data_in(data_in),
+        .pclk(pclk),
+        .wr_clk(wr_clk),
         .zoom(zoom));
   LUT2 #(
     .INIT(4'h8)) 

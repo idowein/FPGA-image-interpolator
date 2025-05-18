@@ -10,6 +10,9 @@ entity BRAM_MUX is
         capture_wea     : in std_logic;
         zoom            : in std_logic; -- 0 = BRAM1, 1 = BRAM2
         bili_cntl       : in std_logic;
+        
+        pclk            : in std_logic;
+        bili_clk        : in std_logic;
 
         -- inputs from bili
         bili_pixel_in       : in std_logic_vector(11 downto 0); 
@@ -24,7 +27,9 @@ entity BRAM_MUX is
         -- small BRAM (1/4) Ports
         addr_bram_small      : out std_logic_vector(16 downto 0);
         data_bram_small      : out std_logic_vector(11 downto 0);
-        we_bram_small        : out std_logic
+        we_bram_small        : out std_logic;
+        
+        wr_clk               : out std_logic
     );
 end BRAM_MUX;
 
@@ -34,9 +39,11 @@ begin
     begin
         if zoom = '0' then
             -- Connect to BRAM1
+            wr_clk          <= pclk;
             addr_bram_full   <= addr_in;
             data_bram_full   <= data_in;
             we_bram_full     <= capture_wea;
+            
 
             -- Disconnect BRAM2
             addr_bram_small   <= (others => '0');
@@ -44,6 +51,7 @@ begin
             we_bram_small     <= '0';
         else -- if zoom is enabled:
             -- Connect to BRAM2
+            wr_clk            <= pclk;
             addr_bram_small   <= addr_in(16 downto 0);
             data_bram_small   <= data_in;
             we_bram_small     <= capture_wea;
@@ -54,6 +62,7 @@ begin
                 data_bram_full   <= (others => '0');
                 we_bram_full     <= '0';
             else -- bili_cntl = '1' -> full BRAM is needed
+                wr_clk           <= bili_clk;
                 addr_bram_full   <= bili_address_write;
                 data_bram_full   <= bili_pixel_in;
                 we_bram_full     <= bili_wea;
