@@ -1,7 +1,7 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
--- Date        : Thu May  8 18:38:08 2025
+-- Date        : Mon May 19 11:39:50 2025
 -- Host        : Ido running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 --               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_1_ovo_7670_caputre_0_0_sim_netlist.vhdl
@@ -87,14 +87,14 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_cap
   signal \counter_row_reg_n_0_[1]\ : STD_LOGIC;
   signal \counter_row_reg_n_0_[2]\ : STD_LOGIC;
   signal \geqOp__8\ : STD_LOGIC;
-  signal \latced_data_reg_n_0_[10]\ : STD_LOGIC;
-  signal \latced_data_reg_n_0_[12]\ : STD_LOGIC;
-  signal \latced_data_reg_n_0_[13]\ : STD_LOGIC;
-  signal \latced_data_reg_n_0_[14]\ : STD_LOGIC;
-  signal \latced_data_reg_n_0_[15]\ : STD_LOGIC;
-  signal \latced_data_reg_n_0_[8]\ : STD_LOGIC;
-  signal \latced_data_reg_n_0_[9]\ : STD_LOGIC;
   signal latch_href : STD_LOGIC;
+  signal \latched_data_reg_n_0_[10]\ : STD_LOGIC;
+  signal \latched_data_reg_n_0_[12]\ : STD_LOGIC;
+  signal \latched_data_reg_n_0_[13]\ : STD_LOGIC;
+  signal \latched_data_reg_n_0_[14]\ : STD_LOGIC;
+  signal \latched_data_reg_n_0_[15]\ : STD_LOGIC;
+  signal \latched_data_reg_n_0_[8]\ : STD_LOGIC;
+  signal \latched_data_reg_n_0_[9]\ : STD_LOGIC;
   signal p_0_in : STD_LOGIC_VECTOR ( 15 downto 8 );
   signal p_0_in1_in : STD_LOGIC;
   signal p_0_in_0 : STD_LOGIC;
@@ -1041,7 +1041,7 @@ begin
      port map (
       C => pclk,
       CE => p_0_in1_in,
-      D => \latced_data_reg_n_0_[14]\,
+      D => \latched_data_reg_n_0_[14]\,
       Q => dout(10),
       R => '0'
     );
@@ -1049,7 +1049,7 @@ begin
      port map (
       C => pclk,
       CE => p_0_in1_in,
-      D => \latced_data_reg_n_0_[15]\,
+      D => \latched_data_reg_n_0_[15]\,
       Q => dout(11),
       R => '0'
     );
@@ -1089,7 +1089,7 @@ begin
      port map (
       C => pclk,
       CE => p_0_in1_in,
-      D => \latced_data_reg_n_0_[8]\,
+      D => \latched_data_reg_n_0_[8]\,
       Q => dout(5),
       R => '0'
     );
@@ -1097,7 +1097,7 @@ begin
      port map (
       C => pclk,
       CE => p_0_in1_in,
-      D => \latced_data_reg_n_0_[9]\,
+      D => \latched_data_reg_n_0_[9]\,
       Q => dout(6),
       R => '0'
     );
@@ -1105,7 +1105,7 @@ begin
      port map (
       C => pclk,
       CE => p_0_in1_in,
-      D => \latced_data_reg_n_0_[10]\,
+      D => \latched_data_reg_n_0_[10]\,
       Q => dout(7),
       R => '0'
     );
@@ -1113,7 +1113,7 @@ begin
      port map (
       C => pclk,
       CE => p_0_in1_in,
-      D => \latced_data_reg_n_0_[12]\,
+      D => \latched_data_reg_n_0_[12]\,
       Q => dout(8),
       R => '0'
     );
@@ -1121,11 +1121,19 @@ begin
      port map (
       C => pclk,
       CE => p_0_in1_in,
-      D => \latced_data_reg_n_0_[13]\,
+      D => \latched_data_reg_n_0_[13]\,
       Q => dout(9),
       R => '0'
     );
-\latced_data_reg[0]\: unisim.vcomponents.FDRE
+latch_href_reg: unisim.vcomponents.FDRE
+     port map (
+      C => pclk,
+      CE => p_0_in1_in,
+      D => camera_h_ref,
+      Q => latch_href,
+      R => '0'
+    );
+\latched_data_reg[0]\: unisim.vcomponents.FDRE
     generic map(
       INIT => '0'
     )
@@ -1136,7 +1144,7 @@ begin
       Q => p_0_in(8),
       R => '0'
     );
-\latced_data_reg[10]\: unisim.vcomponents.FDRE
+\latched_data_reg[10]\: unisim.vcomponents.FDRE
     generic map(
       INIT => '0'
     )
@@ -1144,10 +1152,10 @@ begin
       C => pclk,
       CE => p_0_in1_in,
       D => p_0_in(10),
-      Q => \latced_data_reg_n_0_[10]\,
+      Q => \latched_data_reg_n_0_[10]\,
       R => '0'
     );
-\latced_data_reg[12]\: unisim.vcomponents.FDRE
+\latched_data_reg[12]\: unisim.vcomponents.FDRE
     generic map(
       INIT => '0'
     )
@@ -1155,10 +1163,10 @@ begin
       C => pclk,
       CE => p_0_in1_in,
       D => p_0_in(12),
-      Q => \latced_data_reg_n_0_[12]\,
+      Q => \latched_data_reg_n_0_[12]\,
       R => '0'
     );
-\latced_data_reg[13]\: unisim.vcomponents.FDRE
+\latched_data_reg[13]\: unisim.vcomponents.FDRE
     generic map(
       INIT => '0'
     )
@@ -1166,10 +1174,10 @@ begin
       C => pclk,
       CE => p_0_in1_in,
       D => p_0_in(13),
-      Q => \latced_data_reg_n_0_[13]\,
+      Q => \latched_data_reg_n_0_[13]\,
       R => '0'
     );
-\latced_data_reg[14]\: unisim.vcomponents.FDRE
+\latched_data_reg[14]\: unisim.vcomponents.FDRE
     generic map(
       INIT => '0'
     )
@@ -1177,10 +1185,10 @@ begin
       C => pclk,
       CE => p_0_in1_in,
       D => p_0_in(14),
-      Q => \latced_data_reg_n_0_[14]\,
+      Q => \latched_data_reg_n_0_[14]\,
       R => '0'
     );
-\latced_data_reg[15]\: unisim.vcomponents.FDRE
+\latched_data_reg[15]\: unisim.vcomponents.FDRE
     generic map(
       INIT => '0'
     )
@@ -1188,10 +1196,10 @@ begin
       C => pclk,
       CE => p_0_in1_in,
       D => p_0_in(15),
-      Q => \latced_data_reg_n_0_[15]\,
+      Q => \latched_data_reg_n_0_[15]\,
       R => '0'
     );
-\latced_data_reg[1]\: unisim.vcomponents.FDRE
+\latched_data_reg[1]\: unisim.vcomponents.FDRE
     generic map(
       INIT => '0'
     )
@@ -1202,7 +1210,7 @@ begin
       Q => p_0_in(9),
       R => '0'
     );
-\latced_data_reg[2]\: unisim.vcomponents.FDRE
+\latched_data_reg[2]\: unisim.vcomponents.FDRE
     generic map(
       INIT => '0'
     )
@@ -1213,7 +1221,7 @@ begin
       Q => p_0_in(10),
       R => '0'
     );
-\latced_data_reg[3]\: unisim.vcomponents.FDRE
+\latched_data_reg[3]\: unisim.vcomponents.FDRE
     generic map(
       INIT => '0'
     )
@@ -1224,7 +1232,7 @@ begin
       Q => p_0_in(11),
       R => '0'
     );
-\latced_data_reg[4]\: unisim.vcomponents.FDRE
+\latched_data_reg[4]\: unisim.vcomponents.FDRE
     generic map(
       INIT => '0'
     )
@@ -1235,7 +1243,7 @@ begin
       Q => p_0_in(12),
       R => '0'
     );
-\latced_data_reg[5]\: unisim.vcomponents.FDRE
+\latched_data_reg[5]\: unisim.vcomponents.FDRE
     generic map(
       INIT => '0'
     )
@@ -1246,7 +1254,7 @@ begin
       Q => p_0_in(13),
       R => '0'
     );
-\latced_data_reg[6]\: unisim.vcomponents.FDRE
+\latched_data_reg[6]\: unisim.vcomponents.FDRE
     generic map(
       INIT => '0'
     )
@@ -1257,7 +1265,7 @@ begin
       Q => p_0_in(14),
       R => '0'
     );
-\latced_data_reg[7]\: unisim.vcomponents.FDRE
+\latched_data_reg[7]\: unisim.vcomponents.FDRE
     generic map(
       INIT => '0'
     )
@@ -1268,7 +1276,7 @@ begin
       Q => p_0_in(15),
       R => '0'
     );
-\latced_data_reg[8]\: unisim.vcomponents.FDRE
+\latched_data_reg[8]\: unisim.vcomponents.FDRE
     generic map(
       INIT => '0'
     )
@@ -1276,10 +1284,10 @@ begin
       C => pclk,
       CE => p_0_in1_in,
       D => p_0_in(8),
-      Q => \latced_data_reg_n_0_[8]\,
+      Q => \latched_data_reg_n_0_[8]\,
       R => '0'
     );
-\latced_data_reg[9]\: unisim.vcomponents.FDRE
+\latched_data_reg[9]\: unisim.vcomponents.FDRE
     generic map(
       INIT => '0'
     )
@@ -1287,15 +1295,7 @@ begin
       C => pclk,
       CE => p_0_in1_in,
       D => p_0_in(9),
-      Q => \latced_data_reg_n_0_[9]\,
-      R => '0'
-    );
-latch_href_reg: unisim.vcomponents.FDRE
-     port map (
-      C => pclk,
-      CE => p_0_in1_in,
-      D => camera_h_ref,
-      Q => latch_href,
+      Q => \latched_data_reg_n_0_[9]\,
       R => '0'
     );
 wr_en_i_1: unisim.vcomponents.LUT5

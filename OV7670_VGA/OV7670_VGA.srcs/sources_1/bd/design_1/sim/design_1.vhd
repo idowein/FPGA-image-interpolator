@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
---Date        : Mon May 12 18:44:33 2025
+--Date        : Mon May 19 11:41:52 2025
 --Host        : Ido running 64-bit major release  (build 9200)
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -29,6 +29,16 @@ entity VGA_TOP_WITH_DATA_MUX_imp_1CCBRLA is
 end VGA_TOP_WITH_DATA_MUX_imp_1CCBRLA;
 
 architecture STRUCTURE of VGA_TOP_WITH_DATA_MUX_imp_1CCBRLA is
+  component design_1_bram_datain_mux_0_0 is
+  port (
+    clk : in STD_LOGIC;
+    bili_cntl : in STD_LOGIC;
+    zoom_x2 : in STD_LOGIC;
+    data_in_zoomed_bram : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    data_in_full_bram : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    data_out : out STD_LOGIC_VECTOR ( 11 downto 0 )
+  );
+  end component design_1_bram_datain_mux_0_0;
   component design_1_VGA_TOP_1_0 is
   port (
     pix_clk : in STD_LOGIC;
@@ -43,16 +53,6 @@ architecture STRUCTURE of VGA_TOP_WITH_DATA_MUX_imp_1CCBRLA is
     frame_adress : out STD_LOGIC_VECTOR ( 18 downto 0 )
   );
   end component design_1_VGA_TOP_1_0;
-  component design_1_bram_datain_mux_0_0 is
-  port (
-    clk : in STD_LOGIC;
-    bili_cntl : in STD_LOGIC;
-    zoom_x2 : in STD_LOGIC;
-    data_in_zoomed_bram : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    data_in_full_bram : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    data_out : out STD_LOGIC_VECTOR ( 11 downto 0 )
-  );
-  end component design_1_bram_datain_mux_0_0;
   signal VGA_TOP_1_VGA_H_sync : STD_LOGIC;
   signal VGA_TOP_1_frame_adress : STD_LOGIC_VECTOR ( 18 downto 0 );
   signal VGA_TOP_1_vga_V_sync : STD_LOGIC;
@@ -233,39 +233,6 @@ architecture STRUCTURE of design_1 is
     clk_bili_wr : out STD_LOGIC
   );
   end component design_1_clk_wiz_0_0;
-  component design_1_ov7670_controller_0_0 is
-  port (
-    clk : in STD_LOGIC;
-    resend : in STD_LOGIC;
-    config_finished : out STD_LOGIC;
-    sioc : out STD_LOGIC;
-    siod : inout STD_LOGIC;
-    reset : out STD_LOGIC;
-    pwdn : out STD_LOGIC;
-    xclk : out STD_LOGIC
-  );
-  end component design_1_ov7670_controller_0_0;
-  component design_1_cntl_0_0 is
-  port (
-    clk : in STD_LOGIC;
-    resend_in : in STD_LOGIC;
-    cntl_in : in STD_LOGIC;
-    resend_out : out STD_LOGIC;
-    cntl_out : out STD_LOGIC
-  );
-  end component design_1_cntl_0_0;
-  component design_1_ovo_7670_caputre_0_0 is
-  port (
-    pclk : in STD_LOGIC;
-    camera_v_sync : in STD_LOGIC;
-    camera_h_ref : in STD_LOGIC;
-    zoom_x2 : in STD_LOGIC;
-    din : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    addr : out STD_LOGIC_VECTOR ( 18 downto 0 );
-    dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
-    wr_en : out STD_LOGIC
-  );
-  end component design_1_ovo_7670_caputre_0_0;
   component design_1_BRAM_MUX_0_0 is
   port (
     addr_in : in STD_LOGIC_VECTOR ( 18 downto 0 );
@@ -300,6 +267,39 @@ architecture STRUCTURE of design_1 is
     address_read : out STD_LOGIC_VECTOR ( 16 downto 0 )
   );
   end component design_1_BILINEAR_INTERPOLATI_0_0;
+  component design_1_ov7670_controller_0_0 is
+  port (
+    clk : in STD_LOGIC;
+    resend : in STD_LOGIC;
+    config_finished : out STD_LOGIC;
+    sioc : out STD_LOGIC;
+    siod : inout STD_LOGIC;
+    reset : out STD_LOGIC;
+    pwdn : out STD_LOGIC;
+    xclk : out STD_LOGIC
+  );
+  end component design_1_ov7670_controller_0_0;
+  component design_1_cntl_0_0 is
+  port (
+    clk : in STD_LOGIC;
+    resend_in : in STD_LOGIC;
+    cntl_in : in STD_LOGIC;
+    resend_out : out STD_LOGIC;
+    cntl_out : out STD_LOGIC
+  );
+  end component design_1_cntl_0_0;
+  component design_1_ovo_7670_caputre_0_0 is
+  port (
+    pclk : in STD_LOGIC;
+    camera_v_sync : in STD_LOGIC;
+    camera_h_ref : in STD_LOGIC;
+    zoom_x2 : in STD_LOGIC;
+    din : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    addr : out STD_LOGIC_VECTOR ( 18 downto 0 );
+    dout : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    wr_en : out STD_LOGIC
+  );
+  end component design_1_ovo_7670_caputre_0_0;
   signal BILINEAR_INTERPOLATI_0_address_read : STD_LOGIC_VECTOR ( 16 downto 0 );
   signal BILINEAR_INTERPOLATI_0_address_write : STD_LOGIC_VECTOR ( 18 downto 0 );
   signal BILINEAR_INTERPOLATI_0_pixel_out : STD_LOGIC_VECTOR ( 11 downto 0 );
@@ -377,7 +377,7 @@ BILINEAR_INTERPOLATI_0: component design_1_BILINEAR_INTERPOLATI_0_0
       address_read(16 downto 0) => BILINEAR_INTERPOLATI_0_address_read(16 downto 0),
       address_write(18 downto 0) => BILINEAR_INTERPOLATI_0_address_write(18 downto 0),
       bili_cntl => bili_cntl_1,
-      clk_bili_wr => '0',
+      clk_bili_wr => clk_wiz_0_clk_vga,
       clk_interpolation => clk_wiz_0_clk_interpolation,
       clk_vga => clk_wiz_0_clk_vga,
       pixel_in(11 downto 0) => blk_mem_gen_1_doutb(11 downto 0),

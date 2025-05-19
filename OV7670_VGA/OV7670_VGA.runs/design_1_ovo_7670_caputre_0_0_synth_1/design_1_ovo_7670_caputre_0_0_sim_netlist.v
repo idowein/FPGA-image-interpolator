@@ -1,7 +1,7 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Thu May  8 18:38:08 2025
+// Date        : Mon May 19 11:39:50 2025
 // Host        : Ido running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_1_ovo_7670_caputre_0_0_sim_netlist.v
@@ -134,14 +134,14 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre
   wire [7:0]din;
   wire [11:0]dout;
   wire geqOp__8;
-  wire \latced_data_reg_n_0_[10] ;
-  wire \latced_data_reg_n_0_[12] ;
-  wire \latced_data_reg_n_0_[13] ;
-  wire \latced_data_reg_n_0_[14] ;
-  wire \latced_data_reg_n_0_[15] ;
-  wire \latced_data_reg_n_0_[8] ;
-  wire \latced_data_reg_n_0_[9] ;
   wire latch_href;
+  wire \latched_data_reg_n_0_[10] ;
+  wire \latched_data_reg_n_0_[12] ;
+  wire \latched_data_reg_n_0_[13] ;
+  wire \latched_data_reg_n_0_[14] ;
+  wire \latched_data_reg_n_0_[15] ;
+  wire \latched_data_reg_n_0_[8] ;
+  wire \latched_data_reg_n_0_[9] ;
   wire [15:8]p_0_in;
   wire p_0_in1_in;
   wire p_0_in_0;
@@ -816,13 +816,13 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre
   FDRE \dout_reg[10] 
        (.C(pclk),
         .CE(p_0_in1_in),
-        .D(\latced_data_reg_n_0_[14] ),
+        .D(\latched_data_reg_n_0_[14] ),
         .Q(dout[10]),
         .R(1'b0));
   FDRE \dout_reg[11] 
        (.C(pclk),
         .CE(p_0_in1_in),
-        .D(\latced_data_reg_n_0_[15] ),
+        .D(\latched_data_reg_n_0_[15] ),
         .Q(dout[11]),
         .R(1'b0));
   FDRE \dout_reg[1] 
@@ -852,36 +852,42 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre
   FDRE \dout_reg[5] 
        (.C(pclk),
         .CE(p_0_in1_in),
-        .D(\latced_data_reg_n_0_[8] ),
+        .D(\latched_data_reg_n_0_[8] ),
         .Q(dout[5]),
         .R(1'b0));
   FDRE \dout_reg[6] 
        (.C(pclk),
         .CE(p_0_in1_in),
-        .D(\latced_data_reg_n_0_[9] ),
+        .D(\latched_data_reg_n_0_[9] ),
         .Q(dout[6]),
         .R(1'b0));
   FDRE \dout_reg[7] 
        (.C(pclk),
         .CE(p_0_in1_in),
-        .D(\latced_data_reg_n_0_[10] ),
+        .D(\latched_data_reg_n_0_[10] ),
         .Q(dout[7]),
         .R(1'b0));
   FDRE \dout_reg[8] 
        (.C(pclk),
         .CE(p_0_in1_in),
-        .D(\latced_data_reg_n_0_[12] ),
+        .D(\latched_data_reg_n_0_[12] ),
         .Q(dout[8]),
         .R(1'b0));
   FDRE \dout_reg[9] 
        (.C(pclk),
         .CE(p_0_in1_in),
-        .D(\latced_data_reg_n_0_[13] ),
+        .D(\latched_data_reg_n_0_[13] ),
         .Q(dout[9]),
+        .R(1'b0));
+  FDRE latch_href_reg
+       (.C(pclk),
+        .CE(p_0_in1_in),
+        .D(camera_h_ref),
+        .Q(latch_href),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
-    \latced_data_reg[0] 
+    \latched_data_reg[0] 
        (.C(pclk),
         .CE(p_0_in1_in),
         .D(din[0]),
@@ -889,47 +895,47 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
-    \latced_data_reg[10] 
+    \latched_data_reg[10] 
        (.C(pclk),
         .CE(p_0_in1_in),
         .D(p_0_in[10]),
-        .Q(\latced_data_reg_n_0_[10] ),
+        .Q(\latched_data_reg_n_0_[10] ),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
-    \latced_data_reg[12] 
+    \latched_data_reg[12] 
        (.C(pclk),
         .CE(p_0_in1_in),
         .D(p_0_in[12]),
-        .Q(\latced_data_reg_n_0_[12] ),
+        .Q(\latched_data_reg_n_0_[12] ),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
-    \latced_data_reg[13] 
+    \latched_data_reg[13] 
        (.C(pclk),
         .CE(p_0_in1_in),
         .D(p_0_in[13]),
-        .Q(\latced_data_reg_n_0_[13] ),
+        .Q(\latched_data_reg_n_0_[13] ),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
-    \latced_data_reg[14] 
+    \latched_data_reg[14] 
        (.C(pclk),
         .CE(p_0_in1_in),
         .D(p_0_in[14]),
-        .Q(\latced_data_reg_n_0_[14] ),
+        .Q(\latched_data_reg_n_0_[14] ),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
-    \latced_data_reg[15] 
+    \latched_data_reg[15] 
        (.C(pclk),
         .CE(p_0_in1_in),
         .D(p_0_in[15]),
-        .Q(\latced_data_reg_n_0_[15] ),
+        .Q(\latched_data_reg_n_0_[15] ),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
-    \latced_data_reg[1] 
+    \latched_data_reg[1] 
        (.C(pclk),
         .CE(p_0_in1_in),
         .D(din[1]),
@@ -937,7 +943,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
-    \latced_data_reg[2] 
+    \latched_data_reg[2] 
        (.C(pclk),
         .CE(p_0_in1_in),
         .D(din[2]),
@@ -945,7 +951,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
-    \latced_data_reg[3] 
+    \latched_data_reg[3] 
        (.C(pclk),
         .CE(p_0_in1_in),
         .D(din[3]),
@@ -953,7 +959,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
-    \latced_data_reg[4] 
+    \latched_data_reg[4] 
        (.C(pclk),
         .CE(p_0_in1_in),
         .D(din[4]),
@@ -961,7 +967,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
-    \latced_data_reg[5] 
+    \latched_data_reg[5] 
        (.C(pclk),
         .CE(p_0_in1_in),
         .D(din[5]),
@@ -969,7 +975,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
-    \latced_data_reg[6] 
+    \latched_data_reg[6] 
        (.C(pclk),
         .CE(p_0_in1_in),
         .D(din[6]),
@@ -977,7 +983,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
-    \latced_data_reg[7] 
+    \latched_data_reg[7] 
        (.C(pclk),
         .CE(p_0_in1_in),
         .D(din[7]),
@@ -985,25 +991,19 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ovo_7670_caputre
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
-    \latced_data_reg[8] 
+    \latched_data_reg[8] 
        (.C(pclk),
         .CE(p_0_in1_in),
         .D(p_0_in[8]),
-        .Q(\latced_data_reg_n_0_[8] ),
+        .Q(\latched_data_reg_n_0_[8] ),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
-    \latced_data_reg[9] 
+    \latched_data_reg[9] 
        (.C(pclk),
         .CE(p_0_in1_in),
         .D(p_0_in[9]),
-        .Q(\latced_data_reg_n_0_[9] ),
-        .R(1'b0));
-  FDRE latch_href_reg
-       (.C(pclk),
-        .CE(p_0_in1_in),
-        .D(camera_h_ref),
-        .Q(latch_href),
+        .Q(\latched_data_reg_n_0_[9] ),
         .R(1'b0));
   LUT5 #(
     .INIT(32'hB8B8A8B8)) 

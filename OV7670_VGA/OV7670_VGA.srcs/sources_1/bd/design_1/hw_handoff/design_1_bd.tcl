@@ -524,7 +524,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net clk_in1_1 [get_bd_ports clk_in1] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins cntl_0/clk]
   connect_bd_net -net clk_wiz_0_clk_bili_wr [get_bd_pins BRAM_MUX_0/clk_50_MHz] [get_bd_pins clk_wiz_0/clk_bili_wr]
   connect_bd_net -net clk_wiz_0_clk_interpolation [get_bd_pins BILINEAR_INTERPOLATI_0/clk_interpolation] [get_bd_pins clk_wiz_0/clk_interpolation]
-  connect_bd_net -net clk_wiz_0_clk_vga [get_bd_pins BILINEAR_INTERPOLATI_0/clk_vga] [get_bd_pins VGA_TOP_WITH_DATA_MUX/pix_clk] [get_bd_pins blk_mem_gen_0/clkb] [get_bd_pins clk_wiz_0/clk_vga] [get_bd_pins ov7670_controller_0/clk] [get_bd_pins zoom_bram_address_suit/clkb]
+  connect_bd_net -net clk_wiz_0_clk_vga [get_bd_pins BILINEAR_INTERPOLATI_0/clk_bili_wr] [get_bd_pins BILINEAR_INTERPOLATI_0/clk_vga] [get_bd_pins VGA_TOP_WITH_DATA_MUX/pix_clk] [get_bd_pins blk_mem_gen_0/clkb] [get_bd_pins clk_wiz_0/clk_vga] [get_bd_pins ov7670_controller_0/clk] [get_bd_pins zoom_bram_address_suit/clkb]
   connect_bd_net -net cntl_0_cntl_out [get_bd_pins VGA_TOP_WITH_DATA_MUX/cntl] [get_bd_pins cntl_0/cntl_out]
   connect_bd_net -net cntl_0_resend_out [get_bd_pins cntl_0/resend_out] [get_bd_pins ov7670_controller_0/resend]
   connect_bd_net -net cntl_in_0_1 [get_bd_ports cntl_in] [get_bd_pins cntl_0/cntl_in]
