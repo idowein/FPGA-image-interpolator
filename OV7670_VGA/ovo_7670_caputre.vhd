@@ -50,7 +50,7 @@ architecture Behavioral of ovo_7670_caputre is
 	signal  address                  : STD_LOGIC_VECTOR (18 downto 0) := (others =>'0');
 	signal 	write_state              : STD_LOGIC_VECTOR (1  downto 0);
 	signal  latch_href               : STD_LOGIC;
-	signal 	latced_data              : STD_LOGIC_VECTOR (15 downto 0 ) := (others =>'0');
+	signal 	latched_data             : STD_LOGIC_VECTOR (15 downto 0 ) := (others =>'0');
 	signal  counter_col, counter_row : STD_LOGIC_VECTOR (10 downto 0 ) := (others=> '0');
 
 begin
@@ -64,14 +64,14 @@ begin
                 write_state <= (others =>'0');
             else 
                 -- RGB 565 (camera data) => RGB 444 (aligned to Board's VGA)
-                    dout <= latced_data(15 downto 12) & latced_data(10 downto 7)  & latced_data(4 downto 1);
+                dout <= latched_data(15 downto 12) & latched_data(10 downto 7)  & latched_data(4 downto 1);
                 if (camera_h_ref = '1' and latch_href = '0') then 
                     counter_row <= counter_row + 1;
-                    counter_col<=(others=>'0');
+                    counter_col <= (others => '0');
                 end if;
                 write_state <= write_state(0) & (camera_h_ref and not (write_state(0)));
                 -- pixel contains 2 samples of din (8 bit x 2 = 16 bits - RGB 565)
-                latced_data <= latced_data(7 downto 0) & din;
+                latched_data <= latched_data(7 downto 0) & din;
                 if write_state(1) = '1' then
                     counter_col <= counter_col + 1;
                     if (zoom_x2 = '1') then

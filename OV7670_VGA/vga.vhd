@@ -33,36 +33,20 @@ use IEEE.NUMERIC_STD.ALL;
 --use UNISIM.VComponents.all;
 
 entity vga is
-    Port ( pix_clk      : in  STD_LOGIC;
-           cntl         : in  STD_LOGIC;
-           zoom_x2      : in  STD_LOGIC;
-           frame_fix    : in  STD_LOGIC_VECTOR (11 downto 0);
-           VGA_H_sync   : out STD_LOGIC;
-           vga_V_sync   : out STD_LOGIC;
-           vga_red      : out STD_LOGIC_VECTOR (3 downto 0);
-           vga_blue     : out STD_LOGIC_VECTOR (3 downto 0);
-           vga_green    : out STD_LOGIC_VECTOR (3 downto 0);
-           frame_adress : out STD_LOGIC_VECTOR (18 downto 0));
+    Port ( pix_clk       : in  STD_LOGIC;
+           cntl          : in  STD_LOGIC;
+           zoom_x2       : in  STD_LOGIC;
+           frame_fix     : in  STD_LOGIC_VECTOR (11 downto 0);
+           VGA_H_sync    : out STD_LOGIC;
+           vga_V_sync    : out STD_LOGIC;
+           vga_red       : out STD_LOGIC_VECTOR (3  downto 0);
+           vga_blue      : out STD_LOGIC_VECTOR (3  downto 0);
+           vga_green     : out STD_LOGIC_VECTOR (3  downto 0);
+           frame_address : out STD_LOGIC_VECTOR (18 downto 0));
 end vga;
 
 architecture Behavioral of vga is
 
-    -- Updated constants for 1920x1080 resolution
---    constant FRAME_WIDTH : integer := 1920;
---    constant FRAME_HEIGHT : integer := 1080;
---    constant H_FP : integer := 88;   -- Horizontal Front Porch
---    constant H_PW : integer := 44;   -- Horizontal Pulse Width
---    constant H_MAX : integer := 2200; -- Total Horizontal Pixels (1920 + Front Porch + Back Porch + Sync)
---    constant V_FP : integer := 4;    -- Vertical Front Porch
---    constant V_PW : integer := 5;    -- Vertical Pulse Width
---    constant V_MAX : integer := 1125; -- Total Vertical Pixels (1080 + Front Porch + Back Porch + Sync)
---    constant BITS_WIDTH : integer := 12;
---    constant ADDR_WIDTH : integer := 19;
---    constant PIX_WIDTH : integer := 12;
---    constant VGABIT_WIDTH : integer := 4;
---    constant CAMERA_WIDTH : integer := 1920; -- Updated camera width
---    constant CAMERA_HEIGHT : integer := 1080; -- Updated camera height
-    
     -- Updated constants for 640x480 resolution
     constant FRAME_WIDTH : integer := 640;   -- Width of the frame
     constant FRAME_HEIGHT : integer := 480;  -- Height of the frame
@@ -120,7 +104,7 @@ architecture Behavioral of vga is
     signal fr_address: std_logic_vector(18 downto 0); -- Frame buffer address for current pixel
 
     begin
-        frame_adress<= fr_address;
+        frame_address<= fr_address;
         -- horizon counter
     process(pix_clk) begin
         if rising_edge(pix_clk) then
@@ -198,7 +182,6 @@ architecture Behavioral of vga is
                     elsif (h_cnt(0) = '0') then
                         val_tmp <= val_tmp + 1;
                     end if;
-    
                     -- Increment the zoomed pixel address (`val_zoom`) for
                     -- every valid pixel.
                     val_zoom <= val_zoom + 1;

@@ -37,7 +37,7 @@ begin
 		if  busy_sr(11 downto 10) = "10" or 
 			busy_sr(20 downto 19) = "10" or 
 			busy_sr(29 downto 28) = "10"  then
-				siod <= 'Z'; -- release line for ACK
+			siod <= 'Z'; -- release line for ACK
 		else
 			siod <= data_sr(31); -- drive next data bit
 		end if;
@@ -125,4 +125,3 @@ begin
 		end if;
 	end process;
 end Behavioral;
-
