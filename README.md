@@ -5,7 +5,10 @@ This project implements a video capture and display system using the OV7670 came
 
 ![Image](https://github.com/user-attachments/assets/7216f4db-9091-4da8-ad7c-558805dc4947)
 
-![Image](https://github.com/user-attachments/assets/b5ac41e7-a74a-4fbc-b2cf-929da85c3f7a)
+## User interface
+
+![image](https://github.com/user-attachments/assets/ef6c0856-6ae5-4617-9497-106af98cee17)
+
 ---
 
 ## Features
